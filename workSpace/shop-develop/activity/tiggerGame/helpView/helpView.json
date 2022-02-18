@@ -1,0 +1,8 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "customView_vm" : "../components/helpView_vm/helpView_vm",
+    "customView_only" : "../components/helpView_only/helpView_only",
+    "customView_fol" : "../components/helpView_fol/helpView_fol"
+  }
+}

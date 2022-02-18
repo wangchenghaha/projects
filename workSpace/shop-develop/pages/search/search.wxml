@@ -1,0 +1,72 @@
+
+<view class="wrap">
+
+  <!-- 顶部信息-搜索信息 -->
+  <view class="header">
+    <view class="header_box flex-start" bindtap="onSearch">
+      <view class="search">请输入商品名称或款号</view>
+      <view class="button flex-center">
+        <icon type="search" size="20" color="#999"></icon>
+      </view>
+    </view>
+  </view>
+  <view style="margin-top: 100rpx ">
+    <ad-pop wx:if="{{showAD}}" isShow="{{showAD}}" page="search"></ad-pop>
+  </view>
+  <!-- 全部商品、类别 -->
+  <view class="box">
+    <view class='list'>
+      <view class="list_con flex-start">
+        <scroll-view scroll-x class='list_con_top' wx:if="{{isBandF}}">
+          <view
+            class='top_li {{thisIndex0==index?"top_list":""}}'
+            wx:for="{{allTop}}"
+            wx:key="allTop"
+            data-index='{{index}}'
+            bindtap='allTop_click'
+          >{{item.classifyName}}</view>
+        </scroll-view>
+
+        <scroll-view scroll-y class='list_con_left' scroll-into-view="{{leftScrollViewId}}" scroll-with-animation="true">
+          <text
+            wx:for="{{all}}"
+            wx:key="id"
+            class="left-li flex-center {{index > 9 ? 'more' : ''}} {{thisIndex1 == index}}"
+            data-index='{{index}}'
+            bindtap='leftClick'
+            id="left{{index}}"
+          >{{item.classifyName}}</text>
+        </scroll-view>
+        <scroll-view scroll-y class='list-con-right' scroll-into-view="{{scrollViewId}}" scroll-with-animation="true" bindscroll="handleScroll">
+          <view class="flex-bet right-view {{isBandF}}" wx:for="{{rightList}}" wx:key="id" id="{{brand}}{{index}}">
+<!--          <view class="title flex-center" style="height: 100rpx; line-height: 100rpx">{{all[index].classifyName}}</view>-->
+            <image class="cover-img"
+                   style="width: 500rpx; height: 150rpx; margin-bottom: 20rpx"
+                   wx:if="{{all[index].coverImg}}"
+                   src="{{all[index].coverImg}}"
+                   data-code="{{all[index].classifyId}}"
+                   bindtap='toList'
+                   mode="aspectFit"></image>
+<!--            <view class="title flex-center" style="height: 40rpx; line-height: 40rpx">{{all[index].classifyName}}</view>-->
+            <view class="sub-views flex-center text-c"
+                    wx:for="{{item}}"
+                    wx:key="id"
+                    wx:for-item="subItem"
+                    data-code="{{subItem.classifyId}}"
+                    data-name="{{subItem.classifyName}}"
+                    bindtap='toList'>
+                    <image wx:if="{{subItem.goodsImg}}" style="width: 150rpx; height: 150rpx" src="{{subItem.goodsImg}}" mode="aspectFit" />
+
+                  <view class="subText">{{subItem.classifyName}}</view>
+              </view>
+          </view>
+          <view wx:if="{{!isBandF}}" style="height: 800rpx; width: 100%"></view>
+        </scroll-view>
+      </view>
+    </view>
+      <!-- IphoneX底部栏 -->
+    <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}">
+    </view>
+  </view>
+</view>
+

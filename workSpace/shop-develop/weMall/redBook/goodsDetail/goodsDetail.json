@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "temp-header": "../../components/shareTempHeader/shareTempHeader",
+    "temp-footer": "/components/shareTempFooter/shareTempFooter"
+  }
+}

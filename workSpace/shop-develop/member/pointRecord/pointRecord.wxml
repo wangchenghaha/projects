@@ -1,0 +1,43 @@
+<view class="container">
+    <image class="pointBg" src="{{pointBg}}" mode="aspectFill"></image>
+    <view class="rule flex-center" data-type="notice" bindtap="onClick" wx:if="{{isShow}}">
+        <view class="warn" >!</view>
+        <view class="text ">积分规则</view>  
+    </view>
+    <view class="pointContext">
+        <view class="userInfo flex-start">
+            <image class="userImg" src="{{userImg}}" mode="widthFix"></image>
+            <view class="info">
+                <view class="text1">当前积分</view>
+                <view class="pointNum">{{myPoint}}</view>
+                <view class="overDue"wx:if="{{isShow}}">（有{{expirePoints}}积分将于{{currentYear}}年12月31日过期）</view>
+            </view>
+        </view>
+        <view style="width: 100%; height: 30rpx;"></view>
+        <view class="listArea" wx:if="{{pointList.length > 0}}">
+            <block wx:for="{{pointList}}" wx:key="points">
+                <view class="pointInfo flex-bet">
+                    <view class="info">
+                        <view class="info-come">{{item.updateReason}}<text style="font-size: 24rpx;" wx:if="{{item.brandName && item.brandName != null}}"> ({{item.brandName}})</text></view>
+                        <view class="info-time">{{item.updateDate}}</view>
+                    </view>
+                <view class="number" style="color:{{item.isGet? '#fab848':'#e91926'}};">{{item.updatePoints}}</view>
+                </view>
+            </block>
+        </view>
+        <view class="noRecord" wx:else>暂无积分记录</view>
+    </view>
+
+    <view class="voucher {{isShowTModel ? 'show': ''}}">
+        <view class="showModel">
+            <image class="tan_close" src="../../images/qr_close.png" mode="widthFix" data-type="tanClose" bindtap="onClick"/>
+            <view class="content">
+                <view class="cTitle">积分规则</view>
+                <view class="contentClass">
+                    <view class="cInfo {{item.type? 'titleT':''}}" wx:for="{{contentInfo}}" wx:key="cInfo">{{item.text}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    
+</view>

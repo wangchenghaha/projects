@@ -1,0 +1,492 @@
+@charset "UTF-8";
+page {
+  background-color: #F3F4F5;
+}
+
+.swiper {
+  width: 100%;
+  height: 750rpx;
+}
+
+.swiper .imageView {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 750rpx;
+  position: relative;
+}
+
+.zhekou {
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  width: 125rpx;
+  height: 60rpx;
+}
+
+.zhekou-text {
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  width: 120rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  color: white;
+  text-align: center;
+}
+
+.ptBotomView {
+  background-color: #CC292E;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.ptBotomView .titles {
+  color: white;
+  line-height: 90rpx;
+}
+
+.ptBotomView .botom-leftView {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+
+.ptBotomView .botom-leftView .botom-lefView-s {
+  margin-left: 30rpx;
+  height: 70rpx;
+  width: auto;
+  overflow: hidden;
+}
+
+.ptBotomView .botom-leftView .botom-lefView-s .titles-up {
+  color: #C0BCBC;
+  font-size: 26rpx;
+  text-decoration: line-through;
+  line-height: 35rpx;
+}
+
+.ptBotomView .botom-leftView .botom-lefView-s .titles-down {
+  color: white;
+  font-size: 26rpx;
+  line-height: 35rpx;
+}
+
+.ptBotomView .botom-rightView {
+  display: flex;
+  background-color: white;
+  border-radius: 5rpx;
+  width: 120rpx;
+  height: 60rpx;
+  margin: 15rpx;
+  line-height: 60rpx;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #CC292E;
+}
+
+.descView {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.descView .leftView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.descView .leftView-uptitle {
+  font-size: 28rpx;
+  color: #373738;
+}
+
+.descView .leftView-botomtitle {
+  color: #A7A8A9;
+  font-size: 26rpx;
+}
+
+.descView .rightView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.descView .rightView-imageView {
+  margin-right: 10rpx;
+  width: 35rpx;
+}
+
+.descView .rightView-text {
+  font-size: 25rpx;
+  color: #CC292E;
+}
+
+.cantuanView {
+  background-color: white;
+  margin: 20rpx;
+  overflow: hidden;
+  border-radius: 8rpx;
+}
+
+.cantuanView .topTitleView {
+  font-size: 25rpx;
+  color: #656566;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.cantuanView .botomView {
+  position: relative;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+}
+
+.cantuanView .botomView-leftView {
+  flex: 1;
+  width: auto;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cantuanView .botomView-leftView .icon-z {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.cantuanView .botomView-leftView .icon-z-title {
+  position: absolute;
+  top: -2rpx;
+  left: 0;
+  width: 55rpx;
+  background-color: #CC292E;
+  border-radius: 13rpx;
+  font-size: 18rpx;
+  line-height: 25rpx;
+  color: white;
+  text-align: center;
+}
+
+.cantuanView .botomView-leftView .icon {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 43rpx;
+  border: solid 2rpx #CC292E;
+}
+
+.cantuanView .entTitleView {
+  text-align: center;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.cantuanView .lineView {
+  background-color: #FBFCFD;
+  width: 100%;
+  height: 1rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.cantuanView .pintuanguizView {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  height: 80rpx;
+}
+
+.cantuanView .pintuanguizView .leftView {
+  flex: 1;
+  font-size: 25rpx;
+  color: #656566;
+}
+
+.cantuanView .pintuanguizView .guize {
+  margin-left: 10rpx;
+  padding: 5rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  border: dashed 2rpx #D50000;
+  font-size: 23rpx;
+  color: #D50000;
+  text-align: center;
+  line-height: 30rpx;
+  height: 30rpx;
+  border-radius: 21rpx;
+}
+
+.goPintuanView {
+  background-color: white;
+  margin: 20rpx;
+  overflow: hidden;
+  border-radius: 8rpx;
+  padding-bottom: 20rpx;
+}
+
+.goPintuanView .topTitleView {
+  font-size: 25rpx;
+  color: #656566;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.goPintuanView .iconViews {
+  width: 95%;
+  height: 120rpx;
+  margin-left: 2.5%;
+  border-bottom: 2rpx solid #F3F4F5;
+  color: #656566;
+  line-height: 120rpx;
+  display: flex;
+}
+
+.goPintuanView .iconViews .subView {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+.goPintuanView .iconViews .subView .icon {
+  margin-top: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.goPintuanView .iconViews .subView .phone {
+  margin-left: 20rpx;
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.goPintuanView .iconViews .subView-views {
+  width: 52%;
+  height: 100%;
+  flex-direction: column;
+  text-align: right;
+  position: relative;
+}
+
+.goPintuanView .iconViews .subView-views .topTitle {
+  margin-top: 29rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+
+.goPintuanView .iconViews .subView-views .subTitle {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+}
+
+.goPintuanView .iconViews .subView-views .goPT {
+  width: 140rpx;
+  height: 50rpx;
+  background-color: #CB0000;
+  border-radius: 50rpx;
+  text-align: center;
+  color: white;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 48rpx;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.chimaView {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: white;
+  margin: 20rpx 0;
+}
+
+.chimaView-s {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.chimaView-leftView {
+  font-size: 28rpx;
+  color: #373738;
+  flex: 1;
+}
+
+.chimaView-rightView {
+  margin-right: 10rpx;
+  width: 30rpx;
+  height: auto;
+}
+
+.cainixihuan {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding-top: 20rpx;
+}
+
+.cainixihuan .caini-toptitle {
+  font-size: 25rpx;
+  color: #373738;
+  margin-left: 20rpx;
+}
+
+.html {
+  padding-bottom: 80rpx;
+}
+
+.wxParse-div image {
+  display: block;
+  margin: 0 auto;
+  width: 94%;
+}
+
+.buyView {
+  height: 80rpx;
+  clear: both;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #CC292E;
+  line-height: 80rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.buyView-viewText {
+  color: white;
+  font-size: 30rpx;
+  width: 50%;
+  height: 80rpx;
+}
+
+.buyView-cantuanViewText {
+  background-color: red;
+  color: white;
+  font-size: 30rpx;
+  width: 100%;
+  height: 80rpx;
+}
+
+.bouncesBg {
+  background-color: black;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bouncesView {
+  position: fixed;
+  top: 25%;
+  left: 50rpx;
+  right: 50rpx;
+  height: auto;
+  background-color: white;
+  border-radius: 8rpx;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.bouncesView-view {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bouncesView-view .redTitle {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: red;
+}
+
+.bouncesView-view .submitTitle {
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: #818284;
+}
+
+.bouncesView-view .whiteTitle {
+  margin-top: 100rpx;
+  font-size: 28rpx;
+  color: white;
+  background-color: #CC292E;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 回到首页 */
+.fixed-right {
+  position: fixed;
+  top: 450rpx;
+  right: 20rpx;
+  z-index: 999;
+}
+
+.fixed-right .fixed-item {
+  position: relative;
+  margin-bottom: 20rpx;
+  width: 76rpx;
+  height: 76rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 2rpx 2rpx 5rpx #ccc;
+  overflow: hidden;
+}
+
+.fixed-right .fixed-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed-right .fixed-img {
+  width: 50%;
+}
+
+.fixed-right .share {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

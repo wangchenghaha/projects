@@ -1,0 +1,16 @@
+<myTicketView_fol
+ wx:if="{{brand == 'FOL'}}"
+ jinbi="{{jinbi}}"
+ noViewHeight="{{noViewHeight}}"
+ yhqArrs="{{yhqArrs}}"
+ imgPath="{{imgPath}}"
+/>
+
+<myTicketView_vm
+ wx:if="{{brand == 'VEROMODA'}}"
+ jinbi="{{jinbi}}"
+ noViewHeight="{{noViewHeight}}"
+ yhqArrs="{{yhqArrs}}"
+ imgPath="{{imgPath}}"
+/>
+

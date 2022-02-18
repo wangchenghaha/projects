@@ -1,0 +1,241 @@
+@keyframes bounceInUp {
+  0%, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@keyframes bounceInDown {
+  0%, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@keyframes jackInTheBox {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+page {
+  height: 100%;
+}
+
+page .wrapper {
+  height: 100%;
+}
+
+.container {
+  background-color: #ffb400;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/bg.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container.big {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/bigbg.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container .logo {
+  width: 100%;
+  transform: translate3d(0, -3000px, 0);
+  overflow: hidden;
+}
+
+.container .logo.animate {
+  animation: bounceInDown 0.4s forwards;
+}
+
+.container .logo .bar {
+  background: black;
+}
+
+.container .logo .icon {
+  height: 210rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/logo.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container .content {
+  padding-left: 123rpx;
+  padding-top: 40rpx;
+  opacity: 0;
+  transform: scale(0.1) rotate(30deg);
+  transform-origin: center bottom;
+  box-sizing: border-box;
+}
+
+.container .content.big {
+  padding-left: 98rpx;
+  padding-top: 89rpx;
+}
+
+.container .content.animate {
+  animation: jackInTheBox 0.4s 0.3s forwards;
+}
+
+.container .content .crayon {
+  position: relative;
+  width: 478rpx;
+  height: 723rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/crayon.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container .content .crayon.big {
+  width: 531rpx;
+  height: 795rpx;
+}
+
+.container .content .crayon .startbtn {
+  position: absolute;
+  left: 21rpx;
+  bottom: 169rpx;
+  width: 510rpx;
+  height: 153rpx;
+}
+
+.container .content .crayon .startbtn .btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  will-change: opacity;
+  transition: opacity 0.3s ease;
+}
+
+.container .content .crayon .startbtn .btn.y {
+  opacity: 1;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/start_y.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container .content .crayon .startbtn .btn.b {
+  opacity: 0;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/start_b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container .content .crayon .startbtn.hover .y {
+  opacity: 0;
+}
+
+.container .content .crayon .startbtn.hover .b {
+  opacity: 1;
+}
+
+.container .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transform: translate3d(0, 3000px, 0);
+  overflow: hidden;
+}
+
+.container .footer.animate {
+  animation: bounceInUp 0.4s forwards;
+}
+
+.container .footer .desc {
+  width: 750rpx;
+  height: 467rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/mini-figure.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container .footer .desc.big {
+  height: 612rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/figure.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container .footer .crimp {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 242rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/crimp.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

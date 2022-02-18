@@ -1,0 +1,482 @@
+@keyframes animate{
+    0% {
+        transform: scale(0,0);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+.bg{
+    width: 100%;
+    height: auto;
+    background-color: #006BD5;
+
+    .indexBgImg{
+        width: 100%;
+        height: auto;
+        position: relative;
+        .goHome{
+            position: absolute;
+            top: 50%;
+            right: 32rpx;
+
+            width: 68rpx;
+            height: 68rpx;
+
+        }
+        .guizeBtn{
+            position: absolute;
+            right: 10rpx;
+            top: 61%;
+            width: 110rpx;
+            height: 110rpx;
+        }
+        .centerView{
+            position: absolute;
+            bottom: 65rpx;
+            left: 50%;
+            transform: translateX(-50%);
+    
+            width: 348rpx;
+            height: auto;
+
+            text-align: center;
+
+            &-text{
+                margin-left: 74rpx;
+                width: 200rpx;
+                height: 50rpx;
+                line-height: 50rpx;
+                color: white;
+                font-size: 25rpx;
+                background-color: #00AFEC;
+                border-radius: 10rpx;
+            }
+            &-startGame{
+                margin-top: 5rpx;
+                width:100%;
+                height:110rpx;
+
+            }
+            &-opaView{
+                position: absolute;
+                bottom: 83rpx;
+
+                width: 190rpx;
+                height: 80rpx;
+                color: white;
+
+                
+                background-color: black;
+                opacity: .5;
+            }
+            &-opaView1{
+                position: absolute;
+                bottom: 83rpx;
+
+                width: 190rpx;
+                height: 80rpx;
+                color: white;
+
+                .rightView{
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    font-size: 26rpx;
+                    line-height: 80rpx;
+                }
+                .leftView{
+                    
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    .subView{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        .textView{
+                            font-size: 28rpx;
+                            line-height: 30rpx;
+                            min-width: 100rpx;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bottomView{
+
+        margin-top: -30rpx;
+        padding-left: 20rpx;
+        padding-right: 20rpx;
+
+        box-sizing: border-box;
+        width: 100%;
+        height: 300rpx;
+        position: relative;
+        &-centerView{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+
+            .iconView{
+
+                width: 130rpx;
+                height: 130rpx;
+                overflow: hidden;
+                text-align: center;
+                .icon{
+                    width: 80rpx;
+                    height: 80rpx;
+                    margin: 0 auto;
+                    border: 4rpx solid #FD7D00;
+                    border-radius: 50%;
+
+                }
+                .name{
+                    margin-top: -7rpx;
+                    font-size: 22rpx;
+                    color: black;
+                }
+                .icon-zhanwei{
+                    width: 80rpx;
+                    height: 80rpx;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                }
+                .name-zhanwei{
+                    margin-top: -5rpx;
+                    width: 100%;
+                    height: 36rpx;
+
+                    position: relative;
+                    .text{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        line-height: 38rpx;
+                        color: white;
+                        font-size: 22rpx;
+                    }
+                }
+            }
+        }
+        .title{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50rpx;
+
+            font-size: 22rpx;
+            text-align: center;
+            line-height: 50rpx;
+            color: black;
+        }
+        .subTitle{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300rpx;
+            height: 65rpx;
+            line-height: 65rpx;
+            text-align: center;
+
+            font-size: 28rpx;
+            color: #00AFEC;
+        }
+        .share{ 
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background:none;
+            width: 300rpx;
+            height: 80rpx;
+        }
+        .share::after{ 
+            border: none;
+        }
+    }
+    .guizeView{
+        margin-top: 50rpx;
+        width: 100%;
+        height: auto;
+        padding-right: 20rpx;
+        padding-bottom: 20rpx;
+        box-sizing: border-box;
+        .title{
+            font-size: 28rpx;
+            color: white;
+            text-align: center;
+            line-height: 32rpx;
+            margin-bottom: 50rpx;
+        }
+        .subView_line{
+            margin-top: 10rpx;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+
+            font-size: 22rpx;
+            color: white;
+            line-height: 28rpx;
+            .left{
+                width: 50rpx;
+                height: auto;
+                text-align: center;
+            }
+            .right{
+                flex: 1;
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.bouncedBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .7;
+
+}
+.canOpenView{
+
+    width: 606rpx;
+    height: 606rpx;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    .imgView{
+        transform: scale(0,0);
+        width: 100%;
+        height: 100%;
+        position: relative;
+        animation: animate 0.2s linear 1;
+        animation-fill-mode: forwards;
+        .topTitle{
+            position: absolute;
+            top: 32%;
+            left: 0;
+            color: #F54C2F;
+            font-size: 40rpx;
+            line-height: 50rpx;
+            width: 100%;
+            text-align: center;
+        }
+        .subTitle{
+            position: absolute;
+            top: 43%;
+            left: 0;
+            font-size: 34rpx;
+            color: black;
+            width: 100%;
+            text-align: center;
+        }
+        .jiangpinImg{
+            width: 315rpx;
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+.oneSubView{
+    width: 557rpx;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .topText{
+            position: absolute;
+            top: 36%;
+            left: 0;
+            color: white;
+            font-size: 34rpx;
+            line-height: 60rpx;
+            text-align: center;
+            width: 100%;
+        }
+        .centerText{
+            position: absolute;
+            top: 62%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            width: 70%;
+            height: auto;
+            text-align: center;
+            color: black;
+            font-size: 34rpx;
+        }
+        .bottomView{
+            position: absolute;
+            bottom: 7%;
+            left: 17.5%;
+            width: 65%;
+            height: 95rpx;
+
+            color: #F61627;
+            line-height: 95rpx;
+            text-align: center;
+            font-size: 34rpx;
+            background-color: #FFDD60;
+            border-radius: 95rpx;
+
+        }
+        .share{ 
+            position: absolute;
+            bottom: 7%;
+            left: 17.5%;
+            width: 65%;
+            height: 95rpx;
+            background:none;
+        }
+        .share::after{ 
+            border: none;
+        }
+    }
+}
+.twoSubView{
+    width: 557rpx;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .centerText{
+            position: absolute;
+            top: 26%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            width: 100%;
+            height: auto;
+            text-align: center;
+            color: black;
+            font-size: 34rpx;
+        }
+        .bottomView{
+            position: absolute;
+            bottom: 14%;
+            
+            width: 230rpx;
+            height: 70rpx;
+
+            color: #FFFFFF;
+            line-height: 73rpx;
+            text-align: center;
+            font-size: 30rpx;
+        }
+        .share{ 
+            @extend .bottomView;
+            right: 6%;
+            background:none;
+        }
+        .share::after{ 
+            border: none;
+        }
+    }
+}
+.zhanweiView{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999999;
+    background-color: black;
+    opacity: 0.1;
+    
+}
+
+.backImg{
+    position: fixed;
+    top: 5.5%;
+    left: 30rpx;
+    width: 32rpx;
+    height: 56rpx;
+}
+// 授权手机号
+.shouquanPhone{
+    width: 50%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    z-index: 999999999;
+    border-radius: 10rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-bottom: 20rpx;
+
+    
+    background-color: white;
+    text-align: center;
+    .topView{
+        margin-top: 20rpx;
+        width: 100%;
+        line-height: 40rpx;
+        font-size: 34rpx;
+        color: black;
+    }
+    .topSubView{
+        margin-top: 20rpx;
+        width: 100%;
+        line-height: 38rpx;
+        font-size: 28rpx;
+        color: black;
+    }
+
+    .getPhoneNumber{ 
+        margin-top: 40rpx;
+        display:inline-block;  
+        font-size:26rpx;
+        line-height:68rpx;
+        color:#fff; 
+        background:#000; 
+    
+        width: 60%;
+    
+        
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}

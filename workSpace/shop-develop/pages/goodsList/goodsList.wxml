@@ -1,0 +1,129 @@
+<view class="wrapper {{noScroll?'no-scroll':''}}" style="height:{{noScroll?indexHeight:'auto'}}">
+  <view class="fixed-top" id="fixedHeader">
+    <view class=" text-c" style="padding-top: {{headerStyle.paddingTop}}; height: {{headerStyle.height}}; ">
+      <view class="flex-around menu"
+            style="height: {{headerStyle.menuHeight}}; width: {{headerStyle.menuWidth}}">
+        <text class="back menu-item" bindtap="goBack"></text>
+        <view class="home menu-item text-center" bindtap="gotoIndex">
+          <image src="{{iconHome}}" mode="widthFix"></image>
+        </view>
+
+      </view>
+      <text>商品列表</text>
+    </view>
+    <!--搜索-->
+    <view class="search flex-bet">
+      <navigator url="/pages/search/search">
+        <image class="category" src="/images/nav2.jpg" mode="widthFix"></image>
+      </navigator>
+      <navigator url="/pages/searchHistory/searchHistory">
+        <view class="search-box flex-start">
+          <icon type="search" size="32rpx"></icon>
+          <text>{{placeholder}}</text>
+        </view>
+      </navigator>
+      <view class="cart" data-code="cart" bindtap="onClick">
+        <image class="cart-img" src="/images/nav3.jpg" mode="widthFix"></image>
+        <text class="cart-num" wx:if="{{cartNum && cartNum > 0}}">{{cartNum}}</text>
+      </view>
+    </view>
+    <!--条件查询-->
+    <view class="nav flex-start" wx:if="{{!intentType}}">
+      <view class="flex-start nav-list">
+        <block wx:for="{{nav}}" wx:key="tdName">
+          <view class="nav-item {{item.selected}}"
+                wx:if="{{item.show}}"
+                data-index="{{index}}"
+                data-name="{{item.tdName}}"
+                data-code="nav"
+                bindtap="onClick">
+            {{item.name}}
+            <view class="triangle {{!item.sortDirection}}" >
+              <text class="triangle-down " wx:if="{{item.selected}}"></text>
+              <text class="triangle-up" wx:if="{{item.selected}}"></text>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="flex-start screen" data-code="screenSize" bindtap="onClick">
+        <text>筛选</text>
+        <image class="screen-icon" src="/images/icon_screen.png" mode="widthFix"></image>
+      </view>
+      <view class="promotion" wx:if="{{showPromotion}}">
+        <left-bar wx:if="{{ruleClassify.length}}" bindselectClassfyId="selectClassfyId" ruleClassify="{{ruleClassify}}"></left-bar>
+      </view>
+    </view>
+    <!-- 附近门店商品列表排序 -->
+    <view class="nav flex" wx:if="{{intentType=='fromShopDetailPage'}}">
+      <block wx:for="{{nearbyShopNavArr}}" wx:key="nearbyShopNavArr">
+        <view class="nav-item text-c {{item.isSelected ? 'active' : ''}}" id="{{index}}" bindtap="onShopSortClick">
+          {{item.title}}
+          <text class="triangle {{!item.sortDirec ? 'active' : ''}}" wx:if="{{item.isSelected}}"></text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+  <!--商品列表-->
+  <view class="goods-wrapper flex-bet {{isIphoneX ?'isIPhone-wrapper':''}}" style="margin-top: {{mainMarginTop}}">
+    <view class="no-goods flex-center" wx:if="{{goodsListData.length === 0}}">
+      <view class="no-img">
+        <image src="/images/bag.png" mode="widthFix"></image>
+      </view>
+      <text> 亲，未找到您需要的商品哦！ </text>
+    </view>
+    <block wx:else>
+      <!-- 商品列表 -->
+      <block wx:for="{{goodsListData}}" wx:key="goodsListDate" wx:for-item="goodsItem">
+        <view class="goods-row" wx:for="{{goodsItem}}" wx:key="id">
+          <goods-item
+              class="goods-item"
+              goodsInfo="{{item}}"
+              isShare="{{isShare}}"
+              options="{{options}}"
+              cartNum="{{cartNum}}"
+              bindshareGoodsNum="changeNum"
+              bindchangeCartNum="changeCart">
+          </goods-item>
+        </view>
+      </block>
+      <view class="scroll-loading" wx:if="{{showScrollLoading}}">
+        <my-loading></my-loading>
+      </view>
+      <view style="height: 68rpx; width: 100%;" wx:if="{{isIphoneX}}"></view>
+    </block>
+  </view>
+
+  <!-- 确认上传 -->
+  <view class="confirm-upload" wx:if="{{isShare}}" data-code="confirmUpload" bindtap="onClick">
+    <view class="text1">确认上传({{selectGoodsNum}}/8)</view>
+    <view class="text2">上传{{selectGoodsNum}}张/共8张</view>
+  </view>
+  <screen-size isShow="{{screenShow}}" bindhideScreen="hideScreen" bindselectedRes="selectedRes"></screen-size>
+  <!-- 回到顶部 -->
+  <view wx:if="{{goTopShow}}" class="go-top" data-code="goTop" catchtap="onClick">
+    <image src="/images/top3.png" mode="widthFix"></image>
+  </view>
+
+  <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}">
+  </view>
+</view>
+
+<!-- 红包雨倒计时 -->
+<view class='hby_cavasBg-opa' wx:if="{{hbyJson.canShow}}"></view>
+<view class='hby_cavasBg' wx:if="{{hbyJson.canShow}}" bindtap="{{hbyJson.canTap ? 'hbyTap' : ''}}">
+    <view class="cavas_img">
+        <image src="{{hbyJson.img}}" style="width:100%;opacity: {{hbyJson.canTap ? '1' : '.2'}};" mode="widthFix" />
+    </view>
+    <view class="downNum">{{hbyJson.downNum}}</view>
+</view>
+<view class="wish-entery" wx:if="{{showWishIcon.show}}">
+  <navigator url="/activity/wish/setList/setList">
+    <image src="{{showWishIcon.img}}" mode="widthFix"></image>
+  </navigator>
+</view>
+<block wx:if="{{showAD}}">
+  <ad-pop isShow="{{showAD}}" page="home"/>
+</block>

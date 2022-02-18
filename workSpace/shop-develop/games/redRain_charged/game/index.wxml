@@ -1,0 +1,58 @@
+
+
+<view class="bg" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+    <image src="{{gameBgImg}}" style="width:100%;height:100%;" />
+
+    <image src="{{gameWutaiImg}}" class="wutai" />
+    <image src="{{gameRenwuImg}}" class="renwu" style="transform: translateX({{renwuX}}px);" />
+    <view class="fenshu" style="left:{{renwuX}}px;animation: {{numAnimate}} .8s ease-out 0s 1 forwards;color:{{num === '+1' ? 'rgb(47, 235, 141)' : 'red'}}">{{num}}</view>
+    
+    <block wx:if="{{isFirst}}">
+        <view class="bouncedBg"></view>
+        <view class="bounced">
+            <image src="{{yindaoImg}}" style="width:100%;" mode="widthFix" />
+            <view class="tap" bindtap="yindaoTap"></view>
+        </view>
+    </block>
+    <block wx:else>
+        <view wx:if="{{startGame}}">
+            <view class="rain" wx:for="{{rainImgs}}" wx:key="index" class="rain" style="--y:{{downY}}px;top:{{item.y}}rpx;left:{{item.x}}rpx;animation: {{item.animate}} {{item.speed}}s linear {{item.delay}}s 1 forwards;animation-play-state: {{animationPlayState}};" id="{{index}}" bindanimationend="animateEnd_rain">
+                <image src="{{item.img}}" style="width:100%;height:100%;" />
+            </view>
+            <view class="downLoadNum">
+                <image src="{{downLoadNumImg}}" style="width:100%;height:100%;" />
+                <view class="downLoadNum-text">{{downLoadNum}}</view>
+            </view>
+            <image src="{{backImg}}" class="back" bindtap="back" />
+
+        </view>
+        <view class="downTime" wx:else>
+            <image src="{{downTimeImg}}" style="width:100%;margin-bottom:40rpx;" mode="widthFix" />
+            <view class="downTime-num" style="animation: {{downTimeJson.animate}} .2s ease-in .8s 1 forwards;" bindanimationend="animateEnd">
+                <image src="{{downTimeJson.img}}" style="width:100%;height:100%" bindload="downNumImgLoad" />
+            </view>
+        </view>
+    </block>
+</view>
+
+
+    <block wx:if="{{showEndGame}}">
+
+        <view class="bouncedBg"></view>
+        <view class="bounced endGame">
+            <image src="{{endGameImg}}" style="width:100%;" mode="widthFix" />
+            <block wx:if="{{showEndGame1}}">
+                <view class="shengyu">
+                    <view class="subView">
+                        <view class="subView-label">能量:</view>
+                        <view class="subView-num">{{totalNum}}</view>
+                        <image src="{{zhadanImg}}" class="subView-img" />
+                    </view>
+                </view>
+                <view class="closed" bindtap="back"></view>
+                <view class="agin" bindtap="agin"></view>
+            </block>
+            <view class="ok" wx:else bindtap="back"></view>
+        </view>
+
+    </block>

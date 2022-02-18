@@ -1,0 +1,113 @@
+@import './sass/index.sass'
+@keyframes bounceIn 
+    0%,20%,40%,60%,80%,to 
+        -webkit-animation-timing-function: cubic-bezier(.215,.61,.355,1)
+        animation-timing-function: cubic-bezier(.215,.61,.355,1)
+
+    0% 
+        opacity: 0
+        -webkit-transform: scale3d(.3,.3,.3)
+        transform: scale3d(.3,.3,.3)
+
+    20% 
+        -webkit-transform: scale3d(1.1,1.1,1.1)
+        transform: scale3d(1.1,1.1,1.1)
+
+    40% 
+        -webkit-transform: scale3d(.9,.9,.9)
+        transform: scale3d(.9,.9,.9)
+
+    60% 
+        opacity: 1
+        -webkit-transform: scale3d(1.03,1.03,1.03)
+        transform: scale3d(1.03,1.03,1.03)
+
+    80% 
+        -webkit-transform: scale3d(.97,.97,.97)
+        transform: scale3d(.97,.97,.97)
+
+    to 
+        opacity: 1
+        -webkit-transform: scaleX(1)
+        transform: scaleX(1)
+
+@keyframes bounceOut 
+    20% 
+        -webkit-transform: scale3d(.9,.9,.9)
+        transform: scale3d(.9,.9,.9)
+
+    50%,55% 
+        opacity: 1
+        -webkit-transform: scale3d(1.1,1.1,1.1)
+        transform: scale3d(1.1,1.1,1.1)
+
+    to 
+        opacity: 0
+        -webkit-transform: scale3d(.3,.3,.3)
+        transform: scale3d(.3,.3,.3)
+
+
+
+
+
+page
+    height: 100%
+.wrapper
+    height: 100%
+    background-color: $main
+    +bg('bg')
+    padding-top: 106rpx
+    &.big
+        padding-top: 179rpx
+        +bg('bigbg')
+    +b()
+    .preview
+        position: relative
+        width: 547rpx
+        height: 762rpx
+        background-position: center center
+        background-size: 100% 100%
+        margin: 0 auto
+        .tit
+            position: absolute
+            left: 54rpx
+            top: 83rpx
+            font-size: 24rpx
+            font-weight: bold
+            // text-shadow: 0 0 5rpx rgba(black, 1)
+        .zhang
+            position: absolute
+            left: 130rpx
+            top: 333rpx
+            width: 266rpx
+            height: 208rpx
+            +bg('beat')
+            opacity: 0
+            transform: scale3d(.3,.3,.3)
+            will-change: transform
+            &.animate
+                opacity: 1
+                animation: bounceIn 0.3s ease forwards
+    .btnbox
+        position: relative
+        z-index: 100
+        .btn
+            width: 217rpx
+            height: 125rpx
+            margin: -20rpx auto 0
+            &.normal
+                +bg('selectcard')
+                background-size: 197rpx 105rpx
+                background-position: 7rpx 8rpx
+                &.active
+                    +bg('selectcard-a')
+                    background-size: 100% 100%
+                    background-position: center center
+            &.check
+                +bg('check-l-a')
+                &.active
+                    +bg('check-l')
+
+
+
+                

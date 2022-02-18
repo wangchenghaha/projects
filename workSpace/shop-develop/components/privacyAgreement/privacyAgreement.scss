@@ -1,0 +1,48 @@
+.privacy{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #989898;
+  flex-direction: column;
+  .main{
+    padding: 50rpx;
+    width: 590rpx;
+    min-height: 630rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    .title{
+      font-size: 36rpx;
+    }
+    .content{
+      margin-top: 40rpx;
+      color: #666666;
+      font-size: 28rpx;
+      line-height: 50rpx;
+      .clause{
+        color: #c30202;
+      }
+    }
+    .btn{
+      margin: 80rpx auto 0;
+      width: 426rpx;
+      font-size: 28rpx;
+      &-agree{
+        margin: 10rpx auto;
+        height: 90rpx;
+        line-height: 90rpx;
+        background-color: #000;
+      }
+      &-cancel{
+        height: 90rpx;
+        line-height: 90rpx;
+        font-size: 24rpx;
+        color: #999999;
+      }
+    }
+  }
+  .logo{
+    margin-top: 60rpx;
+  }
+}

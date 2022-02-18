@@ -1,0 +1,7 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "alert" : "/attendgroup/components/alert/alert",
+        "send-coupon": "plugin://sendCoupon/send-coupon"
+    }
+}

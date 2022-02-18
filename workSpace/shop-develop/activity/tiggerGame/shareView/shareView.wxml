@@ -1,0 +1,81 @@
+<customView_vm
+ wx:if="{{brand == 'VEROMODA'}}"
+ canShow="{{canShow}}"
+ qrViewWidthRPX="{{qrViewWidthRPX}}"
+ qrViewHeightRPX="{{qrViewHeightRPX}}"
+ bindshareImage="shareImage"
+ bindbackView="backView"
+ bindguize="guize"
+/>
+<customView_only
+ wx:if="{{brand == 'ONLY'}}"
+ canShow="{{canShow}}"
+ qrViewWidthRPX="{{qrViewWidthRPX}}"
+ qrViewHeightRPX="{{qrViewHeightRPX}}"
+ bindshareImage="shareImage"
+ bindbackView="backView"
+ bindguize="guize"
+/>
+<customView_fol
+ wx:if="{{brand == 'FOL'}}"
+ canShow="{{canShow}}"
+ qrViewWidthRPX="{{qrViewWidthRPX}}"
+ qrViewHeightRPX="{{qrViewHeightRPX}}"
+ bindshareImage="shareImage"
+ bindbackView="backView"
+ bindguize="guize"
+/>
+
+<!-- 保存图片 -->
+<view wx:if="{{brand == 'VEROMODA'}}" class="bouncedView" catchtouchmove="return" style="{{canShow ? 'display: flex;' : 'display: none;'}}">
+    <!-- 透明背景 -->
+    <view class="bouncedView-bg"></view>
+    <!-- 视图 -->
+    <view class="bouncedView-view">
+        <image class="bouncedView-view-image" src="{{imagePath}}shareQRImg.png" mode="widthFix" />
+        <!-- 保存图片 -->
+        <view class="saveImageBtn" bindtap="saveImageTap"></view>
+        <!-- 二维码图 -->
+        <canvas class="erweima" style="width: {{qrViewWidthRPX}}rpx;height: {{qrViewHeightRPX}}rpx;" canvas-id="myQrcode" />
+        <!-- 边框 -->
+        <view class="boraView" style="width: {{qrViewWidthRPX}}rpx;height: {{qrViewHeightRPX}}rpx;"></view>
+
+        <!-- 关闭 -->
+        <view class="cloesd" bindtap="bouncedTap"></view>
+    </view>
+</view>
+<view wx:if="{{brand == 'ONLY'}}" class="bouncedView" catchtouchmove="return" style="{{canShow ? 'display: flex;' : 'display: none;'}}">
+    <!-- 透明背景 -->
+    <view class="bouncedView-bg"></view>
+    <!-- 视图 -->
+    <view class="bouncedView-view">
+        <image class="bouncedView-view-image" src="{{imagePath}}shareImageBG.png" mode="widthFix" />
+        <!-- 保存图片 -->
+        <view class="saveImageBtn" bindtap="saveImageTap"></view>
+        <view class="topTitle">哆啦邀你</view>
+        <view class="topTitle" style="bottom: 51%;">扫描下方二维码为我助力</view>
+        <!-- 二维码图 -->
+        <canvas class="erweima" style="width: {{qrViewWidthRPX}}rpx;height: {{qrViewHeightRPX}}rpx;" canvas-id="myQrcode" />
+        <!-- 边框 -->
+        <view class="boraView boraView_only" style="width: {{qrViewWidthRPX}}rpx;height: {{qrViewHeightRPX}}rpx;"></view>
+
+        <!-- 关闭 -->
+        <view class="cloesd" bindtap="bouncedTap"></view>
+    </view>
+</view>
+<!-- 保存图片 -->
+<view wx:if="{{brand == 'FOL'}}" class="bouncedView" catchtouchmove="return" style="{{canShow ? 'display: flex;' : 'display: none;'}}">
+    <!-- 透明背景 -->
+    <view class="bouncedView-bg" bindtap="bouncedTap"></view>
+    <!-- 视图 -->
+    <view class="bouncedView-view" style="{{brand == 'FOL' ? 'width: 99%;' : ''}}">
+        <image class="bouncedView-view-image" src="{{imagePath}}shareImageBG_tyg.png" mode="widthFix" />
+        <!-- 保存图片 -->
+        <view class="saveImageBtnFOL" bindtap="saveImageTap">保存图片</view>
+        <!-- 二维码图 -->
+        <canvas class="erweimaFOL" style="width: {{qrViewWidthRPX}}rpx;height: {{qrViewHeightRPX}}rpx;" canvas-id="myQrcode" />
+
+        <!-- 文字 -->
+        <view class="wenzi">扫描下方二维码可为我助力</view>
+    </view>
+</view>

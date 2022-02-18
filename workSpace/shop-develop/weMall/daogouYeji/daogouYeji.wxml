@@ -1,0 +1,47 @@
+<view class="achievement">
+  <view class="banner">
+    <view class="banner-bg">
+      <image src="{{bannerImg}}" mode="widthFix"></image>
+    </view>
+    <view class="guide-wrapper">
+      <view class="guide-img">
+        <image src="{{guideImg}}" mode="widthFix"></image>
+      </view>
+      <text class="guide-text">您的专属时尚顾问-{{nickName}}</text>
+    </view>
+  </view>
+  <view class="tab {{tabIndex !== 0 ? 'tab2' : ''}}">
+    <block wx:for="{{tabBar}}" wx:key="tabBar">
+      <!--总览、金额、人数-->
+      <view class="tab-item text-c {{tabIndex === index ? 'active': ''}}" data-code="tabItem" data-index="{{index}}" bindtap="onClick">{{item.name}}</view>
+    </block>
+  </view>
+  <view class="tab-content">
+    <view wx:for="{{tabBar}}" wx:key="tabBar" wx:if="{{tabIndex === index}}" wx:for-item="tabBarItem">
+      <view class="flex tab-title" wx:if="{{tabIndex === 0}}">
+        <block wx:for="{{tabBarItem.subTab}}" wx:key="tabTitle">
+          <!--二级tab栏-->
+          <view class="title-item text-c {{tabTitleIndex === index ? 'active': ''}}" data-code="tabTitle" data-type="{{item.type}}" data-index="{{index}}" bindtap="onClick">{{item.name}}</view>
+        </block>
+      </view>
+      <view class="content" wx:if="{{tabIndex === 0}}">
+        <!--销售概况内容  -->
+        <sale-sum wx:if="{{tabTitleIndex === 0}}" employeeId="{{employeeId}}" salesView="{{salesView}}"></sale-sum>
+        <order-center wx:elif="{{tabTitleIndex === 1}}" orderList="{{orderList}}" employeeId="{{employeeId}}" bindgetOrderList="getOrderList"></order-center>
+        <!--<order-center wx:else></order-center>-->
+      </view>
+      <view class="content1" wx:elif="{{tabIndex === 1}}">
+        <ranking-list rankingList="{{rankingList}}" rankingTitle="{{rankingTitle}}"></ranking-list>
+      </view>
+      <!--<view class="content">
+        &lt;!&ndash;分享效果内容&ndash;&gt;
+        &lt;!&ndash;<all-share wx:if="{{tabTitleIndex === 0}}" employeeId="{{employeeId}}"></all-share>&ndash;&gt;
+        &lt;!&ndash;<all-share wx:if="{{tabTitleIndex === 0}}" allList="{{allList}}"></all-share>&ndash;&gt;
+        &lt;!&ndash;<money-share wx:else tabTitleIndex="{{tabTitleIndex}}" employeeId="{{employeeId}}" purchaseList="{{purchaseList}}"></money-share>&ndash;&gt;
+      </view>-->
+    </view>
+  </view>
+  <!--{{number}}-->
+   <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+</view>

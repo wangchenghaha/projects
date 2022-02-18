@@ -1,0 +1,50 @@
+
+.wrap,#head,.content{ width:100%; height:auto; clear:both; overflow:hidden;}
+.header1{width:80%; height:98rpx; padding-top:27rpx; clear:both; overflow:hidden; margin:0 auto;}
+.header1_btn{ float:left; width:50%; height:98rpx; font-size:30rpx; line-height:98rpx; color:#3e3e3e; font-weight:bold; text-align:center; background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/dg/arrow_down.jpg) no-repeat 82% center; background-size:32rpx auto;}
+
+.header2{ width:100%; height:auto; clear:both; overflow:hidden; text-align:center;}
+.header2Li{ display:inline-block; font-size:26rpx; line-height:100rpx; color:#3e3e3e; padding:0 20rpx; font-weight:bold;}
+.header2_title{ font-size:30rpx; color:#292929;}
+
+.content{ padding-top:20rpx;}
+.fenxiang{ width:100%; height:auto; clear:both; overflow:hidden; position:relative;}
+.shareImg{ width:263rpx; height:auto; overflow:hidden; margin:0 auto; border:1rpx solid #989898;}
+.shareImg image{ display:block; width:100%; height:auto;}
+
+.footShare{ background:none; border:none; padding:0; width:120rpx; height:120rpx; position:absolute;top:0; bottom:0; right:60rpx; margin:auto 0;}
+.footShare .share{ display:block; width:80rpx; height:80rpx; position:absolute; left:0; right:0; bottom:0; top:0; margin:auto;}
+
+.leftRight{ width:100%; height:min-280rpx; clear:both; overflow:hidden; box-sizing:border-box; padding-top:20rpx;}
+.leftRight_left{ float:left; width:10%; height:280rpx; position:relative;}
+.leftRight_left image{ display:block; width:40rpx; height:auto; position:absolute; top:0; bottom:0; left:20%; margin:auto 0;}
+.leftRight_center{ float:left; width:80%; min-height:280rpx;}
+.center_box{ width:auto; min-height:270rpx;}
+.leftRight_li{ display:inline-block; width:147rpx; box-sizing:border-box; margin-right:5rpx; padding:4rpx; border:1rpx solid #969696;}
+.leftRight_li image{ display:block; width:100%; height:auto;}
+.leftRight_li .text{ width:100%; height:20rpx; overflow:hidden; font-size:12rpx; line-height:20rpx;}
+.bottom{ width:100%; height:20rpx; clear: both; overflow: hidden; font-size:12rpx; line-height:20rpx; position:relative;}
+.zhekou{ color:#fff; background:#e83f3f; padding:0 3rpx; margin-left:10rpx; position:absolute; right:0; z-index:99;}
+.nowPrice{ display:inline-block; color:#000; margin-left:1rpx;}
+.oldPrice{ padding-left:2rpx; width:auto; display:inline-block; color:#999; margin-left:1rpx; position:relative; z-index:98;}
+.oldPrice .xian{ display:block; width:100%; height:1rpx; background:#999; position:absolute; left:0;top:0;bottom:0;margin:auto 0;}
+.oldPrice1{ width:100%; text-align:center; margin-right:0; color:#000;}
+.oldPrice1 .xian{ display:none;}
+
+.leftRight_right{ float:right; width:10%; height:280rpx; position:relative;}
+.leftRight_right image{ display:block; width:40rpx; height:auto; position:absolute; top:0; bottom:0; right:20%; margin:auto 0;}
+
+
+.wxShare{ width:100%; height:100%; position:fixed; top:0; left:0;z-index:9999;}
+.opacity{ width:100%; height:100%; position:fixed; top:0; left:0; background:#000; opacity:0.6;}
+.wxShareCon{ width:100%; height:300rpx; position:fixed; bottom:0; left:0; background:#f0f0f0;}
+.wxShare_list{ width:100%; height:196rpx; border-bottom:2rpx solid #dcdcdc; box-sizing:border-box; padding-top:27rpx;}
+.ShareLiBox{width:50%; float:left;}
+.ShareLi{ width:50%; height:169rpx; display:inline-block; text-align:center;}
+.shareToWx{ float:right; padding-right:30rpx; text-align:center;}
+button{ background:none; border:none; padding:0; width:93rpx; height:96rpx; margin:0 auto;}
+button::after{ display:none;}
+.shareToWxq{ float:left; padding-left:30rpx; text-align:center;}
+.ShareLi image{ display:block; width:93rpx; height:auto; margin:0 auto;}
+.ShareLi text{ display:block; font-size:24rpx; line-height:60rpx; color:#000; font-weight:bold;}
+.wxShare_quxiao{ text-align:center; width:100%; height:105rpx; font-size:34rpx; line-height:105rpx; color:#000;}

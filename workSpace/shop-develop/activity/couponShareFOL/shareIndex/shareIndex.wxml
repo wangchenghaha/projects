@@ -1,0 +1,20 @@
+<view class="contrainer"  style="background: {{adapter.backgroundColor}};">
+  <view class="main">
+    <image class="couponShow" src="{{couponShow}}"  mode="widthFix"  data-type="jump" bindtap="onClick"/>
+    <image class="couponImage" src="{{couponImage}}"  mode="widthFix" data-type="coupon" bindtap="onClick"/>
+  </view>
+
+</view>
+
+<block wx:if="{{canShowPic}}">
+    <view class="bouncedBg" bindtap="closeFaceToFace"></view>
+    <view class="bouncedImgView">
+        <image class="imgView"  src="{{getCouponImg}}" mode="widthFix" style="width:100%;" />
+        <view class="close" data-type="close" bindtap="onClick"></view>
+        <view class="couponFirst">成功获得{{adapter.couponFirst}}元优惠券</view>
+        <view class="couponSecond" style="top:400rpx;">好友助力点亮后</view>
+        <view class="couponSecond" style="top:450rpx;">即可升级为<text style="color:{{adapter.backgroundColor}}; font-size: 36rpx;">{{adapter.couponScend}}元</text>点亮券哦~</view>
+        <view class="couponSecond" style="top:500rpx;">好友还可获惊喜好礼！</view>
+        <view class="share" style="  background: {{adapter.backgroundColor}}; color: {{adapter.textColor}};" data-type="share" bindtap="onClick">立即分享</view>
+    </view>
+</block>

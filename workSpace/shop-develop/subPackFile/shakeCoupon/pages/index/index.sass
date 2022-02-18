@@ -1,0 +1,98 @@
+@import '../../common/sass/index.sass'
+@keyframes shake 
+    0%,100% 
+        -webkit-transform: translateX(0)
+        transform: translateX(0)
+    10%,30%,50%,70%,90% 
+        -webkit-transform: translateX(-10px)
+        transform: translateX(-10px)
+    20%,40%,60%,80% 
+        -webkit-transform: translateX(10px)
+        transform: translateX(10px)
+
+.wrapper
+    height: 100%
+    box-sizing: border-box
+    font-size: 0
+    color: white
+    text-align: center
+    .logo
+        height: 88rpx
+        +bgimage('logo')
+        @if $Brand == 'fol'
+            background-size: 307rpx 33rpx
+        @if $Brand == 'only'
+            background-size: 247rpx 77rpx
+    .content
+        position: relative
+        @if $Brand == 'fol'
+            height: calc(100% - 89rpx)
+        +bgimage('mini')
+        padding-top: 510rpx
+        @if $Brand == 'only'
+            height: 100%
+            background-position: center -89rpx
+        box-sizing: border-box
+        .view
+            margin: 0 auto
+        .tit-1
+            @if $Brand == 'fol'
+                width: 221rpx
+                height: 16rpx
+                +bgimage('mini-title')
+                margin-bottom: 35rpx
+            @if $Brand == 'only'
+                position: absolute
+                left: 246rpx
+                top: 420rpx
+                width: 249rpx
+                height: 194rpx
+                +bgimage('mini-title')
+        .title
+            width: 575rpx
+            height: 115rpx
+            +bgimage('title')
+            margin-bottom: 40rpx
+        .tit-2
+            width: 324rpx
+            height: 51rpx
+            +bgimage('tit-2')
+            margin-bottom: 45rpx
+        .shake-icon
+            width: 153rpx
+            height: 154rpx
+            +bgimage('shake_icon')
+            margin-bottom: 30rpx
+            &.animate
+                animation: shake 1.5s ease infinite
+        .descript
+            width: 445rpx
+            height: 72rpx
+            +bgimage('descript')
+            margin-bottom: 65rpx
+        .footer
+            .rule
+                font-size: 32rpx
+                text-decoration: underline
+        &.big
+            +bgimage('big')
+            padding-top: 640rpx
+            @if $Brand == 'only'
+                height: 100%
+                background-position: center -89rpx
+            .tit-1
+                @if $Brand == 'only'
+                    top: 514rpx
+            .tit-2
+                margin-bottom: 60rpx
+            .shake-icon
+                width: 153rpx
+                height: 154rpx
+                +bgimage('shake_icon')
+                margin-bottom: 60rpx
+            .descript
+                width: 445rpx
+                height: 72rpx
+                +bgimage('descript')
+                margin-bottom: 90rpx
+        

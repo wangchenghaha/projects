@@ -1,0 +1,22 @@
+<view class="wrapper">
+    <!-- 头部搜索 -->
+    <view class="header">
+        <input type="text" class="input" placeholder="🔍搜索门店名称" value="{{name}}" placeholder-class="input-placeholder"  bindinput="inputVal"/>
+    </view>
+    <scroll-view class="" scroll-y class='scrollview' style='height: {{screen}}px'>
+        <view class="item" bindtap='selectThis' wx:for='{{shoplist}}' wx:key='{{index}}' data-item='{{item}}'>
+            <view class="title">{{item.name}}</view>
+            <view class="address">{{item.address}}</view>
+            <view class="telephone" catch:tap='makephonecall' data-phone='{{item.telephone}}'>电话：{{item.telephone}}</view>
+        </view>
+        <!-- 没有预约数据 -->
+        <view class="nodata" wx:if="{{nothing}}" style='height: {{screen-2}}px'>
+            <view class="content">
+                <view class="imagebox">
+                    <image class="image" src="../common/icon/appointment.png"></image>
+                </view>
+                <view class="tips">未找到门店信息。</view>
+            </view>
+        </view> 
+    </scroll-view>
+</view>

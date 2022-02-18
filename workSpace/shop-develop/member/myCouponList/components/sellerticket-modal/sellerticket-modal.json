@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "comp-sellerticket": "../sellerticket/sellerticket"
+  }
+}

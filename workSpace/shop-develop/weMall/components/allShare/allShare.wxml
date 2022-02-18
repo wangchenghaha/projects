@@ -1,0 +1,22 @@
+<!--components/allShare/allShare.wxml-->
+<block wx:for="{{allList}}" wx:key="allList" wx:for-index="listIndex">
+  <view class="list-wrapper">
+    <view class="list-item" bindtap="onClick" data-index="{{listIndex}}">{{item.name}}</view>
+    <view class="list-content">
+      <block wx:for="{{item.shareItem}}" wx:key="shareItem" wx:for-index="shareIndex">
+        <view class="temp-item" bindtap="onClick" data-index="{{shareIndex}}" data-id="{{listIndex}}">
+          <text class="temp-name">{{item.tempNameNum}}<text wx:if="{{item.shareDetail}}" class="{{item.isShow ? 'active': ''}}"></text></text>
+          <text>{{item.tempNum}}</text>
+        </view>
+        <view class="share-detail {{item.isShow ? 'active': ''}}">
+          <block wx:for="{{item.shareDetail}}"  wx:key="shareDetail" wx:for-index="wxIndex">
+            <view class="wx-share">
+              <text class="wx-msg">{{item.wxMsg}}</text>
+              <text>{{item.wxMsgNum}}</text>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,163 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #E6E6E6;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .swiperView {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.bg .swiperView .swiper-imageView {
+  position: absolute;
+  border: 1px dashed black;
+}
+
+.bg .swiperView .swiper-imageView-image {
+  position: absolute;
+}
+
+.bg .swiperView .swiper-imageView-image .text {
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  width: auto;
+  height: auto;
+}
+
+.bg .swiperView .swiper-zhezhao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bg .swiperView .home {
+  position: absolute;
+  bottom: 0;
+  right: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.bg .swiperView .zfView {
+  width: auto;
+  height: 70rpx;
+  background-color: black;
+  opacity: 0.7;
+  position: absolute;
+  left: 28%;
+  right: 28%;
+  bottom: 0;
+  border-radius: 70rpx;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.bg .swiperView .zfView-bgView {
+  width: 50%;
+  line-height: 70rpx;
+  font-size: 25rpx;
+  color: white;
+}
+
+.bg .swiperView .zfView-line {
+  width: auto;
+  height: auto;
+  background-color: #242C35;
+  position: absolute;
+  left: 49.5%;
+  right: 49.5%;
+  top: 25%;
+  bottom: 25%;
+}
+
+.centerText {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  text-align: center;
+  width: 100%;
+}
+
+.rotate {
+  position: absolute;
+  top: 30rpx;
+  right: 32rpx;
+  color: black;
+  font-size: 25rpx;
+  line-height: 50rpx;
+  width: 50rpx;
+  text-align: center;
+}
+
+.closed {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: -20rpx;
+  left: -20rpx;
+}
+
+.scale {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: -20rpx;
+  right: -20rpx;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container .fixed-right {
+  position: fixed;
+  top: 570rpx;
+  right: 20rpx;
+  z-index: 999;
+}
+
+.container .fixed-right .fixed-item {
+  position: relative;
+  margin-bottom: 20rpx;
+  width: 76rpx;
+  height: 76rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 2rpx 2rpx 5rpx #ccc;
+  overflow: hidden;
+}
+
+.container .fixed-right .fixed-item .share {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.container .fixed-right .fixed-item .fixed-img {
+  width: 50%;
+}
+
+.container .fixed-right .fixed-item .fixed-img image {
+  width: 100%;
+}
+
+.calueStrNum {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+}

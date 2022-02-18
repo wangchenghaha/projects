@@ -1,0 +1,7 @@
+
+
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden;}
+.li{ width:100%; height:auto; clear:both; overflow:hidden; padding-bottom:25rpx;}
+.li image{ display:block; width:100%; /*height:464rpx;*/ margin-bottom:15rpx;}
+.li .title{ width:100%; height:auto; font-size:32rpx; line-height:36rpx; padding:15rpx 0; font-weight:bold; box-sizing:border-box;padding-left:35rpx;}
+.li .createTime{ width:100%; height:auto; font-size:24rpx; line-height:28rpx; box-sizing:border-box; padding-left:35rpx;}

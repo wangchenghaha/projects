@@ -1,0 +1,70 @@
+<view class="container">
+    <image class="redEnvelopBg" src="{{redEnvelopBg}}"/>
+
+    <!-- 返回logo --> 
+    <image class="backImg" src="{{backImg}}" mode="widthFix" data-type="back"  bindtap="onClick"/>
+    <!-- 音乐开关 -->
+    <image class="musicImg {{isMusicStart?'music-on':''}}" src="{{musicImg}}" mode="widthFix" data-type="music"  bindtap="onClick"/>
+
+    <view class="flex-center">
+        <view class="countNum">剩余次数:{{userData.gameCount}}次</view>
+    </view>
+    <view class="flex-center">
+        <image class="startBtn" src="{{startBtn}}" mode="widthFix" data-type="startGame" bindtap="onClick"/>
+    </view>
+    <view class="flex-start">
+        <image class="commonBtn" src="{{hongBaoBtn}}" mode="widthFix" data-type="hongBao"  bindtap="onClick"/>
+    </view>
+    <view class="flex-end">
+        <image class="commonBtn" src="{{ruleBtn}}" mode="widthFix" data-type="rule"  bindtap="onClick"/>
+    </view>
+
+    
+</view>
+
+<view class="voucher flex-center" wx:if="{{isShowTModel}}">
+    <view class="showModel" >
+        <image class="background" src="{{backgroundImg}}" mode="widthFix" bindtap="onClick"/>
+        <view class="content" wx:if="{{isRule}}">
+            <view class="cTitle">活动规则</view>
+            <view class="contentClass">
+                <view class="cInfo" wx:for="{{contentInfo}}" wx:key="cInfo">{{item.text}}</view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{isCoupon}}">
+            <view class="coupon">
+                <block  wx:for="{{couponList}}" wx:key="coupons" wx:if="{{couponList.length > 0}}">
+                    <image class="couponImg" src="{{item.giftPic}}" mode="widthFix" data-type="openCoupon" bindtap="onClick"></image>
+                </block>
+                <view class="noCoupon flex-center" wx:if="{{couponList.length === 0}}">暂无优惠券！</view> 
+            </view>
+            
+        </view>
+        <image class="tan_close" src="{{closeImg}}" mode="widthFix" data-type="close" bindtap="onClick"/>
+    </view>
+</view>
+
+<block wx:if="{{showPop}}">
+    <view class="bounced" style="background-color: black;opacity: .8;"></view>
+    <view class="bounced">
+        <view class="bounced-getCoupon flex-center" wx:if="{{pop1}}">
+            <image class="background" src="{{getCoupon}}"  mode="widthFix" />
+            <image class="background2" src="{{getCoupon2}}"  mode="widthFix"   style="top:{{getCouponTop.area1}};"/>
+            <view class="friendInfo flex-center" style="top:{{getCouponTop.area1}};">
+                <image class="userImg" src="{{friendAvatar}}"  mode="widthFix" />
+                <view class="text1">您的好友{{friendNick}}邀请你瓜分百元神券</view>
+            </view>
+            <image class="coupon" style="top:{{getCouponTop.coupon}};"  src="{{couponImgShare}}" mode="widthFix"/>
+            <view class="text2" style="top:{{getCouponTop.txt2}};">Mr.J恭喜你获得{{couponNum}}元优惠券</view>
+            <view class="text2" style="top:{{getCouponTop.txt3}};">玩游戏、抢红包、更多惊喜等你拿</view>
+            <image class="button" style="top:{{getCouponTop.btn}};"  src="{{getBtn}}" mode="widthFix" data-type="close"  bindtap="onClick"/>
+        </view>
+        <view class="bounced-noCoupon flex-center" wx:if="{{pop2}}">
+            <image class="background" src="{{noCoupon}}"  mode="widthFix" />
+            <view class="text1" style="top:{{noCouponTop.txt1}};">Mr.J提醒您</view>
+            <view class="text2" style="top:{{noCouponTop.txt2}};">神券已经被瓜分完啦!</view>
+            <view class="text3" style="top:{{noCouponTop.txt3}};">开始游戏一起来拿券吧</view>
+            <image class="button" style="top:{{noCouponTop.button}};"  src="{{startGame}}" mode="widthFix" data-type="close"  bindtap="onClick"/>
+        </view>
+    </view>
+</block>

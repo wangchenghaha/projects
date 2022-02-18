@@ -1,0 +1,14 @@
+<view class='main'>
+  <image class="bg" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_bg.png"></image>
+  <image class="back" bindtap="back" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_back.png"></image>
+  <view class="alert">
+    <image wx:if="{{alertType == 'game'}}" class="actTitle" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_act_title.png"></image>
+    <image wx:if="{{alertType == 'gift'}}" class="gameTitle" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_game_title.png"></image>
+    <image class="alertBg" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_alert_bg.png"></image>
+    <scroll-view class="alertContent" scroll-y="true">
+      <image wx:if="{{alertType == 'game'}}" class="gameText" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_game_text.png"></image>
+      <image wx:if="{{alertType == 'gift'}}" class="giftText" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_gift_text.png"></image>
+    </scroll-view>
+  </view>
+</view>
+<imageLoading imageList="{{loadImageList}}"></imageLoading>

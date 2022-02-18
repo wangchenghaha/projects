@@ -1,0 +1,10 @@
+<view class="bouncedBg" style="animation: {{bgAnimate}} .2s linear 0s 1 forwards;"></view>
+<view class="bounced" style="animation: {{animate}} .2s linear 0s 1 forwards;">
+    <view class="subView">
+        <image src="{{img}}" style="width:100%;height:100%;" />
+        <view class="closedTap" bindtap="closed"></view>
+        <view class="yhqViews">
+            <image wx:for="{{yhqImgs}}" wx:key="index" src="{{item.giftPic}}" style="margin-bottom:10rpx;width:100%;" mode="widthFix" />
+        </view>
+    </view>
+</view>

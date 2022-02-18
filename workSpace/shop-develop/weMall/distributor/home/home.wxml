@@ -1,0 +1,105 @@
+<view class="content">
+  <view class="header flex-start">
+    <view class="outer flex-start">
+      <view class="center flex-start">
+        <view class="inner flex-start"></view>
+      </view>
+    </view>
+    <view class="main-info  flex-start">
+      <view class="avatar">
+        <image src="{{wxInfo.avatarUrl}}" mode="widthFix"></image>
+      </view>
+      <view class="info">
+        <view class="identifier">{{guideInfo.employeeId}}</view>
+        <view class="name">{{guideInfo.nameCn}}</view>
+      </view>
+      <view class="qr-img">
+        <navigator url="../../daogouQRCode/daogouQRCode">
+          <image src="{{fxQRImg}}" mode="widthFix"></image>
+        </navigator>
+      </view>
+    </view>
+    <view class="level">
+      <navigator url="../profit/profit">
+        <image src="{{guideLevel.cardImg}}" mode="widthFix"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="cash flex-bet">
+    <view class="cash-left">
+      <view class="count">
+        <text class="font-bold">￥0</text>元
+      </view>
+      <view class="tip">余额(每月26号可体现上月结余)</view>
+    </view>
+    <view class="cash-right text-c">立即提现</view>
+  </view>
+  <!-- 我的收益 -->
+  <view class="card">
+    <view class="card-title">我的收益</view>
+    <view class="profit flex-bet">
+      <view class="profit-item flex-center" wx:for="{{order}}" wx:key="type">
+        <view class="number color-red font-bold">
+          ¥<text>{{item.value}}</text>
+        </view>
+        <text class="desc">{{item.profitText}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 通知 -->
+  <view class="card">
+    <view class="notice flex-start">
+      <view class="notice-title flex-center">
+        <view class="notice-icon">
+          <image src="{{noticeIcon}}" mode="widthFix"></image>
+        </view>
+        <text>通知</text>
+      </view>
+      <view class="notice-text">
+        <text>伙伴们，8月1日起，分红功能即将上线，敬请期待。伙伴们，8月1日起，分红功能即将上线，敬请期待。</text>
+      </view>
+    </view>
+  </view>
+  <!-- 订单管理 -->
+  <view class="card">
+    <view class="card-title">订单管理</view>
+    <view class="profit flex-bet">
+      <view class="profit-item flex-center" wx:for="{{order}}" wx:key="type">
+        <view class="number  font-bold">
+          <text>{{item.goodsCount}}</text>
+        </view>
+        <text class="desc">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 客户管理 -->
+  <view class="card">
+    <view class="card-title flex-bet">
+      <text class="desc">客户管理</text>
+      <navigator url="../customerList/customerList">
+        <text class="more">查看更多</text>
+      </navigator>
+    </view>
+    <view class="profit flex-bet">
+      <view class="profit-item flex-center" wx:for="{{customer}}" wx:key="type">
+        <view class="number  font-bold">
+          <text>{{item.value}}</text>
+        </view>
+        <text class="desc">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="card-title">实用工具</view>
+    <view class="tool flex-bet">
+      <block wx:for="{{toolList}}" wx:key="index">
+        <view class="tool-item flex-center" data-index="{{index}}" bindtap="toolClick">
+          <view class="icon">
+            <image src="{{item.icon}}" mode="widthFix"></image>
+          </view>
+          <text class="text-c">{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,89 @@
+<!--recommendCourteous//homePage/homePage.wxml-->
+<view style="height:100%;width:100%;">
+  <view class="shade" wx:if="{{showShade}}" bindtap="hideShade"></view>
+  <view class="rule" wx:if="{{showRule}}">
+    <icon class="releClose" type="cancel" size="23" color="#000" bindtap="closeRule"></icon>
+    <image mode="widthFix" src="{{ruleImg}}" class="img"></image>
+    <view class="ruleInfo">
+      <text class="ruleTit">活动时间</text>
+      <text class="ruleText">2021年7月20日00:00-2021年8月31日23:59</text>
+      <text class="ruleTit" style="padding-top: 30rpx;">活动规则</text>
+      <text class="ruleText">1、加入会员即可发起活动，成功邀请1位好友在品牌官网小程序下单即可获得活动奖励，每人最多可发起3次活动，每人活动期间最多领取4次活动奖励；</text>
+      <text class="ruleText">2、邀请好友入会，好友可获赠20元无门槛官网优惠券，可在个人中心-我的优惠券中查看；</text>
+      <text class="ruleText">3、成功邀请1位好友入会并下单，本人与好友均可获得50元无门槛优惠券（限门店使用）</text>
+      <text class="ruleText">4、多笔订单不可累积参与活动；</text>
+      <text class="ruleText">*如在活动中存在作弊，或其他有损品牌或其他用户合法权益的行为，品牌有权终止服务并采取相关处理措施。</text>
+      <text class="ruleText">*最终解释权归品牌所有。</text>
+    </view>
+  </view>
+  <view class="success" wx:if="{{showSuccess}}">
+    <image mode="widthFix" src="{{succImg}}" class="img"></image>
+    <view class="successInfo">
+      <image mode="widthFix" src="{{succ2Img}}" class="img"></image>
+      <button open-type="share" class="shareSuccess">邀请好友助力  </button>
+      <text class="activityRule" bindtap="goHome"> 去官网逛逛> </text>
+    </view>
+  </view>
+  <view class="poster" wx:if="{{showPoster}}">
+    <view class="posterBox">
+      <image mode="widthFix" src="{{posterImg}}" class="img"></image>
+      <view class="QRBox">
+        <image mode="widthFix" src="{{QRImg}}" class="img QRImg"></image>
+      </view>
+    </view>
+    <button class="btnEnd saveAlbum" bindtap="savePhoto">保存至相册</button>
+  </view>
+  <view class="coupons" wx:if="{{showCoupons}}">
+    <image mode="widthFix" src="{{couponsImg}}" class="img"></image>
+  </view>
+  <view>
+    <image mode="widthFix" src="{{bgImg}}" class="bgImg"></image>
+    <view class="tjImg" style="top: {{topTj}}" wx:if="{{showTj}}">
+      <image mode="widthFix" src="{{tjImg}}" class="img"></image>
+      <view class="tjInfo">
+        <text class="activityDate">活动时间：7月20日-8月31日</text>
+        <button class="btn" bindtap="btnInvite">邀请好友下单</button>
+        <text class="activityRule" bindtap="openRule"> 活动规则> </text>
+      </view>
+    </view>
+    <view class="invite" style="top: {{topInvite}}" wx:if="{{showInvite}}">
+      <image mode="widthFix" src="{{inviteImg}}" class="img"></image>
+      <view class="inviteInfo">
+        <view  class="headPicList">
+          <image wx:for="{{newMemberHelpList}}" wx:key="index" src="{{item.helperAvatarUrl}}" mode="widthFix" class="img invitePic" style="border-radius: 70rpx;"></image>
+          <view wx:for="{{3 - newMemberHelpList.length}}" wx:key="index" class="invitePic">?</view>
+        </view>
+        <view class="inviteHeader">
+            <view class="inviteLine"></view>
+            <view class="inviteText"> 还差 <view class="inviteNum"> {{differenceHelpCount}} </view> 人 </view>
+            <view class="inviteLine"></view>
+        </view>
+        <view wx:if="{{differenceHelpCount <= 3}}">
+          <button open-type="share" class="shareBtn">立刻邀请好友</button>
+          <button class="posterBtn" bindtap="openPoster">生成邀请海报</button>
+        </view>
+        <view wx:else>
+          <button class="posterBtn" bindtap="openCoupons">领取优惠券</button>
+        </view>
+      </view>
+      <view style="text-align:center;">
+        <text style="font-size:32rpx;font-weight:bold;height:40rpx;width:100%;line-height:40rpx;display:inline-block;margin-top:20rpx;">助力记录</text>
+        <view wx:for="{{helpList}}" wx:key="index">
+          <image mode="widthFix" class="img helpImg" src="{{item.helperAvatarUrl}}" />
+          <view class="helpTextName">{{item.helperNickname}}</view>
+          <view class="helpTextTime">入会时间：{{item.crmRegisterTime}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="tjImg" style="top: {{topTj}}" wx:if="{{showEnd}}">
+      <image mode="widthFix" src="{{endImg}}" class="img"></image>
+      <view class="tjInfo endInfo">
+        <button class="btnEnd">活动已结束</button>
+        <button class="btnGoTo" bindtap="goHome">去官网逛逛</button>
+        <text class="activityRule" bindtap="openRule">活动规则></text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<canvas canvas-id="canvasa" style="width:100%;height:100%;opacity:0;position: fixed;"></canvas>

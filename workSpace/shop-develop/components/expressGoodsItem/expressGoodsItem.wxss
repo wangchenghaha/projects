@@ -1,0 +1,59 @@
+.goods-item{
+    width: 100%;
+    padding-top: 30rpx;
+    display: flex;
+    border-top: 2rpx solid #ddd;
+}
+
+.goodsImage{
+    width:30%;
+}
+
+.goodsImage image{
+    width: 100%;
+}
+
+.goodsContent{
+    width: 70%;
+    padding: 20rpx 20rpx;
+    font-size: 22rpx;
+    color:  #999;
+    position: relative;
+}
+
+.goodsTitle{
+    line-height: 40rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+
+.goodsDetail{
+    width: 100%;
+    display: flex;
+    margin-top: 20rpx;
+}
+
+.goodsText{
+    border: 1rpx solid #999;
+    line-height: 30rpx;
+    border-radius: 30rpx;
+    padding: 6rpx 6rpx;
+}
+.textColor{
+    max-width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+.textSize{
+    max-width: 37%;
+    margin-left: 3%;
+    white-space: nowrap;
+}
+
+.goodsCount{
+    position: absolute;
+    right: 20rpx;
+    font-size: 30rpx;
+}

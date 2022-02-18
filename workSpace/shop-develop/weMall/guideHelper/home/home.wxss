@@ -1,0 +1,180 @@
+.header {
+  background: #257bfb;
+  height: 450rpx;
+  border-bottom-left-radius: 60rpx;
+  border-bottom-right-radius: 60rpx;
+}
+
+.main {
+  margin: 0 auto;
+  width: 670rpx;
+}
+.main .person {
+  padding-top: 50rpx;
+  box-sizing: border-box;
+}
+.main .person .info .name {
+  font-size: 48rpx;
+}
+.main .person .info .desc {
+  font-size: 24rpx;
+}
+.main .person .code {
+  position: relative;
+  padding-right: 54rpx;
+}
+.main .person .code::after {
+  content: "";
+  position: absolute;
+  right: 15rpx;
+  top: 50%;
+  width: 20rpx;
+  height: 20rpx;
+  border-top: solid 2rpx #fff;
+  border-right: solid 2rpx #fff;
+  transform-origin: center;
+  transform: rotate(45deg) translateY(-50%);
+}
+.main .person .code image {
+  width: 108rpx;
+  height: 108rpx;
+}
+.main .overview {
+  margin-top: -210rpx;
+  width: 100%;
+  height: 420rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx #d3e5fe;
+}
+.main .overview .title {
+  margin: 0 auto;
+  padding: 30rpx 0;
+  width: 620rpx;
+}
+.main .overview .title .select {
+  position: relative;
+  padding-left: 20rpx;
+  width: 136rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  border: solid 1rpx #deecfc;
+  box-sizing: border-box;
+}
+.main .overview .title .select .triangle {
+  display: inline-block;
+  margin-left: -30rpx;
+  width: 15rpx;
+  height: 15rpx;
+  border-top: solid 1rpx #000;
+  border-right: solid 1rpx #000;
+  transform-origin: center;
+  transform: translateX(-20rpx) rotate(135deg);
+  transition: all 0.3s;
+}
+.main .overview .title .select .triangle.true {
+  transform: translateX(-20rpx) translateY(5rpx) rotate(-45deg);
+}
+.main .overview .title .select .time {
+  position: absolute;
+  left: -1rpx;
+  top: 49rpx;
+  width: 136rpx;
+  border: solid 1rpx #deecfc;
+  background: #fff;
+  box-sizing: border-box;
+  border-top: none;
+}
+.main .overview .title .select .time-item {
+  display: block;
+  padding-left: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: solid 1rpx #deecfc;
+}
+.main .overview .title .select .time-item:last-child {
+  border-bottom: none;
+}
+.main .overview .title .detail {
+  width: 120rpx;
+  height: 50rpx;
+  background: #deecfc;
+  border-radius: 25rpx;
+}
+.main .overview .list-item {
+  flex: 0 1 50%;
+  flex-direction: column;
+  height: 140rpx;
+  border-right: dashed 1rpx #bed9fd;
+  border-top: dashed 1rpx #bed9fd;
+  box-sizing: border-box;
+}
+.main .overview .list-item:nth-child(1), .main .overview .list-item:nth-child(2) {
+  border-top: none;
+}
+.main .overview .list-item:nth-child(even) {
+  border-right: none;
+}
+.main .overview .list-item .value {
+  font-size: 60rpx;
+  line-height: 60rpx;
+}
+.main .overview .list-item .value text {
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+.main .overview .list-item .text {
+  font-size: 24rpx;
+}
+.main .nav {
+  margin: 50rpx 0;
+}
+.main .nav-item {
+  flex: 1;
+  flex-direction: column;
+}
+.main .nav-item .icon {
+  width: 85rpx;
+  height: 85rpx;
+  background: #257bfb;
+  border-radius: 25rpx;
+}
+.main .nav-item .icon image {
+  width: 45rpx;
+  height: 45rpx;
+}
+.main .nav-item text {
+  font-size: 24rpx;
+}
+.main .task {
+  margin-bottom: 30rpx;
+  padding: 30rpx;
+  background: #deecfc;
+  border-radius: 20rpx;
+}
+.main .task .title {
+  font-size: 32rpx;
+  color: #257bfb;
+}
+.main .task-item {
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+  height: 130rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.main .task-text {
+  font-size: 28rpx;
+  color: #333333;
+}
+.main .task .btn {
+  display: inline-block;
+  width: 140rpx;
+  height: 42rpx;
+  font-size: 24rpx;
+  color: #257bfb;
+  border: solid 2rpx #257bfb;
+  border-radius: 20rpx;
+}
+
+/*# sourceMappingURL=home.wxss.map */

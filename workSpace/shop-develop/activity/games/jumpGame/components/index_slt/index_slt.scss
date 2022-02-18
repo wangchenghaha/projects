@@ -1,0 +1,374 @@
+page{
+    width: 100%;
+    height: 100%;
+}
+@keyframes jinbiAnimate { 
+    0%{
+        transform: scale(1,1);
+    }
+    100%{
+        transform: scale(1.5,1.5);
+    }
+}
+@keyframes jinbiAnimate1 { 
+    0%{
+        transform: scale(1,1);
+    }
+    100%{
+        transform: scale(1.5,1.5);
+    }
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .imgBg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .views{
+        position: absolute;
+        top:0;
+        left: 75px;
+        right: 50px;
+
+        width: auto;
+        height: auto;
+        &-subView{
+            display: flex;
+            width: 100%;
+            height: auto;
+            margin-bottom: 10rpx;
+            
+            .item{
+                border-radius: 50%;
+                margin-right: 10px;
+                opacity: 0;
+            }
+            .itemTrue {
+                opacity: 1;
+            }
+        }
+    }
+
+    .yuns{
+        width: 100%;
+        height: 100%;
+        &-subView{
+            width: 100%;
+            height: 20%;
+            position: relative;
+
+
+            &-yun{
+                position: absolute;
+                top: 50%;
+
+                transform: translateY(-50%);
+
+            }
+        }
+    }
+    .imgView{
+        // height: auto;
+
+        // position: absolute;
+
+
+        height: auto;
+
+        position: absolute;
+        left: 0;
+        
+
+        .img{
+            width:100%;
+            height:100%;
+            vertical-align: middle;
+            
+
+        }
+        
+    }
+    .zhanwei{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+.bouncesView{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600rpx;
+    height: 608rpx;
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .btnViews{
+            width: 38%;
+            height: 75rpx;
+            border-radius: 75rpx;
+            background-color: white;
+            line-height: 75rpx;
+            color: #E40031;
+            font-size: 32rpx;
+            text-align: center;
+            position: absolute;
+            bottom: 80rpx;
+        }
+        .share{ 
+            width: 38%;
+            height: 75rpx;
+            border-radius: 75rpx;
+            position: absolute;
+            right: 10%;
+            bottom: 90rpx;
+            background:none;
+        }
+        .share::after{ 
+            border: none;
+        }
+        .closed{
+            width: 50rpx;
+            height: 50rpx;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            bottom: -90rpx;
+        }
+        .topTitle{
+            font-weight: bold;
+            font-size: 56rpx;
+            color: #FFE158;
+
+            position: absolute;
+            top: 35%;
+            left: 0;
+
+            text-align: center;
+            width: 100%;
+            line-height: 56rpx;
+        }
+        .centerView{
+            position: absolute;
+            left: 25%;
+            width: 75%;
+            height: auto;
+            display: flex;
+            .titles{
+                color: #fff;
+                font-size: 32rpx;
+                width: auto;
+                line-height: 40rpx;
+            }
+            .point{
+                color: #FFE158;
+                font-size: 32rpx;
+                width: auto;
+                line-height: 40rpx;
+                margin-left: 20rpx;
+                font-weight: 550;
+            }
+            .jinbiImg{
+                margin-left: 20rpx;
+                width: 40rpx;
+                height: 40rpx;
+            }
+            .left{
+                color: #FFE158;
+                font-size: 30rpx;
+                line-height: 64rpx;
+            }
+            .right{
+                margin-left: 20rpx;
+                margin-top: -5rpx;
+            }
+        }
+    }
+}
+.bouncesView1{
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 595rpx;
+    height: 480rpx;
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .title{
+            position: absolute;
+            top: 25%;
+            left: 0;
+            width: 100%;
+            font-size: 32rpx;
+            color: #FFE158;
+            text-align: center;
+        }
+        .bottomTitle{
+            position: absolute;
+            bottom: 50rpx;
+            left: 50%;
+            transform: translateX(-50%);
+
+            padding-left: 40rpx;
+            padding-right: 40rpx;
+            width: auto;
+            height: 70rpx;
+            border-radius: 70rpx;
+            color: #E40031;
+            background-color: #FFE158;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: center;
+            line-height: 70rpx;
+        }
+        .share1{ 
+            position: absolute;
+            bottom: 50rpx;
+            left: 50%;
+            transform: translateX(-50%);
+
+            padding-left: 40rpx;
+            padding-right: 40rpx;
+            width: 270rpx;
+            height: 70rpx;
+            border-radius: 70rpx;
+            
+            background:none;
+        }
+        .share1::after{ 
+            border: none;
+        }
+        .closed{
+            width: 50rpx;
+            height: 50rpx;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            bottom: -90rpx;
+        }
+    }
+}
+
+
+.sanjiao{
+    position: fixed;
+    top: 5.5%;
+    left: 3%;
+    width: 42rpx;
+    height: 59rpx;
+    z-index: 999;
+}
+.numberViewOpa{
+    position: fixed;
+    top: 150rpx;
+    left: 7%;
+    width: 200rpx;
+    height: 55rpx;
+    background-color: white;
+    border-radius: 55rpx;
+
+    opacity: .8;
+}
+.numberView{
+    position: fixed;
+    top: 150rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200rpx;
+    height: 55rpx;
+    border-radius: 55rpx;
+    display: flex;
+    .icon{
+        width: 70rpx;
+        height: 70rpx;
+        border-radius: 50%;
+
+        margin-top: -11.5rpx;
+        margin-left: -20rpx;
+
+        overflow: hidden;
+
+        border: 4rpx solid white;
+    }
+    .xin{
+        width: 45rpx;
+        height: 40rpx;
+        margin-left: 20rpx;
+        margin-top: 7.5rpx;
+        position: relative;
+        &-text{
+            position: absolute;
+            top: 0;
+            left: -2rpx;
+            width: 100%;
+            line-height: 35rpx;
+            font-size: 26rpx;
+            color: white;
+            text-align: center;
+        }
+    }
+    .jia{
+        margin-left: 20rpx;
+        width: 36rpx;
+        height: 36rpx;
+        margin-top: 9.5rpx;
+    }
+    .share{ 
+        width: 36rpx;
+        height: 36rpx;
+        position: absolute;
+        top: 9.5rpx;
+        right: 10rpx;
+
+        background:none;
+    }
+    .share::after{ 
+        border: none;
+    }
+
+}
+.jinViewOpa{
+    position: fixed;
+    left: 6.5%;
+    width: 240rpx;
+    height: 60rpx;
+    background-color: white;
+    border-radius: 60rpx;
+}
+.jinView{
+    position: fixed;
+    left: 6.5%;
+    width: 200rpx;
+    height: 50rpx;
+    border-radius: 50rpx;
+    display: flex;
+    .jinbi{
+        width: 60rpx;
+        height: 60rpx;
+        margin-left: -10rpx;
+
+    }
+    .points{
+        text-align: center;
+        margin-left: 10rpx;
+        width: 140rpx;
+        height: 100%;
+        line-height: 60rpx;
+        color: #FF7D00;
+        font-size: 28rpx;
+        font-weight: 600;
+    }
+}

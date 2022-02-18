@@ -1,0 +1,61 @@
+<view class="tb_box"  style="background:{{bigBackGround}}">
+
+  <image class="tb_backbg" src="{{picUrl}}" mode="widthFix"></image>
+
+  <view class="marquee_box"  style="background:{{bigBackGround}}">
+    <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}rpx;font-size: {{size}}rpx;">
+      <text>{{text}}</text>
+      <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}rpx;">{{text}}</text>
+    </view>
+  </view>
+
+  <view class="brandTitle">
+      <image src="{{LogoPic}}"  mode='widthFix' />
+  </view>
+
+    <view class="turntableBox">
+      <view class="plate-wrap-box">
+          <!------------------- 绘制转盘内容---------------- -->
+          <view class="plate-border" animation="{{ aniData }}">
+            <view class="plate-wrap">
+              <view class="plate-box" wx:for="{{ lottery }}" wx:key="lottery" 
+              style=" transform:translate(-50%,0) rotate({{ 360 / lottery.length * ( index )}}deg);">
+                <text class="text-box" style="color:#{{ index % 2==0?'333':'333' }}">{{ item.text }}</text>
+                <image src="{{item.imagePic}}" class="picStyle"></image>
+              </view>
+            </view>
+          </view>
+
+          <view class="plate-btn-wrap" bindtap="startRollTap">
+            <image src="{{goPic}}" class="goImg" mode="widthFix"></image>
+          </view>
+      </view>
+
+       <view class="btn">
+        <view class="btnP" style="background:{{midBackGround}}" bindtap="goCoupon" >查看奖品</view>
+        <view class="btnP" style="background:{{midBackGround}}" bindtap="goShop">去商城逛逛</view>
+      </view>
+
+      <image src="{{activityTitle}}" class="title" bindtap="clickTitle"></image>
+    </view>
+
+      <view class="text">
+          <view class="textP">1.抽奖活动时间为每周五；</view>
+          <view class="textP">2.每逢周五每位会员均有一次免费抽奖机会；</view>
+          <view class="textP">3.权益的使用和兑换，请遵循权益说明在指定平台活动渠道使用，优惠券将在使用时自动核销；</view>
+          <view class="textP">4.奖品数量有限，兑完即止；</view>
+          <view class="textP">5.活动最终解释权归{{brand}}所有；</view>
+      </view>
+
+
+  <!-- ============中奖名单========== -->
+  <!-- ["屈臣氏￥188大礼包","袜子拖鞋套装","优惠券100","情侣T恤","智行火车票￥144礼包","腾讯视频月季卡优惠", "优惠券10"]; -->
+  <view class="bg" wx:if="{{tanShow}}"></view>
+  <!-- 每周五抽奖 -->
+  <view class="tan" wx:if="{{tanShow_gift}}">
+      <image wx:if="{{showTan}}" src="{{tanPic}}" class="tan_img" bindtap="goCoupon"></image>
+      <image wx:if="{{showErr}}" src="{{errPic}}" class="tan_img" bindtap="clickClose"></image>
+      <image src="{{closePic}}" class="tan_close" bindtap="clickClose"></image>
+      <text wx:if="{{showErrText}}" class="tan_text">{{errMsg}}</text>
+  </view>
+</view>

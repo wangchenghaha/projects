@@ -1,0 +1,33 @@
+.font-bold {
+  font-weight: bold; }
+
+.list-item {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+  border-bottom: solid 2rpx #878787; }
+  .list-item .goods-img {
+    width: 200rpx;
+    margin-right: 20rpx; }
+  .list-item .sale-info {
+    flex: 1; }
+    .list-item .sale-info .temp-title {
+      font-size: 28rpx;
+      line-height: 30rpx;
+      margin-bottom: 10rpx; }
+      .list-item .sale-info .temp-title text {
+        border-left: solid 4rpx #000;
+        padding-left: 10rpx; }
+    .list-item .sale-info .temp-item {
+      display: block;
+      font-size: 24rpx;
+      line-height: 24rpx;
+      color: #878787;
+      margin-bottom: 10rpx; }
+      .list-item .sale-info .temp-item.high-light {
+        font-size: 26rpx;
+        line-height: 26rpx;
+        color: #000; }
+
+/*# sourceMappingURL=moneyShare.wxss.map */

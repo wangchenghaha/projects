@@ -1,0 +1,12 @@
+<view class="container">
+    <!-- 背景图 -->
+    <image  class="backgroundImg" src="{{gameBg}}" mode="widthFix" ></image>
+    <view class="textArea">
+        <view class="animate1">我在</view>
+        <view class="animate2">"记衣大师"</view>
+        <view class="animate3">已经所向无敌</view>
+        <view class="animate4">快来挑战我吧！</view>
+    </view>
+    <view class="option">点击GO进入游戏</view>
+    <view class="startGame" bindtap="onClick"></view>
+</view>

@@ -1,0 +1,12 @@
+<view>
+  <block wx:if="{{videoList.length}}">
+    <swiper class="swiper" style="height: {{height}}" bindchange="swiperChange"  vertical="true">
+      <block wx:for="{{videoList}}" wx:key="*this">
+        <swiper-item class="swiper-item" style="height: {{height}}">
+          <video style="height: {{height}}" wx:if="{{index === swiperCurrent}}" autoplay="{{index === swiperCurrent}}" src="{{item.media_url}}" enable-progress-gesture="true" object-fit="contain"></video>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </block>
+</view>

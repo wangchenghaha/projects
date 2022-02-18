@@ -1,0 +1,51 @@
+<view class="gameResult-contaniner" wx:if="{{showModal}}">
+    <view class="gameResult-wrap gameResultSuc" wx:if="{{type == 1}}">
+        <image class="gameResult-bg" src="../../img/resultSuc-bg.png" />
+        <view class="gameResult-content">
+            <view class="suc-tip">
+                恭喜你获得 {{point || 0}} 积分 
+            </view>
+            <view class="gift-box">
+                <image class="gift" catchtap="luck" src="../../img/gift.png" />
+                <image class="gift" catchtap="luck" src="../../img/gift.png" />
+                <image class="gift" catchtap="luck" src="../../img/gift.png" />
+            </view>
+            <view class="suc-tip" style="margin-top:20rpx;">
+                快来选个礼盒打开吧
+                <view class="suc-des">
+                    （点击上面任意一个礼盒打开）
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="gameResult-wrap gameResultFail" wx:if="{{type == 2}}">
+        <image class="gameResult-bg" src="../../img/resultfail-bg.png" />
+        <view class="gameResult-content">
+            <text class="tip-text">
+                别灰心\n摩拳擦掌，再来一次吧! 
+            </text>
+        </view>
+        <button open-type="share" class="share-btn">
+            <image class="address-btn" src="../../img/sharebtn.png" />
+        </button>
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+    <view class="gameResult-wrap gameResultFail" wx:if="{{type == 3}}">
+        <image class="gameResult-bg" src="../../img/resultfail2-bg.png" />
+        <view class="gameResult-content">
+            <text class="tip-text">
+                别灰心\n明天继续努力，加油！ 
+            </text>
+        </view>
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+    <view class="gameResult-wrap gameResultFail" wx:if="{{type == 4}}">
+        <image class="gameResult-bg" src="../../img/resultfail-bg.png" />
+        <view class="gameResult-content">
+            <text class="tip-text">
+                别灰心\n摩拳擦掌，再来一次吧! 
+            </text>
+        </view>
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+</view>

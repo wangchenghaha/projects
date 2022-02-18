@@ -1,0 +1,309 @@
+<!--pages/orderSave/orderSave.wxml-->
+<view class="order">
+  <view class="order-title">订单摘要</view>
+  <view class="goods">
+    <view class="goods-item" wx:for="{{orderGoods}}" wx:key="orderGoods">
+      <view class="img">
+        <image src="{{item.goodsImg}}" mode="widthFix"></image>
+      </view>
+      <view class="goods-info">
+        <view class="name">{{item.goodsName}}</view>
+        <view class="sku">{{item.goodsSku}}</view>
+        <view class="color">{{item.color ? item.color.colorAlias : item.colorName}}</view>
+        <view class="size">{{item.size ? item.size.sizeAlias : item.sizeName}}</view>
+        <view class="num">x {{item.nums}}</view>
+        <view class="unit-price">￥{{item.onePrice}}
+          <text class="origin-price" wx:if="{{item.discount !== 10 && item.discount !=0}}">￥{{item.originalPrice || item.color.originalPrice || ''}}</text>
+        </view>
+        <view class="discount" wx:if="{{item.discount !== 10 && item.discount !=0}}">
+          <block wx:if="{{item.discount === 90}}">一口价</block>
+          <block wx:else>{{item.discount}}折</block>
+        </view>
+      </view>
+      <view class="goods-price flex-center {{item.isGift === 'Y' ? 'gift' : ''}}">
+        <text data-code="item.allPrice-{{item.allPrice}}">￥{{item.allPrice}}</text>
+        <text wx:if="{{item.isGift === 'Y'}}">
+          <block wx:if="{{item.allPrice > 0}}">加价购商品</block>
+          <block wx:else>
+            <block wx:if="{{item.orderGiftRuleId}}">订单赠品</block>
+            <block wx:else>赠品</block>
+          </block>
+        </text>
+      </view>
+    </view>
+    <block wx:if="{{orderGiftGoods.length}}">
+      <view class="goods-item" wx:for="{{orderGiftGoods}}" wx:key="orderGoods">
+        <view class="img">
+          <image src="{{item.goodsImg}}" mode="widthFix"></image>
+        </view>
+        <view class="goods-info">
+          <view class="name">{{item.goodsName}}</view>
+          <view class="sku">{{item.goodsSku}}</view>
+          <view class="color">{{item.color ? item.color.colorAlias : item.colorName}}</view>
+          <view class="size">{{item.size ? item.size.sizeAlias : item.sizeName}}</view>
+          <view class="num">x {{item.nums}}</view>
+          <view class="unit-price">￥{{item.onePrice}}
+            <text class="origin-price" wx:if="{{item.discount !== 10 && item.discount !=0}}">￥{{item.originalPrice || item.color.originalPrice || ''}}</text>
+          </view>
+          <view class="discount" wx:if="{{item.discount !== 10 && item.discount !=0}}">
+            <block wx:if="{{item.discount === 90}}">一口价</block>
+            <block wx:else>{{item.discount}}折</block>
+          </view>
+        </view>
+        <view class="goods-price flex-center {{item.isGift === 'Y' ? 'gift' : ''}}">
+          <text data-code="item.allPrice-{{item.allPrice}}">￥{{item.allPrice}}</text>
+          <text wx:if="{{item.isGift === 'Y'}}">
+            <block wx:if="{{item.allPrice > 0}}">加价购商品</block>
+            <block wx:else>
+              <block wx:if="{{item.orderGiftRuleId}}">订单赠品</block>
+              <block wx:else>赠品</block>
+            </block>
+          </text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="promotion" wx:if="{{promotion.show && !noNameCouponValue}}">
+    <view class="promotion-item flex-bet {{item.active ? 'active' : ''}}" wx:for="{{promotion.list}}" wx:key="promotionList" catchtap="onClick" data-code="{{item.typeCode}}" data-type="promote">
+      <view class="flex-start">
+        <view class="point flex-center">
+          <text wx:if="{{item.active}}"></text>
+        </view>
+        <view class="type text-c">{{item.typeName}}</view>
+        <view class="desc">{{item.description}}</view>
+      </view>
+      <text class="modify text-c" data-type="modify" data-id="{{item.id}}" catchtap="onClick" wx:if="{{item.childList && item.childList.length}}">修改</text>
+      <!--<view class="btn" bindtap="onClick" data-code="{{item.typeCode}}" data-type="promote">
+        <block wx:if="{{item.typeCode === '1000' || item.typeCode === '1001'}}">换购商品</block>
+        <block wx:else>去参活</block>
+      </view>-->
+    </view>
+  </view>
+  <view class="order-title">配送方式</view>
+  <view class="shipping">
+    <block wx:for="{{shippingMethods}}" wx:key="shipping">
+      <view class="shipping-item {{item.selected ? 'selected':''}}" wx:if="{{item.isShow}}" data-type="shipping" data-text="{{item.text}}" bindtap="onClick">{{item.text}}</view>
+    </block>
+    <!-- 到店自提优惠提示 start -->
+    <block wx:if="{{isActivity}}" wx:for="{{pickupImg}}" wx:key="pickupImg">
+      <image src="{{item}}" class="pickup-img-{{index}}" mode="{{index === 0 ? 'widthFix' : 'aspectFit'}}"></image>
+    </block>
+    <!-- 到店自提优惠提示 end -->
+  </view>
+  <!--门店搜索-->
+  <view class="pickup" wx:if="{{pickupShow}}">
+    <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region.list}}" custom-item="{{customItem}}">
+      <view class="picker-container">
+        当前选择：{{region.list[0]}}，{{region.list[1]}}，{{region.list[2]}}
+      </view>
+    </picker>
+    <view class="btn-search" data-type="search" bindtap="onClick">搜索</view>
+  </view>
+  <view class="pickup_frame flex-center">
+    <text class="pickup_tip_bar text-c" wx:if="{{pickupActivitiesTip}}">{{pickupActivitiesTip}}</text>
+  </view>
+  <block wx:if="{{pickupList.length>0 && !pickupStore.name}}">
+    <block wx:for="{{pickupList}}" wx:key="pickupList">
+      <view class="shop shop-list" data-type="selectStore" data-index="{{index}}" bindtap="onClick">
+        <view class="shop-name">{{item.name}}</view>
+        <view calss="shop-hour shop-item">距您定位距离:{{item.distance}}米</view>
+        <view calss="shop-hour shop-item">营业时间:{{item.businessHours}}</view>
+        <view calss="shop-tel shop-item">联系方式:{{item.phone1}}</view>
+        <view calss="shop-address shop-item">详细地址:{{item.address}}</view>
+        <view class="shop-map" data-type="map" data-store="{{item.storeCode}}" data-latitude="{{pickupStore.latitude}}" data-longitude="{{pickupStore.longitude}}" bindtap="onClick">查看地图</view>
+        <view class="point"></view>
+      </view>
+    </block>
+  </block>
+  <view class="shop {{pickupStore.name ? 'show' : ''}}" wx:if="{{pickupStore.name && pickupShow}}">
+    <view class="shop-name">{{pickupStore.name}}</view>
+    <view calss="shop-hour shop-item">距您定位距离:{{pickupStore.distance}}米</view>
+    <view calss="shop-hour shop-item">营业时间:{{pickupStore.businessHours}}</view>
+    <view calss="shop-tel shop-item">联系方式:{{pickupStore.phone1}}</view>
+    <view calss="shop-address shop-item">详细地址:{{pickupStore.address}}</view>
+    <!-- <view class="user-phone shop-item">提货人手机号：
+      <input class="phone-text" bindinput="inputPhone" type="number" maxlength="11" placeholder="提货人手机号"></input>
+    </view> -->
+    <view class="shop-tip shop-item">提交订单后，门店会为您进行备货，备货完成后会短信或微信告知您上门取件时间！</view>
+    <view class="shop-map" data-type="map" data-latitude="{{pickupStore.latitude}}" data-longitude="{{pickupStore.longitude}}" bindtap="onClick">查看地图</view>
+  </view>
+
+
+  <block wx:if="{{!pickupShow}}">
+    <view class="order-title flex-bet">
+      <text>收货信息</text>
+    </view>
+    <view class="address" wx:if="{{address.userName}}" bindtap="buriedpoint">
+      <view class="address-leftView">
+        <view class="user-name">{{address.userName}}</view>
+        <view class="detail">
+          <text class="city">{{address.province}},</text>
+          <text class="city">{{address.city}},</text>
+          <text class="city">{{address.area}},</text>
+          {{address.detailAddress}}
+        </view>
+        <view class="phone">电话:{{address.phone}}</view>
+      </view>
+      <view class="address-rightView"  wx:if="{{!wishDetail.phone}}">
+        <text class="address-rightView-title" data-type="goAddress" bindtap="onClick">更多</text>
+        <text class="address-rightView-title">></text>
+      </view>
+    </view>
+    <view class="address" wx:else>
+      <view class="address-leftView">
+        <view class="phone" bindtap="buchongAddress">收货人: (请点击填写)</view>
+          <view class="detail" wx:if="{{address.isLocation}}">
+            <text class="city">{{address.province}},</text>
+            <text class="city">{{address.city}},</text>
+            <text class="city">{{address.area}},</text>
+            {{address.detailAddress}}
+          </view>
+        <view class="phone" wx:else bindtap="buchongAddress">地址: (请点击填写)</view>
+        <view class="phone" bindtap="buchongAddress">电话: (请点击填写)</view>
+      </view>
+      <view class="address-rightView" wx:if="{{!wishDetail.phone}}">
+        <text class="address-rightView-title" data-type="goAddress" bindtap="onClick">更多</text>
+        <text class="address-rightView-title">></text>
+      </view>
+    </view>
+    <view class="msg" wx:if="{{wishDetail.phone}}">
+      <textarea placeholder="给好友留言" value="{{msg}}" bindinput="inputMsg"></textarea>
+    </view>
+  </block>
+   <!-- 自提手机号 -->
+   <view class="order-title flex-bet coupon-code" wx:if="{{pickupStore.name}}" >
+    <text>提货人手机号：</text>
+    <view class="flex-start" style="min-width: 100rpx;" wx:if="{{isSlected}}" data-type="showPhoneList" catchtap="onClick">
+      <text class="phone-text"> {{selectedPhone}}</text>
+      <text  style="width:100%; text-align: right;"  data-type="showPhoneList" catchtap="onClick"> > </text>
+    </view>
+    <view class="flex-start"  wx:else >
+      <input class="phone-text" bindinput="inputPhone" type="number" confirm-type="done" focus="{{true}}" maxlength="11" placeholder="输入提货人手机号"></input>
+      <text style="width:20%; text-align: right;" data-type="showPhoneList" catchtap="onClick"> > </text>
+    </view>
+  </view>
+  <view class="order-title flex-bet coupon-code" wx:if="{{showNoNameCoupon}}" data-type="inputCoupon" catchtap="onClick">
+    <text>输入券码</text>
+    <view class="flex-start">
+      <text class="coupon-value" wx:if="{{noNameCouponValue}}"> {{noNameCouponDesc}}</text>
+      <text class="cancel" wx:if="{{noNameCouponValue}}" catchtap="onClick" data-type="cancel">取消</text>
+      <text> > </text>
+    </view>
+  </view>
+  <view class="voucher flex-bet" data-type="card" bindtap="onClick">
+    <view>优惠券 <text class="num">{{cardNum}}张可用</text></view>
+    <my-loading wx:if="{{voucherLoading}}"></my-loading>
+    <view>{{selectText}}> </view>
+  </view>
+  <!-- 暂时注释 -->
+  <view class="pay-method" wx:if="{{STORE_VALUE && storedValueCardOnline}}">
+    <view class="order-title">支付方式</view>
+    <view class="box">
+      <view wx:for="{{payMethods}}" class="flex-bet item" wx:for-index="key" >
+        <view data-index="{{key}}" bindtap="changePayMethod">
+          <icon type="{{item.active ? 'success' : 'circle'}}" />
+          <text class="text">{{item.text}}</text>
+          <text wx:if="{{item.value}}">(可用￥{{item.value}})</text>
+        </view>
+        <view wx:if="{{item.subText}}" bindtap="openMiniprogram">
+          <navigator target="miniProgram" app-id="{{STORE_VALUE}}" path="/pages/giftcardModule/pages/index/index">{{item.subText}}></navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--<view bindtap="goIndex">返回首页</view>-->
+  <view class="price-wrapper">
+    <view class="all-price price-item">
+      <text>商品总额</text>
+      <text>￥ {{goodsPrice}}</text>
+    </view>
+    <view class="all-price price-item" wx:if="{{isPost}}">
+      <text>运费</text>
+      <text> + ￥{{expressFare}}</text>
+    </view>
+    <view class="all-price price-item" wx:else>
+      <text>自提优惠</text>
+      <text> -￥{{expressFare < 0 ? -expressFare: expressFarek}}</text>
+    </view>
+    <view class="favorable-price price-item">
+      <text>优惠</text>
+      <text style="color:red"> - ￥{{voucherPrice}}</text>
+    </view>
+    <view class="count-price">
+      <text>合计</text>
+      <text class="pay-price">￥ {{payPrice >= 0? payPrice : 0}}</text>
+    </view>
+  </view>
+
+  <view class="save-oder {{isIphoneX ?'fix-iphonex-button':''}}">
+     <view wx:if="{{noticeAct}}" class="noticeAct"><image src="{{wxIcon}}" mode="widthFix"/>使用微信支付预计还可减免100元</view>
+    <button class="{{disabled ? 'disabled': ''}}" disabled="{{disabled}}" bindtap="wxSubscribe">立即支付</button>
+  </view>
+  <view class="voucher-wrapper" wx:if="{{cardShow}}">
+    <view class="voucher-container">
+      <view class="scroll-view">
+        <!--优惠券和活动券-->
+        <block wx:for="{{voucherList}}" wx:key="voucher">
+          <view class="voucher-item" wx:if="{{item.myShow}}">
+            <view class="voucher-value">
+              <view class="voucher-price">
+                <block wx:if="{{item.type && item.type === '活动券'}}">
+                  {{item.newValue}}
+                </block>
+                <block wx:else>
+                  <text>￥</text>{{item.value}}
+                </block>
+              </view>
+              <view class="voucher-limit">
+                <block wx:if="{{item.threshold > 0}}">满{{item.threshold}}可用</block>
+                <block wx:else>通用</block>
+              </view>
+            </view>
+            <view class="voucher-info">
+              <view class="desc">使用期限：</view>
+              <view class="date">{{item.startdate}} 开始</view>
+              <view class="date">{{item.enddate}} 结束</view>
+              <view class="name">
+                {{item.type}}
+                <block wx:if="{{item.availabledaydescription}}">({{item.availabledaydescription}})</block>
+              </view>
+            </view>
+            <view class="user-btn {{item.myDisabled ? 'disabled' : ''}}" data-type="{{item.type === '活动券' ? 'useVoucherJL' : 'useVoucher'}}" data-number="{{item.voucherno}}" bindtap="onClick">
+              <block wx:if="{{item.myDisabled}}">不可用</block>
+              <block wx:else>
+                <block wx:if="{{item.selected}}">使用中</block>
+                <block wx:else>去使用</block>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view data-type="closeVoucher" bindtap="onClick" class="close">
+        <icon type="cancel" color="#fff" size="30rpx" class="icon"></icon>
+      </view>
+    </view>
+  </view>
+  <my-popup wx:if="{{popup.show && inputStatus }}" bindclosePopup="closePopup" bgColor="{{popup.bgColor}}">
+    <view class="flex-center input-box">
+      <input type="text" value="{{couponNum}}" bindinput="inputNum" bindconfirm="searchSubmit" placeholder="请输入券号"/>
+      <view class="coupon-btn text-c" data-type="queryCoupon" bindtap="onClick">确定</view>
+    </view>
+  </my-popup>
+  <my-popup wx:if="{{popup.show && childList.length}}" bindclosePopup="closePopup" bgColor="{{popup.bgColor}}">
+    <view class="uses-coupon flex-bet" wx:for="{{childList}}" wx:key="childList" data-index="{{index}}" data-code="{{item.typeCode}}" data-type="change" catchtap="onClick">
+      <view class="flex-start">
+        <view class="coupon-type">{{item.typeName}}</view>
+        <view class="coupon-desc">{{item.description}}</view>
+      </view>
+      <view class="btn text-c">立即使用</view>
+    </view>
+  </my-popup>
+
+  <my-popup wx:if="{{popup.show && isShowPhone}}" bindclosePopup="closePopup" bgColor="{{popup.bgColor}}">
+    <view class="phoneShow" wx:for="{{phoneArray}}" wx:key="phoneArray" data-index="{{index}}" data-type="selectedPhone" catchtap="onClick">
+      {{item.phone}}
+    </view>
+    <view class="phoneShow" data-type="sltInputPhone" catchtap="onClick">添加手机号码</view>
+  </my-popup>
+</view>

@@ -1,0 +1,17 @@
+<view class="wrap">
+  <wish-header wx:if="{{wishDetail.xinyuandanId}}" wishDetail="{{wishDetail}}"></wish-header>
+  <view class="goods-content" wx:if="{{wishDetail.skuList.length}}">
+    <goods-list
+        showIcon="true"
+        goodsList="{{wishDetail.skuList}}"
+        bgColor="#F1E5E5"
+        bindselectIndex="changeCheck"
+    ></goods-list>
+  </view>
+  <view class="fixed-bot">
+    <view class="btn flex-bet">
+      <view class="btn-item btn-finish text-c" bindtap="finish">帮Ta完成心愿</view>
+      <view class="btn-item btn-join text-c" bindtap="joinWish">我也参与</view>
+    </view>
+  </view>
+</view>

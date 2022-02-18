@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  flex-direction: column;
+
+  .main-img {
+    display: block;
+    // margin-top: 50rpx;
+  }
+
+  .warp {
+    width: 100%;
+    margin-top: 20rpx;
+
+    .banner {
+      width: 100%;
+      height: auto;
+      display: block;
+
+      .slide-image {
+        width: 100%;
+        display: block;
+      }
+
+      .style3d {
+        width: 642rpx;
+
+        image {
+          width: 100%;
+          height: 100% !important;
+          transform: scale(0.9);
+          transition: all 0.5s;
+
+          &.active {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  .slide-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    margin-bottom: 40rpx;
+
+    .text {
+      margin: 0 40rpx;
+    }
+  }
+
+  .banner {
+    width: 750rpx;
+    height: 276rpx;
+
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .btn2 {
+    display: block;
+
+    margin-top: 120rpx;
+  }
+
+
+}

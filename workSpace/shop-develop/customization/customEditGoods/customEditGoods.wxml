@@ -1,0 +1,64 @@
+<view class="bg">
+    <view class="swiperView">
+        <swiper current="{{swiperIndex}}" circular style="height:{{swiperImageHeight}}px;">
+            <block wx:for="{{2}}" wx:key="swiperKey">
+                <swiper-item catchtouchmove="stopTouchMove">
+                    <canvas canvas-id="aaa" style="width:100%;height:{{swiperImageHeight}}px;"> 
+                        <image src="{{zfArrs.bgImage[zfArrs.selectIndex].image}}" mode="widthFix" style="width:100%;height:{{swiperImageHeight}}px;" bindload="getImageHeight" />
+                        <view class="swiper-imageView" style="top: {{zfArrs.bgImage[zfArrs.selectIndex].top * 100}}%;left: {{zfArrs.bgImage[zfArrs.selectIndex].left * 100}}%;right: {{zfArrs.bgImage[zfArrs.selectIndex].right * 100}}%;bottom: {{zfArrs.bgImage[zfArrs.selectIndex].bottom * 100}}%;">
+
+                            <block wx:for="{{imageArrs[swiperIndex]}}" wx:key="imageArrs">
+                                
+                                <view id="view-id{{index}}" class="swiper-imageView-image" style="z-index: {{item.canshow ? 1000 : 999}};top:{{item.top}}px;left:{{item.left}}px;width:{{item.width}}px;height:auto;transform: scale({{item.scale}});">
+                                    <view id="rotate-id{{index}}" style="border:{{item.canshow?1:0}}px dashed red;width:100%;transform: rotate({{item.rotate}}deg);" data-id="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+                                        <image id="{{index}}" wx:if="{{item.pic}}" src="{{item.pic}}" mode="widthFix" style="vertical-align: middle;max-height: {{item.max_height}}px;max-width: {{item.max_width}}px;width: {{item.width}}px;" bindload="{{item.width == 0 ? 'typeGetHeight' : ''}}" />
+                                        <view class="text" wx:if="{{item.text}}" style="font-size: {{item.font}}px;line-height: {{item.font}}px;font-weight: {{item.bold ? 'bold' : '0'}};font-family: {{item.ziti}};color:{{item.color}};">{{item.text}}</view>
+
+                                        <image id="{{index}}" src="https://cdn.bestseller.com.cn/assets/wechat/JACKJONES/image/DZclose.png" wx:if="{{item.canshow}}" class="closed" bindtouchstart="closed" />
+                                        <image id="{{index}}" src="https://cdn.bestseller.com.cn/assets/wechat/JACKJONES/image/DZscale.png" wx:if="{{item.canshow && type == 1}}"  class="scale" bindtouchstart="scaleStart" bindtouchmove="scaleMove" bindtouchend="scaleEnd" />
+                                    </view>
+                                </view>
+
+                            </block>
+
+                        </view>
+                        <view class="swiper-zhezhao" style="border-top:{{swiperImageHeight * zfArrs.bgImage[zfArrs.selectIndex].top}}px solid rgba(0,0,0,{{touming}});border-left:{{systemInfo.vWidth * zfArrs.bgImage[zfArrs.selectIndex].left}}px solid rgba(0,0,0,{{touming}});border-right:{{systemInfo.vWidth * zfArrs.bgImage[zfArrs.selectIndex].right}}px solid rgba(0,0,0,{{touming}});border-bottom:{{swiperImageHeight * zfArrs.bgImage[zfArrs.selectIndex].bottom}}px solid rgba(0,0,0,{{touming}});"></view>
+                    </canvas>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="zfView">
+            <view id="{{index}}" style="color:{{zfArrs.selectIndex == index ? 'white' : '#6E7174'}};" wx:for="{{zfArrs.titles}}" wx:key="zfArrs" class="zfView-bgView" bindtap="zfTap">{{item}}</view>
+            <view class="zfView-line"></view>
+        </view>
+<view class="container">
+   
+    <view class="fixed-right">
+        <block wx:for="{{fixedRightArr}}" wx:key="fixedRight">
+            <view wx:if="{{item.isShow}}" class="fixed-item flex-center" data-type="{{item.type}}" bindtap="onClick">
+                <view class="fixed-img flex-center">
+                    <image src="{{item.img}}" mode="widthFix"></image>
+                </view>
+            </view>
+        </block>
+   </view>
+</view>
+        <view class="rotate">旋转</view>
+        <customSlider bindsliderMove="sliderMove" bindsliderEnd="sliderEnd" />
+    </view>
+    <!-- 中间文字 -->
+    <view class="centerText">{{centerStr}}</view>
+    <!-- 计算每行显示字数 -->
+    <view class="calueStrNum">
+        <view wx:for="{{calueStrJson.splitArrs}}" wx:key="calue" id="calueStr{{index}}" style="font-size: {{calueStrJson.font}}px;line-height: {{calueStrJson.font}}px;font-weight: {{calueStrJson.bold ? 'bold' : '0'}};font-family: {{calueStrJson.ziti}};color:{{calueStrJson.color}};">{{item}}</view>
+    </view>
+    <!-- 绘图用，隐藏掉 -->
+        <canvas canvas-id="asd" style="margin-top: 9999px;width:100%;height:{{swiperImageHeight}}px;opacity: 0;">
+            <cover-view style="width:100%;height:{{swiperImageHeight}}px;opacity: 0;background-color: #E6E6E6;" ></cover-view>
+        </canvas>
+        <canvas canvas-id="asd1" style="margin-top: 9999px;width:100%;height:{{swiperImageHeight}}px;opacity: 0;">
+            <cover-view style="width:100%;height:{{swiperImageHeight}}px;opacity: 0;background-color: #E6E6E6;" ></cover-view>
+        </canvas>
+</view>
+<!-- 底部 -->
+<bouncedView type="{{type}}" bindselectTap="selectTap" bindselectAttr="selectAttr" bindsave="save" />

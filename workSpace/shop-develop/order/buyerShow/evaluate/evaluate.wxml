@@ -1,0 +1,60 @@
+<view class="content">
+<!--  商品 -->
+  <view class="card goods flex-start">
+    <view class="goods-img">
+      <image src="{{goods.goodsImg}}" mode="widthFix"></image>
+    </view>
+    <view class="goods-info flex-bet">
+      <view>
+        <view class="goods-name">{{goods.goodsName}}</view>
+        <view>{{goods.gcsSku}}</view>
+        <view class="size">
+          <text class="size-item">{{goods.colorName}}</text>
+          <text class="size-item">{{goods.sizeName}}</text>
+        </view>
+      </view>
+      <view class="flex-start">
+        <view class="">商品评价</view>
+        <five-star size="30" value="{{starValueList[0]}}" bindchangeValue="receiveValue"></five-star>
+      </view>
+    </view>
+  </view>
+  <!-- <image src="../../service/111.jpg" show-menu-by-longpress="true" mode="widthFix" style="width:100%"></image> -->
+<!--  评论-->
+  <view class="card evaluate">
+    <view class="area-wrapper">
+      <view class="text flex-start">
+        <image src="/images/address_edited.png" class="edit-icon" mode="widthFix"></image>
+        <textarea class="text-area" value="{{evaluateMsg}}" bindinput="inputText" placeholder="感觉怎么样？跟大家分享一下吧(至少5个字)"></textarea>
+      </view>
+      <view class="count text-r">{{evaluateMsg.length}}/{{maxLength}}</view>
+    </view>
+    <view class="upload flex-start">
+      <scroll-view scroll-x class="upload-list" wx:if="{{uploadList.length}}">
+        <view class="item" wx:for="{{uploadList}}" wx:key="*this">
+          <image src="{{imgPrefix}}{{item}}" mode="widthFix"/>
+          <view class="del text-c" bindtap="delImg">-</view>
+        </view>
+      </scroll-view>
+      <view class="upload-btn flex-center" bindtap="uploadImg">
+        <image class="icon" src="{{uploadIcon}}" mode="widthFix"></image>
+        <text>拍写买家秀</text>
+      </view>
+    </view>
+    <view class="desc text-c">视频/图片+10字以上评论有机会被选为<text>精选买家秀</text></view>
+    <view class="tip flex-start" bindtap="changeHideName">
+      <icon wx:if="{{isHideName}}" type="success" size="36rpx"></icon>
+      <icon wx:else type="circle" size="36rpx"></icon>
+      <text>匿名评价，不选默认公开微信头像昵称</text>
+    </view>
+  </view>
+<!--  服务-->
+  <view class="card serve">
+    <view class="serve-title">商品服务评价</view>
+    <view wx:for="{{serveList}}" wx:key="text" class="serve-item flex-start">
+      <text>{{item.text}}</text>
+      <five-star size="50" value="{{starValueList[index + 1]}}" data-index="{{index+1}}" bindchangeValue="receiveValue"></five-star>
+    </view>
+    <view class="publish text-c" bindtap="publish">发布</view>
+  </view>
+</view>

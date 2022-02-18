@@ -1,0 +1,50 @@
+<view class="pu-container" style="background-image: url('{{bgImg}}')">
+  <view class='header'>
+    <image src="{{header}}" mode="aspectFit"></image>
+  </view>
+  <form>
+    <view class="main">
+      <view class="item-row">
+        <view class="item-left">手机号码</view>
+        <view class="item-right">
+          <input type="text" value="{{phone}}" disabled />
+          <view class="note">拨打400-862-8888客服咨询变更事宜</view>
+        </view>
+      </view>
+      <view class="item-row">
+        <view class="item-left">会员名称</view>
+        <view class="item-right">
+          <input type="text" placeholder="请输入名称" data-type="name" bindchange="bindPickerChange" value="{{name}}"/>
+        </view>
+      </view>
+      <view class="item-row">
+        <view class="item-left">会员性别</view>
+        <view class="item-right">
+            <picker bindchange="bindPickerChange" value="{{g_index}}" range="{{genderArray}}" data-type="gender">
+              <view class="picker">
+                {{genderArray[g_index]}}
+              </view>
+            </picker>
+        </view>
+      </view>
+      <view class="item-row">
+        <view class="item-left">出生日期</view>
+        <view class="item-right">
+          <picker mode="date" value="{{date}}" start="1949-10-01" end="{{endDate}}" bindchange="bindPickerChange" disabled="{{disabled}}" data-type="birthday">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+          <view class="note">出生日期只能修改一次</view>
+        </view>
+      </view>
+      <view class="item-row">
+        <view class="item-left">E-mail</view>
+        <view class="item-right">
+          <input type="text" placeholder="请输入邮箱" data-type="email" bindchange="bindPickerChange" value="{{email}}"/>
+        </view>
+      </view>
+    </view>
+    <button type="default" size="mini" bindtap="submit">保存修改信息</button>
+  </form>
+</view>

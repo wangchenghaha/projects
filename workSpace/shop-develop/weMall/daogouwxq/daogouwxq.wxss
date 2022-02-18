@@ -1,0 +1,472 @@
+@import "../components/goodsModelListOne/goodsList";
+.footer{ width:100%; height:196rpx; border-top:1rpx solid #9a9a9a; border-bottom:1rpx solid #9a9a9a; position:fixed; bottom:0; left:0; background:#fff; z-index:99; box-sizing:border-box;  padding:15rpx 75rpx;}
+.footer .mask{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+.footer_box{ width:50%; height:66rpx; float:left;}
+.footer_box .btn{ width:90%; height:66rpx; margin:0 auto; line-height:66rpx; background:#e73f3e; font-size:26rpx; color:#fff; font-weight:bold; text-align:center; border-radius:12rpx;}
+
+
+.wxShare{ width:100%; height:100%; position:fixed; top:0; left:0;z-index:9999;}
+.opacity{ width:100%; height:100%; position:fixed; top:0; left:0; background:#000; opacity:0.6;}
+.wxShareCon{ width:100%; height:auto; position:fixed; bottom:0; left:0; background:#f0f0f0;}
+.wxShare_list{ display: flex; justify-content: space-around; width:100%; height:196rpx; box-sizing:border-box; padding-top:27rpx;}
+.ShareLiBox{width:33.3%; flex: 1}
+.ShareLi{ width:60%; margin-left:20%; height:169rpx; display:inline-block; text-align:center;}
+button{ background:none; border:none; padding:0; width:93rpx; height:96rpx; margin:0 auto;}
+button::after{ display:none;}
+.ShareLi image{ display:block; width:93rpx; height:auto; margin:0 auto;}
+.ShareLi text{ display:block; font-size:24rpx; line-height:60rpx; color:#000; font-weight:bold;}
+.wxShare_quxiao{ text-align:center; width:100%; height:105rpx; font-size:34rpx; line-height:105rpx; color:#000;}
+
+.yeji{ width:100%; height:110rpx; border-top:1rpx solid #939393; background:#fff; position:fixed; bottom:0; left:0; text-align:center;}
+.yeji navigator{ font-size:28rpx; line-height:110rpx;}
+
+
+.tanchu{ width:100%; height:100%; position:fixed; top:0; left:0; z-index:99999;}
+.tanchuOpacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.6;}
+.copyBox{ width:100%; height:auto; box-sizing:border-box; padding:20rpx; position:absolute; bottom:0; left:0; background:#f8f7f5; z-index:999999;}
+.copyBox text{ font-size:26rpx; line-height:30rpx; color:#7c7b79;}
+.copyBox .cotyButton{ width:100%; height:30rpx; padding:20rpx 0;}
+.copyFunction{ font-size:26rpx; line-height:30rpx; color:red; float:right;}
+.removeButton{ width:45rpx; height:45rpx; position:absolute; right:20rpx; top:20rpx;}
+.removeButton image{ display:block; width:100%; height:100%;}
+image{
+  display: block;
+  width: 100%;
+}
+.high-light,.goods-list, .code-wrapper{
+  margin: 30rpx auto;
+  width: 95%;
+  overflow: hidden
+}
+.fll{
+  float: left
+}
+.flr{
+  float: right
+}
+.banner{
+  padding-top: 30rpx;
+  position: relative;
+  flex-direction: column;
+}
+.banner .title-logo{
+  width: 166rpx;
+  height: 166rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.banner .title{
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  color: #7f7f7f;
+  text-align: center;
+}
+.banner .title .title-name{
+  color: #000;
+  font-weight: bold;
+  padding-top: 10rpx;
+  font-size: 32rpx;
+}
+.goods-wrapper{
+  padding-bottom: 200rpx;
+}
+.iphoneX_goods_wrapper{
+  padding-bottom: 268rpx;
+}
+.code-wrapper .code-img{
+  width: 270rpx;
+  height: 270rpx;
+}
+.code-wrapper .code-text{
+  padding-left: 30rpx;
+  font-size: 30rpx;
+}
+
+.fixed-right{
+  position: fixed;
+  bottom: 240rpx;
+  right: 0;
+  z-index: 999;
+}
+
+.iphoneX-bottom{
+  bottom: 300rpx;
+}
+
+.fixed-right .fixed-item{
+  margin-top: 40rpx;
+  padding: 0 30rpx;
+  background: #eee;
+  font-size: 36rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #0ea8ca;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+}
+.fixed-right .fixed-item .icon{
+  padding-right: 10rpx;
+}
+.tip{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+.tip .tip-wrapper{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  padding-top: 15rpx;
+  width: 85%;
+  height: 880rpx;
+  background: #fff;
+}
+.tip-wrapper .title{
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.tip-wrapper .sub-title{
+  display: block;
+  font-size: 32rpx;
+  text-align: center;
+}
+.tip-wrapper .skill{
+  margin: 10rpx auto;
+  width: 480rpx;
+}
+.tip-wrapper .skill button{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #a6a6a6;
+  color: #fff;
+  font-size: 26rpx;
+}
+.tip-wrapper .skill .skill-text{
+  display: block;
+  padding-top: 15rpx;
+  line-height: 35rpx;
+  font-size: 26rpx;
+  color: #000;
+}
+.tip-wrapper .example{
+  margin: 20rpx auto;
+  width: 530rpx;
+}
+.tip-wrapper .tip-detail{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tip-wrapper .tip-detail image{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 5rpx;
+}
+.detail-text{
+  font-size: 30rpx;
+}
+.detail-sub{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.no-tip-wrapper{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.no-tip-wrapper text{
+  display: inline-block;
+  font-size: 26rpx;
+  margin: 0 5rpx;
+}
+.no-tip-wrapper text.box{
+  margin-right: 10rpx;
+  width: 25rpx;
+  height: 25rpx;
+  border: solid 1rpx #a6a6a6;
+  vertical-align: center;
+}
+.confirm-wrapper{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #a6a6a6;
+}
+.tip-wrapper .confirm{
+  width: 100%;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height:80rpx;
+  color: #fff;
+  background: #a6a6a6;
+}
+.tip .close{
+  position: absolute;
+  bottom: 80rpx;
+  left: 50%;
+  margin-left: -30rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border: solid 1px #fff;
+  border-radius: 50%;
+}
+.tip .close:after{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1rpx;
+  margin-left: -40%;
+  content: '';
+  width: 80%;
+  height: 2rpx;
+  background: #fff;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+.tip .close:before{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1rpx;
+  margin-left: -40%;
+  content: '';
+  width: 80%;
+  height: 2rpx;
+  background: #fff;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+.example-img{
+  margin: 10px auto 0;
+  width: 72%;
+}
+.gif-tip{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+.gif-tip .close{
+  display: block;
+  position: absolute;
+  right: 50rpx;
+  top: 50rpx;
+  content: '';
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  z-index: 99999;
+}
+.gif-tip image{
+  transform: translateY(-120rpx);
+}
+
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background: rgba(0,0,0,0.8);
+  transition: all 0.3s;
+  transform: translateY(-100%);
+  overflow: hidden;
+  z-index: 999;
+}
+.popup.show{
+  transform: translateY(0);
+}
+.popup .container{
+  position: relative;
+  width: 530rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.popup .container .btn{
+  width: 300rpx;
+  height: 80rpx;
+}
+.popup .container .close{
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.popup .checkbox{
+  color: #fff;
+  margin-top: 30rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+}
+.popup .close text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -15rpx;
+  width: 30rpx;
+  height: 2rpx;
+  background: #fff;
+  transform-origin: center;
+}
+.popup .close text:nth-child(1){
+  transform: rotate(45deg);
+}
+.popup .close text:nth-child(2){
+  transform: rotate(-45deg);
+}
+.guide{
+  display: block;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  font-size: 20rpx;
+  color: #8B8B8B;
+  text-align: center;
+  border-top: dashed 1rpx #8B8B8B;
+}
+.tip-swiper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.tip-swiper .content{
+  width: 100%;
+  height: 100%;
+}
+.tip-swiper .swiper{
+  width: 430rpx;
+  height: 966rpx;
+  overflow: hidden;
+}
+.tip-swiper .swiper image{
+  display: block;
+  width: 100%;
+}
+.tip-swiper .swiper .swiper-item{
+  width: 430rpx;
+  height: 966rpx;
+  overflow: hidden;
+}
+.tip-swiper .swiper .swiper-item .swiper-content{
+  position: absolute;
+  left: 30rpx;
+  top: 240rpx;
+}
+.tip-swiper .swiper .swiper-item .save-img{
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 360rpx;
+}
+.tip-swiper .swiper .swiper-item .save-img .img-item{
+  position: relative;
+  flex: 0 1 25%;
+  width: 88rpx;
+  height: 88rpx;
+  overflow: hidden;
+}
+
+.tip-swiper .swiper .swiper-item .save-img .img-item .icon{
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.tip-swiper .swiper .swiper-item text{
+  line-height: 25rpx;
+  font-size: 16rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
+  word-break: normal;
+  word-wrap: break-word;
+}
+.tip-swiper .swiper .swiper-item .copy-text{
+  display: inline-block;
+  margin-left: 18rpx;
+  width: 330rpx;
+  font-size: 16rpx;
+}
+.tip-swiper .swiper .swiper-item .tip-title{
+  font-size: 28rpx;
+  color: white;
+  /* position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: white; */
+}
+.tip-swiper .swiper .swiper-item .theme-img{
+  margin-left: 18rpx;
+  width: 280rpx;
+  height: 280rpx;
+  overflow: hidden;
+}
+.tip-swiper .swiper .swiper-item .share-content{
+  /* margin-left: 60rpx; */
+  width: 290rpx;
+}
+.tip-swiper .swiper .swiper-item .swiper-moment{
+  align-items: flex-start;
+
+}
+.tip-swiper .swiper .swiper-item .header-img{
+  margin: 0 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.tip-swiper .swiper .swiper-item .share-content .nick-name{
+  font-size: 18rpx;
+  color: #5d729b;
+}
+.tip-swiper .swiper .swiper-item .share-content{
+  max-height: 400rpx;
+  overflow: hidden;
+}
+.tip-swiper .close{
+  position: absolute;
+  right: 120rpx;
+  top: 80rpx;
+}
+.tip-swiper .swiper .swiper-item .share-content .moment{
+  max-width: 200rpx;
+  max-height: 250rpx;
+  overflow: hidden;
+}

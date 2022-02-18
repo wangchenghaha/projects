@@ -1,0 +1,4 @@
+<view class="wrap" style="background-image: url('{{splashImg}}');" bindtap="onClick">
+  <text class='daojishi flex-center' bindtap='gotoIndex'>跳过\n{{time_value}}s</text>
+</view>
+    <privacya-agreement wx:if="{{!showPrivacy}}"></privacya-agreement>

@@ -1,0 +1,106 @@
+
+<view class="pages">
+    <view class="loading" wx:if="{{showloading}}">
+        <view class="loading-warp">
+            <view class="loading-item"></view>
+            <view class="loading-item"></view>
+            <view class="loading-item"></view>
+            <view class="loading-item">
+                <image class="textlogo" src="{{img.textlogo}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="page-cont">
+        <view class="page-tit-wrap">
+            <image bindload="bindloadhand" binderror="binderrorhand" src="{{img.index_tit}}" />
+            <view class="page-tit">JACK & JONES与Jeremy Scott 携手推出</view>
+            <view class="page-tit">“GOOD LUCK TROLLS 好运巨魔”限量联名系列</view>
+        </view>
+        <view class="page-banner-wrap">
+            <Banner bind:bindloadok1="bindloadok1" type="1"></Banner>
+        </view>
+        <view class="page-vedio-wrap">
+            <Vedio></Vedio>
+        </view>
+        <view class="page-introduction-wrap">
+            <view class="introduction-item">
+                <view class="cont-left">
+                    <view class="introduction-tit" style="margin-bottom:30rpx;">JEREMY SCOTT是谁？</view>
+                    <!-- <view class="introduction-des">Jeremy Scott</view> -->
+                    <view class="introduction-cont">
+                        <image style="float:right;width:250rpx;height:355rpx;margin-left:20rpx;" bindload="bindloadhand" binderror="binderrorhand" src="{{img.index_person}}" />
+                        JEREMY SCOTT是MOSCHINO创意总监及自己同名品牌的创办者，是顶尖设计师和流行文化的缔造者。因其惊世骇俗、充满浮夸与挑衅态度的标志性设计风格，被时尚圈誉为鬼才设计师。他曾创造过翅膀鞋、泰迪熊等无数流行，将高级时装与街头风格融为一体，是《纽约时报》眼中的时尚界最后一位反叛者。其先后同Longchamp，Adidas Original，Smart，Swatch等品牌推出过联名系列。今年9月，JACK & JONES NEXT 联手 JEREMY SCOTT 创造别样北欧风格，延续其极具标志的诙谐趣味与极致创意，变奏出一场颇具态度的时尚狂想曲。
+                    </view>
+                </view>
+            </view>
+            <view class="introduction-item introduction-item-ligth">
+                <view class="introduction-tit">GOOD LUCK TROLLS好运巨魔</view>
+                <view class="introduction-cont">
+                    基于JACK & JONES的北欧基因，设计师 JEREMY SCOTT 将目光投向90年代潮流经典标志——“GOOD LUCK TROLLS 好运巨魔”，重新演绎他所推崇和一直渴望拥有的北欧潮流文化吉祥物。
+                </view>
+                <view class="introduction-cont">
+                    适逢TROLLS诞生60周年之际，我们与 JEREMY SCOTT 一起重构经典，致敬文化多元的黄金盛世。以“DARE TO BE TROLLS 敢魔敢型”的乖张态度，唤醒内心深处的真实自我与多元个性，以一种疯魔的姿态，亮出己型。
+                </view>
+            </view>
+            <view class="page-banner-wrap2">
+                <Banner bind:bindloadok2="bindloadok2" type="2"></Banner>
+                <view class="finger-wrap">
+                    <image src="{{img.index_finger}}" />
+                    <view class="finger-tit">左右滑动查看更多</view>
+                </view>
+            </view>
+            <!-- <view class="page-cloth-wrap">
+                <image bindload="bindloadhand" binderror="binderrorhand" src="{{img.index_clothes}}" />
+            </view> -->
+            <view class="introduction-item" style="margin-top: 110rpx;">
+                <view class="introduction-tit">What is JACK & JONES NEXT ?</view>
+            </view>
+            <view class="introduction-item" style="margin-top:60rpx;">
+                <view class="cont-left">
+                    <view class="introduction-cont">
+                        <image style="float:right;width:261rpx;height:209rpx;margin-left:20rpx;" bindload="bindloadhand" binderror="binderrorhand" src="{{img.index_logo2}}" />
+                        北欧男装品牌JACK & JONES全新推出JACK & JONES NEXT联名跨界产品线，致力于不断从时尚、文化、艺术等领域汲取灵感，用联名跨界和产品创意的方式重塑服装表达，引领先锋潮流在探索的过程中拾级而上，永不止步。JACK & JONES NEXT始终在寻求下一个伟大合作，下一个先锋设计，下一个流行风潮……下一个，会是什么？
+                    </view>
+                </view>
+            </view>
+            <view class="introduction-item" style="margin-top: 70rpx;">
+                <view class="introduction-tit">还有更多惊喜……</view>
+                <view class="introduction-tit" style="margin-top:30rpx;">超限量周边JJJS DOG  只等你来！</view>
+                <view class="introduction-cont" style="margin-top:60rpx;">
+                    即刻领取预约礼券，1200只限量周边“JJJS DOG”等你领取！9月19日起，在指定精选门店购买（两件及以上）联名合作系列产品，即可凭赠品礼券获赠限量“JJJS DOG”礼包一份，每一份都拥有专属编号，赠完即止。
+                </view>
+                <view class="page-img-wrap" style="margin-top:30rpx;">
+                    <image bindload="bindloadhand" binderror="binderrorhand" src="{{img.index_bottomimg1}}" style="width:565rpx;height:426rpx;"></image>
+                </view>
+            </view>
+        </view>
+        <view class="page-btn-wrap">
+            <form bindsubmit='registerFormSubmit' report-submit='true'>
+                <view class="btn-item">
+                    <button class="btns" form-type='submit' plain="{{true}}">点击领取限量惊喜</button>
+                </view>
+            </form>
+            <image class="storelist" src="{{img.storelist}}" style="width:565rpx;height:1077rpx;margin-bottom:50rpx;margin-top:30rpx;"></image>
+            <view class="btn-item" bindtap="gostore" data-tplid='136'>查看附近活动门店</view>
+            <view class="btn-store" bindtap="gostore" data-tplid='134'>联名限量系列精选在售门店</view>
+        </view>
+        <view class="page-joint-wrap">
+            <view class="joint-tit">联名合作系列全线曝光</view>
+            <image class="jointimg" src="{{img.nexticon}}" />
+        </view>
+        <view class="page-clotheslist-wrap">
+            <view class="clothes-item" bindtap="godetail" wx:for="{{clotheslist}}" :key="index" data-path="{{item.path}}">
+                <image class="clothimgs" src="{{item.imgurl}}"></image>
+                <view class="clothname">{{item.name}}</view>
+                <view class="clothprice">￥{{item.price}}</view>
+            </view>
+        </view>
+
+        <view class="animation-wrap">
+            <image bindload="bindloadhand" binderror="binderrorhand" id="animation-item1" class="animation-item animation-item1 {{animationclass1?'active':' '}}" src="{{img.index_animation1}}" style="width:95rpx;height:274rpx;"></image>
+            <image bindload="bindloadhand" binderror="binderrorhand" id="animation-item2" class="animation-item animation-item2 {{animationclass2?'active':' '}}" src="{{img.index_animation2}}" style="width:99rpx;height:270rpx;"></image>
+            <image bindload="bindloadhand" binderror="binderrorhand" id="animation-item3" class="animation-item animation-item3 {{animationclass3?'active':' '}}" src="{{img.index_animation3}}" style="width:99rpx;height:308rpx;"></image>
+            <image bindload="bindloadhand" binderror="binderrorhand" id="animation-item4" class="animation-item animation-item4 {{animationclass4?'active':' '}}" src="{{img.index_animation4}}" style="width:125rpx;height:232rpx;"></image>
+        </view>
+    </view>
+</view>

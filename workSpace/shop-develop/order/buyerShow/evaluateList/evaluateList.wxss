@@ -1,0 +1,122 @@
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .subViews {
+  padding: 20rpx;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.bg .subViews .topView {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+}
+
+.bg .subViews .topView .icon {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: #EE8777;
+}
+
+.bg .subViews .topView .name {
+  font-size: 25rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}
+
+.bg .subViews .topView .agreeView {
+  width: 20%;
+  margin-top: 10rpx;
+}
+
+.bg .subViews .topView .agreeView .agreeIcon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+  border: 2rpx dashed #000;
+}
+
+.bg .subViews .topView .agreeView .title {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.bg .subViews .centerView {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 32rpx;
+  display: flex;
+  overflow: hidden;
+}
+
+.bg .subViews .centerView .xing {
+  width: 32rpx;
+  height: 100%;
+}
+
+.bg .subViews .centerView .chima {
+  line-height: 37rpx;
+  font-size: 21rpx;
+  color: #AEAEAE;
+  white-space: nowrap;
+}
+
+.bg .subViews .imageView {
+  width: 100%;
+  margin-top: 20rpx;
+  display: flex;
+}
+
+.bg .subViews .imageView .buyerImage {
+  width: 200rpx;
+  margin-left: 10rpx;
+  height: 200rpx;
+  border-radius: 2rpx;
+}
+
+.bg .subViews .bottomView {
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #222222;
+}
+
+.bg .subViews .replyView {
+  width: 96%;
+  margin-top: 20rpx;
+  margin-left: 2%;
+  background: #efefef;
+  border-radius: 20rpx;
+}
+
+.bg .subViews .replyView .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.bg .subViews .replyView .title {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  font-weight: 550;
+  margin-top: 20rpx;
+  color: #000;
+}
+
+.bg .subViews .replyView .content {
+  font-size: 26rpx;
+  color: #AEAEAE;
+  margin-left: 30rpx;
+}
+
+.bg .subViews .replyView .default_h {
+  width: 100%;
+  height: 20rpx;
+}

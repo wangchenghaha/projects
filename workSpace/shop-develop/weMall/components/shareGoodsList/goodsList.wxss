@@ -1,0 +1,76 @@
+.goods-flex {
+  display: flex;
+  justify-content: space-between; }
+
+.fll {
+  float: left; }
+
+.clear {
+  clear: both; }
+
+.flr {
+  float: right; }
+
+image {
+  display: block; }
+
+.goods-list {
+  margin: 30rpx auto;
+  width: 95%;
+  overflow: hidden; }
+  .goods-list .goods-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+    margin-top: 15rpx; }
+    .goods-list .goods-info text {
+      margin-right: 15rpx; }
+      .goods-list .goods-info text.goods-name {
+        display: inline-block;
+        max-width: 380rpx;
+        line-height: 30rpx;
+        text-align: center;
+        text-overflow: clip;
+        white-space: nowrap;
+        overflow: hidden; }
+      .goods-list .goods-info text.goods-discount {
+        font-size: 30rpx;
+        color: red; }
+      .goods-list .goods-info text.goods-original {
+        font-size: 24rpx;
+        text-decoration: line-through;
+        color: #ccc; }
+  .goods-list .goods-item {
+    margin-bottom: 30rpx; }
+    .goods-list .goods-item1 {
+      margin-top: 30rpx; }
+      .goods-list .goods-item1 .goods-img {
+        margin: 0 auto;
+        width: 68%; }
+    .goods-list .goods-item-wrapper .goods-info {
+      flex-direction: column; }
+      .goods-list .goods-item-wrapper .goods-info .goods-name {
+        display: inline-block;
+        max-width: 310rpx;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+      .goods-list .goods-item-wrapper .goods-info .price-wrapper {
+        display: flex;
+        justify-content: center; }
+    .goods-list .goods-item2 {
+      width: 48%; }
+    .goods-list .goods-item3 {
+      margin-top: 100rpx;
+      width: 49%; }
+    .goods-list .goods-item4 .img-wrapper {
+      overflow: hidden; }
+      .goods-list .goods-item4 .img-wrapper view {
+        border: solid 1rpx #eee; }
+        .goods-list .goods-item4 .img-wrapper view.img-left {
+          width: 43%; }
+        .goods-list .goods-item4 .img-wrapper view.img-right {
+          width: 55%; }
+
+/*# sourceMappingURL=goodsList.wxss.map */

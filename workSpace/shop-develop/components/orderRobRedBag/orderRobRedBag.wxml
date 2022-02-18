@@ -1,0 +1,6 @@
+<view class="rob-bag ~fixed ~flex-center" wx:if="{{showRobBag}}">
+  <navigator url="/activity/robRedBag/home/home">
+    <image src="{{robBagImg}}" mode="widthFix" />
+  </navigator>
+  <icon type="cancel" size="60rpx" color="#fff" bindtap="closeRobBag" />
+</view>

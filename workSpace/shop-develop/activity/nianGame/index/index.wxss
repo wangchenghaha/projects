@@ -1,0 +1,500 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #b9a0e8;
+}
+
+.topImgView {
+  width: 100%;
+  position: relative;
+  vertical-align: middle;
+}
+
+.topImgView .nianshouView {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390rpx;
+}
+
+.topImgView .baozha {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400rpx;
+}
+
+.topImgView .topTitleView {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: .8;
+}
+
+.topImgView .topTitleView .toptitles {
+  background-color: #FFF9F1;
+  border-radius: 20rpx;
+  padding: 10rpx 20rpx;
+  position: relative;
+}
+
+.topImgView .topTitleView .toptitles .titls {
+  font-size: 24rpx;
+  line-height: 35rpx;
+  color: #502203;
+  text-align: center;
+}
+
+.topImgView .topTitleView .toptitles .weiba {
+  position: absolute;
+  bottom: -25rpx;
+  right: 50rpx;
+  width: 0;
+  height: 0;
+  border-top: 25rpx solid #FFF9F1;
+  border-right: 15rpx solid transparent;
+}
+
+.topImgView .gonglueView {
+  position: absolute;
+  bottom: 100rpx;
+  right: 20rpx;
+  width: 86rpx;
+}
+
+.topImgView .gonglueView .gonglue {
+  width: 100%;
+  height: 89rpx;
+  margin-bottom: 40rpx;
+}
+
+.centerView {
+  position: fixed;
+  top: 53%;
+  left: 0;
+  width: 100%;
+  height: 159rpx;
+  display: flex;
+}
+
+.centerView .left {
+  margin-top: 19rpx;
+  margin-left: -50rpx;
+  width: 201rpx;
+  height: 140rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.centerView .center {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.centerView .center .share {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  width: 100%;
+  height: 100%;
+}
+
+.centerView .center .share::after {
+  border: none;
+}
+
+.centerView .right {
+  width: 159rpx;
+  height: 100%;
+  position: relative;
+}
+
+.centerView .right .top {
+  position: absolute;
+  top: -15rpx;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 120rpx;
+  height: 92rpx;
+  overflow: hidden;
+}
+
+.centerView .right .top-img {
+  width: 100%;
+}
+
+.centerView .right .bottom {
+  margin-top: 62rpx;
+  width: 100%;
+  height: 97rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.centerView .right .bottom-img {
+  width: 141rpx;
+  height: 64rpx;
+  margin-left: 18rpx;
+  margin-top: 13rpx;
+}
+
+.centerView .right .miaoshu {
+  position: absolute;
+  bottom: -80rpx;
+  right: 10rpx;
+  width: 100%;
+  height: 80rpx;
+  text-align: right;
+}
+
+.centerView .right .miaoshu-titles {
+  font-size: 21rpx;
+  color: white;
+  line-height: 27rpx;
+}
+
+.bottomView {
+  position: absolute;
+  top: 63%;
+  left: 0;
+  width: 100%;
+}
+
+.bottomView .topView {
+  width: 295rpx;
+  height: 55rpx;
+  color: #b9a0e8;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 55rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.bottomView .scroView {
+  width: 100%;
+  height: 380rpx;
+  white-space: nowrap;
+}
+
+.bottomView .scroView .imgView {
+  display: inline-block;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  width: 260rpx;
+  height: 100%;
+  position: relative;
+}
+
+.bottomView .scroView .imgView-text {
+  position: absolute;
+  top: 17rpx;
+  left: 20rpx;
+  text-shadow: 0.5px 0.5px 1px white,-0.5px -0.5px 1px white;
+}
+
+.bouncedBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .0;
+  animation: openBoxBgAnimate 0.2s linear 1 forwards;
+  z-index: 99;
+}
+
+.bouncedView {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 100;
+}
+
+.bouncedView-animateView {
+  animation: openBoxAnimate 0.2s linear 1 forwards;
+}
+
+.bouncedView-animateView .gongxiBouncedView {
+  width: 587rpx;
+  height: 795rpx;
+  margin: 0 auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+}
+
+.bouncedView-animateView .gongxiBouncedView .guizeSCroView {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.bouncedView-animateView .gongxiBouncedView .guizeSCroView-subViews {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.bouncedView-animateView .gongxiBouncedView .guizeSCroView-subViews .texts {
+  text-align: left;
+  margin-top: 20rpx;
+  font-size: 23rpx;
+  color: #B76652;
+  line-height: 40rpx;
+}
+
+.bouncedView-animateView .gongxiBouncedView .myPrizeScroView {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 462rpx;
+  height: 65%;
+  overflow: hidden;
+}
+
+.bouncedView-animateView .gongxiBouncedView .myPrizeScroView-text {
+  font-size: 34rpx;
+  color: #502203;
+  text-align: center;
+}
+
+.bouncedView-animateView .gongxiBouncedView .myPrizeScroView-imgView {
+  width: 454rpx;
+  margin-top: 8rpx;
+  position: relative;
+}
+
+.bouncedView-animateView .gongxiBouncedView .myPrizeScroView-imgView .yuandian {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #FF5C5B;
+  color: #FFD583;
+  line-height: 30rpx;
+  font-size: 23rpx;
+  text-align: center;
+  position: absolute;
+  right: -8rpx;
+  top: -8rpx;
+}
+
+.bouncedView-animateView .gongxiBouncedView .is12View {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+.bouncedView-animateView .gongxiBouncedView .is12View-text {
+  font-size: 32rpx;
+  line-height: 45rpx;
+  color: #FFEC8E;
+}
+
+.bouncedView-animateView .gongxiBouncedView .yihanBtnView {
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 80rpx;
+  border-radius: 80rpx;
+  background-image: linear-gradient(to right, #FFEC8E, #FDCF71);
+  color: #A95A35;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+.bouncedView-animateView .gongxiBouncedView .yihanShare {
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 80rpx;
+  background: none;
+}
+
+.bouncedView-animateView .gongxiBouncedView .yihanShare::after {
+  border: none;
+}
+
+.bouncedView-animateView .gongxiBouncedView-title {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  width: 100%;
+  font-size: 28rpx;
+  color: #F7B15E;
+}
+
+.bouncedView-animateView .gongxiBouncedView-yhq {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450rpx;
+  vertical-align: middle;
+}
+
+.bouncedView-animateView .gongxiBouncedView-subTitle {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 100%;
+  font-size: 22rpx;
+  color: #D77E5A;
+}
+
+.bouncedView-animateView .centerImgView {
+  width: 518rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  color: #D0BB95;
+  font-size: 24rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 30rpx auto;
+}
+
+.bouncedView-animateView .yhqTitle {
+  width: 100%;
+  line-height: 30rpx;
+  font-size: 22rpx;
+  color: #9F9BA1;
+  text-align: center;
+}
+
+.bouncedView-animateView .iconView {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 50rpx auto;
+}
+
+.bouncedView-imgView {
+  width: 100%;
+  margin: 0 auto;
+  vertical-align: middle;
+  position: relative;
+}
+
+.bouncedView-imgView-gifImg {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bouncedView-btnView {
+  border-radius: 100rpx;
+  width: 55%;
+  height: 100rpx;
+  margin: 40rpx auto 70rpx auto;
+  background-image: linear-gradient(to right, #F8904F, #F44356);
+  text-align: center;
+  line-height: 100rpx;
+  color: white;
+  font-size: 34rpx;
+}
+
+.bouncedView .icon {
+  margin: 0 auto;
+}
+
+@keyframes upAnimate {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes upAnimate1 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes attackHor {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-330rpx);
+  }
+}
+
+@keyframes attackVer {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-200rpx) rotate(-100deg);
+  }
+}
+
+@keyframes openBoxBgAnimate {
+  0% {
+    opacity: .0;
+  }
+  100% {
+    opacity: .7;
+  }
+}
+
+@keyframes openBoxAnimate {
+  0% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.sanjiao {
+  position: fixed;
+  top: 4.5%;
+  left: 3%;
+  width: 42rpx;
+  height: 59rpx;
+  z-index: 9;
+}
+
+.playVideo {
+  position: fixed;
+  top: 11%;
+  right: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

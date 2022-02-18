@@ -1,0 +1,80 @@
+page {
+  height: 100%;
+}
+page .main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+page .main .bg {
+  width: 750rpx;
+  height: 1498rpx;
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+}
+page .main .alertBg,
+page .main .helpButton,
+page .main .help_start {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+page .main .alertBg {
+  width: 623rpx;
+  height: 955rpx;
+}
+page .main .helpButton {
+  width: 347rpx;
+  height: 113rpx;
+  transform: translateY(230rpx);
+}
+page .main .help_start {
+  width: 262rpx;
+  height: 86rpx;
+  transform: translateY(370rpx);
+}
+page .alert {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+page .alert .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+page .alert .box .help_success {
+  width: 641rpx;
+  height: 591rpx;
+}
+page .alert .box .help_start {
+  width: 262rpx;
+  height: 86rpx;
+  margin-top: 30rpx;
+}
+page .alert .box .text {
+  position: absolute;
+  width: 560rpx;
+  height: 130rpx;
+  top: 354rpx;
+  left: 38rpx;
+  text-align: center;
+  color: #134069;
+  font-weight: bold;
+  line-height: 130rpx;
+  font-size: 50rpx;
+}

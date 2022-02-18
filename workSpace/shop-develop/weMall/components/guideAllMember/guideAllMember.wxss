@@ -1,0 +1,59 @@
+.all .search {
+  padding-left: 20rpx;
+  height: 70rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.all .search-input {
+  margin-left: 10rpx;
+  font-size: 26rpx;
+}
+.all .screen {
+  margin: 15rpx 0;
+  font-size: 24rpx;
+}
+.all .screen .select {
+  position: relative;
+  padding: 0 30rpx;
+  width: 450rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  color: #666666;
+  background: #fff;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+}
+.all .screen-btn {
+  width: 220rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  color: #333333;
+  background: #fff;
+  border-radius: 30rpx;
+}
+.all .member-item {
+  padding: 0 30rpx;
+  margin-bottom: 4rpx;
+  height: 130rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.all .member-item .avatar {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 6rpx;
+  border: solid 1rpx red;
+}
+.all .member-item .name {
+  padding-left: 20rpx;
+  margin-right: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.all .member .total {
+  padding: 30rpx 0;
+  font-size: 26rpx;
+  color: #999;
+}
+
+/*# sourceMappingURL=guideAllMember.wxss.map */

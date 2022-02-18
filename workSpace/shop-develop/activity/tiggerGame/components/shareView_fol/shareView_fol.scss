@@ -1,0 +1,46 @@
+@mixin shareView ($bottom){
+    
+    position: absolute;
+    bottom: $bottom;
+    left: 16%;
+    right: 16%;
+    width: auto;
+    height: 88rpx;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    background-color: #9125FF;
+    .imageView{
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+        position: relative;
+        &-image{
+            // 解决图片底部留白问题
+            vertical-align: middle;
+            width: 100%;
+        }
+        .back{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150rpx;
+            height: 100rpx;
+        }
+        .fenxiangView{
+            @include shareView(18.7%);
+        }
+        .mianduimian{
+            @include shareView(8%);
+        }
+    }
+}
+.share{ 
+    background:none;
+    width: 100%;
+    height: 100%;
+}
+.share::after{ 
+    border: none;
+}

@@ -1,0 +1,8 @@
+<view class='video-wrapper'>
+  <view class="video-box" wx:if="{{isVideo}}">
+    <video src='{{videoUrl}}' objectFit='contain' danmu-list="{{danmuList}}" danmu-btn="{{danmuBtn}}" enable-danmu="{{enableDanmu}}" autoplay='true' loop='true'></video>
+  </view>
+  <view class="img-box" wx:else>
+    <image src='{{videoUrl}}' mode='widthFix'></image>
+  </view>
+</view>

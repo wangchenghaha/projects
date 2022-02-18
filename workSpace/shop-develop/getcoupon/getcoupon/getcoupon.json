@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "couponlist": "/getcoupon/components/couponlist/index",
+    "send-coupon": "plugin://sendCoupon/send-coupon"
+  },
+  "disableScroll":true
+}

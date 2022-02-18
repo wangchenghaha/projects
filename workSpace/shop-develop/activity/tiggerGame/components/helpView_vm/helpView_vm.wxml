@@ -1,0 +1,59 @@
+<view class="bg">
+    <image src="{{imagePath}}gameBg.jpg" class="bgImageView" mode="aspectFill" />
+    <view class="imageView">
+        <view class="topImageView">
+            <image src="{{imagePath}}zhuliye1.png" style="width:100%;vertical-align: middle;" mode="widthFix" />
+            <view class="topViewOpa"></view>
+            <view class="topView">
+                <image src="{{fridendData.pic}}" class="icon" mode="widthFix" />
+                <view class="rightView">
+                    <view class="rightTitle">好友{{fridendData.name}}</view>
+                    <view class="rightTitle">正在参加公主梦幻奇境"抽奖活动"</view>
+                </view>
+            </view>
+            <view id="left" class="bottomBtn" style="left: 6%;" bindtap="bottomTap">助TA一臂之力</view>
+            <view id="right" class="bottomBtn" style="right: 4%;" bindtap="bottomTap">去森林里逛逛</view>
+        </view>
+    </view>
+</view> 
+
+
+
+ <!-- 弹框 -->
+ <view class="bouncedView" style="{{canShow ? 'display: flex;' : 'display: none;'}}">
+    <!-- 透明背景 -->
+    <view class="bouncedView-bg" bindtap="{{canClose ? 'bouncedTap' : ''}}"></view>
+        <!-- 弹出层 -->
+    <view class="bouncedView-view">
+        <view class="boxImageView">
+            <image style="width:100%;vertical-align: middle;" mode="widthFix" src="{{imagePath}}helpBouncedImg.png" />
+            <view class="boxView">
+                <view class="box" wx:for="{{zhuliArrs}}" wx:key="box" wx:for-index="indexx">
+                    <view class="box-item" wx:for="{{item}}" wx:key="boxItem">
+                        <view class="itemTopView">
+                            <view class="huangguan">
+                                <image wx:if="{{zhuliAnimationData.index > 3 ? index == 6 - zhuliAnimationData.index  && indexx == 1: zhuliAnimationData.index == index + 1 && indexx == 0}}" src="{{imagePath}}huangguan.png" style="width:100%;height:100%;vertical-align: middle;" />
+                            </view>
+                        </view>
+
+                        <view class="itemBgView">
+                            <image src="{{imagePath}}zhuliPingguo.png" style="width:100%;vertical-align: middle;" mode="widthFix" />
+                            <view class="itemView">
+                                <view class="itemView-topTitle" style="color: {{item == 400 ? '#F9DC46' : 'white'}};">{{item}}</view>
+                                <view class="itemView-subTitle" style="color: {{item == 400 ? '#F9DC46' : 'white'}};">筹码</view>
+                            </view>
+                            <view class="{{zhuliAnimationData.index > 3 ? index == 6 - zhuliAnimationData.index  && indexx == 1 ? 'show' : '' : zhuliAnimationData.index == index + 1 && indexx == 0 ? 'show' : ''}}"></view>
+                        </view>
+
+                    </view>
+                </view>
+
+            </view>
+            <!-- 顶部文字 -->
+            <block wx:if="{{points != ''}}">
+                <view class="topView">帮助好友获得{{points}}枚筹码</view>
+            </block>
+        </view>
+    </view>
+
+ </view>

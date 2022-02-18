@@ -1,0 +1,7 @@
+<view class="video-wrapper">
+  <block wx:for="{{guide}}" wx:key="guide">
+    <my-study video="{{item}}" num="4"></my-study>
+  </block>
+  <view class="container">
+  </view>
+</view>

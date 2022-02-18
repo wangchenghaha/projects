@@ -1,0 +1,188 @@
+
+.container{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 168rpx;
+    overflow-x:hidden;
+
+    .titlePic{
+        position: relative;
+        .actImage{
+            width: 100%;
+        }
+        .notice{
+            position: absolute;
+            top: 40rpx;
+            right: -20rpx;
+            background: #108289;
+            border-radius: 60rpx;
+            width: 200rpx;
+            height: 60rpx;
+            font-size: 28rpx;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .actTab{
+        width: 100%;
+        height: 120rpx;
+        margin-top: -100rpx;
+        border-top-right-radius: 50rpx;
+        border-top-left-radius: 50rpx;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        .itemTab{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            .title{
+                font-size: 36rpx;
+                color: white;
+                font-weight: 550;
+                margin-top: 35rpx;
+            }
+            .detail{
+                margin-top: 5srpx;
+                font-size: 22rpx;
+                color: white;
+            }
+            .line{
+                height: 5rpx;
+                width: 100rpx;
+                border-radius: 5rpx;
+                background: white;
+                margin-top: 9rpx;
+            }
+        }
+    }
+
+    .timerShow{
+        width: 100%;
+        height: 100rpx;
+        margin-top: 20rpx;
+        position: relative;
+        .timerBg{
+            width: 96%;
+            height: 100rpx;
+            position: absolute;
+            margin-left: 2%;
+        }
+        .remindTips{
+            font-size: 26rpx;
+            color: #fff;
+            position: absolute;
+            left: 120rpx;
+            margin-top: 42rpx;
+        }
+        .timerRow{
+            width: 50%;
+            position: absolute;
+            left: 45%;
+            margin-top: 36rpx;
+            .timeTitle{
+                font-size: 28rpx;
+                color: #fff;
+            }
+            .timer{
+                width: 60rpx;
+                height: 50rpx;
+                line-height: 50rpx;
+                text-align: center;
+                background: #ffa627;
+                border-radius: 8rpx;
+                color: white;
+                margin-left: 8rpx;
+                font-weight: 500;
+                font-size: 28rpx;
+              }
+        }
+
+    }
+
+    .shopping{
+        width: 92%;
+        height: 60rpx;
+        background: white;
+        margin-left: 4%;
+        border-radius: 20rpx;
+        margin-top: 10rpx;
+        .logoImg{
+            width: 240rpx;
+            margin-left: 20rpx;
+        }
+        .into{
+            width: 160rpx;
+            font-size: 24rpx;
+            color: #aaaaaa;
+        }
+    }
+
+    .goodsList{
+        width: 100%;
+        .goodsItem{
+            width: 92%;
+            margin-left: 4%;
+            height: 220rpx;
+            background: #fff;
+            border-radius: 20rpx;
+            margin-top: 10rpx;
+            .imgArea{
+                width: 26%;
+                .goodsImg{
+                    width: 120rpx;
+                    height: 200rpx;
+                }
+            }
+            .goodsInfo{
+                width: 70%;
+                height: 180rpx;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .title{
+                    font-size: 32rpx;
+                    height: 200rpx;
+                }
+                .currentPrice{
+                    font-size: 28rpx;
+                    color: red;
+                    font-weight: 600;
+                }
+                .originalPrice{
+                    font-size: 28rpx;
+                    margin-left: 20rpx;
+                    color: #aaa;
+                    text-decoration:underline;
+                    text-decoration:line-through;
+                }
+                .notice{
+                    width: 120rpx;
+                    border-radius: 45rpx;
+                    border: #3cd0c0 2rpx solid;
+                    text-align: center;
+                    line-height: 45rpx;
+                    font-size: 28rpx;
+                    color: #3cd0c0;
+                }
+                .buyNow{
+                    width: 140rpx;
+                    border-radius: 45rpx;
+                    border: red 2rpx solid;
+                    text-align: center;
+                    line-height: 45rpx;
+                    font-size: 28rpx;
+                    color: red;
+                }
+            }
+        }
+    }
+
+}

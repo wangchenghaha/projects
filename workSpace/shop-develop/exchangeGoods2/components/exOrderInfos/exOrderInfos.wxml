@@ -1,0 +1,23 @@
+<view class="g_multi_line_frame">
+  <view class="g_multi_line_title">换货单信息</view>
+  <view class="g_key_left">
+    换货方式：{{exOrderBean.exchangeType=='exchangeExpress'? '快递换货':'到店换货'}}
+  </view>
+  <view class="g_key_left">换货原因：{{exOrderBean.exchangeReason}}</view>
+  <view class="g_key_left">换货数量：{{exOrderBean.sourceGoodsCount}}</view>
+  <view class="g_key_left">申请时间：{{exOrderBean.createTime}}</view>
+  <view class="g_key_left">换货单号：{{exOrderBean.exchangeCode}}</view>
+  <view class="g_key_left">原订单号：{{exOrderBean.oriorderCode}}</view>
+  <view class="g_key_left">收货地址：{{exOrderBean.oriAddress}}</view>
+  <view class="g_key_left" wx:if="{{exOrderBean.exchangeDescription}}">
+    换货说明：{{exOrderBean.exchangeDescription}}
+  </view>
+  <view class="flex_r align_s" wx:if="{{exOrderBean.evidencePics}}">
+    <view class="g_key_left">图片凭证：</view>
+    <view class="flex_r align_s">
+      <block wx:for="{{picList}}" wx:key="picList">
+        <image class="ex_order_evi_pic" src="{{item}}" mode="widthFix" />
+      </block>
+    </view>
+  </view>
+</view>

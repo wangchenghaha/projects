@@ -1,0 +1,46 @@
+<view class='frame'>
+    <!-- 退回原商品 -->
+    <view class="global_order_status_bar_wrap">
+        <text class="order_key">订单状态</text>
+        <text class="order_status">待买家寄回</text>
+    </view>
+
+    <view class='a_a'>
+        <view class='b_title'>退货地址</view>
+        <view class='address_frame'>
+            <!-- <view class='a_title'>退货地址：{{refundAddress}}</view> -->
+            <view>
+                <view class='a_content'>退货收件人：{{recipient}}</view>
+                <view class='a_content'>退货地址：{{refundAddress}}</view>
+                <view class='a_content'>联系电话：{{phoneNo}}</view>
+            </view>
+            <!-- <view class='a_content'>邮编：{{zipCode}}</view> -->
+            <view class="a_copy">
+                <image class="shop_copy" src="/images/icon_copy_black.png" mode="widthFix" bind:tap="onTmplShopInfoCopy"/>
+            </view>
+        </view>
+    </view>
+
+    <view class='b_b'>
+        <view class='b_title'>邮寄信息</view>
+        <view class="b_combile">
+            <view class="b_border">
+                <input class='b_input1' maxlength="15" placeholder='请输入物流公司' value="{{companyName}}" bindinput="onExpressCompanyInput" confirm-type="next"></input>
+                <view class="b_right">
+                    <picker class="b_picker" mode="selector" bind:change="onPickerClick" value="{{index}}" range="{{expressList}}">
+                        <view class="fake_content">777</view>
+                    </picker>
+                    <view class="arrow">
+                        <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <input class='b_input2' maxlength="30" type="digit" placeholder='请填写运单号' confirm-type="done"  bindinput="onExpressCodeInput"></input>
+    </view>
+
+    <view class='global_commit_black_matrix_wrap'>
+        <view class='global_commit_black_matrix' bind:tap='onCommitCode'>确定上传</view>
+    </view>
+
+</view>

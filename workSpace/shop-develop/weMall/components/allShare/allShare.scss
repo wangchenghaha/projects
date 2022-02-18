@@ -1,0 +1,97 @@
+/* components/allShare/allShare.wxss */
+.list-item{
+  padding-left: 15rpx;
+  position: relative;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #000;
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10rpx;
+    width: 6rpx;
+    height: 25rpx;
+    background: #000;
+  }
+}
+.list-wrapper{
+  padding-bottom: 30rpx;
+  .list-content{
+    margin-top: 10rpx;
+    .temp-item{
+      display: flex;
+      justify-content: space-between;
+      height: 70rpx;
+      line-height: 70rpx;
+      font-size: 28rpx;
+      padding: 0 20rpx;
+      background: #f5f5f5;
+      border-bottom: solid 1rpx #fff;
+      &:nth-child(1){
+        border-top: solid 1rpx #dadada;
+      }
+      .temp-name{
+        position: relative;
+        padding-right: 30rpx;
+        text{
+          position: absolute;
+          right: 0;
+          top: 50%;
+          margin-top: -7rpx;
+          width: 0;
+          height: 0;
+          border-left: 8rpx solid transparent;
+          border-right: 8rpx solid transparent;
+          border-top: 14rpx #000 solid;
+          transform-origin: center;
+          transition: all 0.5s;
+          &.active{
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    .share-detail{
+      background: #ececec;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: all 0.3s;
+      height: 0;
+      &.active{
+        transform: scaleY(1);
+        opacity: 1;
+        height: auto;
+      }
+      .wx-share{
+        margin: 0 20rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 26rpx;
+        color: #acacac;
+        &:nth-child(1){
+          border-bottom: solid 1rpx #fff;
+        }
+        .wx-msg{
+          position: relative;
+          padding-left: 30rpx;
+          &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 10rpx;
+            top: 50%;
+            margin-top: -5rpx;
+            width: 10rpx;
+            height: 10rpx;
+            border-radius: 50%;
+            background: #acacac;
+          }
+        }
+      }
+    }
+  }
+}
+
+

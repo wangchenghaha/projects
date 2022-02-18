@@ -1,0 +1,40 @@
+@import "../mycss.wxss";
+@import "../components/steps/index";
+@import "../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar";
+.layout_father{ width:100%; height:auto; clear:both; overflow:hidden;}
+.tip_0{
+    text-align: center;
+    font-size: 22rpx;
+ }
+
+ .tip_failed_detail{
+     color: #B8B8B8;
+    padding: 17rpx 17rpx 7rpx 17rpx;
+    font-size: 24rpx;
+    border-top: 2rpx solid #EBEBEB;
+}
+.hotline{font-size: 24rpx;text-align: right;padding-right: 37rpx;margin-bottom: 17rpx;}
+.text_line_frame{ width:100%; clear:both; overflow:hidden;font-size:24rpx;
+    display: flex;flex-direction: column;border-top: 10rpx solid #F6F5F5; padding: 17rpx 0 0 0;}
+.ex_time{padding-bottom: 12rpx;padding-top: 12rpx;}
+.key_left{ float:left; padding-left:20rpx; color:black;}
+.value_right{ float:right; padding-right:20rpx; color:black;}
+.grey_0{color:#B8B8B8;}
+.grey_1{color:#858585;}
+
+.bottom_list{width: 100%;height: auto;overflow: hidden;}
+
+.layout_extra_info{padding:17rpx;display: flex;flex-direction: column;align-items: flex-start;justify-content: flex-start;
+}
+.title_1{font-size: 24rpx;color: #333;}
+
+.wrapper_shop{padding: 17rpx;font-size: 26rpx;}
+.txt_shop{margin-bottom: 10rpx;}
+
+.d_frame{padding: 17rpx; font-size: 26rpx;line-height: 57rpx;}
+.d_title{margin-bottom: 12rpx;}
+.d_value_bar{width: 100%;}
+.d_value_gray{color: #999;}
+
+
+

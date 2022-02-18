@@ -1,0 +1,36 @@
+.good-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20rxp;
+    image{
+        width: 100%;
+    }
+    .goodsName{
+        font-size: 24rpx;
+        color: #000;
+        margin-top: 10rpx;
+        max-width: 280rpx;
+        overflow:hidden; 
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .goodsPrice{
+        display: flex;
+        align-items: flex-end;
+        .currentPrice{
+            margin-top: 10rpx;
+            font-size: 26rpx;
+            color: #000;
+        }
+        .orignalPrice{
+            margin-top: 10rpx;
+            font-size: 22rpx;
+            color: #999;
+            margin-left: 16rpx;
+            text-decoration:line-through;
+        }
+    }
+    
+}

@@ -1,0 +1,54 @@
+.wrapper .scrollview {
+    background: #F4F4F4;
+}
+.wrapper .scrollview .item {
+    background: #ffffff;
+    padding: 30rpx 22rpx;
+    box-sizing: border-box;
+    margin-bottom: 26rpx;
+}
+.wrapper .scrollview .item:first-child{
+    margin-top: 26rpx;
+}
+.wrapper .scrollview .item .title {
+    display: flex;
+    align-items: center
+}
+.wrapper .scrollview .item .title .tit{
+    font-size: 32rpx;
+    color: #2b2b2b;
+    font-weight: bold;
+    flex: 1;
+}
+.wrapper .scrollview .item .title .status {
+    padding-left: 20rpx;
+    font-size: 28rpx;
+    color: #2b2b2b;
+}
+.wrapper .scrollview .item .title .status.active {
+    color: #C34949;
+}
+
+.wrapper .scrollview .item .address, .wrapper .scrollview .item .telephone {
+    color: #757575;
+    font-size: 28rpx;
+    line-height: 1.8;
+}
+
+.wrapper .scrollview .nodata {
+    background: #ffffff;
+    text-align: center;
+    padding-top: 222rpx;
+    font-size: 0;
+}
+
+.wrapper .scrollview .nodata .content .imagebox .image{
+    width: 160rpx;
+    height: 160rpx;
+    display: inline-block;
+}
+.wrapper .scrollview .nodata .content .tips {
+    font-size: 28rpx;
+    margin-top: 40rpx;
+    color: #757575;
+}

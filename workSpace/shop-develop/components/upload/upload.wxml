@@ -1,0 +1,6 @@
+<view class="upload ">
+  <view class="img">
+    <image src="{{cameraImg}}" mode="widthFix"></image>
+  </view>
+  <text>上传凭证 \n (最多{{ count || 3}}张)</text>
+</view>

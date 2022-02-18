@@ -1,0 +1,27 @@
+.wrap{
+  background: #F1F1F1;
+}
+.wrap .desc{
+  margin: 20rpx auto;
+  padding: 20rpx;
+  width: 95%;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.copy-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+
+.wrap,.ul,.li{ width:100%; height:auto; clear:both; overflow:hidden;}
+.li{ padding:25rpx 0;}
+.dateTime{float:left; border-right:1px solid #eeeeee; width:200rpx; height:auto; text-align:right; padding-right:38rpx; font-size:26rpx; position:relative;}
+.small{ width:20rpx; height:20rpx; background:#959595; position:absolute; right:-10rpx; top:15rpx; border-radius:50%;}
+.big{ width:35rpx; height:35rpx; position:absolute; right:-17.5rpx; top:5rpx;}
+.big image{ display:block; width:100%;}
+
+.content{ float:left; width:510rpx; height:auto; box-sizing:border-box; padding:0 30rpx; font-size:26rpx;}

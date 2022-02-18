@@ -1,0 +1,110 @@
+<view class="wrap">
+    <view class="{{isIphoneX ? 'iPhoneXshoplist':'shoplist'}}" wx:if="{{haveGoods}}">
+        <block wx:for="{{shoplist}}" wx:key="shoplist">
+          <view class="promotion flex-bet arrow-bg" wx:if="{{item.showPromotionItem}}" bindtap="promotionClick" id="{{item.showPromotionItem.id}}">
+            <text class="promotion-name text-c">{{item.showPromotionItem.typeName}}</text>
+            <text class="promotion-desc">{{item.showPromotionItem.description}}</text>
+          </view>
+            <view class="shopItemContent flex-center">
+                <view class="checkIamge flex-center" data-index="{{index}}" bindtap="checkGood">
+                  <icon wx:if="{{item.selected}}" type="success_no_circle" size="30rpx" color="#000" />
+                </view>                
+                <image class="itemPic" src="{{item.goodsImg}}" mode="aspectFit" bindtap="showGoodDetails" data-index="{{index}}" />
+                <image class="itemNoticePic" src="../../images/goods_outsell.png" mode="aspectFit" wx:if="{{item.isOutShelf}}" />
+                <image class="itemNoticePic" src="../../images/list_car_false.png" mode="aspectFit" wx:if="{{item.noSellStock || item.sizeNoSellStock}}" />
+                <view class="itemDescription" data-index="{{index}}" bindtap="checkGood" > 
+                    <view class="itemText">{{item.goodsName}}</view>
+                    <view class="itemText">{{item.goodsCode}}</view>
+                    <view class="itemText">{{item.colorName}}</view>
+                    <view class="itemText">{{item.sizeName}}</view>
+                    <view ><text class="itemText">{{item.goodsCount}}</text><text style="font-size:24rpx; margin-left:20rpx;">￥{{item.discountPrice}}</text></view>
+                </view>
+                <view class="itemEdit">
+                    <image src="../../images/address_deleted.png" mode="aspectFit" bindtap="deleteGood" data-index="{{index}}" ></image>
+                    <image src="../../images/address_edited.png" mode="aspectFit" bindtap="editGood" data-index="{{index}}"></image>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class="noGoods" wx:if="{{!shoplist.length}}">
+          <image style="width: 200rpx; height: 200rpx;" src="../../images/bag.png" mode="aspectFit"/>
+          <text style="font-size: 32rpx; color: black;">亲,您还没有添加购物清单哦~</text>
+          <view class="list_null_btn" bindtap="toIndex">去逛逛</view> 
+    </view>
+    
+    <view class="footer">
+      <view wx:if="{{noticeAct}}" class="noticeAct"><image src="{{wxIcon}}" mode="widthFix"/>使用微信支付预计还可减免100元</view>
+      <view class="settlementContent">
+          <view class="checkIamge flex-center" data-index="{{index}}" bindtap="allCheckGood">
+            <icon wx:if="{{selectAllStatus}}" type="success_no_circle" size="30rpx" color="#000" />
+          </view>  
+          <!-- <image wx:if="{{selectAllStatus}}" class="checkIamge" src="../../images/sc_checked.png" mode="aspectFit" bindtap="allCheckGood"/>
+          <image wx:else class="checkIamge" src="../../images/sc_un_checked.png" mode="aspectFit" bindtap="allCheckGood"/> -->
+          <text style="font-size：24rxp; margin-left:5rpx;">全选</text>
+          <view class="totalPric">合计：<text style="font-size:28rpx; color:red; margin-left:5rpx; font-weight:500;">{{totalPrice}}（{{totalNum}}件）</text></view>
+          <form class="settlement" bindsubmit="submitGood" report-submit="true">
+            <button class="btn" form-type="submit">购买结算</button>
+          </form>
+          <!--<view class="settlement" bindtap="submitGood">购买结算</view>-->
+      </view>
+<!--      <view class="bottomCom {{isIphoneX ?'bottomHeight':''}}"></view>-->
+    </view>
+
+  <!-- 删除商品 - 弹出框 -->
+  <view class="tishi" style="display:{{remove_display}}">
+    <view class="opacity" bindtap="closeShopCart"></view>
+      <view class="tanchu">
+        <view class="h2">提示</view>
+        <icon class="closeIcon" type="cancel" size="30" color="black" bindtap="closeShopCart"/>
+        <view class="title">
+          <text>确认删除该商品吗？</text>
+        </view>
+        <view class="bott">
+          <view class="bot">
+            <view class="true" bindtap="remove_true">{{submitMsg}}</view>
+          </view>
+          <view class="bot">
+            <view class="false" bindtap="remove_false">{{cancelMsg}}</view>
+          </view>
+        </view>
+    </view>
+  </view>
+
+  <!-- 选择尺码 - 弹出框 -->
+<view class="details_size" style="display:{{details_display}}">
+  <view class="details_opacity" bindtap="chicunHide" animation="{{animationOpacity}}"></view>
+  <view class="details_con {{isIphoneX ?'fix-iphonex-button':''}}" animation="{{animationBottom}}">
+    <view class="dd_con">
+      <view class="details_sizeOne_B">
+        <view class="b_title">颜色分类</view>
+        <view class="b_ul">
+          <view data-index="{{index}}" class="b_li {{index==color_list_num?'b_list':''}} {{yanseList[index]?'chima_list':''}}"  wx:for="{{colors}}" wx:key="color" bindtap="colorChange">{{item.colorAlias}}</view>
+        </view>
+        <view class="a_list a_right" bindtap="chicunHide">
+          <icon type="cancel" size="50rpx" color="#000" />
+        </view>
+      </view>
+      <view class="details_sizeOne_B">
+        <view class="b_title">尺码</view>
+        <view class="b_ul">
+          <view data-index="{{index}}" class="b_li {{index==0 && c_li.length<2?'b_list':''}} {{index==size_list_num?'b_list':''}} {{chimaList[index]?'chima_list':''}}" wx:for="{{sizes}}" wx:key="size" bindtap="sizeChange">{{item.sizeAlias}}</view>
+        </view>
+      </view>
+      <view class="details_sizeOne_D">
+        <view class="c_number">
+          <view class="c_add" catchtap="add_number">+</view>
+          <input class="c_num" type="number" value="{{nums}}" disabled="true"/>
+          <view class="c_jian" catchtap="jian_number">-</view>
+        </view>
+        <text>库存：{{stock_nums}}</text>
+      </view>
+      <view class="buy_true" bindtap="submitChange">确认</view>
+    </view>
+  </view>
+</view>
+<!-- 热销推荐/猜你喜欢 -->
+<!-- <dmpGoods projeckName="{{projeckName}}" itemId="{{itemId}}"  wx:if="{{isShowDmp && itemId}}"></dmpGoods> -->
+<!-- 20210816 9999 -->
+<dmpGoods sceneId="gwc102" sceneType="2" itemId="{{itemId}}"  wx:if="{{isShowDmp && itemId}}"></dmpGoods>
+</view>

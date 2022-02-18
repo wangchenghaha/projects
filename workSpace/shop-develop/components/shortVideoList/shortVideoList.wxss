@@ -1,0 +1,52 @@
+.bg {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  position: relative;
+}
+
+.bg .topView {
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: black;
+  text-align: center;
+  border-bottom: 1rpx solid #F7F9FA;
+}
+
+.bg .topView-rightView {
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #ACAEAE;
+  text-align: center;
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+}
+
+.bg .botomListView {
+  width: 100%;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-top: 15rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.bg .botomListView .listView {
+  display: inline-block;
+  width: 240rpx;
+  height: auto;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg .botomListView .playBtn {
+  position: absolute;
+  top: 35%;
+  left: 80rpx;
+  width: 80rpx;
+  opacity: .8;
+}

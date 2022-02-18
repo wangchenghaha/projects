@@ -1,0 +1,230 @@
+image{
+  width: 100%;
+}
+$borderColor:#e8e8e8;
+.flex-bet{
+  display: flex;
+  justify-content: space-between;
+}
+.screen{
+  position: relative;
+  @extend .flex-bet;
+  padding-bottom: 20rpx;
+  border-bottom: solid 1rpx #dfdfdf;
+  text{
+    font-size: 30rpx;
+    line-height: 35rpx;
+  }
+  &-title{
+    padding-left: 10rpx;
+    border-left: solid 4rpx #000;
+  }
+  &-btn{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &-icon{
+    margin-left: 10rpx;
+    width: 24rpx;
+  }
+  &-content{
+    position: absolute;
+    left: 0;
+    top: 55rpx;
+    padding: 10rpx 20rpx;
+    width: 100%;
+    background: #fff;
+    border: solid 1rpx #ccc;
+    box-sizing: border-box;
+    transform: scale(0);
+    transform-origin: right top;
+    transition: 0.3s;
+    &.animate{
+      transform: scale(1);
+    }
+    &.hide{
+      transform: scale(0);
+    }
+    .screen-header{
+      @extend .flex-bet;
+      padding: 10rpx 0;
+      border-bottom: solid 1rpx $borderColor;
+    }
+    .screen-date{
+      margin-top: 30rpx;
+      @extend .flex-bet;
+      align-items: center;
+      .date{
+        flex: 1;
+        background: #f2f2f2;
+        font-size: 30rpx;
+        border-radius: 30rpx;
+        text-align: center;
+      }
+    }
+    .screen-channel{
+      margin-top: 30rpx;
+      @extend .flex-bet;
+      align-items: center;
+      .channel-item{
+        flex: 1;
+        margin: 0 10rpx;
+        background: #f2f2f2;
+        padding: 10rpx 0;
+        text-align: center;
+        &.selected{
+          background: #f7d3d3;
+          color: #d92222;
+        }
+      }
+    }
+    .screen-order{
+      margin-top: 10rpx;
+      .status{
+        margin-top: 20rpx;
+        margin-left: 80rpx;
+        @extend .flex-bet;
+        text{
+          flex: 1;
+          text-align: center;
+          padding: 10rpx 0;
+          margin: 0 10rpx;
+          background: #f2f2f2;
+          &.selected{
+            background: #f7d3d3;
+            color: #d92222;
+          }
+        }
+      }
+    }
+  }
+  &-left{
+    display: block;
+    width: 80rpx;
+  }
+}
+.order-list{
+  flex-direction: column;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: solid 1rpx $borderColor;
+  .goods-img{
+    width: 200rpx;
+    margin-right: 20rpx;
+  }
+  .order-code{
+    font-size: 30rpx;
+  }
+  .goods{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text{
+      padding-bottom: 15rpx;
+      font-size: 28rpx;
+      line-height: 30rpx;
+    }
+    &-name{
+      font-size: 30rpx;
+      font-weight: bold;
+    }
+    &-sku{
+      padding-bottom: 25rpx;
+      font-size: 38rpx;
+      color: #a5a5a5;
+    }
+    .customer{
+      @extend .flex-bet;
+      align-items: flex-end;
+      &-wrapper{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        .avatar{
+          margin: 0 10rpx;
+          width: 60rpx;
+          height: 60rpx;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+      .order-status{
+        padding: 10rpx 15rpx;
+        color: #fff;
+        &.watting-receive{
+          background:#000;
+        }
+        &.watting-shipment{
+          background: #d92222;
+        }
+        &.refunding{
+          background: #bebebe;
+        }
+      }
+    }
+  }
+  .arrow{
+    position: relative;
+    margin: 5rpx auto;
+    width: 40rpx;
+    height: 40rpx;
+    border-bottom: solid 2rpx #ccc;
+    border-left: solid 2rpx #ccc;
+    transition: 0.3s;
+    //transform: rotate(-45deg);
+    transform-origin: center;
+    animation: changeOpacity 1s infinite;
+    &.rotate{
+      //transform: rotate(135deg);
+      animation: changeOpacityShow 1s infinite;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      left: -10rpx;
+      top: 9rpx;
+      width: 40rpx;
+      height: 40rpx;
+      border-bottom: solid 2rpx #ccc;
+      border-left: solid 2rpx #ccc;
+    }
+  }
+  .order-info{
+    padding: 10rpx 0;
+    margin-bottom: 20rpx;
+    font-size: 28rpx;
+    border-bottom: solid 1rpx #ccc;
+    .order-item{
+      line-height: 45rpx;
+      text{
+        text-decoration: line-through;
+        font-size: 24rpx;
+      }
+    }
+    .order-status{
+      color: red;
+    }
+  }
+}
+@keyframes changeOpacity {
+  0%,100%{
+    opacity: 1;
+    transform: scale(1) rotate(-45deg);
+  }
+  50%{
+    opacity: 0.5;
+    transform: scale(0.8) rotate(-45deg);
+  }
+}
+@keyframes changeOpacityShow {
+  0%,100%{
+    opacity: 1;
+    transform: scale(1) rotate(135deg);
+  }
+  50%{
+    opacity: 0.5;
+    transform: scale(0.8) rotate(135deg);
+  }
+}

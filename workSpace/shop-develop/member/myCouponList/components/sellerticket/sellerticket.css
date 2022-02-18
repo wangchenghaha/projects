@@ -1,0 +1,40 @@
+.ant-sellerticket-wrapper {
+  box-sizing: border-box;
+  word-break: break-all;
+  width: 0;
+  height: 0;
+}
+.ant-sellerticket-wrapper view,
+.ant-sellerticket-wrapper cover-view,
+.ant-sellerticket-wrapper cover-image,
+.ant-sellerticket-wrapper text,
+.ant-sellerticket-wrapper swiper,
+.ant-sellerticket-wrapper swiper-item,
+.ant-sellerticket-wrapper input,
+.ant-sellerticket-wrapper picker,
+.ant-sellerticket-wrapper textarea,
+.ant-sellerticket-wrapper form {
+  box-sizing: border-box;
+  word-break: break-all;
+}
+.ant-sellerticket-wrapper button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  line-height: initial;
+}
+.ant-sellerticket-wrapper button::after {
+  border-radius: 0;
+  border: none;
+}
+.ant-sellerticket-wrapper .seat-area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}

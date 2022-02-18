@@ -1,0 +1,23 @@
+<view class="wrap">
+    <view class="customerInfo">
+        <view class="baseInfo">
+            <view class="text">会员姓名：{{customerName}}</view>
+            <view class="text">会员等级：{{customerLevel}}</view>
+            <view class="text">会员积分：{{customerPoint}}</view>
+        </view>
+        <view class="showInfo">
+            <image class="customerIcon" src="{{customerIcon}}" />
+            <view class="customerNick">{{customerNick}}</view>
+        </view>
+    </view>
+    <view class="orderDetail">
+        <view class="text">订单号：{{orderNumber}} <text>复制</text></view>
+        <view class="text">订单件数：x{{orderCount}}件</view>
+        <view class="text">订单支付总额：￥{{orderPrice}}</view>
+        <view class="text">付款时间：{{orderPayTime}}</view>
+        <view class="text">退款时间：{{orderRefundTime}}</view>
+        <view class="text">绑定导购及门店：{{orderStore}}</view>
+        <view class="text">门店信息：{{orderStoreInfo}}</view>
+    </view>
+    
+</view>

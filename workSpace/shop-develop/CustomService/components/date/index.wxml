@@ -1,0 +1,32 @@
+<view class="modal" catchtap='hidemodal' style='display: {{showDateBol ? "block": "none"}}'>
+    <view class="modal-body" catchtap='stop'>
+        <view class="modal-header">
+            <view class="title">
+                <block wx:if="{{showtype === 'date'}}">
+                    选择到店日期
+                </block>
+                <block wx:if="{{showtype === 'time'}}">
+                    <view class="backicon" bindtap='backtodate'>
+                        <image class="image" src="../../common/icon/left.png"/>
+                    </view>        
+                    选择到店时间
+                </block>
+            </view>
+            <view class="close_btn" catchtap='hidemodal'>
+                <image class="image" src="../../common/icon/close_2.png"/>
+            </view>
+        </view>
+        <view class="modal-content">
+            <view class="date-item {{item.select? 'active':''}} {{item.is_reserve == 0 && 'disbaled'}} {{index < 4 ? 'bordertop':''}} {{(index+1)%4 === 1 ? 'borderleft':''}}" wx:for="{{datelist}}" wx:key="{{index}}" data-index='{{index}}' bindtap='selectDate'>{{item.date}}</view>
+            <view class="timebox" style="left: {{showtype ==='date'?'100%':'0'}}">
+                <view class="date-item {{item.select? 'active':''}} {{index < 4 ? 'bordertop':''}} {{(index+1)%4 === 1 ? 'borderleft':''}}" wx:for="{{timelist}}" wx:key="{{index}}" data-index='{{index}}' bindtap='selecttime'>{{item.value}}</view>
+            </view>
+        </view>
+
+        <view class="footer">
+            <view class="btnbox" hover-class="hoverclass">
+                <button class="btn" catchtap='submitForm'>{{showtype ==='date' && ist == 1 ? '继续':'确定'}}</button>
+            </view>
+        </view>
+    </view>
+</view>

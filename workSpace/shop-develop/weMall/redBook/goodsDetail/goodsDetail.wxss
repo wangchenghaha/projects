@@ -1,0 +1,47 @@
+.content {
+  padding-bottom: 200rpx;
+}
+.content image {
+  display: block;
+  width: 100%;
+}
+.content .goods {
+  margin: 0 auto;
+  padding-bottom: 100rpx;
+  width: 96%;
+  flex-wrap: wrap;
+}
+.content .goods-item {
+  margin-top: 20rpx;
+  flex: 0 1 48%;
+}
+.content .goods-item .goods-name {
+  max-width: 350rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content .goods-item .pay-price {
+  font-size: 28rpx;
+}
+.content .goods-item .original-price {
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  color: #ccc;
+  text-decoration: line-through;
+}
+.content .goods-item .discount {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  font-size: 26rpx;
+  border: solid 1rpx red;
+  color: red;
+  border-radius: 10rpx;
+}
+
+/*# sourceMappingURL=goodsDetail.wxss.map */

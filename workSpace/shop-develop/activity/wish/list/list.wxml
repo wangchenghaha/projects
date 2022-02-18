@@ -1,0 +1,18 @@
+<view class="wrap">
+  <wish-header wx:if="{{wishDetail.xinyuandanId}}" wishDetail="{{wishDetail}}"></wish-header>
+  <view class="content">
+    <view class="goods-content">
+      <view wx:if="{{wishDetail.skuList.length}}">
+        <goods-list showIcon="{{false}}" goodsList="{{wishDetail.skuList}}" bgColor="#F1E5E5"></goods-list>
+      </view>
+    </view>
+  </view>
+  <canvas class="my-canvas" canvas-id="myCanvas" style="height: {{canvas.height}}px; width: {{canvas.width}}px"></canvas>
+  <button open-type="share" class="share-btn"></button>
+  <share-footer
+      shareUserText="分享给好友"
+      shareSync="{{true}}"
+      bindshareUser="onShareAppMessage"
+      bindshareMoment="generateGuideQR"
+  ></share-footer>
+</view>

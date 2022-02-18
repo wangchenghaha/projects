@@ -1,0 +1,39 @@
+.wrap {
+  min-height: 100%;
+  background: #F1E5E5;
+  padding-bottom: 200rpx;
+}
+.wrap .goods-content {
+  margin: 0 auto;
+  width: 690rpx;
+}
+.wrap .fixed-bot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  z-index: 99;
+}
+.wrap .fixed-bot .btn {
+  margin: 10rpx auto;
+  width: 690rpx;
+}
+.wrap .fixed-bot .btn-item {
+  flex: 1;
+  font-size: 36rpx;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.wrap .fixed-bot .btn-finish {
+  border-radius: 40rpx 0 0 40rpx;
+  background: #F71111;
+}
+.wrap .fixed-bot .btn-join {
+  border-radius: 0 40rpx 40rpx 0;
+  background: #000;
+}
+
+/*# sourceMappingURL=openDetail.wxss.map */

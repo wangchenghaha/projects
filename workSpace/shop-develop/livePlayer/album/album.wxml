@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="album" wx:if="{{list.length}}">
+    <view class="album-item" wx:for="{{list}}" wx:key="id">
+      <image class="main-img" src="{{item.mainImg}}" data-url="{{item.miniConfigUrl}}" bindtap="onClick" mode="widthFix"></image>
+      <view class="desc flex-bet" wx:if="{{item.title}}">
+        <text class="title">{{item.title}}</text>
+        <text class="arrow"></text>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="text-c">暂无数据</view>
+</view>
+<go-top bindtap="goTop"></go-top>

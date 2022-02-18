@@ -1,0 +1,159 @@
+page{
+    background-color: #eee; 
+}
+.wrap{ 
+    width:100%; 
+    height:100%; 
+    clear:both; 
+  }
+  
+  .horizontalCenter{
+      display: flex;
+      align-items: center;
+  }
+
+  
+.horizontalCenter image{
+    width: 60rpx;
+} 
+
+.defualtText{
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #000;
+}
+
+.orderDetail{
+    width:100%;
+    padding: 30rpx 30rpx 30rpx;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.address{
+    width: 100%;
+    background: #fdf4de;
+    padding: 30rpx 30rpx;
+    margin-top: 20rpx; 
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.address image{
+    width: 60rpx;
+}
+
+.address text{
+    width: 96%;
+    font-size: 28rpx;
+    margin-left: 10rpx;
+}
+
+.expressPosting{
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 20rpx;
+}
+
+.postNotic{
+    background: #ffdede;
+    padding: 30rpx 30rpx;
+}
+
+.postNotic .text{
+    font-size: 28rpx;
+}
+
+.postInfo{
+    background: white;
+    padding: 30rpx 30rpx;
+    margin-top: 20rpx;
+}
+
+.postDetail{
+    width: 80%;
+    padding: 30rpx 30rpx;
+}
+
+.goods-item{
+    width: 80%;
+}
+
+.noExpressInfo{
+    width: 100%;
+    text-align: center;
+    font-size: 32rpx;
+    color: gray;
+}
+
+.expressWaiting{
+    width: 100%;
+    background: #fdf4de;
+}
+
+.expressContent{
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx; 
+}
+
+.waittingContent{
+    background: #fff;
+    padding: 30rpx 30rpx;
+}
+
+.centenLayout{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rpx;
+}
+
+.isShowExpress{
+    border: 1rpx solid gray;
+    height: 70rpx;
+    border-radius: 70rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.isShowExpress text{
+    font-size: 32rpx;
+    color: gray;
+}
+
+.isShowExpress image{
+    width: 45rpx;
+    height: 45rpx;
+    margin-left: 10rpx;
+}
+
+.bottomInfo{
+    display: flex;
+    width: 100%;
+    margin-top: 20rpx;
+    margin-bottom: 50rpx;
+}
+
+.bottomeFrame{
+    display: flex;
+    border: 1rpx solid gray;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 32rpx;
+    flex: 1;
+    margin: 30rpx 30rpx;
+}
+.bottomInfo image{
+    width: 60rpx;
+    height: 60rpx;
+}

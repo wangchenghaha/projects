@@ -1,0 +1,89 @@
+<comp-nav-dynamic id="comp-nav-dynamic"></comp-nav-dynamic>
+<comp-register id="comp-register"></comp-register>
+<comp-auth id="comp-auth"></comp-auth>
+<view class="questionnaire" style="padding-top:{{navHeight}}px">
+    <movable-area style="width:100%;height:100%">
+        <movable-view class="store-coverImg"  direction="vertical" bindtap="openFloatUrl">
+            <image class="" src="{{questions.evaluate.page_float_img}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        </movable-view>
+        <view class="store-information">
+            <view class="shop-name">{{shop_no}}</view>
+            <view class="order-num">
+                订单号：
+                <text>{{order_no}}</text>
+            </view>
+        </view>
+        <view class="title">{{questions.evaluate.title}}</view>
+        <view class="questionnaire-description" wx:if="{{questions.evaluate.desc}}"><text>{{questions.evaluate.desc}}</text></view>
+        <view class="question-list">
+            <view class="list" wx:for="{{questions.evaluate.evaluate_questions}}" wx:key="index">
+                <view class="typeOne" wx:if="{{item.type == 1}}">
+                    <view class="list-title">
+                        <text class="sort-index" selectable="false" space="false" decode="false">{{index+1}}.</text>
+                        <text class="sort-title" selectable="false" space="false" decode="false">{{item.title}}</text>
+                        <text class="must" wx:if="{{item.is_must == 1}}">*</text>
+                    </view>
+                    <view class="list-tips" wx:if="{{item.desc}}">{{item.desc}}</view>
+                    <view class="pointed-star">
+                        <block wx:for="{{5}}" wx:key="index" wx:for-index="indexs" wx:for-item="items">
+                            <view class="star-list" bindtap="scoring" data-question="{{index}}" data-index="{{indexs}}">
+                                <image class="" src="{{indexs+1 <= item.sign?'../../assets/images/star_red.png':'../../assets/images/star_grey.png'}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+                <view class="typeTwo" wx:if="{{item.type == 2}}">
+                    <view class="list-title">
+                        <text class="sort-index" selectable="false" space="false" decode="false">{{index+1}}.</text>
+                        <text class="sort-title" selectable="false" space="false" decode="false">{{item.title}}</text>
+                        <text class="must" wx:if="{{item.is_must == 1}}">*</text>
+                    </view>
+                    <view class="list-tips"><text class="" selectable="false" space="false" decode="false">{{item.desc}}</text></view>
+                    <view class="pointed-star">
+                        <view wx:for="{{11}}" bindtap="chooseScond" wx:for-index="indexs" data-num="{{indexs+1}}" data-question="{{index}}" wx:for-item="items" class="score-list {{indexs+1 <= item.sign?'active':''}}">
+                            {{indexs}}
+                        </view>
+                        <!-- <view class="movable-view">
+                            <movable-area class="movable-area">
+                                <movable-view class="movable-views" bindchange="movableChange" data-question="{{index}}" inertia="{{true}}" direction="horizontal"></movable-view>
+                            </movable-area>
+                        </view> -->
+                    </view>
+                </view>
+                <view class="typeThree" wx:if="{{item.type == 3}}">
+                    <view class="list-title">
+                        <text class="sort-index" selectable="false" space="false" decode="false">{{index+1}}.</text>
+                        <text class="sort-title" selectable="false" space="false" decode="false">{{item.title}}</text>
+                        <text class="must" wx:if="{{item.is_must == 1}}">*</text>
+                    </view>
+                    <view class="list-tips">{{item.desc}}</view>
+                    <view class="pointed-star">
+                        <view class="step {{indexs+1 == item.sign?'active':''}} " wx:for="{{5}}" wx:for-index="indexs" wx:for-item="items" bindtap="scoring" data-question="{{index}}" data-index="{{indexs}}">
+                            <view class="step-circular"></view>
+                            <view class="step-name">{{satisfiedList[indexs].title}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="typeFour" wx:if="{{item.type == 4}}">
+                    <view class="list-title">
+                        <text class="sort-index" selectable="false" space="false" decode="false">{{index+1}}.</text>
+                        <text class="sort-title" selectable="false" space="false" decode="false">{{item.title}}</text>
+                        <text class="must" wx:if="{{item.is_must == 1}}">*</text>
+                    </view>
+                    <view class="list-tips">{{item.desc}}</view>
+                    <view class="pointed-star pointed-textarea">
+                        <textarea name="" id="" placeholder="" maxlength="200" class="textarea" value="{{item.content}}" bindinput="changeContent" data-question="{{index}}"></textarea>
+                        <view class="limit">{{item.content.length}}/200</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="sub-btn" bindtap="_subForm" style="background: url({{questions.evaluate.submit_btn_img}}) no-repeat; background-size: cover;"></view>
+    </movable-area>
+</view>
+<view class="model" style="top:{{navHeight}}px" wx:if="{{model != ''}}">
+    <image class="" src="{{model}}" mode="widthFix"></image>
+    <view class="model" catchtap="">
+        <view class="btn" catchtap="_openHandle"></view>
+    </view>
+</view>

@@ -1,0 +1,189 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container .banner {
+  width: 100%;
+}
+
+.container .showUserImg {
+  width: 100%;
+  margin-top: -70rpx;
+}
+
+.container .showUserImg .userImagebg {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 100%;
+  background: white;
+}
+
+.container .showUserImg .userImagebg .dashLine {
+  width: 108rpx;
+  height: 108rpx;
+  border: 1rpx #909090 dashed;
+  border-radius: 100%;
+}
+
+.container .showUserImg .userImagebg .dashLine .userImage {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.container .nickName {
+  margin-top: -10rpx;
+  font-size: 26rpx;
+  color: black;
+}
+
+.container .navi {
+  width: 100%;
+  display: flex;
+  margin-top: 20rpx;
+  border-top: 2rpx solid black;
+  border-bottom: 2rpx solid black;
+}
+
+.container .navi .naviTilte {
+  width: 50%;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+
+.container .navi .sel {
+  color: white;
+  background: black;
+}
+
+.container .navi .nor {
+  color: black;
+  background: white;
+}
+
+.container .wishList {
+  width: 100%;
+}
+
+.container .wishList .no-goods {
+  padding: 80rpx 0;
+  margin: 0 auto;
+  width: 500rpx;
+}
+
+.container .wishList .no-goods .noImage {
+  width: 500rpx;
+}
+
+.container .receiveList {
+  width: 100%;
+}
+
+.container .receiveList .no-goods {
+  padding: 80rpx 0;
+  margin: 0 auto;
+  width: 500rpx;
+}
+
+.container .receiveList .no-goods .noImage {
+  width: 500rpx;
+}
+
+.container .wish-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 100rpx;
+  width: 100%;
+  background: #f4f4f4;
+}
+
+.container .wish-bottom .wish-notice {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 30rpx;
+  color: #909090;
+}
+
+.container .wish-bottom .wish-notice .wish-title {
+  width: 10%;
+  font-size: 28rpx;
+}
+
+.container .wish-bottom .wish-notice .inputContext {
+  width: 90%;
+  border: 2rpx #909090 solid;
+  height: 100rpx;
+  font-size: 26rpx;
+}
+
+.container .wish-bottom .change {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10rpx;
+  margin-right: 20rpx;
+  text-align: right;
+  font-size: 24rpx;
+}
+
+.container .wish-bottom .address {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 10rpx;
+}
+
+.container .wish-bottom .address .adIcons {
+  width: 10%;
+}
+
+.container .wish-bottom .address .adIcons .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container .wish-bottom .address .address-info {
+  width: 80%;
+}
+
+.container .wish-bottom .address .address-info .user {
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.container .wish-bottom .address .address-info .user .phone {
+  margin-left: 30rpx;
+}
+
+.container .wish-bottom .address .address-info .details {
+  font-size: 20rpx;
+  color: #909090;
+}
+
+.container .wish-bottom .address .address-info .noAddress {
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.container .wish-bottom .address .mark {
+  color: #909090;
+  font-size: 30rpx;
+}
+
+.container .fixed-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 2rpx solid black;
+}
+
+.container .fixed-bottom .fixed-item {
+  flex: 1;
+  line-height: 100rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}

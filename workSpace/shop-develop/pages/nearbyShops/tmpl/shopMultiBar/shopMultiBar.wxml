@@ -1,0 +1,46 @@
+<template name="shopMultiBarTmpl">
+  <view class='shop_wrapper_vertical'>
+    <view class="shop_pre_frame_title">
+        <view class='shop_pre_shop_name'>{{shopBean.shopNameNn||shopBean.shopNameCn}}</view>
+    </view>
+    <view class="shop_wrapper_horizontal">
+        <view class='shop_pre_frame_left_1'>
+            <view class="shop_multi_layout_left_bar">
+                <view class="shop_multi_layout_left_img">
+                    <image class="img_location_1" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_location_2.png"/>
+                </view>
+                <view class='shop_pre_address'  bind:tap="onTmplNavToShopClick"  data-shop-bean="{{shopBean}}">{{shopBean.address}}</view>
+                <image class="img_copy_address" src="/images/icon_copy_black.png" mode="widthFix" bind:tap="onTmplCopyShopAddress"  data-address="{{shopBean.address}}"/>
+            </view>
+           <view class="shop_multi_layout_left_bar">
+               <view class="shop_multi_layout_left_img">
+                    <image class="img_clock_1"  src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_phone_nearby_shop_detail.png"/>
+               </view>
+                <view class='shop_pre_address'  catch:tap="onTmplShopPhoneCall"  data-shop-bean="{{shopBean}}">{{shopBean.o2oShopPhone?shopBean.o2oShopPhone:''}}
+                    {{brand=='JACKJONES'?'':shopBean.cellphone?'/':''}}{{brand=='JACKJONES'?'':shopBean.cellphone?shopBean.cellphone:''}}
+                    </view>
+            </view>
+            <view class="shop_multi_layout_left_bar">
+                <view class="shop_multi_layout_left_img">
+                    <image class="img_clock_1" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_clock_1.png"/>
+                </view>
+                <!-- <view class='shop_pre_address'>营业时间：{{shopBean.openTime}} ~ {{shopBean.closeTime}}</view> -->
+                <view class='shop_pre_address'>营业时间：10:00 ~ 22:00</view>
+            </view>
+        </view>
+        <view class='shop_pre_frame_right'>
+            <view class='vertical_line_2'></view>
+
+            <view class="frame_bag" catch:tap="onTmplShopPhoneCall" data-shop-bean="{{shopBean}}">
+                <image class="img_shop_multi_normal" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_phone_7.png" mode="aspectFit"></image>
+                <view class="shop_multi_tip">联系</view>
+            </view>
+            
+            <view class="frame_nav" catch:tap="onTmplNavToShopClick" data-shop-bean="{{shopBean}}">
+                <image class="img_shop_multi_normal" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_nav_3.png" mode="aspectFit"></image>
+                <view class="shop_multi_tip">{{shopBean.distance}}km</view>
+            </view>
+        </view>
+    </view>
+  </view>
+</template>

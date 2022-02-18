@@ -1,0 +1,127 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container .userInfo {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.container .userInfo .avatarImg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  margin-left: 20rpx;
+}
+
+.container .userInfo .nickName {
+  font-size: 28rpx;
+  color: black;
+  margin-left: 10rpx;
+}
+
+.container .userInfo .foucsed {
+  width: 160rpx;
+  line-height: 60rpx;
+  background: #ddd7d7;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 60rpx;
+  color: #fff;
+  margin-right: 30rpx;
+}
+
+.container .userInfo .foucs {
+  width: 160rpx;
+  line-height: 60rpx;
+  background: #000;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 60rpx;
+  color: #fff;
+  margin-right: 30rpx;
+}
+
+.container .swiper {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 30rpx;
+  height: 1130rpx;
+}
+
+.container .swiper-image {
+  width: 100%;
+  border-radius: 20rpx;
+}
+
+.container .content {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.container .description {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #9a9798;
+}
+
+.container .optionArea {
+  width: 94%;
+  margin-left: 3%;
+  height: 100rpx;
+  border-bottom: 2rpx solid #d6cccc;
+}
+
+.container .optionArea .optionImg {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.container .optionArea .optionTxt {
+  font-size: 28rpx;
+  color: #9a9798;
+  margin-left: 10rpx;
+}
+
+.container .optionArea .goodsImg {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 5rpx;
+}
+
+.container .optionArea .share {
+  position: absolute;
+  width: 200rpx;
+  height: 80rpx;
+  background: none;
+}
+
+.container .optionArea .share::after {
+  border: none;
+}
+
+.container .recommend {
+  width: 94%;
+  height: 100rpx;
+  margin-left: 3%;
+  font-size: 28rpx;
+  color: #000;
+  margin-top: 30rpx;
+}
+
+.container .bottomeView {
+  width: 100%;
+  height: 68rpx;
+}

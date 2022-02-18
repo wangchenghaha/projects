@@ -1,0 +1,117 @@
+
+page{
+    background: #fff;
+}
+view.container{
+    position: relative;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cc2d29;
+    // background-image: linear-gradient(to right bottom, #cc3e29, #ed6c5b);
+    image.bg_img{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+.avatar-nickname-box {
+    position: absolute;
+    left: 114rpx;
+    top: 178rpx;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    padding-right: 90rpx;
+    .userAvatar {
+      width: 140rpx;
+      height: 140rpx;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .avatar_center{
+        width: 30rpx;
+    }
+    .avatar_right{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        flex: 1;
+        .avatar_right_top{
+            margin-top: 40rpx;
+            .userNick {
+              font-size: 32rpx;
+              margin-left: 20rpx;
+            }
+        }
+        .avatar_right_bottom{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            line-height: 24rpx;
+            width: 100%;
+            margin-left: 38rpx;
+        }
+    }
+  }
+view.borad_btn{
+    position: absolute;
+    top: 370rpx;
+    left: 230rpx;
+    width: 280rpx;
+    height: 60rpx;
+    z-index: 9;
+    view{
+        width: 280rpx;
+        height: 60rpx;
+        // background: #fff;
+    }
+}
+view.payment_btn_group{
+    width: 600rpx;
+    box-sizing: border-box;
+    padding: 40rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: absolute;
+    left: 65rpx;
+    top: 980rpx;
+    z-index: 9;
+    view{
+        width: 240rpx;
+        height: 80rpx;
+        // background: #fff;
+    }
+    button{
+        display:block;
+padding-left:0px;
+padding-right:0px;
+line-height:10px;
+background-color: rgba(255,255,255,0);
+width: 240rpx;
+height: 80rpx;
+    }
+    button::after{
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+    }
+    .button-hove{
+        background: transparent;
+    }
+}
+.fission{
+    margin: 0rpx 80rpx 60rpx;
+    height: 190rpx;
+    overflow: hidden;
+}
+    .post{
+        position: relative;
+        top: 0;
+        z-index: 10;
+    }
+}

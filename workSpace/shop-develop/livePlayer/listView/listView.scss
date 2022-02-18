@@ -1,0 +1,243 @@
+.bg{
+    width: 100%;
+    min-height: 100%;
+    background-color: #F1F1F1;
+    .headView{
+        width: 100%;
+        height: 300rpx;
+        &-subViews{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            .leftView{
+                width: 55%;
+                height: 100%;
+                position: relative;
+            }
+            .rightView{
+                flex: 1;
+                height: 100%;
+                background: linear-gradient(to right, #A3ABB1,#8FA2AE);
+                position: relative;
+                &-subView{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 100%;
+                    height: auto;
+                    text-align: center;
+                    .title{
+                        font-size: 38rpx;
+                        color: white;
+                        font-weight: bold;
+                    }
+                    .yuyue{ 
+                        font-size: 34rpx; 
+                        line-height: 70rpx; 
+                        font-weight: bold; 
+                        color: white; 
+                        display: inline-block; 
+                        background-color: black; 
+                        padding-left: 25rpx; 
+                        padding-right: 25rpx; 
+                        margin-left: auto; 
+                        margin-right: auto; 
+                        margin-top: 10rpx; 
+                    } 
+                }
+            }
+        }
+    }
+    .list{
+        margin-top: 20rpx;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        &-view{
+            width: 100%;
+            height: auto;
+            padding: 20rpx;
+            border-bottom: 1rpx solid #EFEFEF;
+            box-sizing: border-box;
+            .topView{
+                width: 100%;
+                height: 50rpx;
+                display: flex;
+                flex-direction: row;
+                .left{
+                    flex: 1;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+
+                    overflow: hidden;
+                    .huifang{
+                        width: 100rpx;
+                        height: 100%;
+                        background-color: #5F7AA1;
+                        border-radius: 50rpx;
+                        text-align: center;
+                        font-size: 26rpx;
+                        line-height: 50rpx;
+                        color: white;
+                    }
+                    .title{
+                        font-size: 32rpx;
+                        margin-left: 20rpx;
+                        line-height: 55rpx;
+                        color: #424242;
+                        font-weight: 0;
+                    }
+                }
+                .right{
+                    color: #5F5F5F;
+                    font-size: 28rpx;
+                    line-height: 55rpx;
+                }
+            }
+            .topView1{
+                margin-top: 10rpx;
+                margin-bottom: 10rpx;
+                width: 100%;
+                font-size: 25rpx;
+                color: #898989;
+            }
+            .centerView{
+                width: 100%;
+                height: auto;
+                position: relative;
+                &-imgView{
+                    width: 100%;
+                    height: auto;
+                    max-height: 400rpx;
+                    overflow: hidden;
+                    border-radius: 20rpx;
+
+                    position: relative;
+                    &-img{
+                        width: 100%;
+
+                        vertical-align: middle;
+                    }
+                    &-zhezhao{
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: black;
+                        opacity: 0.3;
+                    }
+                }
+                &-view{
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    text-align: center;
+                    .title{
+                        font-size: 90rpx;
+                        color: white;
+                        font-weight: bold;
+                        line-height: 90rpx;
+                    }
+                    .subTitle{
+                        margin-top: 10rpx;
+                        display: inline-block;
+                        background-color: white;
+                        opacity: 0.7;
+                        font-size: 28rpx;
+                        padding: 0 15rpx;
+                        color: black;
+                    }
+                    .img{
+                        display: flex;
+                        width: 100rpx;
+                        height: 100rpx;
+                        border-radius: 100%;
+                        margin-top: 30rpx;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+            }
+            .bottomView{
+                margin-top: 20rpx;
+                width: 100%;
+                white-space: nowrap;
+
+                &-view{
+                    display: inline-block;
+                    width: 32%;
+                    height: auto;
+
+                    overflow: hidden;
+                    position: relative;
+                    .img{
+
+                        width: 100%;
+                        border-radius: 35rpx;
+                        vertical-align: middle;
+
+                    }
+                    .baokuan{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 80rpx;
+                        height: 80rpx;
+                    }
+                    .timer{
+                        display: flex;
+                        color: white;
+                        font-size: 21rpx;
+                        background-color: black;
+                        opacity: .4;
+                        width: auto;
+                        height: 35rpx;
+                        line-height: 35rpx;
+                        border-radius: 35rpx;
+                        padding-left: 15rpx;
+                        padding-right: 15rpx;
+                        position: absolute;
+                        bottom: 10rpx;
+                        right: 10rpx;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* 回到顶部 */
+.go-top{
+    position: fixed;
+    right: 20rpx;
+    bottom: 100rpx;
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255,255,255,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    image{
+      width: 40rpx;
+      height: 40rpx;
+    }
+  }
+  .subscribe--live-player-subscribe__btn
+  {
+    background : black !important;
+    border-radius : 0 !important;
+
+    font-size: 34rpx !important;  
+  }

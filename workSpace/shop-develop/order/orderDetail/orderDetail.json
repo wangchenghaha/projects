@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "order-item":"../components/orderItem/orderItem",
+    "copy-icon": "../../components/copyIcon/copyIcon"
+  }
+}

@@ -1,0 +1,382 @@
+@charset "UTF-8";
+page {
+  background: #003bae;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container .mainbg {
+  width: 100%;
+}
+
+.container .brandLogo {
+  position: absolute;
+  width: 380rpx;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .backImg {
+  position: absolute;
+  width: 40rpx;
+  top: 8%;
+  left: 5%;
+}
+
+.container .gameCount {
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  top: 1336rpx;
+  transform: translateX(-50%);
+  font-size: 28rpx;
+  color: #fff;
+  -webkit-text-stroke: 1rpx blue;
+  font-weight: 600;
+}
+
+.container .startGame {
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  background: none;
+  z-index: 9;
+  left: 50%;
+  top: 1100rpx;
+  transform: translateX(-50%);
+}
+
+.container .guide {
+  position: absolute;
+  width: 100rpx;
+  z-index: 9;
+  left: 50%;
+  top: 1233rpx;
+  transform: translateX(-5%);
+}
+
+.container .rule {
+  position: absolute;
+  width: 140rpx;
+  line-height: 50rpx;
+  background: blue;
+  color: #fff;
+  text-align: center;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  font-size: 26rpx;
+  right: 0;
+  top: 200rpx;
+  z-index: 9;
+  opacity: .7;
+}
+
+.container .illustrated {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background: none;
+  top: 1150rpx;
+  left: 45rpx;
+  z-index: 9;
+}
+
+.container .giftList {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background: none;
+  top: 1150rpx;
+  right: 45rpx;
+  z-index: 9;
+}
+
+.voucher {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.voucher .showModel {
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.voucher .showModel .illustratTitle {
+  width: 80%;
+}
+
+.voucher .showModel .illustratArea {
+  width: 85%;
+  height: 720rpx;
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.voucher .showModel .illustratArea .illustrat {
+  width: 100%;
+  position: absolute;
+}
+
+.voucher .showModel .giftArea {
+  width: 100%;
+  height: 1000rpx;
+  position: relative;
+}
+
+.voucher .showModel .giftArea .giftBg {
+  position: absolute;
+  width: 100%;
+}
+
+.voucher .showModel .giftArea .tab {
+  position: absolute;
+  width: 150rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  top: 90rpx;
+  color: white;
+  background: #cc256c;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.voucher .showModel .giftArea .selected {
+  background: #72d2ff;
+}
+
+.voucher .showModel .giftArea .points {
+  position: absolute;
+  font-size: 24rpx;
+  top: 100rpx;
+  font-style: oblique;
+  color: #ffff00;
+  right: 80rpx;
+}
+
+.voucher .showModel .giftArea .listArea {
+  width: 90%;
+  margin-left: 5%;
+  height: 750rpx;
+  margin-top: 170rpx;
+  overflow: scroll;
+}
+
+.voucher .showModel .giftArea .listArea .giftListArea {
+  width: 100%;
+  display: flex;
+}
+
+.voucher .showModel .giftArea .listArea .giftListArea .flow-item {
+  width: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.voucher .showModel .giftArea .listArea .giftListArea .flow-item .couponBg {
+  width: 90%;
+  height: 240rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ff73b7;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.voucher .showModel .giftArea .listArea .giftListArea .flow-item .couponBg .couponImage {
+  width: 90%;
+  height: 120rpx;
+}
+
+.voucher .showModel .giftArea .listArea .giftListArea .flow-item .couponBg .couponPoint {
+  color: white;
+  font-size: 24rpx;
+  margin-top: 5rpx;
+}
+
+.voucher .showModel .giftArea .listArea .giftListArea .flow-item .changeBtn {
+  width: 85%;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+
+.voucher .showModel .giftArea .listArea .giftListArea .flow-item .haveStock {
+  color: red;
+  background: #ffff00;
+}
+
+.voucher .showModel .giftArea .listArea .giftListArea .flow-item .noStock {
+  color: black;
+  background: gray;
+}
+
+.voucher .showModel .giftArea .ruleArea {
+  width: 82%;
+  position: relative;
+  margin-left: 9%;
+  margin-top: 160rpx;
+}
+
+.voucher .showModel .giftArea .ruleArea .ruleText {
+  font-size: 28rpx;
+  color: blue;
+  margin-top: 20rpx;
+}
+
+.voucher .showModel .bigGiftbg {
+  width: 80%;
+  height: 720rpx;
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.voucher .showModel .bigGiftImage {
+  width: 36%;
+  position: absolute;
+  margin-top: 235rpx;
+}
+
+.voucher .showModel .tan_close {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 50rpx;
+}
+
+.voucher .showModel .openGift {
+  width: 300rpx;
+  height: 100rpx;
+  margin-top: 50rpx;
+}
+
+.bounced {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+
+.bounced-firstPop {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bounced-firstPop .toastBg {
+  width: 80%;
+  position: relative;
+}
+
+.bounced-firstPop .toastBg .backgroundImg {
+  position: absolute;
+  width: 100%;
+}
+
+.bounced-firstPop .toastBg .info_1 {
+  position: absolute;
+  width: 100%;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bounced-firstPop .toastBg .info_1 .commonTxt {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  color: #fff;
+}
+
+.bounced-firstPop .toastBg .info_1 .pointTxt {
+  font-size: 42rpx;
+  color: red;
+  font-weight: 900;
+  -webkit-text-stroke: 1rpx white;
+}
+
+.bounced-firstPop .toastBg .invite {
+  width: 300rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bounced-firstPop .toastBg .share {
+  width: 300rpx;
+  height: 80rpx;
+  position: absolute;
+  background: none;
+  top: 290rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bounced-firstPop .toastBg .share::after {
+  border: none;
+}
+
+.bounced-firstPop .toastBg .againGame {
+  width: 260rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bounced-firstPop .toastBg .close {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.musicImg {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  top: 22%;
+  z-index: 9;
+  right: 6%;
+  opacity: 0.5;
+}
+
+/* 旋转class */
+.music-on {
+  animation: music-rotate 4s linear infinite;
+}
+
+/* 旋转动画 */
+@keyframes music-rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

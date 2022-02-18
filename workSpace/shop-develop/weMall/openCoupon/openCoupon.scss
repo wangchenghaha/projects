@@ -1,0 +1,114 @@
+image{
+  display: block;
+  width: 100%;
+}
+@mixin after($width, $height){
+  content: '';
+  display: block;
+  width: $width;
+  height: $height;
+  position: absolute;
+}
+.coupon{
+  overflow: hidden;
+  .banner{
+    position: relative;
+    margin: 50rpx auto 0;
+    width: 95%;
+    .coupon-icon{
+      position: absolute;
+      left: 50%;
+      top: -50rpx;
+      margin-left: -40rpx;
+      width: 80rpx;
+      height: 80rpx;
+      border: solid 10rpx #fff;
+      border-radius: 50rpx;
+      background: #ea231c;
+      .coupon-img{
+        width: 50rpx;
+      }
+    }
+  }
+  .coupon-content{
+    position: relative;
+    margin: 0 auto;
+    width: 95%;
+    height: 460rpx;
+    overflow: hidden;
+    .coupon-bg{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+    .card-wrapper{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      .card{
+        padding: 10rpx 0;
+        margin: 40rpx auto 20rpx;
+        width: 440rpx;
+        background-repeat: no-repeat !important;
+        background-size: 100% 100% !important;
+        &-info{
+          color: #ea231c;
+          .value{
+            padding: 0 20rpx;
+            font-size: 80rpx;
+            line-height: 80rpx;
+          }
+          text{
+            font-size: 40rpx;
+          }
+        }
+        &-threshlod{
+          color: #333333;
+          padding-top: 20rpx;
+          font-size: 46rpx;
+        }
+      }
+      .btn{
+        margin: 40rpx auto 0;
+        width: 220rpx;
+        height: 60rpx;
+        line-height: 60rpx;
+        font-size: 30rpx;
+        border-radius: 30rpx;
+        background: #ea231c;
+      }
+      .dot{
+        position: relative;
+        margin-top: 40rpx;
+        width: 100%;
+        height: 0rpx;
+        border-bottom: dotted 2rpx #4c4c4c;
+        &::after{
+          @include after(30rpx, 30rpx);
+          left: -13rpx;
+          top: -10rpx;
+          background: #fff;
+          border-radius: 50%;
+        }
+        &::before{
+          @include after(30rpx, 30rpx);
+          right: -13rpx;
+          top: -10rpx;
+          background: #fff;
+          border-radius: 50%;
+        }
+      }
+      .card-desc{
+        padding-left: 30rpx;
+        margin-top: 15rpx;
+        font-size: 26rpx;
+        color: #999999;
+        line-height: 40rpx;
+      }
+    }
+  }
+}

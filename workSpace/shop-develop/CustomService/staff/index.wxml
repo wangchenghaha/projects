@@ -1,0 +1,29 @@
+<view class='wrapper'>
+  <view class='header'>
+    <swiper class="images_header" indicator-dots="{{indicatorDots}}"
+        circular="{{circular}}"
+        indicator-dots="true"
+        indicator-color="#eee"
+        indicator-active-color="rgba(0,0,0,0.6)"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" :key="index">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <view class="content">
+    <introduce title='{{io.title}}' img='{{io.detail_pic}}'/>
+    <view class="select-icon">
+      <image style="width:40rpx;height:25rpx;" class="select-img" src="../common/image/sel.png"></image>
+    </view>
+    <!-- 操作栏 -->
+    <view class="footer">
+      <view class="btnbox" hover-class="hoverclass">
+        <button class="btn" wx:if='{{isAuth}}' catchtap='activeRunning'>查看店铺预约记录</button>
+        <button wx:if='{{!isAuth}}' open-type="getUserInfo" plain="{{true}}" class="btn" bindgetuserinfo="getUserAuth">查看店铺预约记录</button>
+      </view>
+    </view>
+  </view>
+</view>

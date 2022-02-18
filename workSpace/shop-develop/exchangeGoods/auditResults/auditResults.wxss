@@ -1,0 +1,30 @@
+@import "../mycss.wxss";
+@import "../components/steps/index";
+
+.layout_father{ width:100%; height:auto; clear:both; overflow:hidden;}
+.tip_0{
+    line-height: 100rpx;
+    text-align: center;
+    width: 100%;
+ }
+
+ .tip_failed_detail{
+     color: #B8B8B8;
+    padding: 17rpx 17rpx 7rpx 17rpx;
+    font-size: 24rpx;
+    border-top: 2rpx solid #EBEBEB;
+}
+.hotline{font-size: 24rpx;text-align: right;padding-right: 37rpx;margin-bottom: 17rpx;}
+.text_line_frame{ width:100%; clear:both; overflow:hidden;font-size:24rpx;
+    display: flex;flex-direction: column;padding: 17rpx 0 0 0;border-bottom: 2rpx solid #EBEBEB;}
+.ex_time{padding-bottom: 12rpx;padding-top: 12rpx;}
+.original_code{padding: 12rpx 0 12rpx 0;border-top: 2rpx solid #EBEBEB;}
+.key_left{ float:left; padding-left:20rpx; color:black;}
+.value_right{ float:right; padding-right:20rpx; color:black;}
+.grey_0{color:#B8B8B8;}
+.grey_1{color:#858585;}
+
+.tip_1{width: 100%;height: 74rpx;font-weight: bold;padding-left: 20rpx;text-align: left;
+    display: flex;align-items: center;font-size: 26rpx;color: gray;margin-top: 17rpx;}
+.bottom_list{width: 100%;height: auto;overflow: hidden;border-top: 1px solid #EBEBEB;}
+

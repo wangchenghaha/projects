@@ -1,0 +1,45 @@
+<view class="we-member">
+  <view class="logo">
+    <image src="{{logo}}" mode="aspectFit"></image>
+  </view>
+  <view class="login-list">
+    <block wx:for="{{loginList}}" wx:key="login">
+      <view class="text-c login-item font-bold">{{item}}</view>
+    </block>
+  </view>
+
+  <view class="operation">
+    <view class="font-bold tip">请完成以下{{wxWork ? '1' : '2'}}歩操作:</view>
+    <view class="step">
+      <block wx:for="{{steps}}" wx:key="steps">
+        <view class="step-item">
+          <text class="text-c">{{index+1}}</text>. 允许{{item.text}}
+        </view>
+      </block>
+    </view>
+    <view class="btn-wrapper">
+      <block wx:if="{{!wxInfo}}">
+        <button class="btn-color" type="primary" bindtap="getUserProfile" >
+          <view class="icon">
+            <image src="/images/weixin.png" mode="widthFix"></image>
+          </view>
+          ① {{steps[0].text}}
+        </button>
+      </block>
+      <block wx:else>
+        <button class="btn-bg" type="default" disabled>
+          <view class="icon">
+            <image src="/images/weixin.png" mode="widthFix"></image>
+          </view>
+          ① {{steps[0].text}}
+        </button>
+      </block>
+      <block wx:if="{{!wxPhone && wxInfo}}">
+        <button class="btn-color" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">② 允许{{steps[1].text}}</button>
+      </block>
+      <block wx:else>
+        <button class="btn-bg" type="default" disabled>② 允许{{steps[1].text}}</button>
+      </block>
+    </view>
+  </view>
+</view>

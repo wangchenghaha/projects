@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    height: 100%;
+    .title{
+        margin-top: 20rpx;
+        width: 92%;
+        margin-left: 20rpx;
+        font-size: 26rpx;
+        color: #000;
+    }
+    .subTitles{
+        width: 92%;
+        font-size: 23rpx;
+        margin-left: 40rpx;
+        color: #000;
+    }
+
+    .bottomV{
+        height: 68rpx;
+    }
+}

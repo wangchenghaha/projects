@@ -1,0 +1,51 @@
+.main image {
+  display: block;
+  width: 100%;
+}
+.main .banner {
+  width: 100%;
+}
+.main .go-home {
+  margin: 20rpx 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+}
+.main .go-home .logo {
+  margin-left: 30rpx;
+  width: 200rpx;
+  height: 25rpx;
+}
+.main .go-home text {
+  display: inline-block;
+  padding: 5rpx 10rpx 5rpx 30rpx;
+  font-size: 28rpx;
+  border: solid 2rpx #000;
+  border-right: none;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+}
+.main .goods {
+  margin: 20rpx auto;
+  width: 95%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.main .goods-item {
+  flex: 0 1 49%;
+  margin-bottom: 10rpx;
+}
+.main .goods-item .goods-name {
+  padding: 10rpx 0;
+  font-size: 26rpx;
+}
+.main .goods-item .goods-price {
+  font-size: 24rpx;
+  color: #e23d4d;
+}
+.main .goods-item .goods-price text {
+  font-size: 34rpx;
+  line-height: 30rpx;
+}
+
+/*# sourceMappingURL=hotSaleWeek.wxss.map */

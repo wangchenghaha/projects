@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "兑换记录",
+  "usingComponents": {
+    "van-tab": "../component/tab/index",
+    "van-tabs": "../component/tabs/index"
+  }
+}

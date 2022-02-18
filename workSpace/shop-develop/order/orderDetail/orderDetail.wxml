@@ -1,0 +1,57 @@
+<view class="content">
+  <view class="header title flex-bet">
+    <text>订单状态</text>
+    <text class="status">{{orderDetail.orderStatus}}</text>
+  </view>
+  <view class="title order-code flex-bet">
+    <view class="flex-start">
+      <text>订单号：{{orderDetail.bigorderCode}}</text>
+      <copy-icon text="{{orderDetail.bigorderCode}}" />
+    </view>
+    <text>{{orderDetail.payTime || orderDetail.createTime}}</text>
+  </view>
+  <view class="address title">
+    <view class="flex-bet">
+      <text class="font-bold">收货人： {{orderDetail.consignee}}</text>
+      <text>{{orderDetail.contactTel}}</text>
+    </view>
+    <view class="address-detail">
+      收货地址：{{orderDetail.province}}{{orderDetail.city}}{{orderDetail.area}} {{orderDetail.detailAddress}}
+    </view>
+  </view>
+  <view class="goods-list">
+    <view class="goods-item" wx:for="{{orderDetail.goodsOrderList}}" wx:key="goodsId">
+      <order-item order="{{item}}">
+        <view class="btn-refund flex-start" slot="btn">
+          <text class="btn-item"
+                wx:for="{{orderBtnList}}"
+                wx:key="status"
+                bindtap="onClick"
+                data-type="{{item.type}}"
+          >{{item.text}}</text>
+        </view>
+        <view class="express flex-bet" slot="express" data-index="{{index}}" data-type="express" bindtap="onClick">
+          <view class="express-icon flex-center {{item.expressInfo ? 'bg-color' : ''}}">
+            <image src="{{item.expressInfo ? expressCar : noExpressCar}}" mode="aspectFit" />
+          </view>
+          <view class="text">
+            <block wx:if="{{item.expressInfo}}">
+              <view class="address">{{item.expressInfo.lResultState}} {{item.expressInfo.eChildList[0].context}}</view>
+              <text class="tip" wx:if="{{item.expressInfo.eChildList[0].fTime}}">{{item.expressInfo.expressCompany}} {{item.expressInfo.eChildList[0].fTime}}</text>
+            </block>
+            <view class="address tip" wx:else>温馨提示：仓库或门店处理中，待打包完成后将为您发货。</view>
+          </view>
+          <text class="arrow {{item.expressInfo ? 'color' : ''}}"></text>
+        </view>
+      </order-item>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="tip">共{{orderDetail.goodsTotalCount}}件商品 合计：￥{{orderDetail.payPrice}}</view>
+    <view class="btn-wrap flex-bet" wx:if="{{footer.length}}">
+      <button class="btn-item text-c" wx:for="{{footer}}" wx:key="type" data-type="{{item.type}}" bindtap="onClick">
+        {{item.text}}
+      </button>
+    </view>
+  </view>
+</view>

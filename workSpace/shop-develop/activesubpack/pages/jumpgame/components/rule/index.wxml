@@ -1,0 +1,53 @@
+<view class="rule-contaniner" wx:if="{{showModal}}">
+    <view class="rule-wrap" >
+        <image class="rule-bg" src="../../img/rule-bg.png" />
+        <view class="rule-content">
+            <scroll-view scroll-y="true" class="rule-scroll">
+                <view class="rule-title">/ 活动时间 /</view>
+                <view class="rule-cont">2020年9月4日-2020年9月25日</view>
+                <view class="rule-title">/ 活动奖品 /</view>
+                <view class="rule-cont">通关好礼：</view>
+                <view class="rule-cont">VERO MODA 30元无门槛代金券</view>
+                <view class="rule-cont">积分奖励 签到礼品：</view>
+                <view class="rule-cont">50元满减券（满499元减50元）</view>
+                <view class="rule-cont">排名奖励：</view>
+                <view class="rule-cont">1~5名：Marie Cat 指定服饰一件</view>
+                <view class="rule-cont">6~20名：VERO MODA精品女包1个</view>
+                <view class="rule-cont">21~50名：VERO MODA时尚太阳镜1副</view>
+                <view class="rule-title">/ 参与方式 /</view>
+                <view class="rule-cont">1. 进入“VERO MODA”微信公众号（微信号：veromoda_CN）</view>
+                <view class="rule-cont">在对话框输入关键词“玛丽猫”，点击弹出信息即可进入游戏。</view>
+                <view class="rule-cont">2. 进入“VERO MODA”小程序，首页即可参与游戏。</view>
+                <view class="rule-title">/ 游戏方式 /</view>
+                <view class="rule-cont rule-left">1. 用户进入互动页面，点击开始，弹出活动引导页，关闭引导页3秒后自动进入游戏界面。</view>
+                <view class="rule-cont rule-left">2. 用户点击屏幕控制游戏界面中玛丽猫向前跳跃，接触屏幕时间越长，跳跃距离越远。</view>
+                <view class="rule-cont rule-left">3. 用户需要控制跳跃距离，使玛丽猫跳落正方体上。如跳跃后掉下正方体则判定游戏失败。一次性完成10次跳跃后，游戏成功通关。</view>
+                <view class="rule-cont rule-left">4. 用户通关游戏后跳转到抽奖页面，即可开启1次礼盒，其余礼盒可通过分享转发给好友领取。参与抽奖若中奖，则直接领取奖品。</view>
+                <view class="rule-cont rule-left">5. 用户每天可参与3次，分享好友可额外获得1次参与机会，每天最多只能参与4次游戏  </view>
+                <view class="rule-cont rule-left">6. 本游戏设置积分排行榜，排名前5名参与者可获得Marie cat指定服饰1件，排名第6~50名参与者可获得相对应的排行奖品。  </view>
+                <view class="rule-cont rule-left">7. 本次游戏设置签到环节，凡是累计签到10天参与用户，都将可以获得50元满减券（满499元减50元）</view>
+                <view class="rule-cont rule-left">8. 所获奖品信息可在“我的奖品”界面中查看。</view>
+                <view class="rule-title">/ 奖品领取与使用 /</view>
+                <view class="rule-cont rule-left">1. 游戏中奖用户：活动期间，按照提示即可领取奖品；</view>
+                <view class="rule-cont rule-left">2. 积分排名获奖用户：游戏结束时间为25日24点，奖品兑换日期为26日~30日，在游戏界面“我的奖品”中完成领奖信息（姓名、联系电话、地址）填写，奖品将通过快递邮寄给获奖用户，逾期不填写，将视为自动放弃奖品。</view>
+                <view class="rule-cont rule-left">3、无门槛优惠券、满减券的使用方式请详见券中的使用说明</view>
+                <view class="rule-title">/ 注意事项 /</view>
+                <view class="rule-cont rule-left">1. VERO MODA是绫致时装（天津）有限公司旗下品牌，绫致时装（天津）有限公司及其关联公司（以下简称“绫致”）为本次活动的举办方。请中奖用户在活动期间准确填写信息，并保持手机畅通，若信息填写错误或未在规定时间内填写完成导致无法发放奖品，将视为用户自行弃奖。</view>
+                <view class="rule-cont rule-left">2. 本次活动中，不同种类的奖品每人各仅限兑奖1次。</view>
+                <view class="rule-cont rule-left">3. 奖品过期未兑奖或使用，将视为自动弃奖，不予补发。</view>
+                <view class="rule-cont rule-left">4. 凡以不正当手段（包括但不限于作弊、刷奖、扰乱系统、实施网络攻击等）参与活动的用户，绫致有权在不事先通知的前提下撤销其活动资格并不予发放奖品或收回已发放的奖品。因此给绫致造成损失的，绫致有权向侵权者追究法律责任。</view>
+                <view class="rule-cont rule-left">5. 为保证活动的真实性、公平性，绫致有权要求参与用户出示身份证明进行活动参与及获奖资格的核实。</view>
+                <view class="rule-cont rule-left">6. 如您有其他活动相关疑问，请在工作时间内（周一至周五9:00-18:00，节假日除外）拨打活动联系电话：4008101666，我们将竭诚为您解答。</view>
+                <view class="rule-title">/ 免责声明 /</view>
+                <view class="rule-cont rule-left">1. 鉴于互联网之特殊性质，活动期间若发生黑客攻击、电信部门技术调整导致重大影响、病毒侵袭、网络故障、微信平台、宽带、域名解析故障或其他网络设备或技术提供商的服务延迟、服务障碍或任何其他类似事件，致使活动无法正常进行，在法律法规允许的范围内绫致不对活动暂停或终止给参与者造成的损失进行额外赔偿或补偿。</view>
+                <view class="rule-cont rule-left">2. 活动中如因系统维护或升级将暂停服务，绫致将提前发布公告通知。暂停服务期间给用户造成的一切不便与损失，在法律法规允许的范围内绫致均得免责。</view>
+                <view class="rule-cont rule-left">3. 活动奖品的领取将以用户填写的信息为准。若出现填写错误、冒领等情况，由用户自行承担相关责任，在法律允许的范围内绫致不对用户的损失进行额外赔偿或补偿。</view>
+                <view class="rule-cont rule-left">4. 由于参与用户自身参与活动方式不当或不正确而导致不能参与活动，在法律法规允许的范围内绫致不承担任何责任。</view>
+                <view class="rule-cont rule-left">5. 凡以任何方式参加本次活动的，视为自愿接受本免责声明的约束。</view>
+                <view class="rule-cont rule-left">6. 本声明未涉及的问题参见国家有关法律法规，当本声明与国家法律法规冲突时，以国家法律法规为准。</view>
+                <view class="rule-cont rule-left">7. 本活动在法律许可范围内由绫致解释。</view>
+            </scroll-view>
+        </view>
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+</view>

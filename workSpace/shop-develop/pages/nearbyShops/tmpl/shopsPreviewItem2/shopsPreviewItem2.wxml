@@ -1,0 +1,23 @@
+<template name="shopsPreviewItem2Tmpl">
+  <view class='shop_pre_frame'>
+    <!-- <view class='{{ifShowStock||ifShowNav?"shop_pre_frame_left_0":"shop_pre_frame_left_1"}}'> -->
+    <view class='shop_pre_frame_left_2'>
+      <view class="shop_pre_frame_title">
+        <view class='shop_pre_shop_name'>{{shopNameCn}}</view>
+        <view class="shop_pre_distance" wx:if="{{distance}}">{{distance}}km</view>
+      </view>
+      <view class='shop_pre_address'>{{address}}</view>
+    </view>
+    <view class='shop_pre_frame_right_2'>
+      <!-- <view class="frame_bag"  data-shop-code="{{shopCode}}"> -->
+        <view class="tip0">库存：{{mapList[0][sku15]}}件</view>
+      <!-- </view> -->
+      <!-- <view class='vertical_line'  wx:if="{{ifShowNav}}" ></view> -->
+      <view class="frame_nav" catch:tap="onTmplNavToShopClick" data-shop-bean="{{item}}">
+        <image class="img_nav" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_nav_3.png" mode="aspectFit"></image>
+        <!-- <view class="tip">路线</view> -->
+      </view>
+    </view>
+    <!-- <image wx:if="{{!(ifShowStock||ifShowNav)}}" class="right_img" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_arrow_right_black_thin.png" mode="aspectFit"></image> -->
+  </view>
+</template>

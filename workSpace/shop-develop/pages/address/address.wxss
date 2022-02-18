@@ -1,0 +1,55 @@
+
+
+.wrap{ width:100%; height:100%; clear:both;}
+
+.null{ width:100%; height:auto; clear:both; overflow:hidden; padding:90rpx 0;}
+.null text{ display:block; width:100%; height:30rpx; font-size:26rpx; line-height:30rpx;color:#AEAEAE;text-align:center;}
+.addressList{ width:100%; margin-bottom: 168rpx;position: flex;}
+.li{
+    width:100%;
+    height:auto;
+    border-bottom: 20rpx solid #ebebeb;
+    padding:20rpx;
+    background: #fff;
+    box-sizing: border-box;
+}
+.liCon{ width:100%; height:auto; box-sizing:border-box; padding:20rpx; padding-bottom:10rpx; border-bottom: 1rpx solid #ebebeb}
+.liCon .name{ font-size:30rpx; line-height:50rpx; color:#000; padding-bottom:6rpx;}
+.liCon .dizhi{ width:100%; height:auto; clear:both; overflow:hidden; font-size:26rpx; line-height:45rpx; color:#000;}
+.liCon .dizhi .left{ color:#AEAEAE;}
+.liCon .myTel{ width:100%; height:44rpx; font-size:26rpx; line-height:30rpx; color:#AEAEAE; border-bottom:2rpx dashed #000;}
+
+.liBottom{ width:100%; height:80rpx;clear:both; overflow: hidden; font-size:28rpx; line-height:80rpx; color:#000;
+position:relative;}
+
+.liBottom .options{ font-size:30rpx; line-height:80rpx; color:#AEAEAE; float: right; margin-right:30rpx; display: flex; align-items: center;}
+.liBottom .options image{width: 40rpx; height: 40rpx; } 
+.liBottom .options text{font-size: 32rpx; color: black; margin-left: 10rpx;}
+
+.wx-switch-input{width:42px !important;height:20px !important;}
+.wx-switch-input::before{width:41px !important;height: 20px !important;}
+.wx-switch-input::after{width: 18px !important;height: 18px !important;}
+
+.addAddress{ 
+    width: 100%; 
+    height: 100rpx; 
+    background-color: #fff; 
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    }
+.addAddress .text{  
+    width: 90%; 
+    height: 80rpx; 
+    background-color: #000; 
+    border-radius: 50rpx;
+    color: #fff; 
+    font-size: 32rpx;  
+    line-height: 80rpx;
+    text-align: center;
+    }
+.bottomA{
+    height: 68rpx;
+}

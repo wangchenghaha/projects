@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle":"dark",
+	"navigationBarBackgroundColor": "#000",
+	"navigationBarTitleText": "会员中心",
+	"navigationBarTextStyle":"white",
+	"usingComponents":{
+		"my-tip":"/components/tip/tip",
+		"contact-serve": "/components/contactServe/contactServe"
+	  }
+}

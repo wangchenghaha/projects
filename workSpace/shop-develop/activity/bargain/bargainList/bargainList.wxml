@@ -1,0 +1,113 @@
+<view class="container">
+    <view class="mongolia" wx:if="{{showActivity}}"></view>
+    <view class="imageBg popup" wx:if="{{showActivity}}">
+        <view class="text1">恭喜你获得VIP权益</view>
+        <image src="{{activityPic}}" mode="widthFix"/>
+        <view class="text2">使用VIP权益发起砍价</view>
+        <view class="button1" bindtap="closeBtn">使用权益</view>
+    </view>
+    <view class="titlePic">
+         <image class="actImage" src="{{actImage}}" mode="widthFix" />
+         <view class="notice" bindtap="showActivity">
+            活动规则
+         </view>
+    </view>
+    <block wx:for="{{bargainListSuccess}}" wx:key="bargain">
+        <view class="bargainContainer" >
+            <view class="bargainMark">
+                {{item.isOver? "砍价关闭": item.isFinish? "砍价成功":"砍价进行中"}}
+
+            </view>
+            <view class="bargainDetail" wx:if="{{!item.orderType || item.orderType === 0}}" data-index="{{index}}" data-code="{{item.id}}" data-type="goShare" bindtap="onClick">
+                <image src="{{item.bargainGoodsDetail.picImage}}" mode="aspectFill" />
+                <view class="bargainInfo">
+                    <view class="t1">{{item.bargainGoodsDetail.goodsName}}</view>
+                    <view class="t3">单买价: ￥{{item.bargainGoodsDetail.goodsPrice}}</view>
+                    <view class="t4">可砍至: ￥{{item.bargainGoodsDetail.floorPrice}}</view>
+                </view>
+            </view>
+            <view class="bargainCouponDetail"  wx:if="{{item.orderType === 1}}" data-index="{{index}}" data-code="{{item.id}}" data-type="goShare" bindtap="onClick">
+                <image src="{{item.couponPic}}" mode="widthFix" />
+                <view class="t1" wx:if="{{item.isOver}}">助力关闭</view>
+                <view class="t1" wx:elif="{{item.isFinish}}">该优惠券已助力成功</view>
+                <view class="t1" wx:else> 还需助力<text style="font-size: 30rpx; font-weight: 600; color: #F03D53;" >{{item.remainHelpCount}}</text>次，免费拿券</view>
+            </view>
+           <view class="dargainTime">
+                <view class="rightTime">
+                    <view>距离结束还剩:</view>
+                    <view class="timer"> {{item.countDownTime.hou}} </view>
+                    <view style="margin-left: 8rpx;">:</view>
+                    <view class="timer"> {{item.countDownTime.min}} </view>
+                    <view style="margin-left: 8rpx;">:</view>  
+                    <view class="timer"> {{item.countDownTime.sec}} </view>
+                </view>
+                <view class="bargainBtn {{item.isOver? 'overbg':''}}"  data-index="{{index}}" data-code="{{item.id}}" data-type="goBargain" bindtap="onClick">{{item.isOver? "砍价已过期": item.isFinish?  item.orderType === 0? "去支付" : "查看优惠券":"继续砍价"}}</view>
+            </view>
+            <!-- 售罄蒙层 -->
+            <view class="mengceng" wx:if="{{item.isStockLess}}"></view>
+            <view class="stocklessImg" wx:if="{{item.isStockLess}}">
+                <image src="{{stockless}}" mode="widthFix"/>
+            </view>
+        </view>
+    </block> 
+
+    <view class="centerNotice">
+        <view class="centerContent">
+            <image  src="{{leftImage}}" mode="widthFix"/>
+            <text>{{bargainTitle}}</text>
+            <image  src="{{rightImage}}" mode="widthFix"/>
+        </view>
+
+    </view>
+
+     <!-- 砍券列表 -->
+    <view class="dargainCoupon" wx:for="{{bargainCouponList}}" wx:key="couponList" data-type="goCoupon" data-item="{{item}}" bindtap="onClick">
+        <image class="couponImage" src="{{item.picImage}}" mode="widthFix" />
+        <view class="goodsInfo">
+            <view class="goodsName">{{item.couponName}}</view>
+            <view class="textMark">
+            </view>
+            <view class="text1">
+                <text class="number">需助力 <text style="color: red;">{{item.helpCount}}</text> 次</text>
+                <text class="count">剩余<text style="color: orange;">{{item.stock}}</text></text>
+            </view>
+            <view class="text3">发起助力</view>
+            <!-- <view class="text2">可砍至 ￥<text style="font-size: 26rpx;">{{flowItem.floorPrice}}</text></view> -->
+        </view>
+    </view>
+
+    <!-- 分类 -->
+    <view class="dargainGoods" wx:for="{{bargainList}}" wx:key="bargainList" wx:for-item="flowRow">
+        <view class="flow-item" wx:for="{{flowRow}}" wx:for-item="flowItem" wx:key="flowArrRow" data-type="goDetail" data-code="{{flowItem.productCode}}" data-stock="{{flowItem.isHasStock}}" bindtap="onClick">
+            <image class="goodsImage" src="{{flowItem.picImage}}" mode='aspectFill' />
+            <view style="margin-left: 20rpx;">
+                <view class="goodsName">{{flowItem.goodsName}}</view>
+                <view class="textMark">
+                    <image class="iconMark" src="../../../images/red_notice.png" />
+                    {{flowItem.bargainSuccessNum}} 人砍价成功
+                </view>
+                <view class="text1">单买价 ￥{{flowItem.discountPrice}}</view>
+                <view class="text2">可砍至 ￥<text style="font-size: 28rpx; font-weight: 550;">{{flowItem.floorPrice}}</text></view>
+            </view>
+            <view class="text3">立即砍价</view>
+            <view class="mengceng" wx:if="{{!flowItem.isHasStock}}"></view>
+            <view class="stocklessImg" wx:if="{{!flowItem.isHasStock}}">
+                <image src="{{stockless}}" mode="widthFix"/>
+            </view>
+        </view>
+    </view>
+    <notice-pop wx:if="{{isShowNotice}}" ruleList="{{ruleList}}" activityTitle="{{activityTitle}}" bindcloseThisPop="closeThisPop"></notice-pop>
+
+    <view class="mongolia" wx:if="{{showInfo}}"></view>
+    <view class="submitInfo {{showInfo ? 'show' : ''}}">
+        <view class="close" data-type="close" bindtap="onClick">
+            <my-close color="#000" size="25"></my-close>
+        </view>
+        <view class="info">
+            <image src="{{couponInfo.picImage}}" mode="widthFix" />
+            <view class="info-goodName">好友帮忙助力{{bargainNum}}次，免费拿券！</view>
+            <view class="info-address">{{couponMark}}</view>
+            <view class="info-submitBtn"  data-type="couponOrder" bindtap="onClick">发起助力</view>
+        </view>
+    </view>
+</view>

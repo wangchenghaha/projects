@@ -1,0 +1,65 @@
+@import '../../common/sass/index.sass'
+.wrapper
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    transitiion: all 0.5s linear
+    background: $main
+    z-index: 1000
+    
+    .image
+        width: 0
+        height: 0
+        overflow: hidden
+    .content
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        text-align: center
+        .logo 
+            width: 286rpx
+            height: 189rpx
+            &.big
+                width: 326rpx
+                height: 217rpx
+            margin: 0 auto
+            +bg('logo-b')
+            
+        .rate
+            color: rgba(220, 126, 117, 1)
+            font-size: 64rpx
+            font-weight: bold
+            width: 500rpx
+            margin: 60rpx auto
+            text-shadow: 0 4rpx 8rpx rgb(137, 36, 42)
+            .tit
+                text-align: left
+            .desc
+                text-align: right
+
+        .percent
+            position: relative
+            width: 520rpx
+            height: 110rpx
+            border-radius: 56rpx
+            box-shadow: 0 0 30rpx rgb(137, 36, 42)
+            overflow: hidden
+            .inner
+                width: 0
+                height: 110rpx
+                background: rgba(220, 126, 117, 1)
+            .tit
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                font-size: 40rpx
+                color: white
+                font-weight: bold
+                text-align: center
+                line-height: 110rpx
+

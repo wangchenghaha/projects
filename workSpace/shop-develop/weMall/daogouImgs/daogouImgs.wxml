@@ -1,0 +1,9 @@
+
+
+<view class='wrap'>
+
+  <view class='li' wx:for="{{coverList}}" wx:key="coverList">
+    <image src='{{item}}' mode='widthFix' bindtap='clickImg' data-src='{{item}}'></image>
+  </view>
+
+</view>

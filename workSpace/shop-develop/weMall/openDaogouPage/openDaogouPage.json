@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "goods-list":"../components/shareGoodsList/goodsList",
+    "share-banner":"../components/guideShareBanner/guideShareBanner",
+    "good-list-one": "../components/goodsModelListOne/goodsList"
+  }
+}

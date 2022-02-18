@@ -1,0 +1,42 @@
+<view class="select-size {{show ? 'show' : ''}}" style="bottom: {{bottom}};">
+  <view class="close" data-type="close" bindtap="onClick">
+    <my-close color="#000" size="25"></my-close>
+  </view>
+  <view class="margin-auto">
+    <view class="goods-base flex-start">
+      <view class="preview">
+        <image src="https://cdn.bestseller.com.cn/goodsImagePC/VEROMODA/319237532/319237532J2G/240400/319237532J2G_p3.jpg" mode="widthFix"></image>
+      </view>
+      <view class="goods-info">
+        <view class="price">￥123</view>
+        <view class="stock">库存<text>150</text>件</view>
+        <view class="size">请选择尺码</view>
+        <view class="sku">123456789</view>
+      </view>
+    </view>
+    <view class="goods-base">
+      <view class="goods-title" data-type="selectColor" bindtap="onClick">颜色分类</view>
+      <view class="color">
+        <block wx:for="{{goodsColor}}" wx:key="color">
+          <text class="color-item {{colorIndex === index ? 'selected' : ''}}">{{item.colorAlias}}</text>
+        </block>
+      </view>
+    </view>
+    <view class="goods-base">
+      <view class="goods-title">尺码</view>
+      <view class="color">
+        <block wx:for="{{goodsColor[colorIndex].sizes}}" wx:key="size">
+          <text class="color-item {{item.selected ? 'selected' : ''}}" data-type="selectSize" data-index="{{index}}" bindtap="onClick">{{item.sizeAlias}}</text>
+        </block>
+      </view>
+    </view>
+    <view class="goods-base flex-bet">
+      <view class="goods-title">购买数量</view>
+      <view class="goods-num flex-start">
+        <block wx:for="{{goodsNum}}" wx:key="goodsNum">
+          <text style="width: {{item.width}}rpx" data-type="{{item.type}}">{{item.value}}</text> 
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

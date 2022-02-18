@@ -1,0 +1,118 @@
+.rd-container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.rule-container{
+  width: 60%;
+  padding: 0 10%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color:#fff;
+  transform: translate(-100%);
+  transition: all 1s; 
+}
+.rule-container.on{
+  transform: translate(0%);
+}
+.rule-container .icon-box{
+  position: absolute;
+  top: 50%;
+  right:0;
+  transform: translate(100%);
+}
+.rule-container .icon-box .icon-download{
+  display: none;
+}
+.rule-container .icon-box .icon-download.on{
+  display: block;
+}
+.rule-container .icon-box image{
+  display: block;
+  width: 95rpx;
+  height: 221rpx;
+}
+.rule-container .user{
+  padding: 60rpx 0;
+  border-bottom: 1rpx solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+.rule-container .user image{
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin-bottom: 20rpx;
+}
+.rule-container .user view{
+  font-size: 32rpx;
+  text-align: center;
+}
+.rule-container .rule view{
+  font-size: 24rpx;
+  padding: 10rpx 0;
+}
+.rule-container .rule .title{
+  font-size: 32rpx;
+  padding: 20rpx 0 10rpx;
+}
+
+.coupon-container{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  transition: all 1s;
+}
+.coupon-container.on{
+  transform: translateY(0%);
+}
+.coupon-box{
+  padding-bottom: 100rpx; 
+  width: 500rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+}
+.coupon-box.on{
+  transform: translate(0%);
+}
+.coupon-box .coupon{
+  display: block;
+  margin: 50rpx auto;
+  width: 308rpx;
+  height: 194rpx;
+}
+.coupon-box .button-area{
+  display: flex;
+  justify-content: space-around;
+}
+
+.coupon-box .button-area view{
+  width: 165rpx;
+  height: 68rpx;
+  text-align: center;
+  line-height: 68rpx;
+  background-color: #009ee6;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}
+
+
+
+
+
+

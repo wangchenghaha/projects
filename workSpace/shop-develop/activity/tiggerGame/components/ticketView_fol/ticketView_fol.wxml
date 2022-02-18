@@ -1,0 +1,65 @@
+<view class="bg">
+    <image src="{{imagePath}}ticketBgImg.jpeg" class="bgImageView" mode="aspectFill" />
+    <!-- 我的筹码/兑奖记录 -->
+    <scroll-view scroll-y="{{true}}" class="jiangpinView">
+        <view class="topView">
+            <view class="leftView">
+                <view class="text">我的筹码：<text style="font-weight: bold;">{{myNumber}}</text></view>
+                <image src="{{imagePath}}xiaopingguo.png" class="leftImage" />
+            </view>
+            <view class="rightView" bindtap="duijiangTap">
+                <image src="{{imagePath}}dhjl.png" style="width:100%;" mode="widthFix" />
+            </view>
+        </view>
+
+        <!-- 助力 -->
+        <view class="zhuliView_only" bindtap="share">
+            <image src="{{imagePath}}ticketBranner.png" style="width:100%;" mode="widthFix" />
+        </view>
+        <!-- 奖品列表 -->
+        <view class="rowView" wx:for="{{prizeDatas}}" wx:key="row" wx:for-index="indexx">
+            <view class="subView" wx:for="{{item}}" wx:key="rowindexx">
+                <image src="{{imagePath}}{{item.bgImg}}" style="width:100%;" mode="widthFix" />
+                <view class="title">{{item.type == 'C' ? '优惠券' : '代金券'}}</view>
+                <view class="imgView">
+                    <image src="{{item.giftPic}}" style="width:100%;height:100%" mode="aspectFit" />
+
+                </view>
+                <view class="moneyView">
+                    <view class="left">{{item.pointsRequire}}</view>
+                    <image src="{{imagePath}}xiaopingguo.png" class="right" />
+                </view>
+
+                <view data-detail="{{item}}" class="duihuan" bindtap="{{item.stock > 0 ? 'duihuan' : ''}}">{{item.stock > 0 ? '兑换' : '已兑完'}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="shuoming" bindtap="backView">返回</view>
+</view>
+<!-- 兑奖记录 -->
+<view class="bouncedBG" wx:if="{{canShow}}">
+    <!-- 透明层 -->
+    <view class="bouncedBG-opaView"></view>
+    <!-- 内容 -->
+    <view scroll-y class="bouncedBG-view">
+        <view class="imageView">
+            <image src="{{imagePath}}duijiangjilu1.png" style="width:100%;" mode="widthFix"  />
+            <scroll-view scroll-y="{{true}}" class="scroView">
+                <block wx:for="{{jiluDatas}}" wx:key="jilu">
+                    <view class="subRowView">
+                        <view class="subRowView-leftView">
+                            <image src="{{item.giftPic}}" class="leftImage" mode="aspectFit" />
+                        </view>
+                        <view class="subRowView-rightView">
+                            <view class="title">{{item.exchangeGiftName}}</view>
+                            <view class="bottomTitle">会员中心-我的优惠券 查看使用</view>
+                        </view>
+                    </view>
+                    <view class="line"></view>
+                </block>
+                <view class="noListView" wx:if="{{jiluDatas.length <= 0}}">暂无兑换记录~</view>
+            </scroll-view>
+            <view class="closed" bindtap="closed"></view>
+        </view>
+    </view>
+</view>

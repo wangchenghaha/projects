@@ -1,0 +1,547 @@
+.nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.margin-auto {
+  margin: 10rpx auto 0;
+  width: 95%;
+}
+
+.content {
+  font-size: 32rpx;
+  color: #000;
+  padding-bottom: 100rpx;
+}
+
+.content .fixed-right {
+  position: fixed;
+  top: 450rpx;
+  right: 20rpx;
+  z-index: 999;
+}
+
+.content .fixed-right .fixed-item {
+  position: relative;
+  margin-bottom: 20rpx;
+  width: 76rpx;
+  height: 76rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 2rpx 2rpx 5rpx #ccc;
+  overflow: hidden;
+}
+
+.content .fixed-right .fixed-item .share, .content .fixed-right .fixed-item .recommend-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.content .fixed-right .fixed-item .fixed-img {
+  width: 50%;
+}
+
+.content .fixed-right .fixed-item .fixed-img image {
+  width: 100%;
+}
+
+.content image {
+  display: block;
+  width: 100%;
+}
+
+.content .swiper {
+  height: 750rpx;
+  width: 100%;
+}
+
+.content .swiper-wrapper {
+  height: 750rpx;
+}
+
+.content .advanceContainer {
+  width: 100%;
+  height: 100rpx;
+  background: #eee;
+  clear: both;
+  display: flex;
+}
+
+.content .advanceContainer .leftInfo {
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(to right, #e73306, #facd04);
+  border-radius: 15rpx;
+  clear: both;
+}
+
+.content .advanceContainer .leftInfo .deposit {
+  color: #fff;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}
+
+.content .advanceContainer .leftInfo .deposit .depPrice {
+  font-size: 36rpx;
+}
+
+.content .advanceContainer .leftInfo .deposit .lastPrice {
+  background: red;
+  margin-left: 10rpx;
+  padding: 5rpx;
+}
+
+.content .advanceContainer .leftInfo .price {
+  color: #fff;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}
+
+.content .advanceContainer .leftInfo .price .curPrice {
+  font-size: 28rpx;
+}
+
+.content .advanceContainer .leftInfo .price .originalPrice {
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+
+.content .advanceContainer .rightTime {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+  color: red;
+}
+
+.content .advanceContainer .rightTime .timer {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background: red;
+  border-radius: 8rpx;
+  color: white;
+  margin-right: 2rpx;
+}
+
+.content .goods {
+  padding: 10rpx 0;
+}
+
+.content .goods-item {
+  padding: 3rpx 0;
+  line-height: 45rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.content .goods-name-sub {
+  font-size: 24rpx;
+  color: red;
+  font-weight: 500;
+}
+
+.content .goods-sku {
+  width: 100%;
+  text-align: center;
+  font-size: 22rpx;
+}
+
+.content .goods-price {
+  color: red;
+}
+
+.content .goods-price .pay-price {
+  font-size: 40rpx;
+  margin-right: 30rpx;
+}
+
+.content .goods-price .discount {
+  font-size: 24rpx;
+  padding: 3rpx 5rpx;
+  background: #ff5000;
+  color: #fff;
+}
+
+.content .goods .payNotice {
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-left: 10rpx;
+  display: flex;
+  height: 50rpx;
+  align-items: center;
+}
+
+.content .goods .payNotice .price {
+  font-size: 32rpx;
+  color: red;
+  margin-left: 30rpx;
+}
+
+.content .goods .payNotice .timer {
+  font-size: 20rpx;
+  font-weight: 500;
+  margin-left: 10rpx;
+}
+
+.content .goods .payNotice .info {
+  font-weight: 500;
+  margin-left: 30rpx;
+}
+
+.content .goods .payNotice .mark {
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  text-align: center;
+  border: 2rpx solid #000;
+  border-radius: 50%;
+  margin-left: 10rpx;
+}
+
+.content .goods .origin-price {
+  font-size: 26rpx;
+  color: #8B8B8B;
+}
+
+.content .goods .origin-price .line {
+  text-decoration: line-through;
+}
+
+.content .title {
+  font-size: 30rpx;
+  padding: 15rpx 0;
+  border-top: solid 1rpx #8B8B8B;
+}
+
+.content .coupon {
+  padding: 15rpx 0;
+  border-top: solid 1rpx #8B8B8B;
+  font-size: 28rpx;
+  background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/icon_arrow_right_dark_gray.png) no-repeat right center;
+  display: flex;
+  flex-direction: row;
+  background-size: auto 24rpx;
+}
+
+.content .coupon .text {
+  width: 40%;
+}
+
+.content .coupon .couponImgClass {
+  width: 68%;
+  height: 50rpx;
+  margin-left: 10rpx;
+}
+
+.content .set-list {
+  flex-wrap: wrap;
+}
+
+.content .set-list .set-item {
+  width: 48%;
+  padding-bottom: 30rpx;
+}
+
+.content .set-list .set-item .goods-name {
+  width: 100%;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content .set-list .set-item .goods-price {
+  padding: 15rpx 0;
+  font-size: 30rpx;
+}
+
+.content .set-list .set-item .btn-buy {
+  display: inline-block;
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #000;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+
+.content .details_size {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100000;
+}
+
+.content .details_size .details_opacity {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: 0;
+}
+
+.content .details_size .select-size {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: 0.3s;
+  transform: translateY(120%);
+}
+
+.content .details_size .select-size.show {
+  transition: 0.3s;
+  transform: translateY(0);
+}
+
+.content .details_size .select-size .close {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.content .details_size .select-size .margin-auto {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.content .details_size .select-size image {
+  display: block;
+  width: 100%;
+}
+
+.content .details_size .select-size .goods-base {
+  padding: 10rpx 0;
+  border-bottom: solid 2rpx #ccc;
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+
+.content .details_size .select-size .goods-base .preview {
+  position: relative;
+  margin-top: -50rpx;
+  width: 160rpx;
+}
+
+.content .details_size .select-size .goods-base .goods-info {
+  margin-left: 40rpx;
+}
+
+.content .details_size .select-size .goods-base .goods-info .price {
+  font-size: 28rpx;
+  color: #f00c0c;
+}
+
+.content .details_size .select-size .goods-base .goods-info .stock, .content .details_size .select-size .goods-base .goods-info .size, .content .details_size .select-size .goods-base .goods-info .sku {
+  padding: 5rpx 0;
+}
+
+.content .details_size .select-size .goods-base .goods-info .stock text, .content .details_size .select-size .goods-base .goods-info .size text, .content .details_size .select-size .goods-base .goods-info .sku text {
+  font-size: 32rpx;
+}
+
+.content .details_size .select-size .goods-base .goods-title {
+  padding: 10rpx 0 0 10rpx;
+}
+
+.content .details_size .select-size .goods-base .color {
+  padding: 10rpx 0;
+}
+
+.content .details_size .select-size .goods-base .color-item {
+  display: inline-block;
+  padding: 0 12rpx;
+  margin-right: 15rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  background: none;
+  border-radius: 10rpx;
+}
+
+.content .details_size .select-size .goods-base .color-item::after {
+  border: none;
+}
+
+.content .details_size .select-size .goods-base .color-item.selected {
+  background: #f00c0c;
+  color: #fff;
+}
+
+.content .details_size .select-size .goods-base .color-item.no-stock {
+  background: #f5f5f5;
+  color: #cccccc;
+}
+
+.content .details_size .select-size .goods-base .goods-num .limit {
+  width: 50rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.content .details_size .select-size .goods-base .goods-num text {
+  display: inline-block;
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 40rpx;
+  text-align: center;
+  border: solid 2rpx #ccc;
+  border-right: none;
+}
+
+.content .details_size .select-size .goods-base .goods-num text:nth-child(2) {
+  font-size: 28rpx;
+}
+
+.content .details_size .select-size .goods-base .goods-num text:last-child {
+  border-right: solid 2rpx #ccc;
+}
+
+.content .details_size .select-size .submitBtn {
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: red;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 40rpx;
+  margin-bottom: 68rpx;
+  margin-top: 30rpx;
+  margin-left: 10%;
+}
+
+.fixed-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.fixed-bottom .fixed-item {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+
+.fixed-bottom .fixed-item.border {
+  border: solid 2rpx #000;
+}
+
+.guide {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.guide-wrapper {
+  width: 672rpx;
+  height: 456rpx;
+  background: #fff;
+}
+
+.guide-title {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.guide-title.guide-title-bg {
+  background: #000;
+}
+
+.guide-input {
+  margin: 0 auto;
+  padding: 0 10rpx;
+  width: 580rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  border: solid 2rpx #ccc;
+  border-radius: 5rpx;
+}
+
+.guide .btn-wrapper {
+  margin: 50rpx auto 0;
+  width: 580rpx;
+}
+
+.guide .btn-wrapper .btn {
+  flex: 0 1 48%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #000;
+}
+
+.contentBottom {
+  height: 120rpx;
+  background: white;
+  border-top: #ccc solid 1rpx;
+}
+
+.contentBottom .lastPayNotice {
+  width: 300rpx;
+  background: white;
+  height: 80rpx;
+  font-size: 22rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30rpx;
+  border: 2rpx #a7a8a8 dashed;
+}
+
+.contentBottom .depositPay {
+  width: 40%;
+  background: red;
+  height: 120rpx;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentBottom .depositPay .h1 {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.contentBottom .depositPay .h2 {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.animate {
+  transform: scale(1);
+}
+
+.hide {
+  transform: scale(0);
+}

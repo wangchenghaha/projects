@@ -1,0 +1,69 @@
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.leftBtnView {
+  position: fixed;
+  left: 35rpx;
+  bottom: 90rpx;
+  width: auto;
+  height: 45rpx;
+  border-radius: 22.5rpx;
+  background-color: #6BBCAD;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  align-items: center;
+  transition: .2s;
+}
+
+.leftBtnView-show {
+  transform: translateY(200rpx);
+}
+
+.leftBtnView .buyCardView {
+  background-color: white;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftBtnView .buyCardView .buyCardImage {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.leftBtnView .centerView {
+  margin-left: 10rpx;
+  color: white;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  margin-top: -3.5rpx;
+}
+
+.leftBtnView .rightView {
+  width: 20rpx;
+  height: auto;
+}
+
+.zanView {
+  position: fixed;
+  right: 50rpx;
+  bottom: 300rpx;
+  width: auto;
+  height: auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.zanView-num {
+  font-size: 25rpx;
+  color: white;
+}

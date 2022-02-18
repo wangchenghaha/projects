@@ -1,0 +1,55 @@
+<!-- games/shooting/shooting.wxml -->
+<view class="content">
+    <view class="content1">
+        <image src="{{url1}}" mode="widthFix" />
+    </view>
+    <view class="content2">
+        <image src="{{url2}}" mode="widthFix" />
+        <view class="re-count">{{todayRemainCount}}</view>
+        <view class="open-tips" bindtap="openTips"></view>
+        <view class="city-list">
+            <view class="single-city" wx:for="{{cityList}}" data-index="{{index}}" wx:key="index">
+                <view class="vote-total">{{item.voteTotal}}</view>
+                <view class="single-city-btn" data-item="{{item}}" bindtap="clickVote"></view>
+            </view>
+        </view>
+        <view class="go-classify" bindtap="gotoWebView"></view>
+        <view class="coupon-con">
+            <view class="coupon-1" bindtap="getCoupon1"></view>
+            <view class="coupon-2" bindtap="getCoupon2"></view>
+        </view>
+    </view>
+    <view class="content3">
+        <image src="{{url3}}" mode="widthFix" />
+        <view class="swiper-content">
+            <swiper class="swiper-s" previous-margin="110rpx" bindchange="handleChange" next-margin="110rpx" indicator-dots="{{indicatorDots}}" circular="{{true}}" autoplay="{{autoplay}}" interval="{{interval}}" current="{{current}}" duration="{{duration}}">
+                <block wx:for="{{swiperImgs}}" wx:key="*this">
+                    <swiper-item>
+                        <view class="swiper-item">
+                            <image class="itemImg {{current == index ? 'active': ''}}" mode="widthFix" src="{{item}}" />
+                        </view>
+                    </swiper-item>
+                </block>
+            </swiper>
+            <!-- <image class="prev arrow" bindtap="prevImg" mode="widthFix" src="../../images/pintuan-sanjiao.png" />
+            <image class="next arrow" bindtap="nextImg" mode="widthFix" src="../../images/pintuan-sanjiao.png" /> -->
+        </view>
+    </view>
+    <view class="bg-black" wx:if="{{showTips}}">
+        <view class="tips">
+            <view class="close-tips" bindtap="closeTips"></view>
+            <view class="rules-list">
+                <view class="list-top">
+                    <view class="font-b">{{rulesData.title}}</view>
+                    <view class="font-b">{{rulesData.subTitle}}</view>
+                    <view>{{rulesData.content}}</view>
+                </view>
+                <view class="list-bottom">
+                    <view class="font-b">{{rulesData.method}}</view>
+                    <view class="mgt8" wx:for="{{rulesData.rules}}" wx:key="index">{{item}}</view>
+                </view>
+                <view class="mgt8">{{rulesData.shootingTime}}</view>
+            </view>
+        </view>
+    </view>
+</view>

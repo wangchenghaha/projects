@@ -1,0 +1,13 @@
+<view class="bg" catchtouchmove="return">
+    <view class="imageView">
+        <image src="{{imagePath}}shareBG.png" class="imageView-image" mode="widthFix" />
+        <!-- 返回 -->
+        <view class="back" bindtap="backView"></view>
+        <!-- 分享邀请 -->
+        <view class="fenxiangView">
+                <button open-type="share" class="share"></button>
+        </view>
+        <!-- 面对面邀请 -->
+        <view class="mianduimian" bindtap="shareImage"></view>
+    </view>
+</view>

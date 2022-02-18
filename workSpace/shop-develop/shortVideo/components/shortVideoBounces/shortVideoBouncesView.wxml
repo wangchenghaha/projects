@@ -1,0 +1,36 @@
+<cover-view class="bg">
+	<cover-view class="bg-black {{animationBol? 'bg-black-show' : ''}}" />
+
+	<cover-view class="bouncesBG {{animationBol? 'bouncesBG-show' : ''}}">
+		<cover-view class="topView">
+			<cover-view class="topView-leftView topView-leftView-title">全部商品
+				<!-- <image src="../../images/shortVideo_Tshirt.png" style="width:30rpx;" mode="widthFix" />
+                <view class="topView-leftView-title">全部美衣</view>
+                <image src="../../images/shortVideo_yousanjiao_green.png" style="width:20rpx;margin-top: 4rpx;" mode="widthFix" /> -->
+			</cover-view>
+			<cover-image
+			 data-type=""
+			 bindtap="onClick"
+			 src="../../images/shortVideo_close.png"
+			 mode="widthFix"
+			 style="width:40rpx;height:auto;margin-right: 20rpx;margin-left: 50rpx;"
+			/>
+		</cover-view>
+		<cover-view class="scroView">
+			<block wx:for="{{goodsList}}" wx:key="scroList" wx:if="{{item.status == 'InShelf'}}">
+				<cover-view class="scroView-listView">
+					<cover-image style="width:150rpx;height:170rpx;" src="{{item.picUrl}}" />
+					<cover-view class="rightView">
+						<cover-view class="rightView-title">{{item.goodsName}}</cover-view>
+						<cover-view class="rightView-title" style="margin-top: 10rpx;">颜色:{{item.colorAlias}}</cover-view>
+						<cover-view class="rightView-bottomView">
+							<cover-view class="moneyTitle">￥{{item.discountPrice}}</cover-view>
+							<cover-view data-type="kankan" data-code="{{item}}" bindtap="onClick" class="qukankan">去看看</cover-view>
+						</cover-view>
+					</cover-view>
+				</cover-view>
+			</block>
+		</cover-view>
+	</cover-view>
+</cover-view>
+

@@ -1,0 +1,42 @@
+.refund {
+  margin: 0 auto;
+  width: 95%;
+}
+.refund-item {
+  margin-bottom: 20rpx;
+  padding: 20rpx 10rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+.refund-item .refund-code text {
+  font-size: 24rpx;
+}
+.refund-item .refund-status {
+  align-items: flex-start;
+}
+.refund-item .refund-status .price {
+  font-size: 28rpx;
+  color: #d70715;
+}
+.refund-item .refund-status .status.success {
+  color: #07C160;
+}
+.refund-item .refund-status .status.fail {
+  color: #d70715;
+}
+.refund-item .refund-status .store-refund {
+  display: inline-block;
+  margin-left: 10rpx;
+  width: 130rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border: solid 1rpx #d70715;
+  color: #d70715;
+}
+.refund-item .goods-wrap {
+  max-height: 660rpx;
+  overflow-y: scroll;
+}
+
+/*# sourceMappingURL=refundList.wxss.map */

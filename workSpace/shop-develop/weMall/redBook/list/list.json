@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "分享列表",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "temp-list": "../../components/shareTempList/shareTempList"
+  }
+}

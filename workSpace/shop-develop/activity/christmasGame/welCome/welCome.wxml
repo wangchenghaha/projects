@@ -1,0 +1,79 @@
+<view class="bg" style="background-image: url('{{splashImg}}');">
+
+    <view class="friendsView">
+        <view class="shengyu">剩余次数:{{userData.gameCount}}次</view>
+        <view class="startView">
+            <view class="leftRightView" style="left : 30rpx;background-image: url('{{WELCOME.jinbi}}');">
+                <view class="text">{{userData.points}}</view>
+            </view>
+            <view class="leftRightView" style="right : 35rpx;background-image: url('{{WELCOME.duihuan}}');" bindtap="duihuan">
+                <view class="text">兑换奖品</view>
+            </view>
+
+            <view class="startGame" bindtap="startGame">
+                <image src="{{WELCOME.startGame}}" style="width:100%;height:100%;" />
+            </view>
+        </view>
+        <view class="imgView">
+            <image src="{{friends.bgImg}}" style="width:100%;height:100%" />
+
+            <view class="name">{{userData.nickName}}的队伍</view>
+
+            <view class="centerView">
+                <view class="subViews" wx:for="{{friends.list}}" wx:key="friends">
+                    <view class="icon">
+                        <image src="{{item.icon ? item.icon : item.defIcon}}" style="width:100%;height:100%;" />
+                    </view>
+                    <view class="otherName" style="background-image: url('{{item.otherIcon}}');color: {{index == friends.list.length - 1 ? '#FF544E' : '#126747'}};">{{item.name ? item.name : item.otherName}}</view>
+                </view>
+            </view>
+            
+            <view class="bottomView" wx:if="{{isFiveNum}}" bindtap="openBox">打开宝箱</view>
+            <button open-type="share" class="bottomView" wx:else>立即邀请好友</button>
+        </view>
+    </view>
+</view>
+
+<view class="guize" bindtap="guize">活动规则</view>
+
+        <block wx:if="{{canOpen}}">
+            <view class="bouncedBg"></view>
+                <view class="canOpenView">
+                    <view class="imgView">
+                        <view class="topTitle">恭喜你</view>
+                        <view class="subTitle">获得"{{baoxiangJson.title}}"</view>
+                        
+                        <image src="{{baoxiangJson.bgImage}}" style="width: 100%;height: 100%;" mode="widthFix" />
+                        <image src="{{baoxiangJson.image}}" class="jiangpin" />
+                        <view class="closed" bindtap="closed"></view>
+                    </view>
+                </view>
+        </block>
+
+        <block wx:if="{{showOneBounced}}">
+            <view class="bouncedBg"></view>
+                <view class="oneSubView">
+                    <view class="imgView">
+                        <image src="{{WELCOME.canNotPlay}}" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+                        
+                            <view class="subTitle" style="top: 38%;">{{canNotPlayText[0]}}</view>
+                            <view class="subTitle" style="top: 45%;">{{canNotPlayText[1]}}</view>
+                            <view class="subTitle" style="top: 52%;">{{canNotPlayText[2]}}</view>
+
+                            <view class="bottomViewsss" style="background-image: url('{{WELCOME.bouncedBtn}}');">立即邀请</view>
+                            <button open-type="share" class="bottomViewsssShare"></button>
+
+                            <view class="closed" bindtap="closed"></view>
+                    </view>
+                </view>
+        </block>
+
+
+<view class="xuehuaView" wx:for="{{xuehuaDatas}}" wx:key="xuehua">
+    <image class="xuehuaView-img xuehua{{index}}" src="{{item}}" />
+</view>
+<view class="sanjiao" bindtap="backTap">
+	<image src="{{WELCOME.backImg}}" style="width:100%;height:100%;" />
+</view>
+<view class="zhanwei" wx:if="{{zhanweiView}}" />
+

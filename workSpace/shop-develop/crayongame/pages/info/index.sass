@@ -1,0 +1,129 @@
+@import '../../common/sass/index.sass'
+@keyframes zoomIn 
+    0% 
+        opacity: 0;
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3)
+
+    50% 
+        opacity: 1
+
+
+@keyframes zoomOut 
+    0% 
+        opacity: 1
+
+    50% 
+        opacity: 0;
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3)
+
+    to 
+        opacity: 0
+page
+    height: 100%
+.wrapper
+    height: 100%
+    background-color: $main
+    +bg('bg')
+    padding-top: 164rpx
+    &.big
+        padding-top: 239rpx
+        +bg('bigbg')
+    +b()
+    .header-tit
+        width: 654rpx
+        height: 103rpx
+        +bg('info-title')
+        margin: 0 auto
+    .form
+        position: relative
+        z-index: 100
+        .form-item
+            width: 100%
+            padding-left: 145rpx
+            box-sizing: border-box
+            margin-bottom: 20rpx
+            display: flex
+            align-items: center
+            will-change: transform
+            .form-control
+                width: 459rpx
+                height: 128rpx
+        
+            &:nth-child(1)
+                .form-control
+                    +bg('select-1')
+                    &.active
+                        +bg('select-1-a')
+            &:nth-child(2)
+                .form-control
+                    +bg('select-2')
+                    &.active
+                        +bg('select-2-a')
+            &:nth-child(3)
+                .form-control
+                    +bg('select-3')
+                    &.active
+                        +bg('select-3-a')
+            &:nth-child(4)
+                .form-control
+                    +bg('select-4')
+                    &.active
+                        +bg('select-4-a')
+            .is-check
+                +square(71)
+                +bg('check')
+                background-size: 73rpx 71rpx
+                background-position: -2rpx center
+                // opacity: 0
+                // transform: scale3d(.3,.3,.3)
+                // will-change: opacity transform
+                &.zoomOut
+                    animation: zoomOut 0.4s forwards
+                &.zoomIn
+                    animation: zoomIn 0.3s forwards
+        .form-btn
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-top: 42rpx
+            .btn
+                width: 306rpx
+                height: 75rpx
+                &.clear
+                    +bg('clear')
+                    margin-right: 55rpx
+                    &.active
+                        +bg('clear-a')
+                &.next
+                    +bg('next')
+                    border: none
+                    border-radius: 0
+                    background-color: transparent
+                    &:after
+                        display: none
+                    &.active
+                        +bg('next-a')
+
+
+    .footer
+        position: fixed
+        left: 0
+        bottom: 0
+        z-index: 10
+        overflow: hidden
+        .desc
+            width: 750rpx
+            height: 467rpx
+            +bg('mini-figure')
+            &.big
+                height: 612rpx
+                +bg('figure')
+        .crimp
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 750rpx
+            height: 242rpx
+            +bg('crimp')

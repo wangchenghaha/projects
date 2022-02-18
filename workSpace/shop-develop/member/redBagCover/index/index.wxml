@@ -1,0 +1,39 @@
+<view class="main" style="background-image: url({{bgImg}})">
+
+  <view wx:if="{{cardList.length}}" class="sector {{rotate ? 'rotate' : ''}}">
+    <view class="sector-item {{rotate ? 'rotate' : ''}} {{index === openIndex ? 'open' : ''}}"
+          wx:for="{{cardList}}"
+          wx:key="id"
+          data-item="{{item}}"
+          data-index="{{index}}"
+          style="transform: rotate({{rotate ? item.rotateDeg : ''}}deg); z-index: {{item.zIndex}}"
+          bind:transitionend="open"
+          bindtap="open">
+      <image src="{{redBagImg}}" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="new-year">
+    <image src="{{newYearImg}}" mode="widthFix"></image>
+  </view>
+  <view class="gift fixed flex-center {{giftItem.cardPic ? 'show' : ''}}" bindtransitionend="rotateCard">
+    <view class="gift-item {{rotateGift ? 'rotate-card' : ''}}"  bind:animationend="animationend" style="opacity: {{showGift ? 0 : 1}}">
+      <image src="{{giftItem.cardPic}}" mode="widthFix"></image>
+    </view>
+    <view class="gift-item gift-card" style="opacity: {{showGift ? 1 : 0}}">
+      <view class="brand-gift">
+        <image src="{{brandGift}}" mode="widthFix"></image>
+        <view class="brand-tip text-c">恭喜您获得</view>
+      </view>
+      <view class="text-c title font-bold margin-t-20">{{brand}} 新年好运红包</view>
+      <view class="text-c sub-title margin-t-5">愿您2020年事事开挂好运来</view>
+      <view class="margin-t-30">
+        <image src="{{giftImg}}" mode="widthFix"></image>
+      </view>
+      <view class="receive-btn color-fff text-c margin-t-30" bindtap="getReceive">一键领取</view>
+      <view class="tip text-c margin-t-30 padding-t-10">
+        <text>分享新客获再一次领取机会>></text>
+        <button open-type="share" class="btn-share"></button>
+      </view>
+    </view>
+  </view>
+</view>

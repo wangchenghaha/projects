@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "preload": "../../components/preload2/index",
+    "modal": "../../components/modal/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

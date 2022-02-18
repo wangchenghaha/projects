@@ -1,0 +1,7 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "customSlider" : "../components/slider/slider",
+    "bouncedView" : "../components/bouncedView/bouncedView"
+  }
+}

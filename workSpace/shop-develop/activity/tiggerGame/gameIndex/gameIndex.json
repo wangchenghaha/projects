@@ -1,0 +1,8 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "customView_vm" : "../components/gameIndex_vm/gameIndex_vm",
+    "customView_only" : "../components/gameIndex_only/gameIndex_only",
+    "customView_fol" : "../components/gameIndex_fol/gameIndex_fol"
+  }
+}

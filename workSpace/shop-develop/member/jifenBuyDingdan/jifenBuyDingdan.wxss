@@ -1,0 +1,55 @@
+
+
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden; box-sizing:border-box; padding:20rpx;}
+
+.header{ width:100%; height:auto; clear:both; overflow:hidden; border-bottom:2rpx solid #000; font-size:32rpx;
+line-height:76rpx; color:#000; text-indent: 20rpx;}
+.contentCon{ width:100%; height:auto; clear:both; overflow:hidden;}
+.li{ width:100%; height:auto ;clear:both; overflow:hidden; border-bottom:2rpx dashed #666; box-sizing:border-box; 
+padding:20rpx;font-size:26rpx; line-height:36rpx; color:#666;}
+.li .classname{float:left; width:64%;}
+.li .classname .zhekou{background:#D70715; color:#fff; padding:0 5rpx;}
+.li .nums{ float:left; width:16%; text-align:center; font-size:28rpx;}
+.li .price{ float:left; width:36%; text-align:right;}
+
+.li_left{ float:left; width:50%;}
+.li_right{ float:right;}
+.li_li text{ color:#000;}
+
+.shouhuo{ width:100%; height:auto; clear:both; overflow:hidden;box-sizing:border-box; padding:0 20rpx;
+border-bottom:2rpx solid #000; margin-bottom:30rpx;}
+.shCon{ width:100%; font-size:32rpx; line-height:76rpx; color:#000;
+background:url(https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_right_gray.png) no-repeat right center; background-size:15rpx;}
+
+.lli{ width:100%; height:auto; clear:both; overflow:hidden;}
+.liCon{ width:100%; height:auto;}
+.liCon .name{ font-size:30rpx; line-height:50rpx; color:#000; padding-bottom:6rpx;}
+.liCon .dizhi{ width:100%; height:auto; clear:both; overflow:hidden; font-size:26rpx; line-height:45rpx; color:#000;}
+.liCon .dizhi .left{ color:#AEAEAE;}
+.liCon .myTel{ width:100%; height:44rpx; font-size:26rpx; line-height:30rpx; color:#AEAEAE; border-bottom:2rpx solid #000;}
+
+.youhuiquan{ width:100%; height:auto; clear:both; overflow:hidden; font-size:32rpx; line-height:50rpx; color:#000;
+background:url(https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_right_gray.png) no-repeat right center; background-size:15rpx;
+margin-bottom:20rpx; border-bottom:2rpx solid #000;}
+.yhq_left{ float:left;padding:20rpx 0;}
+.yhq_name{ line-height:50rpx; font-size:32rpx; float:left;}
+.yhq_tishi{ line-height:34rpx; font-size:22rpx; float:left; color:red; border:1px solid red; position:relative; top:4px; left:5px; padding:0 10rpx;}
+.yhq_right{ float:right; padding:0 20rpx; line-height:86rpx;}
+
+.submit{ width:100%; background:#000; color:#fff; font-size:32rpx; line-height:70rpx;text-align:center;}
+
+
+.fangshi{ width:100%; height:auto; clear:both; overflow:hidden;}
+.fangshi_h2{ width:100%; height:auto; font-size:32rpx; line-height:76rpx; color:#000; border-bottom:2rpx solid #000; text-indent:20rpx;}
+.fangshi_h2 text{ color:red;}
+.fangshi_ul{ width:100%; height:auto; clear:both; overflow:hidden; padding:20rpx 0; border-bottom:2rpx dashed #000;}
+.fangshi_li{ float:left; font-size:28rpx; line-height:50rpx; color:#000; padding:0 30rpx; border:2rpx solid #000;border-radius:10rpx; margin:0 10rpx;}
+.fangshi_list{ border:2rpx solid red;}
+
+.ziti{ width:100%; height:auto; clear:both; overflow:hidden; padding:20rpx 0;}
+.ziti .city{ float:left; width:25.5%; height:60rpx; position:relative; margin-right:3%;}
+.ziti .sousuo{ float:right; width:14%; font-size:26rpx; background:#000; color:#fff; text-align:center; line-height:60rpx; border-radius:10rpx;}
+.picker{ width:100%; height:60rpx;box-sizing:border-box; border:2rpx solid #BABABA;}
+.picker .picker1{font-size:26rpx; line-height:60rpx;color:#666; padding-left:20rpx;}
+.close{width:60rpx; height:60rpx; position:absolute; right:0;top:0; z-index:9;}
+.close image{ display:block; width:30rpx; height:30rpx; margin:19rpx;}

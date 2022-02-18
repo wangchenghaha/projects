@@ -1,0 +1,148 @@
+<!-- pages/nearbyShops/shopDetail/shopDetail.wxml -->
+<import src="../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar"/>
+<view class="frame">
+  <map id="mMap" wx:if="{{false}}" scale="13" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="onMarkerClick" include-points="{{includePoints}}" polyline="{{polyline}}" class="map"></map>
+  <view class="shop_bottom" wx:if="{{false}}">
+    <view class="shop_wrap">
+      <view class="bar">
+        <view class="shop_name">{{shopBean.shopNameNn||shopBean.shopNameCn}}</view>
+        <view class='layout_loc'>
+          <image class="loc_img" src='/images/icon_navi_black.png' mode="widthFix"></image>
+          <view class="loc_txt" id="{{index}}" catch:tap='onTmplMapNavClick'>去门店</view>
+        </view>
+      </view>
+      <view class="layout_info">
+        <view class="info_left">
+          <text class="info_text">地址：{{shopBean.address}}\n</text>
+          <view class="layout_info2">
+            <text>联系方式：</text>
+            <text class="info_text2" bind:tap="onTmplShopPhoneCall">{{shopBean.o2oShopPhone?shopBean.o2oShopPhone:'暂无'}}</text>
+          </view>
+          <text class="info_text">营业时间：{{shopBean.openTime}} ~ {{shopBean.closeTime}}</text>
+        </view>
+        <image class="shop_copy" src="/images/icon_copy_black.png" bind:tap="onTmplShopInfoCopy" />
+      </view>
+    </view>
+  </view>
+
+  <view class="layout_function_icons" wx:if="{{false}}">
+    <view class="call" bindtap="onCall">
+      <image class='img' src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_phone.png" mode="widthFix" />
+      <text class="txt">拨打电话</text>
+    </view>
+    <view class='vertical_line'></view>
+    <view class="nav" bindtap="onNav">
+      <image class='img' src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_navi_circle.png" mode="widthFix" />
+      <text class="txt">门店路线</text>
+    </view>
+  </view>
+
+  <view class="layout_shop_list_bar" wx:if="{{false}}">
+    <view class="button_goto_list" bindtap="onBrowseShopGoods">
+      <text class="tip_goto_list">查看门店所有商品</text>
+    </view>
+  </view>
+
+  <view class="frame_other_shop">
+    <view class="txt_other_shop">当前门店</view>
+    <template is="shopMultiBarTmpl" data="{{shopBean:shopBeanList[0],brand}}" />
+  </view>
+
+  <view class="frame_shop_door_pic">
+    <image class="shop_gate_pic" src="{{shopGateImg}}" mode="widthFix" bind:tap="onGatePickClick"/>
+    <image class="shop_gate_pic" src="{{shopActivityImg}}" mode="widthFix" bind:tap="onActivityClick"/>
+  </view>
+
+  <view class="frame_other_shop" wx:if="{{shopBeanList[1]}}">
+    <view class="txt_other_shop">距当前门店最近门店</view>
+    <template is="shopMultiBarTmpl" data="{{shopBean:shopBeanList[1],brand}}" />
+  </view>
+
+  <view class="frame_shop_rights" wx:if="{{falgShowMemCard}}">
+    <view class="txt_other_shop">门店权益</view>
+
+    <!-- 未登录 -->
+    <view class="wrapper_member_0" wx:if="{{!crmInfo}}">
+      <view class="mem_not_login_0">
+        <view class="mem_not_login_txt">您还不是会员，加入立享如下会员权益</view>
+        <view class="mem_muti_img_frame">
+          <view class="mem_multi_item" wx:for="{{multiTipList}}" wx:key="multiTipList">
+            <image class="mem_img_tip" src="{{item.imgUrl}}"  mode="aspectFit" />
+            <view class="mem_txt_tip">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="mem_frame_btn_not_mem" bind:tap="onGotoLogin">
+        <view class="mem_btn_not_mem">成为会员</view>
+      </view>
+    </view>
+
+    <!-- 是会员 -->
+    <view class="wrapper_member_1" wx:if="{{crmInfo}}">
+      <view class="mem_img_frame">
+        <image class="mem_img" src="{{cardUrl}}" mode="widthFix" />
+        <view class="mem_phone">{{crmInfo.phone}}</view>
+        <view class="mem_card_level">{{crmInfo.level}}</view>
+      </view>
+      <!-- <view class="mem_mid">
+        <view class="mem_mid_0">{{crmInfo.level}}</view>
+        <view class="mem_mid_1">可享：会员积分，积分兑换会员抽奖，不定期优惠券</view>
+      </view> -->
+      <view class="mem_btn_layout_mem_center" bind:tap="onGotoMemCenter">
+        <!-- <view class="mem_btn_goto_center">会员中心</view> -->
+        <image class="mem_img" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_btn_shop_detail_mem_center_3.png" mode="widthFix"></image>
+        <!-- <image class="mem_img" src="/images/icon_btn_shop_detail_mem_center_3.png" mode="widthFix"></image> -->
+        <view class="mem_muti_frame_222">
+          <view class="mem_multi_item_222" wx:for="{{multiTipList}}" wx:key="multiTipList">
+            <image class="mem_img_tip_222" src="{{item.imgUrl}}"  mode="aspectFit" />
+            <view class="mem_txt_tip_222">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="frame_goods_recommend">
+    <view class="txt_goods_being_sold">门店在售商品</view>
+    <view class="txt_more" wx:if="{{false}}" bind:tap="onBrowseShopGoods">更多></view>
+  </view>
+
+  <!-- 暂时不用了 -->
+  <scroll-view wx:if="{{false}}" class="scroll_v" scroll-x="{{true}}" scroll-y="{{false}}">
+    <view class="wrapper_classify">
+      <block wx:for="{{recomdClassifyList}}" wx:key="recomdClassifyList">
+        <view class="classify_item">{{item.navigationName}}</view>
+      </block>
+    </view>
+  </scroll-view>
+
+   <!-- 暂时不用了 -->
+  <view class="wrapper_tabs" wx:if="{{false}}" >
+    <van-tabs bind:click="onClassifySelect">
+      <van-tab wx:for="{{recomdClassifyList}}" wx:key="index" title="{{item.navigationName}}"></van-tab>
+    </van-tabs>
+  </view>
+
+  <view class="recom_goods_list {{isIphoneX ?'iphoneXMarginBottom':''}}">
+    <block wx:if="{{boolHasGoods}}" wx:for="{{recommendGoodsList}}" wx:key="recommendGoodsList">
+      <view id='{{index}}' class="recom_item" bindtap='onRecItemClick' data-color-code="{{item.gsColorCode}}">
+        <image src="https://cdn.bestseller.com.cn{{item.gscMaincolPath}}" mode="aspectFit"></image>
+        <text class="goodName">{{item.goodsName}}</text>
+        <view class="recom_item_bottom">
+          <!-- <view class="recom_item_discount" wx:if="{{item.discount!=10}}">{{item.discount}}折</view> -->
+          <view class="recom_item_price_now {{item.discountPrice === item.originalPrice?'recom_item_discountPrice':''}}">¥{{item.discountPrice}}</view>
+          <view class="recom_item_price_original" wx:if="{{item.discountPrice != item.originalPrice}}">¥{{item.originalPrice}}</view>
+        </view>
+      </view>
+    </block>
+    <view class="recom_no_goods" wx:if="{{!boolHasGoods}}">
+      <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/pic_cart_none_128.png" class="recom_no_goods_img" mode="widthFix" />
+      <view class="recom_no_goods_txt">该分类暂无商品\n请尝试切换分类</view>
+    </view>
+  </view>
+
+   <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}">
+  </view>
+</view>

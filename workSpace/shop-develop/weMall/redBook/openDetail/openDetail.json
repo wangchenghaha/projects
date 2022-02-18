@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "temp-header": "../../components/shareTempHeader/shareTempHeader",
+    "red-book": "../../components/redBookContent/redBookContent"
+  }
+}

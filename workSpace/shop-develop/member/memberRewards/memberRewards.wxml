@@ -1,0 +1,14 @@
+<view class="mr-container">
+  <block wx:for="{{brandlist}}" wx:key="brandlist">
+    <view class="brand-box">
+      <swiper wx:if="{{item.imglist.length>0}}" indicator-dots="{{item.imglist.length>1?true:false}}" indicator-active-color="blue" autoplay="{{true}}" interval="3000" duration="500" circular="{{true}}">
+        <block wx:for="{{item.imglist}}" wx:key="imglist" wx:for-item="img">
+          <swiper-item data-brand="{{item.brand}}" data-index="{{index}}" data-onoff="{{item.onOff}}" bindtap="toRewardsDetails">
+            <image src="{{img}}" class="slide-image" mode="widthFix"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <!--<image src="{{item.logo}}" class="logo" mode="aspectFit" style="width: {{item.width}}; height: {{item.height}};"></image>-->
+    </view>
+  </block>
+</view>

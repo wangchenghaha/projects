@@ -1,0 +1,27 @@
+
+
+
+<view class="wrap">
+  <view class="desc">
+    <view wx:if="{{expressInfo.bigorderCode}}">订单号：{{expressInfo.bigorderCode}} <image src="../../images/icon_copy.png" class="copy-icon" mode="aspectFit" data-text="{{dingdan_code}}" bindtap="onClick" /></view>
+    <view wx:if="{{expressInfo.expressOrderNo}}">快递单号：{{expressInfo.expressOrderNo}}<image src="../../images/icon_copy.png" class="copy-icon" mode="aspectFit" data-text="{{expressInfo.expressOrderNo}}" bindtap="onClick" /></view>
+    <view wx:if="{{expressInfo.expressCompany}}">快递名称：{{expressInfo.expressCompany}}</view>
+  </view>
+  <view class='ul'>
+    <view class='li' wx:for="{{ddAddress}}" wx:key="ddAddress">
+      <view class='dateTime'>
+        <view class='date'>{{item.date1}}</view>
+        <view class='time'>{{item.date2}}</view>
+        <view class="small" wx:if="{{index!=0}}"></view>
+        <view class='big' wx:if="{{index==0}}">
+          <image src='https://cdn.bestseller.com.cn/assets/common/pub/image/addr_circle_yellow.gif' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class='content'>
+        <view class='title'></view>
+        <view class='address'>{{item.waybillMsg}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

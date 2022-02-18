@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wish-header": "../../components/wishHeader/wishHeader",
+    "goods-list": "../../components/wishGoodsList/wishGoodsList"
+  }
+}

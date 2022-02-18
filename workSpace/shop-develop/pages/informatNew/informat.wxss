@@ -1,0 +1,93 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+.container .user {
+  width: 100%;
+  height: 100rpx;
+  background: white;
+}
+.container .user .oneArea {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 80rpx;
+}
+.container .user .oneArea .avatarImg {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  margin-left: 20rpx;
+}
+.container .user .oneArea .text1 {
+  font-size: 32rpx;
+  font-weight: 550;
+  color: black;
+  margin-left: 20rpx;
+}
+.container .user .btn1 {
+  width: 200rpx;
+  line-height: 60rpx;
+  background: black;
+  border-radius: 60rpx;
+  text-align: center;
+  color: white;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+.container .fashion-scroll {
+  width: 120%;
+  height: 200rpx;
+  margin-top: 30rpx;
+}
+.container .fashion-scroll .fashionItem {
+  display: flex;
+  width: 500rpx;
+  height: 100%;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+  background: #fff;
+}
+.container .fashion-scroll .fashionItem .left {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+}
+.container .fashion-scroll .fashionItem .right {
+  width: 230rpx;
+  height: 200rpx;
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .fashion-scroll .fashionItem .right .title {
+  font-size: 28rpx;
+  line-height: 32rpx;
+  margin-top: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.container .fashion-scroll .fashionItem .right .content {
+  font-size: 22rpx;
+  color: gray;
+}
+.container .login {
+  width: 100%;
+  height: 800rpx;
+}
+.container .login .txt {
+  width: 200rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 2rpx solid gray;
+  border-radius: 30rpx;
+}
+
+/*# sourceMappingURL=informat.wxss.map */

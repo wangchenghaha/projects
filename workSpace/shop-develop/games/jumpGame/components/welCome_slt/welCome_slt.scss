@@ -1,0 +1,517 @@
+
+.bg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .bgImg{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .logo{
+        position: absolute;
+        width: 369rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9;
+        top: 172rpx;
+    }
+    .showPoint{
+        position: absolute;
+        font-size: 28rpx;
+        color: #fd9f69;
+        font-weight: 600;
+        top: 1128rpx;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .mainBtn{
+        position: absolute;
+        width: 160rpx;
+        height: 160rpx;
+        top: 760rpx;
+    }
+    .chooseRenWu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300rpx;
+        height: 600rpx;
+        position: fixed;
+        top: 520rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        .renName{
+            font-size: 28rpx;
+            font-size: 32rpx;
+            color: #fff;
+            -webkit-text-stroke: 2rpx #6440c3;
+            font-weight: 900;
+        }
+        .renImg{
+            width: 220rpx;
+            margin-top: 110rpx;
+        }
+    }
+
+    .guizeBtnViewOpa{
+        position: fixed;
+        top: 230rpx;
+        right: -20rpx;
+        width: 150rpx;
+        height: 50rpx;
+        background-color: white;
+        border-radius: 50rpx;
+        opacity: .5;
+    
+    }
+    .guizeBtnView{
+        position: fixed;
+        top: 230rpx;
+        right: -45rpx;
+        width: 150rpx;
+        height: 50rpx;
+        font-size: 23rpx;
+        color: white;
+        line-height: 50rpx;
+    
+    }
+    .goHome{
+        position: fixed;
+        top: 470rpx;
+        right: 32rpx;
+        width: 68rpx;
+        height: 68rpx;
+    
+    }
+    
+    .mainRank{
+        position: absolute;
+        width: 120rpx;
+        z-index: 9;
+        top: 1080rpx;
+        left: 30rpx;
+    }
+    
+    .mainGoods{
+        position: absolute;
+        width: 120rpx;
+        z-index: 9;
+        top: 1080rpx;
+        right: 30rpx;
+    }
+
+    .play{
+        width: 350rpx;
+        height: 150rpx;
+        position: fixed;
+        top: 1260rpx;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+@keyframes animate{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.bouncedBgOpa{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    animation: animate .2s linear 1;
+    
+    z-index: 99999;
+
+    background-color: black;
+    opacity: .5;
+}
+.bouncedBg{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 658rpx;
+
+    animation: animate .2s linear 1;
+    
+    z-index: 99999;
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .closed{
+            position: absolute;
+            top: 8%;
+            right: 2%;
+            width: 80rpx;
+            height: 80rpx;
+
+        }
+        .subView{
+            position: absolute;
+            top: 18%;
+            left: 8%;
+            width: 84%;
+            height: 78%;
+
+
+            .bottomView{
+                margin-top: 20rpx;
+                width: 100%;
+                height: 90%;
+
+                .rowViews{
+                    width: 100%;
+                    height: 370rpx;
+                    display: flex;
+
+                    margin-bottom: 20rpx;
+
+                    .row{
+                        width: 265rpx;
+                        height: 100%;
+                        position: relative;
+
+                        .quanImg_list{
+                            position: absolute;
+                            top: 40%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            width: 120rpx;
+                            height: 193rpx;
+                        }
+                        .jinbiView{
+                            position: absolute;
+                            bottom: 22%;
+                            left: 52%;
+                            transform: translateX(-50%);
+                            width: 55%;
+                            height: 30rpx;
+                            border-radius: 30rpx;
+                            background-color: #9CA9CB;
+                            .textView{
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
+                                .jinbi{
+                                    width: 40rpx;
+                                    height: 40rpx;
+                                    position: absolute;
+                                    top: -5rpx;
+                                    left: -20rpx;
+                                }
+                                .text{
+                                    font-size: 22rpx;
+                                    color: white;
+                                    line-height: 30rpx;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                        .duihuanView{
+                            position: absolute;
+                            bottom: 5%;
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                            width: 170rpx;
+                            height: 50rpx;
+                            border-radius: 50rpx;
+                            background-color: #FFE473;
+
+                            text-align: center;
+                            line-height: 50rpx;
+                            font-size: 34rpx;
+                            font-weight: bold;
+                            color: #FF4668;
+                        }
+                        .quanImg_jilu{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            width: 120rpx;
+                            height: 193rpx;
+                        }
+                    }
+                }
+            }
+            .topView{
+                width: 100%;
+                height: 55rpx;
+                display: flex;
+
+                .sjphNO{
+                    width: 170rpx;
+                    height: 100%;
+                    background-color: #FFDD57;
+
+                    border-top-right-radius: 20rpx;
+                    border-top-left-radius: 20rpx;
+
+                    text-align: center;
+                    line-height: 60rpx;
+                    font-size: 28rpx;
+                    color: #FF7C81;
+
+                    margin-right: 10rpx;
+                }
+                .sjph{
+                    width: 170rpx;
+                    height: 100%;
+                    background-color: #E9FBFF;
+
+                    border-top-right-radius: 20rpx;
+                    border-top-left-radius: 20rpx;
+
+                    text-align: center;
+                    line-height: 60rpx;
+                    font-size: 28rpx;
+                    color: #A2ABEB;
+                    
+                    margin-right: 10rpx;
+                }
+            }
+            .wzView{
+                width: 100%;
+                height: 50rpx;
+                display: flex;
+
+                font-size: 28rpx;
+                color: #C7A1DC;
+                line-height: 50rpx;
+                text-align: left;
+
+                margin-top: 20rpx;
+                .pm{
+                    
+                    width: 20%;
+                }
+                .yh{
+                    width: 53%;
+                }
+                .fs{
+                    width: 23%;
+                    text-align: center;
+                }
+            }
+            .meView{
+                width: 100%;
+                height: 57rpx;
+                line-height: 57rpx;
+                font-size: 25rpx;
+                display: flex;
+                background-color: #C7A1DC;
+
+                margin-bottom: 20rpx;
+                .me{
+                    width: 20%;
+                    height: 100%;
+                }
+                .name{
+                    width: 53%;
+                    color: white;
+                    overflow: hidden;
+                }
+                .fenshu{
+                    width: 23%;
+                    color: #FFE136;
+                    text-align: center;
+                }
+            }
+            .otherViews{
+                width: 100%;
+                height: 57rpx;
+                display: flex;
+
+                border-radius: 10rpx;
+                margin-bottom: 10rpx;
+
+                background-color: #D2EBFE;
+
+                color: #484349;
+                line-height: 57rpx;
+                font-size: 25rpx;
+
+                .me{
+                    width: 20%;
+                    height: 100%;
+                    position: relative;
+                    .jianbian{
+                        position: absolute;
+                        top: 0;
+                        left: 15rpx;
+                        width: 45rpx;
+                        height: 100%;
+                        &-bg{
+                            width: 100%;
+                            height: 35rpx;
+                            border-radius: 35rpx;
+                            margin-top: 11rpx;
+                            position: relative;
+                            padding-left: 10rpx;
+
+                            .text{
+                                font-size: 25rpx;
+                                line-height: 35rpx;
+                                
+                                text-align: left;
+                            }
+                            .iconView{
+                                position: absolute;
+                                top: -6rpx;
+                                right: -30rpx;
+                                width: 45rpx;
+                                height: 45rpx;
+
+                                border-radius: 50%;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+                .name{
+                    width: 53%;
+                    overflow: hidden;
+                }
+                .fenshu{
+                    width: 23%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+.noGameCountBounced{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 595rpx;
+    z-index: 99999;
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &-img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .closed{
+            width: 52rpx;
+            height: 52rpx;
+            position: absolute;
+            right: 35rpx;
+            top: 30rpx;
+        }
+
+        .title{
+            position: absolute;
+            top: 25%;
+            left: 0;
+            width: 100%;
+            font-size: 32rpx;
+            color: #FFE158;
+            text-align: center;
+        }
+        .bottomTitle{
+            position: absolute;
+            bottom: 50rpx;
+            left: 50%;
+            transform: translateX(-50%);
+
+            padding-left: 40rpx;
+            padding-right: 40rpx;
+            width: auto;
+            height: 70rpx;
+            border-radius: 70rpx;
+            color: #E40031;
+            background-color: #FFE158;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: center;
+            line-height: 70rpx;
+        }
+        .share1{ 
+            position: absolute;
+            bottom: 50rpx;
+            left: 50%;
+            transform: translateX(-50%);
+
+            padding-left: 40rpx;
+            padding-right: 40rpx;
+            width: 270rpx;
+            height: 70rpx;
+            border-radius: 70rpx;
+            
+            background:none;
+        }
+        .share1::after{ 
+            border: none;
+        }
+    }
+}
+.sanjiao{
+    position: fixed;
+    top: 4.5%;
+    left: 3%;
+    width: 42rpx;
+    height: 59rpx;
+    z-index: 999;
+}
+
+.jinViewOpa{
+    position: fixed;
+    top: 230rpx;
+    left: 6.5%;
+    width: 200rpx;
+    height: 50rpx;
+
+    background-color: white;
+    border-radius: 50rpx;
+
+    opacity: .8;
+}
+.jinView{
+    position: fixed;
+    top: 230rpx;
+    left: 6.5%;
+    width: 200rpx;
+    height: 50rpx;
+
+    border-radius: 50rpx;
+    display: flex;
+    .jinbi{
+        width: 50rpx;
+        height: 50rpx;
+        margin-left: -10rpx;
+
+    }
+    .points{
+        text-align: center;
+        margin-left: 10rpx;
+        width: 140rpx;
+        height: 100%;
+        line-height: 50rpx;
+        color: #FF7D00;
+        font-size: 25rpx;
+    }
+}
+
+.zhanwei{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+}

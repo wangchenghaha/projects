@@ -1,0 +1,38 @@
+<view class="container">
+    <!--轮播-->
+    <swiper indicator-dots circular style="height:{{swiperImageHeight}}px;margin-top:{{marginTop}}px;">
+        <block wx:for="{{swiperList}}" wx:key="swiperKey" wx:for-item="swiperItem">
+        <swiper-item >
+            <image src="{{swiperItem.picUrl}}" mode="widthFix" style="width:100%;height:{{swiperImageHeight}}px;position: relative;"  bindload="getImageHeight"  />
+        </swiper-item>
+        </block>
+    </swiper>
+   
+    <view class="fixed-right">
+        <block wx:for="{{fixedRightArr}}" wx:key="fixedRight">
+            <view wx:if="{{item.isShow}}" class="fixed-item flex-center" data-type="{{item.type}}" bindtap="onClick">
+                <view class="fixed-img flex-center">
+                    <image src="{{item.img}}" mode="widthFix"></image>
+                </view>
+            </view>
+        </block>
+   </view>
+
+    <view class="markNotice" wx:if="{{isShowTiebiao}}">
+        <view class="h1">贴标服务</view>
+        <view class="h2">我们还提供个贴标服务，有丰富的潮酷贴标，</view>
+        <view class="h2" style="margin-top: 5rpx;">供您选择点缀我们的宝贝</view>
+        <view class="h3">点击下方按钮，即刻开启贴标之旅</view>
+        <view class="submitBtn" bindtap="goToMark">立即定制贴标</view>
+        <view class="h3" wx:if="{{isLimit}}" style="margin-top:10rpx;">
+        贴标每个<text style="color:orangered; font-size:30rpx;"> ￥0 </text> <text style="text-decoration:line-through;">￥15</text>元(最多可贴3个)
+        </view>
+        <view class="h3" wx:else style="margin-top:10rpx;">（每个贴标收费15元）</view>
+    </view> 
+
+    <share-pop wx:if="{{isShare}}" templateImage="{{templateImage}}" bindchangeShow="changeShow" ></share-pop>
+
+    <view class="{{isIphoneX ? 'iphoneXbottomBtn':'bottomBtn'}}" bindtap="submitOrder">
+        直接购买
+    </view>
+</view>

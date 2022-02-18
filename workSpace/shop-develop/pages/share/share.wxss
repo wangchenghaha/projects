@@ -1,0 +1,231 @@
+.home {
+  width: 100%;
+  height: 100%;
+}
+.share_btn {
+  margin: 90rpx auto 0;
+  line-height: 66rpx;
+  text-align: center;
+  min-width: 360rpx;
+  width: auto;
+  border: 2rpx solid green;
+  background-color: #FFFFFF;
+  border-radius: 33rpx;
+  font-size: 33rpx;
+  color: green;
+}
+.header-img {
+  margin-top: 20rpx;
+  display: block;
+  width: 716rpx;
+  height: auto;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.brand_logo {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  top: 50rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.header-txt1 {
+  text-align: center;
+  position: absolute;
+  top: 177rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  font-size: 25rpx;
+}
+.header-txt2 {
+  text-align: center;
+  position: absolute;
+  top: 255rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  font-size: 50rpx;
+}
+.home-txt {
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 25rpx;
+  color: gray;
+}
+.share_modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.share_modal image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.about_wrap {
+  width: 100%;
+  min-height: 100%;
+}
+.about {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 20px;
+  box-sizing: border-box;
+  position: fixed;
+}
+.about-body {
+  width: 700rpx;
+  height: 100%;
+  background-image: url("https://tc.woaap.com/lingzhi/share/image/bigbg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-color: #f8f8f8;
+  border: 1px solid #f8f8f8;
+  box-shadow: 2rpx 4rpx 9rpx 2rpx #aaa;
+  border-radius: 10rpx;
+}
+.about-logo {
+  margin-top: 25rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.about-header {
+  font-size: 40rpx;
+  color: green;
+  margin-top: 50rpx;
+}
+.about-txt1 {
+  margin-top: 25rpx;
+  font-size: 26rpx;
+  color: gray;
+}
+.about-txt2 {
+  font-size: 30rpx;
+}
+.share_btn {
+  margin-top: 20rpx;
+  height: 66rpx;
+  line-height: 62rpx;
+  text-align: center;
+  min-width: 360rpx;
+  width: auto;
+  max-width: 400rpx;
+  border-radius: 33rpx;
+  font-size: 33rpx;
+  box-sizing: border-box;
+}
+.sendMan {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+.sendMan image {
+  margin-left: 45rpx;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 10rpx;
+}
+.sendMan view {
+  font-size: 34rpx;
+  margin-left: 30rpx;
+  color: white;
+}
+.share_modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.share_modal image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.about-bottom {
+  width: 662rpx;
+  max-height: 170rpx;
+  overflow-y: auto;
+  bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  position: absolute;
+}
+.about-bottom.nppos {
+  position: relative;
+  flex: 1;
+  max-height: 1000rpx;
+}
+.bottom-list {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-list-left {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.bottom-list-left image {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+}
+.bottom-text1 {
+  color: gray;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.gif_img {
+  width: 100%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.gif_img image {
+  width: 90%;
+}
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 10;
+}
+.bottom-list-right {
+  font-size: 30rpx;
+}
+.banner-bottom-entry {
+  width: 100%;
+  margin-top: 60rpx;
+}
+.banner-bottom-entry image {
+  width: 100%;
+}

@@ -1,0 +1,102 @@
+.container {
+  padding-bottom: 200rpx;
+}
+.container image {
+  display: block;
+  width: 100%;
+}
+.container .tip {
+  position: fixed;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+.container .tip-wrapper {
+  flex-direction: column;
+  position: relative;
+  padding-top: 15rpx;
+  width: 85%;
+  height: 880rpx;
+  background: #fff;
+}
+.container .tip-wrapper .title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.container .tip-wrapper .sub-title {
+  display: block;
+  font-size: 32rpx;
+  text-align: center;
+}
+.container .tip-wrapper .skill {
+  margin: 10rpx auto;
+  width: 480rpx;
+}
+.container .tip-wrapper .skill button {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #a6a6a6;
+  color: #fff;
+  font-size: 26rpx;
+}
+.container .tip-wrapper .skill-text {
+  display: block;
+  padding-top: 15rpx;
+  line-height: 35rpx;
+  font-size: 26rpx;
+  color: #000;
+}
+.container .tip-wrapper .example {
+  margin: 20rpx auto;
+  width: 530rpx;
+}
+.container .tip-wrapper .tip-detail image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 5rpx;
+}
+.container .tip-wrapper .confirm-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #a6a6a6;
+}
+.container .tip-wrapper .confirm-wrapper .confirm {
+  width: 100%;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background: #a6a6a6;
+}
+.container .tip .no-tip-wrapper {
+  margin-top: 20rpx;
+}
+.container .tip .no-tip-wrapper text {
+  display: inline-block;
+  font-size: 26rpx;
+  margin: 0 5rpx;
+}
+.container .tip .no-tip-wrapper text.box {
+  margin-right: 10rpx;
+  width: 25rpx;
+  height: 25rpx;
+  border: solid 1rpx #a6a6a6;
+  vertical-align: center;
+}
+.container .tip .close {
+  margin-top: 30rpx;
+}
+
+/*# sourceMappingURL=shareDetail.wxss.map */

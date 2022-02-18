@@ -1,0 +1,36 @@
+<view class="endtip-contaniner" wx:if="{{showModal}}">
+    <view class="endtip-wrap">
+        <image class="endtip-bg" src="../../img/endtip-bg.png" />
+        <view class="endtip-content">
+            <view class="endtip-box" wx:if="{{type == 1 || type == 3}}">
+                <view class="endtip-title">
+                    活动已下线
+                </view>
+                <image class="qrcode" src="../../img/qrcode.png"/>
+                <text class="endtip-des">
+                    关注VERO MODA微信公众号
+                </text>
+                <text class="endtip-des">
+                    更多惊喜等着你
+                </text>
+            </view>
+            <view class="endtip-box endtip-box2" wx:if="{{type == 2}}">
+                <view class="endtip-area">
+                    <view class="endtip-text">
+                        恭喜你在此次活动中排名
+                    </view>
+                    <view class="endtip-text">
+                        第{{rank_id}}位，获得排名奖品，
+                    </view>
+                    <view class="endtip-text">
+                        快填写领奖信息吧 
+                    </view>
+                </view>
+            </view>
+        </view>
+        <button class="share-btn" wx:if="{{type == 2}}" catch:tap="addressHandle">
+            <image class="address-btn" src="../../img/addressbtn.png" />
+        </button>
+        <image catchtap="close" class="close-btn" src="../../img/close.png"  wx:if="{{type != 3}}"/>
+    </view>
+</view>

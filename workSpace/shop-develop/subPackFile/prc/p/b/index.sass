@@ -1,0 +1,126 @@
+@import '../../common/sass/index.sass'
+
+
+@keyframes rubberBand 
+    0% 
+        -webkit-transform: scaleX(1)
+        transform: scaleX(1)
+
+    30% 
+        -webkit-transform: scale3d(1.25,.75,1)
+        transform: scale3d(1.25,.75,1)
+
+    40% 
+        -webkit-transform: scale3d(.75,1.25,1)
+        transform: scale3d(.75,1.25,1)
+
+    50% 
+        -webkit-transform: scale3d(1.15,.85,1)
+        transform: scale3d(1.15,.85,1)
+
+    65% 
+        -webkit-transform: scale3d(.95,1.05,1)
+        transform: scale3d(.95,1.05,1)
+
+    75% 
+        -webkit-transform: scale3d(1.05,.95,1)
+        transform: scale3d(1.05,.95,1)
+
+    to 
+        -webkit-transform: scaleX(1)
+        transform: scaleX(1)
+
+
+.wrapper
+    width: 100%
+    height: 100%
+    +bg('bg-b')
+    padding-top: 67rpx
+    &.big
+        padding-top: 91rpx
+        +bg('big-bg-b')
+    +b()
+    .logo
+        width: 239rpx
+        height: 159rpx
+        &.big
+            width: 276rpx
+            height: 183rpx
+        margin: 0 auto
+        +bg('logo-w')
+    .title
+        width: 614rpx
+        height: 132rpx
+        +bg('qstitle-1')
+        margin: 60rpx auto 50rpx
+        &.big
+            margin: 100rpx auto
+    .title2
+        width: 567rpx
+        height: 132rpx
+        +bg('qstitle-2')
+        margin: 60rpx auto
+        &.big
+            margin: 90rpx auto
+    .form
+        .item
+            width: 436rpx
+            height: 96rpx
+            margin: 0 auto 20rpx
+            line-height: 96rpx
+            color: white
+            font-size: 38rpx
+            padding-left: 160rpx
+            +b()
+            &.big
+                margin: 0 auto 30rpx
+        
+        .item-1
+            +bg('btn-1')
+            height: 106rpx
+            line-height: 106rpx
+            &.active
+                +bg('btn-1-a')
+                animation: rubberBand 0.7s ease
+        .item-2
+            +bg('btn-2')
+            height: 98rpx
+            line-height: 98rpx
+            &.active
+                +bg('btn-2-a')
+                animation: rubberBand 0.7s ease
+        .item-3
+            +bg('btn-3')
+            &.active
+                +bg('btn-3-a')
+                animation: rubberBand 0.7s ease
+        .item-4
+            +bg('btn-4')
+            &.active
+                +bg('btn-4-a')
+                animation: rubberBand 0.7s ease
+        .item-5
+            +bg('btn-5')
+            height: 95rpx
+            line-height: 95rpx
+            &.active
+                +bg('btn-5-a')
+                animation: rubberBand 0.7s ease
+    .footer
+        margin-top: 134rpx
+        &.big
+            margin-top: 224rpx
+        display: flex
+        .item
+            flex: 1
+            .btn
+                width: 226rpx
+                height: 85rpx
+                margin: 0 auto
+                line-height: 85rpx
+                font-size: 36rpx
+                color: white
+                text-align: center
+                +bg('btn-l')
+                &.hove
+                    +bg('btn-l-a')

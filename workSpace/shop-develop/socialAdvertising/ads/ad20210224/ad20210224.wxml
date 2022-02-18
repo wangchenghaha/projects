@@ -1,0 +1,14 @@
+<view class="frame">
+    <swiper class="n" style="width: 100%;height:750rpx" circular="true" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{swiperImgList}}" wx:key="layout_swiper">
+            <swiper-item>
+                <image class="img_with_full" src="{{imgBaseUrl}}ad_20210224_0{{item}}0.jpg?v={{randomMilli}}" mode="widthFix" data-map-index="{{item}}" bind:tap="onBannerClick" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210224_070.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210224_080.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onFolderClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210224_090.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onFolderClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210224_100.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onShopClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210224_110.jpg?v={{randomMilli}}" mode="widthFix" />
+</view>

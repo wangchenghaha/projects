@@ -1,0 +1,16 @@
+<!--activesubpack/pages/egg/components/share/share.wxml-->
+<view class="share-container" wx:if="{{isShow}}">
+  <view class="shade-wrapper" bindtap="close"></view>
+  <view class="content-wrapper">
+    <view class="image-box"><image src="{{mainImageUrl}}" mode="widthFix"></image></view>
+    <view class="btns-box">
+      <view class="btn-item" wx:if="{{friendBtn != ''}}">
+        <button open-type="share"></button>
+        <image src="{{friendBtn}}" mode="widthFix"></image>
+      </view>
+      <view class="btn-item" wx:if="{{circleBtn != ''}}">
+        <image bindtap="_shareCircle" src="{{circleBtn}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>

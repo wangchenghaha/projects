@@ -1,0 +1,243 @@
+.main{
+    position: relative;
+    .mask{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        top: 0rpx; left: 0rpx;
+    }
+    .bg{
+        width: 750rpx;
+        height: 1498rpx;
+        vertical-align: bottom;
+    }
+    .balance{
+        position: absolute;
+        top: 144rpx;left: 200rpx;
+        height: 40rpx;
+        line-height: 40rpx;
+        text-align: center;
+        width: 300rpx;
+        font-size: 40rpx;
+        color: white;
+    }
+    .betCoin{
+        position: absolute;
+        top: 1054rpx;
+        left: 200rpx;
+        color: white;
+        font-size: 24rpx;
+        line-height: 30rpx;
+        width: 70rpx;
+        text-align: center;
+    }
+    .winCoin{
+        position: absolute;
+        left: 290rpx;
+        top: 944rpx;
+        font-size: 30rpx;
+        line-height: 30rpx;
+        color: #13406a;
+        width: 270rpx;
+        text-align: center;
+    }
+
+    .button{
+        position: absolute;
+        // background-color: blue;
+    }
+    .add, .sub{
+        width: 46rpx;
+        height: 46rpx;
+        top: 1061rpx;
+        left: 124rpx;
+    }
+    .sub{
+        left: 300rpx;
+    }
+    .start{
+        width: 240rpx;
+        height: 46rpx;
+        top: 1061rpx;
+        left: 396rpx;
+    }
+    .getMore{
+        width: 150rpx;
+        height: 88rpx;
+        right: 72rpx;
+        top: 122rpx;
+    }
+    .goLuck{
+        width: 160rpx;
+        height: 166rpx;
+        bottom: 190rpx;
+        left: 294rpx;
+    }
+    .goRules, .goCoupon{
+        width: 154rpx;
+        height: 40rpx;
+        bottom: 72rpx;
+        left: 172rpx;
+    }
+    .goCoupon{
+        left: 426rpx;
+    }
+    
+    .left, .right{
+        width: 30rpx;
+        height: 47rpx;
+        position: absolute;
+        top: 588rpx;
+        left: 62rpx;
+        z-index: 10;
+    }
+    .right{
+        left: 646rpx;
+        transform: rotate(-180deg);
+    }
+    .wrap{
+        width: 190rpx;
+        height: 620rpx;
+        perspective: 1600rpx;
+        position: absolute;
+        top: 274rpx;
+        overflow: hidden;
+        background: white;
+        border-radius: 20rpx;
+        .imageList{
+            width: 190rpx;
+            height: 620rpx;
+            position: relative;
+            margin-left: -4rpx;
+            transform-style: preserve-3d;
+            transform: translateZ(-800rpx) rotateX(0deg);
+            transition: 2s ease-out;
+            .imageBox{
+                width: 200rpx;
+                height: 220rpx;
+                position: absolute;
+                box-sizing: border-box;
+                padding:0rpx 20rpx;
+                background-color: white;
+                left: 0rpx;
+                top: 0rpx;
+                right: 0rpx;
+                bottom: 0rpx;
+                margin: auto;
+                display: flex; justify-content: center; align-items: center;
+                image{
+                    width: 170rpx;
+                    height: 170rpx;
+                }
+                .line{
+                    width: 140rpx;
+                    height: 5rpx;
+                    position: absolute;
+                    left: 26rpx;
+                    bottom: 0rpx;
+                }
+            }
+        }
+    }
+    .wrap1{
+        left: 64rpx;
+    }
+    .wrap2{
+        left: 274rpx;
+        .imageList{
+            transition: 3s ease-out;
+        }
+    }
+    .wrap3{
+        left: 484rpx;
+        .imageList{
+            transition: 4s ease-out;
+        }
+    }
+}
+
+.getMoreAlert{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: 0rpx; top: 0rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    .more{
+        width:622rpx;
+        height: 460rpx;
+    }
+    .haoyou, .haibao{
+        width: 358rpx;
+        height: 90rpx;
+        padding: 0rpx;
+        border-radius: 0rpx;
+        border: none;
+        background-color: transparent;
+        &:after{
+            border-radius: 0rpx;
+            border: none;
+        }
+    }
+    button.haoyou{
+        margin-top: 100rpx;
+    }
+    .haibao{
+        margin-top: 60rpx;
+    }
+}
+
+.haibaoAlert{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: 0rpx; top: 0rpx;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .haibaoText{
+        width: 245rpx;
+        height: 30rpx;
+        margin: 36rpx 0rpx;
+        position: absolute;
+        bottom: 140rpx;
+    }
+    .haibaoBack{
+        position: absolute;
+        width: 162rpx;
+        height: 68rpx;
+        bottom: 80rpx;
+
+    }
+    
+}
+.newUserAlert{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: 0rpx; top: 0rpx;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .newBg{
+        width: 750rpx;
+        height: 744rpx;
+    }
+    .view{
+        margin-top: 100rpx;
+        width:246rpx;
+        height: 106rpx;
+    }
+}

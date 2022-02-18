@@ -1,0 +1,41 @@
+<!-- socialAdvertising/landing/landing.wxml -->
+<view class="frame_landing" bind:tap="onAdItemClick">
+    <image class="img_with_full" wx:if="{{adMode=='MODE_A'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_001_A.jpg" mode="widthFix"/>
+    <image class="img_with_full" wx:if="{{adMode=='MODE_B'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_001_B_01.jpg?v={{randomMilli}}" mode="widthFix"/>
+    <image class="img_with_full" wx:if="{{adMode=='MODE_B'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_001_B_02.jpg?v={{randomMilli}}" mode="widthFix"/>
+    <view class="wrapper_index">
+        <image class="img_index" wx:if="{{adMode=='MODE_A'}}" src="{{imgBaseUrl}}wechat_social_ad_main_icon_goto_index.jpg" mode="widthFix" bind:tap="onGotoIndexClick" />
+        <image class="img_index" wx:if="{{adMode=='MODE_B'}}" src="{{imgBaseUrl}}wechat_social_ad_main_icon_goto_index_B.jpg" mode="widthFix" bind:tap="onGotoIndexClick" />
+    </view>
+    
+    <image class="img_with_full" wx:if="{{adMode=='MODE_A'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_002_A.jpg" mode="widthFix" data-color-code="120136549A43" />
+
+    <image class="img_with_full" wx:if="{{adMode=='MODE_B'&&false}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_300_B.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full" wx:if="{{adMode=='MODE_B'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_002_B.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120107645S01" />
+
+    <view class="wrapper_side_by_side">
+        <image class="img_single" wx:if="{{adMode=='MODE_A'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_021_A.jpg" mode="widthFix" data-color-code="119308511H51" />
+        <image class="img_single" wx:if="{{adMode=='MODE_B'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_021_B.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120116502H71" />
+        <image class="img_vertical" src="{{imgBaseUrl}}wechat_social_ad_main_icon_vertical_tag.jpg" mode="widthFix" />
+        <image class="img_single" src="{{imgBaseUrl}}wechat_social_ad_main_pic_023.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120105514C39" />
+    </view>
+    <image class="img_with_full" src="{{imgBaseUrl}}wechat_social_ad_main_pic_044.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120107507501" />
+    <image class="img_with_full" src="{{imgBaseUrl}}wechat_social_ad_main_pic_055.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120101665C32" />
+    <view class="wrapper_side_by_side">
+        <image class="img_single" src="{{imgBaseUrl}}wechat_social_ad_main_pic_065.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120158514H13" />
+        <image class="img_vertical" src="{{imgBaseUrl}}wechat_social_ad_main_icon_vertical_tag.jpg?v={{randomMilli}}" mode="widthFix" />
+        <image class="img_single" wx:if="{{adMode=='MODE_A'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_067_A.jpg" mode="widthFix" data-color-code="11939S566S01" />
+        <image class="img_single" wx:if="{{adMode=='MODE_B'}}" src="{{imgBaseUrl}}wechat_social_ad_main_pic_067_B.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120105519H2Z" />
+    </view>
+    <image class="img_with_full" src="{{imgBaseUrl}}wechat_social_ad_main_pic_088.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120101664C04" />
+    <image class="img_with_full" src="{{imgBaseUrl}}wechat_social_ad_main_pic_099.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120249501J3C" />
+    <view class="wrapper_side_by_side">
+        <image class="img_single" src="{{imgBaseUrl}}wechat_social_ad_main_pic_101.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="119349616E06" />
+        <image class="img_vertical" src="{{imgBaseUrl}}wechat_social_ad_main_icon_vertical_tag.jpg" mode="widthFix" />
+        <image class="img_single" src="{{imgBaseUrl}}wechat_social_ad_main_pic_105.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="119349602J34" />
+    </view>
+    <image class="img_with_full" src="{{imgBaseUrl}}wechat_social_ad_main_pic_111.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="119349525J32" />
+    <view class="wrapper_index_2">
+        <image class="img_index" src="{{imgBaseUrl}}wechat_social_ad_main_icon_goto_index.jpg" mode="widthFix" bind:tap="onGotoIndexClick" />
+    </view>
+</view>

@@ -1,0 +1,52 @@
+.expressItem{
+    width: 100%;
+    display: flex;
+}
+
+.expressTimer{
+    width: 20%;
+    position: relative;
+    border-right: 2rpx dashed #a7a8a8;
+    min-height: 150rpx;
+}
+
+.expressTimer .dates{
+    position: absolute;
+    font-size: 28rpx;
+    color: gray;
+    right: 30rpx;
+}
+
+.expressTimer .hours{
+    position: absolute;
+    font-size: 24rpx;
+    color: gray;
+    right: 30rpx;
+    top: 34rpx;
+}
+
+
+.expressInfo{
+    position: relative;
+    width: 80%;
+}
+
+.expressInfo image{
+    position: absolute;
+    width: 50rpx;
+    height: 50rpx;
+    left: -25rpx;
+    top: -20rpx;
+}
+
+.expressInfo .expressState{
+    font-size: 32rpx;
+    color: black;
+    margin-left: 30rpx;   
+}
+
+.expressInfo .expressDetail{
+    font-size: 26rpx;
+    color: gray; 
+    margin-left: 30rpx;   
+}

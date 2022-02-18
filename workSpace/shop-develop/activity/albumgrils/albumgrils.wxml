@@ -1,0 +1,35 @@
+<view class="container">
+    <block wx:for="{{albumGrils}}" wx:key="album">
+        <image class="images" src="{{item.picUrl}}" mode="widthFix"/>
+    </block>
+
+    <view class="albumShare">
+        <view class="albumArea flex-center" data-type="gofriend" bindtap="onClick">
+            <view class="albumBack flex-center">
+                <view class="albumTxt">分享给好友</view>
+                <image class="aImage" src="{{shareFirend}}" mode="widthFix"/>
+            </view>
+            <button open-type="share" class="share"></button>
+        </view>
+        <view class="albumArea  flex-center" data-type="goGroup"  bindtap="onClick">
+            <view class="albumBack flex-center">
+                <view class="albumTxt">分享到朋友圈</view>
+                <image class="aImage" src="{{shareGroup}}" mode="widthFix"/>
+            </view>
+        </view>
+    </view>
+
+    <image class="bottomImg" src="{{bottomImg}}" mode="widthFix"/>
+    
+    <view class="albumBottom">
+        <view class="albumArea" data-type="goTop" bindtap="onClick">
+            <image class="aImage" src="{{goTop}}" mode="widthFix"/>
+            <view class="albumTxt">返回顶部</view>
+        </view>
+        <view class="line"></view>
+        <view class="albumArea" data-type="goHome"  bindtap="onClick">
+            <image class="aImage" src="{{goHome}}" mode="widthFix"/>
+            <view class="albumTxt">查看更多</view>
+        </view>
+    </view>
+</view> 

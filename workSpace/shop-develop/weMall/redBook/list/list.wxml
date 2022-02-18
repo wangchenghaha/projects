@@ -1,0 +1,28 @@
+<view class="content">
+  <view class="header flex-bet">
+    <view class="title">推荐搭配</view>
+    <view class="btn flex-start">
+      <block wx:for="{{sortList}}" wx:key="type">
+        <view class="btn-item flex-center text-c" data-index="{{index}}" bindtap="changeSort">
+          {{item.text}}
+          <view class="sort-flag">
+            <text class="top {{item.value === 'asc' ? 'show': ''}}"></text>
+            <text class="bottom {{item.value === 'desc' ? 'show': ''}}"></text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="book" wx:if="{{bookList.length}}">
+    <temp-list
+        bindremoveTemp="remove"
+        bindsort="changeSort"
+        share="{{bookList}}"
+        detail-path="../detail/detail">
+    </temp-list>
+  </view>
+  <view wx:else class="no-date text-c">暂无数据</view>
+  <view class="go-top flex-center" bindtap="goTop" wx:if="{{showGoTop}}">
+    <text></text>
+  </view>
+</view>

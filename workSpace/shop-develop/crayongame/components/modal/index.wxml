@@ -1,0 +1,6 @@
+<view class="wrapper" catchtouchmove='stop'>
+    <view class="modal {{animate?'animate':''}} award{{modalconfig.index}}">
+        <view class="awards" hover-class="active" bindtap='getcard'></view>
+        <view class="close" catchtap='close'></view>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+{
+  "navigationStyle" : "custom",
+  "disableScroll": true,
+  "usingComponents": {
+    "index_jj" : "../components/index_jj/index_jj",
+    "index_fol" : "../components/index_fol/index_fol",
+    "index_only" : "../components/index_only/index_only",
+    "index_vm" : "../components/index_vm/index_vm",
+    "index_slt" : "../components/index_slt/index_slt"
+  }
+}

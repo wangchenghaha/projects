@@ -1,0 +1,223 @@
+.wrapper {
+  background-color: #F8F8F8;
+}
+.top_nav {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 20rpx solid #F8F8F8;
+}
+.nav-name {
+  display: inline-block;
+  color: #AAAAAA;
+  padding: 0 3%;
+  font-size: 30rpx;
+}
+.nav-hover{
+  color: #000;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.nav-name.true {
+  font-weight: bold;
+  color: #000;
+}
+.navBtn {
+  font-size: 24rpx;
+  display: inline-block;
+  float: right;
+  padding: 0 3%;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #373737;
+}
+.triangle {
+  display: inline-block;
+  vertical-align: middle;
+}
+.triangle .text {
+  margin-bottom: 3rpx;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+}
+.triangle-down {
+  border-bottom: 10rpx solid #838383;
+}
+.triangle-up {
+  border-top: 10rpx solid #000;
+}
+.black {
+  border-bottom: 10rpx solid #000;
+}
+.gray {
+  border-top: 10rpx solid #838383;
+}
+.top_main {
+  /* background: red; */
+  margin-top: 100rpx;
+  padding-bottom: 150rpx;
+}
+.uploadBtn {
+  background: #000;
+  color: #fff;
+  font-size: 32rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  z-index: 10;
+}
+
+
+
+
+.list {
+  width: 100%;
+  padding: 7% 3% 3% 3%;
+  background: #fff;
+  margin-bottom: 20rpx;
+  display: inline-flex;
+}
+.listVideo {
+  width: 192rpx;
+  height: 256rpx;
+  background: #818181;
+  /* width: 30%; */
+  margin-right: 3%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; */
+}
+.video {
+  width: 100%;
+  height: 100%;
+}
+.cover {
+  position: absolute;
+  overflow: hidden;
+  width: 192rpx;
+  height: 256rpx;
+}
+.play {
+  position: absolute;
+  overflow: hidden;
+  width: 192rpx;
+  height: 256rpx;
+}
+.listInfo {
+  width: 66%;
+  position: relative;
+}
+.listInfoState {
+  font-size: 26rpx;
+  color: #FF9C31;
+  position: absolute;
+  right: 13%;
+  top: 56rpx;
+  font-weight: 600;
+}
+.delIcon2 {
+  position: absolute;
+  right: 3%;
+  top: 56rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.listInfoTit {
+  height: 30rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 30rpx;
+  margin-bottom: 44rpx;
+}
+.listInfoText {
+  font-size: 26rpx;
+  /* display: -webkit-inline-box; */
+  width: 100%;
+  line-height: 40rpx;
+}
+.colBlack {
+  color: #000;
+  display: inline;
+}
+.colGray {
+  color: #aaaaaa;
+  display: inline;
+}
+.eyes {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10%;
+  vertical-align: text-bottom;
+}
+.delIcon {
+  width: 44rpx;
+  height: 48rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 向左滑动实现删除操作 */
+.touch-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  background: #fff;
+  /* height: 216rpx; */
+}
+  
+  .content {
+  width: 100%;
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  margin-left: -90px;
+}
+  
+  .del {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    -webkit-transform: translateX(90px);
+    transform: translateX(90px);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    font-size: 35rpx;
+    background-color: #FF5D5D;
+  }
+  
+  .touch-move-active .content, .touch-move-active .del {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }

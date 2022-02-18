@@ -1,0 +1,81 @@
+<view class="tb_box" style="background:{{bigBackGround}}">
+
+    <image class="tb_backbg"  src="{{lotteryBg}}" mode="widthFix"></image>
+    
+    <view class="marquee_container" style="background:{{bigBackGround}}; --marqueeWidth--:-160em">
+      <view class="marquee_text">{{marqueeText}}</view>
+    </view>
+
+    <view class="brandTitle">
+        <image src="{{brandTitle}}"  mode='widthFix' />
+    </view>
+    <view class="turntableBox">
+  
+      <view class="plate-wrap-box">
+        <!------------------- 绘制转盘内容---------------- -->
+        <view class="plate-border" style="background:{{midBackGround}}" animation="{{ aniData }}">
+          <view class="plate-wrap" style="background:{{midBackGround}}" >
+            <view class="plate-box" wx:for="{{lotterys}}" wx:key="lotterys" 
+              style=" transform:translate(-50%,0) rotate({{ 360 / lotterys.length * ( index )}}deg);">
+              <text class="text-box" >{{ item.prizeName }}</text>
+              <image src="{{item.prizePicUrl}}" class="picStyle" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+        <view class="plate-btn-wrap" bindtap="startRollTap">
+          <image src="{{drawPointer}}" class="goImg"></image>
+        </view>
+        </view>
+      </view>
+  
+        <view class="btn">
+          <view class="btnP" bindtap="goCoupon" >查看奖品</view>
+          <view class="btnP" bindtap="goShop">商城逛逛</view>
+        </view>
+  
+        <view class='notice_content' style="background:{{bigBackGround}};">
+            <image class="ruleTitle" src="{{ruleTitleImg}}" mode="widthFix"></image>
+            <view class="text">
+                <view class="textP">1. 成为会员即可免费参与抽奖；</view>
+                <view class="textP">2. 每位会员有一次免费抽奖机会；</view>
+                <view class="textP">3. 权益的使用和兑换，请遵循权益说明在指定平台活动渠道使用，优惠券将在使用时自动核销；</view>
+                <view class="textP">4. 奖品数量有限，兑完为止；</view>
+                <view class="textP">5. 最终活动解释权归ONLY所有；</view>
+            </view>
+      </view>
+  
+    <!-- ============中奖名单========== -->
+    <!-- ["屈臣氏￥188大礼包","袜子拖鞋套装","优惠券100","情侣T恤","智行火车票￥144礼包","腾讯视频月季卡优惠", "优惠券10"]; -->
+    <view class="bg" wx:if="{{blackBgShow}}"></view>
+    <view class="bgWhite" wx:if="{{tanShowWhite}}"></view>
+    <!-- 中奖提示 -->
+    <view class="tan" wx:if="{{tanShow}}">
+        <image src="{{drawNoticePic}}" class="tan_img" bindtap="goCoupon" mode='widthFix' ></image>
+        <view class="close" bindtap="clickClose">
+        </view>
+    </view>
+  
+    <view class="tan" wx:if="{{cheatsShow}}">
+      <image src="{{cheatsNoticePic}}" class="tan_img"  mode='widthFix' ></image>
+      <view class="myGift" bindtap="seeCoupon"></view>
+      <button open-type="share" class="btnShare"></button>
+    </view>
+
+    <view class="tan" wx:if="{{shareGetChance}}">
+      <image src="{{getChancePic}}" class="tan_img"  mode='widthFix' ></image>
+      <button open-type="share" class="btnShare2" wx:if="{{isShare}}"></button>
+      <view class="btnShare2" wx:else bindtap="goBack"></view>
+      <view class="close" bindtap="clickClose"></view>
+    </view>
+
+    <!-- 中奖提示 -->
+    <view class="errTan" wx:if="{{errTanShow}}">
+        <image src="{{errPic}}" class="err_img" mode='widthFix' ></image>
+        <view class="close" bindtap="clickClose">
+          <text></text>
+          <text></text>
+        </view>
+    </view>
+  
+  </view>
+  

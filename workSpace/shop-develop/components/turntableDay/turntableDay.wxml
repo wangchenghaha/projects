@@ -1,0 +1,99 @@
+<view class="tb_box"  style="background:{{mainColor}}">
+
+  <!-- <image class="tb_backbg" src="{{picUrl}}" mode="widthFix"></image> -->
+  <image class="tb_backbg" src="{{backgroundUrl}}" mode="widthFix"></image>
+
+  <view class="marquee_box"  style="background:{{mainColor}}">
+    <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}rpx;font-size: {{size}}rpx;">
+      <!-- <text>{{text}}</text> -->
+      <text>{{marqueeText}}</text>
+      <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}rpx;">{{text}}</text>
+    </view>
+  </view>
+
+  <!-- <view class="brandTitle">
+      <image src="{{LogoPic}}"  mode='widthFix' />
+  </view> -->
+
+    <view class="turntableBox" >
+      <view class="plate-wrap-box">
+          <!------------------- 绘制转盘内容---------------- -->
+          <view class="plate-border" style="background:{{turntableColor}};" animation="{{ aniData }}">
+            <view class="plate-wrap">
+              <view class="plate-box"  wx:for="{{lotterys}}" wx:key="lotterys" 
+                style=" transform:translate(-50%,0) rotate({{ 360 / lotterys.length * ( index )}}deg);border-left: {{borderNum}}rpx solid transparent;border-right: {{borderNum}}rpx solid transparent">
+                <!-- <text class="text-box" >{{ item.prizeName }}</text> -->
+                <image src="{{item.prizePicUrl}}" class="picStyle"></image>
+              </view>
+              <!-- <view class="plate-box" wx:for="{{ lottery }}" wx:key="lottery" 
+              style=" transform:translate(-50%,0) rotate({{ 360 / lottery.length * ( index )}}deg);">
+                <text class="text-box" style="color:#{{ index % 2==0?'333':'333' }}">{{ item.text }}</text>
+                <image src="{{item.imagePic}}" class="picStyle"></image>
+              </view> -->
+            </view>
+          </view>
+
+          <!-- <view class="plate-border" animation="{{ aniData }}">
+          <view class="plate-wrap" >
+            <view class="plate-box"  wx:for="{{lotterys}}" wx:key="lotterys" 
+              style=" transform:translate(-50%,0) rotate({{ 360 / lotterys.length * ( index )}}deg)">
+              <text class="text-box" >{{ item.prizeName }}</text>
+              <image src="{{item.prizePicUrl}}" class="picStyle" mode="widthFix"></image>
+            </view>
+          </view>
+        </view> -->
+
+          <view class="plate-btn-wrap" bindtap="startRollTap">
+            <image src="{{startButtonUrl}}" class="goImg" mode="widthFix"></image>
+          </view>
+      </view>
+
+      <view wx:if="{{isTurntableNum}}">
+        <view wx:if="{{configJson.sharedAddJoinCount}}" style="width:100%;text-align: center;color:{{configJson.shareColor}}">剩余抽奖 {{playerNums}} 次，分享好友可得抽奖机会</view>
+        <view wx:else style="width:100%;text-align: center;color:{{configJson.shareColor}}">剩余抽奖 {{playerNums}} 次</view>
+      </view>
+
+       <view class="btn">
+        <!-- <view class="btnP" style="background:{{turntableColor}}" bindtap="go" >积分兑次数</view> -->
+        <view class="btnP" style="background:{{turntableColor}}" bindtap="goCoupon" >查看奖品</view>
+        <view class="btnP" style="background:{{turntableColor}}" bindtap="goShop">去商城逛逛</view>
+      </view>
+      <view wx:if="{{configJson.consumePointsAddJoinCount}}" class="btn" style='margin-top: 5%;'>
+        <view class="btnP" style="background:{{turntableColor}}" bindtap="integral" style="width:100%">消耗积分兑换抽奖次数</view>
+        <!-- <view class="btnP" style="background:{{turntableColor}}" bindtap="goCoupon" >查看奖品</view> -->
+        <!-- <view class="btnP" style="background:{{turntableColor}}" bindtap="goShop">去商城逛逛</view> -->
+      </view>
+
+      <!-- <image src="{{activityTitle}}" class="title" bindtap="clickTitle"></image> -->
+      <view class="noticeTitle ~flex-center">
+        <view class="line" style="background: {{configJson.ruleColor}}"></view>
+        <view class="title ~flex-center" style="color: {{configJson.ruleColor}}">活动规则</view>
+        <view class="line" style="background: {{configJson.ruleColor}}"></view>
+      </view>
+
+      <view class="text">
+        <text class="textP" style="color: {{configJson.ruleColor}}">{{ruleDesc}}</text>
+          <!-- <view class="textP">1.活动时间：2021年8月17日-2021年9月1日期间的每周二00:00-23:59；</view>
+          <view class="textP">2.每位用户每周仅可参与一次抽奖；</view>
+          <view class="textP">3.优惠券仅限小程序商城及官网使用，有效期为领取优惠券之日起7天内有效，过期将自动核销，取消订单或者退货优惠券均无法退回；</view>
+          <view class="textP">4.此优惠券不与其他优惠券叠加使用；</view>
+          <view class="textP">5.实物需要支付0.01元并填写地址，于7个工作日内寄出，奖品不抵现不退换；</view>
+          <view class="textP">6.活动最终解释权归绫致时装所有。</view> -->
+      </view>
+
+    </view>
+
+
+
+  <!-- ============中奖名单========== -->
+  <!-- ["屈臣氏￥188大礼包","袜子拖鞋套装","优惠券100","情侣T恤","智行火车票￥144礼包","腾讯视频月季卡优惠", "优惠券10"]; -->
+  <view class="bg" wx:if="{{tanShow}}"></view>
+  <!-- 每周五抽奖 -->
+  <view class="tan" wx:if="{{tanShow_gift}}">
+    <image wx:if="{{showTan}}" src="{{drawNoticePic}}" class="tan_img" bindtap="goCoupon"></image>
+      <!-- <image wx:if="{{showTan}}" src="{{tanPic}}" class="tan_img" bindtap="goCoupon"></image> -->
+      <image wx:if="{{showErr}}" src="{{errPic}}" class="tan_img" bindtap="clickClose"></image>
+      <image src="{{closePic}}" class="tan_close" bindtap="clickClose"></image>
+      <text wx:if="{{showErrText}}" class="tan_text">{{errMsg}}</text>
+  </view>
+</view>

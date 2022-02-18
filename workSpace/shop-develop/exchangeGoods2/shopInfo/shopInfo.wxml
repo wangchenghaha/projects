@@ -1,0 +1,18 @@
+<import src="../tmpl/shopMultiInfo/shopMultiInfo"></import>
+<view class='frame'>
+  <text class='txt_title'>您已选择{{shopBean.shopNameCn}},请选择门店换货方式</text>
+  
+  <template is="shopMultiInfoTmpl" data="{{urlShopBG,shopBean}}"></template>
+
+  <view class="frame_choose">
+    <!-- <view class='txt_tip0'>请选择门店换货方式：</view> -->
+    <view class='combine'>
+      <view class='button' bindtap='goStraight'>直接到店换货</view>
+      <view class='txt_tip1'>直接到门店选择需要换货的商品</view>
+    </view>
+    <view class='combine'>
+      <view class='button' bindtap='chooseOnline'>在线选择门店商品</view>
+      <view class='txt_tip1'>在线选择商品，由门店为您备货后，再到门店进行换货</view>
+    </view>
+  </view>
+</view>

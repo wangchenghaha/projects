@@ -1,0 +1,65 @@
+<!-- socialAdvertising/trySearch/trySearch.wxml -->
+<view class="frame" bind:tap="onFrameClick">
+    <swiper wx:if="{{isOnly}}" class='layout_swiper' circular="true" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{swiperImgList}}" wx:key="layout_swiper">
+            <swiper-item>
+                <image src="{{item.picUrl}}" class="img_swiper_item" mode="widthFix" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view wx:if="{{isOnly}}" class="multi" catch:tap="onCouponClick">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip">领取150元专属券包</view>
+    </view>
+    <image class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_020.jpg?v={{randomMilli}}" />
+    <video wx:if="{{false}}" class="layout_video" src="{{videoUrl}}try_search_640_448.mp4" object-fit="fill" show-center-play-btn="true" muted="true" autoplay="autoplay" show-mute-btn="true"></video>
+    <view wx:if="{{isOnly}}" class="multi" catch:tap="onGotoShopClick">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip">去门店逛逛</view>
+    </view>
+    <view wx:if="{{!isOnly}}" class="multi" catch:tap="onCouponClick">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip miniSize">领取搜一搜150元专属券包</view>
+    </view>
+    <image wx:if="{{!isOnly}}" class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_030.jpg?v={{randomMilli}}" />
+    <image wx:if="{{!isOnly}}" class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_040.jpg?v={{randomMilli}}" />
+    <view wx:if="{{!isOnly}}" class="multi" catch:tap="onGotoShopClick">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip">去门店逛逛</view>
+    </view>
+    <image class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_050.jpg?v={{randomMilli}}" data-index="0" />
+    <view class="multi">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip" data-index="0">{{tipList[0]}}</view>
+    </view>
+    <image class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_060.jpg?v={{randomMilli}}" data-index="1" />
+    <view class="multi">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip" data-index="1">{{tipList[1]}}</view>
+    </view>
+    <image class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_070.jpg?v={{randomMilli}}" data-index="2" />
+    <view class="multi">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip" data-index="2">{{tipList[2]}}</view>
+    </view>
+    <image class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_080.jpg?v={{randomMilli}}" data-index="3" />
+    <view class="multi">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip" data-index="3">{{tipList[3]}}</view>
+    </view>
+    <image wx:if="{{!isOnly}}" class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_090.jpg?v={{randomMilli}}" data-index="4" />
+    <image wx:if="{{isOnly}}" class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_100.jpg?v={{randomMilli}}" data-index="4" />
+    <view class="multi">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip miniSize" data-index="4">{{tipList[4]}}</view>
+    </view>
+    <view class="multi" catch:tap="onCouponClick">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip ">领取150元专属券包</view>
+    </view>
+    <view wx:if="{{isOnly}}" class="multi" catch:tap="onGotoShopClick">
+        <image class="img_bar" mode="widthFix" src="{{imgUrl}}tyr_search_pic_010.png?v={{randomMilli}}" />
+        <view class="tip">去门店逛逛</view>
+    </view>
+    <image class="img_single" mode="widthFix" src="{{imgUrl}}tyr_search_pic_101.jpg?v={{randomMilli}}" />
+</view>

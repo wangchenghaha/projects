@@ -1,0 +1,55 @@
+<view class="header">
+  <view class="main">
+    <view class="person flex-bet">
+      <view class="info">
+        <view class="name color-fff">你好，XXX</view>
+        <view class="desc color-fff">XXXXX</view>
+      </view>
+      <view class="code">
+        <image src="/images/daogou_qrcode.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="main">
+  <view class="overview">
+    <view class="title flex-bet">
+      <view class="select flex-bet" mut-bind:tap="changeShowTime">
+        <text>{{defaultValue}}</text>
+        <text class="triangle {{showTimeList}}"></text>
+        <view class="time" wx:if="{{showTimeList}}">
+          <text class="time-item" wx:for="{{timeList}}" wx:key="time" data-value="{{item}}" mut-bind:tap="selectTime">{{item}}</text>
+        </view>
+      </view>
+      <view class="detail text-c">详情</view>
+    </view>
+    <view class="list flex-center flex-wrap">
+      <view class="list-item flex-center" wx:for="{{overview}}" wx:key="list">
+        <view class="value text-c font-bold">
+          <text wx:if="{{!index}}">￥</text>{{item.value}}</view>
+        <view class="text text-c">{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="nav flex-around">
+    <view class="nav-item flex-center" wx:for="{{nav}}" wx:key="nav">
+      <view class="icon flex-center">
+        <image wx:if="{{item.icon}}" src="{{item.icon}}" mode="widthFix"></image>
+        <icon wx:else type="search" color="#fff" size="50rpx" />
+      </view>
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+
+  <view class="task">
+    <text class="title">每日任务</text>
+    <view class="task-item flex-bet" wx:for="{{task}}" wx:key="task">
+      <view class="task-text">
+        {{item.text}}
+        <text>({{item.value}}/1)</text>
+      </view>
+      <text class="btn text-c">立即前往</text>
+    </view>
+  </view>
+</view>

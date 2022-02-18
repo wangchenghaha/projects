@@ -1,0 +1,27 @@
+<view class="wrapper {{isBigPhone?'big':''}}" style="opacity: {{isEnd?0:1}}">
+    <view class="image" wx:for='{{imageList}}' wx:key="item">
+        <image class="item" src='{{item}}' bindload="onload"></image>
+    </view>
+    <view class="content">
+        <view class="logo">
+            <view class="only">ONLY.</view>
+            <view class="and"> & </view>
+            <view class="name">
+                <view class="t">蜡</view>
+                <view class="t">笔</view>
+                <view class="t">小</view>
+                <view class="t">新</view>
+            </view>
+        </view>
+        <view class="rate">
+            <view class="tit">你在烦恼什么？</view>
+            <view class="desc">小新和你一起</view>
+        </view>
+        <view class="percent">
+            <view class="inner" style="width: {{percent}}%"></view>
+            <view class="tit">#打败不开心</view>
+        </view>
+    </view>
+</view>
+  
+  

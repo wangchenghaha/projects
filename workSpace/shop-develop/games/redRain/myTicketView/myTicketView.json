@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText" : "兑奖记录",
+  "navigationBarTextStyle" : "black",
+  "usingComponents": {
+    "myTicketView_fol" : "../components/myTicketView_fol/myTicketView_fol",
+    "myTicketView_vm" : "../components/myTicketView_vm/myTicketView_vm"
+  }
+}

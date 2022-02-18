@@ -1,0 +1,7 @@
+{
+  "navigationStyle" : "custom",
+    "usingComponents": {
+      "index_fol" : "../components/index_fol/index_fol",
+      "index_vm" : "../components/index_vm/index_vm"
+    }
+  }

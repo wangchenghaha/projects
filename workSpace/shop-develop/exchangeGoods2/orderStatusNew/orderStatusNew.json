@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "zan-cell": "../components/cell/index",
+    "zan-cell-group": "../components/cell-group/index",
+    "zan-panel": "../components/panel/index",
+    "zan-steps": "../components/steps/index",
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods",
+    "ex-order-infos-view": "../components/exOrderInfos/exOrderInfos",
+    "ex-button-layout": "../components/exButtonLayout/exButtonLayout"
+  }
+}

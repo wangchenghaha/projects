@@ -1,0 +1,20 @@
+    
+<view class="details_size animate"  wx:if="{{showCoupon}}">
+    <view class="details_opacity"></view>
+    <view class="details_con">
+        <view class="dd_con">
+            <image class = "close" src="../../images/qr_close.png" bindtap="closeCoupon"/>
+            <view class="coupon_sizeOne" >
+                <view class="couponText">活动用券更优惠，请马上领取</view>
+                <view class="coupon_sizeTwo " >
+                    <block wx:for="{{couponPicList}}" wx:key="coupon"  >
+                    <view class="couponImage {{detailInput ?'':'margin_top'}}">
+                        <image src="{{item}}"  mode="widthFix"/>
+                    </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+      <view id="goumai2" class="couponSubmit {{(isIphoneX && detailInput) ?'iphoneXBtnBottom':'btnBottom'}}" bindtap="jumpMiniCard">一键领取</view>
+    </view>
+</view>

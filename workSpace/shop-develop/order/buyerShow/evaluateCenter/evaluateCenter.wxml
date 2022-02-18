@@ -1,0 +1,27 @@
+<view class="content">
+  <view class="header flex-around bg-color">
+    <image class="avatar" src="{{avatarUrl}}" moed="widthFix"></image>
+    <view class="number text-c">
+      <view class="value">{{reviewCount}}</view>
+      <text>全部评价</text>
+    </view>
+    <view class="number text-c">
+      <view class="value">{{buyerShowCount}}</view>
+      <text>买家秀</text>
+    </view>
+  </view>
+  <view class="tab flex-bet bg-color">
+    <view class="tab-item text-c {{item.checked}}" wx:for="{{tab}}" wx:key="text" data-index="{{index}}" bindtap="changeTab">{{item.text}}</view>
+  </view>
+  <view class="container" wx:for="{{tab}}" wx:key="*this">
+    <block wx:if="{{item.checked}}">
+      <view class="order" wx:if="{{item.type === 'order'}}">
+        <wait-rating orderList="{{orderList}}" bindshowMore="showMore"></wait-rating>
+      </view>
+      <view class="order" wx:if="{{item.type === 'rating'}}">
+        <wait-rating orderList="{{ratingList}}"></wait-rating>
+      </view>
+    </block>
+  </view>
+  <go-top bindtap="goTop" wx:if="{{showGoTop}}"></go-top>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "推荐官登录",
+  "usingComponents": {
+    "my-loading":"/components/loading/loading"
+  }
+}

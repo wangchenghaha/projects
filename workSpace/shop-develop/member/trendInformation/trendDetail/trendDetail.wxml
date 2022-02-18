@@ -1,0 +1,42 @@
+<view class="container">
+    <view class="userInfo flex-bet">
+        <view class="flex-center" data-type="author" bindtap="onClick">
+            <image class="avatarImg" src="{{detailData.avatarUrl}}" mode="widthFix"></image>
+            <view class="nickName">{{detailData.nickname}}</view>
+        </view>
+        <view class="foucsed" wx:if="{{detailData.isFocusAuthor}}" data-type="foucs" bindtap="onClick">√  已关注</view>
+        <view class="foucs" wx:else  data-type="foucs" bindtap="onClick">+  关注</view>
+    </view>
+    <!-- <image class="mainImg" src="{{detailData.mainImg}}" mode="widthFix"></image> -->
+    <swiper class="swiper" circular="true" indicator-dots="{{true}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{goodsImgs}}" wx:key="layout_swiper">
+            <swiper-item>
+                <image class="swiper-image" src="{{item.url}}" mode="widthFix" data-map-index="{{item}}" bind:tap="onBannerClick" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="content">{{detailData.title}}</view>
+    <view class="description">{{detailData.description}}</view>
+    <view class="optionArea flex-bet">
+        <view class="flex-center">
+            <image class="optionImg" src="{{shareImg}}" modex="widthFix"></image>
+            <view class="optionTxt">转发</view>
+        </view>
+        <button open-type="share" class="share"></button>
+        <view class="flex-center" data-type="praise" bindtap="onClick">
+            <image class="optionImg" src="{{detailData.isPraise? praised : praise}}" modex="widthFix"></image>
+            <view class="optionTxt">{{detailData.praiseTotal}}</view>
+        </view>
+    </view>
+
+    <view class="optionArea flex-bet" data-type="goods" bindtap="onClick">
+        <view class="optionTxt">查看TA提到的宝贝</view>
+        <view class="flex-center">
+            <image class="goodsImg"  src="{{goodsImg}}" modex="widthFix"></image>
+            <image class="optionImg" src="{{rightArrImg}}" modex="widthFix"></image>
+        </view>
+    </view>
+    <view class="recommend" wx:if="{{detailData.suggestSize}}">尺码推荐：{{detailData.suggestSize}}</view>
+    <view class="bottomeView"></view>
+</view>
+  

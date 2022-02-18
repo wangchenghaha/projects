@@ -1,0 +1,361 @@
+
+page{font-family:'Microsoft Yahei',helvetica,arial !important; height:100%;}
+@font-face {font-family: "iconfont";
+  src: url('https://cdn.bestseller.com.cn/assets/common/pub/iconfont/iconfont.eot?t=1525673542003'); /* IE9*/
+  src: url('https://cdn.bestseller.com.cn/assets/common/pub/iconfont/iconfont.eot?t=1525673542003#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('https://cdn.bestseller.com.cn/assets/common/pub/iconfont/iconfont.ttf?t=1525673542003') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('https://cdn.bestseller.com.cn/assets/common/pub/iconfont/iconfont.svg?t=1525673542003#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:30rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cart:before { content: "\e698"; }
+
+.icon-moreunfold:before { content: "\e6a6"; }
+
+.icon-search:before { content: "\e6ac"; }
+
+.icon-viewgallery:before { content: "\e6b4"; }
+
+.icon-account:before { content: "\e6b8"; }
+
+.icon-shezhi:before { content: "\e64b"; }
+
+.icon-shouye:before { content: "\e64f"; }
+
+.icon-map:before { content: "\e715"; }
+
+.icon-xiaoxi:before { content: "\e60f"; }
+
+.icon-favorite:before { content: "\e6a0"; }
+
+.icon-pic:before { content: "\e6a8"; }
+
+.icon-jia:before { content: "\e62a"; }
+
+.icon-jia1:before { content: "\e608"; }
+
+.icon-yifu:before { content: "\e608"; }
+
+.icon-shouye:before { content: "\e663"; }
+.icon-shouye1:before { content: "\e60c"; }
+
+
+
+
+/* 轮播图 */
+.recommend{ width:100%; height:480rpx; margin-bottom:20rpx; position:relative;}
+.swiper-container{ width:100%;position:absolute; top:0; left:0;}
+.swiper-container .swiper{height: 480rpx;}
+.swiper-container .swiper .img{display:block;width: 100%; height: 100%;}
+.swiper-container .dots{ position: absolute;right:0;left:0;bottom:21rpx;display: flex;  justify-content: center;margin:0 auto;}
+.swiper-container .dots .dot{margin: 0 9rpx;width:18rpx;height:18rpx;border-radius: 50%;transition: all .6s; font:300 18rpx/28rpx "microsoft yahei";text-align: center; border:3rpx solid #fff;}
+.swiper-container .dots .dot.active{background:#fff;color:#fff;}
+
+
+
+/* 回到顶部 */
+.goTop{position:fixed; bottom:100rpx; right:30rpx; width:60rpx; height:60rpx; z-index:999;}
+.goTop image{ width:60rpx; height:60rpx;}
+
+
+/* add eto */
+@import 'style/weui.wxss';
+.h1{
+  font-size: 46px;
+}
+.h2{
+  font-size: 21px;
+}
+image{
+  display: inline-block;
+}
+page{
+  width: 100%;
+  height:100%;
+}
+
+.fll{
+  float: left;
+}
+.flr{
+  float: right;
+}
+.ovf{
+  overflow: hidden;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.text-c{
+  text-align: center;
+}
+.text-r{
+  text-align: right;
+}
+.color-fff{
+  color: #fff;
+}
+.font-bold{
+  font-weight: bold;
+}
+.font-bold{
+  font-weight: bold;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-start{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-end{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-bet{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.fix-iphonex-button {
+  bottom:68rpx!important;
+  z-index: 999;
+}
+.fix-iphonex-button::after {
+  content: ' ';
+  position: fixed;
+  bottom: 0!important;
+  height: 68rpx!important;
+  width: 100%;
+  background: #fff;
+}
+
+.bottomCommon{
+  position: fixed;
+  width:100%;
+  bottom:0;
+  left:0;
+  background: #fff;
+  z-index: 999;
+}
+.iphoneXFooter{ height:148rpx; background: #fff;}
+.iphoneXMarginBottom{margin-bottom: 68rpx;}
+
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  overflow: hidden;
+}
+.nowrap{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+.arrow-bg{
+  background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/icon_arrow_right_dark_gray.png) no-repeat right
+  center;
+  background-size: auto 24rpx;
+}
+.padding-r-10{
+  padding-right: 10rpx;
+}
+.content>img{
+  max-width: 100%;
+}
+.margin-t-5{
+  margin-top: 5rpx;
+}
+.margin-t-10{
+  margin-top: 10rpx;
+}
+.margin-t-15{
+  margin-top: 15rpx;
+}
+.margin-t-20{
+  margin-top: 20rpx;
+}
+.margin-t-25{
+  margin-top: 25rpx;
+}
+.margin-t-30{
+  margin-top: 30rpx;
+}
+.margin-r-5{
+  margin-right: 5rpx;
+}
+.margin-r-10{
+  margin-right: 10rpx;
+}
+.margin-r-15{
+  margin-right: 15rpx;
+}
+.margin-r-20{
+  margin-right: 20rpx;
+}
+.margin-r-25{
+  margin-right: 25rpx;
+}
+.margin-r-30{
+  margin-right: 30rpx;
+}
+.margin-b-5{
+  margin-bottom: 5rpx;
+}
+.margin-b-10{
+  margin-bottom: 10rpx;
+}
+.margin-b-15{
+  margin-bottom: 15rpx;
+}
+.margin-b-20{
+  margin-bottom: 20rpx;
+}
+.margin-b-25{
+  margin-bottom: 25rpx;
+}
+.margin-b-30{
+  margin-bottom: 30rpx;
+}
+.margin-l-5{
+  margin-left: 5rpx;
+}
+.margin-l-10{
+  margin-left: 10rpx;
+}
+.margin-l-15{
+  margin-left: 15rpx;
+}
+.margin-l-20{
+  margin-left: 20rpx;
+}
+.margin-l-25{
+  margin-left: 25rpx;
+}
+.margin-l-30{
+  margin-left: 30rpx;
+}
+.padding-t-5{
+  padding-top: 5rpx;
+}
+.padding-t-10{
+  padding-top: 10rpx;
+}
+.padding-t-15{
+  padding-top: 15rpx;
+}
+.padding-t-20{
+  padding-top: 20rpx;
+}
+.padding-t-25{
+  padding-top: 25rpx;
+}
+.padding-t-30{
+  padding-top: 30rpx;
+}
+.padding-b-5{
+  padding-bottom: 5rpx;
+}
+.padding-b-10{
+  padding-bottom: 10rpx;
+}
+.padding-b-15{
+  padding-bottom: 15rpx;
+}
+.padding-b-20{
+  padding-bottom: 20rpx;
+}
+.padding-b-25{
+  padding-bottom: 25rpx;
+}
+.padding-b-30{
+  padding-bottom: 30rpx;
+}
+.padding-l-5{
+  padding-left: 5rpx;
+}
+.padding-l-10{
+  padding-left: 10rpx;
+}
+.padding-l-15{
+  padding-left: 15rpx;
+}
+.padding-l-20{
+  padding-left: 20rpx;
+}
+.padding-l-25{
+  padding-left: 25rpx;
+}
+.padding-l-30{
+  padding-left: 30rpx;
+}
+.padding-r-5{
+  padding-right: 5rpx;
+}
+.padding-r-10{
+  padding-right: 10rpx;
+}
+.padding-r-15{
+  padding-right: 15rpx;
+}
+.padding-r-20{
+  padding-right: 20rpx;
+}
+.padding-r-25{
+  padding-right: 25rpx;
+}
+.padding-r-30{
+  padding-right: 30rpx;
+}
+.animated{
+  animation-duration:1s;
+  animation-fill-mode:both
+}
+@keyframes shake{
+  0%,100%{
+    -webkit-transform:translateX(0);
+    -ms-transform:translateX(0);
+    transform:translateX(0)
+  }
+  10%,30%,50%,70%,90%{
+    -webkit-transform:translateX(-10px);
+    -ms-transform:translateX(-10px);
+    transform:translateX(-10px)
+  }
+  20%,40%,60%,80%
+  {
+    -webkit-transform:translateX(10px);
+    -ms-transform:translateX(10px);
+    transform:translateX(10px)
+  }
+}
+.shake{
+  -webkit-animation-name:shake;
+  animation-name:shake
+}

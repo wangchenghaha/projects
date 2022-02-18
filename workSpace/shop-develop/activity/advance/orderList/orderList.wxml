@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="orderlist" > 
+        <block wx:for="{{orderList}}" wx:key="orders">
+            <pre-item orderItem="{{item}}" bindrefreOrderList="refreOrderList"></pre-item>
+        </block>
+    </view>
+    <view class="bottomLine flex-center" wx:if="{{isBottom}}">
+        <view class="line"></view>
+        <view class="lineText"> 已经到底了 </view>
+        <view class="line"></view>
+    </view>
+
+    <!-- 没有预售订单 -->
+    <view class="dingdanIsHidden" wx:if="{{dingdanIsHidden}}">
+      <view class="img">
+        <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/order_empty.png" mode="widthFix"></image>
+        <view class="tishi">您还没有预售商品订单</view>
+      </view>
+      <view class="goShopping">
+        <view class="goToShopping" bindtap="goToShopping">去逛逛</view>
+      </view>
+    </view>
+
+</view>

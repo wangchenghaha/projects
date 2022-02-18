@@ -1,0 +1,52 @@
+
+.bg{
+    width: 100%;
+    height: 100%;
+    .topView{
+        width: 100%;
+        height: 100rpx;
+        text-align: center;
+        line-height: 100rpx;
+        display: flex;
+        flex-direction: row;
+        .left{
+            width: auto;
+            height: 100%;
+
+            text-align: center;
+            line-height: 100rpx;
+            
+            display: flex;
+            flex-direction: row;
+            .text{
+                margin-left: 20rpx;
+                font-size: 28rpx;
+            }
+            .jinbi{
+                margin-left: 10rpx;
+                width: 24rpx;
+                height: 24rpx;
+                margin-top: 3rpx;
+            }
+        }
+    }
+    .bottomView{
+        margin-top: -20rpx;
+        width: 100%;
+        height: 100%;
+        .imgView{
+            width: 693rpx;
+            height: 232rpx;
+            margin: 20rpx auto;
+            position: relative;
+        }
+        .noYhbView{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 40rpx;
+            color: white;
+            
+        }
+    }
+}

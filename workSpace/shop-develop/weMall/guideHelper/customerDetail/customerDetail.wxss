@@ -1,0 +1,27 @@
+.container {
+  min-height: 100%;
+  background: #ededed;
+}
+.container .main {
+  margin: 0 auto;
+  width: 690rpx;
+}
+.container .main .header {
+  height: 100rpx;
+}
+.container .main .header-item {
+  flex: 1;
+}
+.container .main .header-item text {
+  display: inline-block;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #999;
+}
+.container .main .header-item text.true {
+  font-weight: bold;
+  color: #333;
+  border-bottom: solid 4rpx #257bfb;
+}
+
+/*# sourceMappingURL=customerDetail.wxss.map */

@@ -1,0 +1,21 @@
+<view class="alert-wrapper" wx:if="{{showoption.show}}">
+    <view class="alert" wx:if="{{showoption.type == 1}}">
+      <view class="alertimg-box">
+        <image class="alertimg" src="{{alert_tip}}"></image>
+        <view class="alert-tip">温馨提示</view>
+        <view class="alert-cont">
+          <text class="alert-text">{{showoption.alerttext}}</text>
+        </view>
+        <view catchtap="clicksure" style="background:{{basecolor}}" class="alert-sure">{{showoption.btntext}}</view>
+      </view>
+    </view>
+    <view class="alert groupsuc" wx:if="{{showoption.type == 2}}">
+      <view class="alertimg-box">
+        <image class="sucimg" src="{{groupsuc}}"></image>
+        <image class="success" src="{{succes}}"></image>
+        <view class="successtip" style="color:{{basecolor}};">恭喜您，组团成功!</view>
+        <!-- <view class="alert-sure">{{showoption.btntext}}</view> -->
+        <view catchtap="clicksure" style="background:{{basecolor}};margin-top:80rpx;" class="alert-sure">去领券</view>
+      </view>
+    </view>
+</view>

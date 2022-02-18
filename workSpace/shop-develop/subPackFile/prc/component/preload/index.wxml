@@ -1,0 +1,18 @@
+<view class="wrapper {{isBigPhone?'big':''}}" style="opacity: {{isEnd?0:1}}">
+    <view class="image" wx:for='{{imageList}}' wx:key="item">
+        <image class="item" src='{{item}}' bindload="onload"></image>
+    </view>
+    <view class="content">
+        <view class="logo {{isBigPhone?'big':''}}"></view>
+        <view class="rate">
+            <view class="tit">解锁你的</view>
+            <view class="desc">本命公主心~</view>
+        </view>
+        <view class="percent">
+            <view class="inner" style="width: {{percent}}%"></view>
+            <view class="tit">#loading</view>
+        </view>
+    </view>
+</view>
+  
+  

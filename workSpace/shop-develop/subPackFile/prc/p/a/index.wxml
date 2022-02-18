@@ -1,0 +1,9 @@
+<view class="wrapper {{isBigPhone ? 'big' : ''}} {{preload? '': 'animate'}}" style="padding-top: {{sh}}px">
+    <view class="logo {{isBigPhone ? 'big' : ''}} {{preload? '': 'animate'}}"></view>
+    <view class="title {{isBigPhone ? 'big' : ''}} {{preload? '': 'animate'}}"></view>
+    <view class="turn" >
+        <view class="start {{isBigPhone ? 'big' : ''}} {{preload? '': 'animate'}}" bindtap='joinActive' hover-class="hoverBtn"></view>
+    </view>
+    
+    <preload bindimageAllLoad='imageAllLoad' wx:if='{{preload}}' />
+</view>

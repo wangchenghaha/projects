@@ -1,0 +1,2 @@
+/* pages/nearbyShops/navMap/navMap.wxss */
+.frame,.map{width: 100%;height: 100%; clear:both; overflow:hidden;}

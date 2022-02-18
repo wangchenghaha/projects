@@ -1,0 +1,25 @@
+<wxs src="../index/index.wxs" module="tools" />
+<view class="pages">
+    <view class="card-wrapper">
+        <image class="card-bg" src="{{imgList.couponbg ? imgUrl +  imgList.couponbg: ''}}"></image>
+        <view class="card-info">
+            <send-coupon
+                    bindcustomevent="getCouponMerchant"
+                    send_coupon_params="{{send_coupon_params}}"
+                    sign="{{sign}}"
+                    send_coupon_merchant="{{send_coupon_merchant}}"
+            >
+                <view class="get-btn" wx:if="{{showbtn &&  lq == 0}}" style="background:{{basecolor}};">{{btnTextList.type_11}}</view>
+<!--                立即领取-->
+            </send-coupon>
+            <view class="get-btn" wx:if="{{showbtn &&  lq == 1}}" style="background:{{basecolor}};">{{btnTextList.type_12}}</view>
+<!--            领取成功-->
+        </view>
+    </view>
+    <view class="join-tip">
+        <image class="joinimg" src="{{imgList.joinTipCoupon ? imgUrl +  imgList.joinTipCoupon: ''}}"></image><text style="color:{{basecolor}};">恭喜您，拼团成功啦！</text>
+    </view>
+</view>
+
+<!-- <alert showoption="{{showoption}}" bind:clicksure="clicksure"></alert>-->
+

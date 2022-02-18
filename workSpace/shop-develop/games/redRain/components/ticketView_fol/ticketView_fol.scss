@@ -1,0 +1,248 @@
+page{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    .topView{
+        width: 100%;
+        height: 100rpx;
+        text-align: center;
+        line-height: 100rpx;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        .left{
+            width: auto;
+            height: 100%;
+
+            text-align: center;
+            line-height: 100rpx;
+            
+            display: flex;
+            flex-direction: row;
+            .text{
+                margin-left: 20rpx;
+                font-size: 28rpx;
+            }
+            .jinbi{
+                margin-left: 10rpx;
+                width: 24rpx;
+                height: 24rpx;
+                margin-top: 3rpx;
+            }
+        }
+        .right{
+            flex: 1;
+            margin-right: 20rpx;
+            text-align: right;
+            line-height: 100rpx;
+            text-decoration: underline;
+        }
+        .imgView{
+            position: absolute;
+            right: 170rpx;
+            top: 12.5rpx;
+            width: 44rpx;
+            height: 43rpx;
+        }
+    }
+    .bottomView{
+        margin-top: -20rpx;
+        width: 100%;
+        height: 100%;
+        .imgView{
+            width: 693rpx;
+            height: 232rpx;
+            margin: 20rpx auto;
+            position: relative;
+
+            .shoujia{
+                position: absolute;
+                bottom: 23%;
+                left: 40%;
+                width: auto;
+                height: 30rpx;
+
+                font-size: 30rpx;
+                color: #FF882A;
+            }
+            .dui{
+                position: absolute;
+                right: 20rpx;
+                top: 44rpx;
+                width: 144rpx;
+                height: 144rpx;
+
+            }
+            .shengyu{
+                width: 184rpx;
+
+                text-align: center;
+                position: absolute;
+                right: 0;
+                bottom: 10rpx;
+                font-size: 28rpx;
+                color: #FF0036;
+            }
+        }
+    }
+}
+
+.bouncedBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: 998;
+    transition: .3s;
+    &-show{
+        opacity: .1;
+    }
+    &-hidden{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+.guizeView{
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 636rpx;
+    height: 790rpx;
+    .animateView{
+        width: 100%;
+        height: 100%;
+        transform: scale(0,0);
+    
+        animation: animate 0.2s linear 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+.threeSubView{
+    width: 713rpx;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-47%,-50%);
+
+    z-index: 999;
+    .imgView{
+        width: 100%;
+        height: auto;
+        position: relative;
+        .closed{
+            position: absolute;
+            right: 40rpx;
+            top: 15rpx;
+            width: 52rpx;
+            height: 52rpx;
+        }
+        .titles{
+            position: absolute;
+            bottom: 27%;
+            left: 15%;
+            right: 18%;
+            width: auto;
+            height: 100rpx;
+            text-align: center;
+            color: #EE2C50;
+            font-size: 28rpx;
+            line-height: 30rpx;
+            
+        }
+        .qrView{
+            position: absolute;
+            bottom: 3%;
+            right: 20%;
+        }
+    }
+    .saveBtn{
+        margin: 20rpx auto 20rpx auto;
+        width: 300rpx;
+        height: 80rpx;
+        line-height: 80rpx;
+        font-size: 28rpx;
+        background-color: #EBEB49;
+        color: #EE2C50;
+        text-align: center;
+    }
+    .saveText{
+        color: white;
+        font-size: 21rpx;
+        width: 100%;
+        text-align: center;
+    }
+}
+.twoSubView{
+    width: 636rpx;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    z-index: 999;
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .centerText{
+            position: absolute;
+            top: 26%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            width: 100%;
+            height: auto;
+            text-align: center;
+            color: black;
+            font-size: 34rpx;
+        }
+        .bottomView{
+            position: absolute;
+            bottom: 17%;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            width: 350rpx;
+            height: 70rpx;
+
+            border-radius: 70rpx;
+
+            background-color: #FFFF40;
+            
+            overflow: hidden;
+            display: flex;
+            line-height: 70rpx;
+            &-text{
+                color: #EE4F22;
+                font-size: 34rpx;
+                margin-left: 25%;
+            }
+            &-subText{
+                margin-left: 10rpx;
+                font-size: 23rpx;
+                color: #ECC130;
+            }
+        }
+    }
+}
+@keyframes animate { 
+    0% {
+        transform: scale(0,0);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}

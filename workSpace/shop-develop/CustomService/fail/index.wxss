@@ -1,0 +1,80 @@
+.wrapper {
+    position: relative;
+    height: 100%;
+  }
+  .wrapper .header {
+    font-size: 0;
+    position: relative;
+  }
+  .wrapper .header .logo_text {
+    position: absolute;
+    top: 86rpx;
+    left: 46rpx;
+    font-size: 38rpx;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .wrapper .header .images_header {
+    width: 750rpx;
+    height: 388rpx;
+  }
+  .wrapper .content {
+    position: absolute;
+    bottom: 0;
+    top:500rpx;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top-left-radius: 32rpx;
+    border-top-right-radius: 32rpx;
+    padding: 32rpx;
+    box-sizing: border-box;
+  }
+
+  .wrapper .content .header {
+    padding: 60rpx 0 34rpx;
+    font-size: 0;
+  }
+  .wrapper .content .header .logo {
+    text-align: center;
+  }
+  .wrapper .content .header .logo .image {
+    width: 102rpx;
+    height: 102rpx;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  .wrapper .content .header .title {
+    font-size: 38rpx;
+    color: #333333;
+    line-height: 54rpx;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 34rpx;
+  }
+  .wrapper .content .tips {
+    width: 540rpx;
+    margin: 0 auto;
+    font-size: 30rpx;
+    line-height: 1.6;
+    font-weight: bold;
+    text-align: justify;
+    color: #515151;
+    margin-bottom: 100rpx;
+  }
+
+  .btnbox .btn {
+    width: 426rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    text-align: center;
+    padding: 0;
+    border-radius: 6rpx;
+    background: #3E3E3E;
+    color: #ffffff;
+    font-size: 32rpx;
+}
+.hoverclass {
+    opacity: 0.7;
+}

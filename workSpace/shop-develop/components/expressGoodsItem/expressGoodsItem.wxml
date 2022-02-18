@@ -1,0 +1,16 @@
+<view class="goods-item" bindtap="gotoDetail">
+    <view class="goodsImage">
+        <image src="{{imageCDN+goodsInfo.gscolPicPath}}" mode="widthFix" />
+    </view>
+    <view class="goodsContent">
+        <view class="goodsTitle">{{goodsInfo.goodsName}}</view>
+        <view class="goodsDetail">
+            <view class="goodsText textColor">{{goodsInfo.colorName}}</view>
+            <view class="goodsText textSize">{{goodsInfo.sizeName}}</view>
+        </view>
+        <view class="goodsDetail" style="margin-top: 100rpx;">
+            <view class="goodsText">￥{{goodsInfo.price}}</view>
+            <view class="goodsCount">x{{goodsInfo.goodsCount}}</view>
+        </view>
+    </view>
+</view>

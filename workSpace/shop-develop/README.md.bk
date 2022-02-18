@@ -1,0 +1,366 @@
+客户端小程序
+
+## 一、检出项目
+
+### 1.1、准备工作
+
+开发前须先下载 `Node.js` 和 `Git` ，`Node.js` 用于构建多品牌，`Git` 用于版本控制，**这一步是非常重要的**。
+
+Node.js安装包
+
+```
+# mac版本
+https://cdn.bestseller.com.cn/dist/tools/node-v10.15.3.pkg
+
+# window版本
+https://cdn.bestseller.com.cn/dist/tools/node-v10.15.3-x64.msi
+```
+
+Git安装包
+
+```
+https://cdn.bestseller.com.cn/dist/tools/Git-2.20.1-64-bit.exe
+```
+
+### 1.2、检出项目
+
+```bash
+# 下载源码（开发分支）
+git clone git@10.150.27.68:mini-programs/shop.git -b develop
+# 生成各品牌源码(请注意一定不要在shop目录下开发，请在各品牌目录下写代码、提交代码和发布版本)
+cd shop && node bin
+```
+
+### 1.3、`bin/index.js` 脚本介绍
+
+> 如果不明白下面三步是什么意思，只需在 `1.2` 中执行下 `node bin` (仅执行一次即可)，并且在需要对 `project.config.json` 或 `app.json` 进行修改时，请在 `shop` 目录下修改，修改完成后执行 `node bin` 选`2` ，即能把你的修改更新到各品牌项目中。如果想了解更多，请看下面这三步。
+
+*1.3.1、介绍*
+
+小程序项目包含 N 个品牌，N 个品牌使用一份代码，由于微信开发者工具不支持多渠道多品牌构建项目，此处使用 Node.js 把代码复制为 N 份。
+
+*1.3.2、N 个品牌共用一份代码(一个git仓库)，如何做到各个品牌的代码互不影响？*
+
+有三个关键性文件  config/brand.js (**I**) 、 project.config.json (**II**) 和  app.json (**III**)，**I** 里仅包含一个品牌号字段、**II** 里主要用于配置目标品牌的AppID，用于小程序开发工具加载使用、**III**是项目的配置文件，定义了界面视图（比如：每个品牌的底部导航按钮可能都不一样 ）。
+
+试想一下由于N个品牌使用的是一套代码，那么 **I** 、**II** 、**III** 里必定要不停的修改，修改会造成不同的开发者的配置文件混乱，要解决这个问题，应该避免这三个文件的修改。 目前的解决方案是，有主项目(shop)复制出N个品牌项目，在N个品牌项目里使用`Git`把 **I**、**II**和**III**三个文件加入到 `--assume-unchanged` (忽略这三个文件，即不提交到仓库)，即使你在N个品牌项目里修改了这三个文件，也不会被追踪和提交到仓库中。
+
+*1.3.3、我要在III里增加一个页面时无法提交进Git仓库*
+
+由于第`2`步具有的副作用，导致所有开发者都无法修改 **I**、**II**、**III** 。解决方法是在主项目(shop)目录里修改  app.json ，修改完成后在根路径下输入 `node bin` 在输入 `2` 即可(注意一点要把各个品牌所有的代码都提交到远程仓库在执行这一步)。
+
+## 二、目录结构
+
+```bash
+├── README.md #项目介绍文档
+├── app.js    #App实例
+├── app.json  #App实例配置
+├── app.wxss  #全局样式
+├── base      #ETO的工具类等(待优化)
+├── config    #项目配置文件(品牌差异的配置需写在此处)
+├── const.js  #常量
+├── events.js #事件总线
+├── images    #静态图
+├── init      #Node.js 脚本(与小程序代码无关)
+├── pages     #视图层
+├── project.config.json  #IDE配置(与小程序代码无关)
+├── service   #业务层
+├── src       #一些重要的源代码
+├── style     #ETO的样式(待优化)
+└── utils     #工具类
+```
+
+## 三、软件分层
+
+业务层(`service`)、视图层(`page`) 和 网络层 (`utils/request.js`)。
+
+此处介绍下写法:
+
+### 3.1、视图层
+
+> 原则是视图层只写页面相关的代码，`任何业务逻辑` 都 `不应该` 写在视图层，下面展示一段视图层的代码:
+
+#### 3.1.1、页面代码
+
+```javascript
+import { init， securityCode } from '../../service/service.js';
+import { getCode，login } from '../../service/member.js';
+
+//index.js 获取应用实例
+const app = getApp()
+
+Page({
+
+  //数据
+  data: {
+    msg: 'Hello World'
+  }，
+
+  //点击事件
+  onClick: function (event) {
+    let {id} = event.currentTarget; //控件ID
+    switch (id) {
+      case 'bt-token':
+        init().then((token) => {
+          this.setData({msg: token});
+        }).catch(e => {
+          wx.showToast({title: e.message， icon: 'none'， duration: 1500});
+        });
+        break;
+      case 'bt-securitycode':
+        securityCode().then((code) => {
+          this.setData({ msg: code });
+        }).catch(e => {
+          wx.showToast({title: e.message， icon: 'none'， duration: 1500});
+        });
+        break;
+      case 'bt-getcode':
+        getCode('18187654321'，3).then((msg) => {
+          this.setData({ msg: msg});
+        }).catch(e => {
+          wx.showToast({title: e.message， icon: 'none'， duration: 1500});
+        });
+        break;
+      case 'bt-login':
+        login('18187654321'， 123456).then((msg) => {
+          this.setData({ msg: msg });
+        }).catch(e => {
+          wx.showToast({ title: e.message， icon: 'none'， duration: 1500 });
+        });
+        break;
+    }
+
+  }
+})
+```
+
+#### 3.1.2、布局文件
+```xml
+<!--index.wxml-->
+<view class="container">
+    <button class="btn" id="bt-token" bindtap='onClick'>获取临时凭证</button>
+    <button class="btn" id="bt-securitycode" bindtap='onClick'>获取图形码</button>
+    <button class="btn" id="bt-getcode" bindtap='onClick'>获取手机验证码</button>
+    <button class="btn" id="bt-login" bindtap='onClick'>登录</button>
+    <button class="btn" id="bt-login" bindtap='onClick'>注销登录</button>
+    <text>{{msg}}</text>
+</view>
+
+```
+
+### 3.2、业务层
+
+### 3.2.1、业务代码
+
+> 原则上业务层应该做到 `只处理业务逻辑`，不应该与视图层耦合（禁止把视图View传入到业务层），当业务层的代码大改动时，明智的做法是添加一个业务方法 。
+
+```javascript
+import { request } from '../utils/request.js'
+import { URL } from '../src/const';
+
+/**
+ * 初始sdk
+ */
+function init(channel) {
+  return new Promise((resolve， reject) => {
+    request({
+      url: URL.INIT，
+      data: {
+        channel:channel
+      }
+    })
+    .then((response) => {
+      if (response.code === 0) {
+        wx.setStorageSync('token'， response.data.token);
+        resolve(response.data.token); //视图层需要的参数
+      } else {
+        reject(new Error(response.msg)); //视图层显示错误信息
+      }
+    })
+    .catch((e) => {
+      reject(new Error(e.message)); //视图层显示错误信息
+    });
+  });
+}
+
+/**
+ * 获取验证码
+ */
+function getCode() {
+  return new Promise((resolve， reject) => {
+    request({
+      url: URL.GETCODE，
+      method: 'POST'，
+      data:{
+        phone:'18187654321'，
+        securityValue:1
+      }
+    })
+    .then((response) => {
+      if (response.code === 0) {
+        wx.setStorageSync('code'， response.msg);
+        resolve(response.msg); //视图层需要的参数
+      } else {
+        reject(new Error(response.msg)); //视图层显示错误信息
+      }
+    })
+    .catch((e) => {
+      reject(new Error(e.message)); //视图层显示错误信息
+    });
+  });
+}
+
+
+export {
+  init，
+  getCode，
+}
+```
+
+### 3.3、网络层
+
+> `request.js` 是对于我们自己的后台进行封装的网络层，后台的返回格式统一为 : `{"code":0，"msg":"成功"}` 或 `{"code":1，"msg":"失败"}`，如需调用其他系统的接口，可以直接使用 `wx.request` 或者自己封装。
+
+```javascript
+ //通用HTTP请求方法
+ //注意返回值 {"code":0，"msg":"成功"} 或者 {"code":1，"msg":"失败"}
+const request = (config) => {
+
+  //默认配置
+  let defaultConfig = {
+    header:{
+      'content-type': 'application/json'， // 请求体类型默认值
+      token: wx.getStorageSync('token') || '' //请求凭证
+    }，
+    method: 'GET' //请求方法OPTIONS， GET， HEAD， POST， PUT， DELETE
+  }
+  let mergeHeader = config.header || 
+    Object.assign(config.header || {}，defaultConfig.header);
+  let mergeMethod = config.method || defaultConfig.method;
+   
+  return new Promise((resolve， reject) => {
+    wx.request({
+
+      url: config.url， //接口地址
+      method: mergeMethod， //请求类型
+      data: config.data， //请求体
+      header: mergeHeader， //请求头
+
+      //成功钩子
+      success: (res) => {
+        let data = res.data;
+        let statusCode = res.statusCode;
+        if(statusCode === 200){
+          resolve(res.data);
+        } else { //封装400-500之间的错误
+          resolve({ code: 1， msg: `${res.data}(${statusCode})`});
+        }
+      }，
+
+      //失败钩子（HTTP客户端配置出错）
+      fail:(e) => {
+        resolve({ code: 1， msg: e.errMsg || e.message });
+      }
+
+    });
+  });
+}
+
+export{
+  request
+}
+```
+
+## 四、常用
+
+**获取配置**
+
+```javascript
+getApp().config
+#如获取品牌号
+getApp().config.brand
+#如获取CDN主机地址
+getApp().config.cdn
+```
+
+**常量信息**
+
+```javascript
+const { URL } = require('src/const.js');
+```
+
+**事件总线**
+
+```javascript
+const events = require('src/events.js');
+```
+
+**HTTP客户端**
+
+```javascript
+const request = require('utils/request.js');
+```
+
+## 五、静态资源
+注意: cdn的域名是 `https://cdn.bestseller.com.cn`，请务必不要用 `https://www|minibs|m|.${brand}.com.cn` 这种写法。`GFS` 路径为 `/data/gfs/GFS/export/source/assets/` ，小程序把静态资源都放在`common`中: 
+
+```
+├── common  #通用资源
+├── h5      #仅用于H5
+├── mobile  #仅用于App
+├── pc      #仅用于PC官网
+└── wechat  #仅用于微信公众号
+```
+
+`common` 文件夹介绍
+```
+├── BESTSELLER #BESTSELLER通用资源(通常适用于小程序和H5)
+├── JACKJONES  #JACKJONES通用资源(通常适用于小程序和H5)
+├── JLINDEBERG #JLINDEBERG通用资源(通常适用于小程序和H5)
+├── NAMEIT     #NAMEIT通用资源(通常适用于小程序和H5)
+├── ONLY       #ONLY通用资源(通常适用于小程序和H5)
+├── pub        #各品牌都通用的资源(通常适用于小程序和H5)
+├── SELECTED   #SELECTED通用资源(通常适用于小程序和H5)
+└── VEROMODA   #VEROMODA通用资源(通常适用于小程序和H5)
+```
+
+## 六、日志
+
+为了统一日志输出和方便调试，尽量在打印日志后删除不重要的日志输出，网络请求的日志已统一输出，如下:
+
+<img src="http://10.150.27.68/middle-koa/API/raw/master/apis/data/log.png" width="70%" height="70%" alt="日志图">
+
+## 七、版本控制
+
+### 7.1 分支介绍
+
+默认有三个分支:
+
+```
+master           系统创建的初始分支
+feature-release  稳定版本分支
+develop 日常开发分支
+```
+
+
+### 7.2 衍生分支
+
+`develop`是开发分支，可以基于 `develop` 衍生新的分支，列举一下这两种情况:
+
+* 接到一个新任务，任务的目标是开发一个新功能，新功能要做的事情是 `点赞`，我们可以这样做：
+
+```bash
+git checkout feature-fabulous
+```
+注意: 不要给分支起这样的名字 `feature-zhangsan`、`feature-imzhangsan` 或者 `feature-我叫张三`。
+
+我们的 `点赞` 功能做好后，切换到 `develop` 分支上执行 `git merge feature-fabulous`，当确保`feature-fabulous`的代码已经成功合并到`develop`上后，删除本地的`feature-fabulous` 和远程的 `feature-fabulous`。
+
+* 收到一个任务，任务: `点赞` 功能上出现一个重大 `bug`，我们可以这样做：
+
+```bash
+git checkout issue-fabulous
+```
+我们的重大`bug`修复好后，切换到 `develop` 分支上执行 `git merge issue-fabulous`，当确保`issue-fabulous`的代码已经成功合并到`develop`上后，删除本地的`issue-fabulous` 和远程的 `issue-fabulous`。
+
+BTW： 在 `develop` 衍生新分支时，我们可以选择推送到远程也可以选择不推送到远程，推送到远程的好处是：当你本地误删代码了，远程有一份备份可以给你减少损失。尽量在完成任务后删除你的远程分支，防止过多的冗余`分支`。

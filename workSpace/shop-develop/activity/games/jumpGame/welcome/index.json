@@ -1,0 +1,6 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "welCome_slt" : "../components/welCome_slt/welCome_slt"
+  }
+}

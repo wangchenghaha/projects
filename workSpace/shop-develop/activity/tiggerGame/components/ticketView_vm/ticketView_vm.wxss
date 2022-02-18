@@ -1,0 +1,255 @@
+.bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bg .shuoming {
+  margin-left: -2rpx;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 120rpx;
+  text-align: center;
+  color: black;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  background-color: #F5D287;
+}
+
+.bg .bgImageView {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.bg .jiangpinView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg .jiangpinView .topView {
+  margin-top: 150rpx;
+  width: 100%;
+  height: 45rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bg .jiangpinView .topView .leftView {
+  flex: 1;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.bg .jiangpinView .topView .leftView .text {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: white;
+}
+
+.bg .jiangpinView .topView .leftView .leftImage {
+  margin-left: 10rpx;
+  width: 45rpx;
+  height: auto;
+}
+
+.bg .jiangpinView .topView .rightView {
+  width: 160rpx;
+  margin-right: 20rpx;
+}
+
+.bg .jiangpinView .zhuliView {
+  margin-left: 80rpx;
+  width: 620rpx;
+  height: auto;
+}
+
+.bg .jiangpinView .rowView {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+
+.bg .jiangpinView .rowView .subView {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.bg .jiangpinView .rowView .subView .title {
+  position: absolute;
+  top: 13.5%;
+  left: 0;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 60rpx;
+  width: 100%;
+}
+
+.bg .jiangpinView .rowView .subView .imgView {
+  position: absolute;
+  top: 26%;
+  left: 0;
+  width: 100%;
+  height: 200rpx;
+}
+
+.bg .jiangpinView .rowView .subView .moneyView {
+  position: absolute;
+  bottom: 26.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 50rpx;
+  border-radius: 25rpx;
+  border: 1rpx solid #40763E;
+  display: flex;
+  flex-direction: row;
+}
+
+.bg .jiangpinView .rowView .subView .moneyView .left {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.bg .jiangpinView .rowView .subView .moneyView .right {
+  margin-top: 10rpx;
+  width: 24rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+}
+
+.bg .jiangpinView .rowView .subView .duihuan {
+  position: absolute;
+  bottom: 12%;
+  left: 0;
+  width: 100%;
+  line-height: 75rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.bouncedBG, .bouncedBG-opaView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouncedBG-opaView {
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bouncedBG-view {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bouncedBG-view .imageView {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.bouncedBG-view .imageView .scroView {
+  position: absolute;
+  top: 26%;
+  left: 0;
+  width: 100%;
+  height: 500rpx;
+}
+
+.bouncedBG-view .imageView .scroView .noListView {
+  width: 100%;
+  line-height: 500rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: black;
+}
+
+.bouncedBG-view .imageView .scroView .subRowView {
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 92%;
+  height: 217rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bouncedBG-view .imageView .scroView .subRowView-leftView {
+  overflow: hidden;
+  margin-top: 20rpx;
+  width: 170rpx;
+  height: 177rpx;
+  border-radius: 12rpx;
+}
+
+.bouncedBG-view .imageView .scroView .subRowView-leftView .leftImage {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.bouncedBG-view .imageView .scroView .subRowView-rightView {
+  margin-left: 50rpx;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.bouncedBG-view .imageView .scroView .subRowView-rightView .title {
+  margin-top: 25rpx;
+  font-size: 28rpx;
+}
+
+.bouncedBG-view .imageView .scroView .subRowView-rightView .bottomTitle {
+  position: absolute;
+  bottom: 25rpx;
+  left: 0;
+  width: auto;
+  height: 28rpx;
+  padding: 10rpx 20rpx;
+  font-size: 23rpx;
+  line-height: 28rpx;
+  color: #F5D287;
+  background-color: #40763E;
+  border-radius: 28rpx;
+}
+
+.bouncedBG-view .imageView .closed {
+  position: absolute;
+  bottom: 1.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.line {
+  width: 92%;
+  height: 2rpx;
+  background-color: #40763E;
+  margin-left: 4%;
+}

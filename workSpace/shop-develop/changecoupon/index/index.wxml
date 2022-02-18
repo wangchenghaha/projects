@@ -1,0 +1,27 @@
+<view class="pages">
+    <view class="coupon-wrapper">
+        <view class="couponbg">
+            <image class="coupon-bg" src="{{couponbg}}"></image>
+        </view>
+        <!-- <image class="brand" src="../img/brand-jj.png"></image> -->
+        <!-- <view class="couponperice coupontip">350元优惠券礼包</view>
+        <view class="couponnum coupontip">共 10 份</view> -->
+    </view>
+    <button class="getbtn" bindtap="wxpaythrottle" form-type='submit' plain="{{true}}"><text>1分钱兑换\n<text class="wxpaytip">(稍后返还)</text></text></button>
+    <view class="button-tip">
+        <text>
+            为防止机器恶意刷单，需象征性地支付1分钱，支付后\n有官方搭配顾问加您微信<text class="tip" style="color:red;padding-bottom:2rpx;border-bottom:1px solid red;">返还支付金额</text>
+        </text>
+    </view>
+    <view class="rule-wrapper" bindtap="showrules">
+        <view class="img-box">
+            <image class="ruleicon" src="../img/ruleicon.png"></image>
+        </view>
+        <view class="content">
+            <text>
+                使\n用\n说\n明
+            </text>
+        </view>
+    </view>
+</view>
+<rule showrule="{{showrule}}" ruleimg="{{ruleimg}}" bind:closerule="closerule"></rule>

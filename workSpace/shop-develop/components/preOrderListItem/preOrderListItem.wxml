@@ -1,0 +1,36 @@
+<view class="itemContainer" >
+    <view class="orderStatus">
+        <view class="orderNum">
+            订单号：{{orderNums}} 
+            <image mode="widthFix" data-text="{{orderNums}}" src="../../images/icon_copy.png" bindtap="copyOrderNum"></image>
+        </view>
+        <view class="orderstatus">{{orderstatus}}</view>
+    </view>
+    <view class="priceNotice" wx:if="{{isShowLastPayTime}}">
+       {{timerShow}}
+    </view>
+    <view class="goodsInfo" bindtap='goOrderDetail'>
+        <image src="{{goodPic}}" mode="widthFix"></image>
+        <view class="goodDetail">
+            <view class="goodName">{{goodsName}}</view>
+            <view class="goodType">
+                <view class="itemType">{{goodsColor}}</view>  
+                <view class="itemType">{{goodsSize}}</view>
+            </view>
+            <view class="goodPrice">
+                <view class="price">￥<text style="font-size: 36rpx;">{{goodsPrice}}</text></view>
+                <view>x 1</view>
+            </view>
+        </view>
+    </view>
+    <view class="optionsShow" wx:if="{{showPrice}}">
+        <view class="priceShow {{isdepStage? 'statusNotice':'' }}">{{depPrice}}</view>
+        <view class="priceShow {{isdepStage? '':'statusNotice' }}">{{lastPrice}}</view>
+    </view>
+    <!-- <view class="baseLine"></view>
+    <view class="optionsShow">
+        <view class="options" bindtap="cancleBtn"  wx:if="{{isdepStage}}">取消订单</view>
+        <view class="options payNotice" wx:if="{{isdepStage}}" bindtap='depPayBtn'>{{depPay}}</view>
+        <view class="options {{isLastPayStage ? 'payNotice':'lastPayNo'}}" wx:else bindtap='lastPayBtn'>{{lastPay}}</view>
+    </view> -->
+</view>

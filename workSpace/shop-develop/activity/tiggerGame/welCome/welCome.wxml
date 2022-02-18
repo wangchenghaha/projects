@@ -1,0 +1,3 @@
+<customView_vm wx:if="{{brand == 'VEROMODA'}}" bindonClick="onClick" bindguize="guize"></customView_vm>
+<customView_only wx:if="{{brand == 'ONLY'}}" bindonClick="onClick" bindguize="guize"></customView_only>
+<customView_fol wx:if="{{brand == 'FOL'}}" bindonClick="onClick" bindguize="guize"></customView_fol>

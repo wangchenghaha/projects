@@ -1,0 +1,6 @@
+.swiper, video{
+  width: 100%;
+}
+.swiper .swiper-item{
+  width: 100%;
+}

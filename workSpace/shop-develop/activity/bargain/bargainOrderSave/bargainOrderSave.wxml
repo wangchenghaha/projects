@@ -1,0 +1,57 @@
+<view class="container">
+    <view class="statusInfo">
+        <view class="statusInfo-status">待支付</view>
+        <view class="statusInfo-price">砍价成功，仅需支付{{payPrice}}元运费</view>
+    </view>
+
+    <view class="addressInfo">
+        <image  class="addressInfo-icon" src="../../../images/address_icon.png" mode="widthFix"/>
+        <view class="addressInfo-detail">
+            <view class="t1">{{address.consignee}}   {{address.contactTel}}</view>
+            <view class="t2">{{address.province}} {{address.city}}{{address.area}} {{address.detailAddress}}</view>
+        </view>
+    </view>
+
+    <view class="goodsInfo">
+        <view class="goodsInfo-detail">
+            <image class="goodsImg" src="{{goodsInfo.picUrl}}" mode="aspectFill" />
+            <view class="infos">
+                <view class="title">{{goodsInfo.goodsName}}</view>
+                <view class="orginalPrice"> 单买价 ￥{{goodsInfo.goodsPrice}}</view>
+                <view class="price"> 可砍至 ￥{{goodsInfo.floorPrice}}</view>
+            </view>
+        </view>
+        <view class="darginPrice">砍价成功， 已砍<text style="color:red; font-size:30rpx;">{{bargainedPrice}}</text>元</view>
+    </view>
+
+    <view class="priceInfo">
+        <view class="priceInfo-row">
+            <view class="left">商品金额：</view>
+            <view class="right">￥{{goodsInfo.goodsPrice}}</view>
+        </view>
+        <view class="priceInfo-row">
+            <view class="left">砍价优惠：</view>
+            <view class="right">￥{{bargainedPrice}}</view>
+        </view>
+        <view class="priceInfo-row">
+            <view class="left">运费</view>
+            <view class="right">￥{{expressFare}}</view>
+        </view>
+    </view>
+
+    <view class="priceInfo">
+        <view class="priceInfo-row">
+            <view class="left">订单号：</view>
+            <view class="right">{{dragainOrderInfo.id}}</view>
+        </view>
+        <view class="priceInfo-row">
+            <view class="left">下单时间：</view>
+            <view class="right">{{dragainOrderInfo.createdTime}}</view>
+        </view>
+    </view>
+
+    <view class="footer {{isIphoneX ?'iphoneXFooter':''}}">
+        <view class="left">共计1件，需支付￥{{payPrice}}</view>
+        <view class="right" bindtap="submitBtn">立即支付</view>
+    </view>
+</view>

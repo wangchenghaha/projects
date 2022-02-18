@@ -1,0 +1,8 @@
+<view>
+  <view>
+    <image class="zp_bg" src="{{picUrl}}zpId_bg.jpg"></image>
+    <image class="zp_tan" src="{{picUrl}}zpId_tan.png "></image>
+    <input class="zp_ipt" type="number" placeholder="7位ID号" bindinput="voteTitle" maxlength="7"></input>
+    <image class="zp_btn" src="{{picUrl}}zp_Btn.png " bindtap="jump"></image>
+  </view>
+</view>

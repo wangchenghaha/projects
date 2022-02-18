@@ -1,0 +1,30 @@
+<template name="classicOrderItemTmpl">
+    <view class='global_classic_order_item_wrap'>
+        <view id="{{index}}">
+            <image class="global_thumbnail" mode="widthFix" src="https://cdn.bestseller.com.cn{{item.gsMainPicPath}}" />
+        </view>
+        <view class="global_thumbnail_right_txt">
+            <view class="global_goods_name_bar">
+                <view>{{item.goodsName}}</view>
+                <view>¥ {{item.price}}</view>
+            </view>
+            <view class="global_goods_sku_bar">
+                <view class="key">货号
+                    <text>{{item.sku}}</text>
+                </view>
+                <view wx:if="{{item.price!=item.originalPrice}}" class="glb_ori_price">¥ {{item.originalPrice}}</view>
+            </view>
+            <view class="key" style="margin-top:27rpx;">颜色
+                <text>{{item.colorName}}</text>
+            </view>
+            <!-- <view class="global_goods_sku_bar"> -->
+                <view class="key">尺码
+                    <text>{{item.sizeName}}</text>
+                </view>
+                <view class="key">数量
+                    <text>{{item.goodsCount}}</text>
+                </view>
+            <!-- </view> -->
+        </view>
+    </view>
+</template>

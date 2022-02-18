@@ -1,0 +1,54 @@
+<!-- socialAdvertising/socialAdvertising.wxml -->
+<view class="frame">
+    <view class="wrapper_logo {{showTopBG?'top_background':''}}">
+        <view class="wrapper_abs">
+            <image class="img_logo" src="{{imgBaseUrl}}wechat_social_ad_main_logo.png" mode="widthFix" />
+            <image class="img_logo_text" src="{{imgBaseUrl}}wechat_social_ad_main_brand_name.png" mode="widthFix" />
+        </view>
+    </view>
+    <view class="wrapper_coupon">
+        <image class="img_coupon_bg" src="{{imgBaseUrl}}wechat_social_ad_main_coupon_bg.png" mode="widthFix" />
+        <view class="coupon_content_upper">
+            <image class="img_coupon_value" src="{{imgBaseUrl}}wechat_social_ad_main_coupon_value.png" mode="widthFix" />
+            <view class="txt_conditions_0">满230元可用</view>
+            <view class="txt_conditions_1">2020.04.07至2020.04.30时段可用</view>
+            <view class="shape_button" bind:tap="onCouponClick">立即领取</view>
+        </view>
+        <view class="coupon_bar_010" bind:tap="onIndexClick">
+            <view class="bar">
+                <image class="img_qs" src="{{imgBaseUrl}}wechat_social_ad_main_index.png" mode="widthFix" />
+                <view class="txt_qs">进入小程序</view>
+            </view>
+        </view>
+        <view class="coupon_bar_020" bind:tap="onRuleBarClick">
+            <view class="bar">
+                <image class="img_qs" src="{{imgBaseUrl}}wechat_social_ad_main_question_mark.png" mode="widthFix" />
+                <view class="txt_qs">使用规则</view>
+            </view>
+        </view>
+        <view class="coupon_bar_030" bind:tap="onShopBarClick">
+            <view class="bar">
+                <image class="img_qs" src="{{imgBaseUrl}}wechat_social_ad_main_location_icon.png" mode="widthFix" />
+                <view class="txt_qs">附近门店</view>
+            </view>
+        </view>
+    </view>
+    <view class="wrapper_tip">
+        <view class="wrapper_tip0">
+            <image class="img_tip" src="{{imgBaseUrl}}wechat_social_ad_main_wechat_icon.png" mode="widthFix" />
+            <view class="tip0">请在结账付款时选择该优惠券核销</view>
+        </view>
+        <view class="tip1">可在我-卡包中查看券</view>
+    </view>
+    <view class="frame_pop" wx:if="{{showRule}}">
+        <view class="frame_opacity" />
+        <view class="frame_rule">
+            <view class="pop_title">使用规则</view>
+            <scroll-view scroll-y class="sv_rule">
+                <view class="rule_detail">{{txtRuleDetail}}</view>
+            </scroll-view>
+            <view class="v_gap"></view>
+            <view class="pop_confirm" bind:tap="onRuleConfirm">确认</view>
+        </view>
+    </view>
+</view>

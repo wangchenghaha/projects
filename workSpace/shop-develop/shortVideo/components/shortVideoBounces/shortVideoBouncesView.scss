@@ -1,0 +1,116 @@
+.bg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    &-black{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0;
+        transition: opacity .2s;
+        width: 100%;
+        height: 100%;
+
+        &-show{
+            opacity: 0.1;
+        }
+    }
+    .bouncesBG{
+        position: fixed;
+        bottom: -700rpx;
+
+        width: 100%;
+        height: 700rpx;
+        background-color: white;
+        opacity: 0.9;
+
+        transition: .2s;
+        &-show{
+            transform: translateY(-100%);
+        }
+        .topView{
+            width: 100%;
+            height: 60rpx;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            &-leftView{
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 30rpx;
+                margin-left: 30rpx;
+                &-title{
+                    line-height: 30rpx;
+                    font-size: 30rpx;
+                    color: #42B3AB;
+                }
+            }
+        }
+        .scroView{
+            width: 100%;
+            height: 640rpx;
+            overflow-y: scroll;
+            &-listView{
+                width: auto;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                margin: 20rpx;
+                padding-bottom: 20rpx;
+
+                border-bottom: 1rpx solid #EEEEED;
+            }
+            .rightView{
+                margin-left: 20rpx;
+                flex: 1;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                
+                &-title{
+                    margin-top: 5rpx;
+                    font-size: 24rpx;
+                    line-height: 29rpx;
+                    white-space: pre-wrap;
+                    word-break:break-all;
+                }
+                &-bottomView{
+                    position: absolute;
+                    bottom: 0;
+                    
+                    width: 100%;
+                    height: 40rpx;
+                    line-height: 40rpx;
+                    display: flex;
+                    flex-direction: row;
+                    .moneyTitle{
+                        color: #4FBBB2;
+                        font-size: 32rpx;
+                        flex: 1;
+                    }
+                    .qukankan{
+                        margin-top: -5rpx;
+                        padding: 8rpx 25rpx;
+                        width: auto;
+                        height: 33rpx;
+                        line-height: 33rpx;
+                        text-align: center;
+                        background-color: #4FBBB2;
+                        border-radius: 7rpx;
+
+                        color: white;
+                        font-size: 24rpx;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+.endtip-contaniner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.endtip-wrap {
+    width: 653rpx;
+    height: 1041rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -326.5rpx;
+    margin-top: -540rpx;
+    z-index: 200;
+}
+
+.endtip-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.button-hover {
+    background: transparent;
+}
+
+.endtip-content {
+    padding: 0 20rpx;
+    width: 530rpx;
+    height: 670rpx;
+    position: absolute;
+    top: 295rpx;
+    background: transparent;
+    left: 60rpx;
+    z-index: 20;
+    overflow-y: auto;
+    font-size: 0rpx;
+    color: #f99aba;
+    font-weight: bold;
+    line-height: 1;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.endtip-box {
+    padding-top: 120rpx;
+    box-sizing: border-box;
+}
+
+.endtip-box2 {
+    padding-top: 220rpx;
+}
+
+.endtip-title {
+    margin: 25rpx 0;
+    font-size: 32rpx;
+    line-height: 52rpx;
+    color: #f99aba;
+    text-align: center;
+}
+
+.qrcode {
+    margin: 50rpx auto;
+    display: block;
+    width: 264rpx;
+    height: 264rpx;
+}
+
+.endtip-des {
+    text-align: center;
+    font-size: 36rpx;
+    color: #999;
+    font-weight: bold;
+}
+
+.endtip-text {
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 60rpx;
+}
+
+.share-btn {
+    position: absolute;
+    bottom: -49rpx;
+    left: 50%;
+    width: 359rpx;
+    height: 98rpx;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    margin-left: -179rpx;
+    line-height: normal;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+}
+
+.share-btn::after {
+    display: none;
+}
+
+.address-btn {
+    width: 359rpx;
+    height: 98rpx;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: -125rpx;
+    left: 50%;
+    margin-left: -25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    z-index: 10;
+}

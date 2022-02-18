@@ -1,0 +1,32 @@
+<view class="contact ~flex-center">
+  <block wx:if="{{serve.img}}">
+    <view class="main main-fol ~flex-center" wx:if="{{brand === 'FOL'}}">
+      <image src="{{serve.img}}" mode="widthFix" show-menu-by-longpress="true"></image>
+      <text class="call" bindtap="call"></text>
+      <icon class="close-fol" type="cancel" size="60rpx" color="white" bindtap="close" />
+    </view>
+    <view class="main" wx:else>
+      <image src="{{serve.img}}" mode="widthFix" show-menu-by-longpress="true"></image>
+      <view class="copy posit"></view>
+      <view class="save posit" bindtap="save"></view>
+      <view class="close posit" bindtap="close"></view>
+      <view class="call posit" bindtap="call"></view>
+      <view class="functionGroup">
+        <view class="bgColor">
+          <view class="fontSize26 white bolder">长按识别图中二维码</view>
+          <view class="fontSize22 gray">即刻添加</view>
+        </view>
+        <view bindtap="copy">
+          <view class="fontSize26 bolder">点击复制微信号</view>
+          <view class="fontSize22">在微信中搜索添加</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="main main-fol ~flex-center">
+      <text class="hot-line ~text-c" bindtap="call">请拨打客服电话 \n{{serveHotLine}}</text>
+      <icon class="close-fol" type="cancel" size="60rpx" color="white" bindtap="close" />
+    </view>
+  </block>
+</view>

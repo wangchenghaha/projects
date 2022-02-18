@@ -1,0 +1,13 @@
+<view class='ant-sellerticket-modal-wrapper' wx:if='{{compShow}}'>
+  <view class='mask-area'></view>
+  <view class='content-area animation-zoomIn'>
+    <view class='title-box'>
+      <view class='title'>提示</view>
+      <view class='desc'>确认领取到微信卡包</view>
+    </view>
+    <view class='btns-box'>
+      <view class='btn-cancel' catch:tap='cancelHandle'>取消</view>
+      <view class='btn-success'>确定<comp-sellerticket renderDetail='{{sellerticket}}' catch:addCard='successHandle'></comp-sellerticket></view>
+    </view>
+  </view>
+</view>

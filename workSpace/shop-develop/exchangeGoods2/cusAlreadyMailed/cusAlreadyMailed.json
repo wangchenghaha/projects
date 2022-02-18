@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ex-order-infos-view": "../components/exOrderInfos/exOrderInfos",
+    "ex-button-layout": "../components/exButtonLayout/exButtonLayout"
+  }
+}

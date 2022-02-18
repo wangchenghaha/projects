@@ -1,0 +1,55 @@
+<view class='page'>
+    <view class='list'>
+      <view class='li'>
+          <picker mode="selector" bindchange="bindPickerChange1" value="{{index1}}" range="{{proviceData}}" range-key="name">
+                <view class="picker">
+                  <view class="picker1">{{proviceData[index1].name}}</view>
+                </view>
+          </picker>
+      </view>
+      <view class='li'>
+           <picker mode="selector" bindchange="bindPickerChange2" value="{{index2}}" range="{{cityData}}" range-key="name">
+            <view class="picker">
+              <view class="picker1">{{cityData[index2].name}}</view>
+            </view>
+          </picker>
+      </view>
+      <view class='li'>
+          <picker mode="selector" bindchange="bindPickerChange3" value="{{index3}}" range="{{districtData}}" range-key="DisName">
+            <view class="picker">
+              <view class="picker1">{{districtData[index3].DisName}}</view>
+            </view>
+          </picker>
+      </view>
+      <view bindtap='search' class='li'>搜索</view>
+    </view>
+    <view class="name_tishi" wx:if="{{shengshiTishi && ! ishaveFirst}}">请选择地址</view>
+    <view class="name_tishi" wx:if="{{chengshiTishi  && ! ishaveFirst}}">城市不能为空</view>
+    <view class="name_tishi" wx:if="{{diquTishi  && ! ishaveFirst}}">地区不能为空</view>
+    
+   <!-- 附近店铺列表 -->
+   
+  <view class='shopList'>
+     <view class='s-li' id="first" wx:if="{{firstShop.hasStore}}" bindtap='goDetaile'>
+         <view class='arrow'><image src='../../images/arrow.jpg'></image></view>
+         <view class='name'><text >{{firstShop.store.storeName}}</text><text data-longitude='{{firstShop.store.storeLongitude}}' data-latitude='{{firstShop.store.storeLatitude}}' data-name='{{firstShop.store.storeName}}'  data-address='{{firstShop.store.storeAddress}}'   bindtap='lookMap' class='lookMap'>查看地图</text></view>
+         <view class='info'>
+            <view class='in-li'>距您定位距离：{{firstShop.store.storeDistance}}米</view>
+            <view class='in-li'>营业时间：{{firstShop.store.storeBusinessHours}}</view>
+            <view class='in-li'>联系方式：{{firstShop.store.storePhone}}</view>
+            <view class='in-li'>地址：{{firstShop.store.storeAddress}}</view>
+         </view>
+     </view>
+     <view class='s-li' id="{{index}}" wx:for="{{shopList}}"wx:key="shopList" bindtap='goDetaile'>
+         <view class='arrow'><image src='../../images/arrow.jpg'></image></view>
+         <view class='name'><text >{{item.name}}</text><text data-longitude='{{item.longitude}}' data-latitude='{{item.latitude}}' data-name='{{item.name}}'  data-address='{{item.address}}'   catchtap='lookMap' class='lookMap'>查看地图</text></view>
+         <view class='info'>
+            <view class='in-li'>距您定位距离：{{item.distance}}米</view>
+            <view class='in-li'>营业时间：{{item.businessHours}}</view>
+            <view class='in-li'>联系方式：{{item.phone1}}</view>
+            <view class='in-li'>地址：{{item.address}}</view>
+         </view>
+     </view>
+  </view>
+
+</view>

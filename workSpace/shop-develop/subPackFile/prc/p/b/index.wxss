@@ -1,0 +1,227 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: url("https://tc.woaap.com/lingzhi/princess/bg-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 67rpx;
+  box-sizing: border-box;
+}
+
+.wrapper.big {
+  padding-top: 91rpx;
+  background: url("https://tc.woaap.com/lingzhi/princess/big-bg-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .logo {
+  width: 239rpx;
+  height: 159rpx;
+  margin: 0 auto;
+  background: url("https://tc.woaap.com/lingzhi/princess/logo-w.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .logo.big {
+  width: 276rpx;
+  height: 183rpx;
+}
+
+.wrapper .title {
+  width: 614rpx;
+  height: 132rpx;
+  background: url("https://tc.woaap.com/lingzhi/princess/qstitle-1.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 60rpx auto 50rpx;
+}
+
+.wrapper .title.big {
+  margin: 100rpx auto;
+}
+
+.wrapper .title2 {
+  width: 567rpx;
+  height: 132rpx;
+  background: url("https://tc.woaap.com/lingzhi/princess/qstitle-2.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 60rpx auto;
+}
+
+.wrapper .title2.big {
+  margin: 90rpx auto;
+}
+
+.wrapper .form .item {
+  width: 436rpx;
+  height: 96rpx;
+  margin: 0 auto 20rpx;
+  line-height: 96rpx;
+  color: white;
+  font-size: 38rpx;
+  padding-left: 160rpx;
+  box-sizing: border-box;
+}
+
+.wrapper .form .item.big {
+  margin: 0 auto 30rpx;
+}
+
+.wrapper .form .item-1 {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-1.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 106rpx;
+  line-height: 106rpx;
+}
+
+.wrapper .form .item-1.active {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-1-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: rubberBand 0.7s ease;
+}
+
+.wrapper .form .item-2 {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-2.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 98rpx;
+  line-height: 98rpx;
+}
+
+.wrapper .form .item-2.active {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-2-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: rubberBand 0.7s ease;
+}
+
+.wrapper .form .item-3 {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-3.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .item-3.active {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-3-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: rubberBand 0.7s ease;
+}
+
+.wrapper .form .item-4 {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-4.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .item-4.active {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-4-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: rubberBand 0.7s ease;
+}
+
+.wrapper .form .item-5 {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-5.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 95rpx;
+  line-height: 95rpx;
+}
+
+.wrapper .form .item-5.active {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-5-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: rubberBand 0.7s ease;
+}
+
+.wrapper .footer {
+  margin-top: 134rpx;
+  display: flex;
+}
+
+.wrapper .footer.big {
+  margin-top: 224rpx;
+}
+
+.wrapper .footer .item {
+  flex: 1;
+}
+
+.wrapper .footer .item .btn {
+  width: 226rpx;
+  height: 85rpx;
+  margin: 0 auto;
+  line-height: 85rpx;
+  font-size: 36rpx;
+  color: white;
+  text-align: center;
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-l.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .footer .item .btn.hove {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-l-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

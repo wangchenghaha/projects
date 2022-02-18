@@ -1,0 +1,10 @@
+<view class="~flex-start">
+  <view wx:for="{{5}}" wx:key="index" class="icon">
+    <image src="{{value >= (index + 1) ? starLight : starDark}}"
+           style="width: {{size}}rpx; height: {{size}}rpx"
+           data-index="{{index}}"
+           bindtap="onClick"
+           class="star"
+           mode="widthFix" />
+  </view>
+</view>

@@ -1,0 +1,77 @@
+<view class="wrap">
+
+  <!-- 邮寄到家 的配送方式 -->
+  <view  style='display:block; padding:20rpx; background:#f2f2f2;'>
+    <view class="lli" wx:if="{{address.userName}}" bindtap="shouhuoxinxi">
+      <image class="addressIcon" src="../../../images/order_address_icon.png"  mode="aspectFit"/>
+      <view class="liCon">
+        <view class="dizhi">
+           <text style="color:black; line-height: 60rpx;">{{address.userName}}</text><text style="color:black; margin-left: 50rpx; line-height: 60rpx;"> {{address.phone}}</text>
+        </view>
+        <view class="dizhi">
+          <view class="addressDetail">{{address.province}}  {{address.city}}  {{address.area}} </view>
+          <view class="addressDetail">{{address.detailAddress}}</view>
+        </view>
+      </view>
+      <image class="arrow" src="../../../images/arrow.jpg"  mode="aspectFit"/>
+    </view>
+
+    <view class="noAddress" wx:if="{{!address.userName}}" bindtap="shouhuoxinxi">
+        + 添加收货地址
+    </view>
+  </view>
+  <view class="line"></view>
+  <!-- <image src="../../../images/ordersave_address.png" style="width:100%; height:6rpx;display:block;" mode="aspectFill"/> -->
+  
+  <view class="header"> 
+    <image src="../../../images/screen_icon.png" style="width: 26rpx; height: 40rpx; margin-left:20rpx;" mode="aspectFit"/>
+    <text>订单摘要</text>
+    </view>
+  
+  <view class="contentCon">
+    <view class="list">
+      <view class="li" wx:for="{{dingdanList}}" wx:key="dingdanList">
+        <view class="classname">
+          <image src="{{item.pic}}"  mode="aspectFit"/>
+          <view class="classright">
+              <view class="classtitle"> {{item.goodsName}}</view>
+              <text >{{item.color.colorAlias}}</text><text >{{item.size.sizeAlias}}</text>
+              <view class="classBottom">
+                <view class="classPirce">￥{{item.money}}+积分{{item.score}}</view>
+                <view class="classCount">× 1</view>
+              </view>
+          </view>
+        </view> 
+        <view class="classNotice">订单付款后预计48小时内发货</view>
+      </view>
+      <view class="details_sizeOne_D">
+        <view class="c_title">购买数量</view>
+        <view class="c_number">
+          <view class="c_add">+</view>
+          <input class="c_num" type="number" value="1" disabled="true"/>
+          <view class="c_jian">-</view>
+        </view>
+      </view>
+
+      <view class="li">
+        <view class="li_left">配送方式</view>
+        <view class="li_right">运费 免运</view>
+      </view>
+    </view>
+
+    <view class="statistics">
+      <view class="notice">共1件商品  小计</view>
+      <view class="content">
+        <view class="content-right">￥{{AllPrice}}</view>
+        <view style="font-size: 24rpx; color:#d70715; font-weight: 600;">+积分{{AllScore}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottomSub {{isIphoneX ?'fix-iphonex-button':''}}">
+    <view class="showTotal"><text style="font-size: 30rpx; color: black; font-weight: 500;">实际支付</text>
+    <text style="font-size: 30rpx; color:#d70715; font-weight: 500; margin-right:20rpx;">￥{{AllPrice}}</text></view>
+    <view class="submit" bindtap="submit">提交订单</view>
+  </view>
+
+</view>

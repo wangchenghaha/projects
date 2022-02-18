@@ -1,0 +1,244 @@
+<view class="wrapper">
+    <!-- 第一个modal窗 door -->
+    <view class="doorModal middle {{animate?'active':''}} {{isBigPhone?'big':''}}" scroll-y wx:if="{{modalType === 'doorModal'}}">
+        <view class="main-content">
+            <view class="title">专宠福利1</view>
+            <view class="maincard">
+                <view class="time">有效期：2020.3.6-2020.3.8</view>
+            </view>
+            <view class="getCard">
+                <block wx:if='{{modalConfig.isJoin == 1 || hasJoin}}'>
+                    <view wx:if='{{unionid}}'>
+                        <button class="btn" data-key='first' bindtap='getOneCard' wx:if="{{!modalConfig.isGetCoupon || modalConfig.isGetCoupon == 0}}">
+                            领取优惠券
+                        </button>
+                        <button class="btn" wx:if="{{modalConfig.isGetCoupon == 1}}" bindtap='openOneCard'>
+                            查看优惠券
+                        </button>
+                    </view>
+                    <view wx:if='{{!unionid}}'>
+                        <button class="btn" data-type="getOneCard"  bindtap='getAuth'>领取优惠券</button>
+                    </view>
+                      
+                </block>
+                <block wx:else>
+                    <button class="btn" wx:if='{{unionid}}' bindtap='checkJoin' data-key='first' open-type="share">
+                        转发好友即可获得
+                    </button>
+                    <button class="btn" wx:if='{{!unionid}}' data-type="getOneCard2" bindtap='getAuth'>转发好友即可获得</button>   
+                </block>
+            </view>
+            <view class="clothesbox">
+                <view class="name">专宠福利2</view>
+                <view class="desc">100% 中奖的幸运抽奖</view>
+                <!-- 没有参与过 -->
+                <block wx:if='{{!modalConfig.isJoin || modalConfig.isJoin == 0}}'>
+                    <view class="reward_tips"></view>
+                    <view class="tit_tips">领取 专宠福利1 后解锁</view>
+                    <!-- 查看规则 -->
+                    <view class="tipsbox">
+                        <text class="tit" bindtap='checkRule' data-index='first'>活动规则</text>
+                    </view>
+                </block>
+                <!-- 已参与过需要分享好友进行资格抽奖 -->
+                <block wx:if='{{ modalConfig.isJoin == 1 }}'>
+                    <!-- 衣服展示 -->
+                    <miniSwiper type='mini' />
+                    <!-- 提示部分 -->
+                    <view class="percentbox">
+                        <!-- 之前从未抽奖，需要分享三次 -->
+                        <block wx:if="{{modalConfig.luckCount == 0}}">
+                            <view class="percent" style="width: {{(modalConfig.inviteCount>= 3 ? 3: modalConfig.inviteCount) / 3 * 100}}%"></view>
+                            <view class="tips">
+                                {{modalConfig.inviteCount>= 3 ? '已解锁' : '累计3位好友助力，解锁抽奖资格'}}
+                            </view>
+                        </block>
+                        <!-- 之前有抽奖，仅需分享一次 -->
+                        <block wx:if='{{modalConfig.luckCount >= 1}}'>
+                            <view class="percent" style="width: {{modalConfig.isShare == 1 ? 100 : 0}}%"></view>
+                            <view class="tips">
+                                {{modalConfig.isShare == 1? '已解锁':'累计进行1次邀请，解锁抽奖资格'}}
+                            </view>
+                        </block>
+                    </view>
+                    <!-- 按钮部分 -->
+                    <block wx:if='{{modalConfig.inviteCount >= 3}}'>
+                        <block wx:if="{{modalConfig.isLuck == 1}}">
+                            <button class="btn" open-type="share" data-key='second'>
+                                邀请好友一起玩
+                            </button>
+                        </block>
+                        <block wx:else>
+                            <block wx:if="{{modalConfig.luckCount > 0}}">
+                                <button class="btn {{isEndTime ? 'disabled':''}}" disabled="{{isEndTime}}" wx:if='{{ modalConfig.isShare == 1 }}' bindtap='getReward'>
+                                    {{isEndTime ? '抽奖结束':'马上抽奖'}}
+                                </button>
+                                <button class="btn" open-type="share" data-key='second' wx:if='{{ modalConfig.isShare == 0 }}'>
+                                    邀请好友助力
+                                </button>
+                            </block>
+                            <block wx:if='{{modalConfig.luckCount == 0}}'>
+                                <button class="btn {{isEndTime ? 'disabled':''}}" disabled="{{isEndTime}}" bindtap='getReward'>
+                                    {{isEndTime ? '抽奖结束':'马上抽奖'}}
+                                </button>
+                            </block>
+                        </block>
+                    </block>
+                    <block wx:else>
+                        <button class="btn" open-type="share" data-key='second'>
+                            邀请好友助力
+                        </button>
+                    </block>
+                    <view class="tipsbox">
+                        <text class="tit" bindtap='checkRule' data-index='first'>活动规则</text>
+                        <!-- 已经抽过奖 -->
+                        <text class="tit" bindtap='checkRecord' wx:if='{{hasReward}}' style="margin-left:20rpx">查看奖品</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <!-- 活动已结束 -->
+    <view class="activeEnd middle {{animate?'active':''}} {{isBigPhone?'big':''}}" wx:if="{{modalType === 'activeEnd'}}">
+        <view class="innerContent">
+            <view class="title">本期活动已结束</view>
+            <view class="desc">
+                <rich-text nodes="感谢您的参与，<br/>更多惊喜优惠尽在官网首页"></rich-text>
+            </view>
+            <view class="button">
+                <button class="btn" bindtap='navigateMini'>点击回官网</button>
+            </view>
+        </view>
+    </view>
+
+    <!-- 活动未开始 -->
+    <view class="activeEnd middle {{animate?'active':''}} {{isBigPhone?'big':''}}" wx:if="{{modalType === 'activeBefore'}}">
+        <view class="innerContent">
+            <view class="title">本期活动还未开始</view>
+            <view class="desc">
+                <rich-text nodes="感谢您的关注，<br/>更多惊喜优惠尽在官网首页"></rich-text>
+            </view>
+            <view class="button">
+                <button class="btn" bindtap='navigateMini'>点击回官网</button>
+            </view>
+        </view>
+    </view>
+
+    <!-- 活动规则 -->
+    <view class="rulebox middle {{animate?'active':''}} {{isBigPhone?'big':''}}" wx:if="{{modalType === 'rulebox'}}">
+        <view class="close" bindtap='HideMiniModal'></view>
+        <view class="title">活动规则</view>
+        <scroll-view class="scrollbox" scroll-y scroll-with-animation>
+            <view class="tit">* 活动时间：2020年3月6日至3月8日</view>
+            <view class="tit">* 用户参与小程序“3.8女神节专宠福利”活动，摇动手机可获得价值1860元优惠券礼包，将活动小程序分享给一个微信好友，即可领取优惠券礼包。</view>
+            <view class="tit">* 用户成功邀请3位微信好友参加活动，即可获得100%中奖的幸运抽奖资格。抽奖奖品包括：斜跨单肩包（价值399元）500个，防紫外线墨镜（价值199元）1000个，波浪印花提包（价值99元）5200个，10元无门槛优惠券若干和5元无门槛优惠券若干。</view>
+            <view class="tit">* 优惠券礼包有效期：2020年3月6日至3月8日，抽奖奖品有效期：2020年3月6日至3月31日，请在规定时间内使用，过期失效不予以返还。</view>
+            <view class="tit">* 优惠券礼包限ONLY折扣店全国门店和品牌官网，购买指定商品满额时使用。每单仅能使用1张优惠券，不可拆单使用，该券不与其他优惠券同享，不找零，不兑现。</view>
+            <view class="tit">* 活动期间，同一用户仅可发起一次分享小程序领取代金券活动。</view>
+            <view class="tit">* 凡满足同一微信号、同一手机号码、同一银行卡、同一身份证号中的任意一个条件者，即视为同一用户。</view>
+            <view class="tit">* 活动期间，如发现有用户通过不正当手段（包括但不限于侵犯第三人合法权益、作弊、扰乱系统、实施网络攻击、恶意套现、刷信誉、批量注册、用机器注册账户、用机器模拟客户端等）参加活动而有碍其他用户公平参加本活动或有违反本活动目的之行为，活动主办方有权取消该用户参加活动资格或收回该用户通过参加本活动所获奖品。如该作弊行为给活动主办方造成损失的，活动主办方保留向该用户追究赔偿的权利</view>
+            <view class="tit">* 由于账户盗用等非常规用户自身原因造成的奖品问题，品牌不予返还或补偿</view>
+            <view class="tit">* 活动主办方将尽力确保本活动的顺利进行。若因特定原因而导致主办方暂停或提前结束本活动的，除非法律、法规另有不同的强制性规定，活动主办方不承担任何法律责任。品牌在法律范围内保留对此活动细则的最终解释权。</view>
+        </scroll-view>
+    </view>
+    <!-- 获取微信unionid授权 -->
+    <view class="middle authorize {{animate?'active':''}} {{isBigPhone?'big':''}}" wx:if="{{modalType === 'authorize'}}">
+        <view class="close" bindtap='HideMiniModal'></view>
+        <view class="logo">ONLY折扣店</view>
+        <view class="tit">申请获得以下权限：</view>
+        <view class="item">· 获取您的公开信息（昵称，头像等）</view>
+        <view class="tit-2">用于提供更好的游戏体验</view>
+        
+        <miniSwiper />
+        <view class="button">
+            <button class="btn" open-type="getUserInfo" bindgetuserinfo="getuserinfo">授权</button>
+        </view>
+    </view>
+    <!-- 中奖纪录 -->
+    <view class="cardone middle {{animate?'active':''}} {{isBigPhone?'big':''}}" wx:if='{{modalType == "cardone"}}'>
+        <view class="close" bindtap='HideMiniModal'></view>
+        <view class="innerContent">
+            <view class="tit-1">恭喜您已获得</view>
+            <view class="title">专属福利1</view>
+
+            <view class="tit-2">
+                <rich-text class="" nodes="成功邀请3位好友，<br/>获得解锁” 专宠福利2 “的机会"></rich-text>
+            </view>
+            <view class="cardboox"></view>
+            <button class="btn" wx:if='{{unionid}}' bindtap='getOneCard'>领取优惠券</button>
+            <button class="btn" wx:else data-type="getOneCard"  bindtap='getAuth'>领取优惠券</button>
+            <view class="tipsbox">
+                <view class="tit" bindtap='checkRule'>活动规则</view>
+            </view>
+        </view>
+    </view>
+    <!-- 开始抽奖 -->
+    <view class="startReward middle {{animate?'active':''}} {{isBigPhone?'big':''}}" wx:if='{{modalType == "startReward"}}'>
+        <view class="close" bindtap='HideMiniModal'></view>
+        <view class="innerContent">
+            <view class="reward_tips">
+                <view class="startBtn" animation='{{animationData}}'></view>
+            </view>
+
+            <view class="button">
+                <button class="btn" wx:if="{{unionid}}" catchtap='getRewardNow'>点击抽奖</button>
+                <button class="btn" data-type="getRewardNow" wx:else bindtap='getAuth'>点击抽奖</button>
+            </view>
+            <view class="tipsbox">
+                <view class="tit" bindtap='checkRule'>活动规则</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 已中奖 -->
+    <view class="middle result {{animate?'active':''}} {{isBigPhone?'big':''}}" wx:if='{{modalType==="result"}}'>
+        <view class="close" bindtap='HideMiniModal'></view>
+        <view class="innerContent">
+            <view class="title">恭喜中奖</view>
+            <view class="rewardbox">
+                <view class="reward" style="background-image:url({{awards.icon}})"></view>
+            </view>
+            <view class="desc">{{awards.name}}</view>
+            <view class="button">
+                <button class="btn" data-id='{{awards.id}}' bindtap='getSecAward' wx:if='{{awards.is_get_coupon==0}}'>领取兑换物</button>
+                <button class="btn" wx:if='{{awards.is_get_coupon==1}}' bindtap='openMyAward'>查看</button>
+            </view>
+            <view class="tipsbox">
+                <view class="tit" bindtap='checkRule'>活动规则</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 奖品列表 -->
+    <view class="middle awardlist  {{animate?'active':''}} {{isBigPhone?'big':''}}"  wx:if='{{modalType==="awardlist"}}'>
+        <view class="close" bindtap='HideMiniModal'></view>
+        <view class="innerContent">
+            <view class="swiperbox">
+                <miniSwiper />
+            </view>
+
+            <view class="header">中奖纪录</view>
+
+            <view class="award">
+                <view class="award__title">
+                    <view class="tit">时间</view>
+                    <view class="tit">状态</view>
+                </view>
+
+                <view class="award__list">
+                    <view class="items">
+                        <view class="time">2020年4月10日</view>
+                        <view class="control">
+                            <button class="btn">点击领取</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="tipsbox">
+                <view class="tit" bindtap='checkRule'>活动规则</view>
+            </view>
+        </view>
+
+    </view>
+</view>

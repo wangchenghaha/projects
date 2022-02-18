@@ -1,0 +1,367 @@
+<view class="pos ~flex-start" wx:if="{{!showFixedTop && FULL_SCREEN}}" style="top: {{searchPos}}px">
+  <icon class="search" type="search" color="#fff" size="40rpx" data-search="search" data-module="search" data-link="/pages/searchHistory/searchHistory" bindtap="onClick" />
+  <lineIcon color="#fff" />
+</view>
+<view style="background-color: {{pageModule[0].pageBgColor || '#fff'}}">
+  <block wx:for="{{pageModule}}" wx:for-index="pageIndex" wx:for-item="pageItem" wx:key="page">
+    <!--  {{index}}-->
+    <!--    文字展示-->
+    <view wx:if="{{pageItem.moduleType === 'textitle' && pageItem.text}}" style="{{pageItem.cssStyle}}">{{pageItem.text}}</view>
+    <!--    文字公告-->
+    <view wx:if="{{pageItem.moduleType === 'textAnnouncement' && pageItem.text}}" class="~flex-start {{pageItem.moduleType}}">
+      <view class="~flex-start text" style="{{pageItem.cssStyle}}">
+        <image lazy-load="true" wx:if="{{pageItem.padding[0].imgUrl}}" class="broadcast-img" src="{{pageItem.padding[0].imgUrl}}" mode="widthFix"></image>
+        <view class="tip-wrap">
+          <text class="tip-text" style="animation-duration: {{pageItem.animationDuration}}s">{{pageItem.text}}{{pageItem.text}}{{pageItem.text}}</text>
+        </view>
+      </view>
+    </view>
+    <!--  横向滚动-->
+    <view wx:if="{{pageItem.moduleType === 'rollHorizontally' && pageItem.goodsList && pageItem.goodsList.length}}">
+      <scroll-view class="roll-scroll" scroll-x style="{{pageItem.cssStyle}}">
+        <view class="roll-item"  wx:for="{{pageItem.goodsList}}" wx:key="module" style="padding-top:{{pageItem.paddingTop}}rpx; margin-right: {{pageItem.paddingLeft || 0 }}rpx; width: {{pageItem.imgWidth || 224}}rpx; height: {{pageItem.imgHeight || 441}}rpx">
+          <image lazy-load="true" src="{{item.imgUrl}}" mode="widthFix" data-index="{{index}}" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-moudle-index="{{pageIndex}}" bindtap="onClick"></image>
+          <block wx:if="{{item.querySkus}}">
+            <view class="goods-name" wx:if="{{item.querySkus.goodsName}}">{{item.querySkus.goodsName}}</view>
+            <view class="~text-c" wx:if="{{item.querySkus.price}}">{{item.querySkus.price}}</view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 轮播图 -->
+    <view class="banner" wx:if="{{pageItem.moduleType === 'largeLoop'}}" >
+      <swiper
+          class="swiper {{item.moduleType}}"
+          style="height: {{(pageIndex === 0 && FULL_SCREEN) ? windowHeight + 'px' : pageItem.swiperHeight + 'rpx' }}; width: {{pageItem.swiperWidth || 100}}%"
+          circular
+          interval="{{pageItem.interval || swiper.interval}}"
+          duration="{{swiper.duration}}"
+          current="{{pageItem.myCurrent}}"
+          autoplay="{{pageItem.autoplay}}"
+          indicator-dots="{{pageItem.indicatortype === 'dot'}}"
+          data-index="{{pageIndex}}"
+          bindchange="changeSwiper"
+      >
+        <swiper-item class="swiper-item" wx:for="{{pageItem.imgList}}" wx:for-item="swiperItem" wx:for-index="swiperIndex" wx:key="swiperList">
+          <navigator wx:if="{{swiperItem.type === 'jumpMiniProgram'}}" target="miniProgram" open-type="navigate" app-id="{{item.code}}" path="{{item.linkUrl}}" data-id="{{item.appId}}" bindcomplete="openMiniProgram">
+            <image lazy-load="true" src="{{swiperItem.imgListImage[0].imgUrl}}" class="img" mode='widthFix'></image>
+          </navigator>
+          <block wx:else>
+            <view class="cover-view"
+                  data-index="{{swiperIndex}}"
+                  data-module="{{pageItem.moduleType}}"
+                  data-link="{{swiperItem.imgListImage[0].weChatlink}}"
+                  data-module-index="{{pageIndex}}"
+                  bindtap="onClick"
+                  wx:if="{{swiperItem.type === 'video'}}" style="width: 750rpx; height: 100%;">
+              <video
+                  id="myVideo{{pageIndex}}-{{swiperIndex}}"
+                  src="{{swiperItem.imgListImage[0].imgUrl}}"
+                  muted="{{swiperItem.videoMuted}}"
+                  controls="{{false}}"
+                  autoplay="{{swiperItem.autoplay}}"
+                  loop="true"
+                  object-fit="cover"
+                  data-index="{{swiperIndex}}"
+                  data-module="{{pageItem.moduleType}}"
+                  data-link="{{swiperItem.imgListImage[0].weChatlink}}"
+                  data-module-index="{{pageIndex}}"
+                  bindloadedmetadata="loadVideo"
+                  bindtap="onClick"
+                  style="width: 750rpx; height: 100%; opacity: {{swiperItem.loaded ? 1 : 0}}"
+              ></video>
+<!--              视频封面 -->
+              <image class="post-img" wx:if="{{swiperItem.imgListImage[0].posterUrl}}" src="{{swiperItem.imgListImage[0].posterUrl}}" mode="widthFix" style="opacity: {{swiperItem.loaded ? 0 : 1}}"></image>
+              <image lazy-load="true" src="{{swiperItem.videoMuted ? icon_voice_no : icon_voice}}" class="voice" mode="widthFix" data-row="{{index}}" data-index="{{swiperIndex}}" bindtap="changeVoice"></image>
+            </view>
+            <view  wx:else
+                   class="img"
+                   data-module="{{pageItem.moduleType}}"
+                   data-link="{{swiperItem.imgListImage[0].weChatlink}}"
+                   data-index="{{swiperIndex}}"
+                   data-module-index="{{pageIndex}}"
+                   bindtap="onClick"
+                   style="background-image: url({{swiperItem.imgListImage[0].imgUrl}})"></view>
+            <view class="swiper-content {{index === 0}}"
+                  wx:if="{{swiperItem.textList || swiperItem.butList}}" style="bottom: {{swiperItem.textBtnBottom}}rpx">
+              <block wx:if="{{swiperItem.textList.length}}">
+                <view wx:for="{{swiperItem.textList}}"
+                      wx:key="text"
+                      wx:for-item="textItem"
+                      class="~text-c swiper-text"
+                      style="{{textItem.textStyle}}">{{textItem.text}}</view>
+              </block>
+              <view wx:if="{{swiperItem.butList.length}}" class="~flex-center">
+                <block  wx:for="{{swiperItem.butList}}" wx:for-item="btnItem" wx:key="btn">
+                  <view style="{{btnItem.btnStyle}}" wx:if="{{btnItem.buttonText}}" data-index="{{index}}" data-module="{{pageItem.moduleType}}" data-link="{{btnItem.weChatlink}}" data-module-index="{{pageIndex}}" bindtap="onClick" class="~text-c">{{btnItem.buttonText}}</view>
+                </block>
+              </view>
+            </view>
+          </block>
+        </swiper-item>
+      </swiper>
+      <view class="num-dot" wx:if="{{pageItem.indicatortype === 'num'}}">{{pageItem.myCurrent}}/{{pageItem.imgList.length}}</view>
+      <view wx:if="{{pageItem.indicatortype === 'line' && pageItem.imgList.length > 1}}" class="swiper-progress">
+        <view class="value" style="width: {{pageItem.progressWidth}}"></view>
+      </view>
+    </view>
+    <!-- 轮播图 B-->
+    <view class="banner" wx:if="{{pageItem.moduleType === 'largeLoopB'}}" >
+      <swiper
+          class="swiper {{item.moduleType}}"
+          style="height: {{pageItem.swiperHeight}}rpx; width: {{pageModule[pageIndex - 1].swiperWidth || 100}}%"
+          duration="{{swiper.duration}}"
+          circular
+          interval="{{pageModule[pageIndex - 1].interval || swiper.interval}}"
+          autoplay="{{pageModule[pageIndex - 1].autoplay}}"
+          current="{{pageModule[pageIndex - 1].myCurrent}}"
+          data-index="{{pageIndex}}"
+          data-module="{{pageItem.moduleType}}"
+          bindchange="changeSwiper"
+      >
+        <swiper-item class="swiper-item ~flex-bet" wx:for="{{pageItem.imgList}}" wx:for-item="swiperItem" wx:for-index="swiperIndex" wx:key="swiperList">
+          <view class="~flex-bet" style="width: 100%">
+            <view class="swiper-item-img"
+                  wx:for="{{swiperItem.bottomSlipDiagram}}"
+                  wx:key="swiperItemB"
+                  wx:for-item="swiperItemB">
+              <image src="{{swiperItemB.imgUrl}}" mode="widthFix" data-link="{{swiperItemB.weChatlink}}" bindtap="onClick" data-module-index="{{pageIndex}}"></image>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <!-- 单张图 -->
+    <view class="hot" wx:if="{{pageItem.moduleType === 'hot'}}" style="{{pageItem.cssStyle}}">
+      <block wx:for="{{pageItem.imgList}}" wx:key="hot">
+        <navigator wx:if="{{item.appId}}" target="miniProgram" app-id="{{item.appId}}" path="{{item.weChatlink}}" data-id="{{item.appId}}" bindcomplete="openMiniProgram">
+          <image lazy-load="true" src="{{item.imgUrl}}" mode="widthFix" data-index="{{index}}" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" show-menu-by-longpress data-module-index="{{pageIndex}}"></image>
+        </navigator>
+        <block wx:else>
+          <image lazy-load="true" src="{{item.imgUrl}}" mode="widthFix" data-index="{{index}}" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-module-index="{{pageIndex}}" bindtap="onClick"></image>
+        </block>
+      </block>
+    </view>
+
+    <view class="swiper_box" wx:if="{{pageItem.moduleType === 'nestedRotation'}}" style="{{pageItem.cssStyle}}; height: {{pageItem.swiperBTop + pageItem.swiperHeight + pageItem.swiperHeightB}}rpx; width: {{pageItem.swiperHeight}}rpx;">
+      <swiper class="swiper-top"
+              indicator-dots="{{true}}"
+              style="height: {{pageItem.swiperHeight}}rpx"
+              interval="{{pageItem.interval || swiper.interval}}"
+              duration="{{swiper.duration}}"
+              autoplay="{{false}}"
+              data-index="{{pageIndex}}"
+              current="{{pageItem.myCurrent}}"
+              bindchange="handleChange" circular >
+        <swiper-item class="swiper_item"
+                     wx:for="{{pageItem.imgList}}"
+                     wx:for-item="swiperItem"
+                     wx:for-index="swiperIndex"
+                     wx:key="swiperList">
+          <image class="swiper_image_100"  src="{{swiperItem.rotatA.imgUrl}}" mode="widthFix" alt=""/>
+        </swiper-item>
+      </swiper>
+      <view class="bottom_container" style="top: {{pageItem.swiperBTop}}rpx">
+        <view class="page-section page-section-spacing">
+          <swiper
+              indicator-dots="{{false}}"
+              current="{{pageItem.myCurrent}}"
+              data-index="{{pageIndex}}"
+              bindchange="handleChange"
+              next-margin="{{pageItem.spaceBetweenB}}rpx"
+              previous-margin="{{pageItem.spaceBetweenB}}rpx"
+              class="bottom_swiper"
+              style="height:{{pageItem.swiperHeightB}}rpx; background-color: {{pageItem.backgroundColor}};" circular>
+            <swiper-item wx:for="{{pageItem.imgList}}" wx:for-item="itemB" wx:key="index">
+              <view class="swiper_title" style="margin-right: {{pageItem.spaceBetweenB}}rpx; height:{{pageItem.swiperHeightB}}rpx; background-color: {{itemB.rotatB.backgroundColor}}; box-shadow: 5rpx 5rpx 10rpx {{itemB.rotatB.boxShadowColor}}; border-radius: {{itemB.rotatB.borderRadius}}rpx; border-color: {{itemB.rotatB.borderColor}}; border-width: {{itemB.rotatB.borderWidth}}rpx; border-style:{{itemB.rotatB.borderType}}; padding-top: {{itemB.rotatB.paddingTop}}rpx;  padding-right: {{itemB.rotatB.paddingRight}}rpx;  padding-bottom: {{itemB.rotatB.paddingBottom}}rpx;  padding-left: {{itemB.rotatB.paddingLeft}}rpx;">
+                <block wx:if="{{itemB.rotatB.isFreeEdit}}">
+                  <view class="swiper_title_top"
+                        style="font-size: {{rotateItem.mainTitleFontSize}}rpx; color:{{rotateItem.mainTitleColor}}; font-weight: {{rotateItem.mainTitleBlod ? 'blod': ''}}; line-height: {{rotateItem.mainTitleHeight}};"
+                        data-link="{{rotateItem.weChatlink}}"
+                        data-module="{{pageItem.moduleType}}"
+                        data-index="{{index}}"
+                        data-module-index="{{pageIndex}}" bindtap="onClick">{{itemB.rotatB.mainTitle}}</view>
+                  <view class="swiper_title_bottom"
+                        style="font-size: {{rotateItem.subTitleFontSize}}rpx; color:{{rotateItem.subTitleColor}}; font-weight: {{rotateItem.subTitleBlod ? 'blod': ''}}; line-height: {{rotateItem.subTitleHeight}}rpx; margin-bottom: {{rotateItem.subtitleMarginBottom}}rpx"
+                        data-link="{{rotateItem.weChatlink}}"
+                        data-module="{{pageItem.moduleType}}"
+                        data-index="{{index}}"
+                        data-module-index="{{pageIndex}}" bindtap="onClick">{{itemB.rotatB.subtitle}}</view>
+                  <view class="swiper_content_model">
+                    <view
+                        wx:for="{{itemB.rotatB.subclassification}}"
+                        wx:key="index"
+                        wx:for-item="child"
+                        data-link="{{rotateItem.weChatlink}}"
+                        data-module="{{pageItem.moduleType}}"
+                        data-index="{{index}}"
+                        style="color: {{child.color}}; background: {{child.bgColor}}; font-size: {{child.fontSize}}rpx; line-height: {{child.heightSC}}rpx; margin-top: {{child.marginTop}}rpx; margin-right: {{child.marginRight}}rpx; margin-bottom: {{child.marginBottom}}rpx; margin-left: {{child.marginLeft}}rpx; padding-top: {{child.paddingTop}}rpx; padding-right: {{child.paddingRight}}rpx; padding-bottom: {{child.paddingBottom}}rpx; padding-left: {{child.paddingLeft}}rpx; border-radius: {{child.borderRadiusSC}}px;"
+                        data-module-index="{{pageIndex}}" bindtap="onClick">{{child.title}}</view>
+                  </view>
+                </block>
+                <view class="~flex-start" wx:else>
+                  <view style="flex: 0 1 {{100/itemB.rotatB.subclassification.length + '%'}}; padding: 0 10rpx" wx:for="{{itemB.rotatB.subclassification}}" wx:for-item="rotateItem" wx:key="id">
+                    <image src="{{rotateItem.imgUrl}}" mode="widthFix" data-link="{{rotateItem.weChatlink}}" data-module="{{pageItem.moduleType}}" data-index="{{index}}" data-module-index="{{pageIndex}}" bindtap="onClick"></image>
+                  </view>
+                </view>
+
+              </view>
+            </swiper-item>
+
+          </swiper>
+        </view>
+
+      </view>
+    </view>
+    <!-- 热区 -->
+    <view class="hot-map" wx:if="{{pageItem.moduleType === 'hotareamap'}}" style="{{pageItem.cssStyle}}">
+      <view wx:for="{{pageItem.imgList}}" wx:key="hotareamap">
+        <view class="area"
+              wx:for="{{item.imgHot}}"
+              wx:for-item="areaItem"
+              wx:key="id"
+              style="left: {{areaItem.left}}rpx; top: {{areaItem.top}}rpx;width: {{areaItem.width}}rpx; height: {{areaItem.height}}rpx"
+              data-link="{{pageItem.weChatlink}}" data-module="{{pageItem.moduleType}}" data-index="{{index}}" data-module-index="{{pageIndex}}" bindtap="onClick"></view>
+        <image lazy-load="true" src="{{item.imgUrl}}" mode="widthFix" data-index="{{index}}" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-module-index="{{pageIndex}}" bindtap="onClick"></image>
+      </view>
+    </view>
+    <!-- 视频 -->
+    <block wx:if="{{pageItem.moduleType === 'video'}}" >
+      <view wx:for="{{pageItem.videoDetails}}"
+            wx:key="video" style="position: relative; {{pageItem.cssStyle}}; height: {{(pageIndex === 0 && FULL_SCREEN) ? windowHeight + 'px' : (750 * pageItem.videoHeight)/pageItem.videoWidth + 'rpx' }};">
+        <image
+            src="{{pageItem.posterDetails[index].imgUrl}}"
+            style="width: 100%; height: {{(pageIndex === 0 && FULL_SCREEN) ? windowHeight + 'px' : (750 * pageItem.videoHeight)/pageItem.videoWidth + 'rpx' }};"
+            data-link="{{item.weChatlink}}"
+            data-module="{{pageItem.moduleType}}"
+            data-module-index="{{pageIndex}}"
+            bindtap="onClick"
+            mode="aspectFill"
+        ></image>
+        <view style="opacity: {{pageItem.loaded ? 1 : 0}}">
+          <video
+              class="video-show"
+              style="opacity: {{!pageItem.pause ? 1 : 0}};width: 100%; height: {{(pageIndex === 0 && FULL_SCREEN) ? windowHeight + 'px' : (750 * pageItem.videoHeight)/pageItem.videoWidth + 'rpx' }};"
+              src="{{item.imgUrl}}"
+              id="myVideo{{pageIndex}}"
+              objectFit="cover"
+              controls="{{false}}"
+              show-center-play-btn="false"
+              muted="muted"
+              show-play-btn
+              autoplay="{{pageItem.autoplay}}"
+              loop="{{pageItem.loop}}"
+              data-loop="{{pageItem.loop}}"
+              data-link="{{item.weChatlink || item.imgUrl}}"
+              show-mute-btn="true"
+              data-module="{{pageItem.moduleType}}"
+              data-module-index="{{pageIndex}}"
+              auto-pause-if-navigate
+              initial-time="1"
+              bindloadedmetadata="loadVideo"
+              bindended="videoClick"
+              bindtap="onClick"></video>
+        </view>
+      </view>
+    </block>
+    <!-- 一托二 一拖三 -->
+    <view class="~flex-start {{pageItem.moduleType}}" wx:if="{{pageItem.moduleType === 'newDragTwo' || pageItem.moduleType ==='newDragThree'}}">
+      <block wx:for="{{pageItem.goodsList}}" wx:key="goods">
+        <image lazy-load="true" class="item" src="{{item.imgUrl}}" mode="widthFix" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-index="{{index}}" data-module-index="{{pageIndex}}" bindtap="onClick"></image>
+      </block>
+    </view>
+    <!-- 两个，三个，四个，五个，六个， 瀑布流 -->
+    <view wx:if="{{pageItem.moduleType === 'category' || pageItem.moduleType === 'categoryThree' || pageItem.moduleType === 'categoryFour' || pageItem.moduleType === 'categoryFive' || pageItem.moduleType === 'categorySix' || pageItem.moduleType === 'flow'}}"
+          class="~flex-start {{pageItem.moduleType}} flex-wrap" style="{{pageItem.cssStyle}}">
+      <block wx:for="{{pageItem.goodsList}}" wx:key="goods">
+        <image lazy-load="true" class="item" src="{{item.imgUrl}}" mode="widthFix" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-index="{{index}}" data-module-index="{{pageIndex}}" bindtap="onClick"></image>
+      </block>
+    </view>
+    <!-- 左四右六和左六右四 -->
+    <view class="~flex-start {{pageItem.moduleType}}" wx:if="{{pageItem.moduleType === 'leftFourRightSix' || pageItem.moduleType === 'leftSixRightFour'}}" style="{{pageItem.cssStyle}}">
+      <block wx:for="{{pageItem.goodsList}}" wx:key="goods">
+        <image lazy-load="true" class="item" src="{{item.imgUrl}}" mode="widthFix" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-index="{{index}}" data-module-index="{{pageIndex}}" bindtap="onClick"></image>
+      </block>
+    </view>
+    <!-- 一键领取 -->
+    <!--  <text  wx:if="{{pageItem.moduleType === 'getCoupon'}}">一键领取</text>-->
+    <view class="~flex-start {{pageItem.moduleType}}" wx:if="{{ pageItem.moduleType === 'getCoupon' && hasCoupon }}" style="{{pageItem.cssStyle}}">
+      <block wx:for="{{pageItem.goodsList}}" wx:key="goods">
+        <image lazy-load="true" class="item" src="{{item.imgUrl}}" data-module="{{pageItem.moduleType}}" data-index="{{index}}" mode="widthFix" bindtap="getCoupon"></image>
+      </block>
+    </view>
+    <!-- 会员等级 -->
+    <view class="{{pageItem.moduleType}}" wx:if="{{ pageItem.moduleType === 'memberLevel'}}" style="{{pageItem.cssStyle}}">
+      <block wx:for="{{pageItem.goodsList}}" wx:key="goods">
+        <image lazy-load="true" wx:if="{{item.radioVal === memberLevel}}" class="item" src="{{item.imgUrl}}" mode="widthFix" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-index="{{index}}" data-module-index="{{pageIndex}}" bindtap="onClick"></image>
+      </block>
+    </view>
+    <!-- 秒杀倒计时 -->
+    <view class="{{pageItem.moduleType}}" wx:if="{{ pageItem.moduleType === 'tuangouBanner' && pageItem.openornot}}">
+      <view class="sec-kill" wx:for="{{pageItem.goodsList}}" wx:key="goods">
+        <image lazy-load="true" class="item" src="{{item.imgUrl}}" mode="widthFix" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-index="{{index}}" data-module-index="{{pageIndex}}" bindtap="onClick"></image>
+        <view class="time">
+          <text>{{secKill[pageIndex].value.hou}}</text>
+          <text>{{secKill[pageIndex].value.min}}</text>
+          <text>{{secKill[pageIndex].value.sec}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cube-roll" wx:if="{{pageItem.moduleType === 'cuberoll'}}" style="height: {{pageItem.moduleHeight ? (pageItem.moduleHeight + 'rpx') : 'auto'}}; margin-bottom: {{pageItem.bgImg[0].paddingBottom || 0 }}rpx; margin-top: {{pageItem.bgImg[0].paddingTop || 0 }}rpx; ">
+      <view>
+        <image src="{{pageItem.bgImg[0].imgUrl}}" mode="widthFix"></image>
+      </view>
+      <scroll-view class="roll-scroll cube" scroll-x style="{{pageItem.cssStyle}}; bottom: {{pageItem.cuberollBottom}}rpx">
+        <view class="roll-item"  wx:for="{{pageItem.goodsList}}" wx:key="module"
+              style="padding-top:{{pageItem.paddingTop}}rpx;margin-left: {{item.paddingLeft || 0 }}rpx; margin-right: {{item.paddingRight || 0 }}rpx; width: {{pageItem.imgWidth || 224}}rpx;">
+          <image lazy-load="true" src="{{item.imgUrl}}" mode="widthFix" data-index="{{index}}" data-module="{{pageItem.moduleType}}" data-link="{{item.weChatlink}}" data-moudle-index="{{pageIndex}}" bindtap="onClick"></image>
+          <block wx:if="{{item.querySkus}}">
+            <view class="goods-name" wx:if="{{item.querySkus.goodsName}}">{{item.querySkus.goodsName}}</view>
+            <view class="~text-c" wx:if="{{item.querySkus.price}}">{{item.querySkus.price}}</view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+    <!--  搜索关键词 -->
+    <view class="search-hot" wx:if="{{pageItem.moduleType === 'hotWordSearch'}}" style="{{pageItem.cssStyle}}; padding:10rpx 20rpx">
+      <view class="search-title font-bold">热词搜索</view>
+      <view class="search-list" >
+        <block wx:for="{{searchKeyWord}}" wx:for-index="searchIndex" wx:key="id">
+          <text wx:if="{{searchIndex < 10}}" style="border-color: {{pageIte.borderColor }}; color: {{pageItem.color || '#ccc'}}; background-color: {{pageItem.backgroundColorBtn || 'none'}};" data-module="hotSearch" data-link="/pages/goodsList/goodsList?listGoodsSelect={{item.keyword}}" data-module-index="{{pageIndex}}" data-text="{{item.keyword}}" bindtap="onClick">{{item.keyword}}</text>
+        </block>
+      </view>
+    </view>
+    <block wx:if="{{pageItem.moduleType === 'guessLike'}}">
+      <!-- /猜你喜欢 -->
+      <!-- <dmpGoods projeckName="firstPage"></dmpGoods> -->
+      <!-- 20210816 9999 -->
+      <dmpGoods sceneId="sy101" sceneType="1" itemId=""></dmpGoods>
+    </block>
+    <!-- 热销推荐 -->
+    <view class="hot-sale" wx:if="{{pageItem.moduleType === 'recommendedSale' && hotSaleArr.length}}">
+      <view class="~text-c title">—— 热销推荐 ——</view>
+      <view class="change ~text-r" >
+        <text bindtap="change">换一换</text>
+      </view>
+      <scroll-view class="like-scroll" scroll-x style="width: 100%">
+        <view class="~flex-start">
+          <block wx:for="{{hotSaleArr}}" wx:key="gsColorCode">
+            <view class="like-item ~text-c" data-module="{{pageItem.moduleType}}" data-index="{{index}}" data-link="/pages/content/content?colorCode={{item.gsColorCode}}" data-module-index="{{pageIndex}}" bindtap="onClick">
+              <image lazy-load="true" src="{{item.goodsImg}}" mode="widthFix"></image>
+              <view class="name ~text-c ~font-bold ~nowrap">{{item.goodsName}}</view>
+              <view class="name ~text-c ~font-bold">￥{{item.discountPrice}}</view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </block>
+</view>
+
+<view wx:if="{{errorText}}" style="margin: 50rpx">{{errorText}}</view>
+<couponpop
+    coupon_display="{{coupon_display}}"
+    activityInfo="{{activityInfo}}"
+    inputUrl="{{inputUrl}}"
+    bindchangeShow="changeShow"
+    wx:if="{{coupon_display}}"></couponpop>

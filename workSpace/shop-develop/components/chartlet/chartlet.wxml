@@ -1,0 +1,8 @@
+<view class='sticker-container' catchtouchstart='onTouchStart' catchtouchend='onTouchEnd' catchtouchmove='onTouchMove'>
+  <image class='sticker' id='sticker' src='{{ image_url }}' mode='aspectFit' style='left:{{ stickerCenterX - 100 }}rpx;top:{{ stickerCenterY - 100 }}rpx;transform:rotate({{ rotate }}deg) scale({{ scale }});border:{{ border }};z-index:{{ z_index }};' wx:if='{{ component_type !== "text" }}'
+  />
+  <text class='text' id='sticker' style='width:{{textWidth}}rpx;left:{{ stickerCenterX - 100 }}rpx;top:{{ stickerCenterY - 100 }}rpx;transform:rotate({{ rotate }}deg);border:{{ border }};z-index:{{ z_index }};' wx:if='{{ component_type === "text" }}'>{{ text }}</text>
+  <image class='remove' src='../../images/qr_close.png' id='remove' hidden='{{ !selected || hideRemove }}' style='left:{{ removeCenterX - 20 }}rpx;top:{{ removeCenterY - 20 }}rpx;z-index:{{ z_index }};' />
+  <image class='handle' src='../../images/shopList_shangxiajiantou.png' id='handle' hidden='{{ !selected }}' style='left:{{ handleCenterX - 20 }}rpx;top:{{ handleCenterY - 20 }}rpx;z-index:{{ z_index }};'  wx:if='{{ component_type != "text" }}'/>
+  <image class='handle' src='../../images/shopList_shangxiajiantou.png' id='handle' hidden='{{ !selected }}' style='left:{{ textHandleCenterX - 20 }}rpx;top:{{ textHandleCenterY - 20 }}rpx;z-index:{{ z_index }};'  wx:if='{{ component_type === "text" }}'/>
+</view>

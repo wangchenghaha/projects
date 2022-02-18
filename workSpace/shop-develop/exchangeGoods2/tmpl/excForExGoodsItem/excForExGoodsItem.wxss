@@ -1,0 +1,43 @@
+@import "../../mycss";
+@import "../stepper/stepper";
+
+.frame {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  margin-bottom: 17rpx;
+  padding-bottom: 17rpx;
+  background-color: white;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.thumbnail_right_txt{
+  display: flex;
+  flex-direction: column;
+  /* width:450rpx; */
+  width: 100%;
+  height: 100%; margin-right:10rpx;}
+
+.key_1{font-size: 18rpx;color: #858585;min-width: 10rpx;margin: 7rpx 17rpx 7rpx 0;}
+.key_1 text {font-size: 18rpx;color: #777;background-color: #eee;padding: 7rpx;text-align: center;}
+
+.color_size{display: flex; flex-direction: row;align-content: center;justify-content: flex-start;}
+
+.key_0{float: left; font-size:25rpx;color:#858585;}
+.key_0 text{font-size:25rpx;color:#858585;}
+
+.layout_delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 17rpx;
+  padding-bottom: 17rpx;
+}
+
+.layout_delete image {
+  width: 44rpx;
+  height: 43rpx;
+}
+
+

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "以声传情",
+  "usingComponents": {
+    "share-view": "../../components/share-view/index"
+
+  }
+}

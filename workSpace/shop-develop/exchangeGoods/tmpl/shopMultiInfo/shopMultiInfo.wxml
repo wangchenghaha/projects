@@ -1,0 +1,30 @@
+<template name="shopMultiInfoTmpl">
+  <view class="frame_info">
+    <view class="shop_img">
+      <image src="{{urlShopBG}}" mode="aspectFill" />
+      <view class="shop_info_tip_tmpl">店铺图片仅供参考</view>
+    </view>
+    <view class="shop_bottom">
+      <view class="shop_wrap">
+        <view class="bar">
+          <view class="shop_name">{{shopBean.shopNameNn||shopBean.shopNameCn}}</view>
+          <view class='layout_loc'>
+            <image class="loc_img" src='https://cdn.bestseller.com.cn/assets/common/pub/image/icon_positioning.png' mode="widthFix"></image>
+            <view class="loc_txt" id="{{index}}" catch:tap='onTmplMapNavClick'>去门店</view>
+          </view>
+        </view>
+        <view class="layout_info">
+          <view class="info_left">
+            <text class="info_text">营业时间：{{shopBean.openTime}} ~ {{shopBean.closeTime}}</text>
+            <view class="layout_info2">
+              <text class="info_text1">电话：</text>
+              <text class="info_text2" bind:tap="onTmplShopPhoneCall">{{shopBean.o2oShopPhone?shopBean.o2oShopPhone:'暂无'}}</text>
+            </view>
+            <text class="info_text">地址：{{shopBean.address}}\n</text>
+          </view>
+          <image class="shop_copy" src="/images/icon_copy_black.png" bind:tap="onTmplShopInfoCopy" />
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

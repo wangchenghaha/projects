@@ -1,0 +1,44 @@
+
+<index_slt
+ indexImgBG="{{indexImgBG}}"
+ showTwoGame="{{showTwoGame}}"
+ cssAnimateTime="{{cssAnimateTime}}"
+ top="{{top}}"
+ datas="{{datas}}"
+ imgPath="{{imgPath}}"
+ currentLeved="{{currentLeved}}"
+ currentIndex="{{currentIndex}}"
+ duration="{{duration}}"
+ yunDatas="{{yunDatas}}"
+ life="{{life}}"
+ jinbiAnimate="{{jinbiAnimate}}"
+ zongNumber="{{zongNumber}}"
+ currentNumber="{{currentNumber}}"
+ imgWidth="{{imgWidth}}"
+ jumpTop="{{jumpTop}}"
+ transformY="{{transformY}}"
+ transformX="{{transformX}}"
+ currentImg="{{currentImg}}"
+ oneBounces="{{oneBounces}}"
+ fenshu="{{fenshu}}"
+ chenghaoJson="{{chenghaoJson}}"
+ twoBounces="{{twoBounces}}"
+ icon="{{icon}}"
+ adapter="{{adapter}}"
+ bindgetImgHeight="getImgHeight"
+ bindtouchstart="touchstart"
+ bindtouchmove="touchmove"
+ bindtouchend="touchend"
+ bindagin="agin"
+ bindbackTap="backTap"
+/>
+
+<!-- 游戏手势 -->
+<view wx:if="{{isFirstJumpGame}}" class="firstGame" bindtap="closedFirst">
+    <view class="firstGame-centerImgView">
+        <image src="{{imgPath}}firstGame.gif" class="firstGame-centerImgView-img" mode="widthFix" />
+
+        <view class="firstGame-centerImgView-text">左右滑动屏幕进行跳跃</view>
+    </view>
+</view>
+

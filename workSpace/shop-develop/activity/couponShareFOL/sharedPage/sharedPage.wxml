@@ -1,0 +1,138 @@
+<view class="content">
+    <image class="couponShow" src="{{couponShow}}"  mode="widthFix"  data-type="jump" bindtap="onClick"/>
+  <view class="main margin-t-20">
+    <view class="couponData">
+      <view class="couponArea" style="background-color: {{adapter.backgroundColor}}">
+<!--        <image class="couponbg" src="{{couponbg}}"  mode="widthFix" ></image>-->
+        <view class="showInfo">
+          <view class="couponInfo">
+            <view class="priceInfo">
+              <view class="tag">￥</view>
+              <view class="price" style="color: {{adapter.textColor}};">{{adapter.couponScend}}</view>
+              <view class="tag">元</view>
+            </view>
+            <view class="timeNotice">
+              <view class="couponTitle" style="color: {{adapter.textColor}};">满{{adapter.couponLimit}}元可用</view>
+              <view class="couponTime" style="color: {{adapter.textColor}};">{{adapter.activityTime}} </view>
+            </view>
+          </view>
+
+          <view class="couponCount">
+            <view class="leftNotice flex-bet" wx:if="{{isHelpLight}}">
+              <view class="text"  style="color: {{adapter.backgroundColor}}; " >恭喜成功点亮</view>
+              <view class="button" style="color: {{adapter.backgroundColor}};  border: 2rpx solid {{adapter.backgroundColor}};" data-type="seeCoupon" bindtap="onClick">立即查看</view>
+            </view>
+            <view class="leftTime" wx:else>
+              <view class="sfmView" >{{timeObj.day}}</view>
+              <view class="maohao" >:</view>
+              <view class="sfmView">{{timeObj.hou}}</view>
+              <view class="maohao">:</view>
+              <view class="sfmView" >{{timeObj.min}}</view>
+              <view class="maohao">:</view>
+              <view class="sfmView">{{timeObj.sec}}</view>
+              <view class="title" >后此点亮券结束</view>
+            </view>
+            <view class="notice" data-type="notice" bindtap="onClick">?</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="schedule">
+        <view class="lightSuccess" wx:if="{{isHelpLight}}">分享好友，TA也能获得{{adapter.couponScend}}元优惠券呦~</view>
+        <view class="title" wx:else>好友将获得<text style="color: {{adapter.backgroundColor}};">  满{{adapter.couponLimit}}-{{adapter.couponFirst}}元优惠券 </text></view>
+        <view class="flex-center">
+          <view class="helpArea" wx:for="{{helpFirends}}" wx:key="helps">
+            <image class="helpImage" src="{{item.helpImg}}"  mode="widthFix" ></image>
+            <view class="nickName" style="background: {{adapter.backgroundColor}};" wx:if="{{item.nickname}}">{{item.nickname}}</view>
+          </view>
+        </view>
+        <view class="lightSuccess flex-bet" wx:if="{{alreadyHelp}}">
+          <view class="lbutton flex-center"  style="color: {{adapter.backgroundColor}}; border: {{adapter.backgroundColor}} 2rpx solid;">
+            <image class="iconS" src="{{shareIcon}}" mode="widthFix" />
+            <view style="margin-left: 30rpx;">立即分享活动</view>
+            <button open-type="share" class="share"></button>
+          </view>
+          <view class="rbutton flex-center"  style="color: {{adapter.textColor}}; background: {{adapter.backgroundColor}};"  data-type="goLightCoupon" bindtap="onClick">
+            <image class="iconS" src="{{personIcon}}" mode="widthFix" />
+            <view style="margin-left: 10rpx;">发起我的点亮券</view>
+          </view>
+        </view>
+        <view class="button"  style="color: {{adapter.textColor}};  background: {{adapter.backgroundColor}};" wx:else data-type="helpLight" bindtap="onClick">立即帮他点亮</view>
+        <view class="bottoms"></view>
+      </view>
+
+    </view>
+
+    <view class="record">
+      <view class="record-tab">
+        <block wx:for="{{recordTab}}" wx:key="tab">
+          <view class="{{item.selected ?  item.isLeft ? 'left-sel': 'rihgt-sel' : 'nor'}}" data-type="recode"  data-selected="{{item.selected}}" bindtap='onClick'>
+            {{item.name}}
+          </view>
+        </block>
+      </view>
+      <block wx:if="{{isLeft}}">
+        <block  wx:if="{{mySelfRecordList.length !== 0}}" >
+          <block wx:for="{{mySelfRecordList}}" wx:key="myself" >
+            <view class="mySelfRecord">
+              <image class="userImg" src="{{item.avatarUrl}}" mode="widthFix"/>
+              <view class="userBase">
+                <view class="user_name">{{item.nickname}}</view>
+              </view>
+              <view class="getCoupon" style="color: {{adapter.backgroundColor}};">获得{{item.couponPrice}}元优惠券</view>
+            </view>
+          </block>
+        </block>
+        <view class="noRecord" wx:else>
+          您暂无任何点亮记录 <text class="goLightCoupon" data-type="goLightCoupon" bindtap="onClick">去发起</text>
+          <view>如果已经分享，请下拉页面刷新</view>
+        </view>
+      </block>
+      <swiper wx:if="{{!isLeft}}" class="otherRecord" vertical="true" autoplay="true" circular="{{true}}" interval="2000" display-multiple-items="{{multipleNum}}">
+        <block wx:for="{{otherRecords}}" wx:key="others">
+          <swiper-item class="contentItem">
+            <image class="userPic" src="{{item.avatarUrl}}" mode="widthFix"/>
+            <view class="name">{{item.nickname}}</view>
+            <view class="coupon" style="color: {{adapter.backgroundColor}};">获得{{adapter.couponScend}}元优惠券</view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="recordBottom"></view>
+    </view>
+
+    <view class="recordBottom"></view>
+  </view>
+
+</view>
+
+<!-- 弹窗 -->
+<block wx:if="{{canShowPic}}">
+    <view class="bouncedBg" data-type="close" bindtap="onClick"></view>
+    <view class="bouncedImgView">
+        <image class="imgView"  src="{{getCouponImg}}" mode="widthFix" style="width:100%;" />
+        <view class="close" data-type="close" bindtap="onClick"></view>
+        <view class="couponFirst">{{alreadyHelp ? '成功帮好友点亮':'点亮即可获得'}}</view>
+        <block wx:if="{{alreadyHelp}}">
+            <view class="couponSecond" style="top:450rpx;">'点击 立即发起 ，还能再得{{adapter.couponScend}}元优惠券哦~</view>
+            <view class="couponSecond" style="top:500rpx;">帮您点亮的好友也可获得点亮惊喜哦~</view>
+            <view class="optionBtn" style="background: {{adapter.backgroundColor}}; color: {{adapter.textColor}};" data-type="helpLight" bindtap="onClick">立即发起</view>
+        </block>
+        <block wx:else>
+            <view class="couponFirst" style="top:360rpx;">{{adapter.couponFirst}}元优惠券</view>
+            <view class="couponSecond" style="top:500rpx;">快帮助好友点亮吧！</view>
+            <view class="optionBtn" style="background: {{adapter.backgroundColor}}; color: {{adapter.textColor}};" data-type="helpLight" bindtap="onClick">立即帮他点亮</view>
+        </block>
+    </view>
+</block>
+
+<view class="voucher {{isShowTModel ? 'show': ''}}">
+    <view class="showModel">
+      <icon class="tan_close" type="cancel" color="#000" size="40rpx" data-type="tanClose" bindtap="onClick"></icon>
+        <view class="content">
+            <view class="cTitle">活  动  细  则</view>
+            <view class="contentClass">
+                <view class="cInfo" wx:for="{{contentInfo}}" wx:key="cInfo">{{item.text}}</view>
+            </view>
+        </view>
+    </view>
+</view>

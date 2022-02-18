@@ -1,0 +1,121 @@
+.content {
+  font-size: 24rpx;
+}
+.content .title {
+  padding: 0 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: solid 1rpx #ccc;
+}
+.content .title.header {
+  height: 74rpx;
+  background: #dadada;
+  border: none;
+}
+.content .title.header .status {
+  color: red;
+}
+.content .title.order-code, .content .title.address {
+  padding: 20rpx 10rpx;
+}
+.content .title .address-detail {
+  padding-top: 10rpx;
+}
+.content .goods-list {
+  padding-bottom: 220rpx;
+}
+.content .goods-list .goods-item {
+  position: relative;
+}
+.content .goods-list .goods-item .btn-refund {
+  position: absolute;
+  right: 0;
+  top: 235rpx;
+}
+.content .goods-list .goods-item .btn-refund .btn-item {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  border: solid 1rpx #ccc;
+  border-radius: 30rpx;
+  margin-right: 15rpx;
+}
+.content .goods-list .goods-item .btn-refund .btn-item:last-child {
+  margin-right: 0;
+}
+.content .goods-list .goods-item .express {
+  padding: 20rpx;
+  margin: 20rpx auto 0;
+  width: 95%;
+  height: 100rpx;
+  border: solid 2rpx #ccc;
+  box-sizing: border-box;
+  border-radius: 50rpx;
+}
+.content .goods-list .goods-item .express-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.content .goods-list .goods-item .express-icon.bg-color {
+  background: #3997DD;
+}
+.content .goods-list .goods-item .express-icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.content .goods-list .goods-item .express .text {
+  margin-left: 30rpx;
+  flex: 1;
+  overflow: hidden;
+}
+.content .goods-list .goods-item .express .text .address {
+  color: #3997DD;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.content .goods-list .goods-item .express .text .address.tip {
+  white-space: normal;
+  color: #000;
+}
+.content .goods-list .goods-item .express .arrow {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  border-left: solid 6rpx #ccc;
+  border-top: solid 6rpx #ccc;
+  transform: rotate(135deg);
+  transform-origin: center;
+}
+.content .goods-list .goods-item .express .arrow.color {
+  border-color: #3997DD;
+}
+.content .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: solid 1rpx #ccc;
+  background: #fff;
+}
+.content .footer .tip {
+  margin-top: 10rpx;
+  padding-right: 20rpx;
+  text-align: right;
+}
+.content .footer .btn-wrap {
+  padding: 20rpx 0;
+}
+.content .footer .btn-wrap .btn-item {
+  flex: 1;
+  margin: 0 20rpx;
+  height: 80;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  background: #000;
+  color: #fff;
+  border-radius: 40rpx;
+}
+
+/*# sourceMappingURL=orderDetail.wxss.map */

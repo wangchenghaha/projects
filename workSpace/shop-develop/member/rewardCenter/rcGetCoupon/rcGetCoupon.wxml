@@ -1,0 +1,33 @@
+<view class="wrap">
+        <view class="couponReceive" style="height:{{contenHeight}}">
+            <image class="coupon_title" src="{{pictitle}}" mode="aspectFit"/>
+            <view class="dottedLineLayout"/>
+             <view class="showInfo">{{ablePoint}}积分立即兑换，{{couponScope}}</view>
+             <view class="showSubmit">
+                 <image class="submitBtn" bindtap="showSubmitPop" src="{{submit_pic}}" mode="aspectFit"></image>
+             </view>
+             <view class="showInfo" >查看使用规则</view>
+            <view class="takeUp ">
+                    <image src="{{pullImage}}" mode="aspectFit"  bindtap="takeUp" />
+            </view>
+            <scroll-view scroll-y="true" class="noticeContent">
+                <text style="font-size:26rpx; color:black; ">{{description}}</text>
+            </scroll-view >
+        </view>
+</view>
+<view class="showSubmitPop" wx:if="{{showSubmitPop}}">
+    <view class="submitPop">
+        <image class="userImage" src="{{userImage}}"/>
+        <view class="title">亲爱的顾客，您即将兑换一张</view>
+        <view class="couponDes">{{couponInfo}}</view>
+        <view class="customePoint">消费积分： {{customePoint}}</view>
+        <view class="availablePoint">可用积分： {{availablePoint}}</view>
+        <view class="couponOption flex-bet"> 
+            <view class="submit" bindtap="submitBtn">确定</view>
+            <view class="canncel" bindtap="canncelBtn">取消</view>
+        </view>
+        <view class="backPoint" bindtap="goBack">返回积分商城</view>
+    </view>
+</view> 
+
+

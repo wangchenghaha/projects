@@ -1,0 +1,36 @@
+.firstGame{
+    position: fixed;
+    z-index: 9998;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .5;
+}
+.firstGame .firstGame-centerImgView{
+
+    position: fixed;
+    z-index: 9999;
+
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+
+}
+.firstGame .firstGame-centerImgView .firstGame-centerImgView-img{
+    width: 400rpx;
+    height: auto;
+
+    margin-left: 23%;
+}
+.firstGame .firstGame-centerImgView .firstGame-centerImgView-text{
+    margin-top: 40rpx;
+    width: 100%;
+    font-size: 34rpx;
+    color: white;
+    text-align: center;
+}

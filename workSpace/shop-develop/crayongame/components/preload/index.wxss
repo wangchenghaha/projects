@@ -1,0 +1,121 @@
+.wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  transitiion: all 0.5s linear;
+  background: #ffb400;
+  z-index: 1000;
+}
+
+.wrapper .image {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.wrapper .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.wrapper .content .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46rpx;
+  font-weight: bold;
+}
+
+.wrapper .content .logo .only {
+  color: white;
+  font-size: 44rpx;
+}
+
+.wrapper .content .logo .and {
+  font-size: 40rpx;
+  font-weight: 100;
+  padding: 0 15rpx;
+  color: white;
+}
+
+.wrapper .content .logo .name {
+  height: 46rpx;
+  line-height: 46rpx;
+  font-weight: 26rpx;
+}
+
+.wrapper .content .logo .name .t {
+  text-shadow: 0 0 10rpx rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  letter-spacing: 10rpx;
+}
+
+.wrapper .content .logo .name .t:nth-child(1) {
+  color: #d0112b;
+  transform: rotate(-4deg);
+}
+
+.wrapper .content .logo .name .t:nth-child(2) {
+  color: #3baf29;
+  transform: rotate(6deg);
+}
+
+.wrapper .content .logo .name .t:nth-child(3) {
+  color: #fddb00;
+  transform: rotate(-4deg);
+}
+
+.wrapper .content .logo .name .t:nth-child(4) {
+  color: #38b5e6;
+  transform: rotate(5deg);
+}
+
+.wrapper .content .rate {
+  margin-top: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+.wrapper .content .rate .tit {
+  font-size: 56rpx;
+  font-weight: 400;
+}
+
+.wrapper .content .rate .desc {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 15rpx rgba(0, 0, 0, 0.8);
+}
+
+.wrapper .content .percent {
+  position: relative;
+  width: 520rpx;
+  height: 110rpx;
+  border-radius: 56rpx;
+  box-shadow: 0 0 30rpx rgba(255, 191, 0, 0.9);
+  overflow: hidden;
+}
+
+.wrapper .content .percent .inner {
+  width: 0;
+  height: 110rpx;
+  background: #ffbf00;
+}
+
+.wrapper .content .percent .tit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-size: 40rpx;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 110rpx;
+}

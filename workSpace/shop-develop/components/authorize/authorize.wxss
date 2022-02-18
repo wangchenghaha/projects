@@ -1,0 +1,48 @@
+/* components/authorize/authorize.wxss */
+.authorize-wrapper {
+   position: fixed;
+   left: 0;
+   top: 0;
+   background: rgba(0, 0, 0, 0.5);
+   width: 100%;
+   height: 100%;
+   z-index: 999;
+   display: flex;
+   align-items: center;
+}
+.authorize-wrapper .container{
+   margin:0 auto;
+   width: 80%;
+}
+.authorize-wrapper .authorize-main{
+   background: #fff;
+}
+.authorize-wrapper .authorize-main text{
+   display: block;
+}
+.authorize-main .sub-title{
+   margin: 0 auto;
+   width: 90%;
+   text-align: center;
+   font-size: 30rpx;
+   font-weight: bold;
+   line-height: 60rpx;
+   border-bottom: solid 1rpx #8a8a8a;
+}
+.authorize-main .desc{
+   display: block;
+   text-align: center;
+   font-size: 30rpx;
+   color: #8a8a8a;
+}
+.authorize-wrapper .title{
+   display: block;
+   font-size: 36rpx;
+   color: #fff;
+   text-align: center;
+}
+.authorize-wrapper .server-list image{
+   display: block;
+   width: 75rpx;
+   height: 75rpx;
+}

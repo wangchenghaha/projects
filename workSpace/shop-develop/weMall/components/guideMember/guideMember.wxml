@@ -1,0 +1,13 @@
+<view class="new">
+  <view class="title ~text-c"> <icon type="warn" color="#257bfb" size="30rpx" /> 最近30天新增了30位会员，待标记10位</view>
+  <view class="member ~flex-bet">
+    <view class="info ~flex-start">
+      <image src="" class="avatar"></image>
+      <view class="desc">
+        <view class="name">李焕英</view>
+        <text class="date">添加时间： 2021-03-30 10:00</text>
+      </view>
+    </view>
+    <text class="btn ~color-fff ~text-c">待分类</text>
+  </view>
+</view>

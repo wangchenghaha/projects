@@ -1,0 +1,66 @@
+<view class="wrap">
+  <view class="container">
+    <view class="banner" style="background-image: url('{{banner}}')">
+      <view class="title text-c" style="{{textColor ? 'color:' + textColor : ''}}">心愿寄语</view>
+      <view class="desc"  style="{{textColor ? 'border-color:' + textColor : ''}}">
+        <textarea value="{{msg}}" bindinput="inputMsg" style="{{textColor ? 'color:' + textColor : ''}}"></textarea>
+      </view>
+      <text class="change"  bindtap="changeMsg" style="{{textColor ? 'color:' + textColor : ''}}">换一换</text>
+      <view class="bottom text-c"></view>
+    </view>
+    <view class="goods">
+      <block wx:if="{{goodsList.length}}">
+        <goods-list
+            showIcon="{{true}}"
+            showBtn="{{true}}"
+            goodsList="{{goodsList}}"
+            bindselectIndex="changeCheck"
+            bindemptyGoods="emptyGoods"
+        ></goods-list>
+      </block>
+      <block wx:else>
+        <view class="no-goods">
+          <image src="{{noGoodsImg}}" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="fixed-bottom">
+    <block wx:if="{{showMsg}}">
+      <view class="msg flex-start">
+        <text class="desc">心愿\n寄语</text>
+        <view class="textarea">
+          <textarea value="{{msg}}" bindinput="inputMsg" placeholder="{{msg}}" />
+          <text class="tip" bindtap="changeMsg">换一换</text>
+        </view>
+      </view>
+    </block>
+    <view class="flex-start address" bindtap="selectAddress">
+      <view class="address-icon">
+        <image src="{{locationIcon}}" mode="widthFix"></image>
+      </view>
+      <view class="address-info">
+        <block wx:if="{{address.phone}}">
+          <view class="address-name">
+            <text>{{address.userName}}</text>
+            <text>{{address.phone}}</text>
+          </view>
+          <view class="address-detail">{{address.detailAddress}}</view>
+        </block>
+        <block wx:else>
+          <view class="address-name">请选择地址</view>
+        </block>
+      </view>
+    </view>
+    <view class="flex-bet btn-wrap">
+      <view class="btn-item text-c flex-center my-wish" bindtap="goMyWish">
+        <view class="icon">
+          <image src="/activity/images/xinyuan.png" mode="widthFix" />
+        </view>
+        <text>我的心愿单</text>
+      </view>
+      <view class="btn-item text-c" bindtap="goBack">再逛逛</view>
+      <view class="btn-item text-c" bindtap="createWish">请Ta来买单</view>
+    </view>
+  </view>
+</view>

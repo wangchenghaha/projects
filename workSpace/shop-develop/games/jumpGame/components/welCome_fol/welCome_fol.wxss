@@ -1,0 +1,628 @@
+.bg {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.bg .bgImg {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.bg .centerView {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.bg .centerView .logo {
+  width: 228rpx;
+  margin: 0 auto;
+}
+
+.bg .centerView .topImg {
+  width: 580rpx;
+  height: auto;
+  margin: 0 auto;
+}
+
+.bg .centerView .bottomImg {
+  width: 698rpx;
+  margin: 70rpx auto 0 auto;
+  position: relative;
+}
+
+.bg .centerView .bottomImg .swiper {
+  position: absolute;
+  top: 123rpx;
+  left: 190rpx;
+  width: 318rpx;
+  height: 200rpx;
+  display: flex;
+}
+
+.bg .centerView .bottomImg .swiper .leftRight {
+  width: 116rpx;
+  height: 100%;
+}
+
+.bg .centerView .bottomImg .swiper .center {
+  flex: 1;
+}
+
+.bg .centerView .bottomImg .play {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400rpx;
+  height: 150rpx;
+}
+
+.bg .centerView .guizeView {
+  background-color: #F0AC9D;
+  width: 100%;
+  height: auto;
+  padding-left: 10rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.bg .centerView .guizeView .title {
+  font-size: 28rpx;
+  color: white;
+  text-align: center;
+  line-height: 32rpx;
+  margin-bottom: 50rpx;
+}
+
+.bg .centerView .guizeView .subView_line {
+  margin-top: 10rpx;
+  width: 100%;
+  height: auto;
+  font-size: 22rpx;
+  color: white;
+  line-height: 28rpx;
+}
+
+.bg .centerView .guizeView .subView_line .left {
+  width: 100%;
+  height: auto;
+}
+
+.bg .centerView .guizeView .subView_line .right {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width: auto;
+  height: auto;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bouncedBgOpa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: animate .2s linear 1;
+  z-index: 99999;
+  background-color: black;
+  opacity: .5;
+}
+
+.bouncedBg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 658rpx;
+  animation: animate .2s linear 1;
+  z-index: 99999;
+}
+
+.bouncedBg .imgView {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bouncedBg .imgView .closed {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.bouncedBg .imgView .subView {
+  position: absolute;
+  top: 18%;
+  left: 8%;
+  width: 84%;
+  height: 78%;
+}
+
+.bouncedBg .imgView .subView .bottomView {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 90%;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews {
+  width: 100%;
+  height: 370rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews .row {
+  width: 265rpx;
+  height: 100%;
+  position: relative;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews .row .quanImg_list {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120rpx;
+  height: 193rpx;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews .row .jinbiView {
+  position: absolute;
+  bottom: 32%;
+  left: 52%;
+  transform: translateX(-50%);
+  width: 55%;
+  height: 30rpx;
+  border-radius: 30rpx;
+  background-color: #9CA9CB;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews .row .jinbiView .textView {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews .row .jinbiView .textView .jinbi {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: -5rpx;
+  left: -20rpx;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews .row .jinbiView .textView .text {
+  font-size: 22rpx;
+  line-height: 30rpx;
+  color: white;
+  text-align: center;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews .row .duihuanView {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  background-color: #FFE473;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #FF4668;
+}
+
+.bouncedBg .imgView .subView .bottomView .rowViews .row .quanImg_jilu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120rpx;
+  height: 193rpx;
+}
+
+.bouncedBg .imgView .subView .topView {
+  width: 100%;
+  height: 55rpx;
+  display: flex;
+}
+
+.bouncedBg .imgView .subView .topView .sjphNO {
+  width: 170rpx;
+  height: 100%;
+  background-color: #FFDD57;
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #FF7C81;
+  margin-right: 10rpx;
+}
+
+.bouncedBg .imgView .subView .topView .sjph {
+  width: 170rpx;
+  height: 100%;
+  background-color: #E9FBFF;
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #A2ABEB;
+  margin-right: 10rpx;
+}
+
+.bouncedBg .imgView .subView .wzView {
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  font-size: 28rpx;
+  color: #C7A1DC;
+  line-height: 50rpx;
+  text-align: left;
+  margin-top: 20rpx;
+}
+
+.bouncedBg .imgView .subView .wzView .pm {
+  width: 23%;
+}
+
+.bouncedBg .imgView .subView .wzView .yh {
+  width: 30%;
+}
+
+.bouncedBg .imgView .subView .wzView .ch {
+  width: 23%;
+  text-align: center;
+}
+
+.bouncedBg .imgView .subView .wzView .fs {
+  width: 23%;
+  text-align: center;
+}
+
+.bouncedBg .imgView .subView .meView {
+  width: 100%;
+  height: 57rpx;
+  line-height: 57rpx;
+  font-size: 25rpx;
+  display: flex;
+  background-color: #C7A1DC;
+  margin-bottom: 20rpx;
+}
+
+.bouncedBg .imgView .subView .meView .me {
+  width: 20%;
+  height: 100%;
+}
+
+.bouncedBg .imgView .subView .meView .name {
+  width: 33%;
+  color: white;
+  overflow: hidden;
+}
+
+.bouncedBg .imgView .subView .meView .chenghao {
+  width: 23%;
+}
+
+.bouncedBg .imgView .subView .meView .fenshu {
+  width: 23%;
+  color: #FFE136;
+  text-align: center;
+}
+
+.bouncedBg .imgView .subView .otherViews {
+  width: 100%;
+  height: 57rpx;
+  display: flex;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+  background-color: #D2EBFE;
+  color: #484349;
+  line-height: 57rpx;
+  font-size: 25rpx;
+}
+
+.bouncedBg .imgView .subView .otherViews .me {
+  width: 20%;
+  height: 100%;
+  position: relative;
+}
+
+.bouncedBg .imgView .subView .otherViews .me .jianbian {
+  position: absolute;
+  top: 0;
+  left: 15rpx;
+  width: 45rpx;
+  height: 100%;
+}
+
+.bouncedBg .imgView .subView .otherViews .me .jianbian-bg {
+  width: 100%;
+  height: 35rpx;
+  border-radius: 35rpx;
+  margin-top: 11rpx;
+  position: relative;
+  padding-left: 10rpx;
+}
+
+.bouncedBg .imgView .subView .otherViews .me .jianbian-bg .text {
+  font-size: 25rpx;
+  line-height: 35rpx;
+  text-align: left;
+}
+
+.bouncedBg .imgView .subView .otherViews .me .jianbian-bg .iconView {
+  position: absolute;
+  top: -6rpx;
+  right: -30rpx;
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.bouncedBg .imgView .subView .otherViews .name {
+  width: 33%;
+  overflow: hidden;
+}
+
+.bouncedBg .imgView .subView .otherViews .chenghao {
+  width: 23%;
+}
+
+.bouncedBg .imgView .subView .otherViews .fenshu {
+  width: 23%;
+  text-align: center;
+}
+
+.noGameCountBounced {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 595rpx;
+  z-index: 99999;
+}
+
+.noGameCountBounced .imgView {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.noGameCountBounced .imgView-img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.noGameCountBounced .imgView .closed {
+  width: 52rpx;
+  height: 52rpx;
+  position: absolute;
+  right: 35rpx;
+  top: 30rpx;
+}
+
+.noGameCountBounced .imgView .title {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  font-size: 32rpx;
+  color: #FFE158;
+  text-align: center;
+}
+
+.noGameCountBounced .imgView .bottomTitle {
+  position: absolute;
+  bottom: 50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  width: auto;
+  height: 70rpx;
+  border-radius: 70rpx;
+  color: #E40031;
+  background-color: #FFE158;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.noGameCountBounced .imgView .share1 {
+  position: absolute;
+  bottom: 50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  width: 270rpx;
+  height: 70rpx;
+  border-radius: 70rpx;
+  background: none;
+}
+
+.noGameCountBounced .imgView .share1::after {
+  border: none;
+}
+
+.sanjiao {
+  position: fixed;
+  top: 4.5%;
+  left: 3%;
+  width: 42rpx;
+  height: 59rpx;
+  z-index: 999;
+}
+
+.numberViewOpa {
+  position: fixed;
+  top: 150rpx;
+  left: 7%;
+  width: 200rpx;
+  height: 55rpx;
+  background-color: white;
+  border-radius: 55rpx;
+  opacity: .8;
+}
+
+.numberView {
+  position: fixed;
+  top: 150rpx;
+  left: 7%;
+  width: 200rpx;
+  height: 55rpx;
+  border-radius: 55rpx;
+  display: flex;
+}
+
+.numberView .icon {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-top: -11.5rpx;
+  margin-left: -20rpx;
+  overflow: hidden;
+  border: 4rpx solid white;
+}
+
+.numberView .xin {
+  width: 45rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 7.5rpx;
+  position: relative;
+}
+
+.numberView .xin-text {
+  position: absolute;
+  top: 0;
+  left: -2rpx;
+  width: 100%;
+  line-height: 35rpx;
+  font-size: 26rpx;
+  color: white;
+  text-align: center;
+}
+
+.numberView .jia {
+  margin-left: 20rpx;
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 9.5rpx;
+}
+
+.numberView .share {
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  top: 9.5rpx;
+  right: 10rpx;
+  background: none;
+}
+
+.numberView .share::after {
+  border: none;
+}
+
+.jinViewOpa {
+  position: fixed;
+  top: 230rpx;
+  left: 6.5%;
+  width: 200rpx;
+  height: 50rpx;
+  background-color: white;
+  border-radius: 50rpx;
+  opacity: .8;
+}
+
+.jinView {
+  position: fixed;
+  top: 230rpx;
+  left: 6.5%;
+  width: 200rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  display: flex;
+}
+
+.jinView .jinbi {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: -10rpx;
+}
+
+.jinView .points {
+  text-align: center;
+  margin-left: 10rpx;
+  width: 140rpx;
+  height: 100%;
+  line-height: 50rpx;
+  color: #FF7D00;
+  font-size: 25rpx;
+}
+
+.guizeBtnViewOpa {
+  position: fixed;
+  top: 230rpx;
+  right: -20rpx;
+  width: 150rpx;
+  height: 50rpx;
+  background-color: white;
+  border-radius: 50rpx;
+  opacity: .5;
+}
+
+.guizeBtnView {
+  position: fixed;
+  top: 230rpx;
+  right: -45rpx;
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 23rpx;
+  color: white;
+  line-height: 50rpx;
+}
+
+.goHome {
+  position: fixed;
+  top: 500rpx;
+  right: 32rpx;
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.btnView {
+  position: fixed;
+  right: 10rpx;
+  width: 126rpx;
+}
+
+.zhanwei {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+}

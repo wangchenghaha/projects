@@ -1,0 +1,19 @@
+<view class='main'>
+    <image class="bg" src="https://alioss.woaap.com/bestseller/campaign2001/images/gift_bg.png"></image>
+    <view class="alert">
+      <image class="alertHead" src="https://alioss.woaap.com/bestseller/campaign2001/images/gift_alert_head.png"></image>
+      <scroll-view class="giftList" scroll-y="true">
+        <view class="content">
+          <view class="imgList" wx:for="{{imgList}}">
+            <image class="prize" src="{{'https://alioss.woaap.com/bestseller/campaign2001/images/prize'+item.award_id+'.png'}}"></image>
+            <image class="btn" wx:if="{{(item.award_id == 3 || item.award_id == 4) && item.is_receive == 0}}" data-item="{{item}}" bindtap="sub" src="https://alioss.woaap.com/bestseller/campaign2001/images/new_user_view.png"></image>
+            <image class="btn" wx:if="{{item.award_id == 5 && item.is_receive == 0}}" data-item="{{item}}" bindtap="sub" src="https://alioss.woaap.com/bestseller/campaign2001/images/prize_sub.png"></image>
+            <image class="btn" wx:if="{{item.award_id != 1 && item.is_receive == 1}}" data-item="{{item}}" bindtap="view" src="https://alioss.woaap.com/bestseller/campaign2001/images/prize_view.png"></image>
+          </view>
+        </view>
+      </scroll-view>
+      <image class="alertBottom" src="https://alioss.woaap.com/bestseller/campaign2001/images/gift_alert_bottom.png"></image>
+    </view>
+    <image class="back" bindtap="back" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_back.png"></image>
+</view>
+<imageLoading imageList="{{loadImageList}}"></imageLoading>

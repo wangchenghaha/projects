@@ -1,0 +1,93 @@
+<view class='wrapper'>
+  <view class='header'>
+    <image class='images_header' src='{{banner}}'></image>
+        <image class='images_logo' src='../common/image/logo.png' style="width:347rpx;height:32rpx;display:block;margin-top:60rpx;margin-left:32rpx;"></image>
+    <!-- <view class="logo_text">
+      <view class="tit">JACKJONES</view>
+      <view class="tit">Customized</view>
+    </view> -->
+  </view>
+  <view class="content-middle">
+    <view class="edit_wrapper">
+      <view class="content">
+        <view class="title">会员信息</view>
+        <view class="formbox">
+          <view class="form-item  {{warnObj[0].show ? 'error':''}}">
+            <view class="label">姓名</view>
+            <view class="form-control">
+              <input type="text" class="el-input" value="{{name}}" placeholder="{{holder[0]}}" placeholder-class='input_holder_text' bindblur='inputBlur' data-type='name' bindfocus="inputFocus" bindinput='inputVal' />
+              <view class="errorText {{warnObj[0].show ? 'active':''}}" data-index='0' bindtap='hideError'>{{warnObj[0].txt}}</view>
+            </view>
+          </view>
+          <view class="form-item  {{warnObj[1].show ? 'error':''}}">
+            <view class="label">手机号</view>
+            <view class="form-control">
+              <input type="text" class="el-input" value="{{mobile}}" placeholder="{{holder[1]}}" placeholder-class='input_holder_text' bindblur='inputBlur' data-type='mobile' bindfocus="inputFocus" bindinput='inputVal' />
+              <view class="errorText {{warnObj[1].show ? 'active':''}}" data-index='1' bindtap='hideError'>{{warnObj[1].txt}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="content">
+        <view class="title">预约信息</view>
+        <view class="formbox">
+          <view class="form-item  {{warnObj[2].show ? 'error':''}}">
+            <view class="label">选择店铺</view>
+            <view class="form-control" bindtap='selectShop'>
+              <view class="{{shop.name ? 'el-input':'input_holder_text'}}">
+                {{shop.name || '请选择店铺'}}
+              </view>
+              <view class="errorText {{warnObj[2].show ? 'active':''}}" data-index='2' bindtap='hideError'>{{warnObj[2].txt}}</view>
+            </view>
+          </view>
+          <view class="form-item  {{warnObj[3].show ? 'error':''}}">
+            <view class="label">预约日期</view>
+            <view class="form-control" bindtap='selectDate'>
+              <view class="{{dateobj.value ? 'el-input':'input_holder_text'}}">{{dateobj.value || '请选择预约日期'}}</view>
+              <view class="errorText {{warnObj[3].show ? 'active':''}}" data-index='3' bindtap='hideError'>{{warnObj[3].txt}}</view>
+            </view>
+          </view>
+          <view class="form-item  {{warnObj[4].show ? 'error':''}}" wx:if="{{dtl.is_time == 1}}">
+            <view class="label">预约时间</view>
+            <view class="form-control" bindtap='selectTime'>
+              <view class="{{timeobj.value ? 'el-input':'input_holder_text'}}">{{timeobj.value || '请选择预约时间'}}</view>
+              <view class="errorText {{warnObj[4].show ? 'active':''}}" data-index='4' bindtap='hideError'>{{warnObj[4].txt}}</view>
+            </view>
+          </view>
+          <!-- 免责声明 -->
+          <!-- <view class="rules">
+                <view class="text_content" bindtap='changeVal'>
+                    <view class="checkbox">
+                        <image class="image_icon" src="{{agree ? '../../common/icon/yes.png':'../../common/icon/select.png'}}" />
+                    </view>
+                    <view class="titlebox">
+                        我已阅读并同意
+                        <text class="tit_1">《特殊定制相关免责协议》</text>
+                    </view>
+                </view>
+            </view> -->
+        </view>
+      </view>
+      <!-- 操作栏 -->
+      <view class="footer">
+        <view class="btnbox" hover-class="hoverclass">
+          <button class="btn" catchtap='submitFormfun'>{{appoint_id ? '修改预约':'确认预约'}}</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 组件 -->
+  <datePicker
+    bind:hidedatemodal='hidedatemodal' 
+    bind:chooseDate='chooseDate' 
+    bind:changeshowtype='changeshowtype'
+    showtype="{{showtype}}"
+    showDateBol="{{showDateBol}}"
+    dl="{{dtl.date}}"
+    tl="{{dtl.time}}"
+    ist="{{dtl.is_time}}"
+    dO="{{dateobj}}"
+    tO="{{timeobj}}"
+  ></datePicker>
+</view>

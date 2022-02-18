@@ -1,0 +1,15 @@
+<view class="container">
+    <block wx:for="{{contents}}" wx:key="album">
+        <view class="contentArea" >
+            <swiper class="swiper" circular="true" indicator-dots="{{false}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" wx:if="{{item.type === 'swiper'}}">
+                <block wx:for="{{item.goodsImg}}" wx:key="layout_swiper">
+                    <swiper-item>
+                        <image class="swiper-image" src="{{item.bannerUrl}}" mode="widthFix" data-utm="{{item.utm}}" data-goodspath="{{item.goodsPath}}" bindtap="onBannerClick" />
+                    </swiper-item>
+                </block>
+            </swiper>
+
+            <image class="images" src="{{item.goodsImg}}" mode="widthFix" data-type="{{item.type}}"  data-utm="{{item.utm}}"  data-url="{{item.pathUrlOne}}" wx:if="{{item.type !== 'swiper'}}" bindtap="onClick"/>
+        </view>
+    </block>
+</view> 

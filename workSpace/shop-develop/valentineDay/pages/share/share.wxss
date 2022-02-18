@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column
+}
+
+.container .input-warp {
+  display: flex;
+  justify-content: flex-end
+}
+
+.container .input-warp .input {
+  width: 500rpx;
+  height: 88rpx;
+  text-align: center;
+  margin-right: 60rpx;
+  margin-top: 18rpx
+}
+
+.container .xinyika {
+  margin-top: 20rpx
+}
+
+.container .logo-warp {
+  width: 640rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20rpx
+}
+
+.container .logo-warp .text {
+  font-size: 30rpx
+}
+
+.container .logo-warp .text .text-top {
+  margin-bottom: 15rpx
+}
+
+.container .logo-warp .play-warp .gaobai {
+  font-size: 24rpx
+}
+
+.container .logo {
+  width: 640rpx;
+  margin-top: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end
+}
+
+.container .post-warp {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative
+}
+
+.container .post-warp .sendGift {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+.container .coupon-warp{
+  width:100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left:0;
+  top:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .coupon-warp .coupon-area{
+  width:690rpx;
+  height:460rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .coupon-warp .coupon-area .sendGift{
+margin-bottom: 50rpx;
+
+}
+.container .coupon-warp .close-btn{
+  width:60rpx;
+  height:60rpx;
+  margin-top:15rpx;
+}
+.container .coupon-warp .close-btn image{
+  width:100%;
+  height:100%;
+}
+.container .option-warp {
+  margin-top: 20rpx;
+  width: 600rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}

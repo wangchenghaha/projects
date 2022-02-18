@@ -1,0 +1,37 @@
+<view class="rule-container" wx:if="{{showrule}}">
+  <view class="rule-wrapper">
+    <view class="rule-cont">
+      <view class="rule-title">使用说明</view>
+      <view class="cont">
+         <scroll-view scroll-y class="rule-scroll">
+           <view class="texts">
+             <text class="rule_text">{{ruletext}}</text>
+           </view>
+           <!-- <view class="rule-item">
+             <view class="rule-index">1.</view>
+             <view class="rule-text">将优惠券包分享给好友，即刻获得1份优惠券。每人只能分享1次 </view>
+           </view>
+           <view class="rule-item">
+             <view class="rule-index">2.</view>
+             <view class="rule-text">将优惠券包分享给好友，即刻获得1份优惠券。每人只能分享1次 </view>
+           </view>
+           <view class="rule-item">
+             <view class="rule-index">1.</view>
+             <view class="rule-text">将优惠券包分享给好友，即刻获得1份优惠券。每人只能分享1次 </view>
+           </view>
+           <view class="rule-item">
+             <view class="rule-index">1.</view>
+             <view class="rule-text">将优惠券包分享给好友，即刻获得1份优惠券。每人只能分享1次 </view>
+           </view> -->
+
+        </scroll-view>
+      </view>
+    </view>
+    <view class="line">
+      <view class="line-one"></view>
+    </view>
+    <view class="close-rule" style="text-align:center;">
+      <image catchtap="closerule" class="close-img" src="../../img/closerule.png" style="width:76rpx;height:76rpx;"></image>
+    </view>
+  </view>
+</view>

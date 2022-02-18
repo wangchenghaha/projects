@@ -1,0 +1,78 @@
+.bouncedBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+}
+
+.bounced {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 824rpx;
+  transform: translateY(100%);
+}
+
+.bounced .subView {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bounced .subView .closedTap {
+  position: absolute;
+  top: 125rpx;
+  right: 20rpx;
+  width: 90rpx;
+  height: 100rpx;
+  z-index: 2;
+}
+
+.bounced .subView .yhqViews {
+  position: absolute;
+  bottom: 0;
+  left: 70rpx;
+  right: 70rpx;
+  height: 530rpx;
+  overflow-y: scroll;
+}
+
+@keyframes bouncedBgAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+
+@keyframes bouncedBgAnimation1 {
+  0% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animate1 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

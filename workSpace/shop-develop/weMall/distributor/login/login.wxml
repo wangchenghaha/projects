@@ -1,0 +1,25 @@
+<view class="content">
+	<!--<view class="header flex-center">
+		<view class="avatar">
+			<image src="{{wxInfo.avatarUrl}}" mode="widthFix"></image>
+		</view>
+		<text>{{wxInfo.nickName}}</text>
+	</view>-->
+	<view class="form" wx:if="{{!isLogin}}">
+		<view class="flex-bet form-item {{item.shake ? 'shake' : ''}} {{item.error ?'error' : ''}}"  wx:for="{{formArr}}" wx:key="type">
+			<input type="{{item.inputType}}" value="{{item.value}}" placeholder="{{item.placeholder}}" data-type="{{item.type}}" bindinput="inputText" />
+			<view class="code-img" wx:if="{{item.type === 'securityCode'}}">
+				<image src="{{item.imgUrl}}" mode="widthFix" bindtap="getSecurityCode"></image>
+			</view>
+			<view class="btn-send text-c" wx:if="{{item.type === 'code'}}">
+				<text wx:if="{{countDown}}">{{countDown}}</text>
+				<text bindtap="sendCode" wx:else>发送验证码</text>
+			</view>
+		</view>
+		<button class="btn-login text-c" bindtap="login">登录</button>
+	</view>
+	<view wx:else class="login-text text-c">
+		<view class="text-c">正在登录</view>
+		<my-loading />
+	</view>
+</view>

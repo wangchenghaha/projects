@@ -1,0 +1,170 @@
+<!--首页的状态-->
+<view class="home" wx:if="{{status==0}}">
+  <view class="header">
+    <image src="{{headerImg[acInfo.background_no-1]}}" class="header-image"></image>
+    <image src="{{logoImg[acInfo.brand_id-1]}}" class="brand_logo"></image>
+    <view class="header-txt1">{{acInfo.activity_dec}}</view>
+    <view class="header-txt2">{{acInfo.activity_dec_two}}</view>
+  </view>
+  <button class="share_btn" style = "{{btnColor[acInfo.background_no-1]}}" plain='{{true}}' open-type='share'>邀请好友领取优惠</button>
+  <!-- <view class="share_btn" bindtap="goToShare">
+    与好友分享领优惠
+  </view> -->
+  <view class="home-txt" wx:if="{{from != 'wemember'}}">
+    分享给好友后即可领取一份
+  </view>
+  <view class="share_modal" wx:if='{{sharePic}}' bindtap="ifShowShareModal">  
+    <image src="https://alioss.woaap.com/bestseller/campaign180927/img/shareBg.png"></image>
+  </view>
+  <view class="banner-bottom-entry" wx:if="acInfo.entry_pic">
+    <image src="{{acInfo.entry_pic}}" mode="widthFix"></image>
+  </view>
+</view>
+<!--第二胚-->
+<view class="about_wrap" wx:if="{{status!=0}}" style="{{bgColor[acInfo.background_no-1]}}">
+  <view class="about">
+    <view class="sendMan" wx:if="{{status==2||status==3 || status==6}}">
+      <image src="{{successInfo.coupon_share_groups.head_url}}" alt=""></image>
+      <view>{{successInfo.coupon_share_groups.nickname}}邀请你一起领取</view>
+    </view>
+    <!-- 刚领取完之后的状态 -->
+    <view class="about-body" wx:if="{{status==4}}">
+      <view class="about-header">恭喜你获得</view>
+      <image src="{{logoImg[acInfo.brand_id-1]}}" alt="" class="about-logo"></image>
+      <view class="about-txt1">{{acInfo.activity_dec}}</view>
+      <!-- <view class="about-txt2" wx:for="{{successInfo.coupon_share_record.coupons_info}}" wx:key="index">{{item.title}}</view> -->
+      <view class="about-txt1">已放入卡包，前往“我-卡包-我的票券” 查看</view>
+      <button class="share_btn" style = "{{btnColor[acInfo.background_no-1]}}" plain='{{true}}' open-type='share'>邀请好友领取优惠</button>
+      <view  wx:if="{{showBtn}}" class="share_btn" bindtap="jumpToShop" style="{{btnColor[acInfo.background_no-1]}}">
+          开启购物之旅
+        </view>
+      <!-- <view class="share_btn" bindtap="goToShare" style = "{{btnColor[acInfo.background_no-1]}}">
+        与好友分享领优惠
+      </view> -->
+      <view class="gif_img">
+        <image src="{{gifImg}}" alt="" mode="widthFix" bindtap="gifImgjumpToShop" wx:if="{{gifImg}}"></image>
+      </view>
+      <view class="about-bottom {{gifImg?'nppos':''}}">
+        <view><image src="https://tc.woaap.com/lingzhi/share/image/line.png" style='height: 2rpx;width: 100%;display: block;'></image></view>
+        <view class="bottom-txt">
+          <view class="bottom-text1">共{{acInfo.share_num}}份,已领取{{successInfo.receive_count}}份</view>
+          <view class="bottom-list" wx:for="{{successInfo.coupon_share_all}}" wx:key="{{index}}">
+            <view class="bottom-list-left">
+              <image src="{{item.head_url}}"></image>
+              <text class="bottom-text2">{{item.nickname}}</text>
+            </view>
+            <view class="bottom-list-right">
+              <view wx:for="{{item.coupons_info}}" wx:for-index='idx' wx:for-item='itm' wx:key="{{idx}}">{{itm.title}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 正常进来的状态 -->
+    <view class="about-body" wx:if="{{status==5}}">
+      <view class="about-header" style="opacity: 0;">恭喜你获得</view>
+      <image src="{{logoImg[acInfo.brand_id-1]}}" class="about-logo"></image>
+      <view class="about-txt1">{{acInfo.activity_dec}}</view>
+      <view class="about-txt2">您已领取</view>
+      <view class="about-txt2" wx:for="{{successInfo.coupon_share_record.coupons_info}}">{{item.title}}</view>
+      <view class="share_btn" bindtap="jumpToShop" style="{{btnColor[acInfo.background_no-1]}}">
+        开启购物之旅
+      </view>
+      <view class="gif_img">
+        <image src="{{gifImg}}" alt="" mode="widthFix" bindtap="gifImgjumpToShop" wx:if="{{gifImg}}"></image>
+      </view>
+      <view class="about-bottom  {{gifImg?'nppos':''}}">
+        <view><image src="https://tc.woaap.com/lingzhi/share/image/line.png" style='height: 2rpx;width: 100%;'></image></view>
+        <view class="bottom-txt">
+          <view class="bottom-text1">共{{acInfo.share_num}}份,已领取{{successInfo.receive_count}}份</view>
+          <view class="bottom-list" wx:for="{{successInfo.coupon_share_all}}">
+            <view class="bottom-list-left">
+              <image src="{{item.head_url}}" alt=""></image>
+              <text class="bottom-text2">{{item.nickname}}</text>
+            </view>
+            <view class="bottom-list-right">
+              <view wx:for="{{item.coupons_info}}" wx:for-item='itm'>{{itm.title}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 还有优惠券没有被领取 -->
+    <view class="about-body" wx:if="{{status==1}}">
+      <view class="about-header" style="opacity: 0;">恭喜你获得</view>
+      <image src="{{logoImg[acInfo.brand_id-1]}}" class="about-logo"></image>
+      <view class="about-txt1">{{acInfo.activity_dec}}</view>
+      <view class="about-txt2" wx:for="{{successInfo.coupon_share_record.coupons_info}}">{{item.title}}</view>
+      <view class="share_btn" bindtap="getAllCard" style="{{btnColor[acInfo.background_no-1]}}" wx:if="{{!isShare}}">
+        授权领取会员卡+优惠券
+      </view>
+      <view class="share_btn" bindtap="shareGetAllCard" style="{{btnColor[acInfo.background_no-1]}}" wx:if="{{isShare}}">
+          授权领取会员卡+优惠券
+        </view>
+        <view  wx:if="{{showBtn}}" class="share_btn" bindtap="jumpToShop" style="{{btnColor[acInfo.background_no-1]}}">
+            开启购物之旅
+          </view>
+      <!-- <view class="about-bottom">
+        <image src="https://tc.woaap.com/lingzhi/share/image/line.png" style='height: 2rpx;width: 100%;'></image>
+        <view class="bottom-txt">
+          <view class="bottom-text1">共{{acInfo.share_num}}份,已领取{{successInfo.receive_count}}份</view>
+          <view class="bottom-list" wx:for="{{successInfo.coupon_share_all}}">
+            <view class="bottom-list-left">
+              <image src="{{item.head_url}}" alt=""></image>
+              <text class="bottom-text2">{{item.nickname}}</text>
+            </view>
+            <view class="bottom-list-right">
+              <view wx:for="{{item.coupons_info}}" wx:for-item='itm'>{{itm.title}}</view>
+            </view>
+          </view>
+        </view>
+      </view> -->
+    </view>
+    <!-- 礼包被领完 -->
+    <view class="about-body" wx:if="{{status==2||status==3 || status==6}}">
+      <view class="about-header" style="opacity: 0;">恭喜你获得</view>
+      <image src="{{logoImg[acInfo.brand_id-1]}}" alt="" class="about-logo"></image>
+      <view class="about-txt1">{{acInfo.activity_dec}}</view>
+      <!-- <view class="about-txt2" wx:if="{{status==2}}">{{acInfo.share_num}}份礼包已被领完</view>
+      <view class="about-txt2" wx:if="{{status==3}}">本轮活动限参与{{acInfo.join_num}}次</view>
+      <view class="about-txt2" wx:if="{{status==3}}">您的参与次数已达上限</view> -->
+      <block wx:if="{{status==2}}">
+        <view class="about-txt2">{{acInfo.share_num}}份礼包已被领完</view>
+      </block>
+      <block wx:if="{{status==3}}">
+        <view class="about-txt2">{{successInfo.receive_count}}份礼包已被领完</view>
+      </block>
+      <block wx:if="{{status==6}}">
+        <view class="about-txt2">{{acInfo.share_num}}份礼包已被领完</view>
+        <view class="share_btn" bindtap="toNewGift" style="{{btnColor[acInfo.background_no-1]}}" wx:if="{{!isActChannel}}">
+          生成新礼包与好友分享
+        </view>
+      </block>
+      <view class="share_btn" bindtap="jumpToShop" style="{{btnColor[acInfo.background_no-1]}}">
+        开启购物之旅
+      </view>
+      <view class="gif_img">
+        <image src="{{gifImg}}" alt="" mode="widthFix" bindtap="gifImgjumpToShop" wx:if="{{gifImg}}"></image>
+      </view>
+      <view class="about-bottom {{gifImg?'nppos':''}}">
+        <view><image src="https://tc.woaap.com/lingzhi/share/image/line.png" style='height: 2rpx;width: 100%;display: block;'></image></view>
+        <view class="bottom-txt">
+          <view class="bottom-text1">共{{acInfo.share_num}}份,已领取{{successInfo.receive_count}}份</view>
+          <view class="bottom-list" wx:for="{{successInfo.coupon_share_all}}">
+            <view class="bottom-list-left">
+              <image src="{{item.head_url}}" alt=""></image>
+              <text class="bottom-text2">{{item.nickname}}</text>
+            </view>
+            <view class="bottom-list-right">
+              <view wx:for="{{item.coupons_info}}" wx:for-item='itm'>{{itm.title}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <image src="https://tc.woaap.com/lingzhi/share/image/bigbg.png" alt="" style='display: none'></image>
+  </view>
+</view>
+
+<view class="mask" wx:if="{{isShowMask}}"></view>
+

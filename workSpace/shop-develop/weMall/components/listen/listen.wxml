@@ -1,0 +1,14 @@
+<view class="listen-item">
+  <view  data-desc="{{guideInfo.desc}}" bindtap="onClick">
+    <image src="{{guideInfo.bgImg}}" mode="widthFix"></image>
+  </view>
+  <view class="desc">
+    <view class="logo" wx:if="{{guideInfo.brandLogo}}">
+      <image src="{{guideInfo.brandLogo}}" mode="widthFix"></image>
+    </view>
+    <view class="text" wx:if="{{guideInfo.title}}">
+      <text>{{guideInfo.title}}</text>
+      <text>{{guideInfo.city}}</text>
+    </view>
+  </view>
+</view>

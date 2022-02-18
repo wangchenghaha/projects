@@ -1,0 +1,8 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "customView_vm" : "../components/welCome_vm/welCome_vm",
+    "customView_only" : "../components/welCome_only/welCome_only",
+    "customView_fol" : "../components/welCome_fol/welCome_fol"
+  }
+}

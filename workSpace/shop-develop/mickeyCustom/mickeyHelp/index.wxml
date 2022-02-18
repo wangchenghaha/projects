@@ -1,0 +1,17 @@
+<view class='main'>
+    <image class="bg" src="https://alioss.woaap.com/bestseller/campaign2001/images/help_bg_big.png"></image>
+    <image class="alertBg" src="https://alioss.woaap.com/bestseller/campaign2001/images/help_alert_bg.png"></image>
+    <image class="helpButton" bindtap="help" src="https://alioss.woaap.com/bestseller/campaign2001/images/help_button.png"></image>
+    <image class="help_start" bindtap="start" src="https://alioss.woaap.com/bestseller/campaign2001/images/help_start.png"></image>
+</view>
+
+<view wx:if="{{helpAlert}}" class="alert" catchtouchmove="catchtouchmove" catchtap="closeAlert">
+    <view class="box">
+        <image class="help_success" src="https://alioss.woaap.com/bestseller/campaign2001/images/home_help_success.png"></image>
+        <image class="help_start" bindtap="start" src="https://alioss.woaap.com/bestseller/campaign2001/images/help_start.png"></image>
+        <view class="text">{{alertText}}</view>
+    </view>
+</view>
+<imageLoading imageList="{{loadImageList}}"></imageLoading>
+
+

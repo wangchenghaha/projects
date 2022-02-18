@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "ex-button-layout": "../components/exButtonLayout/exButtonLayout"
+    }
+}

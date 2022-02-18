@@ -1,0 +1,22 @@
+
+<view class="pages">
+    <view class="page-cont">
+        <view class="page-tit-wrap">
+            <image src="{{img.index_tit}}" class="index_tit" />
+            <image src="{{img.fail}}" class="index_suc" />
+            <view class="successtit">预约提交失败</view>
+            <view class="info-box">
+                <view class="info-wrap">
+                    <view class="info-item">非常抱歉，</view>
+                    <view class="info-item">您本次的预约失败，</view>
+                    <view class="info-item">请点击“重新预约”按键进行重新预约。</view>
+                </view>
+            </view>
+            <view class="btn-wrap">
+                <button class="btn1">
+                    <view class="btn-cont" bindtap="newrecord">预约重新</view>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>

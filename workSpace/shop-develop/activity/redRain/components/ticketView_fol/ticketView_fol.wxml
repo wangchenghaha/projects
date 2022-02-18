@@ -1,0 +1,75 @@
+<view class="bg">
+    <view class="topView">
+        <view class="left">
+            <view class="text">我的金币:{{jinbi}}</view>
+            <view class="jinbi">
+                <image src="{{imgPath}}hby_jinbi.png" style="width:100%;height:100%;" mode="widthFix" />
+            </view>
+        </view>
+
+        <view class="right" bindtap="jilu">兑换记录</view>
+        <view class="imgView" bindtap="guize">
+            <image src="{{imgPath}}hby_wenhao.png" style="width:100%;height:100%;" />
+        </view>
+    </view>
+    <view class="bottomView">
+        <view class="imgView" wx:for="{{yhqArrs}}" wx:key="yhqArrs">
+            <image src="{{item.giftPic}}" style="width:100%;height:100%;" mode="widthFix" />
+            <view class="shoujia">售价:{{item.pointsRequire}}<image src="{{imgPath}}hby_jinbi.png" style="margin-left: 10rpx;margin-top: 3rpx;width:24rpx;height:24rpx;" mode="widthFix" /></view>
+            <view class="dui">
+                <image wx:if="{{item.stock > 0}}" src="{{imgPath}}hby_dui.png" style="width:100%;height:100%;" mode="widthFix" data-detail="{{item}}" bindtap="requestGetCoupon" />
+                <image wx:else src="{{imgPath}}hby_duiNo.png" style="width:100%;height:100%;" mode="widthFix" />
+            </view>
+            <view class="shengyu">{{item.giftName == '5元优惠券' ? '' : '剩余:'+item.stock}}</view>
+        </view>
+    </view>
+</view>
+
+
+        <block wx:if="{{showTwoBounced}}">
+            <view class="bouncedBg"></view>
+                <view class="twoSubView">
+                    <view class="imgView">
+                        <image src="{{imgPath}}hby_twoBounced.png" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+
+                        <view class="centerText" style="top:32%;">兑换成功</view>
+                        <view class="centerText" style="top:44%;">获得{{currentTapTitle}}</view>
+                        <view class="centerText" style="top:58%;color:#8C92A4;font-size: 25rpx;">优惠券已发到卡包</view>
+                        <view class="bottomView" data-type="shengcheng" bindtap="closed">
+                            <view class="bottomView-text">炫耀一下</view>
+                            <view class="bottomView-subText">(+100金币)</view>
+                        </view>
+                    </view>
+                </view>
+        </block>
+        
+        <block wx:if="{{showThreeBounced}}">
+            <view class="bouncedBg"></view>
+            <view class="threeSubView">
+                <view class="imgView">
+                    <image src="{{imgPath}}hby_haibaotu.png" style="width:100%;vertical-align: middle;" mode="widthFix" />
+                    <view class="closed" data-type="cancel" bindtap="closed">
+                        <image src="{{imgPath}}hby_guanbi.png" style="width:100%;height:100%;" />
+                    </view>
+                    <view class="titles">
+                        <view style="margin-top: 20rpx;">我在绫致七夕甜蜜鹊桥惠小游戏获得了</view>
+                        <view>{{currentTapTitle}}!</view>
+                    </view>
+                    <view class="qrView">
+                        <image src="{{qrImgJson.path}}" style="width:{{qrImgJson.width}}rpx;height:{{qrImgJson.height}}rpx;" />
+                    </view>
+                </view>
+                <view class="saveBtn" bindtap="saveImg">保存图片</view>
+                <view class="saveText">点击保存图去分享</view>
+
+            </view>
+        </block>
+        
+        <block wx:if="{{showGuize}}">
+            <view class="bouncedBg" bindtap="guizeClose"></view>
+            <view class="guizeView">
+                <view class="animateView">
+                    <image src="{{imgPath}}hby_guize.png" style="width:100%;height:100%;" />
+                </view>
+            </view>
+        </block>

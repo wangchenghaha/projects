@@ -1,0 +1,22 @@
+$main: #ffb400
+$baseUrl: 'https://tc.woaap.com/lingzhi/crayon/poster/'
+$baseUrl2: 'https://tc.woaap.com/lingzhi/crayon/turntable/'
+
+@mixin square($w)
+    width: $w + rpx
+    height: $w + rpx
+
+@mixin b() 
+    box-sizing: border-box
+
+@mixin bg($key)
+    background: url($baseUrl + $key + '.png')
+    background-size: 100% 100%
+    background-position: center center
+    background-repeat: no-repeat
+
+@mixin bg2($key)
+    background: url($baseUrl2 + $key + '.png')
+    background-size: 100% 100%
+    background-position: center center
+    background-repeat: no-repeat

@@ -1,0 +1,4 @@
+<view class="contarin">
+    <image  src="{{rqImage}}" mode="widthFix"/>
+    <view class="saveBtn" bindtap="saveQR">保存图片</view>
+</view>

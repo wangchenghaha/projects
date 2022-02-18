@@ -1,0 +1,110 @@
+.share {
+  position: relative;
+  margin: 60rpx auto 0;
+  width: 710rpx;
+  padding: 25rpx 20rpx;
+  font-size: 28rpx;
+  border-bottom: solid 1rpx #ccc;
+  background: #fff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+.share .task {
+  position: absolute;
+  left: 20rpx;
+  top: -40rpx;
+  padding: 0 20rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: #ccc;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.share .task text {
+  padding-left: 10rpx;
+}
+.share .task .icon-wrap {
+  width: 26rpx;
+  height: 26rpx;
+  border: solid 1rpx #fff;
+  background: #fff;
+  border-radius: 50%;
+}
+.share .task-new {
+  background: #2a9ae9;
+}
+.share .task-half {
+  background: #ee5c5c;
+}
+.share .task-finish {
+  background: #43ab2b;
+}
+.share .task-icon {
+  width: 26rpx;
+  height: 26rpx;
+}
+.share-img {
+  width: 220rpx;
+  height: 220rpx;
+  box-sizing: border-box;
+}
+.share-img .image {
+  display: block;
+  width: 220rpx;
+  height: 220rpx;
+}
+.share-info {
+  flex: 1;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  color: #999;
+}
+.share-info .share-title {
+  color: #666;
+}
+.share-info .share-item {
+  margin-bottom: 10rpx;
+}
+.share-info .share-item:last-child {
+  margin-bottom: 0;
+}
+.share-info .share-num {
+  line-height: 25rpx;
+}
+.share-info .share-wrap text {
+  padding: 0 20rpx 0 10rpx;
+}
+.share-info .share-wrap .wx-icon {
+  padding: 0 8rpx;
+  filter: grayscale(100%);
+}
+.share-info .share-wrap .wx-icon image {
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+}
+.share-icon image {
+  width: 25rpx;
+  height: 25rpx;
+}
+.share .del-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80rpx;
+  height: 80rpx;
+  background: #f2f2f2;
+  border-radius: 100% 0 0 0;
+  filter: grayscale(100%);
+}
+.share .del-btn .icon-del {
+  width: 30rpx;
+  height: 30rpx;
+  transform: translateX(30rpx) translateY(30rpx);
+  filter: grayscale(100%);
+}
+
+/*# sourceMappingURL=shareTempList.wxss.map */

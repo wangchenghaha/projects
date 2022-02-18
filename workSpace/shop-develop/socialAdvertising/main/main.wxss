@@ -1,0 +1,62 @@
+/* socialAdvertising/socialAdvertising.wxss */
+.frame{width: 100%;height: 100%;display: flex;flex-direction: column; clear:both; overflow:hidden;background-color: #EEEEEE;}
+.wrapper_logo{width: 100%;min-height: 450rpx;position: relative;}
+.wrapper_abs{width: 100%;display: flex;flex-direction: row;align-items: center;position: absolute;left: 40rpx;bottom: 0;}
+.top_background{background: linear-gradient(rgba(255,255,255,0), rgba(239,239,239,0.99)),url("https://cdn.bestseller.com.cn/assets/common/ONLY/image/wechat_social_ad_main_top_bg.jpg?v=123");
+    background-size: 100% auto;}
+.img_logo{width: 87rpx;height: 87rpx;}
+.img_logo_text{width: 120rpx;position: relative;left: 37rpx;}
+
+.wrapper_coupon{width: 100%;position: relative;margin-top: 17rpx; background: linear-gradient(#EEEEEE, #f4f4f4) }
+.img_coupon_bg{width: 100%;min-height: 170rpx;}
+.coupon_content_upper{width: 100%;display: flex;flex-direction: column;align-items: center;
+    justify-content: start;
+    position: absolute;left: 0;top: 0;}
+
+.txt_conditions_0{font-size: 27rpx;color: #303030;}
+.txt_conditions_1{font-size: 25rpx;color:#979797;margin-top: 25rpx;}
+.img_coupon_value{width: 98rpx;margin-top: 30rpx;}
+
+
+.shape_button{
+    margin-top: 27rpx;
+    display: block;
+    width: 350rpx;
+    height: 70rpx;
+    font-size: 30rpx;
+    line-height: 70rpx;
+    color: white;
+    background: #56BF5F;
+    text-align: center;
+    border: 2rpx solid #56BF5F;
+    border-radius: 9rpx;
+}
+
+
+.coupon_bar_010,.coupon_bar_020,.coupon_bar_030{ position: absolute;left: 70rpx;right: 70rpx;bottom: 28rpx;
+    display: flex;flex-direction: row;align-items: center;justify-content: flex-start;
+    background:url(https://cdn.bestseller.com.cn/assets/common/pub/image/wechat_social_ad_right_arrow_0.png) no-repeat right center ;
+    background-size: 14rpx 24rpx;}
+.bar{display: flex;flex-direction: row;align-items: center;justify-content: start;line-height: 100rpx;}
+.coupon_bar_010{bottom: 217rpx;}
+.coupon_bar_020{bottom: 127rpx;}
+.coupon_bar_030{bottom: 38rpx;}
+.img_qs{width:30rpx;height: 30rpx;}
+.txt_qs{font-size: 27rpx;margin-left: 15rpx;}
+
+.wrapper_tip{width: 100%;height: 100%; display: flex;flex-direction: column;align-items: center;justify-content: flex-start;
+    padding-top: 117rpx; background-color: #f4f4f4;}
+.wrapper_tip0{width: auto;display: flex;flex-direction: row;align-items: center;}
+.img_tip{width: 25rpx;margin-right: 7rpx;}
+.tip0,.tip1{font-size: 27rpx;color: #afafaf;}
+
+.frame_pop{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:100000;}
+.frame_opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.5;}
+.frame_rule{width: 100%;position: absolute;bottom: 0;height: 625rpx;background-color: white;
+display: flex;flex-direction: column;align-items: center;}
+.pop_title{width: 100%;text-align: center;height: 110rpx;line-height: 110rpx;font-size: 32rpx;}
+.sv_rule{width: 100%;height: 378rpx;text-align: left;}
+.rule_detail{font-size: 24rpx;margin-left: 75rpx;margin-right: 75rpx;white-space:pre-line;}
+.v_gap{width: 100%;height: 7rpx;background-color: #f7f7f7;}
+.pop_confirm{width: 100%;height: 130rpx;line-height: 130rpx; font-size: 30rpx;color: black;text-align: center;}
+

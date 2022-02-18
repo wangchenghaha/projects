@@ -1,0 +1,46 @@
+<view class="container">
+    <block wx:for="{{contents}}" wx:key="album">
+        <view class="contentArea" >
+            <swiper class="swiper" circular="true" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" wx:if="{{item.type === 'swiper'}}">
+                <block wx:for="{{item.goodsImg}}" wx:key="layout_swiper">
+                    <swiper-item>
+                        <image class="swiper-image" src="{{item}}" mode="widthFix" data-map-index="{{item}}" bind:tap="onBannerClick" />
+                    </swiper-item>
+                </block>
+            </swiper>
+
+            <view class="cover-view" data-index="{{index}}"  wx:if="{{item.type === 'video'}}" style="width: 750rpx; height: 100%">
+                <video 
+                    src="{{item.videoUrl}}"
+                    muted="{{isVoice}}"
+                    controls="true"
+                    autoplay="false"
+                    loop="true"
+                    object-fit="cover"
+                    class="videoClass"
+                    custom-cache="{{false}}"
+                ></video>
+              </view>
+
+            <image class="images" src="{{item.goodsImg}}" mode="widthFix" wx:if="{{item.type !== 'swiper' && item.type !== 'video'}}"/>
+            <!-- 第一个的按钮 -->
+            <view   wx:if="{{item.pathUrlOne}}" 
+                    class="buttonLeft" 
+                    style="top:{{item.buttonTopOne}}; left: {{item.buttonLeftOne}};"
+                    data-type="One" 
+                    data-item='{{item}}' 
+                    bindtap="onClick">
+                    {{item.btnTextOne}}
+            </view>
+             <!-- 第二个的按钮-->
+             <view   wx:if="{{item.pathUrlTwo}}" 
+                    class="buttonLeft" 
+                    style="top:{{item.buttonTopTwo}}; left: {{item.buttonLeftTwo}};"
+                    data-type="Two" 
+                    data-item='{{item}}' 
+                    bindtap="onClick">
+                    {{item.btnTextTwo}}
+            </view>
+        </view>
+    </block>
+</view> 

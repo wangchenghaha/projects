@@ -1,0 +1,112 @@
+.fixed {
+  position: fixed;
+  right: 0;
+  width: 230rpx;
+  bottom: 80rpx;
+  z-index: 99;
+}
+.fixed-item {
+  position: relative;
+  margin-left: 114rpx;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background: #fff;
+  border-radius: 50%;
+}
+.fixed-item .icon {
+  width: 35rpx;
+  height: 35rpx;
+}
+.fixed-item .share-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.fixed-item text {
+  font-size: 20rpx;
+  color: #030303;
+}
+.fixed .live-btn {
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  background: rgba(255, 255, 255, 0.8);
+}
+.fixed .live-btn .avatar {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.fixed .live-btn .avatar image {
+  width: 56rpx;
+  height: 56rpx;
+}
+.fixed .live-btn .text {
+  padding: 0 10rpx;
+  font-size: 26rpx;
+  color: #15d380;
+}
+.fixed .live-btn .icon text {
+  display: inline-block;
+  margin: 0 3rpx;
+  width: 5rpx;
+  height: 25rpx;
+  background: #15d380;
+  transform-origin: bottom;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.26);
+}
+.fixed .live-btn .icon text:nth-child(1) {
+  animation: scale1 1s infinite;
+}
+.fixed .live-btn .icon text:nth-child(2) {
+  animation: scale1 0.5s infinite;
+}
+.fixed .live-btn .icon text:nth-child(3) {
+  animation: scale1 0.8s infinite;
+}
+
+.fixed-center {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.fixed-center .box {
+  position: relative;
+  flex-direction: column;
+  width: 460rpx;
+  height: 300rpx;
+  background: #fff;
+  border-radius: 30rpx;
+}
+.fixed-center .box .title {
+  font-size: 24rpx;
+}
+.fixed-center .box .nickname {
+  font-size: 46rpx;
+}
+.fixed-center .box .close {
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+
+@keyframes scale1 {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.3);
+  }
+}
+
+/*# sourceMappingURL=homeFixed.wxss.map */

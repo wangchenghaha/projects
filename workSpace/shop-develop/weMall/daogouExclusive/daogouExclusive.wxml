@@ -1,0 +1,13 @@
+<view class="wrap">
+    <view class="card">
+        <image class="headImage" src="{{qrHeaderImage}}" mode="aspectFit"/>
+        <view class='content'>
+            <view class='content_info'>
+                <view style="font-size:30rpx;">{{name}}</view>
+                <view style="font-size:28rpx;">{{loginCode}}</view>
+            </view>
+            <image src="{{qrHeaderImage}}" mode="aspectFit"/>
+        </view>
+        <image class='qrImage' src="{{qrCodeImage}}"  mode="aspectFit"/>
+    </view>
+</view>

@@ -1,0 +1,40 @@
+<view class="gameBg">
+    <image class="img" src="{{homeBgImg}}" mode="widthFix" bindload="bgLoad" />
+
+    <view class="topTitleView" style="bottom: {{renwuJson.b+300}}rpx;left: {{renwuJson.l+20}}rpx;animation: {{topTitleJson.animate}} .3s linear 0s 1 forwards;" bindanimationend="topTitleAnimateEnd">
+        <view class="toptitles">
+            <view class="titls">{{topTitleJson.title}}</view>
+            <view class="weiba"></view>
+        </view>
+    </view>
+    <view class="renwu" style="bottom: {{renwuJson.b}}rpx;left: {{renwuJson.l}}rpx;--b : {{renwuJson.b}}rpx;--b1:{{renwuJson.b + 155}}rpx;--l:{{renwuJson.l}}rpx;--l1:{{renwuJson.type === 'l' ? renwuJson.l - 50 : renwuJson.l + 50}}rpx;--tob:{{renwuJson.tob}}rpx;--tol:{{renwuJson.tol}}rpx;animation: {{jumpAnimate}} .8s linear 0s 1 forwards;" bindanimationend="renwuAnimateEnd">
+        <view class="jindu">进度:{{processValue / 85 * 100}}%</view>
+        <view class="renwu-top">
+            <image class="processBg" src="{{processBgImg}}" />
+            <view class="process" style="width:{{processValue}}%;border:{{processValue > 0 ? '1rpx' : '0rpx'}} solid #00FFFF;box-sizing: border-box;"></view>
+        </view>
+        <image class="img" src="{{renwuImg}}" style="height:198rpx;" />
+    </view>
+</view>
+<image class="img bottomImg" src="{{homeBgBottomImg}}" mode="widthFix" />
+<image src="{{guizeImg}}" class="guize" mode="widthFix" bindtap="guize" />
+<view class="play" bindtap="playTap">
+    <image src="{{playImg}}" style="width:100%;height:100%;" />
+</view>
+<view class="taps" style="left: 55rpx;" id="1" bindtap="taps"></view>
+<view class="taps" style="right: 55rpx;" id="2" bindtap="taps"></view>
+<view class="shengyu">
+    <view class="subView">
+        <view class="subView-label">剩余燃料:</view>
+        <view class="subView-num">{{currentTaijie}}g</view>
+        <image src="{{numQiuImg}}" class="subView-img" />
+    </view>
+</view>
+<image src="{{backImg}}" class="back" bindtap="back" />
+  
+
+<noCharged id="noCharged" wx:if="{{showCharged}}" bindnoChargedclosed="noChargedclosed"></noCharged>
+<myPrize id="myPrize" wx:if="{{showMyPrize}}" bindclosed="closed"></myPrize>
+<more id="renwu" wx:if="{{showMore}}" bindgoFinish="goFinish" bindclosed="closed"></more>
+<bigPrize id="bigPrize" wx:if="{{showBigPrize}}" bindclosed="closed"></bigPrize>
+  

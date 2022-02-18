@@ -1,0 +1,333 @@
+.iPhoneX {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottomView {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  z-index: 998;
+}
+
+.bottomView .tietu {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  text-align: center;
+  font-size: 25rpx;
+  color: white;
+  line-height: 90rpx;
+}
+
+.bottomView .view {
+  height: 100%;
+  background-color: white;
+}
+
+.bottomView .view-image {
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top: 10rpx;
+  left: 49%;
+  transform: translateX(-50%);
+}
+
+.bottomView .view-title {
+  font-size: 21rpx;
+  text-align: center;
+}
+
+.bottomView .saveView {
+  height: 100%;
+  background-color: black;
+  text-align: center;
+}
+
+.bottomView .saveView-view {
+  font-size: 25rpx;
+  color: white;
+  line-height: 90rpx;
+}
+
+.topView {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.topView .top {
+  width: 100%;
+  height: 80rpx;
+}
+
+.topView .top .leftView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+
+.topView .top .leftView-subView {
+  display: inline-block;
+  width: auto;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border: 1rpx solid black;
+  text-align: center;
+  margin-right: 20rpx;
+  font-size: 23rpx;
+  color: black;
+  margin-top: 15rpx;
+}
+
+.topView .top .leftView .zitiView {
+  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.topView .top .leftView .zitiView .zihao {
+  font-weight: bold;
+  line-height: 80rpx;
+  margin-left: 70rpx;
+  color: #97999B;
+  font-size: 28rpx;
+}
+
+.topView .top .leftView .zitiView .yanse {
+  margin-left: 70rpx;
+  margin-top: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 5rpx;
+}
+
+.topView .top .leftView .zitiView .B {
+  margin-left: 70rpx;
+  font-size: 40rpx;
+  width: auto;
+  line-height: 80rpx;
+  color: #97999B;
+}
+
+.topView .top .leftView .zitiView .ziti {
+  display: flex;
+  width: auto;
+  height: 40rpx;
+  border: 1rpx solid #97999B;
+  border-radius: 5rpx;
+  margin-top: 19rpx;
+  overflow: hidden;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.topView .top .leftView .zitiView .ziti-title {
+  font-size: 21rpx;
+  color: #5D636A;
+  width: 100%;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.topView .top .leftView .zitiView .ziti-imageView {
+  margin-left: 10rpx;
+  width: 25rpx;
+  height: 25rpx;
+  margin-top: 10rpx;
+}
+
+.topView .centerView {
+  width: 100%;
+  background-color: #E6E6E6;
+}
+
+.topView .centerView-xlView {
+  display: inline-block;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  width: 150rpx;
+  height: 150rpx;
+  position: relative;
+}
+
+.topView .centerView-xlView-image {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topView .centerView-taView {
+  display: inline-block;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  width: auto;
+  flex-direction: column;
+}
+
+.topView .centerView-taView-subView {
+  display: flex;
+  flex-direction: row;
+}
+
+.topView .centerView-taView-image {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 10rpx;
+  background-color: white;
+}
+
+.topView .centerView-wzView {
+  display: inline-block;
+  width: 100%;
+  height: 220rpx;
+  background-color: #F3F3F3;
+  display: flex;
+  flex-direction: row;
+}
+
+.topView .centerView-wzView .leftView {
+  width: 70%;
+  height: 140rpx;
+  background-color: #E6E6E6;
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.topView .centerView-wzView .leftView-left {
+  width: 85%;
+  height: 100%;
+}
+
+.topView .centerView-wzView .leftView-left .input {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  white-space: pre-wrap;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 30rpx;
+}
+
+.topView .centerView-wzView .leftView-left .input-pla {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 30rpx;
+}
+
+.topView .centerView-wzView .leftView-right {
+  color: #999999;
+  width: 15%;
+  line-height: 140rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.topView .centerView-wzView .rightView {
+  width: 30%;
+  height: 100%;
+  position: relative;
+}
+
+.topView .centerView-wzView .rightView-subView {
+  width: 80rpx;
+  height: 100rpx;
+  border: 2rpx solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 21rpx;
+  color: black;
+}
+
+.line {
+  position: fixed;
+  width: 2rpx;
+  height: 50rpx;
+  background-color: #F2F2F2;
+  z-index: 999;
+}
+
+.bouncesView {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.bouncesView .zhezhao {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: black;
+}
+
+.bouncesView-view {
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transform: translateY(100%);
+  box-sizing: border-box;
+}
+
+.bouncesView-view-ziti {
+  display: inline-block;
+  width: auto;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin-left: 40rpx;
+  color: black;
+  margin: 20rpx;
+}
+
+.bouncesView-view-yanse {
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 8rpx;
+  margin: 25rpx 20rpx;
+}
+
+.bouncesView-view-zihao {
+  display: inline-block;
+  width: auto;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin-left: 40rpx;
+  color: black;
+  margin: 20rpx 62rpx;
+  padding-left: 35rpx;
+}

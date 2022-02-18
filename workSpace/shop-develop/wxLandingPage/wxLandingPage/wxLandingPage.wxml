@@ -1,0 +1,32 @@
+<view class="bg">
+    <block wx:for="{{list}}" wx:key="list">
+        <video id="vi_{{index}}" wx:if="{{item.type == 'mp4'}}" object-fit="cover" class="video video_{{index}}" src="{{item.url}}" style="height: {{item.height}};" muted="{{true}}" loop="{{true}}" autoplay="{{true}}" show-mute-btn="{{true}}"  />
+        <image wx:if="{{item.type == 'img'}}" mode="widthFix" src="{{item.url}}" style="width:100%;" />
+        <view wx:if="{{item.type == 'btn'}}" class="btnView" style="margin-top: {{item.top}};margin-bottom: {{item.bottom}};">
+            <view data-link="{{item.link}}" data-isIndex="{{item.isIndex}}" bindtap="onClik" class="btn">{{item.url}}</view>
+        </view>
+    </block>
+    <view class="botomView"></view>
+</view>
+
+
+<!-- 弹框 -->
+<view wx:if="{{isBonuced}}" class="bonucedBG"></view>
+<view wx:if="{{isBonuced}}" class="bonucedView">
+    <view class="topView">
+        <view class="topView-leftView"></view>
+        <view class="topView-rightView" bindtap="closed">
+          <icon type="cancel" color="#fff" size="53px"></icon>
+<!--            <image style="width:100%;" src="/images/round_close.png" mode="widthFix"></image>-->
+        </view>
+    </view>
+    <view class="bottomView">
+        <image style="width:100%;" mode="widthFix" src="{{bouncedImage}}"></image>
+
+        <view class="textView">{{bouncedText}}</view>
+        <button class="btn share" open-type="contact">
+            联系客服
+        </button>
+    </view>
+
+</view>

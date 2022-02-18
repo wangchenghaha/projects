@@ -1,0 +1,32 @@
+.header {
+  position: relative;
+}
+.header image {
+  display: block;
+  width: 100%;
+}
+.header .user-info {
+  margin-top: -80rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header .user-info .avatar {
+  width: 166rpx;
+  height: 166rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header .user-info .title {
+  text-align: center;
+  color: #707070;
+  font-size: 30rpx;
+}
+.header .user-info .title text {
+  color: #000;
+  font-weight: bold;
+  display: block;
+}
+
+/*# sourceMappingURL=shareTempheader.wxss.map */

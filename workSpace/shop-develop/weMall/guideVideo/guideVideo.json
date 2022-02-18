@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "导购社区",
+  "usingComponents":{
+    "listen-item":"../components/listen/listen",
+    "my-study": "../components/myStudy/myStudy"
+  }
+}

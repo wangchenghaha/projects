@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "five-star": "../fiveStar/fiveStar"
+  }
+}

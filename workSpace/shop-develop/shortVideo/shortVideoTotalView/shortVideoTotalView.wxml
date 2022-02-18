@@ -1,0 +1,14 @@
+<view class="bg">
+    <view class="list-row" wx:for="{{3}}" wx:key="list-row">
+        <block wx:for="{{2}}" wx:key="list">
+            <view class="listView">
+                <view class="imageView">
+                    <image mode="widthFix" style="width:100%;" src="https://cdn.bestseller.com.cn/goodsImagePC/VEROMODA/318327502/318327502C13/240400/318327502C13_p7.jpg" />
+                </view>
+                <view class="moneyView">
+                    <view style="font-size:18rpx;line-height: 45rpx;margin-left: 10rpx;">￥<text style="font-size:25rpx;line-height: 45rpx;">456.66</text></view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

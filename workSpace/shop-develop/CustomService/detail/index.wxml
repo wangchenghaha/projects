@@ -1,0 +1,63 @@
+<wxs module="utils" src="./index.wxs"></wxs>
+<view class='wrapper'>
+    <view class='header'>
+        <image class='images_header' src='{{banner}}'></image>
+        <image class='images_logo' src='../common/image/logo.png' style="width:347rpx;height:32rpx;display:block;margin-top:60rpx;margin-left:32rpx;"></image>
+    </view>
+    <view class="content">
+        <view class="header">
+            <!-- <view class="logo">
+                <image class="image" src="../common/icon/appointment.png"></image>
+            </view> -->
+            <view class="title">{{isNew ? utils.formatStatus(orderInfo.status) : '预约详情'}}</view>
+            <view class="code">
+                <text class="tit">预约编号：</text>
+                <text class="con">{{orderInfo.appoint_code}}</text>
+            </view>
+            <view class="shopname">{{orderInfo.store_name}}</view>
+        </view>
+        <view class="formbox">
+            <view class="form-item">
+                <view class="label">姓名：</view>
+                <view class="con">{{orderInfo.name}}</view>
+            </view>
+            <view class="form-item"  catch:tap='makePhoneCall' data-phone='{{orderInfo.mobile}}'>
+                <view class="label">电话：</view>
+                <view class="con">{{orderInfo.mobile}}</view>
+            </view>
+            <view class="form-item">
+                <view class="label">时间：</view>
+                <view class="con">{{orderInfo.appoint_time}} {{orderInfo.time || ''}}</view>
+            </view>
+            <view class="form-item" catch:tap='openInMap'>
+                <view class="con"><view class="label">地址：</view>{{orderInfo.store_address}}</view>
+            </view>
+            <view class="form-item w100">
+                <view class="label">营业时间：</view>
+                <view class="con">10:00-22:00</view>
+            </view>
+            <view class="form-item w100" catch:tap='makePhoneCall' data-phone='0106544198'>
+                <view class="label">电话：</view>
+                <view class="con">010-6543 4198</view>
+            </view>
+        </view>
+        <view class="tips">到店可凭此页面直接前往定制区享受定制服务</view>
+    </view>
+    <view class="footer">
+        <block wx:if="{{orderInfo.status == 1}}">
+            <view class="concelbtn" hover-class="hoverclass">
+                <button class="btn" catchtap='cancel'>取消预约</button>
+            </view>
+            <view class="btnbox" hover-class="hoverclass">
+                <button class="btn" catchtap='activeRunning'>修改预约</button>
+            </view>    
+        </block>
+        <block wx:else>
+            <view class="btnbox" hover-class="hoverclass">
+                <button class="btn" catchtap='getback'>确定</button>
+            </view>   
+        </block>
+          
+        
+    </view>
+</view>

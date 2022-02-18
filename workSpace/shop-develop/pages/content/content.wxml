@@ -1,0 +1,398 @@
+<!--<import src='../../utils/wxParse/wxParse.wxml' />-->
+<!--<import src='../nearbyShops/tmpl/shopsPreviewItem/shopsPreviewItem' />
+<import src="../nearbyShops/tmpl/popGoodsStockDetail/popGoodsStockDetail" />-->
+<view class="wrap" style="display:{{shouye}}">
+  <!-- 导购分享部分 -->
+  <view class='querenUpload' wx:if="{{isFromDaogou}}" bindtap="toZiyou">
+    <view class='uploadOpcity'></view>
+    <view class='uploadText'>确认上传</view>
+  </view>
+  <!-- 回到顶部 -->
+  <view class="goTop" wx:if="{{goTop_show}}" catchtap="goTopFun">
+    <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/2top.png" mode="aspectFit"></image>
+  </view>
+  <!-- 回到首页 -->
+  <!-- <view class="gotoIndex" bindtap="gotoIndex">
+    <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/2index.png" mode="aspectFit"></image>
+  </view> -->
+  <!-- 分享给朋友 -->
+  <!-- <button open-type="share" class="shareToFriend">
+    <image src="/images/share.png" mode="aspectFit"></image>
+  </button> -->
+  <view class="fixed-right">
+    <block wx:for="{{fixedRightArr}}" wx:key="fixedRight">
+      <view wx:if="{{item.isShow}}" class="fixed-item flex-center" id="{{item.type === 'wish' ? 'joinCar1' : item.type}}" data-type="{{item.type}}" bindtap="onClick">
+        <view class="fixed-img flex-center">
+          <image style="{{item.style}}" src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <block wx:if="{{item.type === 'share'}}">
+<!--          <button open-type="share" class="share"></button>-->
+          <button class="share"></button>
+        </block>
+        <block wx:elif="{{item.type === 'recommend'}}">
+          <view class="recommend-btn">
+            <share-button type="2" size="80" fore-color="#989898" back-color="#fff" product="{{product}}" bind:error="on_error" />
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="official" wx:if="{{showOfficial}}">
+    <official-account bindload="officialSuccess" binderror="officialError"></official-account>
+  </view>
+  <!-- 轮播图 -->
+  <view class='swiper-content' wx:if="{{detailShow}}">
+    <swiper class='swiper-wrapper' bindchange="swiperChange" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" wx:if="{{swiperShow}}">
+      <block wx:for="{{slider}}" wx:key="slider">
+        <swiper-item>
+          <image src="{{item.picUrl}}" class="slide-image" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="daogou_car {{isChecked?'daogou_true_car':''}}" wx:if="{{isFromDaogou}}" bindtap="joinShareCar">
+      <view class='bg'>导</view>
+    </view>
+    <!-- 视频播放 start -->
+    <video src="{{videoSrc}}" id="myVideo" play-btn-position="center" object-fit="cover" poster="{{videoPoster}}" wx:if="{{!swiperShow}}" initial-time="{{startTime}}" bindtimeupdate="getVideoInfo" />
+    <block wx:if="{{videoBtnShow}}">
+      <view class="video-btn" bindtap="changeSwiperShow" wx:if="{{swiperShow}}">
+        <view class="videoIcon"></view>
+        <view>00'{{durationTime}}"</view>
+      </view>
+      <view class="video-btn" bindtap="changeSwiperShow" wx:if="{{!swiperShow}}">退出播放</view>
+    </block>
+    <!-- 视频播放 end -->
+    <view class="seckillShow flex-end" wx:if="{{isSeckill}}">
+      <view class="originalPrice">
+          <view>限时秒杀</view>
+          <view class="orginal">￥{{contentCon.color[color_list_num].originalPrice}}</view>
+      </view>
+      <view class="seckillPrice">
+        <view class="seckill flex-center">秒杀价<text style="font-size: 36rpx;">￥{{contentCon.color[color_list_num].price}}</text></view>
+      </view>
+
+      <view class="time">
+          <view class="timeTitle">即将结束</view>
+          <view class="timerRow flex-end">
+            <view wx:if="{{timeObj.day >= 1}}" class="timer day">{{timeObj.day}}天</view>
+            <view class="timer"> {{timeObj.hou}} </view>
+            <view style="margin-left: 8rpx;">:</view>
+            <view class="timer"> {{timeObj.min}} </view>
+            <view style="margin-left: 8rpx;">:</view>
+            <view class="timer"> {{timeObj.sec}} </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="dots flex-center">
+    <block wx:for="{{slider}}" wx:key="slider">
+      <view class="dots-item {{swiperCurrent === index ? 'active' : ''}}"></view>
+    </block>
+  </view>
+  <!-- 活动提示图 暂时注释双十一备用 -->
+  <!-- <image class="activityShow"  wx:if="{{isShowActivityTag}}" src="{{activityImage}}"  mode="widthFix"/> -->
+  <!-- 竖排手动轮播 -->
+  <view class="lunbo" wx:if='{{!detailShow}}'>
+    <view class="imgs" wx:for="{{slider}}" wx:key="slider">
+      <image id="{{index+1}}" src="{{item.picUrl}}" mode="widthFix"></image>
+    </view>
+    <view class="leftNav" wx:if="{{leftNav}}">
+      <view class="spans {{index==imgIndex?'spanList':''}}" wx:for="{{slider}}" wx:key="spans"></view>
+      <view class="down">
+        <image src="/images/down.png" mode="aspectFit" bindtap="toDown"></image>
+      </view>
+    </view>
+    <!-- 导购加入分享收藏 -->
+    <view class="daogou_car {{isChecked?'daogou_true_car':''}}" wx:if="{{isFromDaogou}}" bindtap="joinShareCar">
+      <view class='bg'>导</view>
+    </view>
+  </view>
+  <!-- 详细信息 -->
+  <view class="con">
+    <view class="h1">{{contentCon.goodsName}}</view>
+    <!-- TODO LIST 将内容更换为副标题 -->
+    <!-- 20200729 商品副标题 没有副标题时都不显示 没有跳转链接时 查看不显示 不跳转-->
+    <view class="subheading" wx:if="{{subGoodsName}}">
+      <text class="sub-title">{{subGoodsName}}</text>
+      <text class="sub-check" wx-if="{{subGoodsLink}}" bindtap="subGoodsJump">查看></text>
+    </view>
+    <view class="goods-mark" wx:if="{{goodsMarkText}}">{{goodsMarkText}}</view>
+    <view class="kuanhao">
+      款号{{contentCon.projectCode}}
+      <copyIcon text="{{contentCon.projectCode}}" bind:copy-success="copySuccess"></copyIcon>
+    </view>
+    <!-- 现价 -->
+<!--    <view>券后 ￥{{promotionCoupons[0].futurePrice}}</view>-->
+    <view class="nowPrice">
+      <view class="fuhao">¥</view>
+      <view class="money">
+        {{contentCon.color[color_list_num].price}}
+        <block wx:if="{{SHOW_DISCOUNT}}">
+          <text class="discount" wx:if="{{contentCon.color[color_list_num].discount !== 1}}">
+            <block wx:if="{{contentCon.color[color_list_num].discount === 9}}">一口价</block>
+            <block wx:else>{{(contentCon.color[color_list_num].discount * 1000)/100}}折</block>
+          </text>
+        </block>
+      </view>
+      <text class="guide" wx:if="{{guideId}}">{{guideId}}</text>
+    </view>
+    <!-- 原价 -->
+    <view class="oldPrice" wx:if="{{contentCon.color[color_list_num].discount !== 1}}">
+      <view class="jiage">价格</view>
+      <view class="money">
+        ¥{{contentCon.color[color_list_num].originalPrice}}
+        <view class="xian"></view>
+      </view>
+    </view>
+    <view wx:if="{{noticeAct}}" class="noticeAct">
+      <image src="{{wxIcon}}" mode="widthFix" />
+      使用微信支付预计还可减免100元
+    </view>
+    <view wx:if="{{noWMall}}" class="liebie" bindtap="xuanze">
+      <text> 请选择 颜色分类  尺码</text>
+      <view class="img-wrap flex-start">
+        <block wx:for="{{colorList}}" wx:key="id">
+          <image class="goods-img" src="{{item.goodsImg}}" mode="aspectFill" ></image>
+        </block>
+        <text>共{{colorList.length}}种颜色选择</text>
+      </view>
+    </view>
+    <view wx:if="{{hasCoupon}}" class="coupon" bindtap="getCoupon">
+      <text>领券</text>
+      <image class='couponImgClass' src="{{CoupontitleImage}}" mode='aspectFit' />
+    </view>
+    <view class="promotion flex-start" wx:if="{{promotionList.length}}">
+      <text class="promotion-text">促销:</text>
+      <view class="promotion-list">
+        <view class="flex-start promotion-item" wx:for="{{promotionList}}" wx:key="id" id="{{item.id}}" bindtap="promotionClick">
+        <text class="promotion-type">{{item.typeName}}</text>
+        <text class="promotion-desc arrow-bg">{{item.description}}</text>
+      </view>
+      </view>
+    </view>
+    <view wx:if="{{nearbyShopEnabled && noWMall}}">
+      <view class="{{flagHideMap?'layout_nearby_tip_bar_0':'layout_nearby_tip_bar_1'}}" bindtap="onMapShows">
+        查看附近在售门店
+      </view>
+      <view class='layout_map' wx:if="{{!flagHideMap}}">
+        <view class="map_txt_title_0">距离最近的有货门店</view>
+        <template wx:if="{{flagHaveStock}}" is="shopsPreviewItemTmpl" data="{{...currentShopBean, ifShowStock:'true',ifShowNav:'true'}}" />
+        <map wx:if="{{flagHaveStock&&flagMapAnchor}}" id="mMap" scale="14" markers="{{markers}}" include-points="{{includePoints}}" class="map"></map>
+        <!-- <view class="layout_nav" bindtap="onShopInStockBarClick">显示所有附近有货店铺</view> -->
+        <view class="arrow-bg" bindtap="onShopInStockBarClick">
+          <image class="gif_shop_in_stock_tip" mode="widthFix" src="https://cdn.bestseller.com.cn/assets/common/pub/image/gif_show_shop_in_stock.gif" />
+        </view>
+        <view class="tip_stock">
+          <text>库存并非实时更新，如有误差,敬请谅解。</text>
+          <text>详情请联系相关门店咨询。</text>
+        </view>
+        <view class="map_collapse" bind:tap="onMapHideClick">收起</view>
+      </view>
+    </view>
+    <view wx:if="{{classify.text}}" class="classify flex-start arrow-bg" bindtap="classifyClick">
+      <image src="{{classify.icon}}" class="icon" mode="widthFix"></image>
+      <text class="classify-title">{{classify.text}}</text>
+    </view>
+  </view>
+  <!-- 底部栏 -->
+  <view wx:if="{{noWMall}}" class="footer flex-start  {{isIphoneX ?'iphoneXFooter':''}}">
+    <view wx:if="{{SHOW_BIND_GUIDE}}" class="f_list guide-btn text-c" bindtap="changeShowBind">导购专享</view>
+    <view id="joinCar1" class="f_list joinCar" bindtap="joinCar">加入购物车</view>
+    <view id="goumai1" class="f_list goumai" bindtap="goumai">立即购买</view>
+  </view>
+  <!-- 选择尺码 - 弹出框 -->
+  <view class="details_size" style="display:{{details_display}}">
+    <view class="details_opacity" bindtap="chicunHide" animation="{{animationOpacity}}"></view>
+    <view class="details_con {{isIphoneX ?'fix-iphonex-button':''}}" animation="{{animationBottom}}">
+      <view class="dd_con">
+        <view class="details_sizeOne_A">
+          <view class="a_list a_left">
+            <image src="{{thumbnail}}"  bindtap="previewImg" mode="widthFix"></image>
+          </view>
+          <view class="a_list a_center">
+            <view class="money">¥{{contentCon.color[color_list_num].price}}</view>
+            <view class="kucun">
+              库存
+              <text>{{kucun_nums || 0}}</text>
+              件
+            </view>
+            <view class="chicun">{{xzChicun}}</view>
+            <view class="goods-sku flex-start">
+              {{goodsSizeSku}}
+              <copyIcon text="{{goodsSizeSku}}" bind:copy-success="copySuccess"></copyIcon>
+            </view>
+          </view>
+          <view class="a_list a_right" bindtap="chicunHide">
+            <icon type="cancel" size="50rpx" color="#000" />
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">颜色分类</view>
+          <view class="b_ul">
+            <block wx:for="{{contentCon.color}}" wx:key="b_li" wx:if="{{item.status == 'InShelf'}}">
+              <view id="{{index}}" data-code="{{item.colorCode}}" class="b_li {{index==color_list_num?'b_list':''}}" bindtap="color_list">
+                {{item.colorAlias}}
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">尺码</view>
+          <view class="b_ul">
+            <view id="{{index}}" class="b_li {{index==0 && c_li.length<2?'b_list':''}} {{index==chima_list_num?'b_list':''}} {{chimaList[index]?'chima_list':''}}" wx:for="{{c_li}}" wx:key="c_li" bindtap="chima_list">
+              {{item.sizeAlias}}
+            </view>
+          </view>
+        </view>
+        <view class="details_sizeOne_D">
+          <view class="c_title">购买数量</view>
+          <view class="c_number">
+            <view class="c_add" bindtap="add_number">+</view>
+            <input class="c_num" type="number" value="{{nums}}" disabled="true" />
+            <view class="c_jian" bindtap="jian_number">-</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="d_bottom">
+        <view class="d_daogou" style="display:{{bottom.daogou.display}};width:{{bottom.daogou.width}}" bindtap="daogou">导购专享</view>
+        <view id="joinCar2" class="d_joinCar" style="display:{{bottom.joinCar.display}};width:{{bottom.joinCar.width}}" bindtap="joinCar">加入购物车</view>
+        <view id="goumai2" class="d_goumai" style="display:{{bottom.goumai.display}};width:{{bottom.goumai.width}}" bindtap="goumai">立即购买</view>
+      </view> -->
+      <view class="d_bottom">
+        <view id="joinCar2" class="d_bottom-item d_joinCar" style="display:{{bottom.joinCar.display}};" data-type="{{addWishList ? 'wish' : ''}}" bindtap="joinCar">
+          加入{{addWishList ? '心愿单' : '购物车'}}
+        </view>
+        <view class="d_bottom-item d_goumai" style="display:{{bottom.goumai.display}};">
+          立即购买
+          <form class="form" id="goumai2" bindsubmit="formSubmit" report-submit="true">
+            <button formType="submit">立即</button>
+          </form>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 选择尺码 - 弹出框 - 这是从购物车点“我要买”跳转过来的 -->
+  <view class="details_size" wx:if="{{details_display1}}">
+    <view class="details_opacity" bindtap="chicunHide1" style="opacity:0.5;"></view>
+    <view class="details_con {{isIphoneX ?'fix-iphonex-button':''}}" style="bottom:0;">
+      <view class="dd_con">
+        <view class="details_sizeOne_A">
+          <view class="a_list a_left">
+            <image src="{{thumbnail}}" mode="aspectFit"></image>
+          </view>
+          <view class="a_list a_center">
+            <view class="money">¥{{contentCon.color[color_list_num].price}}</view>
+            <view class="kucun">
+              库存
+              <text>{{kucun_nums}}</text>
+              件
+            </view>
+            <view class="chicun">{{xzChicun}}</view>
+          </view>
+          <view class="a_list a_right" bindtap="chicunHide1">
+            <icon type="cancel" size="50rpx" color="#000" />
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">颜色分类</view>
+          <view class="b_ul">
+            <view id="{{index}}" wx:if="{{item.status == 'InShelf'}}" class="b_li {{index==color_list_num?'b_list':''}}" wx:for="{{contentCon.color}}" wx:key="b_li" bindtap="color_list">
+              {{item.colorAlias}}
+            </view>
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">尺码</view>
+          <view class="b_ul">
+            <view id="{{index}}" class="b_li {{index==0 && c_li.length<2?'b_list':''}} {{index==chima_list_num?'b_list':''}} {{chimaList[index]?'chima_list':''}}" wx:for="{{c_li}}" wx:key="c_li" bindtap="chima_list">
+              {{item.sizeAlias}}
+            </view>
+          </view>
+        </view>
+        <view class="details_sizeOne_D">
+          <view class="c_title">购买数量</view>
+          <view class="c_number">
+            <view class="c_add" bindtap="add_number">+</view>
+            <input class="c_num" type="number" value="{{nums}}" disabled="true" />
+            <view class="c_jian" bindtap="jian_number">-</view>
+          </view>
+        </view>
+      </view>
+      <view class="d_bottom">
+        <view id="goumai2" class="d_goumai" bindtap="goumai" style="width:100%;">确认购买</view>
+      </view>
+    </view>
+  </view>
+  <view class="wish-entery" wx:if="{{showWishIcon.show}}">
+    <navigator url="/activity/wish/setList/setList">
+      <image src="{{showWishIcon.img}}" mode="widthFix"></image>
+    </navigator>
+  </view>
+  <couponpop coupon_display="{{coupon_display}}" activityInfo="{{activityInfo}}" inputUrl="{{inputUrl}}" bindchangeShow="changeShow" wx:if="{{coupon_display}}"></couponpop>
+
+  <!-- 买家秀 -->
+  <buyers-show bindonClick="buyersOnClick" pinglunData="{{pinglunData}}"  buyerShowData="{{buyerShowData}}"  wx:if="{{pinglunData.list && buyerShowData.list}}"></buyers-show>
+  <!-- 活动提示图 -->
+  <image class="activityShow" wx:if="{{isShowActivityTag && hasActivity}}" src="{{activityImage}}" mode="widthFix" />
+  <view wx:if='{{detailShow}}'>
+    <view class="detailMark flex-center">
+      <view class="line"></view>
+      <view class="detailTitle flex-center">商品详情</view>
+      <view class="line"></view>
+    </view>
+    <rich-text nodes="{{bodyContent}}"></rich-text>
+  </view>
+  <view wx:if="{{markWashing}}">
+    <image src="{{markWashing}}" style="width: 100%" mode="widthFix"></image>
+  </view>
+
+  <!-- 推荐搭配 -->
+  <view wx:if="{{setList.length}}" class="collocate">
+    <text class="collocate-title flex-center">推荐搭配</text>
+    <scroll-view class="collocate-scroll" scroll-x style="width: 100%">
+      <view class="collocate-area">
+        <view class="collocate-item" wx:for="{{setList}}" wx:key="colorCode">
+          <image class="goods-img"  src="{{item.newImg}}" mode="widthFix" data-code="{{item.colorCode}}" bindtap="redirect"></image>
+          <view class="goods-name">{{item.goodsName}}</view>
+          <view class="flex-start">
+            <view class="goods-price">￥{{item.price}}</view>
+            <view class="goods-originalPrice" wx:if="{{item.price !== item.originalPrice}}">￥{{item.originalPrice}}</view>
+          </view>
+      </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 热销推荐/猜你喜欢 -->
+  <!-- <dmpGoods projeckName="{{projeckName}}" wx:if="{{itemId}}" itemId="{{itemId}}"></dmpGoods> -->
+  <!-- 20210816 9999 -->
+  <dmpGoods sceneId="xqy103" sceneType="2" itemId="{{itemId}}"  wx:if="{{itemId}}"></dmpGoods>
+  <navigator style="margin:20rpx 0;width: 100%; height: 40rpx; background: #e1e1e1" open-type="redirect" url="/pages/content_new/content?colorCode={{contentCon.color[color_list_num].colorCode}}"></navigator>
+  <!-- 点击店铺列表的Item中的popup stock 按钮弹出的布局 -->
+  <view wx:if="{{flagShowStockDetail}}">
+    <template is="popGoodsStockDetailTmpl" data="{{goodsDetailBean,goodsStockBean,colorList,sizeList,colorIndex,sizeIndex,thumbnailUrl,shopDetailBean}}" />
+  </view>
+  <view class="share-popup ~flex-center" wx:if="{{showShare}}" mut-bind:tap="cancelShare">
+    <view class="main" wx:if="{{pic}}" mut-bind:tap="previewShareImg">
+      <image src="{{pic}}" mode="widthFix" style="width: 100%"></image>
+    </view>
+    <icon type="cancel" size="50rpx" color="#fff" mut-bind:tap="cancelShare" />
+  </view>
+  <block wx:if="{{showShare}}">
+    <share-footer bindshareMoment="saveShareImg" share-user-text="分享给好友"></share-footer>
+  </block>
+  <canvas class="canvas" canvas-id="myCanvas" style="width: 750px; height: 1332px;"></canvas>
+</view>
+
+<!-- 红包雨倒计时 -->
+<view class='hby_cavasBg-opa' wx:if="{{hbyJson.canShow}}"></view>
+<view class='hby_cavasBg' wx:if="{{hbyJson.canShow}}" bindtap="{{hbyJson.canTap ? 'hbyTap' : ''}}">
+    <view class="cavas_img">
+        <image src="{{hbyJson.img}}" style="width:100%;opacity: {{hbyJson.canTap ? '1' : '.2'}};" mode="widthFix" />
+    </view>
+    <view class="downNum">{{hbyJson.downNum}}</view>
+</view>
+
+<!-- 签到任务倒计时 -->
+<text class='daily_check_in_mission_countdown flex-center' wx:if="{{dailyMissionSec}}">剩余\n{{dailyMissionSec}}s</text>
+
+<bind-guide show="{{showBindGuidePop}}" />

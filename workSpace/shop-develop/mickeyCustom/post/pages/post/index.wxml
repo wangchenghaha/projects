@@ -1,0 +1,6 @@
+
+<view class="container">
+    <view class='post' bindlongtap='closePost'>
+        <painter customStyle='margin:0' palette="{{template}}" bind:imgOK="ok" bind:longpress="onImgOK" />
+    </view> 
+</view>

@@ -1,0 +1,6 @@
+<comp-nav-dynamic id="comp-nav-dynamic"></comp-nav-dynamic>
+<comp-register id="comp-register"></comp-register>
+<comp-auth id="comp-auth"></comp-auth>
+<view class="" style="padding-top:{{navHeight}}px" hover-class="none" hover-stop-propagation="false">
+    <web-view src="{{src}}" bindmessage=""></web-view>
+</view>

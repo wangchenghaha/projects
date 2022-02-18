@@ -1,0 +1,20 @@
+$main: rgba(169, 231, 225, 1)
+$baseUrl: 'https://tc.woaap.com/lingzhi/princess/'
+
+@mixin square($w)
+    width: $w + rpx
+    height: $w + rpx
+
+@mixin b() 
+    box-sizing: border-box
+
+@mixin bg($key)
+    background: url($baseUrl + $key + '.png')
+    background-size: 100% 100%
+    background-position: center center
+    background-repeat: no-repeat
+
+page
+    width: 100%
+    height: 100%
+

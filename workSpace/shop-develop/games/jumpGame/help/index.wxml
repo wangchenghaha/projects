@@ -1,0 +1,56 @@
+<help_jj
+ wx:if="{{brand == 'JACKJONES'}}"
+ imgPath="{{imgPath}}"
+ zhanweiView="{{zhanweiView}}"
+ myIcon="{{myIcon}}"
+ otherIcon="{{otherIcon}}"
+ bindtiaozhan="tiaozhan"
+ bindbackTap="backTap"
+ bindgoHome="goHome"
+/>
+
+<help_fol
+ wx:if="{{brand == 'FOL'}}"
+ imgPath="{{imgPath}}"
+ zhanweiView="{{zhanweiView}}"
+ myIcon="{{myIcon}}"
+ otherIcon="{{otherIcon}}"
+ bindtiaozhan="tiaozhan"
+ bindbackTap="backTap"
+ bindgoHome="goHome"
+/>
+
+<help_only
+ wx:if="{{brand == 'ONLY'}}"
+ imgPath="{{imgPath}}"
+ zhanweiView="{{zhanweiView}}"
+ myIcon="{{myIcon}}"
+ otherIcon="{{otherIcon}}"
+ bindtiaozhan="tiaozhan"
+ bindbackTap="backTap"
+ bindgoHome="goHome"
+/>
+
+<help_vm
+ wx:if="{{brand == 'VEROMODA'}}"
+ imgPath="{{imgPath}}"
+ zhanweiView="{{zhanweiView}}"
+ myIcon="{{myIcon}}"
+ otherIcon="{{otherIcon}}"
+ bindtiaozhan="tiaozhan"
+ bindbackTap="backTap"
+ bindgoHome="goHome"
+/>
+
+<help_slt
+ wx:if="{{brand == 'SELECTED'}}"
+ imgPath="{{imgPath}}"
+ zhanweiView="{{zhanweiView}}"
+ myIcon="{{myIcon}}"
+ otherIcon="{{otherIcon}}"
+ bindtiaozhan="tiaozhan"
+ bindbackTap="backTap"
+ bindgoHome="goHome"
+/>
+
+

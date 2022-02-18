@@ -1,0 +1,370 @@
+
+.bg{
+    width: 100%;
+    height: 100%;
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    position: relative;
+    
+    .friendsView{
+        position: absolute;
+        top: 59%;
+        left: 0;
+
+        width: 100%;
+        height: auto;
+
+        .shengyu{
+            width: 100%;
+            font-size: 28rpx;
+            text-align: center;
+            color: white;
+
+            text-shadow: 1px 1px 1px #E87583,-1px -1px 1px #E87583;
+
+        }
+        .startView{
+            width: 100%;
+            height: 111rpx;
+            position: relative;
+            .leftRightView{
+                position: absolute;
+                top: 0;
+                z-index: 111;
+                width: 152rpx;
+                height: 100%;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                text-align: center;
+                .text{
+                    color: #FFFCA1;
+                    font-size: 22rpx;
+                    line-height: 22rpx;
+                    margin-top: 80rpx;
+
+                    width: 100%;
+                }
+
+            }
+            .rightText{
+                font-size: 28rpx;
+                color: white;
+                line-height: 80rpx;
+                text-align: center;
+            }
+            .startGame{
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 111;
+                width: 346rpx;
+                height: 100%;
+            }
+
+        }
+        .imgView{
+            width: 738rpx;
+            height: 380rpx;
+            position: relative;
+
+            margin: 0 auto;
+
+            .name{
+                position: absolute;
+                top: 30rpx;
+                left: 0;
+                font-size: 24rpx;
+                color: #126747;
+                line-height: 55rpx;
+                text-align: center;
+                width: 100%;
+            }
+            .centerView{
+                position: absolute;
+                top: 29%;
+                left: 5%;
+                width: 90%;
+                height: 52%;
+                display: flex;
+                .subViews{
+                    width: 20%;
+                    height: 100%;
+                    overflow: hidden;
+                    .icon{
+                        margin: 20rpx auto 10rpx;
+                        width: 80rpx;
+                        height: 80rpx;
+                        border-radius: 50%;
+                        overflow: hidden;
+                    }
+                    .otherName{
+                        width: 80%;
+                        height: 36rpx;
+
+                        margin-left: 14rpx;
+
+                        background-size: 100%;
+                        background-repeat: no-repeat;
+
+                        font-size: 18rpx;
+                        
+                        text-align: center;
+                        overflow: hidden;
+                        line-height: 35rpx;
+                    }
+                }
+            }
+            .bottomView{
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 300rpx;
+                height: 90rpx;
+
+                font-size: 28rpx;
+                color: white;
+                text-align: center;
+                line-height: 90rpx;
+
+                background:none;
+                z-index: 111;
+            }
+            .bottomView::after{
+                border: none;
+            }
+        }
+    }
+}
+
+
+.bouncedBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: 112;
+
+}
+.canOpenView{
+
+    width: 713rpx;
+    height: 742rpx;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 112;
+    .imgView{
+        transform: scale(0,0);
+        width: 100%;
+        height: 100%;
+        position: relative;
+        animation: animate 0.2s linear 1;
+        animation-fill-mode: forwards;
+        .topTitle{
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFA923;
+            font-size: 45rpx;
+            line-height: 50rpx;
+            width: 100%;
+            text-align: center;
+        }
+        .subTitle{
+            position: absolute;
+            top: 8%;
+            left: 0;
+            font-size: 40rpx;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+        .jiangpin{
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 316rpx;
+            height: 145rpx;
+        }
+        .closed{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70rpx;
+            height: 70rpx;
+        }
+    }
+}
+.oneSubView{
+    width: 557rpx;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 112;
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .bottomViewsss{
+            position: absolute;
+            bottom: 21%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 360rpx;
+            height: 95rpx;
+
+            color: white;
+            line-height: 95rpx;
+            text-align: center;
+            font-size: 34rpx;
+            border-radius: 95rpx;
+
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        .bottomViewsssShare{
+            position: absolute;
+            bottom: 21%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 360rpx;
+            height: 95rpx;
+            background:none;
+
+        }
+        .bottomViewsssShare::after{ 
+            border: none;
+        }
+        .subTitle{
+            font-size: 34rpx;
+            color: white;
+            position: absolute;
+            
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .closed{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70rpx;
+            height: 70rpx;
+        }
+    }
+}
+@keyframes animate{
+    0% {
+        transform: scale(0,0);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.guize{
+    position: fixed;
+    top: 45%;
+    right: 20rpx;
+    padding-top: 5rpx;
+
+    width: 65rpx;
+    height: 63rpx;
+    color: white;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    background-color: black;
+    opacity: .5;
+    border-radius: 20rpx;
+    text-align: center;
+    z-index: 111;
+}
+
+.xuehuaView{
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+
+    &-img{
+      width:100%;
+      height: 100%;
+      transform: translate3d(0,-100%,0);
+      opacity: 1;
+    }
+  .xuehua0{
+      animation: xuehuaAnimate 15s linear 0s infinite;
+  }
+  .xuehua1{
+      animation: xuehuaAnimate 7.5s linear 0s infinite;
+  }
+  .xuehua2{
+      animation: xuehuaAnimate 20s linear 0s infinite;
+  }
+  .xuehua3{
+      animation: xuehuaAnimate1 10s linear 0s infinite;
+  }
+  .xuehua4{
+      animation: xuehuaAnimate1 25s linear 0s infinite;
+  }
+  .xuehua5{
+      animation: xuehuaAnimate1 12.5s linear 0s infinite;
+  }
+    
+}
+@keyframes xuehuaAnimate {
+    0%{
+      opacity: 1;
+      transform: translate3d(0,-100%,0);
+    }
+    100%{
+      opacity: 0;
+      transform: translate3d(10%,100%,0);
+    }
+}
+@keyframes xuehuaAnimate1 {
+  0%{
+      opacity: 1;
+    transform: translate3d(0,-100%,0);
+  }
+  100%{
+      opacity: 0;
+    transform: translate3d(-10%,100%,0);
+  }
+}
+.sanjiao{
+    position: fixed;
+    top: 4.5%;
+    left: 3%;
+    width: 42rpx;
+    height: 59rpx;
+    z-index: 99999;
+}
+.zhanwei{
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .1;
+
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+}

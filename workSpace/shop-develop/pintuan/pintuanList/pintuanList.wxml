@@ -1,0 +1,30 @@
+<!-- 顶部视图 -->
+<!-- <view class="topBG">
+    <view class="topView">
+        <view class = "leftView"></view>
+        <view class = "rightView">
+            <image bindtap="onClink" id="cut" mode="widthFix" class="qhImage" src="{{isBigImage ? '../images/shopList_sel.png' : '../images/shopList_df.png'}}" />
+            <image bindtap="onClink" id="shaixuan" mode="widthFix" class="sxImage" src="../images/shopList_shaixuan.png" />
+        </view>
+    </view>
+    <view class="botomView">
+        <block wx:for="{{selectTitles}}" wx:key="botomList">
+            <view class="subViews" id="{{item.name}}" bindtap = "onClink">
+                <view class="leftView" style="text-align: center;font-size: 28rpx;">{{item.name}}</view>
+                <view class = "rightView" style="margin-right: 40rpx;">
+                    <image style="width: {{item.name === '价格' ? 22 : 15}}rpx;" mode="widthFix" src="{{item.image}}" />
+                </view>
+            </view>
+        </block>
+    </view>
+</view> -->
+<!-- 列表 -->
+<pintuan-list originaListData = "{{originaListData}}" listData = "{{listData}}" fromClass = "list" isBigImage = "{{isBigImage}}" noScroll = "{{noScroll}}"></pintuan-list>
+<!-- <screen-size isShow="{{noScroll}}" bindhideScreen="hideScreen" bindselectedRes="selectedRes"></screen-size> -->
+  <!-- 回到顶部 -->
+  <view wx:if="{{goTopShow}}" class="go-top" id="gotoTop" catchtap="onClink">
+    <image src="/images/top3.png" mode="widthFix"></image>
+  </view>
+
+<!-- IphoneX底部栏 -->
+<view class="{{isIphoneX ?'iphoneX':''}}"></view>

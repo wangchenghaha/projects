@@ -1,0 +1,25 @@
+<!-- socialAdvertising/ads/ad0127/ad0127.wxml -->
+<view class="frame">
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0127_010.jpg?v={{randomMilli}}" mode="widthFix" />
+    <view class="frame_bt n" bind:tap="onCouponClick">
+        <image class="img_with_full" bindload="onImageLoad" src="{{imgBaseUrl}}ad_0127_bt_010.jpg?v={{randomMilli}}" mode="widthFix" />
+        <text wx:if="{{showButtonTips}}">{{tip1}}</text>
+    </view>
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0127_020.gif?v={{randomMilli}}" mode="widthFix" bind:tap="onLuckyClick" wx:if="{{showLucky}}" />
+    <swiper class="n" style="width: 100%;height:{{bannerHeight}}rpx" circular="true" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{swiperImgList}}" wx:key="layout_swiper">
+            <swiper-item>
+                <image class="img_with_full" bindload="onBannerLoad" src="{{imgBaseUrl}}ad_0127_0{{item}}0.jpg?v={{randomMilli}}" mode="widthFix" data-id="{{index}}" bind:tap="onGoodClick" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="frame_bt n" bind:tap="onIndexClick">
+        <image class="img_with_full" bindload="onImageLoad" src="{{imgBaseUrl}}ad_0127_bt_010.jpg?v={{randomMilli}}" mode="widthFix" />
+        <text wx:if="{{showButtonTips}}">{{tip2}}</text>
+    </view>
+    <view class="frame_bt n" bind:tap="onShopClick">
+        <image class="img_with_full" bindload="onImageLoad" src="{{imgBaseUrl}}ad_0127_bt_010.jpg?v={{randomMilli}}" mode="widthFix" />
+        <text wx:if="{{showButtonTips}}">{{tip3}}</text>
+    </view>
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0127_100.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+</view>

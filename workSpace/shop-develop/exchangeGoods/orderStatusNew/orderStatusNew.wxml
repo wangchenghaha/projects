@@ -1,0 +1,307 @@
+<import src="../tmpl/stepper/stepper" />
+<import src="../components/steps/index" />
+<import src="../tmpl/classicOrderItem/classicOrderItem" />
+<import src="../tmpl/excPayListItem/excPayListItem" />
+
+<view class="layout_father">
+
+  <view class="global_order_status_bar_wrap">
+    <text class="order_key">订单状态</text>
+    <text class="order_status">{{orderStatus=='BUYER_MAILED'?'待卖家收货':orderStatus=='RECEIVED'?'待支付':orderStatus=='WAIT_SHIP'?'待卖家发货':orderStatus=='SHIPPED'?'待买家收货':orderStatus=='CLOSED'?'已关闭':'换货成功'}}</text>
+  </view>
+
+  <!-- <view>
+        <view class="zan-cell">
+            <view class="zan-cell__bd">
+                <template is="zan-steps" data="{{ type: 'horizon', steps: steps }}"></template>
+            </view>
+        </view>
+    </view> -->
+
+  <!-- 待卖家收货/待卖家发货/待买家收货/换货成功/已关闭 -->
+  <view wx:if="{{orderStatus!='RECEIVED'}}">
+    <!-- <view class='tip_status'>{{orderStatus=='ExcWaitingSellerReceive'?'待卖家收货':orderStatus=='ExcWaitingSellerExpressDelivery'?'待卖家发货':orderStatus=='ExcWaitingBuyerReceive'?'待买家收货':'待买家收货'}}</view> -->
+    <!-- !=换货成功&&!=已关闭 -->
+    <view class="weui-loadmore global_my_loading_wrapper" wx:if="{{orderStatus!='COMPLETE'&&orderStatus!='CLOSED'}}">
+      <view class="weui-loading my_loading" wx:if="{{orderStatus=='WAIT_SHIP'}}"></view>
+      <image src="{{imgUrl}}" class="global_my_loading_bigger" wx:if="{{orderStatus!='WAIT_SHIP'}}" />
+      <view class="weui-loadmore__tips global_tip_loading">{{orderStatus=='BUYER_MAILED'?'运输在途...':orderStatus=='WAIT_SHIP'?'待卖家发货':orderStatus=='SHIPPED'?'运输在途...':'运输在途...'}}</view>
+    </view>
+
+    <view class="multi_text_frame" wx:if="{{orderStatus!='SHIPPED'&&orderStatus!='WAIT_SHIP'&&orderStatus!='BUYER_MAILED'}}">
+      <view>
+        <text class="global_key_left text_bold">换货单号</text>
+        <text class="global_key_right_black text_bold">{{exDetailBean.exchangeCode}}</text>
+      </view>
+      <view>
+        <text class="global_key_left grey_0">申请换货时间</text>
+        <text class="global_key_right grey_0">{{exDetailBean.createTime}}</text>
+      </view>
+    </view>
+
+    <!-- 原单号/收货人/收货地址 (换货成功)-->
+    <view wx:if="{{orderStatus=='COMPLETE'}}">
+      <view class="multi_text_frame">
+        <view>
+          <text class="global_key_left text_bold">原单号</text>
+          <text class="global_key_right_black text_bold">{{exDetailBean.oriorderCode}}</text>
+        </view>
+      </view>
+
+      <view class='multi_text_auto'>
+        <view>
+          <text class="global_key_left">{{exDetailBean.oriConsignee}}</text>
+          <text class="global_key_right_black">{{exDetailBean.oriContactTel}}</text>
+        </view>
+        <view class="global_key_left grey_1">收货地址：{{exDetailBean.oriAddress}}</view>
+      </view>
+    </view>
+
+    <!-- 卖家发货快递跟踪   ==待买家收货/换货成功-->
+    <view class="multi_text_frame" wx:if="{{orderStatus=='SHIPPED'||orderStatus=='COMPLETE'}}">
+      <view>
+        <text class="global_key_left txt_bold">卖家发货</text>
+      </view>
+      <!-- 如果只有一个包裹，显示这个 -->
+      <view wx:if="{{expressPackNum==1}}">
+        <text class="global_key_left">快递单号：{{expressOrderNo?expressOrderNo:'暂无'}}</text>
+        <text class="global_key_right">快递公司：{{expressCompany?expressCompany:'顺丰速运'}}</text>
+      </view>
+      <!-- 无论有几个包裹，都显示这个 -->
+      <view>
+        <view style='font-size:26rpx;padding:17rpx 0 0 20rpx;'>快递信息跟踪</view>
+        <view class="express_layout" wx:for="{{expressPackageList}}" wx:key="expressPackageList">
+          <!-- 如果有多个包裹，显示包裹x -->
+          <view wx:if="{{expressPackNum>1}}" style="width:100%;">
+            <view>
+              <text class="global_key_left">包裹 {{index+1}} :</text>
+            </view>
+            <view class="multi_text_frame_no_border">
+              <text class="global_key_left">快递单号：{{item[0].expressOrderNo}}</text>
+              <text class="global_key_right">快递公司：{{item[0].expressCompany}}</text>
+            </view>
+          </view>
+          <zan-cell>
+            <zan-steps type="vertical" hasDesc steps="{{item}}"></zan-steps>
+          </zan-cell>
+        </view>
+      </view>
+
+    </view>
+
+
+
+    <!-- 买家寄回快递跟踪  待卖家收货/换货成功-->
+    <view class="multi_text_frame" wx:if="{{orderStatus=='BUYER_MAILED'||orderStatus=='COMPLETE'}}">
+      <view>
+        <text class="global_key_left">买家寄回快递单号：{{exDetailBean.expressNo?exDetailBean.expressNo:'暂无'}}</text>
+        <text class="global_key_right">快递公司：{{exDetailBean.expressCompany?exDetailBean.expressCompany:'暂无'}}</text>
+      </view>
+
+      <!-- <view style='font-size:26rpx;font-weight:bold;padding-left:20rpx;'>快递信息跟踪</view>
+      <view class="zan-cell zan-cell">
+        <view class="zan-cell__bd">
+          <template is="zan-steps" data="{{ type: 'vertical', hasDesc: true, steps:stepsExpress }}"></template>
+        </view>
+      </view> -->
+    </view>
+
+    <!-- 原单号/收货人/收货地址 (等待卖家收货/等待卖家发货/待买家收货)-->
+    <view wx:if="{{orderStatus=='BUYER_MAILED'||orderStatus=='WAIT_SHIP'||orderStatus=='SHIPPED'}}">
+      <view class="multi_text_frame">
+        <!-- <view>
+          <text class="global_key_left text_bold">原单号：</text>
+          <text class="global_key_right_black text_bold">{{exDetailBean.oriorderCode}}</text>
+        </view> -->
+        <view>
+          <text class="global_key_left text_bold">换货单号</text>
+          <text class="global_key_right_black text_bold">{{exDetailBean.exchangeCode}}</text>
+        </view>
+        <view>
+          <text class="global_key_left grey_0">申请换货时间</text>
+          <text class="global_key_right grey_0">{{exDetailBean.createTime}}</text>
+        </view>
+      </view>
+
+
+      <view class='multi_text_auto'>
+        <view>
+          <text class="global_key_left text_bold">收货人：{{exDetailBean.oriConsignee}}</text>
+          <text class="global_key_right">{{exDetailBean.oriContactTel}}</text>
+        </view>
+        <view class="global_key_left grey_1">收货地址：{{exDetailBean.oriAddress}}</view>
+      </view>
+    </view>
+
+    <!-- 原单号/收货人/收货地址 (换货成功)-->
+    <!-- <view wx:if="{{orderStatus=='COMPLETE'}}">
+      <view class="multi_text_frame">
+        <view>
+          <text class="global_key_left">原单号</text>
+          <text class="global_key_right_black">{{exDetailBean.oriorderCode}}</text>
+        </view>
+      </view>
+
+      <view class='multi_text_auto'>
+        <view>
+          <text class="global_key_left">{{exDetailBean.oriConsignee}}</text>
+          <text class="global_key_right_black">{{exDetailBean.oriContactTel}}</text>
+        </view>
+        <view class="global_key_left grey_1">收货地址：{{exDetailBean.oriAddress}}</view>
+      </view>
+    </view> -->
+
+
+    <view wx:if="{{true}}">
+      <view class='tip_goods_info' wx:if="{{orderStatus=='BUYER_MAILED'||orderStatus=='CLOSED'}}">原购商品</view>
+      <view class='tip_goods_info' wx:if="{{orderStatus!='BUYER_MAILED'&&orderStatus!='CLOSED'}}">新换商品</view>
+      <view class='bottom_list'>
+        <!-- 待卖家收货/已关闭(显示原商品)，否则 待卖家发货/待买家收货/换货成功 (显示新商品)   -->
+        <view class="global_order_item" wx:for="{{orderStatus=='BUYER_MAILED'||orderStatus=='CLOSED'||exchangeType=='STORE'?exDetailBean.applySourceList:exDetailBean.actualTargetList.length>0?exDetailBean.actualTargetList:exDetailBean.applyTargetList}}" wx:key="global_order_item">
+          <template is="classicOrderItemTmpl" data="{{item}}" />
+        </view>
+      </view>
+    </view>
+
+    <view class='global_commit_black_matrix_wrap' wx:if="{{orderStatus=='SHIPPED'}}">
+      <view class='global_commit_black_matrix' bindtap='onConfirmReceipt'>确认收货</view>
+    </view>
+  </view>
+  <!-- 待卖家收货/待卖家发货/待买家收货/换货成功/已关闭 -->
+
+
+  <!-- 待支付 (多退/少补)-->
+  <view class='pay_father' wx:if="{{orderStatus=='RECEIVED'}}">
+    <view class='pay_tip_frame'>
+      <view class='tip0'>换货订单确认支付</view>
+      <view class='tip1'>我们已收到您发出退货商品，请确认您提交的换货商品信息</view>
+    </view>
+
+    <view class='detail_frame'>
+      <view class="detail_tip_0">已退回商品清单(申请{{applySourceCount}}件，已入库{{alreadyStrorageTotalCount}}件，应退金额为{{returnedTotalPrice}}元)：</view>
+      <view wx:for="{{processedSourceList}}" wx:key="detail_tip_0">
+        <template is="excPayListItemTmpl" data="{{item,flagShowStorage:true}}" />
+      </view>
+      <view class="detail_subtotal">
+        <text class="global_key_left">小计</text>
+        <text class="global_key_right_black">¥{{returnedTotalPrice}}</text>
+      </view>
+    </view>
+
+
+    <view class='detail_frame'>
+      <view class="detail_tip_0">换货商品清单(共{{actualTargetTotalCount}}件，应付金额为{{newTotalPrice}}元)：</view>
+      <view wx:for="{{exDetailBean.applyTargetList}}" wx:key="detail_tip_1">
+        <template is="excPayListItemTmpl" data="{{item,flagShowStorage:false}}" />
+      </view>
+      <view class="detail_subtotal">
+        <text class="global_key_left">小计</text>
+        <text class="global_key_right_black">¥{{newTotalPrice}}</text>
+      </view>
+    </view>
+
+    <!-- 如果是邮寄换货，并且没有折扣商品，则显示优惠券 -->
+    <view class='coupon_frame' bindtap='onCouponBarClick' wx:if="{{exchangeType=='MAIL'}}">
+        <view class='coupon'>
+            <view class='coupon_left'>
+                <view class='coupon_title'>优惠券</view>
+                <view class='coupon_tip'>{{couponNum}}张可用</view>
+            </view>
+            <view class='coupon_tip_right'>{{couponValue==0?'未使用':'已选'+couponValue+'元优惠券'}}</view>
+        </view>
+    </view>
+
+    <view class="multi_text_frame">
+      <view class="prices_padding">
+        <text class="global_key_left">新商品总金额</text>
+        <text class="global_key_right">¥{{newTotalPrice}}</text>
+      </view>
+      <view class="prices_padding">
+        <text class="global_key_left">原商品总金额</text>
+        <text class="global_key_right">-¥{{returnedTotalPrice}}</text>
+      </view>
+      <view class="prices_padding">
+        <text class="global_key_left">运费（快递）</text>
+        <text class="global_key_right">￥0.00</text>
+      </view>
+      <view class="prices_padding" wx:if="{{true}}">
+        <text class="global_key_left">优惠</text>
+        <text class="global_key_right">-￥{{couponValue}}</text>
+      </view>
+      <view class="prices_padding" wx:if="{{false}}">
+        <text class="global_key_left">订单总价</text>
+        <text class="global_key_right" wx:if="{{actualTotalPrice>=0}}">¥{{actualTotalPriceABS}}</text>
+        <text class="global_key_right" wx:if="{{actualTotalPrice<0}}">-¥{{actualTotalPriceABS}}</text>
+      </view>
+    </view>
+
+    <!-- <view class='preview_wrap'>
+      <view class="global_key_left_gray">订单总价</view>
+      <view class="preview_right" wx:if="{{totalPrice>=0}}">¥{{actualTotalPriceABS}}</view>
+      <view class="preview_right" wx:if="{{totalPrice<0}}">-¥{{actualTotalPriceABS}}</view>
+    </view> -->
+    <view class='preview_wrap'>
+      <view class="global_key_left">合计：{{totalCount}}件</view>
+      <view class="preview_right" wx:if="{{actualTotalPrice>=0}}">实际支付：¥{{actualTotalPriceABS}}</view>
+      <view class="preview_right" wx:if="{{actualTotalPrice<0}}">退款金额：¥{{actualTotalPriceABS}}</view>
+    </view>
+
+    <view class='preview_wrap bg_arrow' bindtap="onAddressBarClick">
+      <text class="global_key_left">收货信息</text>
+      <text class="global_key_right"></text>
+    </view>
+
+    <view class='global_text_line_auto'>
+      <view class='address'>
+        <text class="global_key_left">收货人：{{addressBean.receiver}}</text>
+        <text class="global_key_left_gray">收货地址：{{addressBean.address}}</text>
+        <text class="global_key_left_gray">电话：{{addressBean.tel}}</text>
+      </view>
+    </view>
+
+    <view class='global_commit_black_matrix_wrap'>
+      <view class='global_commit_black_matrix' bindtap='onPayOrConfirmClick' wx:if="{{actualTotalPrice>0}}">去支付</view>
+      <view class='global_commit_black_matrix' bindtap='onPayOrConfirmClick' wx:if="{{actualTotalPrice<=0}}">确认</view>
+    </view>
+
+  </view>
+
+  <!-- 热销推荐/猜你喜欢 -->
+  <dmpGoods projeckName="{{projeckName}}" wx:if="{{orderStatus != 'RECEIVED'}}"></dmpGoods> 
+
+<!--优惠券布局弹出-->
+<view class="voucher-wrapper" wx:if="{{isShowCouponLayout}}">
+   <view class="voucher-container">
+    <view class="scroll-view">
+      <block wx:for="{{couponList}}" wx:key="couponList">
+        <view class="voucher-item">
+          <view class="voucher-value">
+            <view class="voucher-price"><text>￥</text>{{item.value}}</view>
+            <view class="voucher-limit">
+              <block wx:if="{{item.threshold > 0}}">满{{item.threshold}}可用</block>
+              <block wx:else>通用</block>
+            </view>
+          </view>
+          <view class="voucher-info">
+            <view class="desc">使用期限：</view>
+            <view class="date">{{item.newStartTime}} 开始</view>
+            <view class="date">{{item.newEndTime}} 结束</view>
+            <view class="name">{{item.type}}</view>
+          </view>
+          <view class="{{item.isSelect?'bt_coupon_disable':'bt_coupon_enable'}}" data-coupon-no="{{item.voucherno}}" bindtap="onUseCouponItemClick">
+            <block wx:if="{{item.isSelect}}">使用中</block>
+            <block wx:else>去使用</block>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view bindtap="onCouponClose" class="coupon_close">
+      <text></text>
+      <text></text>
+    </view>
+   </view>
+</view>
+
+
+</view>

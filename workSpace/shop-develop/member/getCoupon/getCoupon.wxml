@@ -1,0 +1,27 @@
+
+
+<view class="wrap">
+   <image src='{{getCoupon.activityURL}}' mode='aspectFill' class='bg'></image>
+
+  <view class='quan'>
+    <image src='{{getCoupon.couponCard}}' mode='widthFix' class='quanImg' bindtap='duihuan'></image>
+  </view>
+
+  <view class='tanchu' wx:if="{{onOff}}">
+    <view class='opacity'></view>
+    <view class='con'>
+      <view class='ttImg'>
+        <image src='{{getCoupon.couponCard}}' mode='widthFix' class='quanImg' bindtap='duihuan'></image>
+        <view class='text'>是否确认兑换?</view>
+      </view>
+      <view class='btns'>
+        <view class='btn'>
+          <view class='btn_true' bindtap='duihuan_true'>确认兑换</view>
+        </view>
+        <view class='btn'>
+          <view class='btn_false' bindtap='duihuan_false'>取消兑换</view>
+        </view>
+      </view>  
+    </view>
+  </view>
+</view>

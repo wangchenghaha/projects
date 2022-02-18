@@ -1,0 +1,62 @@
+.goods {
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.goods-item {
+  margin-top: 20rpx;
+  flex: 0 1 48%;
+}
+.goods-item .goods-name {
+  max-width: 350rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goods-item .pay-price {
+  font-size: 28rpx;
+}
+.goods-item .original-price {
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  color: #ccc;
+  text-decoration: line-through;
+}
+.goods-item .discount {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  font-size: 26rpx;
+  border: solid 1rpx red;
+  color: red;
+  border-radius: 10rpx;
+}
+
+.hide {
+  height: 80rpx;
+}
+.hide text {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  border-left: solid 2rpx rgba(0, 0, 0, 0.3);
+  border-top: solid 2rpx rgba(0, 0, 0, 0.3);
+  animation: arrowMove 2s infinite;
+  transform-origin: center;
+}
+
+@keyframes arrowMove {
+  0%, 100% {
+    border-color: rgba(0, 0, 0, 0.5);
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    border-color: rgba(0, 0, 0, 0.3);
+    transform: rotate(45deg) scale(0.8);
+  }
+}
+
+/*# sourceMappingURL=redBookVideoAllGoods.wxss.map */

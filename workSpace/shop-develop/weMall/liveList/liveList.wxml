@@ -1,0 +1,41 @@
+<view class="content">
+  <view wx:if="{{shareList.length}}">
+    <view class="share flex-start" wx:for="{{shareList}}" wx:key="id" data-index="{{index}}" mut-bind:tap="goDetail">
+      <view class="task {{item.task.className}} flex-start">
+          {{item.task.text}}
+          <image class="task-icon" wx:if="{{item.task.icon}}" src="/images/wx_{{item.task.icon}}.png" mode="aspectFit"></image>
+        </view>
+      <view class="share-img">
+        <image class="image" src="{{item.shareImg}}" mode="aspectFit"></image>
+      </view>
+      <view class="share-info">
+        <view class="share-title">{{item.title}}</view>
+        <view class="share-time">发布时间： {{item.createTime}}</view>
+        <view class="share-person">创建人： {{item.anchor}}</view>
+        <view class="share-count flex-start">
+          <text>已分享</text>
+          <view class="share-icon">
+            <image src="/images/share_icon.jpg" mode="widthFix"></image>
+          </view>
+          <text class="share-num">: {{item.allShareCount}}</text>
+          <view class="share-wrap flex-start share-num">
+            <text>包含</text>
+            <view class="wx-icon"><image src="/images/wx_msg.png" mode="widthFix"></image></view>
+            <text>{{item.shareCount}}</text>
+            <view class="wx-icon"><image src="/images/wx_circle.png" mode="widthFix"></image></view>
+            <text>{{item.shareMomentCount}}</text>
+          </view>
+        </view>
+        <view class="share-author">谁可见：
+          <text wx:if="{{item.type === 'guide'}}">仅自己</text>
+          <text wx:else>全国导购</text>
+        </view>
+      </view>
+      <view class="del-btn text-c" wx:if="{{item.delBtnShow}}" data-index="{{index}}" mut-bind:tap="delShare">删除</view>
+    </view>
+  </view>
+  <view wx:else class="text-c">暂无直播间 </view>
+  <view class="go-top flex-center" bindtap="goTop" wx:if="{{showGoTop}}">
+    <text></text>
+  </view>
+</view>

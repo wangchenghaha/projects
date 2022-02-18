@@ -1,0 +1,35 @@
+<wxs src="./index.wxs" module="tools"/>
+<view class="pages">
+
+    <view class="card-wrapper">
+        <view class="card-join" >
+
+            <view class="join-date">
+                 券 码：
+                <input class="input" style="width: 80%;" name="couponCode" placeholder="请输入兑换的券码..."
+                                           bindinput="couponCodeInput"/>
+            </view>
+
+            <view class="divLine"></view>
+            <view bindtap="bindingCoupon">
+                <view class="join-btn-box">
+                    <button style="background:{{basecolor}}" class="join-btn" form-type='submit' plain="{{true}}">立即绑定
+                    </button>
+                </view>
+            </view>
+<!--            <view class="join-rule" bindtap="showrulefun">兑换规则></view>-->
+        </view>
+    </view>
+    <view class="text-wrapper">
+        <scroll-view scroll-y class="rule-scroll">
+            <text class="rule-title">兑换规则</text>
+            <view class="rule-item">
+                <view class="rule-text">
+                    <view class="rule-text"><text>
+                            {{campainExplain}}
+                       </text></view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

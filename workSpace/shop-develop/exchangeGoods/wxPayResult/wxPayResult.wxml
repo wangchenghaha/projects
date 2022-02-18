@@ -1,0 +1,26 @@
+
+<!-- 微信支付换货完成 -->
+<view class='wrap' style='display:{{wrap}}'>
+  
+  <view class='header'>
+    <view class='title'>{{titleTip}}</view>
+    <view class="description">{{description}}</view>
+    <image src='{{headerImg}}' mode='widthFix' class="image"></image>
+  </view>
+
+
+  <view class='content'>
+    <view class="li">换货订单号：{{exDetailBean.exchangeCode}}</view>
+    <view class="li">商品件数：{{exDetailBean.targetGoodsCount}}件</view>
+    <view class="li">支付金额：¥{{exDetailBean.additionalPrice}}</view>
+  </view>
+
+  <view class="footer">
+    <view class='foot_li foot_left'>
+      <view class='btn' bindtap='lookOrder'>查看订单</view>
+    </view>
+    <view class='foot_li foot_right'>
+      <view class='btn' bindtap='gotoHomePage'>继续逛逛</view>
+    </view>
+  </view>
+</view>

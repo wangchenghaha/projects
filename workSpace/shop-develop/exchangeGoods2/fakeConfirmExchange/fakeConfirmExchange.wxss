@@ -1,0 +1,84 @@
+@import "../mycss.wxss";
+@import "../components/steps/index";
+@import "../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar";
+.frame{width: 100%;height: auto;display: flex;flex-direction: column;clear:both;overflow: hidden;}
+
+.title_ex_way {
+    padding-left: 17rpx;
+    font-size: 26rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.exchange_list{width: 100%;height: auto;overflow: hidden;margin-bottom: 17rpx;}
+
+
+.frame_delivery{display: flex;flex-direction: row;justify-content: flex-start;align-items: center;position: relative;
+    font-size: 26rpx;padding: 37rpx 17rpx 37rpx 27rpx;}
+
+.shop_single{position: relative;margin-bottom: 17rpx;}
+
+.img_location{width: 55rpx;margin-right: 27rpx;}
+.cus_info{width: 70%;min-height: 120rpx;}
+.d_name{font-size: 36rpx;color: black;margin-left: 17rpx;}
+.d_tel{font-size: 26rpx;color: #656668;margin-left: 17rpx;}
+.delivery_left{width: 80%;}
+.d_address{width: 65%;margin-left: 17rpx;word-break: normal;color: #656668;font-size: 26rpx;}
+.img_right_arrow{width: 12rpx;position: absolute;transform:translate(-50%,-50%);right:17rpx}
+
+.d_info{width: 100%;border-top: 6rpx solid #F6F5F5;font-size: 32rpx;}
+.d_titile{color: #333;text-align: left;margin-top: 10rpx;line-height: 57rpx;}
+.d_left,.d_right{display: flex;font-size: 28rpx;}
+.d_left{flex-direction: column;width: 70%;height: 100%;text-align: left;}
+.d_left .d_key{display: flex;flex-direction: row;align-items: center;line-height: 70rpx;}
+.d_left text{width:180rpx; }
+.d_value{padding-left: 20rpx;}
+.d_value_1{padding-left: 20rpx;width: 220rpx;border: 1rpx solid #333;}
+
+.d_right{width: 30%;height: auto;align-items: center;}
+.d_right .bt{color: #333;border: 2rpx solid #333;padding: 5rpx 17rpx 5rpx 17rpx;}
+
+
+.prices_bottom{ width:100%; clear:both; overflow:hidden;font-size:26rpx;display: flex;flex-direction: column;
+    padding: 17rpx 0 17rpx 0;}
+.item_padding{padding-top: 5rpx;padding-bottom: 5rpx;}
+.key_left{ float:left; padding-left:20rpx; color:black;font-weight: bold;}
+.value_right{ float:right; padding-right:20rpx; color:black;}
+.price_real{height: 97rpx;line-height: 97rpx; font-size: 26rpx;text-align: right;padding-right: 20rpx;color: black;border-top: 2rpx solid #EFEFEF;}
+
+.coupon_frame{padding: 17rpx 17rpx 17rpx 17rpx;border-bottom:2rpx solid #EFEFEF;border-top: 2rpx solid #EFEFEF;}
+.coupon{ width:100%; height:auto; clear:both; overflow:hidden; font-size:28rpx; line-height:50rpx; color:#000;
+background:url(http://m.veromoda.com.cn/mvc/orderSubmit_content/css/myImg/rightIcon.png) no-repeat right center; background-size:15rpx;}
+.coupon_left{ float:left;}
+.coupon_title{ line-height:50rpx; font-size:26rpx; float:left;}
+.coupon_tip{ line-height:34rpx; font-size:22rpx; float:left; color:red; border:1px solid red; position:relative; top:4px; left:5px; padding:0 10rpx;}
+.coupon_tip_right{ float:right; padding-right:20rpx;}
+
+.total{padding-top: 17rpx;}
+.preview_wrap{height: 70rpx;padding: 17rpx;position: relative;}
+.price_border{width: 100%;height: 1rpx;background-color: #EEE;position: absolute;top: 0;}
+.preview_left{ float:left;color:#666;font-size: 26rpx;}
+.preview_right_b{ float:right;color:black;font-size: 26rpx;}
+.preview_right{ float:right;color:#E21536;font-size: 26rpx;}
+.tip_bottom{padding: 17rpx;color: red;font-size: 26rpx;}
+
+
+.layout_protocol,.protocal_wrapper{width: 100%; height: 97rpx;line-height: 97rpx;display: flex;flex-direction: row;
+    justify-content: space-between;align-items: center;padding:17rpx;}
+.protocal_wrapper{justify-content: flex-start;padding: 0rpx;border-top:0rpx;}
+.protocol_detail{font-size: 22rpx;color: #666769;}
+.protocol_bold{font-size: 22rpx;color: #333;font-weight: bold;border-bottom: 1rpx solid black;display: inline-block;line-height: 1.7;}
+.protocal_bt{ width: 37rpx;height: 37rpx;line-height: 37rpx; font-size: 27rpx;border-radius: 50rpx;
+    border: 3rpx solid #333;text-align: center;margin-left: 17rpx;}
+
+
+.frame_pop{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:100000;}
+.frame_opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.5;}
+.frame_rule{width: 100%;position: absolute;bottom: 0;height: 625rpx;background-color: white;
+display: flex;flex-direction: column;align-items: center;}
+.pop_title{width: 100%;text-align: center;height: 110rpx;line-height: 110rpx;font-size: 32rpx;}
+.sv_rule{width: 100%;height: 378rpx;text-align: left;}
+.rule_detail{font-size: 24rpx;margin-left: 75rpx;margin-right: 75rpx;white-space:pre-line;}
+.v_gap{width: 100%;height: 7rpx;background-color: #f7f7f7;}
+.pop_confirm{width: 100%;height: 130rpx;line-height: 130rpx; font-size: 30rpx;color: black;text-align: center;}
+

@@ -1,0 +1,3 @@
+<view class="tb_box">
+     <truntableDraw id="truntableDraw" bindcontInfo="contInfo" phones="{{phones}}" bgColor="{{bgColorArr}}"></truntableDraw>
+</view>

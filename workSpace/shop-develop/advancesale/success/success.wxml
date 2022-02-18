@@ -1,0 +1,47 @@
+
+<view class="pages">
+    <scroll-view scroll-y class="page-cont">
+        <view class="page-tit-wrap">
+            <image src="{{img.index_tit}}" class="index_tit" />
+            <image src="{{img.success}}" class="index_suc" />
+            <view class="successtit">预约成功</view>
+            <view class="infotit">请核对以下信息</view>
+            <view class="info-box">
+                <view class="info-wrap">
+                    <view class="info-item">姓名：{{advance_book_record.name || ''}}</view>
+                    <view class="info-item">电话：{{advance_book_record.mobile || ''}}</view>
+                </view>
+            </view>
+            <view class="tip">
+                <view class="tip-title">*温馨提示</view>
+                <view class="tip-cont">联名合作系列将于2019年9月19日登陆指定门店；</view>
+                <view class="tip-cont">购买（两件及以上）联名合作系列产品；</view>
+                <view class="tip-cont">即可凭预约券领取JJJS DOG礼品一份；</view>
+                <view class="tip-cont">JJJS DOG全国限量1200份，每一份都拥有专属编号；</view>
+                <view class="tip-cont">先到先得赠完即止；</view>
+                <view class="tip-cont">记得及时领取你的限量惊喜哦！</view>
+            </view>
+            <view class="btn-wrap">
+                <form bindsubmit='registerFormSubmit' report-submit='true' wx:if="{{!advance_book_record.is_get_coupon && !advance_book_record.card_data}}">
+                    <button open-type="share" class="btn1" form-type='submit'>
+                        <view class="btn-cont">一键分享，领取限量赠品礼券</view>
+                        <view class="btn-cont">分享后即可领取礼品券至卡包</view>
+                    </button>
+                </form>
+                <form bindsubmit='registerFormSubmit' report-submit='true' wx:if="{{advance_book_record.is_get_coupon == 0 && advance_book_record.card_data}}">
+                    <view class="btn-item">
+                        <button class="btn-button" bindtap="getcoupon" form-type='submit' plain="{{true}}">立即领取</button>
+                    </view>
+                </form>
+                <form bindsubmit='registerFormSubmit' report-submit='true'  wx:if="{{advance_book_record.is_get_coupon == 1}}">
+                    <view class="btn-item">
+                        <button class="btn-button" bindtap="opencoupon" form-type='submit' plain="{{true}}">点击查看限量礼品赠券</button>
+                    </view>
+                </form>
+                <button class="btn2">
+                    <view class="btn-cont" bindtap="gostore" data-tplid='136'>查看附近活动门店</view>
+                </button>
+            </view>
+        </view>
+    </scroll-view>
+</view>

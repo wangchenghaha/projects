@@ -1,0 +1,71 @@
+<view class='wrapper'>
+  <view class="background-main">
+    <image src="https://alioss.woaap.com/bestseller/campaign2001/images/luckDraw.jpg" mode="widthFix" class="backgroundImg" />
+  </view>
+  <view class="prizeNum">
+    <view class="prizeNum_top">
+      <text>{{balance}}</text>
+    </view>
+    <view class="prizeNum_bottom">{{allow_times}}</view>
+  </view>
+  <view class='header'>
+    <!-- <text>停止位置:</text><input value='{{luckPosition}}' style="width:100%;text-align:center" bindinput='input' type='number'></input> -->
+    <view class='frame_view'>
+      <view class='frame_row'>
+        <image class='frame_item' src='{{images[0]}}.png'></image>
+        <image class='frame_item' src='{{images[1]}}.png'></image>
+        <image class='frame_item' src='{{images[2]}}.png'></image>
+        <image class='frame_item' src='{{images[3]}}.png'></image>
+      </view>
+
+      <view class='frame_row'>
+        <image class='frame_item' src='{{images[11]}}.png'></image>
+        <image class='frame_item_mickey' src='{{btnconfirm}}' bindtap='{{clickLuck}}'></image>
+        <image class='frame_item' src='{{images[4]}}.png'></image>
+      </view>
+
+      <view class='frame_row'>
+        <image class='frame_item' src='{{images[10]}}.png'></image>
+        <image class='frame_item' src='{{images[5]}}.png'></image>
+      </view>
+
+      <view class='frame_row'>
+        <image class='frame_item' src='{{images[9]}}.png'></image>
+        <image class='frame_item' src='{{images[8]}}.png'></image>
+        <image class='frame_item' src='{{images[7]}}.png'></image>
+        <image class='frame_item' src='{{images[6]}}.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='myreward' bindtap="seeMyReward"></view>
+  <view class='gotoGoods' bindtap="seeMyGoods"></view>
+  <view class="content" wx:if="{{isFinally}}">
+    <view class="finall_back" wx:if="{{isFinally && finally != '1'}}">
+      <image class="{{isBigScreen ?'bg big' : 'bg'}}" mode="widthFix" src="{{isBigScreen ? 'https://alioss.woaap.com/bestseller/campaign2001/images/afterBack_x.png' : 'https://alioss.woaap.com/bestseller/campaign2001/images/afterBack.png'}}"></image>
+    </view>
+    <view class="finall" style="top: {{isBigScreen? '440rpx;':'260rpx'}}">
+      <image wx:if="{{finally == '1'}}" src="https://alioss.woaap.com/bestseller/campaign2001/images/rewardNo.png" class="finall_nos" />
+      <image wx:elif="{{finally == '2'}}" bindtap="goBackMain" src="https://alioss.woaap.com/bestseller/campaign2001/images/afterBi.png" class="finall_no" />
+      <image wx:elif="{{finally == '3'}}" bindtap="goBigCoupon" data-type="1" src="https://alioss.woaap.com/bestseller/campaign2001/images/afterT.png" class="finall_no" />
+      <image wx:elif="{{finally == '4'}}" bindtap="goBigCoupon" data-type="2" src="https://alioss.woaap.com/bestseller/campaign2001/images/afterYi.png" class="finall_no" />
+      <image wx:elif="{{finally == '5'}}" bindtap="goBigPrize" src="https://alioss.woaap.com/bestseller/campaign2001/images/afterMickey.png" class="finall_no" />
+      <view wx:if="{{finally == '1'}}" class="goback" bindtap="goBackMain">{{goBack}}</view>
+    </view>
+  </view>
+
+  <view class="getMoreAlert" wx:if="{{getMoreAlert}}" bindtap="closeAlert" catchtouchmove="catchtouchmove">
+    <image class="more" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_more.png'></image>        
+    <button class="haoyou" open-type="share">
+        <image class="haoyou" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_haoyou.png'></image>
+    </button>
+    <image class="haibao" bindtap="haibao" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_haibao.png'></image>
+  </view>
+
+  <view class="haibaoAlert" wx:if="{{haibaoAlert}}">
+    <painter class="haibaoBg" customStyle='margin:0;width:1126rpx;height:1860rpx;transform:scale(0.5);margin-top:-200rpx;' palette="{{template}}" bind:imgOK="ok" bind:longpress="onImgOK" />
+    <image wx:if="{{0}}" class="haibaoText" src='https://alioss.woaap.com/bestseller/campaign2001/images/haibao_text.png'></image>
+    <image class="haibaoBack" bindtap="haibaoBack" src='https://alioss.woaap.com/bestseller/campaign2001/images/haibao_back.png'></image>
+  </view>
+</view>
+<imageLoading imageList="{{loadImageList}}"></imageLoading>
+

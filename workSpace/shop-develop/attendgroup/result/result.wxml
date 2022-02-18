@@ -1,0 +1,78 @@
+<wxs src="../index/index.wxs" module="tools" />
+<view class="pages">
+    <view class="bg-wrapper">
+        <image class="bg" style="height:1459rpx;" wx:if="{{bigPhone}}" src="{{imgList.groupbg ? imgUrl +  imgList.groupbg: ''}}"></image>
+        <image class="bg" style="height:1228rpx;" wx:if="{{!bigPhone}}" src="{{imgList.groupbgSmall ? imgUrl +  imgList.groupbgSmall: ''}}"></image>
+    </view>
+    <view class="card-wrapper">
+        <image class="card-bg" src="{{imgList.groupCardbg ? imgUrl +  imgList.groupCardbg: ''}}"></image>
+         <view class="card-info">
+            <view class="card-item" wx:for="{{couponlist}}" :key="index">
+                <view style="color:{{brand == 'JACKJONES'? '#fff' : '666#'}}">￥</view>
+                <view class="price" style="color:{{brand == 'JACKJONES'? '#fff' : basecolor}};font-size:{{tools.isNumber(item.price)?'36rpx':'46rpx'}}">{{item.price}}</view>
+                <view style="color:{{brand == 'JACKJONES'? '#fff' : '#666'}}">/</view>
+                <view style="color:{{brand == 'JACKJONES'? '#fff' : '#666'}}" class="tip">{{item.tip}}</view>
+            </view>
+        </view>
+        <view class="card-join">
+            <image class="success" src="{{imgList.succes ? imgUrl +  imgList.succes: ''}}"></image>
+            <view class="successtip" style="color:{{basecolor}};">拼团成功</view>
+            <view class="join-amount">
+                <!-- <view class="amount-line"></view>
+                <view class="anount">成团还差<text>{{4-joinNum}}</text>人</view>
+                <view class="amount-line"></view> -->
+            </view>
+            <view class="join-btn-wrapper">
+                <!-- <view class="join-btn active">邀请好友参团</view> -->
+                <view bindtap="openCard" style="background:{{basecolor}};" class="join-btn active">查看优惠券</view>
+<!--                <view bindtap="showshare" style="color:{{basecolor}};" class="join-btn">邀请好友开团</view>-->
+                <view bindtap="goCompain" style="color:{{basecolor}};" class="join-btn">{{btnTextList.type_8}}</view>
+<!--                去开团-->
+
+<!--                <view bindtap="showshare" class="sharetip">生成海报并分享到朋友圈 <image class="shareicon" style="width:24rpx;height:24rpx;"  src="../images/shareicon.png"></image></view>-->
+            </view>
+            <view class="join-rule" bindtap="goBack">{{btnTextList.type_6}}></view>
+<!--            官网逛逛-->
+        </view>
+    </view>
+    <!-- <view class="join-tip" style="margin-top:{{bigPhone?45:0}}rpx;">
+        <image class="joinimg" src="../images/jointip.png"></image><text>您已成功参团 - 拼团成功后您将收到小程序通知</text>
+    </view> -->
+</view>
+
+<!--<alert showoption="{{showoption}}" bind:clicksure="clicksure"></alert>-->
+
+<!--<view class="sharebox" catchtap="closeshare" wx:if="{{showshareflag}}">-->
+<!--    <view class="share-wrapper" catchtap="closeshareclick" >-->
+<!--        <view class="share-top">分享至：</view>-->
+<!--        <view class="share-bottom">-->
+<!--            <view class="share-item">-->
+<!--                <button open-type="share" class="sharebutton">-->
+<!--                    <image src="../images/wechat.png" style="width:119rpx;height:97rpx;"></image>-->
+<!--                    <view>发送给微信好友</view>-->
+<!--                </button>-->
+<!--            </view>-->
+<!--            <view class="share-item">-->
+<!--                <view class="sharebutton" catchtap="shareposter">-->
+<!--                    <image src="../images/firend.png" style="width:98rpx;height:98rpx;"></image>-->
+<!--                    <view>生成朋友圈海报</view>-->
+<!--                </view>-->
+<!--            </view>-->
+<!--        </view>-->
+<!--    </view>-->
+<!--</view>-->
+
+<!--<view class="poster-wrapper" wx:if="{{showposter}}" style="padding-top:{{bigPhone?160:50}}rpx;" catchtap="closeposter">-->
+<!--    <view class="poster-box" catchtap="catchclick">-->
+<!--        <painter customStyle='' palette="{{canvas}}" bind:imgOK="onImgOK"></painter>-->
+<!--    </view>-->
+<!--    <view class="save-btn-wrapper" style="margin-top:{{bigPhone?60:28}}rpx;">-->
+<!--        &lt;!&ndash; <view class="save-btn">保存至相册</view> &ndash;&gt;-->
+<!--        <view class="save-btn" style="background:{{basecolor}}" catchtap='getSettings' wx:if="{{authorize}}">-->
+<!--            <text>保存至相册</text>-->
+<!--        </view>-->
+<!--        <button class="save-btn" style="background:{{basecolor}}" open-type="openSetting" bindopensetting="handleSetting"  plain="{{true}}" wx:elif="{{!authorize}}">-->
+<!--            <text>保存至相册</text>-->
+<!--        </button>-->
+<!--    </view>-->
+<!--</view>-->

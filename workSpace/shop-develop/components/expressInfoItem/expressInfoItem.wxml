@@ -1,0 +1,11 @@
+<view class="expressItem">
+    <view class="expressTimer">
+        <view class="dates">{{expressDate}}</view>
+        <view class="hours">{{expressHours}}</view>
+    </view>
+    <view class="expressInfo">
+        <image src="{{expressImage}}"  mode="widthFix"/>
+        <view wx:if="{{isShow}}" class="expressState">{{expressState}}</view>
+        <view class="expressDetail">{{expressDetail}}</view>
+    </view>
+</view>

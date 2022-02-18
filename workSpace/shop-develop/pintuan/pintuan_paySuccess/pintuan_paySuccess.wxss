@@ -1,0 +1,148 @@
+page {
+  background-color: #F3F3F3;
+}
+
+.sub-bg {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  padding-bottom: 0;
+  background-color: white;
+}
+
+.sub-bg .cp-rightView {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sub-bg .cp-rightView .zhekou {
+  background-color: #DD0000;
+  font-size: 26rpx;
+  text-align: center;
+  color: white;
+  padding: 5rpx;
+}
+
+.sub-bg .cp-rightView-row {
+  display: flex;
+  flex-direction: row;
+  padding-right: 20rpx;
+}
+
+.sub-bg .cp-rightView .yipinView {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.sub-bg .cp-rightView .yipinView .yipin {
+  padding: 5rpx 15rpx;
+  background-color: #CC292E;
+  font-size: 23rpx;
+  color: white;
+  width: auto;
+  line-height: 30rpx;
+  border-radius: 22rpx;
+}
+
+.iconView {
+  margin-top: 30rpx;
+  width: 99%;
+  height: auto;
+}
+
+.iconView-view {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconView-view-icons {
+  width: auto;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.iconView-view-icons-one {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.iconView-view-icons-one-title {
+  position: absolute;
+  top: 2rpx;
+  left: 0;
+  width: 50rpx;
+  height: 22rpx;
+  background-color: #CC292E;
+  border-radius: 23rpx;
+  font-size: 23rpx;
+  line-height: 22rpx;
+  color: white;
+  text-align: center;
+}
+
+.iconView-view-icons .icon {
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 37rpx;
+  border: solid 2rpx #CC292E;
+}
+
+.iconView-view-text {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  color: #CC292E;
+}
+
+.bottomBG {
+  margin: 100rpx 15% 0 15%;
+  height: 80rpx;
+  background-color: #C40008;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+}
+
+.bottomBG-white {
+  margin: 10rpx 15% 0 15%;
+  height: 80rpx;
+  background-color: white;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: black;
+}
+
+.title {
+  font-size: 24rpx;
+  color: #373738;
+}
+
+.title-black {
+  font-size: 22rpx;
+  color: black;
+  margin-right: 70rpx;
+}
+
+.marginTitle {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.text {
+  color: #DD0000;
+  font-size: 24rpx;
+}

@@ -1,0 +1,239 @@
+$mainColor: #828282;
+@mixin circle($width, $bg) {
+  width: $width;
+  height: $width;
+  background: $bg;
+  border-radius: 50%;
+}
+.content{
+  image{
+    display: block;
+    width: 100%;
+  }
+  min-height: 100%;
+  background: #f3f3f3;
+  .header{
+    position: relative;
+    height: 320rpx;
+    background: #232323;
+    border-bottom-left-radius: 40rpx;
+    border-bottom-right-radius: 40rpx;
+    overflow: hidden;
+    .outer{
+      transform: translateX(-10%) translateY(40rpx);
+      @include circle(700rpx,#252525);
+      .center{
+        @include circle(500rpx,#27282a);
+        .inner{
+          @include circle(300rpx,#252626);
+        }
+      }
+    }
+    .main-info{
+      position: absolute;
+      z-index: 99;
+      height: 100%;
+      .avatar{
+        margin-left: 60rpx;
+        width: 120rpx;
+        height: 120rpx;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .info{
+        margin-left: 30rpx;
+        color: #fff;
+        .identifier{
+          font-size: 30rpx;
+        }
+        .name{
+          font-size: 26rpx;
+          color: #f9f9f9;
+        }
+      }
+      .qr-img{
+        margin-left: 30rpx;
+        width: 80rpx;
+        height: 80rpx;
+        image{
+          filter: invert(50%);
+        }
+      }
+    }
+    
+    .level{
+      position: absolute;
+      right: 0;
+      top: 150rpx;
+      width: 202rpx;
+      //height: 40rpx;
+      border-top-left-radius: 20rpx;
+      border-bottom-left-radius: 20rpx;
+      //background-image: linear-gradient(45deg, #f7eeba, #fef9d6, #cdb971)
+      z-index: 999;
+    }
+  }
+  .cash{
+    position: relative;
+    margin: -60rpx auto 20rpx;
+    padding: 0 30rpx;
+    width: 680rpx;
+    height: 135rpx;
+    background-image: linear-gradient(#fa3d52, #fd5b80);
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    z-index: 9;
+    &-left{
+      color: #fff;
+      .count{
+        text{
+          font-size: 40rpx;
+        }
+        font-size: 28rpx;
+      }
+      .tip{
+        font-size: 26rpx;
+      }
+    }
+    &-right{
+      width: 180rpx;
+      height: 60rpx;
+      line-height: 60rpx;
+      font-size: 32rpx;
+      color: #8e7846;
+      background: #fcde9b;
+      border-radius: 30rpx;
+    }
+  }
+  .card{
+    padding: 20rpx;
+    margin: 10rpx auto 0;
+    width: 700rpx;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 10rpx;
+    overflow: hidden;
+    &-title{
+      padding-bottom: 10rpx;
+      margin-bottom: 20rpx;
+      border-bottom: solid 1rpx $mainColor;
+      color: #000;
+      .desc{
+        font-size: 28rpx;
+      }
+      .more{
+        position: relative;
+        padding-right: 20rpx;
+        font-size: 24rpx;
+        color: #828282;
+        &::after{
+          content: '';
+          position: absolute;
+          top: 12rpx;
+          right: 5rpx;
+          width: 15rpx;
+          height: 15rpx;
+          border-right: solid 2rpx #828282;
+          border-top: solid 2rpx #828282;
+          transform-origin: center;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+  .profit{
+    &-item{
+      flex: 0 1 25%;
+      flex-direction: column;
+      border-right: solid 1rpx $mainColor;
+      &:last-child{
+        border-right: none;
+      }
+      .number{
+        font-size: 28rpx;
+        &.color-red{
+          color: red;
+        }
+        text{
+          font-size: 34rpx;
+        }
+      }
+      .desc{
+        color: $mainColor;
+        font-size: 24rpx;
+      }
+    }
+  }
+  .notice{
+    &-title{
+      flex: 0 1 25%;
+      border-right: solid 1rpx $mainColor;
+      .notice-icon{
+        width: 64rpx;
+        height: 64rpx;
+        animation: swing 1s ease-in-out infinite
+      }
+      text{
+        font-size: 24rpx;
+        color: #FF505E;
+      }
+    }
+    &-text{
+      margin-left: 20rpx;
+      flex: 0 1 75%;
+      font-size: 28rpx;
+      overflow: hidden;
+      text{
+        display: inline-block;
+        // width: 100%;
+        white-space: nowrap;
+        // text-overflow: ellipsis;
+        // overflow: hidden;
+        animation: wordsLoop 10s linear infinite;
+      }
+      
+      box-sizing: border-box;
+    }
+  }
+  .tool{
+    &-item{
+      margin-bottom: 20rpx;
+      flex: 0 1 25%;
+      flex-direction: column;
+      .icon{
+        width: 65rpx;
+        height: 65rpx;
+      }
+      text{
+        padding-top: 10rpx;
+        font-size: 26rpx;
+        color:#000;
+      }
+    }
+  }
+}
+@keyframes wordsLoop{
+  0%{
+    transform: translateX(300rpx)
+  }
+  100%{
+    transform: translateX(-100%)
+  }
+}
+@keyframes swing {
+  20% {
+    transform: rotate(20deg)
+  }
+  40% {
+    transform: rotate(-10deg)
+  }
+  60% {
+    transform: rotate(5deg)
+  }
+  80% {
+    transform: rotate(-5deg)
+  }
+  100% {
+    transform: rotate(0deg)
+  }
+}

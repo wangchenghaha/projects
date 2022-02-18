@@ -1,0 +1,44 @@
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .petBg{
+        width: 100%;
+        height: 100%;
+    }
+
+    .petArea{
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 27%;
+        left: 0;
+        .littlePet{
+            display: inline-block; 
+            width: 240px; 
+            height: 240px; 
+        }
+    }
+   
+    .petChoose{
+        width: 90%;
+        position: absolute;
+        z-index: 10;
+        bottom: 18%;
+        margin-left: 5%;
+        .petBtn{
+            width: 140rpx;
+            margin-left: 18rpx;
+            margin-right: 18rpx;
+        }
+    }
+
+
+    .chooseBtn{
+        width: 340rpx;
+        position: absolute;
+        z-index: 20;
+        bottom: 9%;
+    }
+    
+}

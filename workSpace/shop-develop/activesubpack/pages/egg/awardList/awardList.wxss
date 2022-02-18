@@ -1,0 +1,39 @@
+/* activesubpack/pages/egg/awardList/awardList.wxss */
+.list-container{
+  position: relative;
+}
+.list-bg{
+  width: 100%;
+  display: block;
+}
+
+.list-box{
+  position: absolute;
+  width: 595rpx;
+  height: 971rpx;
+  background: #ffffff;
+  top: 514rpx;
+  left: 78rpx;
+  overflow: hidden;
+}
+
+.item-box{
+  text-align: center;
+  margin: 70rpx 0;
+}
+
+.item-title{
+  font-size: 50rpx;
+  color: #000;
+}
+
+.item-btns{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.item-btns image{
+  width: 240rpx;
+  /* height: 74rpx; */
+}

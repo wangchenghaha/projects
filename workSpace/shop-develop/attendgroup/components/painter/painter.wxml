@@ -1,0 +1,3 @@
+<canvas canvas-id="k-canvas" style="{{painterStyle}}{{customStyle}}" disable-scroll="true" bindtouchstart="touch" bindtouchmove="touch" bindtouchend="touch">
+    <!-- <cover-view class="cover-view" bindtouchmove='touch'></cover-view> -->
+</canvas>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText" : "分享砍价",
+  "usingComponents": {
+    "notice-pop": "/components/contentPop/contentPop"
+  }
+}

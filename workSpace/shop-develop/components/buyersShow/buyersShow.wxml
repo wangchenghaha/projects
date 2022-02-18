@@ -1,0 +1,32 @@
+<view class="maijiaxiu">
+    <view class="pinglun" style="border-top: 2rpx solid #ccc;"  data-type="evaluate" bindtap="onClick" wx:if="{{pinglunData.list[0]}}">
+        <view class="topView">
+            <view class="left">宝贝评价({{pinglunData.totalCount}})</view>
+            <view class="right">查看全部</view>
+        </view>
+        <view class="centerView">
+            <image class="icon" src="{{userImage}}"  mode="widthFix"/>
+            <view class="name">{{userNickName}}</view>
+            <view class="xing" wx:for="{{5}}" wx:key="xingxing">
+                <image src="{{imgPath}}xing_quan_32.png" style="width:100%;height:100%;" />
+            </view>
+        </view>
+        <view class="bottom">{{pinglunData.list[0].reviewContent}}</view>
+        <scroll-view scroll-x="{{true}}" class="centerView" wx:if="{{pinglunData.list[0].evaluateImgs}}">
+            <block wx:for="{{pinglunData.list[0].evaluateImgs}}" wx:key="scro">
+                <image class="buyerImage" src="{{item}}" mode="aspectFill"></image>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="pinglun"  data-type="buyerShow" bindtap="onClick" wx:if="{{buyerShows[0]}}">
+        <view class="topView">
+            <view class="left">买家秀({{buyerShowData.totalCount}})</view>
+            <view class="right">查看全部</view>
+        </view>
+        <scroll-view scroll-x="{{true}}" class="centerView">
+            <block wx:for="{{buyerShows}}" wx:key="scro">
+                <image class="buyerImage" src="{{item}}" mode="aspectFill"></image>
+            </block>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,143 @@
+<view class="home-page {{noScroll?'no-scroll':''}}" style="height:{{noScroll?indexHeight:'auto'}}" >
+  <view wx:if="{{!FULL_SCREEN}}">
+    <view class="header" id="my-header" style="padding-top: {{paddingTop}}px">
+      <view class="search-header flex-bet">
+        <view class="search-left flex-start">
+          <icon type="search" size="20" color="#999" ></icon>
+          <view class="search-input"  bindtap="searchInput" >{{placeholder}}</view>
+        </view>
+        <view class="scanning-icon icon" bindtap="scanning">
+          <image src="/images/scanning_icon.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <!--导航  -->
+      <view class='header-nav'>
+        <block class="" wx:for='{{navList}}' wx:key="navList">
+          <block wx:if="{{item.appid}}">
+            <navigator wx:if="{{item.isShow}}"
+                       class="nav-item flex-center"
+                       target="miniProgram"
+                       open-type="navigate"
+                       app-id="{{item.appid}}" path="{{item.path}}" extra-data="" version="release">
+              <image src="{{item.image}}" mode="widthFix"></image>
+              <text class='nav-text'>{{item.text}}</text>
+            </navigator>
+          </block>
+          <block wx:else>
+            <view class='nav-item flex-center'  wx:if="{{item.isShow}}" wx:key='navList' data-code="{{item.code}}" bindtap="onClick">
+              <image src="{{item.image}}" mode="widthFix"></image>
+              <text class='nav-text'>{{item.text}}</text>
+              <text class="cart-num" wx:if="{{item.code === 'cart' && shoppingCar > 0}}">{{shoppingCar}}</text>
+            </view>
+          </block>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="{{topBannerShow ? 'container' : ''}}">
+    <view class="fixed-top text-c" wx:if="{{showFixedTop}}" style="height: {{fixedTopHeight}}px">
+      <view class="search flex-start" style="top: {{searchPos}}px">
+        <icon type="search" color="#000" size="40rpx" data-link="/pages/searchHistory/searchHistory" bindtap="onClick" />
+        <line-icon color="#000" />
+      </view>
+      <image class="logo" src="{{brandLogo}}" style="margin-top: {{searchPos}}px" mode="heightFix"></image>
+    </view>
+  </view>
+  <view style="margin-top: {{mainMarginTop}}px">
+    <home-page wx:if="{{homePageLoad}}" showFixedTop="{{showFixedTop}}" homePageHotSearch="{{homePageHotSearch}}"></home-page>
+  </view>
+<!--  绑定导购 -->
+  <bind-guide show="{{guideLoginPopup}}" />
+  <!--客服弹窗-->
+  <contact-serve wx:if="{{showServe}}" bindcloseServe="closeServe"></contact-serve>
+  <home-fixed
+      showGoTop="{{goToTop.isShow}}"
+      isHomePageLive="{{isHomePageLive}}"
+      bindshowServe="openHelp"
+      bindgoTop="goToTop"></home-fixed>
+
+  <view class="voucher {{(advertisement.show && !showAD) ? 'show': ''}}">
+    <view class="advertisement">
+      <image src="{{(advertisement.videoNumber && advertisement.videoNumber.isShow) ? advertisement.videoNumber.imgUrl : advertisement.imgURL}}" mode="widthFix" data-code="advertisement" bindtap="onClick"></image>
+      <view class="close" data-code="close" bindtap="onClick"></view>
+    </view>
+  </view>
+  <view class="fixed flex-center add-coupon" wx:if="{{!showAD && newAddCoupon.num && newAddCoupon.show}}">
+    <view class="tip-img">
+      <image src="{{newAddCoupon.img}}" mode="widthFix"></image>
+      <view class="close" bindtap="closeNewCoupon"></view>
+      <view class="navigator" bindtap="goMyCouponList"></view>
+      <!-- <navigator class="navigator"  url="/member/myCouponList/myCouponList?name={{newAddCoupon.etoBrand}}" hover-class="navigator-hover"></navigator> -->
+    </view>
+    <checkbox-group class="checkbox" bindchange="checkboxChange">
+      <label wx:for="{{newAddCoupon.checkArr}}" wx:key="checkbox">
+        <checkbox checked="{{item.checked}}"/>
+        {{item.text}}
+      </label>
+    </checkbox-group>
+  </view>
+</view>
+<my-footer></my-footer>
+<!-- 红包雨 -->
+<view class="hbyView" wx:if="{{games.length > 0}}">
+  <block wx:for="{{games}}" wx:key="games">
+    <view class="flex-bet game-item"  wx:if="{{item.type !== 'wish' && item.isgame}}" data-path="{{item.gameLinkUrl}}" data-type="{{item.type}}" bindtap="goGame">
+      <image src="{{item.gameImgUrl}}" class="game-img" mode="widthFix"></image>
+      <view class="hbyView-gameView">
+        <view class="flex-start padding-r-10">
+          <image src="{{gameIcon}}" mode="widthFix" class="game-icon" />
+          <text class="text padding-l-5">小游戏</text>
+        </view>
+        <text class="game-name text-r padding-r-10">{{item.gameName}}</text>
+      </view>
+    </view>
+  </block>
+
+</view>
+<view class="wish-icon" wx:if="{{showWishIcon.show}}">
+  <navigator url="/activity/wish/setList/setList">
+    <image src="{{showWishIcon.img}}" mode="widthFix"></image>
+  </navigator>
+</view>
+<!-- 群二维码 -->
+<block wx:if="{{qunQrCode}}">
+  <view class="qunBg" bindtap="qunCloesd"></view>
+  <view class="qunView">
+    <view class="qunErweimaImgView">
+      <image src="{{qunerweima}}" style="width:100%;" mode="widthFix" />
+      <view style="width:100%;height:100rpx;"></view>
+    </view>
+    <view class="xiazaiView">
+      <image src="{{qunxiazaiImg}}" style="width:30rpx;height:30rpx;margin-top: 15rpx;" mode="widthFix" />
+      <view class="text" bindtap="qunxiazaiTap">点击下载</view>
+    </view>
+  </view>
+</block>
+
+<!-- 红包雨倒计时 -->
+<view class='hby_cavasBg-opa' wx:if="{{hbyJson.canShow}}"></view>
+<view class='hby_cavasBg' wx:if="{{hbyJson.canShow}}" bindtap="{{hbyJson.canTap ? 'hbyTap' : ''}}">
+    <view class="cavas_img">
+        <image src="{{hbyJson.img}}" style="width:100%;opacity: {{hbyJson.canTap ? '1' : '.2'}};" mode="widthFix" />
+    </view>
+    <view class="downNum">{{hbyJson.downNum}}</view>
+</view>
+<view class="wish-entery" wx:if="{{showWishIcon.show}}">
+  <navigator url="/activity/wish/setList/setList">
+    <image src="{{showWishIcon.img}}" mode="widthFix"></image>
+  </navigator>
+</view>
+
+<block wx:if="{{showAD}}">
+  <ad-pop isShow="{{showAD}}" page="home"/>
+</block>
+<view wx:if="{{addTipShow}}" class="add-tip flex-bet"
+      style="right: {{menuButton.right}}px; top: {{menuButton.bottom}}px; background-image: url({{addTipIcon}})">
+  <view class="padding-r-10 text">点击
+    <text class="point"></text>
+    <text class="point"></text>
+    <text class="point"></text>
+    添加到我的小程序</view>
+  <view class="close" bindtap="hideTip"></view>
+<!--  <icon type="cancel" color="#000" size="28rpx" bindtap="hideTip" />-->
+</view>

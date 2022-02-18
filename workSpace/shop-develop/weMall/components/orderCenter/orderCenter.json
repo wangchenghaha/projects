@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "copy-icon": "/components/copyIcon/copyIcon"
+  }
+}

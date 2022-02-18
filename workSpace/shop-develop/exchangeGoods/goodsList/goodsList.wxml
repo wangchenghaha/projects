@@ -1,0 +1,170 @@
+<import src="../tmpl/excForExGoodsItem/excForExGoodsItem" />
+<view class="layout_father">
+  <!-- 顶部按钮和标题 -->
+  <view class="top_bar">
+    <view class="top_0" catchtap="onCategoryShow">
+      <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_ex_menu_black.jpg" mode="widthFix" />
+    </view>
+
+    <view class="shop_name" wx:if="{{shopName}}">
+      <text>{{shopName}}</text>
+    </view>
+  </view>
+
+  <!-- 导航条 -->
+  <view class="nav">
+    <view id="{{index}}" class="{{isNearbyShop?'nav_norm_2':'nav_norm_4'}} {{index==navId?item.sort:'nav_holder_white'}}" style="{{navTextIndent}}" wx:for="{{nav}}" wx:key="nav" bindtap="onSortClick">{{item.name}}</view>
+  </view>
+
+
+  <view class="layout_list  {{isIphoneX ?'iphoneXMarginBottom':''}}">
+    <view id='{{index}}' class="layout_item" wx:for="{{goodsList}}" wx:key="goodsList" bindtap='onItemClick'>
+      <image src="https://cdn.bestseller.com.cn{{item.gscMaincolPath}}" mode="aspectFit"></image>
+      <text>{{item.goodsName}}</text>
+      <view class="item_bottom">
+        <view class="discount" wx:if="{{item.discount!=10}}">{{item.discount}}折</view>
+        <view class="price_now {{item.discount==10?'discountPrice':''}}">¥{{item.discountPrice}}</view>
+        <view class="price_original" wx:if="{{item.discount!=10}}">¥{{item.originalPrice}}</view>
+      </view>
+      <!-- <view class="item_choose">
+        <text>选择</text>
+      </view> -->
+    </view>
+    <view class="weui-loadmore" hidden="{{!flagLoading}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载..</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot" hidden="{{!flagLoadingComplete}}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+    </view>
+
+
+  </view>
+
+
+  <!-- 选择Item后的弹出框 -->
+  <view class="frame_goods_detail" wx:if="{{flagShowItem}}">
+    <view class="opacity"></view>
+    <view class="frame_popup">
+      <view class="frame_popup_upper">
+        <view class="layout_upper">
+          <view class="upper_inner">
+            <view class="upper_common thumbnail">
+              <!-- <image src="https://cdn.bestseller.com.cn{{colorList[colorIndex].picurls[0]}}" mode="widthFix"></image> -->
+              <image src="{{bigThumbUrl}}" mode="widthFix"></image>
+            </view>
+            <view class="upper_common layout_infos">
+              <view class="goods_name">{{goodsName}}</view>
+              <view class="price">¥{{colorList[colorIndex].price}}</view>
+              <view class="stock">库存
+                <text>{{goodsStockBean[sizeList[sizeIndex].sku]?goodsStockBean[sizeList[sizeIndex].sku]:'0'}}</text>件</view>
+              <!-- <view class="size">{{sizeList[sizeIndex].sizeAlias}}</view> -->
+            </view>
+            <view class="upper_common upper_close" bindtap="onItemLayoutClose">
+              <icon type="cancel" size="50rpx" color="#000" />
+            </view>
+          </view>
+        </view>
+        <view class="layout_size_and_color">
+          <view class="title">颜色选择</view>
+          <view class="item_outter">
+            <view id="{{index}}" wx:if="{{item.status == 'InShelf'}}" class="item_inner {{index==colorIndex?'item_selected':''}}" wx:for="{{colorList}}" wx:key="colorList" bindtap="onColorClick">{{item.colorAlias}}</view>
+          </view>
+        </view>
+        <view class="layout_size_and_color">
+          <view class="title">尺码选择</view>
+          <view class="item_outter">
+            <view id="{{index}}" class="item_inner {{index==0 && sizeList.length<2?'item_selected':''}} {{index==sizeIndex?'item_selected':''}} {{noStockList[index]?'item_no_stock':''}}" wx:for="{{sizeList}}" wx:key="sizeList" bindtap="onSizeClick">{{item.sizeAlias}}</view>
+          </view>
+        </view>
+        <view class="layout_count">
+          <view class="c_title">商品件数</view>
+          <view class="c_number">
+            <view class="c_add" bindtap="onCountPlus">+</view>
+            <input class="c_num" type="number" value="{{goodCount}}" disabled="true" />
+            <view class="c_jian" bindtap="onCountMinus">-</view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class="layout_bottom_button  {{isIphoneX ?'fix-iphonex-button':''}}">
+        <view class="bt_dark" bindtap="onAddToCart">确认选择</view>
+        <view class="bt_light" bindtap="onItemLayoutClose">取消</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 点击左上角分类按钮弹出 -->
+  <view class="frame_category" wx:if="{{ifShowCategory}}">
+    <!-- 顶部信息-搜索信息 -->
+    <view class="search_header">
+      <view class="search_header_input_bar">
+        <icon type="search" size="30px"></icon>
+        <input class="input_content" type="text" confirm-type="search" bindinput="searchInput" bindconfirm="onSearchClick" placeholder="请输入商品名称或款号" />
+      </view>
+      <view class="search_close" bindtap='onCategoryClose'>
+        <text>返回</text>
+      </view>
+    </view>
+
+    <!-- 所有类别 -->
+    <view class="frame_category_list">
+      <view class='real_list'>
+        <scroll-view scroll-y class='left_category'>
+          <view wx:for="{{allCate}}" wx:key="allCate1">
+            <view class='{{leftCateIndex==index?"left_item_v":"left_item_v_none"}}'></view>
+            <view class='left_item {{leftCateIndex==index?"left_item_1":""}}' id='{{index}}' bindtap='onLeftCateClick'>{{item.classifyName}}</view>
+          </view>
+        </scroll-view>
+        <scroll-view scroll-y class='right_category'>
+          <view class='right_item' id="{{item.classifyId}}" wx:for="{{allCate[leftCateIndex].list}}" wx:key="allCate2" bindtap='onRightCateClick'>{{item.classifyName}}</view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <!-- 购物车弹出 -->
+  <view class="frame_cart" wx:if="{{flagShowCart}}" catchtouchmove="move">
+  <!-- <view class="frame_cart" style="display:{{flagCartDisplay}}" catchtouchmove="move"> -->
+    <view class="opacity" catchtouchmove="move" bindtap="onCartCancel" animation="{{animOpacity}}"></view>
+    <view id="frame_popup_cart" class="frame_popup_cart {{isIphoneX ?'fix-iphonex-button':''}}" animation="{{animRight}}">
+      <view class="frame_popup_upper_cart">
+        <view class='cart_tip'>您已选择的换货新商品清单</view>
+        <scroll-view wx:if="{{cartList.length>0}}" class='scroll_cart_list' scroll-y="true">
+          <view wx:for="{{cartList}}" wx:key="cartList">
+            <template is="excForExGoodsItemTmpl" data="{{index,item}}"></template>
+          </view>
+        </scroll-view>
+        <view class="empty" wx:if="{{cartList.length==0}}">
+          <image src="/images/cart.png" mode="widthFix" />
+          <text>您的购物车还是空的</text>
+        </view>
+      </view>
+      <view class="layout_bottom_button_cart">
+        <view wx:if="{{cartList.length>0}}"  class="bt_confirm_blue" bindtap="onCartConfirm">已经选好</view>
+        <view wx:if="{{cartList.length>0}}"  class="bt_cancel" bindtap="onCartCancel">继续挑选</view>
+        <view wx:if="{{cartList.length==0}}"  class="bt_confirm_blue" bindtap="onCartCancel">去挑选商品</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 没有列表时的提示信息 -->
+  <view class="list_null" wx:if="{{noneGoods}}">
+    <view class="list_null_con">
+      <image src="/images/bag.png" mode="aspectFit"></image>
+      <text> 亲，未找到您需要的商品哦！ </text>
+    </view>
+  </view>
+  <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+</view>
+
+
+<!-- 固定的购物车 -->
+<view class="cart_layout" catchtap="onCartClick">
+  <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_shopp_cart_ex_white.png" mode="widthFix"></image>
+</view>

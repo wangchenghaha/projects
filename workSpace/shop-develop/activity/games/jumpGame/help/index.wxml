@@ -1,0 +1,13 @@
+
+<help_slt
+ zhanweiView="{{zhanweiView}}"
+ myIcon="{{myIcon}}"
+ otherIcon="{{otherIcon}}"
+ friendName = "{{friendName}}"
+ adapter="{{adapter}}"
+ bindtiaozhan="tiaozhan"
+ bindbackTap="backTap"
+ bindgoHome="goHome"
+/>
+
+

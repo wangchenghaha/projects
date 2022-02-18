@@ -1,0 +1,88 @@
+<view class="tb_box" style="background:{{adapter.bigBackGround}}">
+  <view class='menu-home icon iconfont icon-shouye' style="{{menuStyle}}" bindtap="goShop"></view>
+    <image class="tb_backbg"  src="{{lotteryBg}}" mode="widthFix"></image>
+
+    <view class="marquee_container" style="background:{{adapter.bigBackGround}}; --marqueeWidth--:-160em">
+      <view class="marquee_text">{{marqueeText}}</view>
+    </view>
+
+    <!-- <view class="brandTitle">
+        <image src="{{brandTitle}}"  mode='widthFix' />
+    </view> -->
+    <view class="turntableBox" style="top:{{turnTop}};">
+
+      <view class="plate-wrap-box">
+        <!------------------- 绘制转盘内容---------------- -->
+        <view class="plate-border" style="background:{{adapter.lotterBgColor}}" animation="{{ aniData }}">
+          <view class="plate-wrap" style="background:{{adapter.lotterBgColor}}" >
+            <view class="plate-box" wx:for="{{lotterys}}" wx:key="lotterys"
+              style=" transform:translate(-50%,0) rotate({{ 360 / lotterys.length * ( index )}}deg);">
+              <text class="text-box" >{{ item.prizeName }}</text>
+              <image src="{{item.prizePicUrl}}" class="picStyle" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+        <view class="plate-btn-wrap" bindtap="startRollTap">
+          <image src="{{drawPointer}}" class="goImg"></image>
+        </view>
+        </view>
+      </view>
+
+        <view class="btn" style="top:{{btnTop}};">
+          <view class="btnP" style="background: {{adapter.btnBgColor1}}; color: {{adapter.btnTextColor1}}; " bindtap="goCoupon" >查看奖品</view>
+          <view class="btnP" style="background: {{adapter.btnBgColor2}}; color: {{adapter.btnTextColor2}};" bindtap="goShop">去商城逛逛</view>
+        </view>
+
+        <view class='notice_content' style="top:{{contentTop}}; background:{{adapter.bigBackGround}}">
+            <view class="noticeTitle ~flex-center">
+              <view class="line" style="background:{{adapter.ruleColor}}"></view>
+              <view class="title ~flex-center" style="color: {{adapter.ruleColor}}">活动规则</view>
+              <view class="line" style="background:{{adapter.ruleColor}}"></view>
+            </view>
+            <view class="text" style="color: {{adapter.ruleColor}}">
+                <view class="textP">1. 抽奖时间：4.23-6.23</view>
+                <view class="textP">2. 奖品券使用时间：领取后14天内有效，请在规定时间内使用，过期失效不予以返还。</view>
+                <view class="textP">3. 抽中的奖品将以优惠券或者商品券的形式发送用户，可在卡包下单，若产生邮费请用户自付。</view>
+                <view class="textP">4. 活动期间内，分享给好友参与抽奖后，用户可多获取一次抽奖的机会。</view>
+                <view class="textP">5. 本券仅限使用一次，不可转赠他人，不予兑换现金。</view>
+                <view class="textP">6. 精美大奖数量有限，先到先得。</view>
+                <view class="textP">7. 由于账户盗用等非常规用户自身原因造成的优惠券问题，品牌不予返还或补偿。</view>
+                <view class="textP">8. 礼品以实际发放为准，品牌在法律范围内保留本次活动的最终解释权。</view>
+            </view>
+      </view>
+
+    <!-- ============中奖名单========== -->
+    <!-- ["屈臣氏￥188大礼包","袜子拖鞋套装","优惠券100","情侣T恤","智行火车票￥144礼包","腾讯视频月季卡优惠", "优惠券10"]; -->
+    <view class="bg" wx:if="{{blackBgShow}}"></view>
+    <view class="bgWhite" wx:if="{{tanShowWhite}}"></view>
+    <!-- 中奖提示 -->
+    <view class="tan" wx:if="{{tanShow}}">
+        <image src="{{drawNoticePic}}" class="tan_img" bindtap="goCoupon" mode='widthFix' ></image>
+        <view class="close flex-center" bindtap="clickClose">
+          <image class="closeImg" src="{{closeImg}}" mode="widthFix"></image>
+        </view>
+    </view>
+
+    <view class="tan" wx:if="{{cheatsShow}}">
+      <image src="{{cheatsNoticePic}}" class="tan_img"  mode='widthFix' ></image>
+      <view class="myGift" bindtap="seeCoupon"></view>
+      <button open-type="share" class="btnShare"></button>
+    </view>
+
+    <view class="tan" wx:if="{{shareGetChance}}">
+      <image src="{{getChancePic}}" class="tan_img"  mode='widthFix' ></image>
+      <button open-type="share" class="btnShare2" wx:if="{{isShare}}"></button>
+      <view class="btnShare2" wx:else bindtap="goBack"></view>
+      <view class="close" bindtap="clickClose"></view>
+    </view>
+
+    <!-- 中奖提示 -->
+    <view class="errTan" wx:if="{{errTanShow}}">
+        <image src="{{errPic}}" class="err_img" mode='widthFix' ></image>
+        <view class="close" bindtap="clickClose">
+          <text></text>
+          <text></text>
+        </view>
+    </view>
+
+  </view>

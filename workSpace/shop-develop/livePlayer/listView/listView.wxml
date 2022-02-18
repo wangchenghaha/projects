@@ -1,0 +1,57 @@
+<view class="bg">
+    <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" interval="{{5000}}" class="headView" wx:if="{{roomInfo.length > 0}}">
+        <swiper-item wx:for="{{roomInfo}}" wx:key="items">
+            <view class="headView-subViews">
+                <view class="leftView">
+                    <image src="{{item.share_img || item.cover_img}}" style="width:100%;height:100%;" mode="widthFix" />
+                </view>
+                <view class="rightView">
+                    <view class="rightView-subView">
+                        <view class="title">{{item.zhiboTitle}}</view>
+                        <view class="title" style="font-size: 30rpx;margin-bottom: {{item.huanhang ? 0 : 30}}rpx;">{{item.startHoursStr}}</view>
+                        <view wx:if="{{item.huanhang}}" class="title" style="font-size: 30rpx;margin-bottom: 30rpx;">不见不散</view>
+                        <view class="yuyue" wx:if="{{item.isZhibo}}" data-roomid="{{item.roomid}}" bindtap="gotoZhibo">进入直播</view>
+                        <subscribe wx:else room-id="{{item.roomid}}"></subscribe>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+
+    <scroll-view scroll-y="{{true}}" class="list">
+        <view class="list-view" wx:for="{{listData}}" wx:key="listView">
+            <view class="topView">
+                <view class="left">
+                    <view class="huifang">回放</view>
+                    <view class="title">{{item.videoTitle}}</view>
+                </view>
+                <view class="right">{{item.nyr}}</view>
+            </view>
+            <view class="topView1">{{item.goodsList.length}}件宝贝</view>
+            <view class="centerView" bindtap="centerTap" data-id="{{item.id}}" data-type="center">
+                <view class="centerView-imgView">
+                    <image class="centerView-imgView-img" src="{{item.coverImgUrl}}" mode="widthFix" />
+                    <view class="centerView-imgView-zhezhao"></view>
+                </view>
+                <view class="centerView-view">
+                    <view class="title">{{item.yr}}</view>
+                    <view class="subTitle">{{item.nyrTime}}直播开启</view>
+                    <image class="img" src="{{playBtnImg}}" mode="widthFix" />
+                </view>
+            </view>
+            <scroll-view scroll-x="{{true}}" class="bottomView" wx:if="{{item.goodsList.length > 0 && item.goodsList.length > 1}}">
+                <view wx:for="{{item.goodsList}}" wx:key="scro" wx:for-item="items" wx:for-index="indexs" class="bottomView-view" style="margin-right: {{index == 4 ? 0 : 2}}%;" bindtap="centerTap" data-id="{{item.id}}" data-index="{{indexs}}" data-type="bottom">
+                    <image class="img" src="{{items.coverImg}}" mode="widthFix" />
+                    <!-- <image class="baokuan" src="{{baokuanImg}}" mode="widthFix" /> -->
+                    <view class="timer">{{items.shichang}}</view>
+                </view>
+            </scroll-view>
+        </view>
+    </scroll-view>
+</view>
+
+
+  <!-- 回到顶部 -->
+  <view wx:if="{{goTopShow}}" class="go-top" bindtap="gotoTop">
+    <image src="/images/top3.png" mode="widthFix"></image>
+  </view>

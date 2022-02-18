@@ -1,0 +1,78 @@
+<view class="home-page {{noScroll?'no-scroll':''}}" style="height:{{noScroll?indexHeight:'auto'}}" >
+  <view class="{{topBannerShow ? 'container' : ''}}">
+    <view class="fixed-top text-c" wx:if="{{showFixedTop}}" style="height: {{fixedTopHeight}}px">
+      <icon class="search" style="top: {{searchPos}}px" type="search" color="#000" size="40rpx" data-link="/pages/searchHistory/searchHistory" bindtap="onClick" />
+      <image class="logo" src="{{brandLogo}}" style="margin-top: {{searchPos}}px" mode="heightFix"></image>
+    </view>
+    <home-page showFixedTop="{{showFixedTop}}"></home-page>
+  </view>
+  <!--客服弹窗-->
+  <contact-serve wx:if="{{showServe}}" bindcloseServe="closeServe"></contact-serve>
+  <home-fixed
+      showGoTop="{{goToTop.isShow}}"
+      isHomePageLive="{{isHomePageLive}}"
+      bindshowServe="openHelp"
+      bindgoTop="goToTop"></home-fixed>
+  <my-footer></my-footer>
+  <view class="voucher {{advertisement.show ? 'show': ''}}">
+    <view class="advertisement">
+      <image src="{{advertisement.imgURL}}" mode="widthFix" data-code="advertisement" bindtap="onClick"></image>
+      <view class="close" data-code="close" bindtap="onClick"></view>
+    </view>
+  </view>
+  <view class="fixed flex-center add-coupon" wx:if="{{newAddCoupon.num && newAddCoupon.show}}">
+    <view class="tip-img">
+      <image src="{{newAddCoupon.img}}" mode="widthFix"></image>
+      <view class="close" bindtap="closeNewCoupon"></view>
+      <view class="navigator" bindtap="goMyCouponList"></view>
+      <!-- <navigator class="navigator"  url="/member/myCouponList/myCouponList?name={{newAddCoupon.etoBrand}}" hover-class="navigator-hover"></navigator> -->
+    </view>
+    <checkbox-group class="checkbox" bindchange="checkboxChange">
+      <label wx:for="{{newAddCoupon.checkArr}}" wx:key="checkbox">
+        <checkbox checked="{{item.checked}}"/>
+        {{item.text}}
+      </label>
+    </checkbox-group>
+  </view>
+</view>
+<!-- 红包雨 -->
+<view class="hbyView" wx:if="{{games.length > 0}}">
+  <block wx:for="{{games}}" wx:key="games">
+    <view wx:if="{{item.type !== 'wish' && item.isShow}}" data-detail="{{item.gamePath}}" data-type="{{item.type}}"  class="hbyView-gameView" bindtap="goGame">
+      <image src="{{item.hbyGameImg}}" mode="widthFix" style="width:180rpx;vertical-align: middle;" />
+    </view>
+  </block>
+</view>
+<view class="wish-icon" wx:if="{{showWishIcon.show}}">
+  <navigator url="/activity/wish/setList/setList">
+    <image src="{{showWishIcon.img}}" mode="widthFix"></image>
+  </navigator>
+</view>
+<!-- 群二维码 -->
+<block wx:if="{{qunQrCode}}">
+  <view class="qunBg" bindtap="qunCloesd"></view>
+  <view class="qunView">
+    <view class="qunErweimaImgView">
+      <image src="{{qunerweima}}" style="width:100%;" mode="widthFix" />
+      <view style="width:100%;height:100rpx;"></view>
+    </view>
+    <view class="xiazaiView">
+      <image src="{{qunxiazaiImg}}" style="width:30rpx;height:30rpx;margin-top: 15rpx;" mode="widthFix" />
+      <view class="text" bindtap="qunxiazaiTap">点击下载</view>
+    </view>
+  </view>
+</block>
+
+<!-- 红包雨倒计时 -->
+<view class='hby_cavasBg-opa' wx:if="{{hbyJson.canShow}}"></view>
+<view class='hby_cavasBg' wx:if="{{hbyJson.canShow}}" bindtap="{{hbyJson.canTap ? 'hbyTap' : ''}}">
+  <view class="cavas_img">
+    <image src="{{hbyJson.img}}" style="width:100%;opacity: {{hbyJson.canTap ? '1' : '.2'}};" mode="widthFix" />
+  </view>
+  <view class="downNum">{{hbyJson.downNum}}</view>
+</view>
+<view class="wish-entery" wx:if="{{showWishIcon.show}}">
+  <navigator url="/activity/wish/setList/setList">
+    <image src="{{showWishIcon.img}}" mode="widthFix"></image>
+  </navigator>
+</view>

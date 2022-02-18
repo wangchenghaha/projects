@@ -1,0 +1,76 @@
+<view class="contrainer">
+
+<view style="height: 30rpx;"></view>
+<view class="couponArea">
+        <!-- <view class="title">好友助力点亮膨胀券 高达<text style="color: #244d83;">548</text>元优惠券轻松拿</view>
+        <view class="time">TIME: 11月25日 - 11月26日</view>
+        <view class="notice">（助力分享只可参与一次）</view> -->
+        <view class="flow" wx:if="{{false}}">
+            <block wx:for="{{couponList}}" wx:key="coupon"  wx:for-item="flowRow">
+                <block wx:for="{{flowRow}}" wx:for-item="flowItem" wx:key="flow">
+                    <view class="flow-item" data-type="coupon" bindtap="onClick">
+                        <image class="imgBg" src="{{couponBg}}" mode="widthFix"/>
+                        <view class="coupon_price">
+                            <view class="tag">￥</view>
+                            <view class="price">{{flowItem.firstPrice}}</view>
+                            <view class="tag">券</view>
+                        </view>
+                        <view class="limit">满{{flowItem.limitPrice}}使用</view>
+                        <view class="friends">好友助力后膨胀为</view>
+                        <view class="coupon_price" style="top: 230rpx;">
+                            <view class="tag">￥</view>
+                            <view class="price">{{flowItem.scendPrice}}</view>
+                            <view class="tag">券</view>
+                        </view>
+                        <view class="limit"  style="top: 280rpx;">满{{flowItem.limitPrice}}使用</view>
+                    </view>
+               </block>
+            </block>
+        </view>
+        <view class="couponInfo" data-type="coupon" bindtap="onClick">
+            <image class="bgImage" src="{{shareCouponBg}}"  mode="widthFix"/>
+            <!-- <view class="coupons" >
+                <view class="couponLeft flex-center">
+                    <view class="coupon_price">
+                        <view class="tag">￥</view>
+                        <view class="price">20</view>
+                        <view class="tag">券</view>
+                    </view>
+                    <view class="limit">满300使用</view>
+                </view>
+                <view class="couponRight flex-center">
+                    <view class="coupon_price">
+                        <view class="tag">￥</view>
+                        <view class="price">50</view>
+                        <view class="tag">券</view>
+                    </view>
+                    <view class="limit">满300使用</view>
+                </view>
+            </view> -->
+
+        </view>
+        <view class="bottomArea">
+            <!-- <text class="txt" data-type="couponShow" bindtap="onClick" wx:if="{{isLightRecord}}">查看我的点亮进度</text> -->
+        </view>
+    </view>
+
+<!--    <image class="couponShow" src="{{couponShow}}"  mode="widthFix"  data-type="jump" bindtap="onClick"/>-->
+
+    <!--<view class="bottomText">
+        <view class="text1">家的温暖，没你不<text style="font-style: italic;">“型”</text></view>
+        <view class="text2">BUY NOW</view>
+    </view>-->
+</view>
+
+<block wx:if="{{canShowPic}}">
+    <view class="bouncedBg" bindtap="closeFaceToFace"></view>
+    <view class="bouncedImgView">
+        <image class="imgView"  src="{{getCouponImg}}" mode="widthFix" style="width:100%;" />
+        <view class="close" data-type="close" bindtap="onClick"></view>
+        <view class="couponFirst">成功获得{{adapter.couponFirst}}元优惠券</view>
+        <view class="couponSecond" style="top:400rpx;">好友助力点亮后</view>
+        <view class="couponSecond" style="top:450rpx;">即可升级为{{adapter.couponSecond}}元点亮卷哦~</view>
+        <view class="couponSecond" style="top:500rpx;">好友还可获惊喜好礼！</view>
+        <view class="share" style="  background: {{adapter.backgroundColor}}; color: {{adapter.textColor}};" data-type="share" bindtap="onClick">立即分享</view>
+    </view>
+</block>

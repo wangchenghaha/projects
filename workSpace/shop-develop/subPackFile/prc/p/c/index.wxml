@@ -1,0 +1,16 @@
+<view class="wrapper {{isBigPhone ? 'big' : ''}}">
+    <navigate />
+    <view class="logo"></view>
+    <view class="title2 {{isBigPhone ? 'big' : ''}}"></view>
+    <view class="form">
+        <view class="item item-{{index+1}} {{activeIndex == index? 'active':''}}" wx:for="{{items}}" wx:key="index" bindtap='checkThis' data-index='{{index}}'>{{item.label}}</view>
+    </view>
+    <view class="footer {{isBigPhone ? 'big' : ''}}">
+        <view class="item">
+            <view class="btn clear" hover-class="hove" bindtap='clear'>清空选项</view>
+        </view>
+        <view class="item">
+            <view class="btn next" hover-class="hove" bindtap='next'>交卷</view>
+        </view>
+    </view>
+</view>

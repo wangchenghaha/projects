@@ -1,0 +1,75 @@
+<view  class="wrapper">
+  <view class="Info">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="list">
+        <label class="listName">视频标题</label>
+        <input class="listInfo" type="text" placeholder="请输入视频标题" value="{{saVideoTitle}}" data-inp='1' bindinput="inputing" />
+      </view>
+      <!-- <view class="list">
+        <label class="listName">视频类型</label>
+        <picker class="listInfo" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <view class="picker">
+            {{multiArray[0][multiIndex[0]]}}{{multiArray[1][multiIndex[1]]}}
+          </view>
+        </picker>
+      </view> -->
+      <view class="list">
+        <label class="listName">视频介绍</label>
+        <textarea class="listInfo listInfoText" placeholder="请输入视频介绍" value="{{projectDescription}}" data-inp='2' bindinput="inputing" />
+      </view>
+      <view class="list">
+        <label class="listName">剪辑</label>
+        <input class="listInfo" id="editor" type="text" placeholder="请输入剪辑人姓名" hold-keyboard="true" bindfocus="toggle" value="{{videoEditorName}}" />
+      </view>
+      <view class="list">
+        <label class="listName">拍摄</label>
+        <input class="listInfo" id="photographer" type="text" placeholder="请输入拍摄人姓名" hold-keyboard="false" bindfocus="toggle" value="{{videographerName}}" />
+      </view>
+      <view class="upload">
+        <label class="uploadText">上传作品</label>
+        <image class="icon-del {{ showVideo ? 'showVideo' : '' }}" src="/images/address_deleted.png" mode="aspectFit" bindtap="delVideo" />
+        <view class="uploadBtn {{ showVideo ? '' : 'showVideo' }}" bindtap="uploadBtn">
+          <image class="addIcon" src="{{addIcon}}"></image>
+          <view>上传视频</view>
+        </view>
+        <view class="uploadVideo {{ showVideo ? 'showVideo' : '' }}">
+          <video class="video" object-fit="contain" src="{{videoUrl}}"></video>
+        </view>
+      </view>
+      <view class="list">
+        <label class="listName" style="width:34%;">音乐版权有效期</label>
+        <picker class="listInfo" mode="date" value="{{musicCopyrightExpireDate}}"  bindchange="bindDateChange" style="width:59%;">
+          <view class="picker">
+            {{musicCopyrightExpireDate}}
+          </view>
+        </picker>
+      </view>
+
+      <button form-type="submit" class="submit">提交</button>
+
+      
+
+
+
+
+      <view class="upContent {{ show ? 'show' : '' }}">
+        <view class="upContent_mask" bindtap="toggle" />
+        <view class="upContent_container">
+          <view class="list" style="padding: 0 3%;">
+            <label class="listName">员工信息</label>
+            <input class="listInfo" type="text" placeholder="请输入DA号，姓名" value="{{userName}}" data-inp='3' bindinput="inputing" />
+          </view>
+          <scroll-view scroll-y="true" style="height: 1350rpx;" bindscrolltolower="lower">
+            <view class="listDA" id="{{idType}}" bindtap="checkedEditor" data-item="{{item}}" wx:for="{{userInfoList}}" wx:key="index">
+              <view class="listDALi">{{item.userName}}</view>
+              <view class="listDALi listDAName">{{item.nameCn}}</view>
+              <view class="listDALi listDAJob">{{item.orgNameCn}}</view>
+              <view class="listDALi">{{item.phone}}</view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+
+    </form>
+  </view>
+</view>

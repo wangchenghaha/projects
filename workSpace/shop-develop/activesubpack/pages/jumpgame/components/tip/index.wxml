@@ -1,0 +1,17 @@
+<view class="tip-contaniner" wx:if="{{showModal}}">
+    <view class="tip-wrap">
+        <image class="tip-bg" src="../../img/tip-bg.png" />
+        <view class="tip-content">
+            <text class="tip-text" wx:if="{{type == 1}}">
+                今日参与机会已用完，\n分享好友\n还能额外获得一次参与机会哦~
+            </text>
+            <text class="tip-text" wx:if="{{type == 2}}">
+                今日参与机会已用完，\n明天再来参与吧！
+            </text>
+        </view>
+        <button open-type="share" class="share-btn" wx:if="{{type == 1}}">
+            <image class="address-btn" src="../../img/sharebtn.png" />
+        </button>
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+</view>

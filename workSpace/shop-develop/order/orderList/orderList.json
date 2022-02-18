@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "order-nav":"../components/orderNav/orderNav",
+    "order-item":"../components/orderItem/orderItem",
+    "copy-icon": "../../components/copyIcon/copyIcon"
+  }
+}

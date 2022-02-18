@@ -1,0 +1,41 @@
+<view class="main {{hasThreeLevel ? '' : '~flex-start'}}" wx:if="{{ruleClassify[levelIndex1]}}">
+	<scroll-view  scroll-y="{{!hasThreeLevel}}" scroll-x="{{hasThreeLevel}}" class="level {{hasThreeLevel}}" >
+		<view 
+			class="level-item ~text-c {{levelIndex1 === index}}"
+			wx:for="{{ruleClassify}}" 
+			wx:key="id"
+			data-type="1"
+			data-index="{{index}}" 
+			bindtap="onClick">{{item.name}}</view> 
+	</scroll-view>
+
+	<view class="~flex-start" wx:if="{{ruleClassify[levelIndex1].list && ruleClassify[levelIndex1].list.length}}">
+		<scroll-view 
+			scroll-y="{{true}}" 
+			class="level-center {{hasThreeLevel}}" >
+			<view class="level-item ~text-c {{hasThreeLevel && levelIndex2 === index ? 'active' : ''}}"
+			 wx:for="{{ruleClassify[levelIndex1].list}}" 
+			 wx:key="id"
+			 data-type="2"
+			 data-index="{{index}}"
+			 bindtap="onClick">
+				{{item.name}}
+			</view>
+		</scroll-view>
+
+		<block wx:if="{{ruleClassify[levelIndex1].list[levelIndex2].list && ruleClassify[levelIndex1].list[levelIndex2].list.length}}">
+			<scroll-view 
+				class="level-right "
+				scroll-y="{{true}}">
+				<view class="level-item ~text-c"
+				wx:for="{{ruleClassify[levelIndex1].list[levelIndex2].list}}"
+				wx:key="id"
+				data-type="3"
+				data-index="{{index}}"
+				bindtap="onClick">{{item.name}}</view>
+			</scroll-view>
+		</block>
+		
+	</view>
+	
+</view>

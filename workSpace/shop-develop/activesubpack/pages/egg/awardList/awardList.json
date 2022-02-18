@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "send-coupon": "plugin://sendCoupon/send-coupon"
+  }
+}

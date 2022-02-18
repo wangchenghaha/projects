@@ -1,0 +1,231 @@
+.wrap {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.li {
+  width: 94%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+  padding: 3%;
+}
+
+.li image {
+  display: block;
+  width: 100%; /*height:464rpx;*/
+  margin-bottom: 15rpx;
+  margin-top: 15rpx;
+}
+
+.title {
+  font-size: 28rpx;
+  line-height: 36rpx;
+  padding: 15rpx 0;
+  font-weight: bold;
+  box-sizing: border-box;
+  float: left;
+}
+.title .sub-title{
+  color: #6a6a6a;
+  font-size: 20rpx;
+}
+.text-wrapper{
+  padding-left: 15rpx;
+  box-sizing: border-box;
+  border-left: solid 6rpx #c4c4c4;
+}
+
+.createTime {
+  font-size: 20rpx;
+  line-height: 40rpx;
+  box-sizing: border-box;
+  color: #ccc;
+  text-align: right;
+}
+
+.showMessage {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.tag_bg {
+  width: 200rpx;
+  height: 60rpx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: url(https://cdn.bestseller.com.cn/assets/common/image/dg/label-wsc.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.showMessage .source {
+  flex: 1;
+  text-align: right;
+  font-size: 28rpx;
+}
+
+.text_show {
+  height: 60rpx;
+  font-size: 26rpx;
+  padding: 10rpx;
+  font-weight: bold;
+  color: white;
+  box-sizing: border-box;
+  margin-right: 25rpx;
+}
+
+.bg_red {
+  padding: 0 40rpx;
+  margin-left: 30rpx;
+  background-color: #d90715;
+  border-radius: 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.transparent_bg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(15, 15, 26, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wxapp-modal {
+  width: 85%;
+  background-color: #fff;
+  padding: 30rpx 20rpx 60rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.wxapp-modal image {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.wxapp-modal text {
+  font-size: 30rpx;
+  color: #000;
+}
+
+.hide {
+  display: none;
+}
+
+.display {
+  display: flex;
+}
+
+.margin_top {
+  margin-top: 20rpx;
+}
+
+.image_close {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 50rpx;
+}
+
+.confirm-btn {
+  margin: 0 auto;
+  width: 85%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #a6a6a6;
+  color: #fff;
+  text-align: center;
+}
+.article-tip{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 99;
+}
+.article-tip .tip-img{
+  width: 100%;
+}
+.article-tip .tip-img image{
+  width: 100%;
+}
+.article-tip .close{
+  display: block;
+  position: absolute;
+  right: 40rpx;
+  top: 50rpx;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  z-index: 999;
+}
+.account{
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.account-wrapper{
+  max-width: 640rpx;
+  max-height: 500rpx;
+  padding: 50rpx 0;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.account-tip{
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+}
+.account .close{
+  position: relative;
+  margin-top: 50rpx;
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  border: solid 4rpx #fff;
+  border-radius: 50%;
+}
+.account .close::after{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -20rpx;
+  margin-top: -2rpx;
+  content: '';
+  width: 40rpx;
+  height: 4rpx;
+  background: #fff;
+  transform: rotate(45deg);
+}
+.account .close::before{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -20rpx;
+  margin-top: -2rpx;
+  content: '';
+  width: 40rpx;
+  height: 4rpx;
+  background: #fff;
+  transform: rotate(-45deg);
+}

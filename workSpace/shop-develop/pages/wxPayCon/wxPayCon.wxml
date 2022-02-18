@@ -1,0 +1,78 @@
+
+
+<!-- 微信支付完成 -->
+<view class='wrap' style='display:{{wrap}}'>
+
+
+  <view class='header'>
+    <view class='title'>{{headerTitle}}</view>
+    <view class="description">{{description}}</view>
+    <image src='{{headerImg}}' mode='widthFix' class="image"></image>
+  </view>
+
+
+  <view class='content'>
+    <view class="li flex-start">订单号：{{payCon.bigorderCode}}<copy-icon text="{{payCon.bigorderCode}}" bind:copy-success="copySuccess"/> </view>
+    <view class="li">商品件数：{{payCon.goodsTotalCount}}件</view>
+    <view class="li">支付金额：{{payCon.payPrice}}元</view>
+  </view>
+  <!-- John& 大神让yxw添加的绑定的导购二维码 -->
+  <view class="qr-img" wx:if="{{guideQRImg}}">
+    <image src="{{guideQRImg}}" mode="widthFix" data-url="{{guideQRImg}}" data-type="saveImg" bindtap="onClick"></image>
+    <view class="tip">亲，有任何售后或其他问题，请添加我们小管家微信，点击图片保存二维码，获取一对一服务哦</view>
+  </view>
+  <view class="customer" wx:if="{{customer.wxName}}">
+    <view class="customer-img"  data-url="{{customer.imgUrl}}" data-link="{{customer.linkUrl}}" data-type="saveImg" bindtap="onClick">
+      <image src="{{customer.imgUrl}}" mode="widthFix"></image>
+    </view>
+    <view class="save" data-url="{{customer.imgUrl}}" data-type="saveImg" bindtap="onClick"></view>
+<!--    <view class="copy" data-type="copyName" bindtap="onClick"></view>-->
+  </view>
+  <view class="sendVoucher activity" wx:if="{{activeList.length && !customer.wxName}}">
+
+    <!-- 活动列表 -->
+    <block wx:for="{{activeList}}" wx:key="activeList">
+      <view class="cinema" data-index="{{index}}" data-type="video" bindtap="onClick">
+        <image src="{{item.imgUrl}}" mode="widthFix"></image>
+      </view>
+    </block>
+
+  </view>
+  <!--集赞小程序-->
+  <view wx:if="{{shareZan.isShow}}">
+    <navigator class="fixed-top" target="miniProgram" open-type="navigate" app-id="{{shareZan.appId}}" path="{{shareZan.path}}" extra-data="" version="release">
+      <image src="{{shareZan.imgUrl}}" style="width:100%" mode="widthFix"></image>
+    </navigator>
+  </view>
+   <navigator class="sendVoucher activity" target="miniProgram" open-type="navigate" app-id="{{aishowAppid}}" path="{{miniPath}}" extra-data="" version="release" wx:if="{{showTime}}">
+       <image src="{{imageUrl}}" mode="widthFix"></image>
+  </navigator>
+
+  <!-- 热销推荐/猜你喜欢 -->
+  <!-- <dmpGoods projeckName="{{projeckName}}"  wx:if="{{itemId}}" itemId="{{itemId}}"></dmpGoods> -->
+  <!-- 20210816 9999 -->
+  <dmpGoods sceneId="ddwcy107" sceneType="2" itemId="{{itemId}}"  wx:if="{{itemId}}"></dmpGoods>
+
+  <view class="footer flex-around {{isIphoneX ? 'iphoneXFooter':''}}">
+    <view class='foot_li foot_left'>
+      <form bindsubmit="toIndex" report-submit="true">
+        <button class="btn foot2ConList" form-type="submit">继续逛逛</button>
+      </form>
+      <!--<view class='btn' bindtap='toIndex'>继续逛逛</view>-->
+    </view>
+    <view class='foot_li foot_right'>
+      <form bindsubmit="toDingdan" report-submit="true">
+        <button class="btn foot2ConList color-fff" form-type="submit">查看订单</button>
+      </form>
+      <!--<view class='btn' bindtap='toDingdan'>查看订单</view>-->
+    </view>
+  </view>
+</view>
+<!--抢红包入口-->
+<rob-bag wx:if="{{payCon.status}}" orderStatus="{{payCon.status}}"></rob-bag>
+
+<view class="voucher flex-center"  wx:if="{{isNewUser}}">
+  <view class="showModel" >
+      <image class="newUserImage" src="{{newUserImage}}" mode="widthFix"  data-type="close" bindtap="onClick"></image>
+  </view>
+</view>

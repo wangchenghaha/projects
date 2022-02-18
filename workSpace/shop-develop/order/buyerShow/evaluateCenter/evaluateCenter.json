@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "评价中心",
+  "usingComponents": {
+    "five-star": "../../components/fiveStar/fiveStar",
+    "rating-item": "../../components/ratingItem/ratingItem",
+    "wait-rating": "../../components/waitRatingItem/waitRatingItem",
+    "go-top": "../../../components/goTop/goTop"
+  }
+}

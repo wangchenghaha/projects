@@ -1,0 +1,16 @@
+.goods{
+  padding: 20rpx;
+  border-bottom: solid 2rpx #ccc;
+  image{
+    display: block;
+    width: 100%;
+  }
+  &-img{
+    width: 180rpx;
+    margin-right: 20rpx;
+  }
+  &-info{
+    flex: 1;
+    font-size: 28rpx;
+  }
+}

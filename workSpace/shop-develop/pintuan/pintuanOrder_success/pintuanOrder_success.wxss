@@ -1,0 +1,215 @@
+page {
+  background-color: #F3F4F5;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.head {
+  background-color: #CC292E;
+  width: 100%;
+  height: 150rpx;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.head-leftView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-left: 40rpx;
+}
+
+.head-leftView-topTitle {
+  font-size: 34rpx;
+  color: white;
+}
+
+.head-leftView-botomTitle {
+  font-size: 23rpx;
+  color: white;
+}
+
+.head-image {
+  margin-right: 50rpx;
+  width: 60rpx;
+  height: auto;
+}
+
+.address {
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.address-leftView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.address-leftView-title {
+  font-size: 25rpx;
+  color: black;
+}
+
+.yaoqing {
+  margin-top: 20rpx;
+  width: 100%;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: white;
+}
+
+.yaoqing-titles {
+  padding: 0 0 0 20rpx;
+  font-size: 25rpx;
+  color: #878787;
+  height: auto;
+}
+
+.yaoqing .topView {
+  width: 100%;
+  height: 30rpx;
+  display: flex;
+  flex-direction: row;
+  line-height: 30rpx;
+}
+
+.yaoqing .topView-image {
+  width: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  height: auto;
+}
+
+.yaoqing .topView-title {
+  font-size: 25rpx;
+  width: 100%;
+  flex: 1;
+  color: black;
+}
+
+.yaoqing .botomView {
+  position: relative;
+  margin-top: 10rpx;
+  width: 100%;
+  height: 85rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.yaoqing .botomView-leftView {
+  flex: 1;
+  width: 100%;
+  height: 85rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 60rpx;
+}
+
+.yaoqing .botomView-leftView .icon {
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 37rpx;
+  border: solid 2rpx #CC292E;
+  margin-left: 10rpx;
+}
+
+.yaoqing .botomView-leftView-title {
+  position: absolute;
+  top: 5rpx;
+  left: 67rpx;
+  width: 50rpx;
+  height: 23rpx;
+  background-color: #CC292E;
+  border-radius: 21rpx;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: white;
+  text-align: center;
+}
+
+.shop {
+  margin-top: 20rpx;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.shop-rightView {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 20rpx 20rpx 0;
+}
+
+.shop-rightView .zhekou {
+  background-color: #DD0000;
+  font-size: 24rpx;
+  text-align: center;
+  color: white;
+  padding: 5rpx;
+}
+
+.zhifu {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.title {
+  font-size: 25rpx;
+  color: #373738;
+}
+
+.title-small {
+  font-size: 23rpx;
+  color: #878787;
+}
+
+.title-red {
+  font-size: 26rpx;
+  color: red;
+}
+
+.tempView {
+  width: 100%;
+  height: 100rpx;
+}
+
+.buyView {
+  height: 100rpx;
+  clear: both;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.buyView-viewText {
+  color: white;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}

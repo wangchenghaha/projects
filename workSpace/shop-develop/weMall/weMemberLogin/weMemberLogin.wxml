@@ -1,0 +1,64 @@
+<view class="we-member">
+  <view class="go-back" data-type="goBack" bindtap="onClick">返回</view>
+  <view class="content">
+    <view class="flex-bet">
+      <view class="title font-bold">输入{{personalLogin ? '员' : '店铺虚拟'}}工后六位</view>
+      <!--        暂时不显示，后续显示-->
+<!--      <view class="switch-btn" bindtap="switchLogin">切换{{personalLogin ? '店铺' : '个人'}}账号登录</view>-->
+    </view>
+
+    <view class="input-wrapper">
+      <block wx:if="{{!wxWork}}">
+        <input data-type="DAInput" bindinput='onClick' focus="true" value="{{sixDANum}}" type='text' maxlength='{{numberArr.length}}'/>
+      </block>
+      <view class="number flex-bet">
+        <block wx:for="{{numberArr}}" wx:key="numberArr">
+          <view class="number-item text-c">{{item}}</view>
+        </block>
+        <view class="confirm" data-type="confirm" bindtap="onClick"></view>
+      </view>
+    </view>
+    <view class="example">
+      <block wx:if="{{personalLogin}}">如：账号DA00123456，输入123456即可</block>
+      <block wx:else>如：账号DA00A1OE30，输入A1OE30即可</block>
+    </view>
+
+    <view class="guide-info" wx:if="{{guideInfo.guideName}}">
+      <view class="guide-item example">姓名：{{guideInfo.guideName}}</view>
+      <view class="guide-item example">店铺名称：{{guideInfo.shopName}}</view>
+      <view class="guide-item example">店铺代码：{{guideInfo.shopCode}}</view>
+      <view class="guide-item example">当前登录手机：{{personalLogin ? guideInfo.curLoginPhone : '店铺IPAD'}}</view>
+      <view class="guide-item example">当前登录微信：{{guideInfo.curLoginWX}}</view>
+      <view class="guide-item example">个人手机账号：{{guideInfo.privatePhone}}</view>
+
+      <view class="login-btn">
+        <button type="primary" data-type="weMemberLogin" bindtap="onClick">使用{{personalLogin ? guideInfo.curLoginPhone : '店铺IPAD'}}登录</button>
+      </view>
+
+    </view>
+  </view>
+  <view class="fixed-bottom {{!guideInfo.shopName ? 'fixed-bt' : ''}}">
+    <view class="title text-c">导购微商城登录</view>
+    <view class="logo">
+      <image src="{{logo}}" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="fixed flex-center" wx:if="{{showClose}}">
+    <view class="code">
+      <view class="close" data-type="close" bindtap="onClick">
+        <my-close color="#000" size="25"></my-close>
+      </view>
+      <view class="code-title font-bold">请输入手机验证码：</view>
+      <view class="code-wrapper">
+        <input data-type="codeInput" bindinput='onClick' type='number' maxlength='{{codeArr.length}}' value="{{code}}"/>
+        <view class="code-arr flex-bet">
+          <block wx:for="{{codeArr}}" wx:key="code">
+            <view class="code-item text-c">{{item}}</view>
+          </block>
+        </view>
+        <button type="{{code.length === 6 ? 'primary' : 'default' }}" data-type="login" bindtap="onClick">确定</button>
+      </view>
+      <view class="text-c desc">您本次登录使用{{personalLogin ? guideInfo.curLoginPhone : '店铺IPAD'}}登录</view>
+    </view>
+  </view>
+</view>

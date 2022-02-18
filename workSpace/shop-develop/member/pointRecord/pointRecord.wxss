@@ -1,0 +1,186 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+}
+
+.container .pointBg {
+  width: 100%;
+  height: 400rpx;
+}
+
+.container .rule {
+  position: absolute;
+  right: 50rpx;
+  top: 50rpx;
+}
+
+.container .rule .warn {
+  width: 28rpx;
+  line-height: 28rpx;
+  font-size: 24rpx;
+  text-align: center;
+  border: 2rpx solid #fff;
+  border-radius: 28rpx;
+  color: #ffffff;
+}
+
+.container .rule .text {
+  color: #ffffff;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+.container .pointContext {
+  background: #ffffff;
+  width: 92%;
+  height: 80%;
+  position: absolute;
+  left: 4%;
+  top: 15%;
+  border-radius: 50rpx;
+  box-shadow: #f8f8f8;
+}
+
+.container .pointContext .userInfo {
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+}
+
+.container .pointContext .userInfo .userImg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 160rpx;
+}
+
+.container .pointContext .userInfo .info {
+  margin-left: 20rpx;
+}
+
+.container .pointContext .userInfo .info .text1 {
+  font-size: 30rpx;
+  font-weight: 530;
+}
+
+.container .pointContext .userInfo .info .pointNum {
+  font-size: 32rpx;
+  font-weight: 600;
+  background: #fab848;
+  width: 150rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  margin-top: 4rpx;
+}
+
+.container .pointContext .userInfo .info .overDue {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 4rpx;
+}
+
+.container .pointContext .listArea {
+  overflow: scroll;
+  height: 75%;
+}
+
+.container .pointContext .listArea .pointInfo {
+  width: 92%;
+  height: 160rpx;
+  margin-left: 4%;
+  border-bottom: #f5f5f5 solid 2rpx;
+}
+
+.container .pointContext .listArea .pointInfo .info {
+  width: 70%;
+}
+
+.container .pointContext .listArea .pointInfo .info-come {
+  font-size: 32rpx;
+}
+
+.container .pointContext .listArea .pointInfo .info-time {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.container .pointContext .listArea .pointInfo .number {
+  color: #fab848;
+  font-size: 40rpx;
+}
+
+.container .pointContext .noRecord {
+  width: 100%;
+  line-height: 500rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.container .voucher {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: 0.3s;
+  transform: translateY(-100%);
+}
+
+.container .voucher .showModel {
+  position: relative;
+  width: 666rpx;
+}
+
+.container .voucher .showModel .tan_close {
+  width: 60rpx;
+  height: 60rpx;
+  position: relative;
+  top: 90rpx;
+  left: 550rpx;
+}
+
+.container .voucher .showModel .content {
+  position: flex;
+  width: 94%;
+  background: white;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50rpx 30rpx;
+  box-sizing: border-box;
+  margin-left: 3%;
+}
+
+.container .voucher .showModel .content .cTitle {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 30rpx;
+}
+
+.container .voucher .showModel .content .contentClass {
+  max-height: 900rpx;
+  overflow-y: scroll;
+}
+
+.container .voucher .showModel .content .contentClass .cInfo {
+  font-size: 26rpx;
+  color: #000;
+}
+
+.container .voucher .showModel .content .contentClass .titleT {
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 550;
+  margin-top: 10rpx;
+}
+
+.container .show {
+  transform: translateY(0);
+}

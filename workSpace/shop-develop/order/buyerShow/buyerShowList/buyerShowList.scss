@@ -1,0 +1,117 @@
+.container{
+    width: 100%;
+    height: 100%;
+    .goods{
+        margin-top: 20rpx;
+        .goodsImg{
+            width: 100rpx;
+            height: 120rpx;
+            margin-left: 30rpx;
+            border-radius: 10rpx;
+        }
+        .info{
+            margin-left: 20rpx;
+            .goodstxt{
+                font-size: 30rpx;
+            }
+            .timer{
+                color: #AFAFAF;
+                font-size: 24rpx;
+                margin-top: 10rpx;
+            }
+        }
+    }
+    
+    .list {
+        width: 96%;
+        margin-left: 2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .list-half {
+            width: 346rpx;
+            box-sizing: border-box;
+            background: #fff;
+            .card {
+                position: relative;
+                background-color: #fff;
+                border-radius: 20rpx;
+                margin-top: 60rpx;
+                .showImg{
+                    width: 100%;
+                    border-radius: 20rpx;
+                }
+                .picNum{
+                    width: 100rpx;
+                    height: 40rpx;
+                    position: absolute;
+                    color: white;
+                    background: #000;
+                    border-radius: 40rpx;
+                    opacity: .7;
+                    margin-left: 16rpx;
+                    margin-top: 20rpx;
+                    .icon{
+                        width: 30rpx;
+                    }
+                    .text{
+                        font-size: 20rpx;
+                        margin-left: 6rpx;
+                    }
+                }
+                .content{
+                    width: 94%;
+                    margin-left: 3%;
+                    font-size: 28rpx;
+                    font-weight: 500;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-wrap: break-word;
+                    white-space: normal !important;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+                .right{
+                    width: 70%;
+                    margin-top: 10rpx;
+                    .icon{
+                        width: 50rpx;
+                        height: 50rpx;
+                        border-radius: 50rpx;
+                        margin-left: 10rpx;
+                        border:2rpx solid #EE8777;
+                    }
+                    .name{
+                        font-size: 24rpx;
+                        font-weight: 550;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        margin-left: 10rpx;
+                        color: #AFAFAF;
+                    }
+                }
+                .left{
+                    width: 30%;
+                    margin-top: 10rpx;
+                    .agreeNum{
+                        font-size: 24rpx;
+                        color: #666;
+                    }
+                    .icon{
+                        width: 28rpx;
+                        height: 28rpx;
+                        margin-left: 10rpx;
+                        margin-right: 10rpx;
+                        border: 2rpx dashed #000;
+                    }
+                }
+            } 
+        }
+    }
+    .bottomView{
+        width: 100%;
+        height: 68rpx;
+    }
+}

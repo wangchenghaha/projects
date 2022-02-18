@@ -1,0 +1,32 @@
+
+.slide-image {
+    position: absolute;
+    height: 350rpx;
+    width: 470rpx;
+    z-index: 5;
+    top: 12%;
+    margin: 0 20rpx;
+}
+    
+.swiperitem {
+    height: 426rpx;
+}
+    
+.active {
+    z-index: 10;
+    height: 426rpx;
+    width: 470rpx;
+    top: 7%;
+    transition: all 0.2s ease-in 0s;
+}
+
+.swiperitem2 {
+    width: 470rpx;
+    height: 426rpx;
+}
+
+.slide-image2 {
+    width: 470rpx;
+    height: 426rpx;
+}
+    

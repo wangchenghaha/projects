@@ -1,0 +1,41 @@
+<!-- exchangeGoods2/cusAlreadyMailed/cusAlreadyMailed.wxml -->
+<import src="../tmpl/classicOrderItem/classicOrderItem" />
+<import src="../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar"/>
+<view class="g_frame">
+    <view class="g_layout_red_top">
+        <view class="g_tip_00">{{hasRefundShop?'请携带商品到店退货':'等待卖家确认收货'}}</view>
+        <view class="g_tip_01" wx:if="{{hasRefundShop}}">请您于<span class="g_span_time"> {{remainTimeArray[0]}} </span>天<span class="g_span_time"> {{remainTimeArray[1]}} </span>小时<span class="g_span_time"> {{remainTimeArray[2]}} </span>分内携带商品到已选门店办理退货，超时系统自动默认退货失败。</view>
+        <view class="g_tip_01" wx:elif="{{!hasRefundShop}}">你已退货，等待商家处理。</view>
+    </view>
+
+    <view class="order_tip">{{hasRefundShop?TIP_1:TIP_0}}</view>
+
+    <view class="layout_refund flex_c align_c g_border_top g_border_bottom">
+        <view class="w_price flex_r align_c space_b g_big_height">
+            <view class="title_m">退回商品总金额</view>
+            <view class="total_p">¥ {{int0}}.<span class="total_r">{{decimalPart}}</span></view>
+        </view>
+        <view class="v_divider"></view>
+
+        <view class="w_exp flex_r align_c space_s">
+            <image class="exp_img" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_ex_refund_clock.png" mode="widthFix"/>
+            <view class="exp_txt">退货物流：{{expressInfo}}</view>
+            <image wx:if="{{false}}" class="exp_img2" src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_right_white.png" mode="widthFix"/>
+        </view>
+
+
+        <view class="shop_wrapper" wx:if="{{hasRefundShop}}">
+            <template is="shopMultiBarTmpl" data="{{shopBean}}" />
+        </view>
+    </view>
+
+    <view class="g_order_item_title g_big_height">退回商品</view>
+    <view class="global_order_item g_border_bottom g_padding_bottom" wx:for="{{exDetailBean.applySourceList}}" wx:key="applySourceList">
+        <template is="classicOrderItemTmpl" data="{{item}}"></template>
+    </view>
+
+    <ex-order-infos-view exOrderBean="{{exDetailBean}}" />
+
+    <ex-button-layout exchangeCode="{{exDetailBean.exchangeCode}}"
+                        bindonCommitClick="onCommitClick"/>
+</view>

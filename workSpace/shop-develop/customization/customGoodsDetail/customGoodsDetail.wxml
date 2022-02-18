@@ -1,0 +1,74 @@
+<view class="bg">
+  <swiper indicator-dots circular style="height:{{swiperImageHeight}}px;">
+    <block wx:for="{{jsonDatas.datas[jsonDatas.selectIndex].swiperPics}}" wx:key="swiperKey">
+      <swiper-item >
+        <image src="{{item}}" class="swiperImg" mode="widthFix" style="height:{{swiperImageHeight}}px;" bindload="getImageHeight" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 商品名称 -->
+  <view class="bordTitle">{{jsonDatas.datas[jsonDatas.selectIndex].template_name}}</view>
+  <!-- 钱 -->
+  <view class="money">￥<text style="color: #4A4A4A;font-weight: normal;">{{jsonDatas.datas[jsonDatas.selectIndex].sale_price}}</text></view>
+  <!-- 描述 -->
+  <view class="miaoshu">单品价,不包含定制费用</view>
+  <!-- 线条 -->
+  <view class="line"></view>
+  <!-- 颜色/尺码框 -->
+  <block wx:for="{{colorAndChimaArrs}}" wx:key="colorAndChimaArrs">
+
+    <view class="colorView">
+      <view id="{{index}}" class="selectColorView" bindtap="selectTap">
+        <view class="selectColorView-title">{{item.title == '' ? '请选择尺码' : item.title}}</view>
+          <image class="selectColorView-image" src="https://cdn.bestseller.com.cn/assets/wechat/JACKJONES/image/DZjiantou.png" mode="widthFix" animation="{{item.animation}}" />
+      </view>
+      <view class="colorViews {{item.canShow ? 'colorViews-show' : ''}}">
+        <view bindtap="selectTap_subs" wx:for="{{index == 1 ? item.arrs[jsonDatas.selectIndex] : item.arrs}}" wx:for-index="arrsIndex" wx:for-item="arrsItem" wx:key="colorViews" id="{{arrsIndex}}" data-type="{{index}}" class="colorViews-title {{item.canShow ? 'colorViews-title-show' : ''}}">{{arrsItem}}</view>
+      </view>
+    </view>
+
+  </block>
+
+  <!-- 填充层 -->
+  <view class="customView" style="height: {{400 + iphoneXHeight}}rpx;"></view>
+</view>
+
+<!-- 底部框 最上层 -->
+<view class="filxBotomView">
+  <!-- 商品描述 -->
+  <view class="filxBotomView-topView" bindtap="bouncesTap">
+    <view class="filxBotomView-topView-title">商品描述</view>
+    <view class="filxBotomView-topView-title-right">+</view>
+  </view>
+  <!-- 客服、重新定制、直接购买 -->
+  <view class="filxBotomView-bottomView">
+    <block wx:for="{{bottomViewTitles}}" wx:key="filxBotomView-bottomView">
+      <view id="{{index}}" class="view{{index}}" bindtap="bottomTap">
+        <image class="view0-image" src="https://cdn.bestseller.com.cn/assets/wechat/JACKJONES/image/DZkefu.png" wx:if="{{index == 0}}" />
+        <view class="view0-title" wx:if="{{index == 0}}">{{item}}</view>
+        <block wx:else>{{item}}</block>
+      </view>
+    </block>
+  </view>
+  <!-- 适配iPhoneX -->
+  <view style="width: 100%;height:{{iphoneXHeight}}rpx;"></view>
+</view>
+<!-- 商品描述弹框 -->
+<view class="bouncedView {{canShow ? 'bouncedView-show' : ''}}" style="bottom: {{iphoneXHeight + 210}}rpx;">
+  <scroll-view scroll-y="{{true}}" style="height:{{htmlHeight}}px;opacity: {{canShow ? 1 : 0}};">
+      <rich-text nodes="{{bodyContent}}"></rich-text>
+  </scroll-view>
+</view>
+
+  <!--客服弹窗-->
+<block wx:if="{{helpData.wxNum}}">
+  <view wx:if="{{tipShow}}" class="helpBonucedBG"></view>
+  <view wx:if="{{tipShow}}" class="helpBounced">
+    <image src="{{helpData.bouncedImage}}" mode="widthFix" style="width:100%;position: relative;" >
+      <view class="bounced-close" bindtap="changeShow"></view>
+      <view class="bounced-call" bindtap="callPhone"></view>
+      <view class="bounced-copy" bindtap="bouncedCopy"></view>
+      <view class="bounced-save" bindtap="bouncedSave"></view>
+    </image>
+  </view>
+</block>

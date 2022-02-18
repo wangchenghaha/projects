@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bouncesView" : "../components/shortVideoBounces/shortVideoBouncesView",
+    "shareView" : "../components/shortVideoShare/shortVideoShare"
+  }
+}

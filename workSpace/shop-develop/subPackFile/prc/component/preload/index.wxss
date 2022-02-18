@@ -1,0 +1,84 @@
+.wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  transitiion: all 0.5s linear;
+  background: #a9e7e1;
+  z-index: 1000;
+}
+
+.wrapper .image {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.wrapper .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.wrapper .content .logo {
+  width: 286rpx;
+  height: 189rpx;
+  margin: 0 auto;
+  background: url("https://tc.woaap.com/lingzhi/princess/logo-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .content .logo.big {
+  width: 326rpx;
+  height: 217rpx;
+}
+
+.wrapper .content .rate {
+  color: #dc7e75;
+  font-size: 64rpx;
+  font-weight: bold;
+  width: 500rpx;
+  margin: 60rpx auto;
+  text-shadow: 0 4rpx 8rpx #89242a;
+}
+
+.wrapper .content .rate .tit {
+  text-align: left;
+}
+
+.wrapper .content .rate .desc {
+  text-align: right;
+}
+
+.wrapper .content .percent {
+  position: relative;
+  width: 520rpx;
+  height: 110rpx;
+  border-radius: 56rpx;
+  box-shadow: 0 0 30rpx #89242a;
+  overflow: hidden;
+}
+
+.wrapper .content .percent .inner {
+  width: 0;
+  height: 110rpx;
+  background: #dc7e75;
+}
+
+.wrapper .content .percent .tit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-size: 40rpx;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 110rpx;
+}

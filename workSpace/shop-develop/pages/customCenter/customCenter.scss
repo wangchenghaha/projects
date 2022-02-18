@@ -1,0 +1,70 @@
+.wrap{
+    width: 100%; 
+    margin: 0 auto;
+    .banner {
+        .swiper{
+            height: 480rpx;
+        }
+        .large-swiper{
+            height: 900rpx;
+        }
+        image{
+            display: block;
+            width: 100%;
+          }
+    }
+    .hot{
+        width: 100%;
+        display: block;
+        margin-top: 30rpx;
+        image{
+            width: 100%;
+        }
+    }
+    /* 商品列表 */
+    .scroll-header{
+        display: flex;
+        white-space: nowrap;
+        .flow-content{
+            width: 375rpx;
+            display: inline-block; 
+            margin-top: 20rpx;
+            image{
+                border: 2rpx solid #000;
+                display: flex;
+                width: 90%;
+                align-items: center;
+                justify-content: center;
+            }
+            .goodsInfo{
+                width: 340rpx;
+                line-height: 50rpx;
+                text-align: center;
+                font-size: 28rpx;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow:ellipsis;
+            }
+        }
+        .category-four{
+            width: 188rpx;
+            display: inline-block; 
+            image{
+                width: 90%;
+                margin-left: 5%;
+            }
+        }
+    }
+    
+    .botton-content{
+        flex-wrap: wrap;
+        .botton-item{
+            flex: 0 1 50%;
+            image{
+                width: 100%;
+            }
+            
+        }
+    }
+}
+

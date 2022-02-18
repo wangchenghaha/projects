@@ -1,0 +1,718 @@
+{
+    "pages": [
+        "pages/welcome/welcome",
+        "pages/index/index",
+        "pages/setting/requestPermission",
+        "pages/dgbPay/dgbPay",
+        "pages/informat/informat",
+        "pages/informatCon/informatCon",
+        "pages/informatNew/informat",
+        "pages/webview/webview",
+        "pages/search/search",
+        "pages/goodsList/goodsList",
+        "pages/content/content",
+        "pages/orderSave/orderSave",
+        "pages/coupon/coupon",
+        "pages/address/address",
+        "pages/addAddress/addAddress",
+        "pages/wxPay/wxPay",
+        "pages/wxPayCon/wxPayCon",
+        "pages/allDingdan/allDingdan",
+        "pages/dingdanToPay/dingdanToPay",
+        "pages/dingdanToTui/dingdanToTui",
+        "pages/lookDdAdress/lookDdAdress",
+        "pages/memberCenter/memberCenter",
+        "pages/returned/returned",
+        "pages/nearbyShops/main/main",
+        "pages/nearbyShops/navMap/navMap",
+        "pages/nearbyShops/shopInStock/shopInStock",
+        "pages/shoppingCart/shoppingCart",
+        "pages/whitePage/whitePage",
+        "pages/share/share",
+        "pages/etoLogin/etoLogin",
+        "pages/orderExpressDetail/orderExpressDetail",
+        "pages/weMember/weMember",
+        "pages/collection/collection",
+        "pages/customCenter/customCenter",
+        "pages/searchHistory/searchHistory"
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "您的位置信息将用于快速帮您填写收货地址"
+        }
+    },
+    "plugins": {
+        "goodsSharePlugin": {
+            "version": "4.0.1",
+            "provider": "wx56c8f077de74b07c"
+        },
+        "sendCoupon": {
+            "version": "1.1.5",
+            "provider": "wxf3f436ba9bd4be7b"
+        }
+    },
+    "subpackages": [
+        {
+            "name": "exchangeGoods",
+            "root": "exchangeGoods/",
+            "pages": [
+                "applyForExchange/applyForExchange",
+                "auditResults/auditResults",
+                "exchangeMethod/exchangeMethod",
+                "shopList/shopList",
+                "shopsMap/shopsMap",
+                "shopInfo/shopInfo",
+                "goodsList/goodsList",
+                "fakeConfirmExchange/fakeConfirmExchange",
+                "prepareGoodsStatus/prepareGoodsStatus",
+                "uploadTrackingNumber/uploadTrackingNumber",
+                "orderStatusNew/orderStatusNew",
+                "wxPayResult/wxPayResult",
+                "rewardPic/rewardPic"
+            ]
+        },
+        {
+            "name": "exchangeGoods2",
+            "root": "exchangeGoods2/",
+            "pages": [
+                "applyForExchange/applyForExchange",
+                "auditResults/auditResults",
+                "exchangeMethod/exchangeMethod",
+                "shopList/shopList",
+                "shopsMap/shopsMap",
+                "shopInfo/shopInfo",
+                "goodsList/goodsList",
+                "fakeConfirmExchange/fakeConfirmExchange",
+                "prepareGoodsStatus/prepareGoodsStatus",
+                "uploadTrackingNumber/uploadTrackingNumber",
+                "orderStatusNew/orderStatusNew",
+                "wxPayResult/wxPayResult",
+                "rewardPic/rewardPic",
+                "cusAlreadyMailed/cusAlreadyMailed"
+            ]
+        },
+        {
+            "name": "order",
+            "root": "order/",
+            "pages": [
+                "qualityRefund/qualityRefund",
+                "refundDetail/refundDetail",
+                "orderList/orderList",
+                "orderDetail/orderDetail",
+                "refundGoods/refundGoods",
+                "refundList/refundList",
+                "buyerShow/evaluate/evaluate",
+                "buyerShow/evaluateList/evaluateList",
+                "buyerShow/buyerShowDetail/buyerShowDetail",
+                "buyerShow/commentDetail/commentDetail",
+                "giftList/giftList",
+                "buyerShow/buyerShowList/buyerShowList",
+                "buyerShow/evaluateCenter/evaluateCenter"
+            ]
+        },
+        {
+            "name": "nearbyShops2",
+            "root": "nearbyShops2/",
+            "pages": [
+                "shopDetail/shopDetail"
+            ]
+        },
+        {
+            "name": "pintuan",
+            "root": "pintuan/",
+            "pages": [
+                "pintuanList/pintuanList",
+                "pintuanDetail/pintuanDetail",
+                "pintuanBuy/pintuanBuy",
+                "pintuanOrder/pintuanOrder",
+                "pintuanOrder_success/pintuanOrder_success",
+                "pintuan_paySuccess/pintuan_paySuccess"
+            ]
+        },
+        {
+            "name": "valentineDay",
+            "root": "valentineDay",
+            "pages": [
+                "pages/index/index",
+                "pages/record/index",
+                "pages/listen/index",
+                "pages/goRecord/goRecord",
+                "pages/startRecord/startRecord",
+                "pages/longtapRecord/longtapRecord",
+                "pages/setPwd/setPwd",
+                "pages/share/share"
+            ]
+        },
+        {
+            "name": "activity",
+            "root": "activity/",
+            "pages": [
+                "aPenny/aPenny",
+                "tiggerGame/welCome/welCome",
+                "tiggerGame/gameIndex/gameIndex",
+                "tiggerGame/ticketView/ticketView",
+                "tiggerGame/shareView/shareView",
+                "tiggerGame/helpView/helpView",
+                "tiggerGame/guizeView/guizeView",
+                "gloryKing/gloryKing",
+                "advance/goodDetail/content",
+                "advance/orderSave/orderSave",
+                "advance/orderList/orderList",
+                "advance/orderDetail/orderDetail",
+                "bargain/bargainContent/content",
+                "bargain/bargainList/bargainList",
+                "bargain/bargainHelpView/bargainHelpView",
+                "bargain/bargainShareView/bargainShareView",
+                "bargain/bargainOrderSave/bargainOrderSave",
+                "recommedGoods/recommedGoods",
+                "luckBag/luckBagContent/luckBagContent",
+                "luckBag/luckBagOrderSave/luckBagOrderSave",
+                "couponShare/couponShare/couponShare",
+                "couponShare/shareIndex/shareIndex",
+                "couponShare/sharedPage/sharedPage",
+                "couponShareFOL/couponShare/couponShare",
+                "couponShareFOL/shareIndex/shareIndex",
+                "couponShareFOL/sharedPage/sharedPage",
+                "wish/setList/setList",
+                "wish/list/list",
+                "wish/openDetail/openDetail",
+                "wish/myWishList/myWishList",
+                "middleJump/middlejump",
+                "scannedTrack/scannedTrack",
+                "mercPlugin/index",
+                "flashShop/welCome/welCome",
+                "flashShop/register/register",
+                "flashShop/questions/questions",
+                "flashShop/otherQuestion/otherQuestion",
+                "flashShop/questionAndFinish/questionAndFinish",
+                "previewHome/previewHome",
+                "robRedBag/home/home",
+                "robRedBag/detail/detail",
+                "courierGame/welCome/welCome",
+                "courierGame/ticket/ticket",
+                "courierGame/myTicket/myTicket",
+                "courierGame/help/help",
+                "courierGame/game/game",
+                "courierGame/guize/guize",
+                "christmasGame/welCome/welCome",
+                "christmasGame/ticket/ticket",
+                "christmasGame/myTicket/myTicket",
+                "christmasGame/help/help",
+                "christmasGame/game/game",
+                "christmasGame/guize/guize",
+                "luckGame/luckGame",
+                "nianGame/index/index",
+                "nianGame/tujianView/tujianView",
+                "yearBill/index/index",
+                "yearBill/help/help",
+                "onlyXjackjones/onlyXjackjones",
+                "games/springOuting/index/index",
+                "games/springOuting/main/main",
+                "games/springOuting/help/help",
+                "games/springOuting/myGift/myGift",
+                "guessLike/guessLike",
+                "games/lottery/lotteryOnly/lottery",
+                "games/lottery/lotteryVm/lottery",
+                "games/lottery/lotteryOnly0423/lottery",
+                "games/lottery/lotterySchool/lottery",
+                "games/jumpGame/help/index",
+                "games/jumpGame/index/index",
+                "games/jumpGame/welcome/index",
+                "games/jumpGame/ruleContent/ruleContent",
+                "seckill/seckill",
+                "games/lottery/lotteryBeiFu/lottery",
+                "couponShareFOL/home/home"
+            ],
+            "plugins": {
+                "mercPlugin": {
+                    "version": "2.3.0",
+                    "provider": "wx87ebb56764fea681"
+                }
+            }
+        },
+        {
+            "name": "weMall",
+            "root": "weMall/",
+            "pages": [
+                "sendCoupon/sendCoupon",
+                "openCoupon/openCoupon",
+                "userService/userService",
+                "daogouLogin/daogouLogin",
+                "daogouMbList/daogouMbList",
+                "daogouMoban/daogouMoban",
+                "daogouXuanze/daogouXuanze",
+                "daogouImgs/daogouImgs",
+                "daogouwxq/daogouwxq",
+                "daogouNav/daogouNav",
+                "openDaogouPage/openDaogouPage",
+                "daogouYeji/daogouYeji",
+                "daogouQRCode/daogouQRCode",
+                "daogouQRCodeNew/daogouQRCodeNew",
+                "daogouWshop/daogouWshop",
+                "daogouLearn/daogouLearn",
+                "daogouBind/daogouBind",
+                "daogouWeb/daogouWeb",
+                "daogouVideo/daogouVideo",
+                "daogouUvideo/daogouUvideo",
+                "daogouUvideoDetail/daogouUvideoDetail",
+                "guideVideo/guideVideo",
+                "daogouExclusive/daogouExclusive",
+                "openCustomerRefundDetail/openCustomerRefundDetail",
+                "weMemberLogin/weMemberLogin",
+                "weMallOperation/weMallOperation",
+                "salesRanking/salesRanking",
+                "liveList/liveList",
+                "liveDetail/liveDetail",
+                "redBook/list/list",
+                "redBook/detail/detail",
+                "redBook/goodsDetail/goodsDetail",
+                "redBook/openDetail/openDetail",
+                "distributor/login/login",
+                "shareDetail/shareDetail",
+                "openShareDetail/openShareDetail",
+                "distributor/home/home",
+                "distributor/customerList/customerList",
+                "distributor/profit/profit",
+                "guideHelper/home/home",
+                "guideHelper/customerDetail/customerDetail"
+            ]
+        },
+        {
+            "name": "shortVideo",
+            "root": "shortVideo/",
+            "pages": [
+                "shortVideoListDetail/shortVideoListDetail",
+                "shortVideoListMore/shortVideoListMore",
+                "shortVideoTotalView/shortVideoTotalView"
+            ]
+        },
+        {
+            "name": "games",
+            "root": "games",
+            "pages": [
+                "pages/truntableNew/truntableNew",
+                "pages/truntableNewFol/truntableNewFol",
+                "pages/turntablePromotion/turntablePromotion",
+                "pages/turntableMemberDay/turntableMemberDay",
+                "jumpGame/index/index",
+                "jumpGame/welCome/index",
+                "jumpGame/help/index",
+                "myPet/adoptPet/adoptPet",
+                "myPet/myPet/myPet",
+                "myPet/friendHelp/friendHelp",
+                "redEnvelop/game/game",
+                "redEnvelop/main/main",
+                "redRain/index/index",
+                "redRain/game/game",
+                "redRain/help/help",
+                "redRain/ticketView/ticketView",
+                "redRain/myTicketView/myTicketView",
+                "lottery/lotteryMay/lottery",
+                "sharpEyes/game/game",
+                "sharpEyes/help/help",
+                "sharpEyes/main/main",
+                "flappyBird/home/index",
+                "flappyBird/game/index",
+                "flappyBird/help/index",
+                "flappyBird/story/index",
+                "shooting/shooting",
+                "redRain_charged/index/index",
+                "redRain_charged/guize/index",
+                "redRain_charged/game/index",
+                "redRain_charged/help/index"
+            ]
+        },
+        {
+            "name": "member",
+            "root": "member/",
+            "pages": [
+                "jifenBuy/jifenBuy",
+                "jifenBuyContent/jifenBuyContent",
+                "jifenBuyDingdan/jifenBuyDingdan",
+                "couponsList/couponsList",
+                "contact/contact",
+                "lbs/lbs",
+                "brandActivity/brandActivity",
+                "myCoupons/myCoupons",
+                "pointsDetails/pointsDetails",
+                "profileUpdates/profileUpdates",
+                "myPoints/myPoints",
+                "memberRewards/memberRewards",
+                "rewardsDetails/rewardsDetails",
+                "getCoupon/getCoupon",
+                "getCard/getCard",
+                "mycouponJL/mycouponJL",
+                "myCouponList/myCouponList",
+                "rewardCenter/rcGoodsDetail/rcGoodsDetail",
+                "rewardCenter/rcOrderList/rcOrderList",
+                "rewardCenter/rcOrderSave/rcOrderSave",
+                "rewardCenter/rcGetCoupon/rcGetCoupon",
+                "rewardCenter/rcMain/rcMain",
+                "login/login",
+                "pointRecord/pointRecord",
+                "trendInformation/main/main",
+                "trendInformation/trendDetail/trendDetail",
+                "trendInformation/userCenter/userCenter",
+                "trendInformation/autorCenter/autorCenter",
+                "blindBox/blindBox",
+                "hotSaleWeek/hotSaleWeek",
+                "storeValueCard/storeValueCard",
+                "redBagCover/index/index",
+                "redBagCover/first/first",
+                "redBagCover/help/help"
+            ]
+        },
+        {
+            "name": "store",
+            "root": "store/",
+            "pages": [
+                "storelist/storelist",
+                "storedetail/storedetail"
+            ]
+        },
+        {
+            "name": "wxLandingPage",
+            "root": "wxLandingPage/",
+            "pages": [
+                "wxLandingPage/wxLandingPage"
+            ]
+        },
+        {
+            "name": "customservice",
+            "root": "CustomService/",
+            "pages": [
+                "index/index",
+                "fail/index",
+                "detail/index",
+                "form/index",
+                "login/index",
+                "maplist/index",
+                "myrecord/index",
+                "record/index",
+                "shoplist/index",
+                "staff/index"
+            ]
+        },
+        {
+            "name": "getcoupon",
+            "root": "getcoupon/",
+            "pages": [
+                "getcoupon/getcoupon"
+            ]
+        },
+        {
+            "name": "attendgroup",
+            "root": "attendgroup/",
+            "pages": [
+                "group/group",
+                "coupon/coupon",
+                "result/result",
+                "fail/fail",
+                "index/index"
+            ]
+        },
+        {
+            "name": "bindingcoupon",
+            "root": "bindingcoupon/",
+            "pages": [
+                "index/index"
+            ]
+        },
+        {
+            "name": "fightgroup",
+            "root": "fightgroup/",
+            "pages": [
+                "index/index",
+                "group/group",
+                "coupon/coupon",
+                "result/result",
+                "fail/fail"
+            ]
+        },
+        {
+            "name": "changecoupon",
+            "root": "changecoupon/",
+            "pages": [
+                "index/index",
+                "notice/notice",
+                "received/received"
+            ]
+        },
+        {
+            "name": "changecoupononline",
+            "root": "changecoupononline/",
+            "pages": [
+                "index/index",
+                "notice/notice",
+                "received/received"
+            ]
+        },
+        {
+            "name": "advancesale",
+            "root": "advancesale/",
+            "pages": [
+                "index/index",
+                "success/success",
+                "fail/fail",
+                "nearstore/storelist/storelist",
+                "nearstore/storedetail/storedetail"
+            ]
+        },
+        {
+            "name": "newcoupon",
+            "root": "newcoupon/",
+            "pages": [
+                "index/index"
+            ]
+        },
+        {
+            "name": "customization",
+            "root": "customization/",
+            "pages": [
+                "customClassify/customClassify",
+                "customEditGoods/customEditGoods",
+                "customGoodsDetail/customGoodsDetail",
+                "customOrderDetail/customOrderDetail",
+                "customOrderList/customOrderList",
+                "customOrderSave/customOrderSave",
+                "customPreView/customPreView"
+            ]
+        },
+        {
+            "name": "mickeyCustom",
+            "root": "mickeyCustom/",
+            "pages": [
+                "luckDraw/luckDraw",
+                "mickeyTiger/index",
+                "mickeyAddress/index",
+                "mickeyHelp/index",
+                "mickeyMyGift/index",
+                "mickeyRules/index",
+                "mickeyHome/index"
+            ]
+        },
+        {
+            "name": "socialAdvertising",
+            "root": "socialAdvertising/",
+            "pages": [
+                "main/main",
+                "landing/landing",
+                "shopLanding/shopLanding",
+                "trySearch/trySearch",
+                "tempweb/tempweb",
+                "socialGroup/socialGroup",
+                "honorOfKings/honorOfKings",
+                "honorOfKingsStatic/honorOfkingsStatic",
+                "newMoments/newMoments",
+                "newMomentsDynamic/newMomentsDynamic",
+                "newMoments1120/newMoments1120",
+                "kuaikan1223/kuaikan1223",
+                "kuaikan122302/kuaikan122302",
+                "kuaikan/ad1225/ad1225",
+                "kuaikan/ad0103/ad0103",
+                "kuaikan/ad0115/ad0115",
+                "ads/ad0118/ad0118",
+                "ads/ad0127/ad0127",
+                "ads/ad0202/ad0202",
+                "kuaikan/ad0129/ad0129",
+                "ads/ad20210224/ad20210224",
+                "ads/ad20210306/ad20210306",
+                "ads/ad20210306New/ad20210306",
+                "ads/ad20210307/ad20210307",
+                "ads/ad20210413/ad20210413",
+                "ads/ad20210521/index",
+                "ads/adsCommon/index"
+            ]
+        },
+        {
+            "name": "dailyCheckIn",
+            "root": "dailyCheckIn/",
+            "pages": [
+                "main/main",
+                "points/points",
+                "coupons/coupons",
+                "history/history"
+            ]
+        },
+        {
+            "name": "livePlayer",
+            "root": "livePlayer",
+            "pages": [
+                "home/home",
+                "liveGuideQR/liveGuideQR",
+                "rePlayer/rePlayer",
+                "listView/listView",
+                "playerDetail/playerDetail",
+                "transfer/transfer",
+                "liveGuide/liveGuide",
+                "liveCoupon/liveCoupon",
+                "activity/activity",
+                "livePayCoupon/livePayCoupon",
+                "album/album",
+                "feedLive/feedLive"
+            ],
+            "plugins": {
+                "live-player-plugin": {
+                    "version": "1.3.2",
+                    "provider": "wx2b03c6e691cd7370"
+                }
+            }
+        },
+        {
+            "name": "shakeCoupon",
+            "root": "subPackFile/shakeCoupon",
+            "pages": [
+                "pages/index/index"
+            ]
+        },
+        {
+            "name": "princess",
+            "root": "subPackFile/prc",
+            "pages": [
+                "p/a/index",
+                "p/b/index",
+                "p/c/index",
+                "p/d/index"
+            ]
+        },
+        {
+            "name": "crayongame",
+            "root": "crayongame",
+            "pages": [
+                "pages/index/index",
+                "pages/info/index",
+                "pages/poster/index",
+                "pages/last/index",
+                "pages/result/index",
+                "pages/turntable/index",
+                "pages/doraemon/index"
+            ]
+        },
+        {
+            "name": "activesubpack",
+            "root": "activesubpack",
+            "pages": [
+                "pages/jumpgame/index/index",
+                "pages/jumpgame/gamewebview/index",
+                "pages/getstorecoupon/getstorecoupon",
+                "pages/egg/index/index",
+                "pages/egg/rule/rule",
+                "pages/egg/awardList/awardList",
+                "pages/questionnaire/pages/index/index",
+                "pages/questionnaire/pages/webView/index"
+            ]
+        },
+        {
+            "name": "businessCouponSubpack",
+            "root": "businessCouponSubpack/",
+            "pages": [
+                "pages/index/index",
+                "pages/webView/webView",
+                "pages/couponList/couponList"
+            ]
+        },
+        {
+            "name": "recommendCourteous",
+            "root": "recommendCourteous/",
+            "pages": [
+                "homePage/homePage",
+                "help/help"
+            ]
+        }
+    ],
+    "preloadRule": {
+        "pages/allDingdan/allDingdan": {
+            "network": "all",
+            "packages": [
+                "exchangeGoods",
+                "order"
+            ]
+        },
+        "pages/dingdanToPay/dingdanToPay": {
+            "network": "all",
+            "packages": [
+                "exchangeGoods",
+                "order"
+            ]
+        },
+        "pages/nearbyShops/main/main": {
+            "network": "all",
+            "packages": [
+                "nearbyShops2"
+            ]
+        },
+        "pages/index/index": {
+            "network": "all",
+            "packages": [
+                "member",
+                "weMall",
+                "pintuan",
+                "shortVideo",
+                "games"
+            ]
+        },
+        "pages/memberCenter/memberCenter": {
+            "network": "all",
+            "packages": [
+                "pintuan"
+            ]
+        }
+    },
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#fbf9fe",
+        "backgroundColor": "#fff"
+    },
+    "networkTimeout": {
+        "request": 150000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "usingComponents": {
+        "comp-image-pre": "/components/image-pre/image-pre",
+        "comp-painter": "/components/painter/painter"
+    },
+    "tabBar": {
+        "color": "#6d6d6d",
+        "selectedColor": "#fff",
+        "borderStyle": "black",
+        "backgroundColor": "#121212",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/bar1.png",
+                "selectedIconPath": "images/bar1_active.png",
+                "text": "购物商城"
+            },
+            {
+                "pagePath": "pages/weMember/weMember",
+                "iconPath": "images/bar2.png",
+                "selectedIconPath": "images/bar2_active.png",
+                "text": "导购天地"
+            },
+            {
+                "pagePath": "pages/shoppingCart/shoppingCart",
+                "iconPath": "images/bar3.png",
+                "selectedIconPath": "images/bar3_active.png",
+                "text": "购物袋"
+            },
+            {
+                "pagePath": "pages/informatNew/informat",
+                "iconPath": "images/bar4.png",
+                "selectedIconPath": "images/bar4_active.png",
+                "text": "潮流资讯"
+            },
+            {
+                "pagePath": "pages/memberCenter/memberCenter",
+                "iconPath": "images/bar5.png",
+                "selectedIconPath": "images/bar5_active.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "debug": true,
+    "sitemapLocation": "sitemap.json",
+    "usingShopPlugin": true
+}

@@ -1,0 +1,128 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container .helpbg {
+  width: 100%;
+}
+
+.container .content {
+  position: absolute;
+  width: 490rpx;
+  height: 136rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  background: none;
+  border-radius: 100rpx;
+  top: 500rpx;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .rule1 {
+  position: absolute;
+  width: 160rpx;
+  height: 120rpx;
+  background: none;
+  z-index: 9;
+  right: 0;
+}
+
+.container .rule2 {
+  position: absolute;
+  width: 120rpx;
+  height: 120rpx;
+  background: none;
+  right: 82px;
+  z-index: 9;
+}
+
+.container .text1 {
+  position: absolute;
+  width: 420rpx;
+  font-size: 32rpx;
+  color: #87c13b;
+  text-align: center;
+  border-radius: 100rpx;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .help {
+  position: absolute;
+  width: 420rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 100rpx;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .startGame {
+  position: absolute;
+  width: 420rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 100rpx;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.voucher {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.voucher .showModel {
+  position: relative;
+  width: 92%;
+}
+
+.voucher .showModel .rankbg {
+  width: 100%;
+}
+
+.voucher .showModel .tan_close {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  top: 50rpx;
+  right: 40rpx;
+}
+
+.voucher .showModel .rankArea {
+  position: absolute;
+  width: 70%;
+  height: 900rpx;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.voucher .showModel .rankArea .ruleTitle {
+  font-size: 28rpx;
+  color: #e58e1e;
+  margin-top: 20rpx;
+}
+
+.voucher .showModel .rankArea .ruleContent {
+  width: 85%;
+  font-size: 24rpx;
+  color: #87c13b;
+}

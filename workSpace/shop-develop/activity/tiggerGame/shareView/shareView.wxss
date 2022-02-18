@@ -1,0 +1,116 @@
+.bouncedView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouncedView-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .5;
+}
+
+.bouncedView-view {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bouncedView-view-image {
+  vertical-align: middle;
+  width: 100%;
+  position: relative;
+}
+
+.bouncedView-view .saveImageBtn {
+  position: absolute;
+  bottom: 11%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300rpx;
+  height: 80rpx;
+}
+
+.bouncedView-view .topTitle {
+  position: absolute;
+  bottom: 56%;
+  left: 0;
+  width: 100%;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.bouncedView-view .erweima {
+  position: absolute;
+  bottom: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+.bouncedView-view .boraView {
+  position: absolute;
+  bottom: 22.3%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10rpx solid #40763E;
+  border-radius: 10rpx;
+}
+
+.bouncedView-view .boraView_only {
+  border: 10rpx solid #0072BA;
+}
+
+.bouncedView-view .cloesd {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+
+.bouncedView-view .saveImageBtnFOL {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 380rpx;
+  height: 70rpx;
+  border-radius: 70rpx;
+  line-height: 70rpx;
+  background-image: linear-gradient(#FFFB4A, #FF892A);
+  text-align: center;
+  font-size: 28rpx;
+  color: #E14B41;
+}
+
+.bouncedView-view .erweimaFOL {
+  position: absolute;
+  bottom: 19.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+.bouncedView-view .wenzi {
+  position: absolute;
+  bottom: 44%;
+  left: 0;
+  width: 100%;
+  height: 40rpx;
+  font-size: 25rpx;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}

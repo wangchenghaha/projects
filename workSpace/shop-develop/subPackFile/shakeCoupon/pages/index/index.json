@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "preload": "../../components/preload/index",
+    "confirmBox": "../../components/modal/index"
+  },
+  "disableScroll": true,
+  "navigationStyle": "custom"
+}

@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="main">
+    <view class="header flex-bet">
+      <view class="text-c header-item" wx:for="{{headerList}}" wx:key="header">
+        <text class="{{item.checked}}">{{item.text}}</text>
+      </view>
+    </view>
+    <view class="content" wx:for="{{headerList}}" wx:key="content">
+      <block wx:if="{{item.checked}}">
+        <new-member wx:if="{{item.text === '新会员' }}"></new-member>
+        <all-member wx:if="{{item.text === '所有会员' }}"></all-member>
+        <no-member wx:if="{{item.text === '非会员' }}"></no-member>
+      </block>
+    </view>
+  </view>
+</view>

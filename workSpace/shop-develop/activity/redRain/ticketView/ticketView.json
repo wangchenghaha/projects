@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText" : "兑换奖品",
+    "navigationBarTextStyle" : "black",
+    "usingComponents": {
+        "ticketView_fol" : "../components/ticketView_fol/ticketView_fol",
+        "ticketView_vm" : "../components/ticketView_vm/ticketView_vm"
+    }
+}

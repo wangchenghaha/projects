@@ -1,0 +1,74 @@
+<view class="mc-container">
+  <view class="banner">
+    <!-- <image src="{{banner.img}}" mode="aspectFill"></image> -->
+
+    <view class='memberCard' style="background-image:url({{vipCardBackground}})">
+      <view class="user">
+        <image src="{{user.img}}" mode="aspectFill"></image>
+      </view>
+      <view class='memberName'>{{memberName}}</view>
+      <view class='myLevel'>{{myLevel}}</view>
+      <text class="points" bindtap="toPointRecord">{{points}} 积分></text>
+    </view>
+
+    <view class='levelTips'>{{levelTips}}</view>
+    <view class="container01">
+      <view class="pbWrap">
+        <view class="progressBackground">
+          <view class="progressBufferBackground" style="width: {{currentBuffer + '%' }}"></view>
+          <view class="circleListWrap">
+            <view wx:for="{{levelList}}" wx:key="item" style="background-color:{{item.color}}; opacity:{{ index === currentHidePoint ? 0 :1 }}" class="circleList"></view>
+          </view>
+        </view>
+        <image style="left: {{currentBlinkPoint + '%' }}" class="blinkImg" src="{{blinkGif}}" />
+      </view>
+      <view class="levelTitle">
+        <view wx:for="{{levelList}}" wx:key="item">{{item.name}}</view>
+      </view>
+    </view>
+
+
+  </view>
+  <view class="content">
+    <view class='rightsTit'>金卡会员特权</view>
+    <view class='rightsList'>
+      <view class='exchange' bindtap="toPointsMallCoupon">
+        <image src='../../images/exchange.png'></image>
+        <text class='text1'>积分兑券</text>
+        <text class='text2'>会员积分兑换优惠券</text>
+      </view>
+      <view class='gifts' bindtap="toPointsMallGifts">
+        <image src='../../images/gift.png'></image>
+        <text class='text1'>积分换礼</text>
+        <text class='text2'>会员积分兑换精美礼品</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='goMemberCenter' bindtap='toMemberCenter'>进入会员中心 ></view>
+
+</view>
+
+
+<!--zanshi buyong  -->
+<view class="model" wx-if="{{active == 1}}">
+  <view class="modelCenter">
+    <view class="topclose" bindtap="closemodel">
+      <image src="/images/vip_04.png"></image>
+    </view>
+    <view class="toplogo">
+      <image src="{{detail.logo}}"></image>
+    </view>
+    <view class="title">{{detail.title}}</view>
+    <view class="detail">{{detail.descraption1}}</view>
+    <view class="detail">{{detail.descraption2}}</view>
+    <view class="slogo">
+      <block wx:for="{{detail.list}}" wx:key="detailList">
+        <view bindtap="showVip" data-index="{{item.index}}">
+          <image src="{{item.logo}}"></image>
+        </view>
+      </block>
+    </view>
+    <view class="closemodel" bindtap="closemodel">我已了解会员权益</view>
+  </view>
+</view>

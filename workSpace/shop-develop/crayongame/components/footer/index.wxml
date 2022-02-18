@@ -1,0 +1,4 @@
+<view class="footer {{needAnimate? 'needAnimate':''}} {{preload? '':'animate'}}">
+    <view class="desc {{isBigPhone ? 'big':''}}"></view>
+    <view class="crimp"></view>
+</view>

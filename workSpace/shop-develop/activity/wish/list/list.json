@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的心愿",
+  "usingComponents": {
+    "wish-header": "../../components/wishHeader/wishHeader",
+    "share-footer": "/components/shareTempFooter/shareTempFooter",
+    "goods-list": "../../components/wishGoodsList/wishGoodsList"
+  }
+}

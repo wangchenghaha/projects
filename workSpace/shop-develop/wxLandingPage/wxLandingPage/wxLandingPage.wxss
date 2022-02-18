@@ -1,0 +1,100 @@
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .video {
+  width: 100%;
+}
+
+.bg .btnView {
+  display: flex;
+  width: 50%;
+  height: auto;
+  margin-left: 25%;
+  margin-right: 25%;
+  justify-content: center;
+}
+
+.bg .btnView .btn {
+  display: inline-block;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  color: white;
+  background-color: black;
+  padding: 20rpx 0;
+}
+
+.bg .botomView {
+  width: 100%;
+  height: 1rpx;
+}
+
+.share {
+  background: none;
+}
+
+.share::after {
+  border: none;
+}
+
+.bonucedBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bonucedView {
+  position: fixed;
+  top: 30%;
+  left: 15%;
+  width: 70%;
+  height: auto;
+}
+
+.bonucedView .topView {
+  width: 100%;
+  height: 74rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bonucedView .topView-leftView {
+  flex: 1;
+}
+
+.bonucedView .topView-rightView {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.bonucedView .bottomView {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.bonucedView .bottomView .textView {
+  margin-top: 20rpx;
+  color: gray;
+  font-size: 27rpx;
+  white-space: pre-wrap;
+}
+
+.bonucedView .bottomView .btn {
+  margin-top: 20rpx;
+  display: inline-block;
+  font-size: 26rpx;
+  color: white;
+  background-color: #EB4328;
+  padding: 0 80rpx;
+}

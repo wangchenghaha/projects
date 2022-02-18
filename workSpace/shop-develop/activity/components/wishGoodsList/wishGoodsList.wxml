@@ -1,0 +1,34 @@
+<view class="goods">
+  <view class="goods-item ~flex-bet" wx:for="{{goodsList}}" wx:key="sku">
+    <view class="goods-info ~flex-bet">
+      <view class="icon ~flex-center" wx:if="{{showIcon}}" data-index="{{index}}" bindtap="selectGoods">
+        <icon wx:if="{{item.myChecked}}" type="success_no_circle" size="36rpx" />
+      </view>
+      <view class="goods-img">
+        <image src="{{item.goodsImg}}" mode="widthFix"></image>
+      </view>
+      <view class="goods-desc">
+        <view class="goods-name">{{item.goodsName}}</view>
+        <view class="goods-name">{{item.gcsSku}}</view>
+        <view class="goods-name">{{item.colorName}}</view>
+        <view class="goods-name">{{item.sizeName}}</view>
+        <view class="goods-name ~font-bold">
+          <text>1</text>
+          <text>￥ {{item.discountPrice}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="operation" wx:if="{{showBtn}}">
+      <view class="del-btn btn" data-index="{{index}}" bindtap="deleteGoods">
+        <image src="/images/address_deleted.png" mode="widthFix"></image>
+      </view>
+<!--      <view class="del-btn btn">-->
+<!--        <image src="/images/address_edited.png" mode="widthFix"></image>-->
+<!--      </view>-->
+    </view>
+    <view class="triangle">
+      <text class="left triangle-item" style="border-color: transparent transparent transparent {{bgColor}}"></text>
+      <text class="right triangle-item" style="border-color: transparent {{bgColor + ' transparent transparent'}}"></text>
+    </view>
+  </view>
+</view>

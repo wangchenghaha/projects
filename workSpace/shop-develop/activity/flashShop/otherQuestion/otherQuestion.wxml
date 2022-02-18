@@ -1,0 +1,9 @@
+<view class="bg" style="background-image: url('{{splashImg}}');">
+    <view class="logoView" bindtap="goNextPage">
+        <view class="top">{{logoJson.top}}</view>
+        <view class="bottom">{{logoJson.bottom}}</view>
+    </view>
+    <view class="logo">
+        <image src="{{logoImg}}" style="width:100%;" mode="widthFix" />
+    </view>
+</view>

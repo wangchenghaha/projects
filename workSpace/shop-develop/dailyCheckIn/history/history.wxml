@@ -1,0 +1,35 @@
+<!-- dailyCheckIn/history/histroy.wxml -->
+<view class="frame">
+    <view class="wrapper_tab">
+        <van-tabs active="{{tabIndex}}" bind:change="_onTabChange">
+            <van-tab wx:for="{{tabTitles}}" wx:key="index" title="{{item}}"></van-tab>
+        </van-tabs>
+    </view>
+    <scroll-view scroll-y class="main_wrapper_coupon flex_c align_c" hidden="{{tabIndex!=0}}">
+       <view class="main_coupon_list flex_c align_c">
+            <block class="item_wrapper flex_c align_c" wx:for="{{couponList}}" wx:key="couponList">
+                <view class="item" bind:tap="_onCouponItemClick" data-id="{{index}}">
+                    <image src="{{CDN_HOST}}{{item.couponUrl}}" mode="widthFix"/>
+                    <view class="sale_price coupont_left">售价：<span class="value">{{item.points}}</span></view>
+                    <view class="remaining_amount coupont_left">剩余数量：<span class="value">{{item.cardCount}}</span></view>
+                    <image class="coupon_mask" wx:if="{{item.hasRedeemed&&item.cardCount>0}}" src="{{imgCouponReceived}}" mode="widthFix"/>
+                    <image class="coupon_mask" wx:if="{{item.cardCount==0}}" src="{{imgCouponNoStock}}" mode="widthFix"/>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+    <scroll-view scroll-y class="scroll_view_content" hidden="{{tabIndex==0}}">
+        <block wx:for="{{historyList}}" wx:key="historyList">
+            <view class="points_item" data="{{item}}">
+                <view class="points_item_left">
+                    <view class="item_title">{{item.couponName}}</view>
+                    <view class="item_date">兑换时间：{{item.showDateStr}}</view>
+                </view>
+                <view class="item_value">绫米 -{{item.points}}</view>
+            </view>
+        </block>
+    </scroll-view>
+    <view class="layout_bottom" wx:if="{{false}}">
+        <view class="bt_exchange" bind:tap="onBtClick">积分兑换</view>
+    </view>
+</view>

@@ -1,0 +1,38 @@
+/* 选择Item后的弹出框 */
+.frame_goods_detail{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:776;background-color:transparent;}
+.opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.5;}
+.frame_popup{ width:90%; height: auto; position:absolute; left: 5%; top:15%;margin:auto;background:#fff;border-radius: 10rpx;}
+
+.frame_popup_padding{ box-sizing:border-box; padding:0 20rpx;display: flex;flex-direction: column;}
+.layout_upper{width:100%; height:310rpx; clear:both; position:relative;}
+.upper_common{ float:left; height:162rpx;}
+.thumbnail{ width:200rpx; height:320rpx; border-radius: 10rpx; margin-top:-60rpx;background-color: #EEE;}
+.thumbnail image{ width:100%; height: 100%;border-radius: 10rpx;}
+
+.layout_infos{ width:350rpx; height: 162rpx; float:left; font-size:32rpx; line-height:38rpx; padding-left:27rpx;}
+.layout_infos .name{line-height: 35rpx; font-size: 32rpx;font-weight: bold;margin-top: 17rpx;}
+
+.price_frame{text-align: center;display: flex;flex-direction: row;}
+.price_value_now{ color:#ff580c; font-size:32rpx;line-height: 32rpx; margin-top:17rpx;font-weight: bold;}
+.price_value_origin{padding-left: 17rpx; font-size: 28rpx; color: #666;text-decoration: line-through;}
+.layout_infos .tip{ color:#000; font-size:26rpx;width: 100%;background-color: white;margin-top: 57rpx;font-weight: 500;}
+
+.upper_close{ width:60rpx; height:60rpx; position:absolute; right:0; top:10rpx;}
+.upper_close image{ width:42rpx; margin:9rpx 0 0 9rpx;}
+
+
+/* 颜色分类 */
+.layout_size_and_color{ width:100%; height: auto; clear: both; overflow: hidden;border-bottom: 2rpx solid #e7e7e7;}
+.title{ font-size:26rpx; line-height:70rpx; color:#333;font-weight: bold;}
+.item_outter{ width:100%; height:auto; clear:both; overflow:hidden;}
+.item_inner{ float:left; border-radius:10rpx; font-size:24rpx; line-height:60rpx; background:none; margin-bottom:20rpx;
+ color:#000; padding:0 12rpx; margin-right:15rpx;}
+.item_selected{ background:#ff5000; color:#fff; }
+.item_no_stock{ background:#f5f5f5; color:rgb(204, 204, 204);}
+
+.bottom_stock{width: 100%;line-height: 68rpx;}
+.stock_key,.stock_value{font-size: 26rpx;color: black;font-weight: bold;}
+.stock_key{float: left;}
+.stock_value{float: right;margin-right: 17rpx;}
+.tmpl_frame_no_stock{width: 100%;line-height: 37rpx;margin-bottom: 7rpx;height: 80rpx;}
+.tmpl_no_stock_tip{text-align: center;width: 100%;color: black;font-weight: bold;font-size: 24rpx;text-align: center;}

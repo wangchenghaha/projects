@@ -1,0 +1,173 @@
+.bg {
+  width: 100%;
+  height: auto;
+  background-color: #0072CB;
+}
+
+.bg .imgView {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bg .imgView .icon {
+  position: absolute;
+  top: 26%;
+  left: 28%;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.bg .imgView .tapView {
+  position: absolute;
+  bottom: 6%;
+  width: 315rpx;
+  height: 115rpx;
+}
+
+.guizeView {
+  margin-top: 50rpx;
+  width: 100%;
+  height: auto;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.guizeView .title {
+  font-size: 28rpx;
+  color: white;
+  text-align: center;
+  line-height: 32rpx;
+  margin-bottom: 50rpx;
+}
+
+.guizeView .subView_line {
+  margin-top: 10rpx;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  font-size: 22rpx;
+  color: white;
+  line-height: 28rpx;
+}
+
+.guizeView .subView_line .left {
+  width: 50rpx;
+  height: auto;
+  text-align: center;
+}
+
+.guizeView .subView_line .right {
+  flex: 1;
+}
+
+.bouncedBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .7;
+}
+
+.canOpenView {
+  width: 560rpx;
+  height: 744rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.canOpenView .imgView {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.canOpenView .imgView .title {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  font-size: 28rpx;
+  color: black;
+  text-align: center;
+}
+
+.canOpenView .imgView .bouncedTapView {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 380rpx;
+  height: 110rpx;
+}
+
+.zhanweiView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+  background-color: black;
+  opacity: 0.1;
+}
+
+.shouquanPhone {
+  width: 50%;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999999999;
+  border-radius: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 20rpx;
+  background-color: white;
+  text-align: center;
+}
+
+.shouquanPhone .topView {
+  margin-top: 20rpx;
+  width: 100%;
+  line-height: 40rpx;
+  font-size: 34rpx;
+  color: black;
+}
+
+.shouquanPhone .topSubView {
+  margin-top: 20rpx;
+  width: 100%;
+  line-height: 38rpx;
+  font-size: 28rpx;
+  color: black;
+}
+
+.shouquanPhone .getPhoneNumber {
+  margin-top: 40rpx;
+  display: inline-block;
+  font-size: 26rpx;
+  line-height: 68rpx;
+  color: #fff;
+  background: #000;
+  width: 60%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.goHome {
+  position: fixed;
+  top: 50%;
+  right: 32rpx;
+  width: 68rpx;
+  height: 68rpx;
+}

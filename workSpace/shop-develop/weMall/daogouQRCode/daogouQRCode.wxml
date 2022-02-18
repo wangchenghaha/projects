@@ -1,0 +1,41 @@
+<view class="container">
+   <image class="background" src="{{qr_background}}" mode="widthFix"/>
+   <view class="context">
+        <view class="context-guide">
+            <view class="guideBase">
+                <image class="userPic" src="{{wxInfo.avatarUrl}}" mode="widthFix"/>
+                <view class="guideInfo">
+                    <view class="tag">您的专属时尚顾问</view>
+                    <view class="nick">{{wxInfo.nickName}}</view>
+                </view>
+            </view>
+            <view class="notice">
+                <view class="line"></view>
+                <view class="text">长按识别二维码即刻添加</view>
+                <view class="line"></view>
+            </view>
+        </view>
+        <image class="context-qrImg" src="{{guideInfo.guideQR}}" wx:if="{{guideInfo.guideQR}}" mode="widthFix"/>
+        <view class="context-errshow" wx:if="{{reLoading}}">
+            <view class="errMsg">{{errMsg}}</view>
+            <view class="reLoading" bindtap="reLoading">重新加载</view>
+        </view>
+   </view>
+
+    <view class="marks">
+        <block wx:for="{{marks}}" wx:key="mark">
+            <view class="item {{index === 2? '':'border-r'}}">
+                <image class="markImage" src="{{item.image}}" mode="widthFix"/>
+                <view class="markText">{{item.text}}</view>
+            </view>
+        </block>
+    </view>
+      <view class="brandLogo" bindtap="copyOpenId">
+        <image src="{{brandLogo}}" mode="aspectFit" />
+    </view>
+  <view class="text-c da-num" wx:if="{{guideInfo.employeeId}}">{{guideInfo.employeeId}}</view>
+
+</view>
+
+
+

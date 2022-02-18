@@ -1,0 +1,125 @@
+<scroll-view wx:if="{{canShowPage}}" style="height:100%;" scroll-y scroll-into-view="{{scroTop}}" scroll-with-animation >
+    <view class="topView">
+        <image src="{{dataDic.logo}}" mode="widthFix" style="width:100%;" />
+        <image src="../images/shiyongshuoming.png" mode="widthFix" class="shuoming" bindtap="shuoming" />
+    </view>
+    <!-- 横竖切换栏 -->
+    <view class="switchView">
+        <view class="leftView">赠品兑换</view>
+        <!-- 点击商品选择颜色和尺码 -->
+        <view class="subTitleBg">
+            <view class="title"><image class="icon" src="../images/shou.gif" />点击商品选择颜色和尺码</view>
+        </view>
+        <image class="rightView" src="../images/{{switchBtn}}.png" mode="widthFix" bindtap="switch" />
+    </view>
+    <!-- UI层 -->
+    <!-- 横版 -->
+    <view class="swiperView" wx:if="{{switchBtn == 'left'}}">
+        <swiper current="{{sliderValue - 1}}" circular style="width:100%;height:{{swiperImageHeight}}px;" bindchange="swiperChange" >
+            <block wx:for="{{jsonDatas}}" wx:key="swiperList">
+                <swiper-item >
+                    <image id="{{index}}" src="{{item.color[item.colorDefault].image}}" style="width:100%;" mode="widthFix" bindload="getImageHeight" bindtap="{{isEmpy[index] <= 0 ? '' : isSaveOrder ? '' : 'onClick'}}" />
+                    <!-- 会员专享title -->
+                    <!-- <view class="imageTitle">{{item.brand}}会员专享</view> -->
+                    <!-- 名称 -->
+                    <view class="imageTitle" style="font-weight: normal;top: 70rpx;font-size: 24rpx;color:#18191A;">{{item.goodsName}}</view>
+                    <!-- 吊牌价 -->
+                    <view class="imageTitle" style="top: 100rpx;font-size: 38rpx;">吊牌价：￥{{item.color[item.colorDefault].originalPrice}}</view>
+                    <!-- 已兑完 -->
+                    <view class="wuhuo" style="height:{{swiperImageHeight}}px;" wx:if="{{isEmpy[index] <= 0}}">
+                        <image src="../images/wuhuo.png" mode="widthFix" class="wuhuo-image" />
+                    </view>
+                    <!-- 选择框 -->
+                    <icon type="success" class="selectBox-true" size="54rpx" color="black" wx:if="{{index == subMitIndex}}" />
+                </swiper-item>
+            </block>
+        </swiper>
+
+        <!-- 左右按钮 -->
+        <image class="leftAndRightBtn" style="left: 30rpx;" data-type="left" src="../images/sanjiao-left.png" bindtap="leftAndRightBtnTap" />
+        <image class="leftAndRightBtn" style="right: 30rpx;" data-type="right" src="../images/sanjiao-right.png" bindtap="leftAndRightBtnTap" />
+        
+        <!-- slider -->
+        <slider disabled min="1" max="{{jsonDatas.length}}" value="{{sliderValue}}" activeColor="#000000" backgroundColor="#B2B5B4" block-size="20" class="slider" />
+        <view class="sliderValue">{{sliderValue}} / {{jsonDatas.length}}</view>
+    </view>
+    <!-- 竖版 -->
+    <view class="swiperView-ver" wx:else>
+        <view id="{{index}}" class="imageView" wx:for="{{jsonDatas}}" wx:key="ver" bindtap="{{isEmpy[index] <= 0 ? '' : isSaveOrder ? '' : 'onClick'}}">
+            <image src="{{item.color[item.colorDefault].image}}" style="width:100%;position: relative;" mode="widthFix" bindload="getImageHeight"  >
+                <!-- 已兑完 -->
+                <view class="wuhuo" wx:if="{{isEmpy[index] <= 0}}">
+                    <image src="../images/wuhuo.png" mode="widthFix" class="wuhuo-image" />
+                </view>
+                <!-- 选择框 -->
+                <icon type="success" class="selectBox-true" style="left:30rpx;" size="54rpx" color="black" wx:if="{{index == subMitIndex}}" />
+                <view class="selectBox" wx:else></view>
+
+            </image>
+            <!-- 会员专享 -->
+            <view class="imageTitle">[{{item.brand}}]{{item.goodsName}}</view>
+            <!-- 吊牌价 -->
+            <view class="imageTitle" style="font-size: 23rpx;">吊牌价：￥{{item.color[item.colorDefault].originalPrice}}</view>
+
+        </view>
+    </view>
+
+
+
+    <view class="sub-bg" bindtap="{{isSaveOrder?'':'gotoAddress'}}">
+        <view class="address" wx:if="{{address.contactTel != ''}}">
+            <view class="leftView">
+                <!-- <view class="leftView-image"></view> -->
+                <image src="../images/xinxi.png" class="leftView-image" mode="widthFix" />
+            </view>
+            <view class="centerView">
+                <view class="centerView-top">收货信息</view>
+                <view class="centerView-center">
+                    <view class="centerView-center-leftView">收货人：<text class="centerView-center-leftView" style="margin-left: 27rpx;">{{address.consignee}}</text></view>
+                    <view class="centerView-center-rightView">手机号：{{address.contactTel}}</view>
+                </view>
+                <view class="centerView-bottom">
+                    <view class="centerView-bottom-title">收货地址：</view>
+                    <view class="centerView-bottom-title" style="flex: 1;">{{address.province}} {{address.city}} {{address.area}} {{address.detailAddress}}</view>
+                </view>
+            </view>
+        <image src="/images/pintuan-sanjiao.png" mode="widthFix" style="width:30rpx;margin-left: 20rpx;margin-right: 20rpx;" />
+        </view>
+        <view class="noAddress" wx:else>点击添加地址
+            <image src="/images/pintuan-sanjiao.png" mode="widthFix" class="noAddress-image" />
+        </view>
+    </view>
+    <block wx:if="{{isSaveOrder}}">
+        <view class="descText" style="font-size: 26rpx;color:#18191A;">赠品订单已生成，<text class="descText_gif" bindtap="subMitTap_gif">请点击查看</text></view>
+        <view class="subMit" style="margin: 0 2.5% 30rpx 2.5%;" bindtap="subMitTap_repeat">
+            <view class="subMit-title">确认并支付</view>
+            <view class="subMit-subTitle">(1分)</view>
+        </view>
+        <view class="subMit_cancel" bindtap="cancelOrder">取消订单</view>
+    </block>
+    <block wx:else>
+        <view class="subMit" bindtap="subMitTap">
+            <view class="subMit-title">确认并支付</view>
+            <view class="subMit-subTitle">(1分)</view>
+        </view>
+        <view class="descText_red">{{dataDic.description}}</view>
+    </block>
+
+    <view class="userDire" id="shuoming">
+        <view class="userDire-topView">
+            <view class="line"></view>
+            <view class="text">使用说明</view>
+            <view class="line"></view>
+        </view>
+        <view class="userDire-bottomView">
+            <view class="subViews" wx:for="{{useDire}}" wx:key="list">
+                <view class="subViews-title">0{{index + 1}}</view>
+                <view class="subViews-title" style="margin-left: 20rpx;flex:1;">{{item.text}}</view>
+            </view>
+        </view>
+    </view>
+    <view style="width:100%;height:30rpx;"></view>
+</scroll-view>
+  
+
+<bonuces wx:if="{{isBounces}}" currentSelectIndex="{{currentSelectIndex}}" jsonDatas="{{jsonDatas}}" kucunArrs="{{kucunArrs}}" bindbouncesHidden="bouncesHidden" bindselectColor="selectColor" bindselectChima="selectChima" bindbounceSubmit="bounceSubmit"></bonuces>

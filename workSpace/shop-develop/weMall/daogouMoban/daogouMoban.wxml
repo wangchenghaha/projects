@@ -1,0 +1,83 @@
+
+
+<view class="wrap">
+
+  <view id='head'>
+    <view class='header1'>
+      <view class='header1_btn header1_btn1'>发布时间</view>
+      <view class='header1_btn header1_btn2'>适用区域</view>
+    </view>
+    <view class='header2'>
+      <view class='header2Li header2_title'>推荐搭配</view>
+      <view class='header2Li'>发布时间: 2017.12.28</view>
+      <view class='header2Li'>适用区域: 全国</view>
+    </view>
+  </view>
+
+  <view class='content'>
+    <view class='fenxiang'>
+      <view class='shareImg'>
+        <image src='{{picSrc}}' mode='widthFix'></image>
+      </view>
+      <!-- 分享给朋友 -->
+      <view class='footShare' bindtap='shareToTanchu'>
+        <image src="/images/share.png" mode="widthFix" class='share'></image>
+      </view>
+    </view>
+
+
+    <view class='leftRight'>
+      <view class='leftRight_left'>
+        <image src='/images/jiantou_left.jpg' mode='widthFix' bindtap='leftClick'></image>
+      </view>
+      <scroll-view scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollLeft}}" class='leftRight_center' bindscroll="scrolling">
+         <view class='center_box' style="width:{{152*List.length+'rpx'}}"> 
+          <view class='leftRight_li'  wx:for="{{List}}" wx:key="List">
+            <image src='{{item.gscMaincolPath}}' mode='widthFix'></image>
+            <view class='text'>{{item.goodsName}}</view>
+            <view class="bottom">
+              <view class="zhekou" wx:if="{{item.discount!=10}}">{{item.discount}}折</view>
+              <view class="nowPrice {{item.discount==10?'discountPrice':''}}">¥{{item.discountPrice}}</view>
+              <view class="oldPrice" wx:if="{{item.discount!=10}}">
+                ¥{{item.originalPrice}}
+                <view class="xian"></view>
+              </view>
+            </view>
+          </view>
+         </view> 
+      </scroll-view>
+      <view class='leftRight_right'>
+        <image src='/images/jiantou_right.jpg' mode='widthFix' bindtap='rightClick'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='wxShare' wx:if="{{wxShare}}">
+    <view class='opacity'></view>
+    <view class='wxShareCon'>
+      <view class='wxShare_list'>
+        <view class='ShareLiBox'>
+          <view class='ShareLi shareToWx'>
+            <!-- 分享给朋友 -->
+            <view class='shareBox'>
+              <button open-type="share" class="shareToFriend">
+                <image src="/images/shareToWx.jpg" mode="widthFix"></image>
+              </button>
+            </view>
+            <text>分享给顾客</text>
+          </view>
+        </view>
+        <view class='ShareLiBox'>
+          <view class='ShareLi shareToWxq' bindtap='toShareWxq'>
+            <view class='ShareBox' style='height:96rpx;'>
+              <image src='/images/shareToWxq.jpg' mode='widthFix'></image>  
+            </view>
+            <text>分享到朋友圈</text>
+          </view>
+        </view>
+      </view>
+      <view class='wxShare_quxiao' bindtap='shareToCancel'>取消</view>
+    </view>
+  </view>
+
+</view>

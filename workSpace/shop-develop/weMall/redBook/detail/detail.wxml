@@ -1,0 +1,40 @@
+<view class="detail-wrapper">
+  <temp-header />
+  <red-book wx:if="{{bookDetail.matchJson}}" matchJson="{{bookDetail.matchJson}}" />
+  <temp-footer bindshareMoment="shareMoment" bindshareUser="shareUser" shareSync="true" />
+  <view class="guide-id text-c">{{employeeId}}</view>
+  <view class="share-tip flex-center" wx:if="{{shareUser.status || shareMoment.status}}">
+    <view class="wrap flex-center">
+      <block wx:if="{{shareUser.status}}">
+        <image src="{{shareUser.img}}" mode="widthFix"></image>
+        <button open-type="share" class="share-btn">确定</button>
+      </block>
+      <block wx:else>
+        <image src="{{shareMoment.img}}" mode="widthFix"></image>
+        <button class="share-btn" bindtap="shareMoment">确定</button>
+      </block>
+    </view>
+    <icon class="close" type="cancel" size="60rpx" color="#fff" bindtap="closeTip" />
+  </view>
+  <view class="success-tip flex-center" wx:if="{{saveSuccess}}">
+    <view class="wrap">
+      <view class="title text-c font-bold">温馨提示</view>
+      <view class="sub-title text-c">您可以将此视频内容分享至朋友圈</view>
+      <view class="skill flex-center">
+        <text class="line"></text>
+        <text class="text">分享小技巧</text>
+        <text class="line"></text>
+      </view>
+      <swiper class="swiper" indicator-dots autoplay interval="3000" duration="0" circular>
+        <swiper-item class="swiper-item" wx:for="{{successTip}}" wx:key="*this">
+          <image src="{{item}}" mode="widthFix"></image>
+        </swiper-item>
+      </swiper>
+      <view class="learn flex-center">
+        <text>详细操作演示视频请点击</text>
+        <navigator url="/weMall/daogouLearn/daogouLearn">无师自通</navigator>
+      </view>
+    </view>
+    <icon class="close" type="cancel" size="60rpx" color="#fff" bindtap="closeSuccess" />
+  </view>
+</view>

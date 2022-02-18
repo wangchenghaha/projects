@@ -1,0 +1,329 @@
+page{
+  background: #fde2db;
+}
+.tb_box{
+  width: 100%;
+  padding-bottom: 40rpx;
+}
+.tb_backbg{
+  width: 100%;
+  height: 1388rpx;
+}
+/* 中奖名单 */
+.marquee_box {
+  height: 60rpx;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  color: black;
+  left: 0%;
+  top:0%;
+  opacity: 0.6;
+}
+
+.marquee_text {
+  height:60rpx;
+  line-height:60rpx;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}
+
+.brandTitle{
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0%;
+  top:400rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.brandTitle image{
+  width: 60%;
+}
+
+.inputOrder{
+  position: absolute;
+  top: 80rpx;
+  right: 20rpx;
+  width: 120rpx;
+  line-height: 40rpx;
+  color: white;
+  font-size: 26rpx;
+  text-align: center;
+  border: 2rpx white solid;
+  border-radius: 40rpx;
+}
+
+/* logo */
+.tb_logo{
+  width: 100%;
+  height: 210rpx;
+  position: absolute;
+  top: 18%;
+  left: 0;
+}
+
+/* 大转盘 */
+ .turntableBox{
+    position: absolute;
+    top: 650rpx;
+    left: 0;
+    width: 100%;
+}
+.container {
+  z-index: 1;
+  padding-top: 220rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #e74143;
+}
+
+.plate-wrap-box {
+  position:relative;
+  width:675rpx;
+  height:675rpx;
+  border-radius:50%;
+  margin:0 auto 60rpx;
+
+}
+
+.plate-border {
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+
+}
+
+.plate-wrap {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  z-index:9;
+  width:95%;
+  height:95%;
+  border:1rpx solid #95c29e;
+  border-radius:50%;
+  overflow:hidden;
+  margin:auto;
+
+}
+
+.plate-light {
+  z-index: 1;
+  width: 500rpx;
+  height: 500rpx;
+  border: none;
+}
+
+.plate-box {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  width: 0;
+  height: 0;
+  font-size: 24rpx;
+}
+
+
+.text-box {
+  position:absolute;
+  text-align:center;
+  display:inline-block;
+  width:158rpx;
+  word-break:break-all;
+  top:-281rpx;
+  transform:translate(-50%, 0);
+  font-size:26rpx;
+}
+
+.plate-btn-wrap {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 118rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+
+
+.picStyle{
+  width:129rpx;
+  height:132rpx;
+  position:absolute;
+  display:inline-block;
+  word-break:break-all;
+  top:-290rpx;
+  transform:translate(-50%, 0);
+}
+
+.goImg{
+  width: 118rpx;
+  height:144rpx;
+}
+
+/* 弹窗 */
+.bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.bgWhite{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.tan{
+  position:fixed;
+  width:100%;
+  height:900rpx;
+  left:0;
+  top:7%;
+  z-index:6;
+}
+.tan_img{
+  width:80%;
+  height:90%;
+  margin-left:10%;
+}
+
+.tan_err{
+  width:80%;
+  margin-left:10%;
+}
+
+.tan_err_msg{
+  width: 60%;
+  position: absolute;
+  top: 40%;
+  margin-left: 20%;
+  font-size: 28rpx;
+  color: black;
+  text-align: center;
+}
+
+.tan_close {
+    width: 10%;
+    height: 74rpx;
+    position: absolute;
+    right: 45%;
+    top: 96%;
+}
+/* 再来一次按钮 */
+.btn{
+  width: 100%;
+  display: flex
+}
+.btnP{
+  width:56%;
+  border-radius:50rpx;
+  text-align:center;
+  padding:2% 0;
+  color:white;
+  margin-left:5%;
+  margin-right: 5%;
+  font-size:32rpx;
+}
+/* 底部文字提示 */
+.title{
+    width: 100%;
+    height:30rpx;
+    margin-top: 5%;
+}
+.text{
+    width: 90%;
+    margin-left: 8%;
+    color: #422a22;
+    margin-bottom: 60rpx;
+}
+.textP{
+    line-height:24px;
+    font-size: 22rpx;
+    text-indent: -4%;
+    color: white;
+}
+.text image{
+    width: 10%;
+    height:18rpx;
+    margin: 5% 43%;
+}
+
+.notice_content{
+  padding: 20rpx;
+  margin: 30rpx;
+
+}
+
+
+.sigma-content{
+    text-align: center;
+    margin:10px 0 10px 0;
+}
+.sigma-middle-line:before{
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: white;/*颜色需与主题大背景色一致*/ 
+  position: relative;
+  top: 16px;/*调节线高*/
+  left: 0;
+}
+.sigma-line-text{
+  display: inline-block;
+  padding: 0 18px 0 18px;
+  position: relative;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: white;
+  background: #baabca;
+}
+.tanShow_loginInput{
+  width:44%;
+  position:absolute;
+  top:33%;
+  left:28%;
+  border:2px solid #d7bca6;
+  border-radius:5px;
+  font-size: 28rpx;
+}
+.tan_login_Btn{
+  width:64%;
+  position:absolute;
+  top:64%;
+  left:18%;
+  height:14%;
+}
+
+.imgCenter{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10rpx;
+}
+
+.tagArr{
+  width: 30rpx;
+  height: 30rpx;
+}

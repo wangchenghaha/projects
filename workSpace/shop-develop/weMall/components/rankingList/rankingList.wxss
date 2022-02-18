@@ -1,0 +1,156 @@
+.text-c, .ranking .title, .ranking .sub-title, .ranking .tab-item {
+  text-align: center; }
+
+.font-bold, .ranking .title, .ranking .tab-item, .ranking .footer-title {
+  font-weight: bolder; }
+
+image {
+  display: block;
+  width: 100%; }
+
+.content {
+  width: 100%; }
+
+.ranking .title {
+  padding-top: 30rpx;
+  font-size: 38rpx;
+  color: #a71f24; }
+.ranking .sub-title {
+  font-size: 32rpx;
+  color: #2d2d2d; }
+.ranking .tab {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+  .ranking .tab-item {
+    flex: 0 1 21%;
+    margin: 10rpx;
+    font-size: 30rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 35rpx;
+    border: solid 2rpx #2d2d2d; }
+    .ranking .tab-item.active {
+      background: #000;
+      color: #fff; }
+    .ranking .tab-item.item4 {
+      flex: 0 1 25%; }
+.ranking-content {
+  margin-top: 30rpx; }
+  .ranking-content .ranking-item {
+    padding: 60rpx 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .ranking-content .ranking-item:nth-child(odd) {
+      background: #f0f0f0; }
+    .ranking-content .ranking-item .num {
+      font-size: 36rpx;
+      width: 120rpx;
+      text-align: center;
+      color: #2d2d2d; }
+      .ranking-content .ranking-item .num .new {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #999999;
+        font-size: 20rpx; }
+        .ranking-content .ranking-item .num .new .icon {
+          width: 15rpx;
+          margin-right: 5rpx; }
+    .ranking-content .ranking-item .avatar {
+      width: 100rpx;
+      height: 100rpx; }
+      .ranking-content .ranking-item .avatar.little-avatar {
+        padding: 20rpx;
+        box-sizing: border-box;
+        border-radius: 50%; }
+        .ranking-content .ranking-item .avatar.little-avatar1 {
+          background: #f0f0f0; }
+        .ranking-content .ranking-item .avatar.little-avatar0 {
+          background: #fff; }
+    .ranking-content .ranking-item .user {
+      padding-left: 15rpx;
+      font-size: 26rpx;
+      line-height: 40rpx;
+      color: #2d2d2d; }
+      .ranking-content .ranking-item .user-item {
+        padding: 5rpx 0; }
+    .ranking-content .ranking-item .money {
+      flex: 1;
+      margin-left: 30rpx;
+      font-size: 28rpx;
+      color: #e3868a;
+      text-align: center; }
+      .ranking-content .ranking-item .money-icon {
+        margin-right: 10rpx;
+        width: 30rpx;
+        height: 30rpx; }
+      .ranking-content .ranking-item .money-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; }
+.ranking .footer {
+  padding: 40rpx 20rpx;
+  background: #f0f0f0; }
+  .ranking .footer-title {
+    margin-bottom: 30rpx;
+    font-size: 42rpx;
+    text-align: center;
+    color: #000; }
+  .ranking .footer-sub-title {
+    font-size: 34rpx;
+    color: #2d2d2d;
+    text-align: center; }
+  .ranking .footer .rule {
+    margin-top: 30rpx;
+    width: 100%; }
+    .ranking .footer .rule-item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 40rpx 0; }
+    .ranking .footer .rule-left {
+      width: 120rpx;
+      margin-right: 30rpx; }
+      .ranking .footer .rule-left .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .ranking .footer .rule-left .top .avatar {
+          width: 50rpx;
+          height: 50rpx; }
+        .ranking .footer .rule-left .top .arrow {
+          width: 40rpx;
+          height: 40rpx;
+          border-left: solid 1rpx #bdbdbd;
+          border-top: solid 1rpx #bdbdbd;
+          transform-origin: center; }
+          .ranking .footer .rule-left .top .arrow-right {
+            transform: rotate(135deg); }
+          .ranking .footer .rule-left .top .arrow-left {
+            transform: rotate(-45deg); }
+    .ranking .footer .rule-name {
+      font-size: 30rpx;
+      line-height: 40rpx;
+      text-align: center;
+      color: #2d2d2d; }
+    .ranking .footer .rule-text {
+      padding: 5rpx 0;
+      flex: 1;
+      font-size: 26rpx;
+      line-height: 40rpx;
+      color: #2d2d2d; }
+  .ranking .footer .desc {
+    padding: 20rpx 0;
+    text-align: right;
+    font-size: 30rpx;
+    color: #2d2d2d; }
+    .ranking .footer .desc text {
+      color: red;
+      padding-right: 10rpx; }
+
+/*# sourceMappingURL=rankingList.wxss.map */

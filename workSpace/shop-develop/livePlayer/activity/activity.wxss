@@ -1,0 +1,17 @@
+.content .btn{
+  margin: 30rpx auto;
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  background: #000;
+  color: #fff;
+  border-radius: 20rpx;
+}
+.img-item{
+  /* margin-bottom: 45rpx; */
+}
+image{
+  display: block;
+  width: 100%;
+}

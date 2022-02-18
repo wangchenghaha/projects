@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "bonuces":"../components/aPennyBounces/aPennyBounces"
+  }
+}

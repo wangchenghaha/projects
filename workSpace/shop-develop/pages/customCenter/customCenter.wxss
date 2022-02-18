@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+  /* 商品列表 */
+}
+
+.wrap .banner .swiper {
+  height: 480rpx;
+}
+
+.wrap .banner .large-swiper {
+  height: 900rpx;
+}
+
+.wrap .banner image {
+  display: block;
+  width: 100%;
+}
+
+.wrap .hot {
+  width: 100%;
+  display: block;
+  margin-top: 30rpx;
+}
+
+.wrap .hot image {
+  width: 100%;
+}
+
+.wrap .scroll-header {
+  display: flex;
+  white-space: nowrap;
+}
+
+.wrap .scroll-header .flow-content {
+  width: 375rpx;
+  display: inline-block;
+  margin-top: 20rpx;
+}
+
+.wrap .scroll-header .flow-content image {
+  border: 2rpx solid #000;
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap .scroll-header .flow-content .goodsInfo {
+  width: 340rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.wrap .scroll-header .category-four {
+  width: 188rpx;
+  display: inline-block;
+}
+
+.wrap .scroll-header .category-four image {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.wrap .botton-content {
+  flex-wrap: wrap;
+}
+
+.wrap .botton-content .botton-item {
+  flex: 0 1 50%;
+}
+
+.wrap .botton-content .botton-item image {
+  width: 100%;
+}

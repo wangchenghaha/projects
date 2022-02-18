@@ -1,0 +1,51 @@
+.pages {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    box-sizing: border-box;
+    background: #d23c37;
+}
+.card-box {
+    position: relative;
+    margin: 0 auto;
+    width: 715rpx;
+    height: 1121rpx;
+}
+.card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 715rpx;
+    height: 1121rpx;
+}
+.tips {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 90rpx; 
+    z-index: 20;
+}
+.tips .button-item {
+    margin: 20rpx 0;
+    font-size: 26rpx;
+    color: #333;
+    padding-left: 85rpx;
+}
+.tips .button-item .save-btn-wrapper {
+    margin: 0 5rpx;
+    display: inline-block;
+    padding: 5rpx;
+    border-radius: 40rpx;
+    color: #fff;
+    background: #d23c37;
+}
+.save-btn {
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #fff !important;
+    border:none !important;
+    line-height: 1 !important;
+    font-size: 26rpx !important;
+}

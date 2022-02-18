@@ -1,0 +1,71 @@
+.contrainer {
+  width: 100%;
+  min-height: 100%;
+}
+.contrainer .main .couponShow {
+  width: 100%;
+}
+.contrainer .main .couponImage {
+  display: block;
+  margin: 0 auto;
+  width: 96%;
+  border-radius: 20rpx;
+}
+
+.bouncedBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bouncedImgView {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 75%;
+  height: auto;
+  border-radius: 8rpx;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bouncedImgView .imgView {
+  width: 80%;
+  margin-top: 100rpx;
+  position: relative;
+}
+.bouncedImgView .close {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 150rpx;
+  right: 10rpx;
+}
+.bouncedImgView .couponFirst {
+  position: absolute;
+  top: 300rpx;
+  font-size: 42rpx;
+  font-weight: 600;
+  color: black;
+}
+.bouncedImgView .couponSecond {
+  position: absolute;
+  font-size: 30rpx;
+  color: black;
+}
+.bouncedImgView .share {
+  width: 300rpx;
+  line-height: 80rpx;
+  position: absolute;
+  bottom: 90rpx;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 80rpx;
+}
+
+/*# sourceMappingURL=shareIndex.wxss.map */

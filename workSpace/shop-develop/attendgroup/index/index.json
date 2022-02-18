@@ -1,0 +1,7 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "rule" : "/attendgroup/components/rule/rule",
+        "alert" : "/attendgroup/components/alert/alert"
+    }
+}

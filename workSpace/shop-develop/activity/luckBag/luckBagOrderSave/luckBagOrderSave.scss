@@ -1,0 +1,261 @@
+page{
+    background: #f5f5f5;
+  }
+.wrapper{
+    width: 100%;
+    background: #f5f5f5;
+
+    .expressType{
+        background: white;
+        height: 80rpx;
+        font-size: 26rpx;
+        .onLeft{
+            margin-left: 40rpx;
+        }
+        .onRight{
+            margin-right: 40rpx;
+        }
+    }
+
+    .addAderss{
+        background: white;
+        margin-top: 16rpx;
+        height: 100rpx;
+        width: 96%;
+        margin-left: 2%;
+        border-radius: 10rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .text{
+            font-size: 32rpx;
+        }
+        .mark{
+            width: 32rpx;
+            line-height: 32rpx;
+            font-size: 28rpx;
+            text-align: center;
+            margin-left: 10rpx;
+            border: 2rpx red solid;
+            border-radius: 50%;
+            color: red;
+        }
+    }
+
+    .address{
+        background: white;
+        margin-top: 16rpx;
+        width: 96%;
+        margin-left: 2%;
+        border-radius: 10rpx;
+        .onLeft{
+            margin-left: 20rpx;
+            .addressDetail{
+                display: flex;
+                margin-top: 20rpx;
+                margin-bottom: 20rpx;
+                image{
+                    width: 25rpx;
+                    height: 30rpx;
+                    margin-top: 50rpx;
+                }
+                .detailInfo{
+                    max-width: 600rpx;
+                    margin-left: 10rpx;
+                    font-size: 28rpx;
+                }
+            }
+        }
+        .onRight{
+            margin-right: 20rpx;
+        }
+    }
+
+    .goodContainer{
+        background: white;
+        margin-top: 16rpx;
+        width: 96%;
+        margin-left: 2%;
+        border-radius: 10rpx;
+        .goodsRow{
+            width: 100%;
+            font-size: 32rpx;
+            color: #000;
+            clear: both;
+            display: flex;
+            
+            .onLeft{
+                width: 80%;
+                margin-left: 20rpx;
+                margin-top: 20rpx;
+                margin-bottom: 20rpx;
+            }
+            .onRight{
+                width: 20%;
+                margin-right: 20rpx;
+                margin-top: 20rpx;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+    }
+    .couponActivity{
+        background: white;
+        margin-top: 16rpx;
+        width: 96%;
+        height: 100rpx;
+        margin-left: 2%;
+        border-radius: 10rpx;
+        display: flex;
+        align-items: center;
+        .mark{
+            width: 120rpx;
+            line-height: 42rpx;
+            color: white;
+            border-radius: 40rpx;
+            text-align: center;
+            font-size: 28rpx;
+            background: red;
+            margin-left: 20rpx;
+        }
+        .content{
+            font-size: 32rpx;
+            margin-left: 15rpx;
+        }
+    }
+    .costInfo{
+        background: white;
+        margin-top: 16rpx;
+        width: 96%;
+        margin-left: 2%;
+        border-radius: 10rpx;
+        &-item{
+            width: 100%;
+            height: 80rpx;
+            font-size: 28rpx;
+            .onLeft{
+                margin-left: 40rpx;
+            }
+            .onRight{
+                margin-right: 40rpx;
+            }
+        }
+    }
+
+    .costClass{
+        height: 60rpx;
+        color: #555;
+    }
+
+    .dividing-line-10{
+       border-top: 10rpx solid #eee;
+    }
+   
+    .goodsInfo{
+        display: flex;
+        .goodImg{
+            display: flex;
+            width: 160rpx;
+            justify-content: center;
+            align-items: center;
+        }
+        image{
+           max-width: 260rpx;
+        }
+        .baseInfo{
+            margin-left: 20rpx;
+        }
+    
+    }
+
+    .tiebiaoMargin{
+        margin-bottom: 30rpx;
+    }
+    .goodsName{
+        font-size: 32rpx;
+        color: #000;
+        max-width: 280rpx;
+        overflow:hidden; 
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .goodsStyle{
+        font-size: 28rpx;
+        margin-top: 20rpx;
+        color: #555;
+    }
+    .goodsPice{
+        font-size: 32rpx;
+        margin-top: 80rpx;
+        color: #000;
+    }
+    .markTag{
+        width: 100rpx;
+        line-height: 40rpx;
+        font-size: 24rpx;
+        color: orangered;
+        text-align: center;
+        border: 1rpx solid orangered;
+        border-radius: 20rpx;
+        margin-top: 20rpx;
+    }
+    
+    .coupon-dividing-line{
+        border-top: 1rpx solid #eee;
+        border-bottom: 1rpx solid #eee;
+    }
+
+    .dividing-line_1rpx{
+        width: 100%;
+        background: #eee;
+        height: 10rpx;
+    }
+
+   
+    
+    .bottomSubmit{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background: white;
+        border-top: 1rpx solid #ccc;
+        .explain{
+            display: flex;
+            align-items: center;
+            padding: 30rpx 30rpx;
+            .content{
+                font-size: 24rpx;
+                color: #000;
+                line-height: 25rpx;
+                margin-left: 10rpx;
+            }
+        }
+        .payInfo{
+            width: 100%;
+            clear: both;
+            .onLeft{
+                float: left;
+                font-size: 28rpx;
+                color:#555;
+                height: 100rpx;
+                line-height: 100rpx;
+                margin-left: 30rpx;
+            }
+            .onRight{
+                float: right;    
+                height: 100rpx;
+                line-height: 100rpx;
+                text-align: center;
+                width: 240rpx;
+                background: #000;
+                color: white;
+                font-size: 32rpx;
+                
+            }
+        }
+    }
+   
+
+   
+}

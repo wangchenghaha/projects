@@ -1,0 +1,26 @@
+<!-- socialAdvertising/ads/ad0118/ad0118.wxml -->
+<view class="frame">
+    <video class="layout_video" src="{{imgBaseUrl}}ad_0118_010.mp4?v={{randomMilli}}" object-fit="fill" show-center-play-btn="true" muted="true" autoplay="autoplay" show-mute-btn="true"></video>
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_020.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_030.jpg?v={{randomMilli}}" style="height:1884rpx;" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_040.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_050.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_060.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="12119S086" bind:tap="onGoodClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_070.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_080.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="12119S082" bind:tap="onGoodClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_090.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_100.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121122018" bind:tap="onGoodClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_110.jpg?v={{randomMilli}}" mode="widthFix" />
+    <view class="wrapper_side_by_side">
+        <image class="img_single" src="{{imgBaseUrl}}ad_0118_120.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121154012" bind:tap="onGoodClick" />
+        <image class="img_single" src="{{imgBaseUrl}}ad_0118_130.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="12119S085" bind:tap="onGoodClick" />
+    </view>
+    <view class="wrapper_side_by_side">
+        <image class="img_single" src="{{imgBaseUrl}}ad_0118_140.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="12119S083" bind:tap="onGoodClick" />
+        <image class="img_single" src="{{imgBaseUrl}}ad_0118_150.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121113051" bind:tap="onGoodClick" />
+    </view>
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_160.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_170.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onIndexClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_180.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onWebClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0118_190.jpg?v={{randomMilli}}" mode="widthFix" />
+</view>

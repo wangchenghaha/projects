@@ -1,0 +1,94 @@
+<view class="container">
+    <image class="mainbg" src="{{mainbg}}" mode="widthFix"></image>
+    <image class="brandLogo" src="{{brandLogo}}" mode="widthFix"></image>
+    <!-- 返回logo --> 
+    <image class="backImg" src="{{backImg}}" mode="widthFix" data-type="back"  bindtap="onClick"/>
+
+    <view class="startGame"  data-type="startGame" bindtap="onClick"></view>
+    <image class="guide" src="{{guideImg}}"  mode="widthFix" wx:if="{{isFirstEnty}}"></image>
+    <view class="rule"  data-type="rule" bindtap="onClick" >活动规则</view>
+    <view class="gameCount" wx:if="{{userData.gameCount > -1}}">游戏次数：{{userData.gameCount}}次</view>
+    <view class="illustrated" data-type="illustrated" bindtap="onClick"></view>
+    <view class="giftList" data-type="giftList" bindtap="onClick"></view>
+</view>
+
+<view class="voucher flex-center"  wx:if="{{isIllustrat}}">
+    <view class="showModel" >
+        <image class="illustratTitle" src="{{illustratTitle}}" mode="widthFix"></image>
+        <view class="illustratArea">
+            <image class="illustrat" src="{{illustratBg}}" mode="widthFix"></image>
+            <block wx:for="{{illustrats}}" wx:key="illustrat">
+                <image class="illustrat" src="{{item}}" mode="widthFix"></image>
+            </block>
+        </view>
+        <image class="openGift" src="{{openGiftImage}}" mode="widthFix" data-type="openGift"  wx:if="{{isColletAll}}"  bindtap="onClick"></image>
+        <image class="tan_close" src="{{tan_close}}" mode="widthFix" data-type="tan_close" wx:else bindtap="onClick"></image>
+    </view>
+</view>
+
+<view class="voucher flex-center"  wx:if="{{isBigGift}}">
+    <view class="showModel" >
+        <image class="bigGiftbg" src="{{bigGiftbg}}" mode="widthFix" data-type="tan_close" bindtap="onClick"></image>
+        <image class="bigGiftImage" src="{{bigGiftImage}}" mode="widthFix" ></image>
+    </view>
+</view>
+
+<view class="voucher flex-center"  wx:if="{{isGift}}">
+    <view class="showModel" >
+        <view class="giftArea">
+            <image class="giftBg" src="{{giftBg}}" mode="widthFix"></image>
+            <view class="tab {{isChange ? 'selected': ''}}" style="left:72rpx;"  data-type="change" bindtap="onClick">奖品兑换</view>
+            <view class="tab {{isChange ? '': 'selected'}}" style="left:222rpx;"  data-type="myGift" bindtap="onClick">我的奖品</view>
+            <view class="points">我的积分：{{userData.points}}</view>
+            <view class="listArea">
+                <view class="giftListArea" wx:for="{{giftLists}}" wx:key="giftList" wx:for-item="flowRow">
+                    <view class="flow-item" wx:for="{{flowRow}}" wx:for-item="flowItem" wx:key="flowArrRow" data-type="goDetail" data-code="{{flowItem.productCode}}" data-stock="{{flowItem.isHasStock}}" bindtap="onClick">
+                        <view class="couponBg">
+                            <image class="couponImage" src="{{flowItem.giftPic}}"></image>
+                            <view class="couponPoint"  wx:if="{{isChange}}">消耗积分：{{flowItem.pointsRequire}}</view>
+                            <view class="couponPoint"  wx:if="{{isChange}}">剩余数量：{{flowItem.stock}}</view>
+                        </view>
+                        <view class="changeBtn {{flowItem.stock > 0 ?'haveStock':'noStock'}}" data-type="changeGift" data-giftid="{{flowItem.id}}"   wx:if="{{isChange}}" bindtap="onClick">{{flowItem.stock > 0 ? '兑换':'已兑完'}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <image class="tan_close" src="{{tan_close}}" mode="widthFix" data-type="tan_close" bindtap="onClick"></image>
+    </view>
+</view>
+
+<view class="voucher flex-center"  wx:if="{{isRule}}">
+    <view class="showModel" >
+        <view class="giftArea">
+            <image class="giftBg" src="{{ruleBg}}" mode="widthFix"></image>
+            <view class="ruleArea">
+                <block wx:for="{{rules}}" wx:key="rule">
+                    <view class="ruleText">{{item}}</view>
+                </block>
+            </view>
+        </view>
+        <image class="tan_close" src="{{tan_close}}" mode="widthFix" data-type="tan_close" bindtap="onClick"></image>
+    </view>
+</view>
+
+<block wx:if="{{gameNoCount}}">
+    <view class="bounced" style="background-color: black;opacity: .5;"></view>
+    <view class="bounced">
+        <view class="bounced-firstPop">
+            <view class="toastBg" style="height: 600rpx;">
+                <image class="backgroundImg" src="{{gameNoCountImg}}" mode="widthFix"></image>
+                <view class="info_1">
+                    <view class="commonTxt">很遗憾！您的游戏次数剩余</view>
+                    <text class="pointTxt">0</text>
+                    <view class="commonTxt">您可通过邀请好友获得游戏次数</view>
+                </view>
+                <image class="invite" style=" top: 290rpx;" src="{{inviteBtn}}" mode="widthFix"></image>
+                <button open-type="share" class="share"></button>
+                <view class="close" data-type="tan_close" bindtap="onClick"></view>
+            </view>
+        </view>
+    </view>
+</block>
+
+ <!-- 音乐开关 -->
+ <image class="musicImg {{isMusicStart?'music-on':''}}" src="{{musicImg}}" mode="widthFix" data-type="music"  bindtap="onClick"/>

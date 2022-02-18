@@ -1,0 +1,134 @@
+<view class="container">
+
+    <!-- 倒计时 -->
+    <view class="topView flex-start" style="left: 30rpx;">
+        <image class="background" src="{{timeBg}}"  mode="widthFix"></image>
+        <view class="showNum">00:{{overTimer}}</view>
+    </view>
+    <!-- 积分 -->
+    <view class="topView flex-end" style="right: 30rpx;">
+        <image class="background" src="{{pointBg}}"  mode="widthFix"></image>
+        <view class="showNum">{{currentPoint}}分</view>
+    </view>
+
+    <!-- 红包炸弹 -->
+    <view class="views" wx:for="{{datas}}" wx:key="datas" style="left: {{item.left}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;top: 0;animation: {{item.animation}} {{item.speed}}s linear {{loadTime}}s infinite;animation-play-state: {{animationPlayState}};" data-data="{{item}}" data-jifen="{{item.jifen}}" bindanimationiteration="animationiteration">
+        <image src="{{item.imageUrl}}" class="img" style="transform: rotate({{item.angle}}deg);" mode="widthFix" />
+    </view>
+    
+    <!-- 雨点 -->
+    <view class="views" wx:for="{{yudianDatas}}" wx:key="yudianDatas" style="left: {{item.left}}rpx;width:{{item.width}}rpx;height: {{item.height}}rpx;top: 15%;z-index: {{item.z_index}};animation: {{item.animation}} {{item.speed}}s linear infinite;animation-play-state: {{animationPlayState}};">
+        <image src="{{liuxingImg}}" class="img" mode="widthFix" />
+    </view>
+
+    <!-- 狗狗 -->
+    <view id="game" class="imgView" style="width:{{imgWidth}}rpx; transform: translateX({{transformX}}px);">
+        <image src="{{currentImg}}" class="img" mode="widthFix" bindload="getImgHeight" />
+    </view>
+
+    <!-- 碰撞显示分数 -->
+    <view class="pointNum flex-center" style="width:{{imgWidth}}rpx; color:{{txtColor}}; transform: translateX({{transformX}}px);" wx:if="{{showPoint}}">
+        <view style="animation:  {{pointAnimate}} .5s ease-out 0s 1 forwards;"> {{points}}</view>
+    </view>
+
+    <!-- 移动狗狗 -->
+    <view class="zhanwei" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend"></view>
+    
+    <!-- 返回logo --> 
+    <image class="backImg" src="{{backImg}}" mode="widthFix" data-type="back"  bindtap="onClick"/>
+    <!-- 顶部logo -->
+    <image class="topImg" src="{{topImg}}" mode="widthFix"/>
+    <!-- 中间logo -->
+    <!-- <image class="centerImg" src="{{centerImg}}" mode="widthFix"/> -->
+    <!-- 底部舞台 -->
+    <image class="bottomImg" src="{{bottomImg}}" mode="widthFix"/>
+    <!-- 背景 -->
+    <image class="gameBg" src="{{gameBg}}"/>
+</view>
+
+<block wx:if="{{daojishiJson.show}}">
+    <view class="bounced" style="background-color: black;opacity: .5;"></view>
+    <view class="bounced">
+        <view class="bounced-daojishiView flex-center">
+            <image class="hongBaoTime"  style="top:{{popdownTimeTop.img1}};" src="{{hongBaoTime}}" mode="widthFix" />
+            <image class="downTime"  style="top:{{popdownTimeTop.img2}};"  src="{{daojishiJson.numImg}}"  mode="widthFix"/>
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{firstShow}}">
+    <view class="bounced" style="background-color: black;opacity: .5;"></view>
+    <view class="bounced">
+        <view class="bounced-firstPop flex-center">
+            <image class="background" src="{{firstShowImg}}" mode="widthFix" data-type="firstShow"  bindtap="onClick"/>
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{showPop}}">
+    <view class="bounced" style="background-color: black;opacity: .8;"></view>
+    <view class="bounced">
+        <view class="bounced-firstPop flex-center" wx:if="{{pop1}}">
+            <image class="background" src="{{popFirst}}"  mode="widthFix" />
+            <view class="point" style="top:{{popFirstTop.txt}};">您的成绩为：{{currentPoint}}</view>
+            <image class="button" style="top:{{popFirstTop.btn}};"  src="{{openBox}}" mode="widthFix" data-type="open"  bindtap="onClick"/>
+        </view>
+        <view class="bounced-secondPop flex-center" wx:if="{{pop2}}">
+            <image class="background" src="{{popSecond}}"  mode="widthFix" />
+            <view class="text1" style="top:{{popSecondTop.txt1}};">Mr.J祝您新年快乐</view>
+            <view class="text2" style="top:{{popSecondTop.txt2}};">恭喜您获得</view>
+            <image class="coupon" style="top:{{popSecondTop.coupon}};"  src="{{couponImg}}" mode="widthFix"/>
+            <view class="text3" style="top:{{popSecondTop.txt3}};">请在卡包/会员中心查看我的优惠券</view>
+            <image class="button" style="top:{{popSecondTop.btn}};"  src="{{getBtn}}" mode="widthFix" data-type="getGift"  bindtap="onClick"/>
+        </view>
+        <view class="bounced-thirdPop flex-center" wx:if="{{pop3}}">
+            <image class="background" src="{{popThird}}"  mode="widthFix" />
+            <view class="text1" style="top:{{popThirdTop.txt1}};">分享好友抢大额神券</view>
+            <image class="coupon" style="top:{{popThirdTop.coupon}};"  src="{{couponImg2}}" mode="widthFix"/>
+            
+            <view class="text2" style="top:{{popThirdTop.txt2}};" wx:if="{{twoFriendHelp}}">
+                <image  src="{{leftImage}}" mode="widthFix"/>
+                <text> 已完成，券已发放至你的账户 </text>
+                <image  src="{{rightImage}}" mode="widthFix"/>
+            </view>
+            <view class="text2" style="top:{{popThirdTop.txt2}};" wx:else>
+                <image  src="{{leftImage}}" mode="widthFix"/>
+                <text> 还差<text style="color: #FFFC29">{{helpCount}}人</text>可获得的神券</text>
+                <image  src="{{rightImage}}" mode="widthFix"/>
+            </view>
+            
+           <view class="invent" style="top:{{popThirdTop.invent}};">
+                <view class="helpArea" wx:for="{{helpFirends}}" wx:key="helps">
+                    <image class="helpImage" src="{{item.helpImg}}"  mode="widthFix" ></image>
+                    <view class="nickName" style="background: {{adapter.backgroundColor}};" wx:if="{{item.nickname}}">{{item.nickname}}</view>
+                </view>
+            </view>
+
+            <view class="button" style="top:{{popThirdTop.button}};"  wx:if="{{!twoFriendHelp}}">
+                <image class="left" src="{{leftBtnImage}}" mode="widthFix" data-type="inventMore"  bindtap="onClick"/>
+                <image class="right" src="{{rightBtnImage}}" mode="widthFix"/>
+            </view>
+            <button open-type="share" class="share" style="top:{{popThirdTop.button}};"  wx:if="{{!twoFriendHelp}}"></button>
+
+            <view class="button" style="top:{{popThirdTop.button}};"  wx:if="{{twoFriendHelp}}">
+                <image class="left" src="{{leftBtnImage}}" mode="widthFix"  data-type="again"  bindtap="onClick" />
+                <image class="right" src="{{rightBtn2Image}}" mode="widthFix"  data-type="coupon"  bindtap="onClick" />
+            </view>
+            <!-- <image class="button2" style="top:{{popThirdTop.button}};"  src="{{againImage}}" mode="widthFix" data-type="again"  bindtap="onClick" wx:if="{{twoFriendHelp}}"/> -->
+            <view class="text3" style="top:{{popThirdTop.txt3}};" >请在卡包/会员中心查看我的优惠券</view>
+            <image class="image2" style="top:{{popThirdTop.txt4}};" src="{{goBackImg}}" mode="widthFix" data-type="back"  bindtap="onClick"/>
+        </view>
+        <view class="bounced-forthPop flex-center" wx:if="{{pop4}}">
+            <image class="background" src="{{forthPop}}"  mode="widthFix" />
+            <view class="text1" style="top:{{forthPopTop.txt1}};">Mr.J提醒您</view>
+            <view class="text2" style="top:{{forthPopTop.txt2}};">还差一步就可以获得神券了</view>
+            <view class="text3" style="top:{{forthPopTop.txt3}};">继续分享<text style="color: #FFFC29">{{helpCount}}个好友</text>就达标啦！</view>
+            <image class="button" style="top:{{forthPopTop.button}};"  src="{{inventBtn}}" mode="widthFix"/>
+            <button open-type="share" class="share" style="top:{{forthPopTop.button}};" ></button>
+            <view class="text4" style="top:{{forthPopTop.txt4}};" data-type="back"  bindtap="onClick">残忍拒绝</view>
+        </view>
+    </view>
+</block>
+
+
+

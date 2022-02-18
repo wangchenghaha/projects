@@ -1,0 +1,111 @@
+<view class="mc-container">
+  <view class="banner">
+    <image src="{{bannerInfo.picUrl}}" mode="aspectFill"></image>
+    <view class='goShopContent' bindtap="goshop">
+      <text>{{banner.goshop}}</text>
+      <view class='goShopLogo'></view>
+    </view>
+
+    <view wx:if="{{flagShowIconBackToShopDetail}}" class='backToShopDetail' bindtap="onBackToShopDetail">
+      <text>{{TXT_BACK_TO_SHOP_DETAIL}}</text>
+      <view class='ImgBackToShopDetail'></view>
+    </view>
+
+    <view wx:if="{{false}}" class='layout_daily_check_in' bindtap="onDailyCheckInClick">
+      <view class='ImgDailyCheckIn'></view>
+      <text>{{TXT_GOTO_DAILY_CHECK_IN}}</text>
+    </view>
+
+    <view class="user">
+      <view class='user_img'>
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="nick-name">
+        <open-data type="userNickName"></open-data>
+      </view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class='myCenter'>
+      <view class="nav-item flex-center" bindtap='toQingdan'>
+        <!-- <view class='shopCart'></view> -->
+        <image src="{{shopCartImage}}"  mode="widthFix"/>
+        <text class='centerLetter'>购物车</text>
+        <text class="cart-num" wx:if="{{shoppingCars > 0}}">{{shoppingCars}}</text>
+      </view>
+      <view class="nav-item flex-center"  wx:if="{{isCollection}}" style='display: flex;' bindtap='toCollection'>
+         <image src="{{collectionImage}}"  mode="widthFix"/>
+        <text class='centerLetter'>收藏夹</text>
+      </view>
+      <view class="nav-item flex-center integralMallContent {{isBestseller? '':'hide'}}" bindtap='toPointsMall'>
+        <!-- <view class='integralMall'></view> -->
+        <image src="{{pointMallImage}}"  mode="widthFix"/>
+        <text class='centerLetter'>积分商城</text>
+      </view>
+       <!-- <view style='display: flex;' bindtap='jumpDuiba' wx:if="{{duibaEntry}}" class="duibaStyle">
+         <image src="{{duibaImage}}" mode="widthFix" />
+         <text class='centerLetter'>兑吧</text>
+       </view> -->
+       <navigator wx:if="{{storedValueCardOnline}}" class="nav-item flex-center" target="miniProgram" app-id="{{STORE_VALUE}}" path="{{STORE_VALUE_PATH}}">
+          <image src="{{storeValueCard}}" mode="widthFix" />
+         <view class='centerLetter'>储值卡</view>
+       </navigator>
+      <view class="nav-item flex-center" bindtap='openCard'>
+        <image src="{{memberCardImage}}"  mode="widthFix"/>
+        <text class='centerLetter'>{{nav.mycard}}</text>
+      </view>
+  </view>
+    <view class="centerSwiper" wx:if="{{swiperInfo.length}}">
+      <view class="swiper-container">
+        <swiper class="swiper"
+                autoplay="auto"
+                circular="{{circular}}"
+                interval="{{interval}}" duration="{{duration}}" indicator-dots="{{swiperInfo.length >1}}" indicator-active-color="#fff">
+          <swiper-item wx:for="{{swiperInfo}}" wx:key="id">
+            <image src="{{item.picUrl}}" class="img" mode='aspectFill' data-index="{{index}}" bindtap="jumpUrl"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+    <view class='myOrder' bindtap="all">
+      <view class='orderLogo fl'></view>
+      <text class='fl'>我的订单</text>
+      <text class='fr'>全部订单 ></text>
+    </view>
+
+
+    <view class="sales weui-form-preview__ft">
+      <block wx:for="{{sales}}" wx:key="sales">
+        <view class="weui-form-preview__btn weui-form-preview__btn_default" id="{{index}}" bindtap="salesClick">
+          <image class="icon" src="{{item.img}}" mode="aspectFit"></image>
+          <view>{{item.text}}</view>
+          <view class='num_tishi' wx:if="{{item.shoppingCar!=0 && (showPintuan ? index != 4 : index != 3)}}">{{item.shoppingCar>=99?99:item.shoppingCar}}</view>
+        </view>
+      </block>
+    </view>
+    <!-- <view class="sub-nav sub-nav-2 weui-form-preview__ft">
+      <view class="weui-form-preview__btn weui-form-preview__btn_default">
+        <navigator url="../../qingdan/qingdan">购物清单</navigator>
+      </view>
+      <view class="weui-form-preview__btn weui-form-preview__btn_default">
+        <navigator url="../../address/address">地址管理</navigator>
+      </view>
+    </view> -->
+  </view>
+  <view wx:if="{{OFFICIAL_ACCOUNT}}">
+    <image src="{{officialAccount}}" mode="widthFix" class="official-account" bindtap="officialAccount"></image>
+  </view>
+  <view class="list">
+    <block wx:for="{{list}}" wx:key="list">
+      <view wx:if="{{item.isShow}}" data-link="{{item.link}}" data-index='{{index}}' bindtap='toDetailPage' class='singleView'>
+        <image src="{{item.img}}" style="{{item.style || '' }}" mode="heightFix"></image>
+        <text>{{item.contents}}</text>
+        <text class='fr'>{{item.arrow}}</text>
+        <text class='fr'>{{item.alert}}</text>
+        <image class='secondImg fr' src="{{item.tips}}"></image>
+      </view>
+    </block>
+    <view class='adBanner' data-type="bottom" bindtap='toPointsMall' style="background-image: url('{{bottomInfo.picUrl}}')"></view>
+  </view>
+</view>
+<contact-serve wx:if="{{showServe}}" bindcloseServe="closeServe" bindsaveImg="saveImg" bindcopyName="copyName"></contact-serve>

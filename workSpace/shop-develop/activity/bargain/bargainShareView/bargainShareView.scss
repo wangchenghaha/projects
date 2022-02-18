@@ -1,0 +1,631 @@
+.bg{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    background-color: #cb2026;
+    padding-top: 70rpx;
+
+    .topView{
+        position: relative;
+        margin-left: 30rpx;
+        margin-right: 30rpx;
+        width: auto;
+        height: auto;
+        background-color: white;
+        border-radius: 25rpx;
+        display: flex;
+        flex-direction: column;
+        &-coupouImage{
+            width: 90%;
+            max-height: 360rpx;
+            min-height: 280rpx;
+            margin-left: 5%;
+        }
+        &-hdgzView{
+            margin-top: 20rpx;
+            margin-bottom: 20rpx;
+            padding-left: 20rpx;
+            padding-right: 20rpx;
+            box-sizing: border-box;
+            width: 100%;
+            height: 40rpx;
+            display: flex;
+            flex-direction: row;
+            .left{
+                flex: 1;
+            }
+            .right{
+                background-color: #E6E2E3;
+                width: 140rpx;
+                height: 40rpx;
+                border-radius: 40rpx;
+                text-align: center;
+                line-height: 40rpx;
+                font-size: 22rpx;
+                color: #9B9798;
+            }
+
+        }
+        &-centerView{
+            margin-left: 20rpx;
+            margin-right: 20rpx;
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            .imgView{
+                width: 170rpx;
+                height: 170rpx;
+                background-color: red;
+                border-radius: 20rpx;
+            }
+            .rightView{
+                flex: 1;
+                width: auto;
+                height: auto;
+                .title{
+                    margin-top: 5rpx;
+                    margin-left: 10rpx;
+                    font-size: 26rpx;
+                    font-weight: 400;
+                    line-height: 38rpx;
+                }
+            }
+            .subTitle{
+                position: absolute;
+                bottom: 30rpx;
+                left: 180rpx;
+                color: gray;
+                font-size: 23rpx;
+                &-text{
+                    margin-left: 20rpx;
+                    font-size: 32rpx;
+                    color: red;
+                }
+            }
+            .kjz{
+                position: absolute;
+                top: 65%;
+                right: -22rpx;
+                background-color: #EC6C2D;
+                width: 140rpx;
+                height: 50rpx;
+                transform: translateY(-50%);
+                border-radius: 50rpx 0 0 50rpx;
+                &-title{
+                    color: #fff;
+                    font-size: 21rpx;
+                    line-height: 50rpx;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-left: 15rpx;
+                }
+            
+            }
+        }
+        &-sliderBgView{
+            margin-left: 20rpx;
+            margin-right: 20rpx;
+            margin-top: 20rpx;
+            width: auto;
+            height: 17rpx;
+            background: linear-gradient(#CBC7CA,#F4F0F3);
+
+            border-radius: 17rpx;
+            position: relative;
+            overflow: hidden;
+            .sliderView{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: #EC6C2D;
+            }
+        }
+        &-titleView{
+            margin-top: 10rpx;
+            margin-left: 20rpx;
+            margin-right: 20rpx;
+            display: flex;
+            flex-direction: row;
+            .leftTitle{
+                font-size: 27rpx;
+                color: red;
+                font-weight: bold;
+                margin-left: 5rpx;
+                width: 50%;
+                text-align: left;
+            }
+            .rightTitle{
+                font-size: 26rpx;
+                color: gray;
+                font-weight: bold;
+                margin-right: 5rpx;
+                width: 50%;
+                text-align: right;
+            }
+
+            .couponShow{
+                font-size: 30rpx;
+                width: 100%;
+                color: red;
+                font-weight: bold;
+                margin-left: 5%;
+            }
+        }
+        &-bottomView{
+            width: auto;
+            height: 40rpx;
+            flex-direction: row;
+            position: absolute;
+            bottom: 30rpx;
+            left: 20%;
+            font-weight: 600;
+           // transform: translateX(-50%);
+            .title{
+                font-size: 22rpx;
+                line-height: 40rpx;
+                margin-right: 20rpx;
+            }
+            .dayClass{
+                font-size: 24rpx;
+                line-height: 40rpx;
+                margin-right: 10rpx;
+            }
+            .sfmView{
+                width: 60rpx;
+                height: 50rpx;
+                line-height: 50rpx;
+                text-align: center;
+                background: #000;
+                border-radius: 8rpx;
+                color: white;
+                margin-left: 8rpx;
+                font-weight: 500;
+                font-size: 28rpx;
+            }
+            .maohao{
+                margin-left: 8rpx;
+                margin-right: 8rpx;
+                font-size: 24rpx;
+                line-height: 35rpx;
+            }
+
+        }
+        .zhanwei{
+            width: 100%;
+            height: 95rpx;
+        }
+    }
+    .shareView{
+        margin-top: 40rpx;
+        margin-left: 60rpx;
+        margin-right: 60rpx;
+        height: 80rpx;
+
+        display: flex;
+        flex-direction: row;
+        .subView{
+            width: 45%;
+            height: 100%;
+            border-radius: 80rpx;
+            background-color: #fff;
+            position: relative;
+            &-leftView{
+                margin-left: 55rpx;
+                margin-right: 35rpx;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                .img{
+                    width: 32rpx;
+                    height: 27rpx;
+                    margin-top: 28rpx;
+                    margin-right: 20rpx;
+                }
+                .rightView{
+                    flex: 1;
+                    height: auto;
+                    margin-top: 16rpx;
+                    .title{
+                        font-size: 25rpx;
+                        line-height: 25rpx;
+                        color: #EC6C2D;
+                    }
+                }
+            }
+            &-rightView{
+                margin-left: 10%;
+                text-align: center;
+                color: white;
+                font-size: 25rpx;
+                line-height: 80rpx;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                image{
+                    width: 32rpx;
+                    height: 32rpx;
+                }
+            }
+        }
+    }
+    .toPay{
+        width: 40%;
+        line-height: 80rpx;
+        border-radius: 80rpx;
+        background-color: #EC6C2D;
+        margin-left: 30%;
+        margin-top: 50rpx;
+        font-size: 25rpx;
+        text-align: center;
+        color: white;
+    }
+    .shareSubTitle{
+        text-align: center;
+        font-size: 23rpx;
+        font-weight: bold;
+        color: white;
+        margin-top: 20rpx;
+    }
+    .fuyongView{
+        margin-top: 70rpx;
+        width: 100%;
+        height: 40rpx;
+        position: relative;
+        &-subView{
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            .img{
+                width: 50rpx;
+                margin-top: 12rpx;
+            }
+            .centerTitle{
+                font-size: 26rpx;
+                font-weight: bold;
+                color: white;
+                margin-top: 7rpx;
+                margin-left: 20rpx;
+                margin-right: 20rpx;
+            }
+        }
+    }
+    .kjView{
+        margin-top: 20rpx;
+        margin-left: 30rpx;
+        margin-right: 30rpx;
+        border-radius: 8rpx;
+        height: auto;
+        background-color: #e59093;
+        padding-top: 20rpx;
+        padding-bottom: 40rpx;
+        &-subView{
+            margin-top: 20rpx;
+            margin-left: 30rpx;
+            margin-right: 30rpx;
+            width: auto;
+            height: 60rpx;
+            display: flex;
+            flex-direction: row;
+            .icon{
+                width: 60rpx;
+                height: 60rpx;
+                margin-right: 20rpx;
+                background-color: red;
+                border-radius: 50%;
+            }
+            .title{
+                font-size: 22rpx;
+                color: black;
+                line-height: 60rpx;
+                width: 60%;
+            }
+            .subTitle{
+                flex: 1;
+                font-size: 22rpx;
+                color: white;
+                line-height: 60rpx;
+                text-align: right;
+            }
+        }
+    }
+    .kcView{
+
+        margin-top: 20rpx;
+        margin-left: 30rpx;
+        margin-right: 30rpx;
+        border-radius: 5rpx;
+        height: auto;
+        background-color: white;
+
+        padding: 20rpx 30rpx 20rpx 30rpx;
+        box-sizing: border-box;
+        .topViews{
+            width: 100%;
+            height: 40rpx;
+            display: flex;
+            flex-direction: row;
+            &-icon{
+                width: 40rpx;
+                height: 40rpx;
+                border-radius: 50%;
+                margin-right: 10rpx;
+                background-color: red;
+            }
+            &-title{
+                font-size: 22rpx;
+                color: black;
+                line-height: 45rpx;
+                width: 60%;
+            }
+            &-subTitle{
+                flex: 1;
+                font-size: 22rpx;
+                color: gray;
+                line-height: 45rpx;
+                text-align: right;
+            }
+        }
+        .bottomViews{
+            margin-top: 30rpx;
+            width: 100%;
+            height: auto;
+
+            font-size: 22rpx;
+            color: #4D4D4D;
+
+        }
+    }
+}
+
+.goBack{
+    position: fixed;
+    bottom: 80rpx;
+    right: 30rpx;
+    width: 76rpx;
+    height: 76rpx;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 2rpx 2rpx 5rpx gray;
+    border: 1rpx solid gray;
+    overflow: hidden;
+    image{
+        width: 50%;
+    }
+}
+
+.bouncedBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+.bouncedImgView{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: auto;
+    border-radius: 8rpx;
+    transform: translate(-50%,-50%);
+    &-subMitView{
+        position: absolute;
+        bottom: 75rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 270rpx;
+        height: 80rpx;
+        background-color: #FFDC00;
+        color: red;
+        font-size: 26rpx;
+        text-align: center;
+        border-radius: 70rpx;
+        line-height: 70rpx;
+    }
+    &-couponSubMitView{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 270rpx;
+        height: 80rpx;
+        background-color: black;
+        color: white;
+        font-size: 26rpx;
+        text-align: center;
+        border-radius: 70rpx;
+        line-height: 70rpx;
+        bottom: 10rpx;
+    }
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .goodsInfo{
+            position: absolute;
+            width: 100%;
+            display: flex;
+            top: 80rpx;
+            .goodsImg{
+                width: 40%;
+                border-radius: 10rpx;
+                margin-left: 50rpx
+            }
+            .goodsBaseInfo{
+                width: 55%;
+                margin-left: 5%;
+                .goodsName{
+                    font-size: 24rpx;
+                    color: black;
+                    font-weight: 600;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all; /* 追加这一行代码 */
+                    overflow : hidden;
+                    text-overflow: ellipsis;
+                }
+                .goodsfloorprice{
+                    font-size: 24rpx;
+                    color: black;
+                    font-weight: 600;
+                }
+                .goodsprice{
+                    font-size: 18rpx;
+                    color: #CBC7CA;
+                }
+                .erweima{
+                    width: 180rpx;
+                    height: 180rpx;
+                    margin-left: 20%;
+                    margin-top: 20rpx;
+                }
+            }
+        }
+        .couponInfo{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .couponImage{
+                width: 100%;
+                height: 280rpx;
+            }
+            .erweima{
+                width: 100rpx;
+                height: 100rpx;
+                margin-top: 20rpx;
+            }
+        }
+        .title{
+            position: absolute;
+            top: 45%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 21rpx;
+            font-style: italic;
+        }
+        
+    }
+    &-saveImage{
+        position: absolute;
+        bottom: 80rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 270rpx;
+        height: 70rpx;
+        background-color: #EC6C2D;
+        color: white;
+        font-size: 26rpx;
+        text-align: center;
+        border-radius: 70rpx;
+        line-height: 70rpx;
+    }
+    .folImgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .title{
+            position: absolute;
+            top: 45%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 21rpx;
+            font-style: italic;
+        }
+        .rqcode{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+        }
+    }
+}
+.bouncedView{
+    position: fixed;
+    top: 30%;
+    left: 20%;
+    width: 60%;
+    height: auto;
+    border-radius: 8rpx;
+    background-color: white;
+   //  transform: translate(-50%,-50%);
+    animation-name:popup;
+    animation-duration:0.3s;
+    animation-timing-function:linear;
+    animation-delay:0;
+    animation-iteration-count:1;
+    animation-direction:normal;
+    .title{
+        margin-top: 70rpx;
+        text-align: center;
+        font-size: 30rpx;
+    }
+    .subTitle{
+        text-align: center;
+        font-size: 30rpx;
+        color: red;
+    }
+    .imgView{
+        margin-top: 30rpx;
+        width: 100%;
+        height: 207rpx;
+        position: relative;
+
+        &-img{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 197rpx;
+            height: 207rpx;
+        }
+    }
+    .submitView{
+        margin-top: 20rpx;
+        margin-left: 50rpx;
+        margin-right: 50rpx;
+        height: 80rpx;
+        border-radius: 80rpx;
+        background:linear-gradient(to right,#FF8D3B,#FF004A);
+
+        text-align: center;
+        line-height: 80rpx;
+        color: white;
+        font-size: 24rpx;
+    }
+}
+
+@keyframes popup
+{
+    from{opacity:0;transform:scale(0.3,0.3);}
+    to 	{opacity:1;transform:scale(1,1);}
+}
+
+.share{ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:none;
+    width: 100%;
+    height: 100%;
+}
+.share::after{ 
+    border: none;
+}

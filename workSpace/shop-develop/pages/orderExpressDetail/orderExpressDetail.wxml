@@ -1,0 +1,81 @@
+<view class="wrap">
+     <view class="orderDetail"  wx:if="{{isHaveOrder}}">
+        <view class="defualtText">订单编号：{{orderNumber}}  <image style="width: 50rpx;" bindtap="copyOrderNum" src="{{expressCopy}}" mode='widthFix' /><text style="color:red;" bindtap="copyOrderNum">复制</text></view>
+        <view class="defualtText">付款时间：{{payTime}}</view>
+        <view class="defualtText">购买数量：x{{orderCount}}</view>
+        <view class="defualtText">实际支付：￥{{orderPrice}}</view>
+    </view>
+    <view class="address">
+        <image src="{{expressAddress}}" mode='widthFix' />
+        <text class="defualtText">[收货地址]{{addressDetail}}</text>
+    </view>
+    <view class="expressPosting" wx:if="{{expressList.length > 0}}">
+        <view class="horizontalCenter">
+            <image src="{{expressPosting}}" mode="widthFix" />
+            <text class="defualtText">物流信息</text>
+        </view>
+        <view class="postNotic">
+            <view class="defualtText">{{expressList.length}}个包裹已发出：</view>
+            <view class="defualtText">{{expressInfo}}</view>
+        </view>
+        <view class="postInfo" wx:for="{{expressList}}" data-index="{{index}}" wx:key="expressItem">
+            <view class="horizontalCenter">
+                <image src="{{expressPackage}}" mode="widthFix" />
+                <text class="defualtText">包裹  {{index + 1}}</text>
+            </view>
+            <view class="postDetail">
+                <view class="defualtText">发货时间：{{item.shipTime}} </view>
+                <view class="defualtText">承 运 商：{{item.expressCompany}}</view>
+                <view class="defualtText">物流单号：{{item.expressOrderNo}}<image style="width: 50rpx;" src="{{expressCopy}}" mode='widthFix' data-index="{{index}}" bindtap="copyOrderItemNum"/><text style="color:red;"  data-index="{{index}}" bindtap="copyOrderItemNum">复制</text></view>
+            </view>
+            <block wx:for="{{item.goodsOrderList}}" wx:key="goodsItem" wx:for-item="item">
+                <expressGoodItem goodsInfo="{{item}}" class="goods-item" ></expressGoodItem>
+            </block>
+             <view class="horizontalCenter">
+                <image src="{{expressCurrent}}" mode="widthFix" />
+                <text class="defualtText">当前包裹最新物流</text>
+            </view>
+            <view wx:if="{{item.detailList.length > 0}}">
+                <view wx:if="{{item.isShowAll}}">
+                    <block  wx:for="{{item.detailList}}" wx:key="detailItem">
+                        <expressDetail  expressInfo="{{item}}" class="goods-item"></expressDetail>
+                    </block>
+                </view>
+                <expressDetail wx:else expressInfo="{{item.detailList[0]}}"  class="goods-item"></expressDetail>
+                <view class="centenLayout">
+                    <view class="isShowExpress" data-index="{{index}}" bindtap="showExpress">
+                        <text>{{item.isShowDetail}}</text>
+                        <image src="{{item.isShowImage}}"  mode="widthFix" />
+                    </view>
+                </view>
+            </view>
+            <view wx:else class="noExpressInfo">暂无物流信息，请耐心等待！</view>
+        </view>
+    </view>
+
+    <view class="expressWaiting" wx:if="{{waitShipList.length > 0}}">
+        <view class="expressContent">
+            <view class="horizontalCenter">
+                <image src="{{expressWaiting}}" mode="widthFix" />
+                <text class="defualtText">未发货</text>
+            </view>
+            <view class="waittingContent">
+                <view class="defualtText">以下商品已在加紧安排发货，请耐心等待</view>
+                 <block wx:for="{{waitShipList}}" wx:key="goodsItem" wx:for-item="item">
+                    <expressGoodItem goodsInfo="{{item}}" class="goods-item" ></expressGoodItem>
+                </block>
+            </view>
+        </view>
+    </view>
+
+    <view class="bottomInfo">
+        <view class="bottomeFrame" bindtap="callPhone">
+            <image src="{{callService}}"  mode="widthFix" />
+            <view class="">联系客服</view>
+        </view>
+         <view class="bottomeFrame" bindtap="goToTop">
+            <image src="{{backTop}}"  mode="widthFix" />
+            <view class="">返回顶部</view>
+        </view>
+    </view>
+</view>

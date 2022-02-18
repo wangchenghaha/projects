@@ -1,0 +1,10 @@
+<!--components/tip/tip.wxml-->
+<view class="fixed-tip">
+  <view class="tip-content">
+    <view class="image-wrapper">
+      <slot></slot>
+    </view>
+    <view class="btn" bindtap="closeTip">确定</view>
+  </view>
+  <text class="close" bindtap="closeTip"></text>
+</view>

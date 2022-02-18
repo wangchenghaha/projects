@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "米奇抽奖",
+  "usingComponents": {
+    "painter": "../post/painter/painter",
+    "imageLoading":"../imageLoading/index"
+  }
+}

@@ -1,0 +1,13 @@
+
+
+<view>
+	<view class="first">
+        <icon type="warn" size="80" class='mt' color="#e84f60"/>
+        <view class="first-info">
+             亲爱的用户，需要您的授权才能使用哦！
+        </view>
+    </view>
+    <view class="button-sp-area">
+        <button class="weui-btn btnStyle" bindopensetting="open" open-type="openSetting">打开设置</button>
+    </view>
+</view>

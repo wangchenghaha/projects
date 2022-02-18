@@ -1,0 +1,21 @@
+<view class="frame">
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_0202_010.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_020.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_031.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="221157018" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_032.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121151013H81" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_033.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_040.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onMultiGoodClick" />
+    <swiper class="n" style="width: 100%;height:{{bannerHeight}}rpx" circular="true" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{swiperImgList}}" wx:key="layout_swiper">
+            <swiper-item>
+                <image class="img_with_full" bindload="onBannerLoad" src="{{imgBaseUrl}}ad_0202_0{{item}}.jpg?v={{randomMilli}}" mode="widthFix" data-map-index="{{item}}" bind:tap="onBannerClick" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_060.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="221133090A00" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_070.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="221101027E40" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_080.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121122009H01" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_090.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onMoreClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_100.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onWebClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_0202_110.jpg?v={{randomMilli}}" mode="widthFix" />
+</view>

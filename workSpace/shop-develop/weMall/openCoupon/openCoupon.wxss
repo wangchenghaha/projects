@@ -1,0 +1,100 @@
+image {
+  display: block;
+  width: 100%; }
+
+.coupon {
+  overflow: hidden; }
+  .coupon .banner {
+    position: relative;
+    margin: 50rpx auto 0;
+    width: 95%; }
+    .coupon .banner .coupon-icon {
+      position: absolute;
+      left: 50%;
+      top: -50rpx;
+      margin-left: -40rpx;
+      width: 80rpx;
+      height: 80rpx;
+      border: solid 10rpx #fff;
+      border-radius: 50rpx;
+      background: #ea231c; }
+      .coupon .banner .coupon-icon .coupon-img {
+        width: 50rpx; }
+  .coupon .coupon-content {
+    position: relative;
+    margin: 0 auto;
+    width: 95%;
+    height: 460rpx;
+    overflow: hidden; }
+    .coupon .coupon-content .coupon-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%; }
+    .coupon .coupon-content .card-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999; }
+      .coupon .coupon-content .card-wrapper .card {
+        padding: 10rpx 0;
+        margin: 40rpx auto 20rpx;
+        width: 440rpx;
+        background-repeat: no-repeat !important;
+        background-size: 100% 100% !important; }
+        .coupon .coupon-content .card-wrapper .card-info {
+          color: #ea231c; }
+          .coupon .coupon-content .card-wrapper .card-info .value {
+            padding: 0 20rpx;
+            font-size: 80rpx;
+            line-height: 80rpx; }
+          .coupon .coupon-content .card-wrapper .card-info text {
+            font-size: 40rpx; }
+        .coupon .coupon-content .card-wrapper .card-threshlod {
+          color: #333333;
+          padding-top: 20rpx;
+          font-size: 46rpx; }
+      .coupon .coupon-content .card-wrapper .btn {
+        margin: 40rpx auto 0;
+        width: 220rpx;
+        height: 60rpx;
+        line-height: 60rpx;
+        font-size: 30rpx;
+        border-radius: 30rpx;
+        background: #ea231c; }
+      .coupon .coupon-content .card-wrapper .dot {
+        position: relative;
+        margin-top: 40rpx;
+        width: 100%;
+        height: 0rpx;
+        border-bottom: dotted 2rpx #4c4c4c; }
+        .coupon .coupon-content .card-wrapper .dot::after {
+          content: '';
+          display: block;
+          width: 30rpx;
+          height: 30rpx;
+          position: absolute;
+          left: -13rpx;
+          top: -10rpx;
+          background: #fff;
+          border-radius: 50%; }
+        .coupon .coupon-content .card-wrapper .dot::before {
+          content: '';
+          display: block;
+          width: 30rpx;
+          height: 30rpx;
+          position: absolute;
+          right: -13rpx;
+          top: -10rpx;
+          background: #fff;
+          border-radius: 50%; }
+      .coupon .coupon-content .card-wrapper .card-desc {
+        padding-left: 30rpx;
+        margin-top: 15rpx;
+        font-size: 26rpx;
+        color: #999999;
+        line-height: 40rpx; }
+
+/*# sourceMappingURL=openCoupon.wxss.map */

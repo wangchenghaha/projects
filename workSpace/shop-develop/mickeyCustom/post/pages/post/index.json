@@ -1,0 +1,10 @@
+{
+   "navigationBarTitleText": "'鼠'我最红新年购",
+    "disableScroll":true,
+    "backgroundColor": "#f7f7f7",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+      "painter": "../../components/painter/painter"
+    }
+  }
+  

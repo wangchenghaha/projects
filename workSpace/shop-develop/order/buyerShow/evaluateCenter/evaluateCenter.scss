@@ -1,0 +1,111 @@
+$main-color: #FF5000;
+.content{
+  font-size: 28rpx;
+  background: #FAF9FD;
+  .bg-color{
+    background: #fff;
+  }
+  // 头部
+  .header{
+    height: 176rpx;
+    .avatar{
+      width: 94rpx;
+      height: 94rpx;
+      border-radius: 50%;
+    }
+    .number{
+      font-size: 50rpx;
+      line-height: 50rpx;
+      font-weight: bold;
+      text{
+        font-size: 26rpx;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  // tab栏
+  .tab{
+    margin-top: 20rpx;
+    height: 100rpx;
+    &-item{
+      flex: 1;
+      font-size: 30rpx;
+      &.true{
+        position: relative;
+        font-weight: bold;
+        &:after{
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          width: 80rpx;
+          height: 4rpx;
+          background: #000;
+        }
+      }
+    }
+  }
+  .container{
+    box-sizing: border-box;
+    image{
+      display: block;
+      width: 100%;
+    }
+    .order{
+      &-item{
+        padding: 20rpx;
+        margin-bottom: 20rpx;
+        border-radius: 20rpx;
+        background: #fff;
+        .order-code{
+          font-size: 26rpx;
+          .status{
+            color: $main-color;
+          }
+        }
+        .info{
+          margin-bottom: 20rpx;
+          align-items: flex-start;
+          .goods-img{
+            image{
+              width: 160rpx;
+              height: 267rpx;
+            }
+          }
+          .goods{
+            flex: 1;
+            padding: 0 20rpx;
+            box-sizing: border-box;
+            &-name{
+              line-height: 30rpx;
+            }
+            .color{
+              padding: 5rpx 0;
+              &-item{
+                font-size: 24rpx;
+                line-height: 28rpx;
+                color: rgba(0,0,0,0.5);
+              }
+            }
+          }
+          .operate{
+            .count{
+              font-size: 24rpx;
+              color: rgba(0,0,0,0.5);
+            }
+            .evaluate-btn{
+              margin-top: 20rpx;
+              width: 120rpx;
+              height: 40rpx;
+              line-height: 40rpx;
+              color: $main-color;
+              border: solid 2rpx $main-color;
+              border-radius: 20rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+}

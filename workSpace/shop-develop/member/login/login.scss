@@ -1,0 +1,62 @@
+.we-member{
+  .logo{
+    margin: 150rpx auto 20rpx;
+    width: 540rpx;
+    height: 60rpx;
+    overflow: hidden;
+    image{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .login-list{
+    padding: 40rpx 0 180rpx;
+    .login-item{
+      font-size: 36rpx;
+    }
+  }
+  .operation{
+    margin: 20rpx auto;
+    width: 600rpx;
+    .tip{
+      font-size: 32rpx;
+    }
+    .step{
+      padding-top: 20rpx;
+      &-item{
+        font-size: 32rpx;
+        text{
+          display: inline-block;
+          width: 30rpx;
+          height: 30rpx;
+          line-height: 30rpx;
+          font-size: 24rpx;
+          border: solid 2rpx #000;
+          border-radius: 50%;
+        }
+      }
+    }
+    .btn-wrapper{
+      padding-top: 40rpx;
+      button{
+        margin-top: 20rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(2, 193, 97);
+        &.btn-bg{
+          background: rgb(220, 220, 220);
+          color: #fff;
+        }
+        .icon{
+          width: 34rpx;
+          margin-right: 15rpx;
+          image{
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

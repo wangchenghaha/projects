@@ -1,0 +1,3 @@
+<view>提示</view>
+<view>您还未领取会员卡，点击领取！</view>
+<navigator target="miniProgram" open-type="navigate" app-id="wxeb490c6f9b154ef9" path="" extra-data="{{extraData}}" bindsuccess="onClick" version="release">打开绑定的小程序</navigator>

@@ -1,0 +1,56 @@
+.wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  transitiion: all 0.5s linear;
+  background: white;
+}
+
+.wrapper .image {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.wrapper .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.wrapper .content .logo {
+  width: 307rpx;
+  height: 33rpx;
+  background: url("https://tc.woaap.com/lingzhi/fol_shop/logo.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 307rpx 33rpx;
+  margin: 0 auto;
+}
+
+.wrapper .content .rate {
+  margin-top: 60rpx;
+  color: black;
+  font-weight: bold;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+
+.wrapper .content .percent {
+  width: 420rpx;
+  height: 20rpx;
+  padding: 2rpx;
+  border: 1rpx solid black;
+}
+
+.wrapper .content .percent .inner {
+  width: 0;
+  height: 20rpx;
+  background: black;
+}

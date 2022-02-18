@@ -1,0 +1,107 @@
+
+
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden; padding-bottom:134rpx;}
+.header{ width:100%; height:146rpx; background:#eeeeee; border-top:2rpx solid #b8b8b8; padding-left:96rpx; box-sizing:border-box; position:relative; border-bottom:1rpx solid #e9e9e9;}
+.header .title{ font-size:30rpx; font-weight:bold; line-height:54rpx;color:#000; padding-top:20rpx;}
+.header .description{ font-size:24rpx; line-height:48rpx; color:#888888;}
+.header .image{ display:block; width:50rpx; height:50rpx; position:absolute; left:20rpx; top:0;bottom:0;margin:auto 0;}
+
+.content{ width:100%;height:auto; clear:both; overflow:hidden; box-sizing:border-box; padding:60rpx 37rpx 0;}
+.content .li{ width:100%; height:auto; clear:both; overflow:hidden; padding:20rpx 0; font-size:30rpx; line-height:40rpx; color:#000;}
+
+.footer{ width:100%; height:110rpx; position:fixed; bottom:0; left:0; background: #ffffff}
+.iphoneXFooter{ height:148rpx; background: #fff;}
+.foot_li{flex: 0 1 46%; font-size:30rpx; text-align:center;}
+.foot_li .btn{
+  display: block;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 36rpx;
+  background: #000;
+  color: #fff;
+  border: 2rpx solid #000;
+  text-align: center;
+  border-radius: 50rpx;
+}
+.foot_left .btn{
+  width: 100%;
+  background:#fff;
+  border:2rpx solid #000;
+  color:#000;
+}
+.activity image{
+  display: block;
+  width: 100%;
+}
+.activity .activity-item{
+  margin: 20rpx auto;
+  width: 95%;
+}
+.cinema{
+  width: 100%;
+}
+.customer{
+  position: relative;
+  margin: 20rpx auto;
+  width: 92%;
+}
+.customer .customer-img{
+
+}
+.customer image{
+  display: block;
+  width: 100%;
+}
+.customer .save{
+  position: absolute;
+  left: 180rpx;
+  bottom: 175rpx;
+  width: 120rpx;
+  height: 40rpx;
+}
+.customer .copy{
+  position: absolute;
+  left: 180rpx;
+  bottom: 95rpx;
+  width: 180rpx;
+  height: 40rpx;
+}
+.qr-img{
+  margin: 30rpx auto;
+  width: 500rpx;
+}
+.qr-img .tip{
+  font-size: 28rpx;
+}
+.qr-img image{
+  display: block;
+  width: 100%;
+}
+
+.voucher{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+}
+.voucher  .showModel{
+      width: 92%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+.voucher .showModel .newUserImage{
+    width: 90%;
+    position: relative;
+}
+
+.voucher .showModel .tan_close{
+          width: 60rpx;
+          height: 60rpx;
+          margin-top: 50rpx;
+}
+   

@@ -1,0 +1,38 @@
+.font-bold{
+  font-weight: bold;
+}
+.list-item{
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+  border-bottom: solid 2rpx #878787;
+  .goods-img{
+    width: 200rpx;
+    margin-right: 20rpx;
+  }
+  .sale-info{
+    flex: 1;
+    .temp-title{
+      font-size: 28rpx;
+      line-height: 30rpx;
+      margin-bottom: 10rpx;
+      text{
+        border-left: solid 4rpx #000;
+        padding-left: 10rpx;
+      }
+    }
+    .temp-item{
+      display: block;
+      font-size: 24rpx;
+      line-height: 24rpx;
+      color: #878787;
+      margin-bottom: 10rpx;
+      &.high-light{
+        font-size: 26rpx;
+        line-height: 26rpx;
+        color: #000;
+      }
+    }
+  }
+}

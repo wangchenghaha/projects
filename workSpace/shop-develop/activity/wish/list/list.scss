@@ -1,0 +1,39 @@
+.wrap{
+  padding-bottom: 200rpx;
+  min-height: 100%;
+  background: #F1E5E5;
+  overflow: hidden;
+  image{
+    display: block;
+    width: 100%;
+  }
+  .content{
+    margin: 0 auto;
+    background: #fff;
+    width: 690rpx;
+    .goods-content{
+      .title{
+        padding-top: 30rpx;
+        font-size: 24rpx;
+        font-weight: 400;
+        color: #E7AEB3;
+      }
+    }
+  }
+  .share-btn{
+    position: fixed;
+    left: 0;
+    bottom: 20rpx;
+    width: 50%;
+    height: 160rpx;
+    z-index: 99999;
+    opacity: 0;
+  }
+  .my-canvas{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(-100%) translateY(100%);
+  }
+}

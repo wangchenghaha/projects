@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "抽奖",
+  "disableScroll": false,
+  "usingComponents": {
+    "painter": "../post/painter/painter",
+    "imageLoading":"../imageLoading/index"
+  }
+}

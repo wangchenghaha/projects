@@ -1,0 +1,4 @@
+<movable-area scale-area class="area" style="top:{{top}}px;right:{{right}}rpx;width:{{width}}rpx;height:{{height}}px;border-radius: {{width}}rpx;">
+    <view class="selectView" style="top:0px;right:0rpx;width:{{width}}rpx;height:{{value + 10}}px;border-radius: {{width}}rpx;"></view>
+    <movable-view bindchange="move" bindtouchend="end" class="sliderView" direction="vertical"></movable-view>
+</movable-area>

@@ -1,0 +1,96 @@
+<view class="container">
+    <!-- 直播 -->
+    <swiper wx:if="{{roomInfo.length > 0 || serveArr.length > 0 }}" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" interval="{{5000}}" class="live-now-header">
+        <swiper-item wx:if="{{roomInfo.length > 0 }}" wx:for="{{roomInfo}}" wx:key="roomid" data-roomid="{{item.roomid}}" bindtap="liveDetails">
+            <view>
+                <image src="{{item.cover_img}}" style="width:100%;height:100%;" mode="widthFix" />
+            </view>
+            <view class="play-position">
+                <image class="img" src="{{playBtnImg}}" mode="widthFix" />
+                <view class="subTitle">正在直播中 . . .</view>
+            </view>
+        </swiper-item>
+        <swiper-item wx:if="{{serveArr.length > 0 }}" wx:for="{{serveArr}}" wx:key="index">
+            <video style="width:100%;height: 100%" autoplay="{{false}}" loop bindplay='bindplay' muted="{{true}}" controls="{{true}}" objectFit="cover" vslide-gesture-in-fullscreen='{{true}}' src="{{item.videoUrl}}"></video>
+        </swiper-item>
+    </swiper>
+    <!-- 直播预告 -->
+    <block wx:if="{{roomNotice.length > 0 }}">
+        <view class="live_list_container" wx:for="{{roomNotice}}" wx:key="index" wx:if="{{index<1}}">
+            <view class="group" style="margin-top:{{marginIncrease}}px;">
+                <view class="live_list_container_title">
+                    <view>
+                        <image class="icon_img_live" src="{{icon_live}}"></image>
+                    </view>
+                    <view class="live_subtitle">
+                        <text class="live_subtitle_title">
+                            <text>直播预告</text>
+                        </text>
+                        <text class="live_subtitle_time">{{item.day}} {{item.startHoursStr}}-{{item.endHoursStr}}</text>
+                    </view>
+                    <view class="subscribe" bindtap="liveDetails" data-roomid="{{item.roomid}}">立即预约</view>
+                </view>
+                <view class="live_list_container_imageGroup">
+                    <view bindtap="liveDetails" data-roomid="{{item.roomid}}">
+                        <image class="live_img_container" src="{{item.cover_img}}" style="width:100%;height:100%;" mode="widthFix" />
+                    </view>
+                    <view class="live_img">
+                        <block class="" wx:for="{{item.goods}}" wx:for-item="items" wx:if="{{index<3}}" wx:key="url">
+                            <view bindtap="picJump" data-index="{{index}}" data-link="{{items.url}}">
+                                <image class="item" src="{{items.cover_img}}"></image>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 直播回放 -->
+    <block wx:if="{{roomPlayCallbackNew.length > 0}}">
+        <view class="live_list_container" wx:for="{{roomPlayCallbackNew}}" wx:key="index" wx:if="{{index<3}}" style="margin-bottom: 50rpx;">
+            <view class="group">
+                <view class="live_list_container_title">
+                    <view>
+                        <image class="icon_img_replay" src="{{icon_replay}}"></image>
+                    </view>
+                    <view class="live_subtitle">
+                        <view class="live_subtitle_title">
+                            <view>回放</view>
+                            <view class="unit">
+                                <image class="icon_img_unit" src="{{icon_unit}}"></image>
+                                <view>{{item.count}}</view>
+                                <view style="margin-left: 5rpx;">观看</view>
+                            </view>
+                        </view>
+                        <view class="live_subtitle_time">{{item.day}} {{item.startHoursStr}}-{{item.endHoursStr}}</view>
+                    </view>
+                </view>
+                <view class="live_list_container_imageGroup">
+                    <view wx:for-index="index" id="{{index}}">
+                        <block wx:for="{{item.media}}" wx:for-item="items" wx:if="{{index<1}}" wx:key="index">
+                            <video class="videoStyle" id="{{item.roomid}}" objectFit='cover' src="{{items.media_url}}" bindtap="bindplay" show-play-btn="{{true}}"
+                            poster="{{item.cover_img}}"
+                            >
+                                <!-- <cover-view class="video_cover">
+                                    <cover-image src="{{item.cover_img}}" mode="widthFix"></cover-image>
+                                    <cover-image src="{{playBtnImg}}" mode="widthFix" class="video_play_icon"></cover-image>
+                                    <cover-view class="video_bg_black"></cover-view>
+                                </cover-view> -->
+                            </video>
+                        </block>
+                    </view>
+                    <view class="live_img">
+                        <block class="" wx:for="{{item.goods}}" wx:for-item="items" wx:if="{{index<3}}" wx:key="index">
+                            <view bindtap="picJump" data-index="{{index}}" data-link="{{items.url}}">
+                                <image class="item" src="{{items.cover_img}}"></image>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 加载更多 -->
+    <view class="loading" hidden="{{!loadMore}}">上滑查看更多回放</view>
+    <view class="loading" hidden="{{!loadAll}}">已加载全部</view>
+</view>

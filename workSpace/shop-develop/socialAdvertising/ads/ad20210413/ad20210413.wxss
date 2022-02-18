@@ -1,0 +1,6 @@
+.frame{width: 100%;height: auto;clear:both; overflow:hidden;display: flex;flex-direction: column;background-color: #C91004;}
+.img_with_full{width: 100%;}
+.n{margin-top: -1rpx;}
+page {
+    background-color: #99DFF6;
+}

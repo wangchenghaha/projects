@@ -1,0 +1,6 @@
+.copy-icon{
+  display: inline-block;
+  margin-left: 10rpx;
+  width: 40rpx;
+  height: 38rpx;
+}

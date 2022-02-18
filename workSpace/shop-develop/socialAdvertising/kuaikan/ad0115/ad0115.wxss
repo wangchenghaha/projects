@@ -1,0 +1,9 @@
+/* socialAdvertising/kuaikan/ad0115/ad0115.wxss */
+.frame{width: 100%;height: auto;clear:both; overflow:hidden;display: flex;flex-direction: column;background-color: #C91004;}
+.img_with_full{width: 100%;}
+.layout_video{width: 100%;height: 430rpx;}
+.n{margin-top: -1rpx;}
+.img_live{height: 119rpx;}
+page {
+    background-color: #C91004;
+}

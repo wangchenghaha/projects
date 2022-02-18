@@ -1,0 +1,27 @@
+
+<canvas wx:if="{{!(isStart || isEnd)}}" type="2d" id="gameCanvas" style="width:100%;height:100%;" bindtap="click"></canvas>
+
+<view wx:else class="bg">
+    <image src="{{canvasImg}}" class="bg-img" style="width:100%;height:100%;" />
+    <block wx:if="{{isStart}}">
+        <image src="{{startGameImg}}" class="bg-startGame" mode="widthFix" bindtap="startGame" />
+    </block>
+    <block wx:else>
+        <view class="bouncedBg"></view>
+        <view class="bg-gameOver">
+            <view class="positionView">
+                <image src="{{gameOverImg}}" style="width:100%;" mode="widthFix" />
+                <block wx:if="{{userData.gameCount > 0}}">
+                    <view class="num" style="top: 30%;">游戏得分: {{num}}</view>
+                    <view class="num" style="top: 42%;">召唤伙伴: {{birdNum}}<image src="{{xingxingImg}}" style="margin-left:20rpx;width:28rpx;" mode="widthFix" /></view>
+                </block>
+
+                <view class="closed" bindtap="closed"></view>
+                <view class="play" bindtap="playAgin"></view>
+                <button open-type="share" class="share" wx:if="{{userData.gameCount <= 0}}"></button>
+            </view>
+
+        </view>
+    </block>
+</view>
+

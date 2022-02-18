@@ -1,0 +1,108 @@
+<view class="wrapper">
+    <view class="header {{showSearch ? 'active': ''}}" catchtap='cancelsearch'>
+        <view class="content {{showSearch ? 'active': ''}}" catchtap='stop'>
+            <!-- 基础控制 -->
+            <view class="topper">
+                <view class="tabbox">
+                    <view class="tab-item" data-index='1' bindtap='changeIndex'>进行中</view>
+                    <view class="tab-item" data-index='2' bindtap='changeIndex'>已完成</view>
+                    <view class="tab-item" data-index='3' bindtap='changeIndex'>已取消</view>
+                    <view class="underline" style='left: {{16.6667 + 16.6667 * 2 * (tabIndex - 1)}}%'></view>
+                </view>
+                <view class="searchbar" bindtap='startSearch'>
+                    <image class="image" src="../common/icon/search.png"></image>
+                </view>
+            </view>
+            <!-- 搜索条 -->
+            <view class="searchbox">
+                <input type="text" placeholder="🔍姓名、电话或者预约编号" placeholder-class='holder_text' class="input" value='{{searchVal}}' data-type='search' bindinput="inputVal" confirm-type='search' bindconfirm='getData' />
+            </view>
+        </view>
+    </view>
+    <!-- 主要内容 -->
+    <view class="main-ceontent">
+        <scroll-view class="scroll-view" enable-back-to-top scroll-y bindscrolltolower='bindscrolltolower'>
+            <view class="user-item" wx:for="{{datalist}}" wx:key='{{index}}' data-item='{{item}}' bindtap='checkDetail'>
+                <view class="left">
+                    <view class="name">{{item.name}}</view>
+                    <view class='mobile' data-mobile="{{item.mobile}}" catchtap='makephonecall'>
+                        <image src='../common/icon/phone.png' class='icon'/>
+                        <text class="tit">{{item.mobile}}</text>
+                    </view>
+                </view>
+                <view class="right">
+                    <view>预约到店时间：</view>
+                    <view> {{item.appoint_time}} {{item.time || ''}}</view>
+                </view>
+            </view>    
+
+            <!-- 没有预约数据 -->
+            <view class="nodata" wx:if="{{datalist && datalist.length === 0}}">
+                <view class="content">
+                    <view class="imagebox">
+                        <image class="image" src="../common/icon/appointment.png"></image>
+                    </view>
+                    <view class="tips">您当前暂无预约记录。</view>
+                </view>
+            </view> 
+        </scroll-view>
+            
+    </view>
+
+    <!-- 详情弹窗 -->
+    <view class="detail" wx:if='{{checkdetail}}'>
+        <view class="detail-content">
+            <view class="detail-header">
+                <view class="code">
+                    <text class="tit">预约编号:</text>
+                    <text class="con">{{oneItem.appoint_code}}</text>
+                </view>
+                <view class="closebox" bindtap='closeDetailModal'>
+                    <image class="btn" src="../common/icon/close.png"></image>
+                </view>
+            </view>
+
+            <!-- 中间 -->
+            <view class="info">
+                <view class="content">
+                    <view class="name">{{oneItem.name}}</view>
+                    <view class="mobile" data-mobile="{{oneItem.mobile}}" catchtap='makephonecall'>电话 : {{oneItem.mobile}}</view>
+                </view>
+            </view>
+
+            <!-- 是否扶沟 -->
+            <view class="form">
+                <view class="content">
+                    <view class="title">顾客是否产生复购</view>
+                    <view class="checkbox">
+                        <view class="checkbox-item" data-status='1' bindtap='changeRebackStatus'>
+                            <view class="iconbox {{oneItem.isHasReback === true ? 'active':''}}">
+                                <image src='../common/icon/select2.png' class="icon" />
+                            </view>
+                            <view class="tit">是</view>
+                        </view>
+                        <view class="checkbox-item" data-status='0' bindtap='changeRebackStatus'>
+                            <view class="iconbox {{oneItem.isHasReback === false ? 'active':''}}">
+                                <image src='../common/icon/select2.png' class="icon" />
+                            </view>
+                            <view class="tit">否</view>
+                        </view>
+                    </view>
+
+                    <view class="inputbox">
+                        <input type="number" value="{{oneItem.rebackNumber}}" data-type='reback' bindinput="inputVal" placeholder="请输入复购金额" placeholder-class="input-placeholder" disabled="{{!oneItem.isHasReback}}"  class="input {{oneItem.isHasReback ? '':'disabled'}}"/>
+                    </view>
+
+                    <view class="footer">
+                        <view class="concelbtn" hover-class="hoverclass">
+                            <button class="btn" catchtap='cancelOrder'>取消预约</button>
+                        </view>
+                        <view class="btnbox" hover-class="{{oneItem.isHasReback && oneItem.rebackNumber || oneItem.isHasReback === false ? 'hoverclass':''}}" >
+                            <button class="btn {{oneItem.isHasReback && oneItem.rebackNumber || oneItem.isHasReback === false ? 'active':'disabled'}}" catchtap="{{oneItem.isHasReback && oneItem.rebackNumber || oneItem.isHasReback === false ? 'completeOrder':''}}" >已完成</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

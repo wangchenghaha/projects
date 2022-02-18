@@ -1,0 +1,309 @@
+.bg-noScro {
+  height: 87%;
+  overflow: hidden;
+}
+
+.bg {
+  width: 100%;
+  height: auto;
+  padding-bottom: 20rpx;
+}
+
+.bg .box {
+  width: 100%;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.bg .box-item {
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+  flex: 0 1 345rpx;
+}
+
+.bg .box-item .imageView {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.bg .box-item .imageView .wuhuoImage {
+  position: absolute;
+  right: 0;
+  bottom: 50rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.bg .box-item .imageView .zhekou {
+  position: absolute;
+  top: 15rpx;
+  right: 0;
+  width: 80rpx;
+  height: 40rpx;
+}
+
+.bg .box-item .imageView .zhekou-text {
+  position: absolute;
+  top: 15rpx;
+  right: 0;
+  width: 75rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: white;
+  text-align: center;
+}
+
+.bg .box-item .imageView .opaView {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  height: 40rpx;
+  opacity: .6;
+}
+
+.bg .box-item .imageView .opaText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 20rpx;
+  color: #1B1C20;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.bg .box-item .botomView {
+  background-color: #CC292E;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bg .box-item .botomView .titles {
+  color: white;
+  line-height: 80rpx;
+}
+
+.bg .box-item .botomView .botom-leftView {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+
+.bg .box-item .botomView .botom-leftView .botom-lefView-s {
+  margin-left: 10rpx;
+  height: 60rpx;
+  width: auto;
+  overflow: hidden;
+}
+
+.bg .box-item .botomView .botom-leftView .botom-lefView-s .titles-up {
+  color: #C0BCBC;
+  font-size: 22rpx;
+  text-decoration: line-through;
+  line-height: 30rpx;
+}
+
+.bg .box-item .botomView .botom-leftView .botom-lefView-s .titles-down {
+  display: block;
+  color: white;
+  font-size: 22rpx;
+  line-height: 30rpx;
+}
+
+.bg .box-item .botomView .botom-rightView {
+  display: flex;
+  background-color: white;
+  border-radius: 5rpx;
+  width: 90rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  line-height: 50rpx;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #CC292E;
+}
+
+.columbg {
+  width: 100%;
+  height: auto;
+  padding-bottom: 20rpx;
+}
+
+.columbg .columListBG {
+  width: 95%;
+  height: auto;
+  margin: 20rpx;
+}
+
+.columbg .columListBG .imageView {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.columbg .columListBG .imageView .wuhuoImage {
+  position: absolute;
+  right: 0;
+  bottom: 50rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.columbg .columListBG .imageView .zhekou {
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  width: 125rpx;
+  height: 60rpx;
+}
+
+.columbg .columListBG .imageView .zhekou-text {
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  width: 120rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  color: white;
+  text-align: center;
+}
+
+.columbg .columListBG .imageView .opaView {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  height: 60rpx;
+  opacity: .6;
+}
+
+.columbg .columListBG .imageView .opaText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 20rpx;
+  color: #1B1C20;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.columbg .columListBG .botomView {
+  background-color: #CC292E;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.columbg .columListBG .botomView .titles {
+  color: white;
+  line-height: 90rpx;
+}
+
+.columbg .columListBG .botomView .botom-leftView {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+
+.columbg .columListBG .botomView .botom-leftView .botom-lefView-s {
+  margin-left: 30rpx;
+  height: 70rpx;
+  width: auto;
+  overflow: hidden;
+}
+
+.columbg .columListBG .botomView .botom-leftView .botom-lefView-s .titles-up {
+  color: #C0BCBC;
+  font-size: 26rpx;
+  text-decoration: line-through;
+  line-height: 35rpx;
+}
+
+.columbg .columListBG .botomView .botom-leftView .botom-lefView-s .titles-down {
+  color: white;
+  font-size: 26rpx;
+  line-height: 35rpx;
+}
+
+.columbg .columListBG .botomView .botom-rightView {
+  display: flex;
+  background-color: white;
+  border-radius: 5rpx;
+  width: 120rpx;
+  height: 60rpx;
+  margin: 15rpx;
+  line-height: 60rpx;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #CC292E;
+}
+
+.columbg .columListBG .collectionView {
+  margin-left: 30%;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  width: 300rpx;
+  height: 60rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8rpx;
+  border: solid 2rpx #CC292E;
+  align-items: center;
+  justify-content: center;
+}
+
+.columbg .columListBG .collectionView .collectionImage {
+  margin-right: 10rpx;
+  width: 35rpx;
+}
+
+.columbg .columListBG .collectionView .collectionText {
+  font-size: 25rpx;
+  color: #CC292E;
+}
+
+.noDataView {
+  width: 100%;
+  height: 80%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.noDataView .image {
+  margin-top: 40%;
+}
+
+.noDataView .text {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  color: black;
+}

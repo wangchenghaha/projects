@@ -1,0 +1,53 @@
+.bg {
+  box-sizing: border-box;
+}
+.bg:nth-child(even) {
+  background: #ededed;
+}
+
+.list {
+  margin-top: 20rpx;
+  align-items: flex-start;
+}
+.list image {
+  display: block;
+  width: 100%;
+}
+.list .list-img {
+  margin: 20rpx auto;
+  width: 96%;
+  overflow: hidden;
+}
+.list .scroll-view {
+  width: 100%;
+  height: 480rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.list .scroll-view .goods-item {
+  display: inline-block;
+  margin-right: 15rpx;
+  width: 240rpx;
+  height: 480rpx;
+  vertical-align: top;
+}
+.list .scroll-view .goods-item:last-child {
+  margin-right: 0;
+}
+.list .scroll-view .goods-item .goods-img {
+  width: 100%;
+}
+.list .scroll-view .goods-item .price {
+  margin-top: 20rpx;
+}
+.list .scroll-view .goods-item .price-origin {
+  font-size: 24rpx;
+  color: #ccc;
+  text-decoration: line-through;
+}
+.list .scroll-view .goods-item .price-pay {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=redBookVideoGoods.wxss.map */

@@ -1,0 +1,33 @@
+<!--activesubpack/pages/egg/dialog/dialog.wxml-->
+<view class="dialog-container" wx:if="{{isShow}}">
+    <view class="dialog-shade-wrapper"></view>
+    <view class="dialog-main-wrapper" wx:if="{{isRemoveIcon}}">
+        <image mode="widthFix" class="dialog-image-area" src="{{imgUrl}}" bindtap="_toHome" />
+        <image wx:if="{{isRemoveIcon}}" bindtap="_close" class="dialog-close-area" src="../../../img/close.png" />
+    </view>
+    <view class="dialog-main-wrapper" wx:else>
+        <div class="dialog-win-box">
+            <image mode="widthFix" class="dialog-image-area" src="{{imgUrl}}" />
+        </div>
+        <view class="win-btn-area">
+            <send-coupon
+                class="send-coupon"
+                wx:if="{{coupon_type == 1}}"
+                bindcustomevent="getcoupon"
+                send_coupon_params="{{couponDetail.send_coupon_params}}"
+                sign="{{couponDetail.sign}}"
+                send_coupon_merchant="{{couponDetail.send_coupon_merchant}}"
+            ><image src="{{btnImg}}" /></send-coupon>
+            <image wx:else bindtap="_clickWinBtn" src="{{btnImg}}" />
+        </view>
+        <view class="share-btns">
+            <view class="share-item">
+                <button open-type="share"></button>
+                <image mode="widthFix" class="win-btn-area" src="{{friendBtn}}" />
+            </view>
+            <view class="share-item">
+                <image bindtap="_share" mode="widthFix" class="win-btn-area" src="{{circleBtn}}" />
+            </view>
+        </view>
+    </view>
+</view>

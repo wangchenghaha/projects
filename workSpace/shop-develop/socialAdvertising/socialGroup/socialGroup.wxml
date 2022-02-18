@@ -1,0 +1,49 @@
+<!-- socialAdvertising/crossIndustryCooperation/crossIndustryCooperation.wxml -->
+<view class="frame">
+    <!-- <scroll-view class="scroll_wapper {{isIphoneX ?'scroll_iphoneX':''}}" scroll-y="{{true}}"> -->
+    <swiper class='layout_swiper' circular="true" indicator-dots="true" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}" indicator-active-color="#FFFFFF">
+        <block wx:for="{{swiperImgList}}" wx:key="layout_swiper">
+            <swiper-item>
+                <image src="{{item.picUrl}}" class="img_swiper_item" mode="widthFix" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <image class="img_bg" src="{{imgBaseUrl}}social_group_receive_coupons.png?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+    <view class="frame_actual_inflow">
+        <view class="bar_1">
+            <view class="wrapper_logo" bind:tap="onIndexClick">
+                <image wx:if="{{false}}" class="mini_logo" src="{{imgBaseUrl}}social_group_logo.jpg" mode="widthFix" />
+                <view class="txt_brand">{{brandName}}官方福利</view>
+            </view>
+            <!-- <view class="wrapper_shop_info" wx:if="{{false}}">
+                <image class="mini_logo" src="{{imgBaseUrl}}social_group_customer_service_avatar.jpg" mode="widthFix" />
+                <view class="txt_brand_des">ONLY 西单大悦城店铺 | 7.1km</view>
+            </view> -->
+        </view>
+        <view class="bar_2">
+            <view class="tip">{{activityDes}}</view>
+            <!-- <view class="more" wx:if="{{false}}">展开全部</view> -->
+        </view>
+        <view class="bar_3">
+            <view class="wrapper_service" bind:tap="onServiceClick">
+                <image class="cus_service_avatar" src="{{imgBaseUrl}}social_group_customer_service_avatar.jpg" mode="widthFix" />
+                <button class="cus_button" open-type="contact">点击回复“1”获取更多福利</button>
+            </view>
+        </view>
+    </view>
+    <image wx:if="{{false}}" class="img_bg" src="{{qrCodeImgUrl}}?v={{randomMilli}}" mode="widthFix" bind:longpress="onQRCodeLongPress" />
+    <image class="img_bg" src="{{imgBaseUrl}}social_group_point_of_interest.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_goto_un" src="{{imgBaseUrl}}social_group_goto_undertaking_page.jpg" mode="widthFix" bind:tap="onIndexClick" />
+    <swiper class='layout_swiper_bottom' circular="true" indicator-dots="true" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}" indicator-active-color="#FFFFFF">
+        <block wx:for="{{swiperImgListBottom}}" wx:key="layout_swiper">
+            <swiper-item>
+                <image src="{{item.picUrl}}" class="img_swiper_item_bottom" mode="widthFix" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <image class="img_shop" src="{{imgBaseUrl}}social_group_goto_shop.png" mode="widthFix" bind:tap="onGotoShopClick" />
+    <image class="img_goto_un_2" src="{{imgBaseUrl}}social_group_goto_undertaking_page.jpg" mode="widthFix" bind:tap="onIndexClick" />
+    <!-- </scroll-view> -->
+    <view class="v_blank" wx:if="{{showCube}}"></view>
+    <image wx:if="{{showCube}}" class="img_arrow" src="{{imgBaseUrl}}social_group_arrow_down.png" mode="widthFix" />
+</view>

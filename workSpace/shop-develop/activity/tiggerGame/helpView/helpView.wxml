@@ -1,0 +1,35 @@
+<customView_vm
+ wx:if="{{brand == 'VEROMODA'}}"
+ canShow="{{canShow}}"
+ fridendData="{{fridendData}}"
+ zhuliArrs="{{zhuliArrs}}"
+ points="{{points}}"
+ canClose="{{canClose}}"
+ zhuliAnimationData="{{zhuliAnimationData}}"
+ bindbottomTap="bottomTap"
+ bindbouncedTap="bouncedTap"
+/>
+
+<customView_only
+ wx:if="{{brand == 'ONLY'}}"
+ canShow="{{canShow}}"
+ fridendData="{{fridendData}}"
+ zhuliArrs="{{zhuliArrs}}"
+ points="{{points}}"
+ canClose="{{canClose}}"
+ zhuliAnimationData="{{zhuliAnimationData}}"
+ bindbottomTap="bottomTap"
+ bindbouncedTap="bouncedTap"
+/>
+<customView_fol
+ wx:if="{{brand == 'FOL'}}"
+ canShow="{{canShow}}"
+ fridendData="{{fridendData}}"
+ zhuliArrs="{{zhuliArrs}}"
+ points="{{points}}"
+ canClose="{{canClose}}"
+ zhuliAnimationData="{{zhuliAnimationData}}"
+ bindbottomTap="bottomTap"
+ bindbouncedTap="bouncedTap"
+/>
+

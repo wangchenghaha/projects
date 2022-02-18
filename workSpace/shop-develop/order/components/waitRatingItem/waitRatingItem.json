@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "five-star": "../fiveStar/fiveStar",
+    "rating-item": "../ratingItem/ratingItem",
+    "copy-icon": "../../../components/copyIcon/copyIcon"
+  }
+}

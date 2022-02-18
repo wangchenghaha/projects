@@ -1,0 +1,350 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: flex;
+}
+
+.container .petBg {
+  width: 100%;
+  height: 100%;
+}
+
+.container .userInfo {
+  width: 300rpx;
+  height: 80rpx;
+  z-index: 10;
+  top: 12%;
+  left: 30rpx;
+  position: absolute;
+  border-radius: 80rpx;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.container .userInfo .userAvatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  border: 5rpx solid #442816;
+}
+
+.container .userInfo .loverIcon {
+  width: 50rpx;
+  margin-left: 20rpx;
+}
+
+.container .userInfo .loverNum {
+  font-size: 36rpx;
+  color: #fff;
+  -webkit-text-stroke: 1px #442816;
+  font-weight: 900;
+  margin-left: 20rpx;
+}
+
+.container .petTask {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 11%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 30rpx;
+}
+
+.container .petTask .img {
+  width: 80rpx;
+  margin-top: 30rpx;
+}
+
+.container .petOpt {
+  width: 92%;
+  position: absolute;
+  z-index: 10;
+  bottom: 50rpx;
+  margin-left: 4%;
+}
+
+.container .petOpt .img {
+  width: 100rpx;
+  margin-right: 30rpx;
+}
+
+.container .petOpt .feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .petOpt .feed .feedImg {
+  width: 120rpx;
+}
+
+.container .petOpt .feed .feedNum {
+  font-size: 32rpx;
+  color: #fff;
+  -webkit-text-stroke: 1px #442816;
+  font-weight: 900;
+  margin-top: -20rpx;
+}
+
+.container .petArea {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 18%;
+  left: 0;
+}
+
+.container .petArea .littlePet {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.container .friendHelp {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.container .friendHelp .helpContent {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 600rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .friendHelp .helpContent .helpTitle {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-top: -80rpx;
+}
+
+.container .friendHelp .helpContent .title {
+  width: 92%;
+  margin-top: -50rpx;
+}
+
+.container .friendHelp .helpContent .title .helps {
+  font-size: 24rpx;
+  color: #000;
+}
+
+.container .friendHelp .helpContent .title .close {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container .friendHelp .helpContent .showFriend {
+  width: 90%;
+  display: flex;
+  margin-top: 80rpx;
+}
+
+.container .friendHelp .helpContent .showFriend .friendItem {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .friendHelp .helpContent .showFriend .friendItem .friendAvatar {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.container .friendHelp .helpContent .showFriend .friendItem .friendNick {
+  font-size: 28rpx;
+  color: #909090;
+}
+
+.container .friendHelp .helpContent .notice {
+  font-size: 24rpx;
+  font-weight: 550;
+}
+
+.container .friendHelp .helpContent .helpBtn {
+  width: 80%;
+  line-height: 80rpx;
+  background: #F6614C;
+  color: white;
+  text-align: center;
+  border-radius: 80rpx;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+}
+
+.container .task {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.container .task .taskContent {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 70%;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .task .taskContent .taskTitle {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-top: -80rpx;
+}
+
+.container .task .taskContent .title {
+  width: 92%;
+  margin-top: -50rpx;
+}
+
+.container .task .taskContent .title .helps {
+  font-size: 24rpx;
+  color: #000;
+}
+
+.container .task .taskContent .title .close {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container .task .taskContent .showTask {
+  width: 94%;
+  margin-top: 30rpx;
+}
+
+.container .task .taskContent .showTask .taskItem {
+  width: 100%;
+  margin-top: 20rpx;
+  box-shadow: 2px 0px 1px 0px #eeeeee;
+}
+
+.container .task .taskContent .showTask .taskItem .mark {
+  width: 12rpx;
+  height: 130rpx;
+  background: #F6614C;
+  border-top-left-radius: 12rpx;
+  border-bottom-left-radius: 12rpx;
+}
+
+.container .task .taskContent .showTask .taskItem .feedBag {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 30rpx;
+}
+
+.container .task .taskContent .showTask .taskItem .taskShow {
+  width: 50%;
+  margin-left: 30rpx;
+}
+
+.container .task .taskContent .showTask .taskItem .taskShow .taskCon {
+  font-size: 26rpx;
+  font-weight: 550;
+  color: #000;
+}
+
+.container .task .taskContent .showTask .taskItem .taskShow .taskRate {
+  font-size: 26rpx;
+  color: #909090;
+}
+
+.container .task .taskContent .showTask .taskItem .taskBtn {
+  line-height: 60rpx;
+  width: 160rpx;
+  text-align: center;
+  background: #F6614C;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 60rpx;
+}
+
+.container .exchange {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.container .exchange .exchangeContent {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 70%;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .exchange .exchangeContent .exchangeTitle {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-top: -80rpx;
+}
+
+.container .exchange .exchangeContent .title {
+  width: 92%;
+  margin-top: -50rpx;
+}
+
+.container .exchange .exchangeContent .title .helps {
+  font-size: 24rpx;
+  color: #000;
+}
+
+.container .exchange .exchangeContent .title .close {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container .exchange .exchangeContent .navi {
+  width: 50%;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  line-height: 60rpx;
+  font-weight: 550;
+}
+
+.container .exchange .exchangeContent .navi .sel {
+  color: #FF4A4B;
+  border-bottom: #FF4A4B 2rpx solid;
+}
+
+.container .exchange .exchangeContent .showExchange {
+  width: 94%;
+  margin-top: 30rpx;
+  max-height: 750rpx;
+  overflow: scroll;
+}
+
+.container .exchange .exchangeContent .showExchange .coupon {
+  width: 100%;
+}

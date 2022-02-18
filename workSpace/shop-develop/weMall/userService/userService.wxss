@@ -1,0 +1,52 @@
+.text-indent{
+  display: inline-block;
+  text-indent: 2em;
+}
+.user-service{
+  padding-bottom: 60rpx;
+  background: #eee;
+}
+image{
+  display: block;
+  width: 100%;
+}
+.line{
+  text-decoration: underline;
+}
+.title{
+  padding: 5rpx 0;
+  font-size: 28rpx;
+}
+.sub-title{
+  font-size: 24rpx;
+}
+.tip{
+  padding: 15rpx 10rpx;
+  margin: 30rpx auto;
+  width: 95%;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  background: #fff;
+}
+.text-rule{
+  display: block;
+  padding-left: 2em;
+}
+.text-item{
+  padding: 5rpx 0;
+}
+.tab{
+  margin-top: 20rpx;
+  background: #fff;
+}
+.tab .tab-title .tab-item{
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border: solid 2rpx #000;
+}
+.tab-item.active{
+  background: #000;
+  color: #fff;
+}

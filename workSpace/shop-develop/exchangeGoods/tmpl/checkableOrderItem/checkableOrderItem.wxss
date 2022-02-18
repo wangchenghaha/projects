@@ -1,0 +1,28 @@
+@import "../../mycss";
+@import "../stepper/stepper";
+.frame{width: 100%;height: auto;display: flex;flex-direction: row;align-items:center;margin-bottom: 17rpx;background-color: white;}
+/* .cb{width: 8%;} */
+.stepper_layout {
+    float: right;
+    margin-right: 100rpx;
+    margin-left: 30rpx;
+}
+.layout_delete{display: flex;align-items: center;padding-right: 17rpx;}
+.layout_delete image{width:44rpx;height: 43rpx;}
+
+/* checkbox未选中时样式 */
+checkbox .wx-checkbox-input {
+    /* 自定义样式.... */
+    border-radius: 3rpx;
+    height: 26rpx;
+    width: 26rpx;
+    margin-top: -4rpx;
+  }
+  
+  /* checkbox选中时样式 */
+  checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    /* 自定义样式.... */
+    background-color: #019fe8;
+    border: 1rpx solid #019fe8;
+    color: white;
+  }

@@ -1,0 +1,31 @@
+
+<view class="comp-page">
+    <view class="swipee-wrap" wx:if="{{type == 1}}">
+        <swiper class="swiperitem"
+            autoplay="{{true}}" 
+            interval="{{3000}}"
+            circular="{{true}}"
+            previous-margin="120rpx"
+            next-margin="120rpx"
+            bindchange="handlechange"
+            duration="{{500}}">
+            <block wx:for="{{imgUrls}}" :key="index">
+                <swiper-item>
+                    <image bindload="bindload1" binderror="binderror1" src="{{item}}" class="slide-image {{currentIndex == index ? 'active' : ''}}"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="swipee-wrap" wx:if="{{type == 2}}">
+        <swiper class="swiperitem2"
+            autoplay="{{false}}" 
+            circular="{{true}}"
+            duration="{{500}}">
+            <block wx:for="{{imgUrls2}}" :key="index">
+                <swiper-item>
+                <image  bindload="bindload2" binderror="binderror2" src="{{item}}" class="slide-image2"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>

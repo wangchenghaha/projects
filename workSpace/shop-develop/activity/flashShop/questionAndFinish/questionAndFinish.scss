@@ -1,0 +1,98 @@
+.bg{
+    width: 100%;
+    height: 100%;
+    .imgView{
+        width: 100%;
+        height: auto;
+        position: relative;
+        .questionView{
+            width: 90%;
+            height: auto;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: white;
+            .q{
+                font-size: 45px;
+
+            }
+            .title{
+                
+                font-size: 21px;
+
+            }
+            .subTitleView{
+                width: auto;
+                height: auto;
+                margin: 0 auto;
+                display: inline-block;
+                .subTitles{
+    
+                    font-size: 30rpx;
+                    line-height: 65rpx;
+    
+                    text-align: justify;
+
+                }
+            }
+            .topColorView{
+                width: 75%;
+                line-height: 130rpx;
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+
+                margin: 70rpx auto 50rpx;
+                
+            }
+            .subDesc{
+                padding-left: 10%;
+                padding-right: 10%;
+                box-sizing: border-box;
+                font-size: 40rpx;
+                line-height: 60rpx;
+            }
+            .dakaFinishView{
+                margin-top: 80rpx;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .bottomView{
+                margin: 40rpx auto 40rpx;
+                width: 75%;
+                height: 150rpx;
+                border-top: 4rpx solid white;
+                border-left: 4rpx solid white;
+                border-right: 4rpx solid white;
+                border-bottom: 8rpx solid white;
+
+                padding-top: 18rpx;
+                box-sizing: border-box;
+                &-text{
+                    font-size: 35rpx;
+                    line-height: 55rpx;
+                }
+                &-centerView{
+                    font-size: 35rpx;
+                    line-height: 100rpx;
+                }
+            }
+        }
+    }
+
+}
+
+
+.logo{
+    position: fixed;
+    bottom: 80rpx;
+    left: 0;
+
+    width: 100%;
+    font-size: 21rpx;
+    color: #ADADAD;
+    text-align: center;
+  }

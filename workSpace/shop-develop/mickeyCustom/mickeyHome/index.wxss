@@ -1,0 +1,74 @@
+.main {
+  position: relative;
+}
+.main .bg {
+  width: 750rpx;
+  height: 1208rpx;
+  vertical-align: bottom;
+}
+.main .big {
+  height: 1498rpx;
+}
+.main .gotoGame {
+  width: 229rpx;
+  height: 79rpx;
+  position: absolute;
+  left: 260rpx;
+  bottom: 200rpx;
+  animation: gogame 1s linear infinite;
+}
+.main .activityRules {
+  width: 128rpx;
+  height: 53rpx;
+  position: absolute;
+  left: 311rpx;
+  bottom: 70rpx;
+}
+.main .musicClose {
+  width: 125rpx;
+  height: 103rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50rpx;
+}
+.main .homeTitle {
+  position: absolute;
+  top: 170rpx;
+  width: 378rpx;
+  height: 122rpx;
+  left: 186rpx;
+}
+.main .musicButton {
+  width: 125rpx;
+  height: 103rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 50rpx;
+}
+@keyframes homeTitle {
+  from {
+    top: 170rpx;
+    opacity: 1;
+  }
+  to {
+    top: 470rpx;
+    opacity: 0;
+  }
+}
+@keyframes gogame {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(20deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

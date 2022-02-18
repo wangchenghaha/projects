@@ -1,0 +1,130 @@
+.contact {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+
+.contact .main {
+  position: relative;
+  /* width: 750rpx; */
+  width: 600rpx;
+}
+
+.contact .main-fol {
+  width: 540rpx;
+  flex-direction: column;
+}
+
+.contact .main image {
+  display: block;
+  width: 100%;
+}
+
+.contact .main .posit {
+  position: absolute;
+  left: 0;
+}
+
+.contact .main .posit.copy {
+  left: 215rpx;
+  bottom: 270rpx;
+  width: 185rpx;
+  height: 50rpx;
+}
+
+.contact .main .posit.save {
+  left: 215rpx;
+  bottom: 340rpx;
+  width: 130rpx;
+  height: 50rpx;
+}
+
+.contact .main .posit.close {
+  /* left: 0;
+  bottom: 0; */
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 80rpx;
+}
+
+.contact .main .posit.call {
+  /* left: 330rpx;
+  bottom: 80rpx;
+  width: 270rpx;
+  height: 100rpx; */
+  left: 165rpx;
+  height: 100rpx;
+  top: 680rpx;
+}
+
+.contact .close-fol {
+  display: block;
+  margin-top: 30rpx;
+}
+
+.contact .call {
+  position: absolute;
+  left: 138rpx;
+  top: 184rpx;
+  display: block;
+  width: 336rpx;
+  height: 30rpx;
+}
+
+.contact .hot-line {
+  display: block;
+  padding: 30rpx 0;
+  width: 100%;
+  background: #fff;
+}
+
+.functionGroup {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  /* margin-top: -10rpx; */
+  border-radius: 0rpx 0rpx 6rpx 6rpx;
+  margin-top: -8rpx;
+  border-top: 2rpx solid #333;
+}
+
+.functionGroup>view {
+  text-align: center;
+  width: 100%;
+  height: 100rpx;
+}
+
+.bgColor {
+  background-color: black;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black
+}
+
+.gray {
+  color: #999;
+}
+
+.fontSize26 {
+  font-size: 26rpx;
+}
+
+.fontSize22 {
+  font-size: 22rpx;
+}
+
+.bolder {
+  font-weight: bolder;
+  margin-top: 16rpx;
+}

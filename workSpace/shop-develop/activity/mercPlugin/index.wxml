@@ -1,0 +1,18 @@
+<view wx:if="{{brandId}}">
+  <view class="banner">
+    <image class="banner-img" src="{{bannerUpNew}}" mode="widthFix"></image>
+  </view>
+  <!-- <list
+        brandid="{{brandId}}"
+        showMoreTask="{{true}}"
+        needQqLogin="{{false}}"/> -->
+  <lottery 
+        brandid="{{brandId}}"
+        lotterykey="shunfeng"
+        gid="331"
+        isExpand="{{true}}"
+        picurl="https://igame-10037599.cos.ap-shanghai.myqcloud.com/48d6dae6-4c03-8825-04fd-441687fac71a"/>
+  <!-- <view class="banner">
+    <image class="banner-img" src="{{bannerDown}}" mode="widthFix"></image>
+  </view> -->
+</view>

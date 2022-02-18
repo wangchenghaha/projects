@@ -1,0 +1,28 @@
+<view>
+  <view class="list ~flex-bet">
+    <view class="list-item ~flex-center">
+      <view class="list-img">
+        <image src="https://cdn.bestseller.com.cn/assets/wechat/FOL/image/FOLDA00586910-1590668339397.jpg" mode="widthFix" />
+      </view>
+      <view class="btn-more ~text-c">查看全部</view>
+    </view>
+    <view class="list-item ~flex-center">
+      <view class="list-img">
+        <image src="https://cdn.bestseller.com.cn/assets/wechat/FOL/image/FOLDA00586910-1590668339397.jpg" mode="widthFix" />
+      </view>
+      <view class="price">
+        <view class="price-origin">吊牌价￥500</view>
+        <view class="price-pay">￥500</view>
+      </view>
+    </view>
+    <view class="list-item ~flex-center">
+      <view class="list-img">
+        <image src="https://cdn.bestseller.com.cn/assets/wechat/FOL/image/FOLDA00586910-1590668339397.jpg" mode="widthFix" />
+      </view>
+      <view class="price">
+        <view class="price-origin">吊牌价￥500</view>
+        <view class="price-pay">￥500</view>
+      </view>
+    </view>
+  </view>
+</view>

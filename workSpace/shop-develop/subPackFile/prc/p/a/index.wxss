@@ -1,0 +1,118 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@keyframes rotateInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-581rpx) rotate(-360deg) scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0) scale(1);
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("https://tc.woaap.com/lingzhi/princess/bg-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.wrapper.big {
+  background: url("https://tc.woaap.com/lingzhi/princess/big-bg-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .logo {
+  width: 286rpx;
+  height: 189rpx;
+  margin: 0 auto 35rpx;
+  background: url("https://tc.woaap.com/lingzhi/princess/logo-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.wrapper .logo.big {
+  width: 326rpx;
+  height: 217rpx;
+  margin: 0 auto 70rpx;
+}
+
+.wrapper .logo.animate {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.wrapper .title {
+  width: 599rpx;
+  height: 190rpx;
+  background: url("https://tc.woaap.com/lingzhi/princess/title2.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.wrapper .title.animate {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.wrapper .turn {
+  position: absolute;
+  width: 185rpx;
+  height: 192rpx;
+  bottom: 10%;
+  left: 61rpx;
+  transition: all 0.1s cubic-bezier(0.91, 0.6, 0.79, 1.51);
+}
+
+.wrapper .turn.big {
+  bottom: 15.209%;
+}
+
+.wrapper .turn .start {
+  width: 185rpx;
+  height: 192rpx;
+  background: url("https://tc.woaap.com/lingzhi/princess/start.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: translateX(-581rpx) rotate(-360deg) scale(1);
+}
+
+.wrapper .turn .start.animate {
+  animation: rotateInLeft 1.5s ease forwards;
+}
+
+.wrapper .turn .start.hoverBtn {
+  background: url("https://tc.woaap.com/lingzhi/princess/start-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

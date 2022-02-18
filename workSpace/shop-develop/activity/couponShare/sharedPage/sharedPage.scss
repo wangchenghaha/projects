@@ -1,0 +1,512 @@
+.content{
+    width: 100%;
+    height: 100%;
+    padding-top: 30rpx;
+  .showInfo{
+    width: 100%;
+    .couponInfo{
+      display: flex;
+      justify-content: space-between;
+      height: 200rpx;
+      .priceInfo{
+        display: flex;
+        align-items: center;
+        margin-left: 30rpx;
+        .tag{
+          font-size: 26rpx;
+        }
+        .price{
+          font-size: 86rpx;
+          margin-left: 40rpx;
+          margin-right: 40rpx;
+          font-weight: 600;
+        }
+
+      }
+    }
+
+    .timeNotice{
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      margin-right: 30rpx;
+      justify-content: center;
+      .couponTitle{
+        font-size: 32rpx;
+        font-weight: 600;
+        font-weight: 600;
+      }
+      .couponTime{
+        margin-top: 6rpx;
+        font-size: 24rpx;
+        display: flex;
+
+      }
+    }
+    .dashedLine{
+      width: 100%;
+      height: 2rpx;
+    }
+    .couponCount{
+      width: auto;
+      height: 80rpx;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .leftNotice{
+        width: 80%;
+        .text{
+          font-size: 28rpx;
+          font-weight: 550;
+          margin-left: 20rpx;
+        }
+        .button{
+          font-size: 28rpx;
+          width: 160rpx;
+          line-height: 42rpx;
+          border-radius: 42rpx;
+          margin-left: 20rpx;
+          text-align: center;
+        }
+      }
+      .leftTime{
+        height: 80rpx;
+        display: flex;
+        align-items: center;
+        margin-left: 30rpx;
+        .title{
+          font-size: 24rpx;
+          line-height: 34rpx;
+          margin-left: 3rpx;
+
+        }
+        .dayClass{
+          font-size: 24rpx;
+          line-height: 40rpx;
+          margin-right: 10rpx;
+        }
+        .sfmView{
+          width: 34rpx;
+          height: 34rpx;
+          border-radius: 5rpx;
+          font-size: 24rpx;
+          text-align: center;
+          line-height: 34rpx;
+          font-weight: 600;
+        }
+        .maohao{
+          font-size: 24rpx;
+          line-height: 32rpx;
+          font-weight: 600;
+        }
+      }
+      .notice{
+        width: 40rpx;
+        height: 40rpx;
+        line-height: 40rpx;
+        font-size: 36rpx;
+        text-align: center;
+        border-radius: 100%;
+        margin-right: 30rpx;
+      }
+    }
+  }
+    .schedule{
+        width: 94%;
+        margin-left: 3%;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20rpx;
+        position: relative;
+        margin-top: 20rpx;
+        .helpTitle{
+            width: 100%;
+            font-size: 32rpx;
+            margin-top: 40rpx;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .text1{
+                color: #0853ed;
+            }
+            .text2{
+                color: #000;
+                margin-top: 10rpx;
+            }
+
+        }
+        .title{
+            color: #000;
+            font-size: 32rpx;
+            margin-top: 40rpx;
+        }
+        .sliderBgView{
+            margin-left: 20rpx;
+            margin-right: 20rpx;
+            margin-top: 20rpx;
+            width: 90%;
+            height: 12rpx;
+            border-radius: 17rpx;
+            position: relative;
+            overflow: hidden;
+            margin-top: 40rpx;
+            .sliderView{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                border-radius: 17rpx;
+            }
+        }
+        .lightSuccess{
+            width: 90%;
+            font-size: 28rpx;
+            margin-top: 30rpx;
+            font-weight: 550;
+            .iconS{
+                width: 30rpx;
+            }
+            .lbutton{
+                width: 280rpx;
+                height: 80rpx;
+                border-radius: 100rpx;
+                position: relative;
+                .share{
+                    position: absolute;
+                    width: 280rpx;
+                    height: 80rpx;
+                    top: 0;
+                    left: 0;
+                    border-radius: 100rpx;
+                }
+
+            }
+            .rbutton{
+                width: 280rpx;
+                height: 80rpx;
+                border-radius: 100rpx;
+            }
+        }
+        .button{
+            width: 60%;
+            line-height: 80rpx;
+            text-align: center;
+            margin-top: 40rpx;
+            border-radius: 70rpx;
+            font-size: 32rpx;
+            font-weight: 550;
+        }
+        .bottoms{
+            height: 50rpx;
+        }
+    }
+
+    .record{
+        margin: 30rpx auto;
+        padding-bottom: 30rpx;
+        width: 94%;
+        background: #fff;
+        border-radius: 10rpx;
+        &-tab{
+            width: 100%;
+            display: flex;
+            background: #ededed;
+            height: 100rpx;
+            border-top: 10rpx;
+            border-top-left-radius: 10rpx;
+            border-top-right-radius: 10rpx;
+            .nor{
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #000;
+            }
+            .left-sel{
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top-right-radius: 40rpx;
+                border-top-left-radius: 10rpx;
+                background: #fff;
+                font-weight: 600;
+                color: #000;
+            }
+            .rihgt-sel{
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top-right-radius: 10rpx;
+                border-top-left-radius: 40rpx;
+                background: #fff;
+                font-weight: 600;
+                color: #000;
+            }
+        }
+
+        .mySelfRecord{
+            display: flex;
+            align-items: center;
+            margin-top: 50rpx;
+            .userImg{
+                width: 80rpx;
+                height: 80rpx;
+                border-radius: 80rpx;
+                margin-left: 30rpx;
+            }
+            .userBase{
+                width: 100rpx;
+                margin-left: 10rpx;
+                .user_name{
+                    font-size: 24rpx;
+                    color: black;
+                }
+                .user_option{
+                    font-size: 24rpx;
+                    color: gray;
+                }
+            }
+            .getCoupon{
+                width: 60%;
+                font-size: 30rpx;
+                text-align: end;
+            }
+        }
+
+        .noRecord{
+            margin-top: 50rpx;
+            font-size: 28rpx;
+            line-height: 40rpx;
+            width: 100%;
+            text-align: center;
+            .goLightCoupon{
+                line-height: 40rpx;
+                text-align: center;
+                color: royalblue;
+                border-bottom: 1rpx solid royalblue;
+                margin-left: 20rpx;
+            }
+        }
+
+        .otherRecord{
+            width: 100%;
+            .contentItem{
+                display: flex;
+                width: 100%;
+                margin-top: 3rpx;
+                align-items: center;
+                height: 60rpx;
+                padding: 0 10rpx;
+                box-sizing: border-box;
+                .userPic{
+                    width: 60rpx;
+                    height: 60rpx;
+                    border-radius: 40rpx;
+                    margin-left: 30rpx;
+                }
+                .name{
+                    width: 20%;
+                    font-size: 24rpx;
+                    margin-left: 10rpx;
+                    color: #000;
+                }
+                .coupon{
+                    width: 60%;
+                    font-size: 28rpx;
+                    text-align: end;
+                }
+            }
+        }
+
+
+    }
+
+    .couponShow{
+        width: 94%;
+        margin-left: 3%;
+        margin-top: 20rpx;
+        border-radius: 10rpx;
+    }
+
+    .bottomText{
+        width: 94%;
+        margin-left: 3%;
+        display: flex;
+        justify-content: space-between;
+        .text1{
+            font-size:30rpx;
+        }
+        .text2{
+             font-size:30rpx;
+             text-decoration:underline;
+             font-weight: 600;
+        }
+    }
+
+    .recordBottom{
+        height: 50rpx;
+    }
+}
+
+.bouncedBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.bouncedImgView{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: auto;
+    border-radius: 8rpx;
+    transform: translate(-50%,-50%);
+    .imgView{
+        width: 80%;
+        margin-top: 100rpx;
+        position: relative;
+    }
+    .close{
+        width: 50rpx;
+        height: 50rpx;
+        position: absolute;
+        bottom: 30rpx;
+        right: 50rpx;
+    }
+}
+
+
+.share{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:none;
+    width: 100%;
+    height: 100%;
+}
+
+
+.voucher{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: 0.3s;
+    transform: translateY(-100%);
+    .showModel{
+        position: relative;
+        width: 666rpx;
+        .tan_close{
+        width: 60rpx;
+        height: 60rpx;
+        position: relative;
+        top: 90rpx;
+        left: 520rpx;
+        }
+        .content{
+            position: flex;
+            width: 94%;
+            background: white;
+            border-radius: 20rpx;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50rpx 30rpx;
+            box-sizing: border-box;
+            margin-left: 3%;
+            .cTitle{
+                font-size: 36rpx;
+                font-weight: 600;
+                color: #000;
+                margin-bottom: 30rpx;
+            }
+            .contentClass{
+                max-height: 900rpx;
+                overflow-y: scroll;
+                .cInfo{
+                    font-size: 28rpx;
+                    color: #000;
+                  }
+            }
+        }
+    }
+
+  }
+  .show{
+    transform: translateY(0);
+  }
+
+
+.bouncedBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.bouncedImgView{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 75%;
+    height: auto;
+    border-radius: 8rpx;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .imgView{
+        width: 80%;
+        margin-top: 100rpx;
+        position: relative;
+    }
+    .close{
+        width: 50rpx;
+        height: 50rpx;
+        position: absolute;
+        top: 150rpx;
+        right: 10rpx;
+    }
+    .couponFirst{
+        position: absolute;
+        top: 300rpx;
+        font-size: 42rpx;
+        font-weight: 600;
+        color: black;
+    }
+    .couponSecond{
+        position: absolute;
+        font-size: 30rpx;
+        color: black;
+    }
+
+    .optionBtn{
+        width: 300rpx;
+        line-height: 80rpx;
+        position: absolute;
+        bottom: 90rpx;
+        text-align: center;
+        font-size: 36rpx;
+        border-radius: 80rpx;
+    }
+}
+
+

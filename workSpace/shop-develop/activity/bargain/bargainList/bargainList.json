@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "活动详情",
+  "usingComponents": {
+    "notice-pop": "/components/contentPop/contentPop",
+    "my-close":"/components/close/close"
+  }
+}

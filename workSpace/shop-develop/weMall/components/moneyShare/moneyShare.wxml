@@ -1,0 +1,32 @@
+<!--components/moneyShare/moneyShare.wxml-->
+<view >
+  <block wx:if="{{purchaseList.length > 0}}">
+    <view class="list-item" wx:for="{{purchaseList}}" wx:key="purchase">
+      <view class="goods-img">
+        <image src="{{item.coverPic}}" mode="widthFix"></image>
+      </view>
+      <view class="sale-info">
+        <view class="temp-title">
+          <text class="font-bold">推荐搭配</text>-{{item.pageTitle}}
+        </view>
+        <view class="temp-item">发布时间：{{item.createTime}}</view>
+        <view class="temp-item">创建人：{{item.nickname || ''}}</view>
+        <view class="temp-item">分享次数：{{item.shareCount || 0}}</view>
+        <view class="temp-item">谁可见：仅自己</view>
+        <block wx:if="{{tabTitleIndex === 1}}">
+          <view class="temp-item high-light font-bold">购买金额：{{item.payPrice}}</view>
+          <view class="temp-item high-light font-bold">购买人数：{{item.purchaseCount}}人</view>
+        </block>
+        <block wx:else>
+          <view class="temp-item high-light font-bold">购买人数：{{item.purchaseCount}}人</view>
+          <view class="temp-item high-light font-bold">购买金额：{{item.payPrice}}</view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <view wx:else>
+    <text>未查询到数据</text>
+  </view>
+</view>
+
+

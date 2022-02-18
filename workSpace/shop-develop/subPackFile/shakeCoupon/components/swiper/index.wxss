@@ -1,0 +1,17 @@
+.wrapper .swiper {
+  margin: 0 auto;
+  width: 400rpx;
+  height: 300rpx;
+}
+
+.wrapper .swiper .item {
+  width: 400rpx;
+  height: 300rpx;
+}
+
+.wrapper .swiper .item .good {
+  width: 400rpx;
+  height: 300rpx;
+  background-size: 100% 100%;
+  background-position: center;
+}

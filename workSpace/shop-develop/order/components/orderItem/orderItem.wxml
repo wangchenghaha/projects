@@ -1,0 +1,22 @@
+<view class="goods">
+  <view class="~flex-start">
+    <view class="goods-img">
+      <navigator url="/pages/content/content?goodsColor={{order.gcsSku || order.sku}}">
+        <image src="{{order.goodsImg}}" mode="widthFix"></image>
+      </navigator>
+    </view>
+    <view class="goods-info">
+      <view class="goods-name">{{order.goodsName}}</view>
+      <view class="goods-sku" wx:if="{{order.gcsSku || order.sku}}">
+        货号: {{order.gcsSku || order.sku}}
+      </view>
+      <view class="goods-color">颜色: {{order.colorName}}</view>
+      <view class="goods-size">尺码: {{order.sizeName}}</view>
+      <view class="goods-price">价格: ￥{{order.price}}</view>
+      <view class="goods-num">数量: {{order.goodsCount || order.counts}}</view>
+      <slot name="reason"></slot>
+    </view>
+    <slot name="btn"></slot>
+  </view>
+    <slot name="express"></slot>
+</view>

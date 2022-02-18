@@ -1,0 +1,434 @@
+page {
+  background-color: #F3F4F5;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.head {
+  background-color: #CC292E;
+  width: 100%;
+  height: 150rpx;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.head-leftView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-left: 40rpx;
+}
+
+.head-leftView-topTitle {
+  font-size: 34rpx;
+  color: white;
+}
+
+.head-leftView-botomTitle {
+  font-size: 23rpx;
+  color: white;
+}
+
+.head-image {
+  margin-right: 50rpx;
+  width: 60rpx;
+  height: auto;
+}
+
+.address {
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.address-leftView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.address-leftView-title {
+  font-size: 25rpx;
+  color: black;
+}
+
+.address-rightView {
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  border-radius: 25rpx;
+  border: solid 2rpx #CC292E;
+  font-size: 25rpx;
+  color: #CC292E;
+  text-align: center;
+}
+
+.yaoqing {
+  margin-top: 20rpx;
+  width: 100%;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: white;
+}
+
+.yaoqing-titles {
+  padding: 0 0 0 20rpx;
+  font-size: 25rpx;
+  color: #878787;
+  height: auto;
+}
+
+.yaoqing .topView {
+  width: 100%;
+  height: 30rpx;
+  display: flex;
+  flex-direction: row;
+  line-height: 30rpx;
+}
+
+.yaoqing .topView-image {
+  width: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.yaoqing .topView-title {
+  font-size: 25rpx;
+  width: 100%;
+  flex: 1;
+  color: black;
+}
+
+.yaoqing .botomView {
+  position: relative;
+  margin-top: 10rpx;
+  width: 100%;
+  height: 85rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.yaoqing .botomView-leftView {
+  flex: 1;
+  width: 100%;
+  height: 85rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 60rpx;
+}
+
+.yaoqing .botomView-leftView .icon {
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 37rpx;
+  border: solid 2rpx #CC292E;
+  margin-left: 10rpx;
+}
+
+.yaoqing .botomView-leftView-title {
+  position: absolute;
+  top: 5rpx;
+  left: 65rpx;
+  width: 50rpx;
+  height: 20rpx;
+  background-color: #CC292E;
+  border-radius: 21rpx;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: white;
+  text-align: center;
+}
+
+.yaoqing .botomView-rightView {
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  font-size: 25rpx;
+  color: white;
+  text-align: center;
+  background-color: #CC292E;
+}
+
+.shop {
+  margin-top: 20rpx;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.shop-rightView {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 20rpx 20rpx 0;
+}
+
+.shop-rightView .zhekou {
+  background-color: #DD0000;
+  font-size: 24rpx;
+  text-align: center;
+  color: white;
+  padding: 5rpx;
+}
+
+.zhifu {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.tempView {
+  width: 100%;
+  height: 100rpx;
+}
+
+.buyView {
+  height: 100rpx;
+  clear: both;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #CC292E;
+  display: flex;
+  flex-direction: row;
+}
+
+.buyView-viewText {
+  color: white;
+  font-size: 30rpx;
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.title {
+  font-size: 25rpx;
+  color: #373738;
+}
+
+.title-small {
+  font-size: 23rpx;
+  color: #878787;
+}
+
+.title-red {
+  font-size: 26rpx;
+  color: red;
+}
+
+.bouncesBg {
+  background-color: black;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bouncesView_hdBG {
+  position: fixed;
+  top: 25%;
+  left: 50rpx;
+  right: 50rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.bouncesView_hdBG .imageBG {
+  width: 100%;
+  height: 75rpx;
+  position: relative;
+}
+
+.bouncesView_hdBG .imageBG .imageView {
+  width: 48rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20rpx;
+}
+
+.bouncesView_hdBG .bouncesView {
+  background-color: white;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.bouncesView_hdBG .bouncesView-title {
+  font-size: 30rpx;
+}
+
+.bouncesView_hdBG .bouncesView-view {
+  width: 100%;
+  height: auto;
+  background-color: #E1F8E9;
+  text-align: center;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.bouncesView_hdBG .bouncesView-view-centerView {
+  margin-left: 150rpx;
+  margin-right: 150rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bouncesView_hdBG .bouncesView-view-centerView-view {
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.bouncesView_hdBG .bouncesView-view-centerView-view .imageView {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 10rpx;
+  background-color: #00AE27;
+  border-radius: 61rpx;
+}
+
+.canceButonView {
+  position: fixed;
+  top: 28%;
+  left: 50rpx;
+  right: 50rpx;
+  height: auto;
+  background-color: white;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.canceButonView-view {
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.canceButonView-buyView {
+  margin-top: 80rpx;
+  width: 100%;
+  height: 100rpx;
+  clear: both;
+  overflow: hidden;
+  background-color: #CC292E;
+  display: flex;
+  flex-direction: row;
+}
+
+.canceButonView-buyView-viewText {
+  color: white;
+  font-size: 30rpx;
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.share {
+  background: none;
+}
+
+.share::after {
+  border: none;
+}
+
+.bouncesBg_hd {
+  background-color: black;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bouncesView_hdBG {
+  position: fixed;
+  top: 25%;
+  left: 50rpx;
+  right: 50rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.bouncesView_hdBG .imageBG {
+  width: 100%;
+  height: 75rpx;
+  position: relative;
+}
+
+.bouncesView_hdBG .imageBG .imageView {
+  width: 48rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20rpx;
+}
+
+.bouncesView_hdBG .bouncesView_hd {
+  background-color: white;
+  border-radius: 8rpx;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.bouncesView_hdBG .bouncesView_hd-view {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bouncesView_hdBG .bouncesView_hd-view .redTitle {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: red;
+}
+
+.bouncesView_hdBG .bouncesView_hd-view .submitTitle {
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: #818284;
+}
+
+.bouncesView_hdBG .bouncesView_hd-view .whiteTitle {
+  margin-top: 100rpx;
+  font-size: 28rpx;
+  color: white;
+  background-color: #CC292E;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

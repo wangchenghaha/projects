@@ -1,0 +1,23 @@
+<view class="sign-contaniner" wx:if="{{showModal}}">
+    <view class="sign-wrap">
+        <image class="sign-bg" src="../../img/sign-bg.png" />
+        <view class="sign-content">
+            <view class="sign-date">
+                <view catchtap="sign" data-index="{{index}}" data-info="{{item}}" class="sign-item {{item.is_sign ? 'active' : ''}} {{item.can_sign ? '' : 'notsign'}}" wx:for="{{list}}" wx:key="{{index}}">
+                    {{item.day}}
+                    <view class="signtip {{item.animationed ? 'animationed' : ''}}">+500</view>
+                </view>
+            </view>
+            <view class="sign-tip">
+                <view class="texts">点击日期完成签到</view>
+                <view class="tip">累计签到10天</view>
+                <view class="tip">即可获得50元满减代金券哦~ </view>
+            </view>
+        </view>
+        <view class="share-btn" catchtap="getCouponHandle" wx:if="{{showbtn}}">
+            <image class="address-btn" src="../../img/getcouponbtn.png" />
+        </view>
+        <!-- <image class="address-btn" wx:if="{{can_receive_award && is_sign_award}}" src="../../img/sharebtn.png" /> -->
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+</view>

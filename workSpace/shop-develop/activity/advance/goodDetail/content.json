@@ -1,0 +1,9 @@
+{
+  "usingComponents":{
+    "select-size":"/components/selectSize/selectSize",
+    "my-close":"/components/close/close",
+    "share-button": "plugin://goodsSharePlugin/share-button",
+    "notice-pop": "/components/contentPop/contentPop",
+    "couponpop": "/components/couponPop/couponPop"
+  }
+}

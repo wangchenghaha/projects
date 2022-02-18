@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "privacya-agreement": "../../components/privacyAgreement/privacyAgreement"
+  }
+}

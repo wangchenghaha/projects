@@ -1,0 +1,33 @@
+
+<view class="opacity" bindtap="bouncesHidden" animation="{{animationOpacity}}"></view>
+<view class="opacityView" animation="{{animationView}}">
+    <view class="topView">
+        <view style="flex:1;"></view>
+        <image src="../../images/close.png" class="topView-rightView" bindtap="bouncesHidden"  />
+    </view>
+    <view class="imageView">
+        <image src="{{imageUrl}}" style="width: 200rpx;height: 300rpx;" mode="aspectFit" />
+    </view>
+
+
+    <view class="classView">
+        <view class="topTitle">颜色分类</view>
+        <view class="selectRowView">
+            <block wx:for="{{colorArrs}}" wx:key="color">
+                <view id="{{index}}" data-type="color" bindtap="onClick" class="select-li {{index == jsonDatas[currentSelectIndex].colorDefault ? 'select-list':''}}" >{{item.colorAlias}}</view>
+            </block>
+        </view>
+    </view>
+    <view class="classView" style="border-bottom: 2rpx solid #E9EAEB;">
+        <view class="topTitle">尺码</view>
+        <view class="selectRowView">
+            <block wx:for="{{chimaArrs}}" wx:key="chima">
+                <view id="{{index}}" data-type="chima" bindtap="{{kucunNum?'onClick' : ''}}" class="select-li {{index == jsonDatas[currentSelectIndex].sizeDefault?'select-list':''}} {{kucunNum?'':'select-noList'}}">{{item.sizeAlias}}</view>
+            </block>
+        </view>
+    </view>
+
+    <view class="kucun">库存:{{kucunNum}}</view>
+    <view class="subMit" bindtap="submit">确定</view>
+
+</view>

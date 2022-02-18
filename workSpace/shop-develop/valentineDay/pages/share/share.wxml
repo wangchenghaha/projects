@@ -1,0 +1,61 @@
+<view class="container"
+    style="background:url({{comData.valentine.greeting_confirm_img}}); background-size:100%; background-repeat: repeat; width:100%;min-height:100vh;">
+
+    <comp-image-pre src='{{comData.valentine.greeting_blessing_img}}' class="main-img" mode="widthfix" width="436"
+        height="160">
+    </comp-image-pre>
+    <view class="input-warp"
+        style="background:url({{comData.valentine.set_receiver_input_img}});background-size:100% 100%;width:750rpx;height:160rpx;">
+        <input type="text" class="input" value="{{name}}" bindinput="name" />
+    </view>
+    <comp-image-pre src='{{heartSelect}}' class="xinyika" mode="aspectFit" width="642" height="447"></comp-image-pre>
+    <view class="logo-warp">
+        <view class="text">
+            <view class="text-top">
+                {{zhufuArr[0]}}
+            </view>
+            <view class="text-bottom">
+                {{zhufuArr[1]}}
+
+            </view>
+        </view>
+        <view class="play-warp" hover-class="none" hover-stop-propagation="false">
+            <comp-image-pre src='{{comData.valentine.listen_btn}}' bindtap="play" class="main-img" mode="aspectFill"
+                width="185" height="122">
+            </comp-image-pre>
+            <view class="gaobai" hover-class="none" hover-stop-propagation="false">
+                点击收听告白
+            </view>
+        </view>
+
+    </view>
+    <view class="logo">
+        <comp-image-pre src='{{comData.valentine.logo_img}}' class="main-img" mode="aspectFill" width="280" height="40">
+        </comp-image-pre>
+    </view>
+    <view class="post-warp" hover-class="none" hover-stop-propagation="false">
+        <view class="post-mark"
+            style="width:375rpx;height:380rpx;background:url({{comData.valentine.postmark_img}});background-size:100% 100%;">
+        </view>
+        <comp-image-pre src='{{comData.valentine.send_btn}}' class="sendGift" bindtap="handleShare" mode="aspectFill"
+            width="283" height="83"></comp-image-pre>
+
+    </view>
+    <view class="coupon-warp" wx:if="{{couponShow}}" hover-class="none" hover-stop-propagation="false">
+        <view class="coupon-area"
+            style="background: url({{comData.valentine.coupon_bac_img}});background-size:100% 100%;" hover-class="none"
+            hover-stop-propagation="false">
+            <comp-image-pre src='{{comData.valentine.coupon_receive_btn}}' class="sendGift" bindtap="addCoupon"
+                mode="aspectFill" width="440" height="80">
+            </comp-image-pre>
+        </view>
+        <view class="close-btn" bindtap="closeModal" hover-class="none" hover-stop-propagation="false">
+            <image class="" src="{{imgModel.close}}" mode="widthFix" lazy-load="false" binderror="" bindload="">
+                
+            </image>
+        </view>
+    </view>
+</view>
+
+<share-view id="comp-share" bind:customCanvas="handleCanvasPoster"  bind:customFriends="handleShareFriends" postBtn="{{comData.valentine.save_poster_img}}">
+</share-view>

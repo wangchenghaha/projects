@@ -1,0 +1,174 @@
+.pages {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+}
+
+.pages .bg-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-wrapper .bg {
+    width: 750rpx;
+}
+
+.bg-wrapper .brand {
+    position: absolute;
+    left: 50%;
+    width: 371rpx;
+    height: 39rpx;
+    transform: translate(-50%,0);
+}
+.card-wrapper {
+    position: absolute;
+    bottom: 50rpx;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 662rpx;
+    height: 658rpx;
+}
+.cardbg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 662rpx;
+    height: 658rpx;
+}
+.card-wrapper .card-info {
+    display: flex;
+    position: absolute;
+    top: 52rpx;
+    left: 0;
+    width: 662rpx;
+    height: 240rpx;
+    /* border-bottom: 1rpx dashed #ec6a74; */
+    /* border-top-left-radius: 16rpx;
+    border-top-right-radius: 16rpx; */
+    z-index: 10;
+}
+.card-item {
+    padding-top: 20rpx;
+    flex: 1;
+    border-right: 1px solid #af9c9e;
+    box-sizing: border-box;
+}
+.card-item view{
+    margin-bottom: 30rpx;
+    text-align: center;
+    font-size: 14rpx;
+    color: #fff;
+}
+.card-item view:first-child {
+    margin-bottom: 40rpx;
+}
+.card-item view.price {
+    font-size: 48rpx;
+    color: #ef6772;
+}
+.card-item view.tip {
+    font-size: 20rpx;
+    margin-bottom: 0;
+}
+.card-item:last-child {
+    border: none;
+}
+.card-wrapper .card-info .card-amount {
+    font-size: 80rpx;
+    font-family: 'Regular'
+}
+
+.card-wrapper .card-info .card-tip {
+    margin-top: 30rpx;
+    font-size: 36rpx;
+}
+
+.card-wrapper .card-info .card-date {
+    margin-top: 60rpx;
+    font-size: 24rpx;
+}
+
+.card-wrapper .card-info .coupon {
+    position: absolute;
+    top: 60rpx;
+    right: 90rpx;
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.card-wrapper .card-info .card-amount text {
+    font-size: 36rpx;
+    vertical-align: middle;
+}
+
+.card-wrapper .card-join {
+    position: absolute;
+    left: 0;
+    top: 340rpx;
+    z-index: 10;
+    padding-top: 60rpx;
+    width: 662rpx;
+    height: 330rpx;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom-left-radius: 16rpx;
+    border-bottom-right-radius: 16rpx;
+    box-sizing: border-box;
+}
+
+.cardicon-wrapper {
+    position: absolute;
+    top: -55rpx;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardicon {
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.card-wrapper .card-join .join-date {
+    text-align: center;
+    font-size: 24rpx;
+    color: #000;
+}
+
+.card-wrapper .card-join .join-btn-box {
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+.card-wrapper .card-join .join-btn-box .join-btn {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 415rpx;
+    height: 95rpx;
+    border-radius: 40rpx;
+    background: #ef6772;
+    font-size: 42rpx;
+    text-align: center;
+    line-height: 95rpx;
+    color: #fff;
+    border:none;
+}
+
+.card-wrapper .card-join .join-rule {
+    margin-top: 35rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #000;
+}

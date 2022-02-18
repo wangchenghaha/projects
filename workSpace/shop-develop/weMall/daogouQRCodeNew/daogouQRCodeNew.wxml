@@ -1,0 +1,19 @@
+<view class="wrap">
+    <image class="guideBg" src="{{guideBg}}" mode="widthFix"/>
+     <image class="guidetitle" src="{{guideTitle}}" mode="widthFix"/>
+    <view class = "daogouInfo">
+            <view class="image_border">
+                <image  bindtap="bindViewTap" class="daogou-avatar" src="{{portraitPic}}" background-size="cover"></image>
+            </view>
+            <text class="daogou-nickname">您的专属时尚顾问</text>
+            <text class="daogou-nickname" style="font-weight: 600;">{{nickName}}</text>
+    </view>
+
+    <view class="qrCodeImage">
+        <view class='backgroundMask'></view>
+        <image class="qrCode" src="{{qrCode}}"  data-src="{{qrCode}}" background-size="cover" bindtap="previewImage"></image>
+    </view>
+</view>
+
+
+

@@ -1,0 +1,401 @@
+@keyframes shouzhi {
+    0%{
+        transform: translateY(-0.5)
+    }
+    100%{
+        transform: translateY(0)
+    }
+}
+.topView{
+    width: 100%;
+    height: auto;
+    position: relative;
+    .shuoming{
+        position: absolute;
+        right: 0;
+        bottom: 100rpx;
+        width: 138rpx;
+        height: 97rpx;
+    }
+}
+// 横竖切换
+.switchView{
+    display: flex;
+    flex-direction: row;
+    margin-top: -20rpx;
+    width: 100%;
+    height: 90rpx;
+    background-color: white;
+
+    .subTitleBg{
+        margin-left: 20rpx;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        height: 95rpx;
+        position: relative;
+
+        .icon{
+            width: 45rpx;
+            height: 45rpx;
+            position: absolute;
+            top: 40%;
+            left: 0;
+            transform: translateY(-50%);
+
+            animation: shouzhi 0.9s infinite;
+
+        }
+        .title{
+            margin-left: 40rpx;
+            font-size: 22rpx;
+            color: gray;
+            line-height: 95rpx;
+            width: auto;
+        }
+    }
+    .leftView{
+        margin-left: 20rpx;
+        line-height: 90rpx;
+        color: #1E1E1E;
+        font-size: 28rpx;
+    }
+    .rightView{
+        width: 140rpx;
+        height: 48rpx;
+        margin-right: 20rpx;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+// ui横版
+.swiperView{
+    width: 100%;
+    height: auto;
+    position: relative;
+    .swiper{
+        width: 100%;
+        height: 100%;
+    }
+    .slider{
+        position: absolute;
+        left: 25rpx;
+        width: 75%;
+        bottom: 5rpx;
+    }
+    .sliderValue{
+        float: right;
+        font-size: 28rpx;
+        color: #9E9FA0;
+        position: absolute;
+        right: 40rpx;
+        bottom: 22rpx;
+        display: flex;
+    }
+    .imageTitle{
+        position: absolute;
+        top: 80rpx;
+        left: 30rpx;
+        font-size: 26rpx;
+        font-weight: bold;
+        display: flex;
+    }
+
+}
+// 竖版
+.swiperView-ver{
+    width: 100%;
+    height: auto;
+
+    padding: 20rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    .imageView{
+        width: 100%;
+        height: auto;
+        margin-bottom: 20rpx;
+        
+    }
+    .imageTitle{
+        font-size: 28rpx;
+        color: #434445;
+        margin-left: 20rpx;
+        display: flex;
+    }
+}
+// 无货
+.wuhuo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2B2B2B;
+    opacity: 0.2;
+
+    &-image{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        width: 282rpx;
+        height: 282rpx;
+    }
+}
+// 选中
+.selectBox-true{
+    position: absolute;
+    top: 50rpx;
+    right: 30rpx;
+}
+// 未选中
+.selectBox{
+    position: absolute;
+    top: 50rpx;
+    left:30rpx;
+    
+    width: 50rpx;
+    height: 50rpx;
+    background-color: white;
+    border: 1rpx solid #DCDEDB;
+    border-radius: 26rpx;
+    box-shadow: 0 1rpx 1rpx 1rpx rgb(214, 212, 214);
+}
+
+.sub-bg{
+    margin-top: 10rpx;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+
+    box-sizing: border-box;
+    .address{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: auto;
+
+        background-color: #F2F2F2;
+        .leftView{
+            width: 80rpx;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            
+            &-image{
+                margin-top: 30rpx;
+                width: 35rpx;
+            }
+        }
+        .centerView{
+            width: 100%;
+            height: auto;
+            flex: 1;
+            &-top{
+                margin-top: 28rpx;
+                font-size: 30rpx;
+                color: #434445;
+                line-height: 40rpx;
+            }
+            &-center{
+                margin-top: 30rpx;
+                display: flex;
+                flex-direction: row;
+                height: 30rpx;
+                &-leftView{
+                    flex: 1;
+                    width: 100%;
+                    font-size: 27rpx;
+                    color: gray;
+                    line-height: 30rpx;
+                }
+                &-rightView{
+                    width: auto;
+                    font-size: 27rpx;
+                    color: gray;
+                    line-height: 30rpx;
+                }
+            }
+            &-bottom{
+                margin-top: 30rpx;
+                margin-bottom: 30rpx;
+                display: flex;
+                flex-direction: row;
+                &-title{
+                    font-size: 27rpx;
+                    color: gray;
+                    line-height: 30rpx;
+                }
+            }
+        }
+    }
+}
+.subMit_gif{
+    margin-top: 50rpx;
+    width: 35%;
+    margin-left: 32.5%;
+    margin-right: 32.5%;
+    margin-bottom: 30rpx;
+
+    background-color: black;
+    text-align: center;
+
+
+    font-size: 32rpx;
+    color: white;
+    line-height: 80rpx;
+}
+.subMit{
+    margin: 50rpx 2.5% 30rpx 2.5%;
+    width: 95%;
+    height: 90rpx;
+
+    border-radius: 10rpx;
+
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    &-title{
+        font-size: 32rpx;
+        color: white;
+        line-height: 90rpx;
+        font-weight: bold;
+    }
+    &-subTitle{
+        font-weight: bold;
+        margin-left: 20rpx;
+        font-size: 25rpx;
+        color: white;
+        line-height: 87rpx;
+
+    }
+}
+.subMit_cancel{
+    margin: 0 2.5% 30rpx 2.5%;
+    color: gray;
+
+    width: 95%;
+    line-height: 90rpx;
+    font-size: 25rpx;
+    text-align: center;
+
+    border-radius: 10rpx;
+
+    background-color: #F1F2F3;
+    display: block;
+}
+.descText_gif{
+    line-height: 120rpx;
+    font-size: 26rpx;
+
+    text-decoration: none;
+    
+    padding-bottom: 5rpx;
+    color:#18191A;
+    border-bottom: 1px solid #B1B2B2;
+}
+.descText{
+    display: block;
+    text-align: center;
+
+    width: 100%;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 24rpx;
+
+}
+.descText_red{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    line-height: 35rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: red;
+}
+.userDire{
+    margin-top: 30rpx;
+    width: 100%;
+    height: auto;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    &-topView{
+        width: 100%;
+        height: 60rpx;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    &-bottomView{
+        width: 100%;
+        height: auto;
+        margin-top: 30rpx;
+        margin-bottom: 30rpx;
+        .subViews{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5rpx;
+            &-title{
+                font-size: 24rpx;
+                color: gray;
+                line-height: 38rpx;
+                white-space: pre-wrap;
+                word-break:break-all;
+            }
+        }
+    }
+    .line{
+        width: 35%;
+        height: 2rpx;
+        background-color: #E4E5E6;
+    }
+    .text{
+        text-align: center;
+        flex: 1;
+        font-size: 28rpx;
+        color: black;
+    }
+}
+.title{
+    font-size: 24rpx;
+    color: #373738;
+}
+.noAddress{
+    width:100%;
+    line-height: 100rpx;
+    
+    text-align: center;
+    font-size: 28rpx;
+
+    position: relative;
+    &-image{
+        position: absolute;
+        right: 20rpx;
+        top: 35rpx;
+        width:30rpx;
+    }
+}
+
+
+
+
+// 左右按钮
+.leftAndRightBtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 58.5rpx;
+    height: 84rpx;
+}

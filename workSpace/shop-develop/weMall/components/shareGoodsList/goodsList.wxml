@@ -1,0 +1,90 @@
+<!--components/shareGoodsList/goodsList.wxml-->
+<view class='high-light'>
+  <view wx:if="{{wxMoment.length}}">
+    <block wx:for="{{wxMoment}}" wx:key="wxMoment">
+      <view wx:if="{{item.isView}}">
+        <navigator wx:if="{{item.miniAppid}}"
+                   target="miniProgram"
+                   open-type="navigate"
+                   app-id="{{item.miniAppid}}"
+                   path="{{item.miniPath || '' }}" extra-data="{{item.miniExtraData}}">
+          <image src='{{item.wxPic}}' show-menu-by-longpress="true" mode="widthFix"></image>
+        </navigator>
+        <navigator wx:else url="{{item.miniUrl || '' }}">
+          <image src='{{item.wxPic}}' show-menu-by-longpress="true" mode="widthFix"></image>
+        </navigator>
+      </view>
+    </block>
+  </view>
+  <view wx:elseif="{{highLight.length}}">
+    <block wx:for="{{highLight}}" wx:key="highLight">
+      <image src='{{item}}' show-menu-by-longpress="true" mode="widthFix"></image>
+    </block>
+  </view>
+</view>
+<view class="goods-list">
+  <block wx:for="{{list}}" wx:key="goodsList">
+    <!--第一张和第四张-->
+    <block  wx:if="{{index === 0 || index === 4}}">
+      <view class="goods-item goods-item1">
+        <view class="goods-img" data-sku="{{item.sku}}" bindtap="onClick">
+          <image lazy-load="true" src="{{item.skuPic1}}" mode="widthFix"></image>
+        </view>
+        <view class="goods-info" style="flex-direction: {{item.discount != 10 ? 'column': 'row'}}">
+          <text class="goods-name">{{item.goodsName}}</text>
+          <view>
+            <text class="goods-discount" wx:if="{{SHOW_DISCOUNT && item.discount != 10}}">
+              <block wx:if="{{item.discount === 90}}">一口价</block>
+              <block wx:else>{{item.discount}}折</block>
+            </text>
+            <text class="goods-price">￥{{item.discountPrice}}</text>
+            <text class="goods-original" wx:if="{{item.discount !=10}}">￥{{item.originalPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!--   第2,3,6,7个 -->
+    <block wx:if="{{index === 1 || index === 2 || index ===5 || index === 6}}">
+      <view class="goods-item goods-item-wrapper {{index % 2 === 0 ? 'flr goods-item3' : 'fll goods-item2'}}">
+        <view class="goods-img2"  data-sku="{{item.sku}}" bindtap="onClick">
+          <image  lazy-load="true" src="{{item.skuPic1}}" mode="widthFix"></image>
+        </view>
+        <view class="goods-info">
+          <text class="goods-name">{{item.goodsName}}</text>
+          <view class="price-wrapper">
+            <text class="goods-discount" wx:if="{{SHOW_DISCOUNT && item.discount != 10}}">
+              <block wx:if="{{item.discount === 90}}">一口价</block>
+              <block wx:else>{{item.discount}}折</block>
+            </text>
+            <text class="goods-price">￥{{item.discountPrice}}</text>
+            <text class="goods-original" wx:if="{{item.discount !=10}}">￥{{item.originalPrice}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="clear" wx:if="{{index%2===0}}"></view>
+    </block>
+    <!--第4个或第8个-->
+    <block wx:if="{{index === 3 || index === 7}}">
+      <view class="goods-item goods-item4">
+        <view class="img-wrapper">
+          <view class="img-left fll"  data-sku="{{item.sku}}" bindtap="onClick">
+            <image lazy-load="true" src="{{item.skuPic2}}" mode="widthFix"></image>
+          </view>
+          <view class="img-right flr"  data-sku="{{item.sku}}" bindtap="onClick">
+            <image lazy-load="true" src="{{item.skuPic1}}" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="goods-info">
+          <text class="goods-name">{{item.goodsName}}</text>
+          <text class="goods-discount" wx:if="{{SHOW_DISCOUNT && item.discount != 10}}">
+            <block wx:if="{{item.discount === 90}}">一口价</block>
+            <block wx:else>{{item.discount}}折</block>
+          </text>
+          <text class="goods-price">￥{{item.discountPrice}}</text>
+          <text class="goods-original" wx:if="{{item.discount !=10}}">￥{{item.originalPrice}}</text>
+        </view>
+      </view>
+    </block>
+  </block>
+
+</view>

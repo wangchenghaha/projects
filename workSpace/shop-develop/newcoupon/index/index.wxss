@@ -1,0 +1,42 @@
+page {
+    line-height: 1;
+}
+.bg-wrap {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.rule {
+    width: 140rpx;
+    height: 65rpx;
+    border-radius: 40rpx;
+    position: absolute;
+    right: 0rpx;
+    top: 18rpx;
+    z-index: 10;
+    line-height: 65rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #fff;
+    background: rgba(0,0,0,0.1);
+}
+.btn-wrap {
+    padding-bottom: 25rpx;
+    box-sizing: border-box;
+}
+.btn-item {
+    margin: 50rpx auto;
+    width: 545rpx;
+}
+.btn-item image {
+    width: 100%;
+}
+
+.btn-item {
+    width:565rpx;
+    height:90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-size: 30rpx;
+}

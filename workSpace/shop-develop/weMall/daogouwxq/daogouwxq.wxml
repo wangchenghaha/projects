@@ -1,0 +1,241 @@
+<!--<import src='/components/goodsList/goodsList.wxml' />-->
+
+<view class="wrap">
+  <view class="banner flex-center">
+    <!-- <image src="{{bannerImg}}" mode="widthFix"></image> -->
+    <view class='title-logo'>
+      <image src='{{titleLogo}}' mode="widthFix"></image>
+    </view>
+    <view class='title'>
+      你的专属时尚顾问
+      <view class="title-name">{{sharePageTitle}}</view>
+    </view>
+  </view>
+  <!--封面图  -->
+  <share-banner wx:if="{{bannerUpList.length > 0}}" banner="{{bannerUpList}}"></share-banner>
+  <view class='cover-img'>
+    <image src='{{upImage}}' show-menu-by-longpress="true" mode="widthFix"></image>
+  </view>
+  <share-banner banner="{{bannerList}}" shortVideo="{{shortVideo}}"></share-banner>
+
+  <view class="{{isIphoneX?'iphoneX_goods_wrapper':'goods-wrapper'}}" wx:if="{{goodsList.length}}">
+    <good-list-one wx:if="{{modelType && modelType === 'model2'}}" list="{{goodsList}}" highLight="{{highLight}}" wxMoment="{{wxMoment}}"></good-list-one>
+    <goods-list wx:else list="{{goodsList}}" highLight="{{highLight}}" wxMoment="{{wxMoment}}"></goods-list>
+    <!--<template is='goodsList' data='{{goodsList}}'></template>-->
+    <text wx:if='{{guideInfo.employeeId}}' class='guide'>{{guideInfo.employeeId}}</text>
+  </view>
+  <!--<view class='goods-list'>
+    <view wx:for="{{List}}" wx:key="List" class='goods-item {{index%2==0?"fll":"flr"}}' >
+      <image src='{{item.skuPic}}' mode="widthFix"></image>
+      <text class='goods-name'>{{item.goodsName}}</text>
+      <view class='price-wrapper'>
+        <view class="goods-discount" wx:if="{{item.discount!=10}}">{{item.discount}}折</view>
+        <text class='goods-price'>￥{{item.discountPrice}}</text>
+        <text class='goods-original' wx:if="{{item.discount!=10}}">￥{{item.originalPrice}}</text>
+      </view>
+    </view>
+  </view>-->
+  <view class='code-wrapper'>
+    <view class='code-img'  wx:if="{{false}}">
+      <image src='{{QRCodeImg}}' mode="widthFix"></image>
+    </view>
+    <!-- <view class='code-text'>
+      <view class='long-tap'>长按识别二维码</view>
+      <view class='more-info'>查看更多品牌动向</view>
+    </view> -->
+  </view>
+</view>
+<view class="fixed-right  {{isIphoneX?'iphoneX-bottom':''}}">
+  <view class='goods fixed-item' data-name='goodsList'><text class='icon iconfont icon-yifu'></text>商品<text wx:if='{{List.length>0}}'>({{List.length}})</text></view>
+  <view class='index fixed-item' bindtap='gotoIndex'><text class='icon iconfont icon-shouye'></text>首页</view>
+</view>
+<view class='footer' wx:if='{{hasZID}}'>
+  <view class='mask' wx:if='{{footMask}}'></view>
+  <view class='wxShareCon'>
+    <view class="wxShare_list {{isIphoneX?'iphoneXMarginBottom':''}}">
+      <view class='ShareLiBox'>
+        <view class='ShareLi shareToWx'>
+          <!-- 分享给朋友 -->
+          <view class='shareBox'>
+            <button open-type="share" class="shareToFriend" wx:if="{{shareUserChecked}}">
+              <image src="/images/shareToWx.jpg" mode="widthFix"></image>
+            </button>
+            <button bindtap="shareUser" class="shareToFriend" wx:else>
+              <image src="/images/shareToWx.jpg" mode="widthFix"></image>
+            </button>
+          </view>
+          <text>分享给顾客</text>
+        </view>
+      </view>
+      <view class='ShareLiBox'>
+        <view class='ShareLi shareToWxq' bindtap='saveShareImg' wx:if="{{friendChecked}}">
+          <view class='ShareBox' style='height:96rpx;'>
+            <image src='/images/shareToWxq.jpg' mode='widthFix'></image>
+          </view>
+          <text>分享到朋友圈</text>
+        </view>
+        <view class='ShareLi shareToWxq' bindtap='showShareFC' wx:else>
+          <view class='ShareBox' style='height:96rpx;'>
+            <image src='/images/shareToWxq.jpg' mode='widthFix'></image>
+          </view>
+          <text>分享到朋友圈</text>
+        </view>
+      </view>
+      <!--<view class='ShareLiBox'>
+        <view class='ShareLi shareToWxq' bindtap='copyShareUrl'>
+          <view class='ShareBox' style='height:96rpx;'>
+            <image src='/images/shareToCopy.jpg' mode='widthFix'></image>
+          </view>
+          <text>复制购买链接</text>
+        </view>
+      </view>-->
+    </view>
+  </view>
+</view>
+
+<view class='tanchu' wx:if="{{copyIsShow}}">
+  <view class='tanchuOpacity' bindtap='removeCopyBox'></view>
+  <view class='copyBox'>
+    <text>{{show_url}}</text>
+    <view class='cotyButton'>
+      <view class='copyFunction' bindtap='copyUrlFun'>复制文案</view>
+    </view>
+    <view class='removeButton' bindtap='removeCopyBox'>
+      <icon type="cancel" size="50rpx" color="#000" />
+    </view>
+  </view>
+</view>
+<block wx:if="{{isShowGif}}">
+  <view wx:if="{{tipShow}}" class="gif-tip">
+    <text class="close" bindtap="changeShow"></text>
+    <image src="{{saveImgTipGif}}" mode="widthFix"></image>
+  </view>
+</block>
+<block wx:else>
+  <my-tip tipShow="{{tipShow}}" bindchangeShow="changeShow" wx:if="{{tipShow}}">
+    <image src="{{saveImgTip}}" mode="widthFix"></image>
+  </my-tip>
+</block>
+<!---->
+<view class="tip-swiper" wx:if="{{themeSwipe.showTipSwipe}}">
+
+  <view class="content flex-center">
+    <icon class="close" type="cancel" size="60rpx" color="white" bindtap="closeTip"></icon>
+    <swiper class="swiper" duration="0" interval="2000" autoplay="true">
+      <block wx:for="{{themeSwipe.saveImgTipList}}" wx:key="*this">
+        <swiper-item class="swiper-item">
+          <view class="tip-title text-c"> {{index+1}}.{{item.text}}</view>
+          <image src="{{item.img}}" mode="widthFix"></image>
+          <block wx:if="{{index === 1}}">
+            <view class="swiper-content save-img flex-start">
+              <block wx:for="{{themeSwipe.saveImgList}}" wx:key="*this">
+                <view class="img-item">
+                  <icon class="icon" type="success" size="30rpx" />
+                  <image src="{{item}}" mode="widthFix" ></image>
+                </view>
+              </block>
+            </view>
+          </block>
+<!--          #焕新出发，为确保大家安心安全的购物体验，线下门店严格采取多重防疫措施，随时恭候您的光临！关心衣橱，更关爱您的健康。初春系列，添一枚萌物！立即查看…
+msg.jackjones.com.cn/2cLgCC0nns4-->
+          <block wx:elif="{{index === 2}}">
+            <view class="swiper-content">
+              <text class="copy-text">{{copy_url}}</text>
+              <view class="theme-img">
+                <image src="{{themeSwipe.themeImg}}" mode="widthFix"></image>
+              </view>
+            </view>
+          </block>
+          <block wx:elif="{{index === 3}}">
+            <view class="swiper-content swiper-moment flex-start">
+              <view class="header-img">
+                <image src="{{titleLogo}}" mode="widthFix"></image>
+              </view>
+              <view class="share-content">
+                <view class="nick-name">{{wxInfo.nickName}}</view>
+                <text>{{copy_url}}</text>
+                <view class="moment">
+                  <image src="{{themeSwipe.themeImg}}" mode="widthFix"></image>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:elif="{{index === 5}}">
+            <view class="swiper-content">
+              <text class="copy-text">{{copy_url}}</text>
+              <view class="theme-img">
+                <image src="{{themeSwipe.themeImg}}" mode="widthFix"></image>
+              </view>
+            </view>
+          </block>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+</view>
+<view class="tip" wx:if="{{friendCircle || shareUserTip}}">
+  <view class="tip-wrapper" style="{{friendCircle?'height:930rpx':''}}" wx:if="{{shareUserTip || friendCircle}}">
+    <view class="example-img" style="{{friendCircle?'width:70%':'width:80%'}}">
+      <image src="{{exampleImg.shareUserImg}}" mode='widthFix' wx:if="{{shareUserTip}}"></image>
+      <image src="{{exampleImg.friendCircle}}" mode='widthFix' wx:else></image>
+    </view>
+    <view class="tip-detail">
+      <text class="detail-text">详细操作演示视频请点击</text>
+      <image src="/images/right_click.png"></image>
+      <text class="detail-sub" bindtap="toGuideLearn">无师自通</text>
+    </view>
+    <view class="no-tip-wrapper" bindtap="changeUserCheck">
+      <label wx:if="{{shareUserTip}}">
+        <checkbox checked="{{shareUserChecked}}"></checkbox>
+        <text class="label-1__text">不在提示此消息</text>
+      </label>
+      <label wx:else>
+        <checkbox checked="{{friendChecked}}"></checkbox>
+        <text class="label-1__text">不在提示此消息</text>
+      </label>
+    </view>
+    <view class="confirm-wrapper">
+      <button class="confirm" open-type="share" wx:if="{{shareUserTip}}">确定</button>
+      <button class="confirm" bindtap="confirmSaveImg" wx:else>确定</button>
+    </view>
+  </view>
+  <!--<view class="tip-wrapper" style="height:930rpx" wx:if="{{friendCircle}}">
+    <view class="example-img">
+      <image src="{{exampleImg.friendCircle}}" mode='widthFix'></image>
+    </view>
+    <view class="tip-detail">
+      <text class="detail-text">详细操作演示视频请点击</text>
+      <image src="/images/right_click.png"></image>
+      <text class="detail-sub" bindtap="toGuideLearn">无师自通</text>
+    </view>
+    <view class="no-tip-wrapper" bindtap="changeUserCheck">
+      <label>
+        <checkbox checked="{{shareUserChecked}}"></checkbox>
+        <text class="label-1__text">不在提示此消息</text>
+      </label>
+    </view>
+    <view class="confirm-wrapper">
+      <button class="confirm" bindtap="confirmSaveImg">确定</button>
+    </view>
+  </view>-->
+  <view class="close" bindtap="close" style="{{friendCircle?'bottom:30rpx':''}}"></view>
+</view>
+
+<view class="popup {{weMall.isShow ? 'show' : ''}} flex-center">
+  <view class="container">
+    <image src="{{weMall.goodsImg}}" mode="widthFix" bindtap="weMallClick"></image>
+    <text class="close" bindtap="closeWeMall"></text>
+  </view>
+  <checkbox-group class="checkbox" bindchange="checkboxChange">
+    <label wx:for="{{checkArr}}" wx:key="checkbox">
+      <checkbox checked="{{item.checked}}"/>
+      {{item.text}}
+    </label>
+  </checkbox-group>
+  <!-- <view class="close" bindtap="closeWeMall">
+    <text></text>
+    <text></text>
+  </view> -->
+</view>
+

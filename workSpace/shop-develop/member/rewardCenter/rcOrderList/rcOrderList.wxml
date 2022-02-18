@@ -1,0 +1,156 @@
+<view class="wrap">
+
+  <!-- 顶部信息 --> 
+  <view class="header">
+    <view class="h_item like"></view>
+    <view class="h_item logo">
+      <view bindtap="toIndex">
+        <image src="{{titleLogo}}" mode="aspectFit" style="width:288rpx; height:30rpx;"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    
+    <!-- 导航条 -->
+    <view class="nav">
+      <view id="{{index}}" class="li {{index==nav_id?'list':''}}" wx:for="{{nav}}" wx:key="nav" bindtap="liClick">{{item.name}}</view>
+    </view>
+
+
+    <!-- 非退货订单列表 -->
+    <view class="ul" wx:if="{{ul_show && !isTuihuo}}">
+      <view class="ul_li" wx:for="{{dingdanList}}" wx:key="dingdanList">
+        <view id="{{index}}" class="li_left" bindtap="toDingdanCon">
+          <image src="https://cdn.bestseller.com.cn{{item.picUrl}}" mode="widthFix"></image>
+        </view>
+        <view id="{{index}}" class="li_right" bindtap="toDingdanCon">
+          <view>订单号：<text data-text="{{item.bigorderCode}}" bindlongpress="onClick">{{item.bigorderCode}}</text></view>
+          <view>{{item.createTime}}</view>
+          <view class="status" style="{{item.deliveryMode == 'pickup'?'padding-bottom:0;':''}}">{{item.status=='WaitingPay'?'待付款':item.status=='WaitingShipment'?'待发货':item.status=='WaitingReceive'?'待收货':item.status=='TransactionCancel'?'交易取消':item.status=='TransactionSuccess'?'交易完成':''}} {{item.isHaveRefund!='0'?'(有退)':''}}</view>
+          <view style="padding-bottom:15rpx;">共{{item.goodsTotalCount}}件商品</view>
+          <view>实付：¥ {{item.payPrice}}</view>
+
+          <view wx:if="{{item.deliveryMode == 'pickup'}}" style='font-size:24rpx;'>
+            <view>店铺:{{item.bigOrderStore.name}}</view>
+            <view>营业时间:{{item.bigOrderStore.businessHours}}</view>
+            <view>联系方式:{{item.bigOrderStore.phone1}}</view>
+            <view>地址:{{item.bigOrderStore.address}}</view>
+            <!--   -->
+            <view class="voucher"  wx:if="{{item.status=='WaitingReceive'}}"  style='color:#fff;'  id='{{item.bigorderCode}}'  data-checkcode='{{item.checkcode}}'  catchtap='voucher'>凭证 </view>
+          </view>
+        </view>
+        <view id="{{index}}" class="wxPay" bindtap="wxPay" wx:if="{{item.status=='WaitingPay'?true:false}}">立即支付</view>
+      </view>
+    </view>
+
+    <!-- 提货凭证 -->
+    <view class='voucherD'    wx:if="{{isVoucher}}"  >
+        <view class='mainV'>          
+            <view class='titleV'>提货凭证</view>
+            <view class='closeV' bindtap="closeVoucher">关闭</view>
+           <view class='barcode'>
+           <!-- left:-273rpx;    left:-273rpx;  -->
+           <view style='position:relative; margin-top:10rpx;'><canvas  style=" position: absolute; left:25rpx; top:50rpx;"   canvas-id="barcode"/></view>             
+             <view style='padding-top:137rpx;'>订单号：<text data-text="{{bigorderCode}}" bindlongpress="onClick">{{bigorderCode}}</text></view>
+           </view>
+          <view class='qrcode' style=' position: relative;'>
+            <canvas  style=" position: absolute;  left:25rpx;  top:50rpx;" canvas-id="qrcode"/>
+            <view style='padding-top:137rpx;'>提货码：{{checkcode}}</view>
+           </view>
+        </view>
+    </view>
+
+    <!-- 退货订单列表 --> 
+    <view class="ul" wx:if="{{ul_show && isTuihuo}}">
+      <view class="ul_li" wx:for="{{dingdanList}}" wx:key="dingdanList">
+        <view id="{{index}}" class="li_left" bindtap="toDingdanCon1">
+          <image src="{{item.mainPicPath}}" mode="widthFix"></image>
+        </view>
+        <view id="{{index}}" class="li_right" bindtap="toDingdanCon1">
+          <view>退单号：{{item.refundCode}}</view>
+          <view>{{item.createTime}}</view>
+          <view class="status">{{item.refundStatus=="ApplyRefunding"?"退款申请中":item.refundStatus=="ResuseRefund"?"退款被拒":item.refundStatus=="RefundClose"?"退款关闭":item.refundStatus=="WaitingRefund"?"等待退款":item.refundStatus=="REFUNDING"?"退款中":item.refundStatus=="RefundFail"?"退款失败":item.refundStatus=="RefundSuccess"?"退款成功":item.refundStatus=="RefundGoodsReceive"?"退货入库":item.refundStatus=="RefundGoodsClose"?"退货关闭":item.refundStatus=="WaitingRefundGoods"?"待买家寄回商品":""}}</view>
+          <view style="padding-bottom:15rpx;">共{{item.refundTotalCount}}件商品</view>
+          <view>实付：¥ {{item.realPayPrice}}</view>
+        </view>
+        <view id="{{index}}" class="wxPay" bindtap="wxPay" wx:if="{{item.status=='WaitingPay'?true:false}}">立即支付</view>
+
+        <view wx:if="{{item.refundStatus=='WaitingRefundGoods'}}">
+            <image bindtap="tip" class='returnshop' src='../../images/returnshop.jpg'></image>
+            <view data-refundCode='{{item.refundCode}}'  data-oriorderCode='{{item.oriorderCode}}'  class="wxUp" bindtap='wxUp'>上传运单号</view>
+            <view bindtap='goReturned'  data-index='{{index}}' data-refundskus='{{item.refundSkus[0]}}' data-refundcode='{{item.refundCode}}' data-oriordercode='{{item.oriorderCode}}' data-address='{{item.address}}'    class="wxReturn">到店退货</view>
+        </view>
+        <view wx:if="{{isShowWay == index}}">
+            <image bindtap="tip" class='returnshop' src='../../images/returnshop.jpg'></image>
+            <view data-refundCode='{{item.refundCode}}'  data-oriorderCode='{{item.oriorderCode}}'  class="wxUp" bindtap='wxUp'>上传运单号</view>
+            <view bindtap='goReturned'  data-index='{{index}}' data-refundskus='{{item.refundSkus[0]}}' data-refundcode='{{item.refundCode}}' data-oriordercode='{{item.oriorderCode}}' data-address='{{item.address}}'    class="wxReturn">到店退货</view>
+        </view>
+        <view class="wxReset" wx:if="{{ item.refundStatus == 'RefundGoodsReceive' && item.returnType == 'InStoreReturn'}}"   style='display:{{isResetWay}}'  id="{{index}}" bindtap='resetWays'>修改退货方式</view>
+
+      </view>
+    </view>
+
+    <!-- 没有该项订单 -->
+    <view class="dingdanIsHidden" wx:if="{{dingdanIsHidden}}">
+      <view class="img">
+        <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/order_empty.png" mode="widthFix"></image>
+        <view class="tishi">您还没有待处理订单</view>
+      </view>
+      <view class="goShopping">
+        <view class="goToShopping" bindtap="goToShopping">去逛逛</view>
+      </view>
+    </view>
+
+    <!-- 加载更多 -->
+    <view class="load_more" style="display:{{load_more_hidden}}">
+      <view class="more_text">
+        <view class="load_img" style="display:{{text_isHidden?'block':'none'}}">
+          <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/order_loading.png" animation="{{animationLoad}}"></image>
+        </view>
+        <view class="loading" style="display:{{load_isHidden?'block':'none'}}">加载中</view>
+        <view class="loading" style="display:{{load_isHidden?'none':'block'}}">没有更多了</view>
+      </view>
+    </view>
+  </view>
+   <!-- 到店退提示信息 -->
+   <view class='tip' bindtap='closeTip' wx:if="{{isTip}}">
+      <view class='tip-main'>
+          <view class='tip-title'>退货须知，以下情况不可到店退货</view>
+          <view class='tip-content'>
+            <text class='block'>* 直接接触皮肤的内衣类商品</text>
+            <text class='block'>* 商品吊牌、商标、票据等有缺失的商品；已经穿着过或洗涤过的商品；已经修改或加工过的商品；</text>
+            <text class='block'>* 目前仅为服务上海地区，其他地区敬请期待！</text>
+            <text class='block other'>更多退货政策请在首页下方查看退货说明！</text>
+          </view>
+          <view class='tip-btn' >我知道了</view>
+      </view>
+   </view>
+   <!-- 上传快递单号 - 弹出框  -->
+   <view class="tishis" wx:if="{{submitDanhao}}">
+      <view class="opacity"></view>
+      <view class="tanchu">
+        <view class="h2">退款</view>
+        <view class="title">
+          <text class="h1">物流名称</text>
+          <input type="text" value="{{danhao_name}}" placeholder="请输入物流名称" bindinput="nameInput"/>
+        </view>
+        <view class="p" wx:if="{{danhao_name_tishi}}">{{danhao_name_text}}</view>
+
+        <view class="title">
+          <text class="h1">快递单号</text>
+          <input type="text" value="{{danhao_number}}" placeholder="请输入快递单号" bindinput="numberInput"/>
+        </view>
+        <view class="p" wx:if="{{danhao_tishi}}">{{danhao_text}}</view>
+
+        <view class="bott">
+          <view class="bot">
+            <view class="btn true" bindtap="danhao_true">确定</view>
+          </view>
+          <view class="bot">
+            <view class="btn false" bindtap="danhao_false">取消</view>
+          </view>
+        </view>
+      </view>
+   </view>
+</view>

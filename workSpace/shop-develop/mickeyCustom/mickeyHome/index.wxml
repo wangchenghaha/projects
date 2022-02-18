@@ -1,0 +1,10 @@
+<view class='main'>
+  <image class="{{isBigScreen ?'bg big' : 'bg'}}" src="{{isBigScreen ? 'https://alioss.woaap.com/bestseller/campaign2001/images/homeBg_big.jpg' : 'https://alioss.woaap.com/bestseller/campaign2001/images/homeBg_sm.jpg'}}"></image>
+  <image class="gotoGame" bindtap="gotoGame" src="https://alioss.woaap.com/bestseller/campaign2001/images/goto_game.png"></image>
+  <image class="activityRules" bindtap="gotoRules" src="https://alioss.woaap.com/bestseller/campaign2001/images/activity_rules.png"></image>
+  <image class="homeTitle" style="{{homeTitleAnimation}}" src="https://alioss.woaap.com/bestseller/campaign2001/images/home_title.png"></image>
+  <image class="musicButton" wx:if="{{musicIsOpen}}" bindtap="musicPause" src="https://alioss.woaap.com/bestseller/campaign2001/images/music_open.png"></image>
+  <image class="musicButton" wx:else bindtap="musicPlay" src="https://alioss.woaap.com/bestseller/campaign2001/images/music_close.png"></image>
+</view>
+<imageLoading imageList="{{loadImageList}}" bindfinish="imgLoadFinish"></imageLoading>
+

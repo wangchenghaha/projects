@@ -1,0 +1,14 @@
+var getdate = function(start,end) {
+    if(start == end) {
+        return start + '全天'
+    }
+    return start + '-' + end
+}
+var isNumber = function(num) {
+    return isNaN(num)
+}
+
+module.exports = {
+    getdate: getdate,
+    isNumber : isNumber
+};

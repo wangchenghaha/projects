@@ -1,0 +1,110 @@
+<view class="container">
+    <!-- 背景图 -->
+    <image  class="backgroundImg" src="{{gameBg}}" mode="widthFix" ></image>
+    <!-- logo图 -->
+    <image class="logoImg" src="{{logoImg}}" mode="widthFix"></image>
+   
+    <!-- 返回logo --> 
+    <image class="backImg" src="{{backImg}}" mode="widthFix" data-type="tan_close"  bindtap="onClick"/>
+
+    <!-- 目标图形 -->
+    <view class="pointArea flex-center">
+        <image class="pointImg" src="{{pointImg}}" mode="widthFix"></image>
+    </view>
+
+    <view class="gameMode">{{gameMode}}</view>
+
+    <!-- <view class="playGame" data-type="restartGame" bindtap="onClick"></view> -->
+      <!-- 游戏区域 -->
+    <view class="gameArea" >
+        <view class="flow-item" wx:for="{{gameImages}}" wx:key="bargainList" data-index="{{index}}" data-id="{{item.id}}" bindtap="onClickCard">
+            <image class="goodsImage b1" animation="{{item.animationMain}}" src="{{item.showImg}}"  mode='widthFix' />
+            <image class="goodsImage b2" animation="{{item.animationBack}}" src="{{item.icon}}"  mode='widthFix' />
+        </view>
+    </view>
+</view>
+
+<image class="fistpage" src="{{fistapage}}" wx:if="{{isFirst}}" data-type="closeFist" bindtap="onClick"></image>
+
+<block wx:if="{{gameSuccess}}">
+    <view class="bounced" style="background-color: black;opacity: .5;"></view>
+    <view class="bounced">
+        <view class="bounced-firstPop">
+            <view class="toastBg" style="height: 600rpx;">
+                <image class="backgroundImg" src="{{gameSuccessImg}}" mode="widthFix"></image>
+                <view class="info">
+                    <view class="commonTxt">游戏得分： <text class="pointTxt">{{points}}</text></view>
+                    <view class="commonTxt">获得：拼图碎片*1</view>
+                </view>
+                <image class="giftLight" src="{{giftLight}}" mode="widthFix"></image>
+                <image class="puzzleImg" src="{{puzzleImg}}" mode="widthFix"></image>
+                <view class="againGame" style=" top: 372rpx;"  data-type="restart" bindtap="onClick"></view>
+                <view class="close" data-type="tan_close" bindtap="onClick"></view>
+                <view class="goodsPush">
+                    <image class="goodsBg" src="{{goodsBg}}" mode="widthFix"></image>
+                    <view class="title">{{brandName}}-618衣起购</view>
+                    <view class="goodsInfo" data-type="goodsDetail" bindtap="onClick">
+                        <image class="goodsImg" src="{{goodsImage}}" mode="aspectFill"></image>
+                        <view class="goodsTitle">{{goodsTitle}}</view>
+                        <view class="goods">
+                            <view class="goodsPrice">￥{{goodsPrice}}</view>
+                            <view class="goodsDetail">查看详情</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+
+
+<block wx:if="{{gameOver}}">
+    <view class="bounced" style="background-color: black;opacity: .5;"></view>
+    <view class="bounced">
+        <view class="bounced-firstPop">
+            <view class="toastBg" style="height: 600rpx;">
+                <image class="backgroundImg" src="{{gameOverImg}}" mode="widthFix"></image>
+                <view class="info_1">
+                    <view class="commonTxt">游戏得分：</view>
+                    <view class="pointTxt">0</view>
+                </view>
+                <view class="againGame" style=" top: 306rpx;" data-type="restart" bindtap="onClick"></view>
+                <view class="close" data-type="tan_close" bindtap="onClick"></view>
+                <view class="goodsPush">
+                    <image class="goodsBg" src="{{goodsBg}}" mode="widthFix"></image>
+                    <view class="title">{{brandName}}-618衣起购</view>
+                    <view class="goodsInfo" data-type="goodsDetail" bindtap="onClick">
+                        <image class="goodsImg" src="{{goodsImage}}"  mode="aspectFill"></image>
+                        <view class="goodsTitle">{{goodsTitle}}</view>
+                        <view class="goods">
+                            <view class="goodsPrice">￥{{goodsPrice}}</view>
+                            <view class="goodsDetail">查看详情</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{gameNoCount}}">
+    <view class="bounced" style="background-color: black;opacity: .5;"></view>
+    <view class="bounced">
+        <view class="bounced-firstPop">
+            <view class="toastBg" style="height: 600rpx;">
+                <image class="backgroundImg" src="{{gameNoCountImg}}" mode="widthFix"></image>
+                <view class="info_1">
+                    <view class="commonTxt">很遗憾！您的游戏次数剩余</view>
+                    <text class="pointTxt">0</text>
+                    <view class="commonTxt">您可通过邀请好友获得游戏次数</view>
+                </view>
+                <image class="invite" style=" top: 290rpx;" src="{{inviteBtn}}" mode="widthFix"></image>
+                <button open-type="share" class="share"></button>
+                <view class="close1" data-type="tan_close" bindtap="onClick"></view>
+            </view>
+        </view>
+    </view>
+</block>
+
+<!-- 音乐开关 -->
+<image class="musicImg {{isMusicStart?'music-on':''}}" src="{{musicImg}}" mode="widthFix" data-type="music"  bindtap="onClick"/>

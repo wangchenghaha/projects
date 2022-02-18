@@ -1,0 +1,2 @@
+<!--activesubpack/pages/egg/rule/rule.wxml-->
+<image class="rule-image" mode="widthFix" src="{{img_url}}" />

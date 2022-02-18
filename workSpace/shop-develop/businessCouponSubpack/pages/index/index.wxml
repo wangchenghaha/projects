@@ -1,0 +1,48 @@
+<!-- businessCouponSubpack/pages/index/index.wxml -->
+<view wx:if="{{isReady}}">
+    <view class="coupon-list" wx:if="{{!hadget || !gzhData.banner}}">
+        <view class="coupon-area" wx:if="{{couponDatas.coupon_list.length}}">
+            <view class="item" wx:for="{{couponDatas.coupon_list}}" wx:key="*this">
+                <image class="img" src="{{item.brand_logo}}" />
+                <view class="info">
+                    <view class="txt">{{item.brand_name}}</view>
+                    <view class="txt-l">{{item.title}}</view>
+                    <view class="txt-s">{{item.begin_time}}</view>
+                </view>
+            </view>
+        </view>
+        <view wx:else class="no-data">你还没有优惠券哦</view>
+        <send-coupon bindcustomevent="hadgetcoupon" send_coupon_params="{{couponDatas.cardList.send_coupon_params}}"
+            sign="{{couponDatas.cardList.sign}}" send_coupon_merchant="{{couponDatas.cardList.send_coupon_merchant}}">
+            <view wx:if="{{isNotShowBtn && !hadget}}" class="btn">一键领取</view>
+        </send-coupon>
+    </view>
+    <scroll-view class="coupon-list" wx:else scroll-y="true" style="height: {{scrollHeight}}px;">
+        <view class="coupon-area" wx:if="{{couponDatas.coupon_list.length}}">
+            <view class="item" wx:for="{{couponDatas.coupon_list}}" wx:key="*this">
+                <image class="img" src="{{item.brand_logo}}" />
+                <view class="info">
+                    <view class="txt">{{item.brand_name}}</view>
+                    <view class="txt-l">{{item.title}}</view>
+                    <view class="txt-s">{{item.begin_time}}</view>
+                </view>
+            </view>
+        </view>
+        <view wx:else class="no-data">你还没有优惠券哦</view>
+        <send-coupon bindcustomevent="hadgetcoupon" send_coupon_params="{{couponDatas.cardList.send_coupon_params}}"
+            sign="{{couponDatas.cardList.sign}}" send_coupon_merchant="{{couponDatas.cardList.send_coupon_merchant}}">
+            <view wx:if="{{isNotShowBtn && !hadget}}" class="btn">一键领取</view>
+        </send-coupon>
+        <!-- <image class="" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+        
+    </image> -->
+    </scroll-view>
+    <view class="gzh-area" wx:if="{{hadget && gzhData.banner}}" style="height:{{gzhImgHeight}}px" bindtap="jumpTo"
+        hover-class="none" hover-stop-propagation="false">
+        <image class="" bindload="imageLoad" src="{{gzhData.banner}}" mode="aspectFit">
+
+        </image>
+    </view>
+    <view wx:if="{{isNotShowBtn && hadget}}" class="btn detail" catchtap="tolookcoupon">立即查看</view>
+    <view wx:if="{{isShowLocalBtn}}" class="btn detail" catchtap="getlocalsetting">重新授权</view>
+</view>

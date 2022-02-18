@@ -1,0 +1,29 @@
+<block wx:if="{{goods.length}}">
+  <view class="bg" wx:for="{{goods}}" wx:key="*this">
+    <all-goods wx:if="{{item.showMore}}" goods-list="{{item.goodsList}}" data-index="{{index}}"
+               bindhideGoods="hideGoods"></all-goods>
+    <view class="list" wx:else>
+      <view class="list-img">
+        <image src="{{item.imgUrl}}" mode="widthFix"/>
+      </view>
+      <view class="goods-list" wx:if="{{item.goodsList.length}}">
+        <scroll-view class="scroll-view" scroll-x>
+          <view class="goods-item ~flex-center" wx:for="{{item.goodsList}}" wx:key="gsColorCode"
+                wx:for-item="goodsItem">
+            <view class="goods-img">
+              <navigator url="/pages/content/content?colorCode={{goodsItem.gsColorCode}}">
+                <image src="{{goodsItem.goodsImg}}" mode="widthFix"/>
+              </navigator>
+            </view>
+            <view class="price">
+              <view class="price-origin ~text-c" wx:if="{{goodsItem.discountPrice !== goodsItem.originalPrice}}">
+                吊牌价￥{{goodsItem.originalPrice}}
+              </view>
+              <view class="price-pay ~text-c">￥{{goodsItem.discountPrice}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</block>

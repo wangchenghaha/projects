@@ -1,0 +1,58 @@
+<wxs src="./index.wxs" module="tools"/>
+<view class="pages">
+  <view class="bg-wrapper">
+    <image class="bg" style="height:1459rpx;" wx:if="{{bigPhone}}"
+           src="{{imgList.backgroundBig ? imgUrl +  imgList.backgroundBig: ''}}"></image>
+    <image class="bg" style="height:1228rpx;" wx:if="{{!bigPhone}}"
+           src="{{imgList.backgroundBig ? imgUrl +  imgList.backgroundSmall: ''}}"></image>
+    <image wx:if="{{brand != 'SELECTED'}}" class="brand"
+           style="top:{{bigPhone?510:320}}rpx;height:{{imgmodel.brandheight}}rpx;width:{{imgmodel.brandwidth}}rpx;"
+           src="{{imgList.brandLogo ? imgUrl +  imgList.brandLogo: ''}}"></image>
+
+  </view>
+  <view class="card-wrapper">
+    <image class="cardbg" src="{{imgList.indexCard ? imgUrl +  imgList.indexCard: ''}}"></image>
+    <view class="cardicon-wrapper">
+      <image class="cardicon" src="{{imgList.coupon ? imgUrl +  imgList.coupon: ''}}"></image>
+    </view>
+    <view class="card-info">
+      <!--            <view class="card-item" wx:for="{{couponlist}}" :key="index">-->
+      <!--                <view style="color:{{brand == 'JACKJONES'? '#fff' : '#666'}}">￥</view>-->
+      <!--                <view class="price" style="color:{{brand == 'JACKJONES'? '#fff' : basecolor}};font-size:{{tools.isNumber(item.price)?'36rpx':'46rpx'}}">{{item.price}}</view>-->
+      <!--                &lt;!&ndash; <view style="color:{{brand == 'JACKJONES'? '#fff' : '#666'}}">/</view> &ndash;&gt;-->
+      <!--                <view style="color:{{brand == 'JACKJONES'? '#fff' : '#666'}}" class="tip">{{item.tip}}</view>-->
+      <!--            </view>-->
+      <!-- <view class="card-item" wx:if="{{brand=='JACKJONES'}}" style="padding-top:14rpx;">
+         <view style="margin-bottom:28rpx;font-size:20rpx;color:{{basecolor}};">"我型"奢镜</view>
+          <view class="price" style="color:{{basecolor}};margin-bottom:0;">
+              <image class="eay" src="../images/jjeays.png" style="width:111rpx;height:83rpx;"></image>
+          </view>
+          <view>/</view>
+          <view class="tip">满1500赠</view>
+      </view> -->
+    </view>
+    <view class="card-join" wx:if="{{isloading}}">
+      <view class="join-date">活动时间：{{tools.getdate(start_time,end_time)}}</view>
+      <!--         {{start_time}} 至 {{end_time}}-->
+
+
+      <view class="join-btn-box">
+        <button wx:if="{{is_tuan == 2}}" style="background:{{basecolor}}" class="join-btn" bindtap="hot">活动预热</button>
+        <view bindtap="getUserInfoProfile">
+          <button wx:if="{{is_tuan == 1}}" form-type='submit' style="background:{{basecolor}}" plain="{{true}}" class="join-btn">{{btnTextList.type_8}}
+            <!--                        开启拼团-->
+          </button>
+          <button wx:if="{{is_tuan == 0}}" style="background:{{basecolor}}" class="join-btn"
+                  form-type='submit' plain="{{true}}">{{btnTextList.type_13}}
+          </button>
+          <!--                    点击助力-->
+
+        </view>
+      </view>
+      <view class="join-rule" bindtap="showrulefun">活动规则></view>
+    </view>
+  </view>
+</view>
+
+<rule basecolor="{{basecolor}}" brand="{{brand}}" showrule="{{showrule}}" campainExplain="{{campainExplain}}" bind:closerule="closerule"></rule>
+<alert basecolor="{{basecolor}}" showoption="{{showoption}}" bind:clicksure="clicksure"></alert>

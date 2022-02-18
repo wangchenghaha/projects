@@ -1,0 +1,84 @@
+.content {
+  width: 100%;
+  min-height: 100%;
+}
+.content image {
+  display: block;
+  width: 100%;
+}
+.content .header {
+  padding: 30rpx 0;
+  flex-direction: column;
+}
+.content .header .avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.content .form {
+  margin: 200rpx auto 0;
+  width: 640rpx;
+}
+.content .form-item {
+  padding: 10rpx;
+  margin-bottom: 10rpx;
+  border-bottom: solid 2rpx #000;
+  box-sizing: border-box;
+}
+.content .form-item.shake {
+  animation: shake 1s;
+}
+.content .form-item.error {
+  border-bottom: solid 2rpx red;
+}
+.content .form-item input {
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 36rpx;
+  box-sizing: border-box;
+}
+.content .form-item .code-img {
+  width: 220rpx;
+  height: 80rpx;
+  border: solid 1rpx #ccc;
+}
+.content .form-item .btn-send text {
+  display: inline-block;
+  width: 220rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  background: #000;
+  color: #fff;
+}
+.content .form .btn-login {
+  margin: 40rpx auto;
+  font-size: 34rpx;
+  color: #fff;
+  background: #000;
+}
+.content .login-text {
+  padding-top: 120rpx;
+  font-size: 40rpx;
+}
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10rpx);
+    -ms-transform: translateX(-10rpx);
+    transform: translateX(-10rpx);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10rpx);
+    -ms-transform: translateX(10rpx);
+    transform: translateX(10rpx);
+  }
+}
+
+/*# sourceMappingURL=login.wxss.map */

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "introduce": "../components/first/index"
+  },
+  "disableScroll": true,
+  "navigationStyle" : "custom"
+}

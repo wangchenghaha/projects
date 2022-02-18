@@ -1,0 +1,25 @@
+<view class="rule-wrapper" wx:if="{{showrule}}">
+  <view class="rule" style="height:{{bigPhone?1154:1100}}rpx;top:{{bigPhone?90:50}}rpx;">
+    <view class="topimg-wrapper">
+      <image class="topimg {{brand=='SELECTED'?'selclass' : ''}}" src="{{imgList.rulebg ? imgUrl +  imgList.rulebg: ''}}"></image>
+      <image catchtap="closerule" class="close-rule" src="{{imgList.ruleClose ? imgUrl +  imgList.ruleClose: ''}}"></image>
+    </view>
+
+    <view class="rule-cont">
+      <view class="rule-cont-wrapper">
+         <scroll-view scroll-y="{{true}}" class="rule-scroll" >
+           <text style="color:{{basecolor}}" class="rule-title">活动规则</text>
+           <view class="rule-item">
+             <view class="rule-text"><text>{{campainExplain}}</text></view>
+           </view>
+        </scroll-view>
+
+      </view>
+    </view>
+
+    <view class="bottomimg-wrapper">
+      <!-- <image class="bottomimg" src="{{rule_bottom}}"></image> -->
+      <image class="bottomnext" src="{{imgList.ruleNext ? imgUrl +  imgList.ruleNext: ''}}"></image>
+    </view>
+  </view>
+</view>

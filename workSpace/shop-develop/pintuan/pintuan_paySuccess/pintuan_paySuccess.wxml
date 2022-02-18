@@ -1,0 +1,39 @@
+<view class="sub-bg">
+    <image mode="widthFix" style="width:220rpx;" src="{{detailData.imageUrl}}"  />
+    <view class="cp-rightView">
+        <view class="title">{{detailData.goodsName}}</view>
+        <view class="title marginTitle">{{detailData.sizeAlias}}</view>
+        <view class="cp-rightView-row">
+            <view class="title" style="flex: 1;">x{{detailData.nums}}</view>
+            <view class="title-black">拼团价<text class="text">￥{{detailData.onePrice}}</text></view>
+            <view style="text-decoration: line-through;" class="title">￥{{detailData.originalPrice}}</view>
+        </view>
+        <view class="yipinView">
+            <view style="flex:1;"></view>
+            <view class="yipin">已拼单{{yipinNumber}}件</view>
+        </view>
+    </view>
+</view>
+
+<view class="iconView">
+    <view class="iconView-view">
+        <icon type="success" size="23" color="red" />
+        <view class="iconView-view-text">拼单成功</view>
+    </view>
+</view>
+<view class="iconView" style="margin-left: 5rpx;">
+    <view class="iconView-view">
+        <view class="iconView-view-icons">
+            <block wx:for="{{faceAndIcon.otherIcons}}" wx:key="face">
+            <view class="iconView-view-icons-one" wx:if="{{index == 0}}">
+                <view class="iconView-view-icons-one-title">拼主</view>
+                <image src="{{faceAndIcon.icon}}" mode="widthFix" class="icon"></image>
+            </view>
+            <image src="{{item}}" mode="widthFix" class="icon" style="margin-left: 10rpx;" wx:else></image>
+            </block>
+        </view>
+    </view>
+</view>
+
+<view class="bottomBG" bindtap="gotoIndex">去首页逛逛</view>
+<view class="bottomBG-white" bindtap="toOrderDetail">查看订单详情 ></view>

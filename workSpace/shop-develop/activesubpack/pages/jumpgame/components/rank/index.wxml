@@ -1,0 +1,27 @@
+<view class="rank-contaniner" wx:if="{{showModal}}">
+    <view class="rank-wrap">
+        <image class="rank-bg" src="../../img/rank-bg.png" />
+        <view class="rank-content">
+            <view class="rank-top">
+                <view class="rank-item" wx:for="{{ranklist}}" wx:key="{{item.rank_id}}">
+                    <view class="rank-index">{{item.rank_id}}</view>
+                    <view class="rank-avatar">
+                        <image class="avatar-img" src="{{item.avatar_url}}"/>
+                    </view>
+                    <view class="rank-name">{{item.nickname}}</view>
+                    <view class="rank-point">{{item.integral}}</view>
+                </view> 
+            </view>
+            <view class="rank-my">
+                <view class="rank-index">我的</view>
+                <view class="rank-avatar">
+                    <image class="avatar-img" src="{{my_rank.avatar_url}}"/>
+                </view>
+                <view class="rank-name">排名:{{my_rank.rank_id}}</view>
+                <view class="rank-point">积分:{{my_rank.integral}}</view>
+            </view>
+        </view>
+        <image catch:tap="addressHandle" wx:if="{{rankInfo.is_activity_end == 1 && rankInfo.is_integral_award && !rankInfo.is_fill_address}}" class="address-btn" src="../../img/addressbtn.png" />
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+</view>

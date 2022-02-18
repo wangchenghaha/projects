@@ -1,0 +1,497 @@
+.container{
+    width: 100%; 
+    margin: 0 auto;
+    background: #cb2026;
+    padding-bottom: 168rpx;
+    overflow-x:hidden;
+    .mongolia{
+        width: 100%;
+        height: 100%;
+        background:#000; 
+        opacity:0.7;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 99;
+    }
+    .imageBg{
+        position: fixed;
+        top: 30%;
+        left: 20%;
+        width: 60%;
+        height: auto;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        color: white;
+        
+        animation-name:popup;
+        animation-duration:0.3s;
+        animation-timing-function:linear;
+        animation-delay:0;
+        animation-iteration-count:1;
+        animation-direction:normal;
+        image{
+            width: 500rpx;
+            margin-top: 20rpx;
+        }
+        
+        .text1{
+           
+            font-size: 30rpx;
+            font-weight: 550;
+        }
+        .text2{
+            font-size: 28rpx;
+            margin-top: -100rpx;
+        }
+        .button1{
+            width: 400rpx;
+            height: 80rpx;
+            background: #FBD816;
+            border-radius: 90rpx;
+            text-align: center;
+            line-height: 80rpx;
+            font-size: 30rpx;
+            color: #EB3941;
+            margin-top: 30rpx;
+        }
+    }
+
+    @keyframes popup
+    {
+        from{opacity:0;transform:scale(0.3,0.3);}
+        to 	{opacity:1;transform:scale(1,1);}
+    }
+
+    .titlePic{
+        position: relative;
+        .actImage{
+            width: 100%;
+        }
+        .notice{
+            position: absolute;
+            top: 40rpx;
+            right: -20rpx;
+            background: orangered;
+            border-radius: 60rpx;
+            width: 180rpx;
+            height: 60rpx;
+            font-size: 28rpx;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+    .bargainContainer{
+        width: 94%;
+        margin-left: 3%; 
+        border-radius: 20rpx;
+        margin-top: 10rpx; 
+        background: #fff;
+        padding: 10rpx 0rpx;
+        overflow: hidden;
+        position: relative;
+        .mengceng{
+            width: 100%;
+            height: 100%;
+            background:#000; 
+            opacity:0.5;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 20rpx;
+        }
+        .stocklessImg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            image{
+                width: 140rpx;
+            }
+        }
+        .bargainMark{
+            width: 200rpx;
+            height: 40rpx;
+            line-height: 40rpx;
+            font-size: 22rpx;
+            color: white;
+            background: #EC6C2D;
+            border-radius: 40rpx;
+            text-align: center;
+            margin-left: 520rpx;
+            margin-top: 10rpx;
+            image{
+                width: 26rpx;
+                margin-left: 5rpx;
+                margin-top: 5rpx;
+            }
+        }
+        .bargainDetail{
+            display: flex;
+            margin-top: 10rpx;
+            image{
+                width: 160rpx;
+                height: 160rpx;
+                margin-left: 40rpx;
+                border-radius: 10rpx;
+                margin-top: 10rpx;
+            }
+            .bargainInfo{
+                width: 68%;
+                margin-left: 2%;
+                .t1{
+                    font-size: 28rpx;
+                    color: #000;
+                    font-weight: 550;
+                    height: 82rpx;
+                }
+                .t2{
+                    
+                }
+                .t3{
+                    font-size: 24rpx;
+                    color: #000;
+                    margin-top: 10rpx;
+                }
+                .t4{
+                    font-size: 28rpx;
+                    color: red;
+                }
+            }
+        }
+        .bargainCouponDetail{
+            display: flex;
+            align-items: center;
+            image{
+                width: 40%;
+                max-height: 300rpx;
+                margin-left: 50rpx; 
+            }
+            .t1{
+                width: 45%;
+                text-align: end;
+                font-size: 22rpx;
+                color: #000;
+            }
+        }
+        .dargainTime{
+            display: flex;
+            margin-left: 50rpx;
+            margin-top: 10rpx;
+            .rightTime{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22rpx;
+                color: #000;
+                font-weight: 600;
+                .timer{
+                  width: 60rpx;
+                  height: 50rpx;
+                  line-height: 50rpx;
+                  text-align: center;
+                  background: #000;
+                  border-radius: 8rpx;
+                  color: white;
+                  margin-left: 8rpx;
+                  font-weight: 500;
+                  font-size: 28rpx;
+                }
+              }
+              .bargainBtn{
+                width: 200rpx;
+                line-height: 60rpx;
+                text-align: center;
+                color: white;
+                font-size: 26rpx;
+                margin-left: 40rpx;
+                background: linear-gradient(to right,#FF9348, #F03D53);
+                border-radius: 50rpx;
+              }
+              .overbg{
+                background: gray;
+              }
+        }
+       
+    }
+
+    .centerNotice{
+        width: 100%;
+        height: 120rpx;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 20rpx;
+        .centerContent{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            image{
+                width: 80rpx;
+            }
+            text{
+                font-size: 36rpx;
+                color: white;
+                margin-left: 20rpx;
+                margin-right: 20rpx;
+            }
+        }
+    }
+    .dargainGoods{
+        display: flex;
+        width: 94%;
+        margin-left: 3%;
+        margin-top: 10rpx;
+        .flow-item{
+            width: 32%;
+            background: #fff;
+            border-radius: 20rpx;
+            margin-left: 10rpx;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            .mengceng{
+                width: 100%;
+                height: 100%;
+                background:#000; 
+                opacity:0.5;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 20rpx;
+            }
+            .stocklessImg{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                image{
+                    width: 140rpx;
+                }
+            }
+            .goodsImage{
+                width: 210rpx;
+                height: 310rpx;
+                margin-top: 10rpx;
+                border-radius: 10rpx;
+            }
+
+            
+            .goodsName{
+                max-width: 210rpx;
+                margin-top:10rpx;
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                font-size: 26rpx;
+               
+            }
+            .textMark{
+                display: flex;
+                width: 190rpx;
+                height: 36rpx;
+                line-height: 36rpx;
+                font-size: 20rpx;
+                color: red;
+                border: 1rpx solid red;
+                border-radius: 36rpx;
+                align-items: center;
+                justify-content: center;
+                margin-top: 8rpx;
+                .iconMark{
+                    width: 26rpx;
+                    height: 26rpx;
+                }
+            }
+            .text1{
+                font-size: 24rpx;
+                color: gray;
+                margin-top: 8rpx;
+            }
+            .text2{
+                font-size: 24rpx;
+                color: red;
+                margin-top: 2rpx;
+            }
+            .text3{
+                width: 190rpx;
+                line-height: 50rpx;
+                font-size: 24rpx;
+                background: #EC6C2D;
+                color: #fff;
+                text-align: center;
+                border-radius: 50rpx;
+                margin-bottom: 20rpx;
+                margin-top: 10rpx;
+            }
+        }
+        
+    }
+
+    .dargainCoupon{
+        display: flex;
+        width: 94%;
+        margin-left: 3%;
+        margin-top: 10rpx;
+        background: #fff;
+        border-radius: 10rpx;
+        align-items: center;
+        .couponImage{
+            width: 50%;
+            max-height: 300rpx;
+            margin-left: 4%;
+        }
+        .goodsInfo{
+            width: 42%;
+            margin-left: 4%;
+            .goodsName{
+                max-width: 210rpx;
+                margin-top:20rpx;
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                font-size: 30rpx;
+            }
+            .textMark{
+                display: flex;
+                width: 190rpx;
+                height: 10rpx;
+                line-height: 36rpx;
+                font-size: 20rpx;
+                color: red;
+                border-radius: 36rpx;
+                align-items: center;
+                justify-content: center;
+                margin-top: 8rpx;
+                .iconMark{
+                    width: 26rpx;
+                    height: 26rpx;
+                }
+            }
+            .text1{
+                font-size: 24rpx;
+                color: gray;
+                margin-top: 8rpx;
+                display: flex;
+                .number{
+                    width: 50%;
+                }
+                .count{
+                    width: 40%;
+                    text-align: end;
+                }
+            }
+            .text2{
+                font-size: 24rpx;
+                color: red;
+                margin-top: 5rpx;
+            }
+            .text3{
+                width: 90%;
+                line-height: 50rpx;
+                font-size: 24rpx;
+                background: orange;
+                color: #fff;
+                text-align: center;
+                border-radius: 50rpx;
+                margin-bottom: 20rpx;
+                margin-top: 10rpx;
+            }
+        }
+       
+    }
+
+    .mongolia{
+        width: 100%;
+        height: 100%;
+        background:#000; 
+        opacity:0.5;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    
+.submitInfo{
+    position: fixed;
+    left: 0;
+    top: 25%;
+    padding-bottom: 30rpx;
+    width: 70%;
+    margin-left: 15%;
+    background: #fff;
+    box-sizing: border-box;
+    transition: 0.3s;
+    border-radius: 10rpx;
+    transform: translateY(-200%);
+    z-index: 99;
+    &.show{
+      transition: 0.3s;
+      transform: translateY(0);
+    }
+    .close{
+      position: absolute;
+      right: 20rpx;
+      top: 20rpx;
+    }
+    .info{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       image{
+         width: 80%;
+         margin-top: 100rpx;
+       }
+       &-goodName{
+         width: 80%;
+         margin-left: 10%;
+         font-size: 28rpx;
+         margin-top: 20rpx;
+         color:  #F03D53;
+         text-align: center;
+       }
+       &-goodSize{
+         width: 80%;
+         margin-left: 10%;
+         font-size: 24rpx;
+         margin-top: 20rpx;
+         color: gray;
+       }
+       &-address{
+        width: 80%;
+        margin-left: 10%;
+        font-size: 24rpx;
+        margin-top: 10rpx;
+        color: gray;
+       }
+       &-submitBtn{
+         font-size: 28rpx;
+         color: white;
+         width: 60%;
+         line-height: 80rpx;
+         text-align: center;
+         background: linear-gradient(to right,#FF9348, #F03D53);
+         border-radius: 80rpx;
+         margin-top: 50rpx;
+       }
+    }
+  
+  }
+  
+}

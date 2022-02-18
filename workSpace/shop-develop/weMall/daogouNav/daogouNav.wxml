@@ -1,0 +1,50 @@
+
+<view class="wrap">
+  <view class="card-wrapper flex-bet {{isIphoneX ?'iphoneXMarginBottom':''}}">
+    <block wx:for="{{ulData}}" wx:key="ulData">
+      <block wx:if="{{item.isShow}}" >
+        <view class="card-item" >
+          <block wx:if="{{item.appId}}">
+            <block wx:if="{{item.jumpMini}}">
+              <image src="{{item.imgSrc}}" bindtap="stopJump" mode='widthFix'></image>
+            </block>
+            <block wx:else>
+              <navigator wx:if="{{item.appId}}" target="miniProgram" open-type="navigate" app-id="{{item.appId}}" path="{{item.path}}"  version="release">
+                <image src="{{item.imgSrc}}"  mode='widthFix'></image>
+              </navigator>
+            </block>
+          </block>
+          <image wx:else data-index="{{index}}" bindtap="toNextPage" src="{{item.imgSrc}}"  mode='widthFix'></image>
+        </view>
+      </block>
+    </block>
+  </view>
+  <view class="btn-wrapper {{isIphoneX ?'bottom':''}}">
+    <block wx:for="{{btnList}}" wx:key="btnList">
+      <view class="btn-item" wx:if="{{item.show}}" style="background: {{item.bgColor}}" data-type="{{item.type}}" data-index="{{index}}" bindtap="onClick">
+        <image src="{{item.image}}" mode="widthFix"></image>
+        <text>{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="back" data-type="back" bindtap="onClick">返回</view>
+  <view class="tip" wx:if="{{showTip}}">
+    <text class="close" data-type="close" bindtap="onClick"></text>
+    <image src="{{tipImg}}" mode="widthFix"></image>
+  </view>
+  <view class="popup flex-center {{weMall.isShow ? 'show' : ''}}">
+    <view class="container">
+      <image src="{{weMall.weMallImg}}" mode="widthFix" bindtap="weMallClick"></image>
+      <view class="close" bindtap="closeWeMall"></view>
+    </view>
+    <checkbox-group class="checkbox" bindchange="checkboxChange">
+      <label wx:for="{{checkArr}}" wx:key="checkbox">
+        <checkbox checked="{{item.checked}}"/>
+        {{item.text}}
+      </label>
+    </checkbox-group>
+  </view>
+
+  <!-- IphoneX底部栏 -->
+<!--  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>-->
+</view>

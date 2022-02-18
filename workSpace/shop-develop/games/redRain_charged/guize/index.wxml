@@ -1,0 +1,4 @@
+<view class="bg">
+    <view class="title">{{json.title}}</view>
+    <view class="subTitle" wx:for="{{json.subTitle}}" wx:key="index">{{item}}</view>
+</view>

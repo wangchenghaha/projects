@@ -1,0 +1,77 @@
+<view class="tb_box" style="background:{{bigBackGround}}">
+
+    <image class="tb_backbg"  src="{{lotteryBg}}" mode="widthFix"></image>
+
+    <view class="marquee_container" style="background:{{bigBackGround}}; --marqueeWidth--:-160em">
+      <view class="marquee_text">{{marqueeText}}</view>
+    </view>
+
+    <view class="brandTitle">
+        <image src="{{brandTitle}}"  mode='widthFix' />
+    </view>
+    <view class="turntableBox">
+
+      <view class="plate-wrap-box">
+        <!------------------- 绘制转盘内容---------------- -->
+        <view class="plate-border" style="background:{{midBackGround}}" animation="{{ aniData }}">
+          <view class="plate-wrap" style="background:{{midBackGround}}" >
+            <view class="plate-box" wx:for="{{lotterys}}" wx:key="lotterys"
+              style=" transform:translate(-50%,0) rotate({{ 360 / lotterys.length * ( index )}}deg);">
+              <image src="{{item.prizePicUrl}}" class="picStyle" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+        <view class="plate-btn-wrap" bindtap="startRollTap">
+          <image src="{{drawPointer}}" class="goImg"></image>
+        </view>
+        </view>
+      </view>
+
+
+
+        <view class='notice_content' style="background:{{bigBackGround}};">
+          <view class="btn flex-bet">
+            <view class="btn-gift btn-item text-c" bindtap="goCoupon">查看奖品</view>
+            <view class="btn-back btn-item text-c" bindtap="goShop">去商城看看</view>
+          </view>
+<!--            <image class="ruleTitle" src="{{ruleTitleImg}}" mode="widthFix"></image>-->
+            <view class="notice-title text-c color-fff">活动规则</view>
+            <view class="text">
+                <view class="textP" wx:for="{{ruleList}}" wx:key="item" >{{index + 1}}、{{item}}</view>
+            </view>
+      </view>
+
+    <!-- ============中奖名单========== -->
+    <!-- ["屈臣氏￥188大礼包","袜子拖鞋套装","优惠券100","情侣T恤","智行火车票￥144礼包","腾讯视频月季卡优惠", "优惠券10"]; -->
+    <view class="bg" wx:if="{{blackBgShow}}"></view>
+    <view class="bgWhite" wx:if="{{tanShowWhite}}"></view>
+    <!-- 中奖提示 -->
+    <view class="tan" wx:if="{{tanShow}}">
+        <image src="{{drawNoticePic}}" class="tan_img" bindtap="goCoupon" mode='widthFix' ></image>
+        <view class="close" bindtap="clickClose">
+        </view>
+    </view>
+
+    <view class="tan" wx:if="{{cheatsShow}}">
+      <image src="{{cheatsNoticePic}}" class="tan_img"  mode='widthFix' ></image>
+      <view class="myGift" bindtap="seeCoupon"></view>
+      <button open-type="share" class="btnShare"></button>
+    </view>
+
+    <view class="tan" wx:if="{{shareGetChance}}">
+      <image src="{{getChancePic}}" class="tan_img"  mode='widthFix' ></image>
+      <button open-type="share" class="btnShare2" wx:if="{{isShare}}"></button>
+      <view class="btnShare2" wx:else bindtap="goBack"></view>
+      <view class="close" bindtap="clickClose"></view>
+    </view>
+
+    <!-- 中奖提示 -->
+    <view class="errTan" wx:if="{{errTanShow}}">
+        <image src="{{errPic}}" class="err_img" mode='widthFix' ></image>
+        <view class="close" bindtap="clickClose">
+          <text></text>
+          <text></text>
+        </view>
+    </view>
+
+  </view>

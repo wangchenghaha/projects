@@ -1,0 +1,61 @@
+<!-- 导购宝支付页面 -->
+<view class="wrap" style="display:{{wrap}}">
+  <view class="content">
+    <view class="li">
+      <text class="li_left">{{orderDetail.consignee}}   {{orderDetail.contactTel}}</text>
+      <view class="flex">
+        <image src="../../images/address.png" background-size="cover"></image>
+        <view class="li_right">{{orderDetail.detailAddress}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="brBg"></view>
+  <view class="list">
+    <view class="list_top">
+      <image src="{{logo}}" mode="aspectFit" style="width: 115px; height: 12px;"></image>
+      <!-- <view class='list_tr'>共{{orderDetail.goodsTotalCount}}件商品</view> -->
+    </view>
+    <view class="dl">
+      <view class="dd" wx:for="{{orderDetail.goodsOrderList}}" wx:key="id">
+        <view class="dd_left">
+          <image src="{{item.goodsImg}}" mode="widthFix"></image>
+        </view>
+        <view class="dd_center">
+          <view class="title">{{item.goodsName}}</view>
+          <view class="goodsColor">{{item.colorName}}</view>
+          <view class="goodsSize">尺码:{{item.sizeName}}</view>
+        </view>
+        <view class="dd_right">
+          <view class="price">￥{{item.price}}</view>
+          <view class="originalPrice">￥{{item.originalPrice}}</view>
+          <view class="tNum">×{{item.goodsCount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="brBg"></view>
+  <view class="additional">
+    <text class="fl">优惠券</text>
+    <text class="fr">{{orderDetail.couponNo || '未使用优惠券'}}</text>
+  </view>
+  <view class="additional">
+    <text class="fl">配送方式</text>
+    <text class="fr">{{orderDetail.deliveryMode === 'pickup' ? '到店自提' : '邮寄到家'}}</text>
+  </view>
+  <view class="additional">
+    <text class="fl">专属导购</text>
+    <text class="fr">{{orderDetail.shopguideId}}</text>
+  </view>
+  <view class="footer">
+    <!-- <view class='foot_li foot_left'>
+      <view class='btn' bindtap='toIndex'>继续逛逛</view>
+    </view> -->
+    <view class="foot_total">
+      <view class="totalCount">共计:{{orderDetail.goodsTotalCount}}件，合计:</view>
+      <view class="price">￥{{orderDetail.payPrice}}</view>
+    </view>
+    <view class="foot_li foot_right">
+      <view class="btn" bindtap="wxPay">立即支付</view>
+    </view>
+  </view>
+</view>

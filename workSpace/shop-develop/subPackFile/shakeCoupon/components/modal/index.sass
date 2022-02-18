@@ -1,0 +1,427 @@
+@import '../../common/sass/index.sass'
+@keyframes bounce 
+    0%,4%,10.6%,16%,to 
+        -webkit-animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+
+    8%,8.6% 
+        -webkit-animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        -webkit-transform: translate3d(0,-30px,0);
+        transform: translate3d(0,-30px,0)
+
+    14% 
+        -webkit-animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        -webkit-transform: translate3d(0,-15px,0);
+        transform: translate3d(0,-15px,0)
+
+    22.5% 
+        -webkit-transform: translate3d(0,-4px,0);
+        transform: translate3d(0,-4px,0)
+
+@keyframes rubber
+    0%,20%,53%,80%,to 
+        -webkit-animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    
+
+    40%,43% 
+        -webkit-animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        -webkit-transform: translate3d(0,-30rpx,0);
+        transform: translate3d(0,-30rpx,0)
+    
+
+    70% 
+        -webkit-animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        -webkit-transform: translate3d(0,-15rpx,0);
+        transform: translate3d(0,-15rpx,0)
+    
+
+    90% 
+        -webkit-transform: translate3d(0,-4rpx,0);
+        transform: translate3d(0,-4rpx,0)
+    
+.wrapper
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 10
+    background: rgba(black, 0.6)
+    .middle
+        position: absolute
+        left: 50%
+        top: 108rpx
+        transform: translateX(-50%)
+        opacity: 0
+        transition: all 0.5s ease
+        padding-top: 80rpx
+        padding-bottom: 15rpx
+        width: 654rpx
+        height: 1195rpx
+        padding: 29rpx 18rpx 23rpx
+        box-sizing: border-box
+        // +bgimage('mini_modal')
+        border-radius: 10rpx
+        background: rgba(white, 0.8)
+        &:before
+            content: ''
+            position: absolute
+            left: 18rpx
+            right: 18rpx
+            bottom: 23rpx
+            top: 29rpx
+            border: 3rpx solid #495725
+            border-radius: 5rpx
+            z-index: -1
+        &:after
+            content: ''
+            width: 714rpx
+            height: 1212rpx
+            position: absolute
+            right: -47rpx
+            top: -118rpx
+            +bgimage('modal_bg')
+            z-index: -1
+        &.active
+            opacity: 1
+        &.big
+            top: 270rpx
+            // +bgimage('big_modal')
+            height: 1320rpx
+        .close
+            position: absolute
+            right: 20rpx
+            top: 60rpx
+            width: 100rpx
+            height: 100rpx
+            +bgimage('close')
+            background-size: 50rpx 50rpx
+    
+    .tipsbox
+        display: flex
+        align-items: center
+        justify-content: center
+        .tit
+            display: inline-block
+            font-size: 26rpx
+            padding-bottom: 10rpx
+            border-bottom: 1rpx solid white
+            vertical-align: top
+    .doorModal
+        .main-content
+            width: 100%
+            height: 100%
+            overflow: scroll
+            .title
+                font-size: 50rpx
+                line-height: 1
+                font-weight: bold
+                padding-top: 43rpx
+                margin-bottom: 33rpx
+            .maincard
+                width: 371rpx
+                height: 203rpx
+                +bgimage('card_1')
+                margin: 0 auto
+                overflow: hidden
+                
+                .time
+                    padding-top: 150rpx
+                    color: white
+                    font-size: 24rpx
+                    line-height: 38rpx
+            .getCard
+                padding-top: 42rpx
+                .btn
+                    +button(286, 49)
+            .clothesbox
+                margin-top: 76rpx
+                .name
+                    font-size: 50rpx
+                    font-weight: bold
+                    line-height: 1
+                .desc
+                    font-size: 32rpx
+                    line-height: 2
+                    margin-bottom: 20rpx
+                .reward_tips
+                    width: 383rpx
+                    height: 384rpx
+                    +bgimage('turntable_ex')
+                    margin: 0 auto 30rpx
+                .tit_tips
+                    font-size: 26rpx
+                
+                .percentbox
+                    width: 440rpx;
+                    height: 36rpx;
+                    border: 1rpx solid #d84b91;
+                    border-radius: 4rpx;
+                    margin: 0 auto 24rpx;
+                    text-align: center;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    position: relative;
+                    .percent 
+                        width: 0;
+                        height: 34rpx;
+                        background: #d84b91;
+                        transition: all 0.3s ease-in;
+                    
+                    .tips 
+                        position: absolute;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        font-size: 24rpx;
+                        line-height: 34rpx;
+                .btn
+                    +button(286,50, 30)
+                    margin-bottom: 20rpx
+                    &.disabled 
+                        color: white
+                        background: #999999  
+        &.big
+            .title
+                padding-top: 120rpx
+            .tit_tips
+                margin-bottom: 40rpx
+            .clothesbox
+                .percentbox
+                    margin: 20rpx auto 44rpx
+                .btn
+                    margin-bottom: 50rpx
+
+    .activeEnd
+        .innerContent
+            .title
+                font-weight: bold
+                font-size: 50rpx
+                padding-top: 300rpx
+            .desc
+                margin: 80rpx auto
+                font-size: 36rpx
+                line-height: 2
+            .button
+                .btn
+                    +button(375, 70, 38)
+    .rulebox
+        color: white
+        .title
+            padding: 40rpx 0
+            box-sizing: border-box
+            font-size: 50rpx
+            font-weight: bold
+            line-height: 1
+            text-align: center
+        .scrollbox
+            height: calc(100% - 140rpx)
+            .tit
+                font-size: 24rpx
+                line-height: 36rpx
+                margin-bottom: 20rpx
+                padding: 0 50rpx
+                text-align: justify
+                box-sizing: border-box
+                .underline
+                    text-decoration: underline
+    .authorize
+        color: white
+        .logo
+            padding-top: 130rpx
+            font-size: 50rpx
+            font-weight: bold
+            margin-bottom: 60rpx
+        .tit
+            font-size: 30rpx
+            text-align: left
+            padding: 0 100rpx
+            box-sizing: border-box
+            margin-bottom: 40rpx
+        .item
+            font-size: 26rpx
+            text-indent: 40rpx
+            margin-bottom: 40rpx
+        .tit-2
+            font-size: 40rpx
+            font-weight: bold
+            margin-bottom: 40rpx
+        .button
+            margin-top: 50rpx
+            .btn
+                +button(286,50, 30)
+    .cardone
+        .innerContent
+            width: 100%
+            height: 100%
+            text-align: center
+            color: white
+            overflow: hidden
+            line-height: 1
+            .tit-1
+                padding-top: 90rpx
+                font-size: 32rpx
+                margin-bottom: 20rpx
+            .title
+                font-size: 50rpx
+                font-weight: bold
+                margin-bottom: 47rpx
+            .tit-2
+                font-size: 32rpx
+                line-height: 1.5
+            .cardboox
+                width: 658rpx
+                height: 491rpx
+                +bgimage('getCard_1')
+            .btn
+                +button(309,54,34)
+                margin-bottom: 95rpx
+        &.big
+            .tit-1
+                padding-top: 150rpx
+                margin-bottom: 45rpx
+            .cardboox
+                margin-bottom: 50rpx
+            .btn
+                margin-bottom: 195rpx
+
+
+            
+    .startReward
+        .innerContent
+            padding-top: 250rpx
+            .reward_tips
+                position: relative
+                margin: 0 auto 150rpx
+                width: 493rpx
+                height: 493rpx
+                &:after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 0
+                    right: 0
+                    bottom: 0
+                    width: 493rpx
+                    height: 493rpx
+                    +bgimage('turntable')
+                    transform: rotate(18deg)
+                .startBtn
+                    width: 93rpx
+                    height: 116rpx
+                    +bgimage('GO')
+                    position: absolute
+                    left: 200rpx
+                    top: 188rpx
+                    z-index: 10
+
+                    
+            .button
+                margin-bottom: 100rpx
+                .btn
+                    +button()
+        &.big
+            .innerContent
+                padding-top: 300rpx
+                .reward_tips
+                    margin: 0 auto 190rpx
+    .result
+        .innerContent
+            .title
+                font-size: 50rpx
+                font-weight: bold
+                line-height: 51rpx
+                padding-top: 130rpx
+            .rewardbox
+                position: relative
+                width: 573rpx
+                height: 618rpx
+                +bgimage('reward_bg')
+                margin: 0 auto
+                .reward
+                    position: absolute
+                    left: 50%
+                    top: 40%
+                    transform: translate(-50%,-50%)
+                    width: 400rpx
+                    height: 210rpx
+                    +bgimage('reward1')
+                    background-size: 400rpx 300rpx
+                    background-position: 0 0
+            .desc
+                font-size: 32rpx
+                margin: 20rpx auto
+            .button
+                margin: 0 auto 80rpx
+                .btn
+                    +button(370,63,38)
+        &.big
+            .rewardbox
+                margin: 30rpx
+            .desc
+                margin: 0 auto 120rpx
+            .button
+                margin: 0 auto 120rpx
+    .awardlist
+        .innerContent
+            padding: 40rpx 32rpx 0
+            box-sizing: border-box
+            .swiperbox
+                position: relative
+                width: 573rpx
+                height: 518rpx
+                margin: 0 auto
+                +bgimage('reward_bg')
+                background-size: 480rpx 518rpx
+                padding: 108rpx 0 
+                box-sizing: border-box
+            .header
+                text-align: center
+                font-size: 30rpx
+                color: black
+                padding-bottom: 17rpx
+                border-bottom: 4rpx solid black
+                box-sizing: border-box
+            .award
+                height: 450rpx
+                overflow-y: scroll
+                &__title
+                    font-size: 32rpx
+                    height: 72rpx
+                    color: #000000
+                    display: flex
+                    align-items: center
+                    .tit
+                        flex: 1
+                &__list
+                    .items
+                        display: flex
+                        align-items: center
+                        height: 72rpx
+                        .time
+                            flex: 1
+                            font-size: 32rpx
+                            color: #000000
+                            white-space: nowrap
+                            text-overflow: ellipsis
+                            overflow: hidden
+                        .control
+                            flex: 1
+                            .btn
+                                +button(120,42,32)
+                                border-radius: 4rpx
+        &.big
+            .award
+                height: 570rpx
+
+

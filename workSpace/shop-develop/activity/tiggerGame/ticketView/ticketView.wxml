@@ -1,0 +1,39 @@
+<customView_vm
+ wx:if="{{brand == 'VEROMODA'}}"
+ canShow="{{canShow}}"
+ myNumber="{{myNumber}}"
+ prizeDatas="{{prizeDatas}}"
+ jiluDatas="{{jiluDatas}}"
+ bindduijiangTap="duijiangTap"
+ bindshare="share"
+ bindduihuan="duihuan"
+ bindbackView="backView"
+ bindclosed="closed"
+/>
+
+<customView_only
+ wx:if="{{brand == 'ONLY'}}"
+ canShow="{{canShow}}"
+ myNumber="{{myNumber}}"
+ prizeDatas="{{prizeDatas}}"
+ jiluDatas="{{jiluDatas}}"
+ bindduijiangTap="duijiangTap"
+ bindshare="share"
+ bindduihuan="duihuan"
+ bindbackView="backView"
+ bindclosed="closed"
+/>
+
+<customView_fol
+ wx:if="{{brand == 'FOL'}}"
+ canShow="{{canShow}}"
+ myNumber="{{myNumber}}"
+ prizeDatas="{{prizeDatas}}"
+ jiluDatas="{{jiluDatas}}"
+ bindduijiangTap="duijiangTap"
+ bindshare="share"
+ bindduihuan="duihuan"
+ bindbackView="backView"
+ bindclosed="closed"
+/>
+

@@ -1,0 +1,40 @@
+<view class='wrapper'>
+    <view class='header'>
+        <image class='images_header' src='{{banner}}'></image>
+        <image class='images_logo' src='../common/image/logo.png' style="width:347rpx;height:32rpx;display:block;margin-top:60rpx;margin-left:32rpx;"></image>
+        <!-- <view class="logo_text">
+            <view class="tit">JACKJONES</view>
+            <view class="tit">Customized</view>
+        </view> -->
+    </view>
+    <view class="content">
+        <!-- 登录窗口 -->
+        <view class="login">
+            <view class="login-body">
+                <view class="title">员工登录</view>
+                <view class="form">
+                    <view class="form-item">
+                        <view class="label">用户名</view>
+                        <view class="form-control {{warnObj[0].show ? 'error':''}}">
+                            <input type="text" data-type='name' class='el-input' placeholder="{{holder[0]}}" placeholder-class="input_holder_text" bindblur='inputBlur' bindfocus="inputFocus" bindinput="inputVal" value='{{name}}' />
+                            <view class="errorText {{warnObj[0].show ? 'active':''}}" bindtap='hideError' data-index='0'>{{warnObj[0].txt}}</view>
+                        </view>
+                    </view>
+                    <view class="form-item">
+                        <view class="label">密码</view>
+                        <view class="form-control {{warnObj[1].show ? 'error':''}}">
+                            <input type="password" data-type='password' class='el-input' placeholder="{{holder[1]}}" placeholder-class="input_holder_text" bindblur='inputBlur' bindfocus="inputFocus" bindinput="inputVal" value='{{password}}' />
+                            <view class="errorText {{warnObj[1].show ? 'active':''}}" bindtap='hideError' data-index='1'>{{warnObj[1].txt}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 操作栏 -->
+        <view class="footer">
+            <view class="btnbox" hover-class="hoverclass">
+                <button class="btn" catchtap='submitLoginfun'>立即登录</button>
+            </view>
+        </view>
+    </view>
+</view>

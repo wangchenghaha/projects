@@ -1,0 +1,25 @@
+<!-- socialAdvertising/kuaikan122302/kuaikan122302.wxml -->
+<view class="frame">
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_122302_010.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_030.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="领券顶部" bind:tap="onCouponClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_040.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_050.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="领券中部" bind:tap="onCouponClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_060.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_070.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_080.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="12119S072S01" data-bt-name="彤款卫衣" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_090.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_091.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_100.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121116011H81" data-bt-name="短裙" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_120.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_130.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_140.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="12119S065C40" data-bt-name="情侣卫衣" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_150.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_160.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="12117L001J7Z" data-bt-name="背带牛仔裤" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_170.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_180.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="12119S073J8Z" data-bt-name="扎染宽松卫衣" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_190.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_200.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121149052J0Z" data-bt-name="牛仔裤" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_210.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="领券底部" bind:tap="onCouponClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_220.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="专辑页" bind:tap="onAlbumClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_122302_230.jpg?v={{randomMilli}}" mode="widthFix" />
+</view>

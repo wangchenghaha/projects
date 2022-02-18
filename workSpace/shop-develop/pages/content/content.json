@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "share-button": "plugin://goodsSharePlugin/share-button",
+    "couponpop": "/components/couponPop/couponPop",
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods",
+    "copyIcon": "/components/copyIcon/copyIcon",
+    "share-footer": "/components/shareTempFooter/shareTempFooter",
+    "buyers-show":"/components/buyersShow/buyersShow",
+    "bind-guide": "/components/bindGuide/bindGuide"
+  }
+}

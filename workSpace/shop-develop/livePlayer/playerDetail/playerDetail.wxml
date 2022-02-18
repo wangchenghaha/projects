@@ -1,0 +1,65 @@
+
+<block wx:if="{{replayPaths.length == 1}}">
+    <video autoplay="{{isFirstLoad}}" id="video_0" controls="{{controls}}" enable-progress-gesture="{{false}}" object-fit="cover" class="video" style="height:{{isIphoneX ? '97%' : '100%'}}" src="{{replayPaths[currentIndex]}}" bindtimeupdate="videoUpdata" bindplay="startPlay" bindended="endPlay" />
+</block>
+<block wx:else>
+    <swiper class="headScroView" current="{{currentIndex}}" vertical="{{true}}" circular="{{true}}" bindchange="swiperChange" bindanimationfinish="finish">
+        <swiper-item  wx:for="{{replayPaths}}" wx:key="videos" >
+            <video wx:if="{{currentIndex == index}}" autoplay="{{isFirstLoad}}" id="video_{{index}}" controls="{{controls}}" enable-progress-gesture="{{false}}" object-fit="cover" class="video" style="height:{{isIphoneX ? '97%' : '100%'}}" src="{{item}}" bindtimeupdate="videoUpdata" bindplay="startPlay" bindended="endPlay" />
+            <view wx:else style="width:100%;height:{{isIphoneX ? '97%' : '100%'}};"></view>
+        </swiper-item>
+    </swiper>
+</block>
+
+
+<view class="bouncedViewBg" style="bottom:{{bouncedShow ? goodDatas.length > 1 ? isIphoneX ? '56%' : '53%' : isIphoneX ? '440rpx' : '390rpx' : isIphoneX ? '11%' : '120rpx'}};">
+
+    <view class="bouncedBtn_share" bindtap="shareTap">
+        <image src="{{hb_shareImg}}" style="width:100%;height:100%;" />
+    </view>
+    <view class="bouncedBtn" bindtap="btnTap">
+        <image src="{{hb_shoppingImg}}" style="width:100%;height:100%;" />
+    </view>
+
+</view>
+
+<view class="bouncedView {{bouncedShow ? goodDatas.length > 1 ? 'bouncedView-show' : 'bouncedView-show1' : ''}}" style="bottom:{{isIphoneX ? '3%' : '0'}}">
+    <view class="topView">
+    <image src="{{hb_leftsjImg}}" class="sanjiao" mode="widthFix" />
+        <view class="text" bindtap="lookMoreTap">查看更多视频</view>
+        <image class="img" src="{{closeImg}}" mode="widthFix" bindtap="bgTap" />
+    </view>
+    <scroll-view scroll-y="{{true}}" class="scroView">
+        <view class="subViews" wx:for="{{goodDatas}}" wx:key="subViews" id="{{index}}" bindtap="onClick">
+            <image class="img" src="{{item.coverImg}}" mode="widthFix" />
+            <view class="rightView">
+                <view class="title">{{item.goodsName}}</view>
+                <view class="bottomView">
+                    <view class="leftView">￥<text class="leftView-text">{{item.price}}</text></view>
+                    <view class="rightView" data-url="{{item.url}}" bindtap="buy">购买</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+
+<block wx:if="{{firstBounced}}">
+
+    <view class="bg" bindtap="firstTap"></view>
+    <view class="bg_view">
+        <image class="img" src="{{updownImg}}" />
+        <view class="text">上下滑动切换视频</view>
+    </view>
+
+</block>
+        <canvas canvas-id="canvasID" class="cavasView" />
+<block wx:if="{{canShowShare}}">
+
+    <view class="bg" style="bottom: 200rpx;" bindtap="shareBgTap"></view>
+
+    <view class="bg_view" style="width:{{canvasWidth}}rpx;max-width: 80%;">
+        <image src="{{shareImg}}" style="width:100%;" mode="widthFix" />
+    </view>
+    <footShareView bindshareMoment="shareMoment"></footShareView>
+
+</block>

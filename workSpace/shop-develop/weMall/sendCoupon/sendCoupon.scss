@@ -1,0 +1,259 @@
+image{
+  display: block;
+  width: 100%;
+}
+@mixin after($width, $height){
+  content: '';
+  display: block;
+  width: $width;
+  height: $height;
+  position: absolute;
+}
+.send{
+  min-height: 100%;
+  background: #e9e9e9;
+  .banner{
+    width: 100%;
+  }
+  .container{
+    margin: 0 auto;
+    padding-bottom: 30rpx;
+    width: 94%;
+    .coupon{
+      margin-top: -80rpx;
+      margin-bottom: 30rpx;
+      flex-wrap: wrap;
+      &-item{
+        flex: 0 1 48%;
+        padding-top: 30rpx;
+        margin-bottom: 30rpx;
+        width: 340rpx;
+        background: #fff;
+        .price{
+          font-size: 40rpx;
+          color: #ea231c;
+          text{
+            font-size: 80rpx;
+            vertical-align: middle;
+          }
+        }
+        .channel{
+          font-size: 30rpx;
+          padding-bottom: 20rpx;
+        }
+        .threshold,.time{
+          font-size: 24rpx;
+          line-height: 30rpx;
+          color: #999999;
+        }
+        .btn{
+          position: relative;
+          margin-top: 50rpx;
+          width: 100%;
+          height: 70rpx;
+          line-height: 80rpx;
+          background: #000;
+          color: #fff;
+          font-size: 28rpx;
+          .qr-icon{
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: -25rpx;
+            margin-top: -25rpx;
+            width: 50rpx;
+            height: 50rpx;
+            padding: 10rpx;
+            box-sizing: border-box;
+            background: #000;
+            border-radius: 50%;
+            image{
+              width: 90%;
+            }
+          }
+          .text{
+            position: relative;
+            z-index: 9;
+          }
+          &:after{
+            @include after(30rpx, 30rpx);
+            left: -15rpx;
+            top: -15rpx;
+            background: #eaeaea;
+            border-radius: 50%;
+          }
+          &:before{
+            @include after(30rpx, 30rpx);
+            right: -15rpx;
+            top: -15rpx;
+            background: #eaeaea;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .desc{
+      padding: 30rpx;
+      width: 100%;
+      box-sizing: border-box;
+      background: #fff;
+      font-size: 28rpx;
+      line-height: 38rpx;
+      border-radius: 10rpx;
+      color: #999999;
+      text{
+        line-height: 38rpx;
+      }
+    }
+  }
+  .popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-100%);
+    transition: all 0.3s;
+    z-index: 999;
+    &.show{
+      transform: translateY(0);
+    }
+    &-wrapper{
+      position: relative;
+      width: 620rpx;
+      height: 790rpx;
+      .content{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 620rpx;
+        height: 790rpx;
+        overflow: hidden;
+        .logo{
+          margin: 20rpx auto;
+          width: 320rpx;
+        }
+        .title{
+          display: block;
+          font-size: 36rpx;
+          color: #ea231c;
+        }
+        .dot{
+          position: relative;
+          width: 100%;
+          height: 0rpx;
+          border-bottom: dotted 10rpx #4c4c4c;
+          &::after{
+            @include after(30rpx, 30rpx);
+            left: -13rpx;
+            top: -10rpx;
+            background: #4c4c4c;
+            border-radius: 50%;
+          }
+          &::before{
+            @include after(30rpx, 30rpx);
+            right: -13rpx;
+            top: -10rpx;
+            background: #4c4c4c;
+            border-radius: 50%;
+          }
+        }
+        .channel{
+          padding-top: 20rpx;
+          font-size: 30rpx;
+        }
+        .card{
+          padding: 10rpx 0;
+          margin: 20rpx auto;
+          width: 440rpx;
+          background-repeat: no-repeat !important;
+          background-size: 100% 100% !important;
+          &-info{
+            .value{
+              padding: 0 20rpx;
+              font-size: 80rpx;
+              line-height: 80rpx;
+            }
+            text{
+              font-size: 40rpx;
+            }
+          }
+          &-threshlod{
+            padding-top: 20rpx;
+            font-size: 46rpx;
+          }
+          &-date{
+            font-size: 24rpx;
+          }
+        }
+        .qr-code{
+          margin: 20rpx auto 0;
+          width: 220rpx;
+          canvas{
+            width: 220rpx;
+            height: 220rpx;
+          }
+        }
+
+      }
+      .share{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 80rpx;
+        &-item{
+          flex: 1;
+          height: 80rpx;
+          line-height: 80rpx;
+          font-size: 30rpx;
+          vertical-align: middle;
+          .icon{
+            margin-left: 5rpx;
+            width: 30rpx;
+            height: 30rpx;
+          }
+        }
+      }
+    }
+    .close{
+      position: absolute;
+      right: 0;
+      top: -80rpx;
+      width: 50rpx;
+      height: 50rpx;
+      border: solid 6rpx #fff;
+      border-radius: 50%;
+      z-index: 9999;
+      text{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -2rpx 0 0 -15rpx;
+        display: block;
+        width: 30rpx;
+        height: 4rpx;
+        background: #fff;
+        transform-origin: center;
+        &:nth-child(1){
+          transform: rotate(45deg);
+        }
+        &:nth-child(2){
+          transform: rotate(-45deg);
+        }
+      }
+      &:after{
+        position: absolute;
+        bottom: -30rpx;
+        left: 50%;
+        content: '';
+        display: block;
+        width: 4rpx;
+        height: 30rpx;
+        background: #fff;
+      }
+    }
+
+  }
+}

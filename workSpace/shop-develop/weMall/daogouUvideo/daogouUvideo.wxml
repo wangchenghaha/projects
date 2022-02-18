@@ -1,0 +1,150 @@
+<view class="wrapper">
+  <view class='top_nav'>
+    <view class="nav-name {{item.typeId == currentId ? 'nav-hover':''}}" wx:for="{{section}}" wx:key="id" id='{{item.typeId}}' catchtap='handleTap'>
+      {{item.name}}
+    </view>
+    <view class="navBtn" bindtap="hotSortFun">
+      人气排序
+      <view class="triangle">
+        <view wx:if="{{hotSort}}">
+          <text class="text black"></text>
+          <text class="text gray"></text>
+        </view>
+        <view wx:else>
+          <text class="text triangle-down"></text>
+          <text class="text triangle-up"></text>
+        </view>
+      </view>
+    </view>
+    <view class="navBtn" bindtap="timeSortFun">
+      上传时间
+      <view class="triangle">
+        <view wx:if="{{timeSort}}">
+          <text class="text black"></text>
+          <text class="text gray"></text>
+        </view>
+        <view wx:else>
+          <text class="text triangle-down"></text>
+          <text class="text triangle-up"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="top_main">
+    <view hidden='{{currentId!= "A"}}'>
+      <!-- {{listAll}} -->
+      <scroll-view scroll-y="true" style="height: 1500rpx;" scroll-top="0" bindscrolltolower="lower">
+        <view class="buyVideo list" wx:for="{{listAll}}" wx:key="index" id="{{item.id}}" catchtap="videoMax" data-item="{{item}}">
+          <view class="listVideo">
+            <video class="video" object-fit="contain" src="{{item.videoUrl}}" id="{{item.id}}" data-item="{{item}}" bindfullscreenchange="screenChange" direction='0' show-fullscreen-btn="{{false}}" show-play-btn="{{false}}"></video>
+            <!-- <image class="cover" src="https://cmscdn.bestseller.com.cn/hds-creative/rest/rawfile/V0000000412/D3-NBA-Final高清-cover.jpg" mode="aspectFill"></image> -->
+            <!-- <image class="play" src="{{play}}"></image> -->
+          </view>
+          <view class="listInfo">
+            <view class="listInfoTit">{{item.saVideoTitle}}</view>
+            <!-- <view class="listInfoState">{{item.state}}</view> -->
+            <view class="listInfoText">
+              <view class="colBlack">剪辑：</view>
+              <view class="colGray">{{item.videoEditorName}}</view>
+            </view>
+            <view class="listInfoText">
+              <view class="colBlack">拍摄：</view>
+              <view class="colGray">{{item.videographerName}}</view>
+            </view>
+            <!-- <view class="listInfoText">
+              <view class="colBlack">视频类型：</view>
+              <view class="colGray">{{item.type}}</view>
+            </view> -->
+            <view class="listInfoText">
+              <view class="colBlack">视频介绍：</view>
+              <view class="colGray">{{item.projectDescription}}</view>
+            </view>
+            <view class="listInfoText">
+              <view class="colBlack">上传时间：</view>
+              <view class="colGray">{{item.musicCopyrightExpireDate}}</view>
+              <image class="eyes" src="{{eyes}}"></image>
+              <view class="colGray">{{item.clickTime}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view hidden='{{currentId!= "B"}}'>
+      <scroll-view scroll-y="true" style="height: 1500rpx;" scroll-top="0" bindscrolltolower="lower">
+        <!-- <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" wx:for="{{list}}" wx:key="index"> -->
+          <!-- <view class="content"> -->
+            <!-- <view class="buyVideo list" mut-bind:touchstart="touchstart" mut-bind:touchmove="touchmove" mut-bind:touchend="touchE" style="{{item.txtStyle}}" data-index='{{index}}' data-approveStatus='{{item.approveStatus}}'> -->
+            <view class="buyVideo list" style="{{item.txtStyle}}" data-index='{{index}}' data-approveStatus='{{item.approveStatus}}' wx:for="{{list}}" wx:key="index">
+              <view class="listVideo">
+                <video class="video" object-fit="contain" src="{{item.videoUrl}}" id="{{item.id}}" mut-bind:tap="videoMax" data-item="{{item}}" bindfullscreenchange="screenChange" direction='0' show-fullscreen-btn="{{false}}" show-play-btn="{{false}}"></video>
+                <!-- <image class="cover" src="https://cmscdn.bestseller.com.cn/hds-creative/rest/rawfile/V0000000412/D3-NBA-Final高清-cover.jpg" mode="aspectFill"></image> -->
+                <!-- <image class="play" src="{{play}}"></image> -->
+              </view>
+              <view class="listInfo" catchtap="goDetail" data-index='{{item}}'>
+                <view class="listInfoTit">{{item.saVideoTitle}}</view>
+                <view class="listInfoState">{{item.approveStatus === 'Init' ? '待审核' : '审核通过'}}</view>
+                <image wx:if="{{item.approveStatus === 'Init'}}" class="delIcon2" src="/images/icon_trash_grey_48.png" data-id="{{item.id}}" catchtap="delBtn" data-index="{{index}}"></image>
+                <view class="listInfoText">
+                  <view class="colBlack">剪辑：</view>
+                  <view class="colGray">{{item.videoEditorName}}</view>
+                </view>
+                <view class="listInfoText">
+                  <view class="colBlack">拍摄：</view>
+                  <view class="colGray">{{item.videographerName}}</view>
+                </view>
+                <!-- <view class="listInfoText">
+                  <view class="colBlack">视频类型：</view>
+                  <view class="colGray">{{item.type}}</view>
+                </view> -->
+                <view class="listInfoText">
+                  <view class="colBlack">视频介绍：</view>
+                  <view class="colGray">{{item.projectDescription}}</view>
+                </view>
+                <view class="listInfoText">
+                  <view class="colBlack">上传时间：</view>
+                  <view class="colGray">{{item.musicCopyrightExpireDate}}</view>
+                  <!-- <image class="eyes" src="{{eyes}}"></image>
+                  <view class="colGray">{{item.sentiment}}</view> -->
+                </view>
+              </view>
+            </view>
+          <!-- 　　　　<view style="{{item.txtStyle}}" class='item' data-index='{{index}}' bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchE">
+          　　　　  <view class='title'>{{item.title}}</view>
+                    <view>{{item.create_time}}</view>
+                  
+          　　</view> -->
+          <!-- </view> -->
+          
+          <!-- <view class="del" data-id="{{item.id}}" catchtap="delBtn" data-index="{{index}}">
+            <image class="delIcon" src="{{del}}"></image>
+          </view> -->
+        <!-- </view> -->
+      </scroll-view>
+    </view>
+  </view>
+
+  
+
+  <view class="uploadBtn" bindtap="goUvideo">
+    上传视频
+  </view>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</view>

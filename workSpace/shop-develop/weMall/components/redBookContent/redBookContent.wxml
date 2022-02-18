@@ -1,0 +1,69 @@
+<view class="content">
+  <view class="banner">
+    <block wx:if="{{detail.isImg}}">
+      <view class="nav ~flex-bet ">
+        <view class="nav-item {{index === 1? 'active' : ''}}" wx:for="{{4}}">lock 1</view>
+        <!--<view class="nav-item">lock 1</view>
+        <view class="nav-item">lock 2</view>
+        <view class="nav-item">lock 3</view>-->
+      </view>
+      <swiper class="swiper" indicator-dots="{{swiper.indicatorDots}}"
+              autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+        <block wx:for="{{swiper.list}}" wx:key="*this">
+          <swiper-item class="swiper-item">
+            <view class="img"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </block>
+    <block wx:else>
+      <!--     视频 -->
+      <view wx:if="{{matchJson.videoData && matchJson.videoData.rotationVideoList}}">
+        <block wx:for="{{matchJson.videoData.rotationVideoList}}" wx:key="videoUrl">
+          <view class="~flex-center">
+            <video src="{{item.videoUrl}}" style="width: {{item.width}}; height: {{item.height}}" autoplay="true" muted="true" show-mute-btn="true" controls="true" loop="true"></video>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+<!--  文案展示 -->
+  <view class="" wx:if="{{matchJson.copywritingListData}}">
+    <block wx:if="{{matchJson.copywritingListData.copywritingImgList && matchJson.copywritingListData.copywritingImgList.length}}">
+      <image src="{{item.imgUrl}}" mode="widthFix" wx:for="{{matchJson.copywritingListData.copywritingImgList}}" wx:key="index"></image>
+    </block>
+  </view>
+<!--  商品展示 -->
+  <view wx:if="{{showSame}}" class="goods-title ~flex-bet">
+    <text class="line"></text>
+    <text class="desc">立即GET同款</text>
+    <text class="line"></text>
+  </view>
+  <video-goods wx:if="{{matchJson.videoData.redbookGoosdVideoLists}}" goods="{{matchJson.videoData.redbookGoosdVideoLists}}" ></video-goods>
+  <!-- <goods-temp></goods-temp> -->
+  <!--<view class="goods">
+    <view class="goods-item ~flex-start">
+      <view class="goods-img">
+        <image src="https://cdn.bestseller.com.cn/assets/wechat/FOL/image/FOLDA00586910-1590668339397.jpg" mode="widthFix" />
+      </view>
+      <view class="goods-info">
+        <view class="goods-name">呢子大衣</view>
+        <view class="origin-price">吊牌价123</view>
+        <view class="pay-price">12</view>
+      </view>
+      <view class="btn-buy">立即购买</view>
+    </view>
+        <view class="goods-item ~flex-start">
+      <view class="goods-img">
+        <image src="https://cdn.bestseller.com.cn/assets/wechat/FOL/image/FOLDA00586910-1590668339397.jpg" mode="widthFix" />
+      </view>
+      <view class="goods-info">
+        <view class="goods-name">呢子大衣</view>
+        <view class="origin-price">吊牌价123</view>
+        <view class="pay-price">12</view>
+      </view>
+      <view class="btn-buy">立即购买</view>
+    </view>
+  </view>-->
+
+</view>

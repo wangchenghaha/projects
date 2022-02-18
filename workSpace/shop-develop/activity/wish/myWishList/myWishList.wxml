@@ -1,0 +1,91 @@
+<view class="container">
+    <image class="banner" src="{{bannerImg}}" mode="widthFix" />
+    <view class="showUserImg flex-center">
+        <view class="userImagebg flex-center">
+            <view class="dashLine flex-center">
+                <image class="userImage" src="{{userImg}}" mode="widthFix"/>
+            </view>
+        </view>
+    </view>
+   <view class="nickName flex-center">{{userName}}</view>
+
+    <view class="navi">
+        <block wx:for="{{navi}}" wx:key="navi">
+            <view class="naviTilte flex-center {{item.selected? 'sel': 'nor'}}" data-selected="{{item.selected}}" data-type="navi" bindtap="onClick">{{item.name}}</view>
+        </block>
+    </view>
+
+
+    <!-- 我喜欢的 -->
+    <view class="wishList" wx:if="{{isLike}}">
+        <block wx:if="{{goodsList.length}}">
+            <goods-list
+                showIcon="{{true}}"
+                showBtn="{{true}}"
+                goodsList="{{goodsList}}"
+                bindselectIndex="changeCheck"
+                bindemptyGoods="emptyGoods"
+            ></goods-list>
+          </block>
+          <block wx:else>
+            <view class="no-goods">
+              <image class="noImage" src="{{noGoodsImg}}" mode="widthFix"></image>
+            </view>
+          </block>
+    </view>
+
+    <!-- 我收到的 -->
+    <view class="receiveList" wx:else>
+          <block wx:if="{{recevieList.length}}">
+            <receive-list recevieList="{{recevieList}}"></receive-list>
+          </block>
+          <block wx:else>
+            <view class="no-goods">
+              <image class="noImage" src="{{noReceive}}" mode="widthFix"></image>
+            </view>
+          </block>
+    </view>
+
+    <view style="height: 320rpx;"></view>
+    <view class="wish-bottom" wx:if="{{isCreateWish}}">
+    <!-- <view class="wish-bottom" wx:if="{{isCreateWish}}"> -->
+        <view class="wish-notice flex-center" >
+            <view class="wish-title">心愿寄语</view>
+            <textarea class="inputContext" 
+            placeholder="悄悄告诉你，这是我七夕最想要的礼物"
+            bindblur="bindTextAreaBlur"
+            bindinput="inputMsg"
+            value="{{details}}"></textarea>
+        </view>
+        <text class="change" bindtap="changeMsg">换一换</text>
+        <view class="address flex-center" bindtap="selectAddress">
+            <view class="adIcons flex-start">
+                <image class="icon" src="../../../images/order_address_icon.png" mode="widthFix"/>
+            </view>
+            <view class="address-info">
+                <block wx:if="{{address.phone}}">
+                    <view class="user flex-start">
+                        <view class="flex-bold">{{address.userName}}</view>
+                        <view class="phone flex-bold">{{address.phone}}</view>
+                    </view>
+                    <view class="details">{{address.province}} {{address.city}} {{address.area}}{{address.detailAddress}}</view>
+                </block>
+                <block wx:else>
+                    <view class="noAddress">请选择地址</view>
+                </block>
+            </view>
+            <view class="mark">></view>
+        </view>
+        <view style="height: 30rpx;"></view>
+    </view>
+
+    <!-- 底部布局 -->
+    <view class="fixed-bottom" wx:if="{{isLike}}">
+        <block wx:for="{{fixedBottom}}" wx:key="bottom">
+          <view class="text-c fixed-item" style="background: {{item.bgColor}}; color: {{item.color}}" data-type="{{item.event}}" bindtap="onClick">
+            {{item.name}}
+          </view>
+        </block>
+    </view>
+
+</view>

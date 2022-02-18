@@ -1,0 +1,19 @@
+<view class="endtip-contaniner" wx:if="{{showModal}}">
+    <view class="endtip-wrap">
+        <image class="endtip-bg" src="../../img/endtip-bg.png" />
+        <view class="endtip-content">
+            <view class="endtip-box">
+                <view class="endtip-title">
+                    按住屏幕控制玛丽猫向前跳跃，按住屏幕时间越长，跳跃距离越远哦~
+                </view>
+                <view class="endtip-title">
+                    需要控制跳跃距离使玛丽猫跳跃正方体上，如掉落正方体则判定游戏失败，当一次性完成10次跳跃，则通关成功。
+                </view>
+                <!-- <view class="endtip-title">
+                    按住屏幕控制游戏界面中的玛丽猫向前跳跃，按住屏幕时间越长，跳跃距离越远哦。
+                </view> -->
+            </view>
+        </view>
+        <image catchtap="close" class="close-btn" src="../../img/close.png"  wx:if="{{type != 3}}"/>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+<view class='wrapper'>
+  <view class='header'>
+    <image class='images_header' src='{{banner}}'></image>
+    <image class='images_logo' src='../common/image/logo.png' style="width:347rpx;height:32rpx;display:block;margin-top:60rpx;margin-left:32rpx;"></image>
+    <!-- <view class="logo_text">
+      <view class="tit">JACKJONES</view>
+      <view class="tit">Customized</view>
+    </view> -->
+  </view>
+  <view class="content">
+      <view class="header">
+        <view class="logo">
+          <image class="image" src="../common/icon/false.png"></image>
+        </view>
+        <view class="title">预约失败</view>
+      </view>
+
+      <view class="tips">非常抱歉，您选择的时间预订失败，请返回重新预约其他时间！</view>
+
+      <view class="footer">
+        <view class="btnbox" hover-class="hoverclass">
+          <button class="btn" catchtap='submitForm'>重新预约</button>
+        </view>
+      </view>
+  </view>
+</view>

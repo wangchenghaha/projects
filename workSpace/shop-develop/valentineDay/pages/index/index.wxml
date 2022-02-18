@@ -1,0 +1,9 @@
+<view class="page">
+  <image class="" src="{{data.valentine.activity_loading_img}}" mode="aspectFit" lazy-load="false" binderror="" bindload="">
+  </image>
+  <view class="warp" wx:if="{{timeImg}}" hover-class="none" hover-stop-propagation="false">
+    <comp-image-pre src='{{timeImg}}'  class="main-img" mode="aspectFill" width="451" height="381">
+    </comp-image-pre>
+  </view>
+ 
+</view>

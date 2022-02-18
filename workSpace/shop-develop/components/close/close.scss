@@ -1,0 +1,18 @@
+.close{
+  position: relative;
+  icon{
+    display: block;
+  };
+  .line{
+    position: absolute;
+    left: 11.5px;
+    width: 2rpx;
+    height: 40rpx;
+    &.bottom{
+      top: 22px;
+    }
+    &.top{
+      bottom: 22px;
+    }
+  }
+}

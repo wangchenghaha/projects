@@ -1,0 +1,24 @@
+
+<video object-fit="cover" class="video" src="{{detailData.videoUrl}}" loop='true' autoplay="true" enable-play-gesture="true" vslide-gesture="true"  />
+<cover-view class="leftBtnView {{animationBol ? 'leftBtnView-show' : ''}}" bindtap="bouncesTap">
+    <cover-view class="buyCardView">
+        <cover-image src="../images/shortVideo_buyCard.png" class="buyCardImage" mode="widthFix" />
+    </cover-view>
+    <cover-view class="centerView">
+        <cover-view class="centerView-text">视频中同款商品</cover-view>
+    </cover-view>
+    <cover-image src="../images/shortVideo_yousanjiao.png" mode="widthFix" class="rightView" />
+</cover-view>
+
+<cover-view class="zanView" bindtap="zan">
+    <cover-image src="{{detailData.isPrise ? '../images/shortVideo_zan_70_t.png' : '../images/shortVideo_zan_70.png'}}" style="width:70rpx;" mode="widthFix" />
+    <cover-view class="zanView-num">{{detailData.priseCount}}</cover-view>
+</cover-view>
+<cover-view class="zanView" style="bottom:150rpx;" bindtap="shareTap">
+    <cover-image src="../images/shortVideo_share.png" style="width:70rpx;" mode="widthFix" />
+    <cover-view class="zanView-num">分享</cover-view>
+</cover-view>
+
+<!-- 弹框 -->
+<bouncesView goodsList="{{detailData.goodsList}}" bindonClick="onClick" wx:if="{{isBounces}}"></bouncesView>
+<shareView detailData="{{detailData}}" bindshareOnClick="shareOnClick" wx:if="{{share}}"></shareView>

@@ -1,0 +1,65 @@
+<view class="container">
+    <!-- 顶部banner -->
+    <!-- <image class="banner" src="{{banner}}"  mode="widthFix"/> -->
+    <!-- 导购信息 -->
+    <view class="guideInfo">
+        <image class="background" src="{{background}}" mode="widthFix"/>
+        <view class="layer"></view>
+        <view class="info">
+            <image class="pic" src="{{userPic}}" mode="widthFix"/>
+            <view class="data">
+                <view class="name">{{userName}}</view>
+                <view class="store">{{userStore}}  ({{userStoreCode}})</view>
+            </view>
+        </view>
+    </view>
+    <!-- 销售排行榜 -->
+    <view class="ranking">
+        <view class="area" >
+            <block wx:for="{{areaList}}" wx:key="area">
+                <view class="{{item.seleted ? 'sel':'nor'}}" data-type="area" data-index="{{index}}" bindtap="onClick">{{item.title}}</view>
+            </block>
+        </view>
+        <view class="period" >
+            <block wx:for="{{periodList}}" wx:key="period">
+                <view class="perCommon {{item.seleted ? 'sel':'nor'}}" data-type="period" data-datetype="{{item.type}}" data-index="{{index}}"  bindtap="onClick">{{item.title}}</view>
+            </block>
+           
+        </view>
+        
+        <block wx:for="{{rankList}}" wx:key="rank" wx:if="{{rankList[0].numbers}}">
+            <view class="rankInfo {{index % 2 === 0 ? 'backgroundColor': ''}}" >
+                <image class="icons" src="{{item.icons}}" mode="widthFix"/>
+                <view class="base">
+                    <view class="name">{{item.name}}</view>
+                    <view class="area" wx:if="{{item.area}}">{{item.area}}</view>
+                </view>
+                <view class="data">
+                    <view class="numbers">{{item.numbers}}</view>
+                    <view class="store" wx:if="{{item.store}}">{{item.store}}</view>
+                </view>
+                <view class="salePrice">￥{{item.salsePrice}}</view>
+            </view>
+        </block>
+        <view class="reLoadArea flex-center" wx:if="{{!rankList[0].numbers}}">
+            <text class="reLoad" bindtap="reload">重新加载</text>
+        </view>
+    </view>
+
+    <view class="bottomArea"></view>
+</view>
+
+ <!-- 导购个人数据 -->
+<view class="personaldata" wx:if="{{false}}">
+    <view class="data">
+        <view class="title">今日累计销售</view>
+        <view class="numerical">{{todayPrice}}</view>
+        <view class="compare">较昨日 <text style="color:#f2c898;margin-left: 6rpx;">{{comparePrice}}</text></view>
+    </view>
+    <view class="line"></view>
+    <view class="data">
+        <view class="title">今日销售排名</view>
+        <view class="numerical">第 {{ranks}} 名</view>
+        <view class="compare">较昨日 <text style="color:#f2c898ed;margin-left: 6rpx;">{{compareRank}}</text></view>
+    </view>
+</view>

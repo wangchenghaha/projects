@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "Banner" : "/advancesale/components/banner/banner",
+        "Vedio" : "/advancesale/components/vedio/vedio"
+    }
+}

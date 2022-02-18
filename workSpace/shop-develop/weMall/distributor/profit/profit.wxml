@@ -1,0 +1,41 @@
+<view class="content">
+  <view class="container">
+    <view class="banner flex-bet">
+      <view class="rule flex-start">
+        <text class="icon flex-center">?</text>
+        <text>规则说明</text>
+      </view>
+      <view class="info flex-bet">
+        <view class="avatar">
+          <image src="{{wxInfo.avatarUrl}}" mode="widthFix"></image>
+        </view>
+        <view class="step">
+          <view class="text flex-bet">
+            <text class="desc">成长值</text>
+            <text class="score">7020</text>
+          </view>
+          <view class="progress">
+            <text class="value"></text>
+          </view>
+          <view class="desc">还差200成长值升级到金牌推荐官</view>
+        </view>
+      </view>
+      <view class="employee">ID:{{guideInfo.employeeId}}</view>
+    </view>
+
+    <view class="level flex-center">
+      <slider class="slider" value="{{levelValue}}" disabled min="0" max="15000" block-size="12" backgroundColor="#BFBFBF" activeColor="#4EED4E"/>
+      <view class="level-wrap flex-bet">
+        <view class="flex-bet level-item" wx:for="{{level}}" wx:key="*this">
+          <text class="value">{{item.value}}</text>
+          <view class="icon">
+            <image src="{{item.imgUrl}}" mode="widthFix"></image>
+          </view>
+          <text class="text">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="title">会员权益</view>
+  </view>
+</view>

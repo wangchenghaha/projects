@@ -1,0 +1,17 @@
+<view class="wrapper {{isBigPhone ? 'big':''}}"  style="height: {{wh}}px;">
+    <!-- <navigateBar /> -->
+    <view class="header-tit"></view>
+    <view class="form">
+        <view class="form-item" wx:for="{{selectBar}}" wx:key="name" bindtap='selectThis' data-index='{{index}}'>
+            <view class="form-control {{item.select == true ? 'active': ''}}"></view>
+            <view class="is-check {{item.select == true?'zoomIn':'zoomOut'}}"></view>
+        </view>
+        <view class="form-btn">
+            <view class="btn clear" hover-class="active" bindtap='clearAll'></view>
+            <view class="btn next" hover-class="active" wx:if='{{userinfo.openId}}' bindtap='createPoster'></view>
+            <button class="btn next" hover-class="active" open-type="getUserInfo" wx:if='{{!userinfo.openId}}' bindgetuserinfo="getuserinfo"></button>
+        </view>
+    </view>
+    
+    <footerBar/>
+</view>

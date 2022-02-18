@@ -1,0 +1,30 @@
+.guide{
+  image{
+    display: block;
+    width: 100%;
+  }
+  .title{
+    padding: 20rpx;
+    font-size: 34rpx;
+    font-weight: bolder;
+  }
+  .video{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    &-item{
+      width: 49%;
+      flex: 0 1 49%;
+      padding-bottom: 20rpx;
+    }
+    &-title{
+      display: inline-block;
+      width: 100%;
+      font-size: 24rpx;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

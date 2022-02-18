@@ -1,0 +1,74 @@
+
+.guide-fixed{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+.guide-fixed .guide-content{
+  position: absolute;
+  left: 50%;
+  top: 300rpx;
+  margin-left: -45%;
+  width: 90%;
+  height: 450rpx;
+  background: #fff;
+}
+.guide-content .guide-title{
+  display: block;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 36rpx;
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+.guide-content .sub-title{
+  display: block;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  text-align: center;
+}
+.guide-content .guide-form{
+  margin: 10rpx auto;
+  width: 90%;
+}
+.guide-content .guide-text{
+  flex: 1;
+  margin-right: 20rpx;
+  padding-left: 10rpx;
+  height: 72rpx;
+  font-size: 30rpx;
+  border: 4rpx solid #bdc3c7;
+}
+.guide-content .guide-btn{
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 50rpx;
+  text-align: center;
+  background: #e24f01;
+  color: #fff;
+  border-radius: 50%;
+}
+.guide-content .btn-wrapper{
+  margin: 50rpx auto 20rpx;
+  width: 90%;
+}
+.guide-content .btn-wrapper .btn{
+  flex: 1;
+  font-size:30rpx;
+  line-height:80rpx;
+  width:284rpx;
+  height:80rpx;
+  text-align:center;
+  background:#000;
+  color:#fff;
+}
+.guide-content .btn-wrapper .confirm-btn{
+  margin-right: 20rpx;
+}

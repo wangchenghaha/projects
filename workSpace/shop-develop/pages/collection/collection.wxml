@@ -1,0 +1,142 @@
+<view class="wrap">
+    <view class="collectionHeader flex-bet">
+        <view class="collectionNums">共<text class="txt1">  {{collectionNums}}  </text>件商品</view>
+        <view class="collectionOption flex-bet">
+            <view class="seacher" bindtap="collectionSeacher">
+            <image class="icon1" src="../../images/collection_seacher.png" />
+                    搜索
+            </view>   
+            <view style="margin-left: 30rpx;" bindtap="collectionEdit">{{editText}}</view>
+        </view>
+    </view>
+    <view class="{{isIphoneX ? 'iPhoneXlist':'list'}}" wx:if="{{haveGoods}}">
+        <view class="collectionList">
+            <block wx:for="{{collectionList}}" wx:key="index">
+                <view class="collectionList-item" >
+                    <view class="btn_sel flex-center" wx:if="{{isEdit}}" data-index="{{index}}" bindtap="checked">
+                        <image src="{{item.isSelected?'../../images/collection_sel.png':'../../images/collection_nor.png'}}"/>
+                    </view>
+                    <view class="goods" style="width:{{isEdit? '80%':'90%'}}" data-index="{{index}}" bindtap="goDetail">
+                        <view class="imagePic">
+                            <image src="{{item.imagePic}}" mode="widthFix"/>
+                            <view wx:if="{{item.stock && Number(item.stock) < 1}}" class="noStock">库存不足</view>
+                        </view>
+                        <view class="goods-info">
+                            <view class="goodsTitle">{{item.goodsName}}</view>
+                            <view >￥{{item.discountPrice}}</view>
+                            <view class="originalPrice">
+                              <text wx:if="{{item.discountPrice != item.originalPrice}}">￥{{item.originalPrice}}</text>
+                            </view>
+                            <view style="margin-top:106rpx">共{{item.collectionCount?item.collectionCount : 0}}人收藏</view>
+                        </view>
+                    </view>
+                    <view class="option">
+                        <image src="../../images/collection_delete.png"  data-index="{{index}}"  bindtap="deleteThis"/>
+                        <image src="../../images/list_car_true.png" mode="widthFix" data-index="{{index}}" bindtap="addShopCart"/>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="bottomLine flex-center" wx:if="{{isBottom && isFol}}">
+        <view class="line"></view>
+        <view class="lineText"> 已经到底了 </view>
+        <view class="line"></view>
+    </view>
+
+    <!-- 热销推荐/猜你喜欢 -->
+    <!-- <dmpGoods projeckName="{{projeckName}}" wx:if="{{isBottom  && !isFol}}"></dmpGoods> -->
+    <!-- 20210816 9999 -->
+    <block wx:if="{{showDMP}}">
+      <dmpGoods sceneId="scy105" sceneType="2" itemId="{{dmpGoodsItemIds}}"  wx:if="{{isBottom  && !isFol}}"></dmpGoods>
+    </block>
+    <view class="seacherFrame" wx:if="{{isSeacher}}">
+          <view class="inputArea">
+            <input class="seacherEdit" type="text" value="{{searchValue}}" bindinput="searchInput" placeholder="搜索商品名"/>
+            <view class="seacher-icon flex-center" bindtap="seacherGoods">
+                <image src="../../images/collection_seacher.png" mode="widthFix" bindtap="seacherGoods"></image>
+            </view>
+          </view> 
+          <view class="canncelSeacher" bindtap="canncelSeacher">取消</view>
+    </view>
+
+    <view class="noGoods" wx:if="{{noGoods}}">
+          <image style="width: 200rpx; height: 200rpx;" src="../../images/bag.png" mode="aspectFit"/>
+          <text style="font-size: 32rpx; color: black;">亲,您还没有收藏任何商品哦~</text>
+          <view class="list_null_btn" bindtap="toIndex">去逛逛</view> 
+    </view>
+
+     <view class="footer" wx:if="{{isEdit}}">
+        <view class="settlementContent">
+            <view class="left">
+                <image class="checkIamge" src="{{isAllSelected?'../../images/collection_sel.png':'../../images/collection_nor.png'}}" mode='widthFix' bindtap="allCheckGood"/>
+                <text style="margin-left: 10rpx;">全选</text>
+            </view>
+            <view class="btn" bindtap="deleteSel">删除</view>
+        </view>
+        <view class="bottomCom {{isIphoneX ?'bottomHeight':''}}">
+        </view>
+    </view>
+
+    <!-- 删除商品 - 弹出框 -->
+    <view class="tishi" style="display:{{remove_display}}">
+      <view class="opacity"></view>
+        <view class="tanchu">
+          <view class="h2">提示</view>
+          <view class="title">
+              确认取消收藏该商品吗？
+          </view>
+          <view class="bott">
+            <view class="bot">
+              <view class="true" bindtap="remove_true">确定</view>
+            </view>
+            <view class="bot">
+              <view class="false" bindtap="remove_false">取消</view>
+            </view>
+          </view>
+      </view>
+    </view>
+
+  <!-- 选择尺码 - 弹出框 -->
+  <view class="details_size" style="display:{{details_display}}">
+    <view class="details_opacity" bindtap="chicunHide" animation="{{animationOpacity}}"></view>
+    <view class="details_con {{isIphoneX ?'fix-iphonex-button':''}}" animation="{{animationBottom}}">
+      <view class="dd_con ">
+        <view class="goods-img" wx:if="{{goodsImg}}">
+          <image src="{{goodsImg}}" mode="widthFix"></image>
+        </view>
+        <view class="priceArea">
+          <view class="curPrice">￥{{currentPrice}}</view>
+          <view class="orgPrice" wx:if="{{currentPrice != originalPrice}}">￥{{originalPrice}}</view>
+        </view>
+        <view class="goods-sku">{{goodsSku}}</view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">颜色分类</view>
+          <view class="b_ul">
+            <view data-index="{{index}}" class="b_li {{index==color_list_num?'b_list':''}} {{yanseList[index]?'chima_list':''}}" wx:for="{{colors}}" wx:key="color" bindtap="colorChange">{{item.colorAlias}}</view>
+          </view>
+          <view class="a_list a_right" bindtap="chicunHide">
+            <icon type="cancel" size="50rpx" color="#000" />
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">尺码</view>
+          <view class="b_ul">
+            <view data-index="{{index}}" class="b_li {{index==0 && c_li.length<2?'b_list':''}} {{index==size_list_num?'b_list':''}} {{chimaList[index]?'chima_list':''}}" wx:for="{{sizes}}" wx:key="size" bindtap="sizeChange">{{item.sizeAlias}}</view>
+          </view>
+        </view>
+        <view class="details_sizeOne_D">
+          <view class="c_number">
+            <view class="c_add" catchtap="add_number">+</view>
+            <input class="c_num" type="number" value="{{nums}}" disabled="true"/>
+            <view class="c_jian" catchtap="jian_number">-</view>
+          </view>
+          <text>库存：{{stock_nums}}</text>
+        </view>
+        <view class="buy_true" bindtap="submitChange">确定加入购物车并删除收藏</view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,14 @@
+<view class="guide-fixed" wx:if="{{show}}"  catchtouchmove="cancelBindGuide">
+  <view class="guide-content">
+    <text class="guide-title">绑定导购</text>
+    <text class="sub-title">线下导购信息登录</text>
+    <view class="guide-form ~flex-bet">
+      <input type="text" class="guide-text" placeholder="请输入员工号后6位" maxlength="10" value="{{guideText}}" bindinput="guideValue"/>
+<!--      <text class="guide-btn"  bindtap="toGuide">导</text>-->
+    </view>
+    <view class="btn-wrapper ~flex-bet">
+      <button class="btn confirm-btn" bindtap="bindGuide">确定</button>
+      <button class="btn cancel-btn" bindtap="cancelBindGuide">取消</button>
+    </view>
+  </view>
+</view>

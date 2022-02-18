@@ -1,0 +1,76 @@
+<view class="send">
+  <view class="banner">
+    <image src="{{banner}}" mode="widthFix"></image>
+  </view>
+  <view class="container">
+    <view class="coupon flex-center">
+      <block wx:for="{{couponList}}" wx:key="couponList">
+        <view class="coupon-item" data-type="couponItem" data-index="{{index}}" bindtap="onClick">
+          <view class="price font-bold text-c">￥<text>{{item.orderPrice}}</text></view>
+          <view class="channel text-c">{{item.pageTilte}}券</view>
+          <view class="threshold text-c">满{{item.promotionId}}使用</view>
+          <view class="time text-c">{{item.startTime}}至{{item.endTime}}</view>
+          <view class="btn text-c font-bold" data-type="qrCode" bindtap="onClick">
+            <view class="text text-c">点击生成二维码</view>
+            <view class="qr-icon flex-center">
+              <image src="{{qrCodeIcon}}" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="desc">
+      <text>{{couponRule}}</text>
+    </view>
+  </view>
+
+  <!-- 弹窗 -->
+  <view class="popup flex-center {{showCard ? 'show' : ''}}">
+    <view class="popup-wrapper">
+      <view class="bg">
+        <image src="{{sendCouponImg}}" mode="widthFix"></image>
+      </view>
+      <view class="close" data-type="close" bindtap="onClick">
+        <text></text>
+        <text></text>
+      </view>
+      <view class="content">
+        <view class="logo">
+          <image src="{{logoImg}}" mode="widthFix"></image>
+        </view>
+        <text class="title text-c">送您一张优惠券</text>
+        <view class="dot"></view>
+        <view class="channel text-c">——仅限{{couponInfo.pageTilte}}使用——</view>
+        <view class="card" style="background: url({{cardBg}})">
+          <view class="card-info flex-center color-fff">
+            <text>￥</text>
+            <view class="value">{{couponInfo.orderPrice}}</view>
+            <text>券</text>
+          </view>
+          <view class="card-threshold color-fff text-c">满{{couponInfo.promotionId}}可用</view>
+        </view>
+        <view class="card-date text-c">有效期: {{couponInfo.startTime}}至{{couponInfo.endTime}}</view>
+        <view class="qr-code">
+          <image src="{{couponInfo.codeImg}}" mode="widthFix"></image>
+          <canvas canvas-id="qrcode"></canvas>
+        </view>
+      </view>
+      <view class="share flex-bet">
+        <block wx:for="{{shareMethod}}" wx:key="shareMethod">
+          <button class="share-item flex-center" open-type="{{index === 0 ? 'share' : writePhotosAlbum}}" style="background: {{item.bgColor}}" data-type="{{item.type}}" bindtap="onClick"  >
+            <text class="color-fff">{{item.text}}</text>
+            <view class="icon">
+              <image src="{{item.icon}}" mode="widthFix"></image>
+            </view>
+          </button>
+          <!--<view class="share-item flex-center" wx:else style="background: {{item.bgColor}}" data-type="{{item.type}}" bindtap="onClick">
+            <text class="color-fff">{{item.text}}</text>
+            <view class="icon">
+              <image src="{{item.icon}}" mode="widthFix"></image>
+            </view>
+          </view>-->
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

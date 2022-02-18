@@ -1,0 +1,26 @@
+<view class="all">
+  <view class="search ~flex-start">
+    <icon type="search" color="#ccc" size="30rpx"></icon>
+    <input type="text" class="search-input" placeholder="输入会员姓名/手机号" />
+  </view>
+  <view class="screen ~flex-bet">
+    <view class="select">活跃时间最近</view>
+    <view class="screen-btn ~text-c" bindtap="screen">筛选</view>
+  </view>
+  <view class="member">
+    <view class="~flex-bet member-item">
+      <view class="~flex-start info">
+        <image src="" mode="widthFix" class="avatar"></image>
+        <text class="name">李焕英</text>
+        <gender-icon type="0"/>
+      </view>
+    </view>
+    <view class="~flex-start member-item">
+      <image src="" mode="widthFix" class="avatar"></image>
+      <text class="name">李焕英</text>
+      <gender-icon type="1"/>
+    </view>
+    <view class="~text-c total">总共2位用户</view>
+  </view>
+</view>
+<guide-screen wx:if="{{showScreen}}" bindhideScreen="hideScreen" />

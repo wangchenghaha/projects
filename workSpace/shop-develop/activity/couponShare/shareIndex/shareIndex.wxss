@@ -1,0 +1,239 @@
+.contrainer {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.contrainer .couponArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 94%;
+  border-radius: 10rpx;
+}
+.contrainer .couponArea .title {
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  font-weight: 550;
+}
+.contrainer .couponArea .time {
+  font-size: 26rpx;
+  margin-top: 5rpx;
+}
+.contrainer .couponArea .notice {
+  font-size: 24rpx;
+  margin-top: 5rpx;
+  color: #999;
+}
+.contrainer .couponArea .flow {
+  display: flex;
+  width: 98%;
+  margin-top: 30rpx;
+}
+.contrainer .couponArea .flow .flow-item {
+  width: 32%;
+  background: #fff;
+  border-radius: 20rpx;
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.contrainer .couponArea .flow .flow-item .imgBg {
+  width: 100%;
+  height: 260rpx;
+  margin-top: 50rpx;
+}
+.contrainer .couponArea .flow .flow-item .coupon_price {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  color: #0853ed;
+  top: 80rpx;
+}
+.contrainer .couponArea .flow .flow-item .coupon_price .tag {
+  font-size: 24rpx;
+}
+.contrainer .couponArea .flow .flow-item .coupon_price .price {
+  font-size: 36rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-weight: 600;
+}
+.contrainer .couponArea .flow .flow-item .limit {
+  position: absolute;
+  font-size: 24rpx;
+  color: black;
+  top: 130rpx;
+}
+.contrainer .couponArea .flow .flow-item .friends {
+  width: 200rpx;
+  line-height: 30rpx;
+  position: absolute;
+  font-size: 22rpx;
+  top: 190rpx;
+  background: #d1dfff;
+  color: #0853ed;
+  border-radius: 30rpx;
+  text-align: center;
+}
+.contrainer .couponArea .couponInfo {
+  width: 100%;
+  position: relative;
+}
+.contrainer .couponArea .couponInfo .bgImage {
+  width: 98%;
+  height: 274rpx;
+  margin-left: 1%;
+  margin-top: 10rpx;
+}
+.contrainer .couponArea .couponInfo .coupons {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.contrainer .couponArea .couponInfo .coupons .couponLeft {
+  width: 50%;
+}
+.contrainer .couponArea .couponInfo .coupons .couponLeft .coupon_price {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  color: #0853ed;
+  top: 90rpx;
+}
+.contrainer .couponArea .couponInfo .coupons .couponLeft .coupon_price .tag {
+  font-size: 24rpx;
+}
+.contrainer .couponArea .couponInfo .coupons .couponLeft .coupon_price .price {
+  font-size: 42rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-weight: 600;
+}
+.contrainer .couponArea .couponInfo .coupons .couponLeft .limit {
+  position: absolute;
+  font-size: 24rpx;
+  color: black;
+  top: 150rpx;
+}
+.contrainer .couponArea .couponInfo .coupons .couponRight {
+  width: 50%;
+}
+.contrainer .couponArea .couponInfo .coupons .couponRight .coupon_price {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  color: #cafe3a;
+  top: 90rpx;
+}
+.contrainer .couponArea .couponInfo .coupons .couponRight .coupon_price .tag {
+  font-size: 24rpx;
+}
+.contrainer .couponArea .couponInfo .coupons .couponRight .coupon_price .price {
+  font-size: 42rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-weight: 600;
+}
+.contrainer .couponArea .couponInfo .coupons .couponRight .limit {
+  position: absolute;
+  font-size: 24rpx;
+  color: white;
+  top: 150rpx;
+}
+.contrainer .couponArea .bottomArea {
+  width: 100%;
+  height: 30rpx;
+  text-align: center;
+}
+.contrainer .couponArea .bottomArea .txt {
+  width: 100rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #0853ed;
+  border-bottom: #0853ed 2rpx solid;
+}
+.contrainer .couponShow {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+.contrainer .bottomText {
+  width: 94%;
+  margin-left: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+.contrainer .bottomText .text1 {
+  font-size: 30rpx;
+}
+.contrainer .bottomText .text2 {
+  font-size: 30rpx;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.bouncedBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bouncedImgView {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 75%;
+  height: auto;
+  border-radius: 8rpx;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bouncedImgView .imgView {
+  width: 80%;
+  margin-top: 100rpx;
+  position: relative;
+}
+.bouncedImgView .close {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 150rpx;
+  right: 10rpx;
+}
+.bouncedImgView .couponFirst {
+  position: absolute;
+  top: 300rpx;
+  font-size: 42rpx;
+  font-weight: 600;
+  color: black;
+}
+.bouncedImgView .couponSecond {
+  position: absolute;
+  font-size: 30rpx;
+  color: black;
+}
+.bouncedImgView .share {
+  width: 300rpx;
+  line-height: 80rpx;
+  position: absolute;
+  bottom: 90rpx;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 80rpx;
+}
+
+/*# sourceMappingURL=shareIndex.wxss.map */

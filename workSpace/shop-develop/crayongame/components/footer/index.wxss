@@ -1,0 +1,43 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.footer.needAnimate {
+  transform: translate3d(0, 3000px, 0);
+  overflow: hidden;
+}
+
+.footer.needAnimate.animate {
+  animation: bounceInUp 0.4s forwards;
+}
+
+.footer .desc {
+  width: 750rpx;
+  height: 467rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/mini-figure.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.footer .desc.big {
+  height: 612rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/figure.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.footer .crimp {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 242rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/crimp.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

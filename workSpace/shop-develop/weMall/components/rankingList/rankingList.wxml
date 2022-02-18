@@ -1,0 +1,69 @@
+<view class="ranking">
+  <view class="title font-bold">全国微商城销售Top10</view>
+  <view class="sub-title">— {{rankingTitle}} —</view>
+  <view class="tab" wx:if="{{rankingList.length}}">
+    <block wx:for="{{rankingList}}" wx:key="ranking">
+      <view class="tab-item {{item.active ? 'active' : ''}} {{tabItem4 ? 'item4': ''}}"  data-index="{{index}}" data-type="job" bindtap="onClick">{{item.name}}</view>
+    </block>
+  </view>
+  <view class="ranking-content">
+    <block wx:for="{{curRanking}}" wx:key="curRanking">
+      <view class="ranking-item">
+        <view class="num">
+          <view>{{item.rn}}</view>
+          <view class="new">
+            <view class="icon">
+              <image src="{{item.rankingIcon}}" mode="widthFix"></image>
+            </view>
+            {{item.rankingText}}
+          </view>
+        </view>
+        <view class="avatar {{index >= 3 ? 'little-avatar little-avatar'+ index%2 : ''}}">
+          <image mode="widthFix" src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="user">
+          <view class="username user-item">姓名: {{item.name}}</view>
+          <view class="employee user-item">DA号: {{item.employeeId}}</view>
+        </view>
+        <view class="money">
+          <view class="money-name">
+            <view class="money-icon">
+              <image mode="widthFix" src="{{moneyIcon}}"></image>
+            </view>
+            销售金额
+          </view>
+          <view class="money-total">{{item.money}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="footer">
+    <view class="footer-title">————奖励评选规则————</view>
+    <view class="footer-sub-title">以上排名仅按月至今微商城销售额展示，</view>
+    <view class="footer-sub-title">参与评选者需同时满足以下条件</view>
+    <view class="rule">
+      <block wx:for="{{rankingList}}" wx:key="rule">
+        <view class="rule-item" wx:if="{{item.rule.length}}">
+          <view class="rule-left">
+            <view class="top">
+              <text class="arrow arrow-left"></text>
+              <view class="avatar">
+                <image mode="widthFix" src="{{item.avatarDefaultUrl}}"></image>
+              </view>
+              <text class="arrow arrow-right"></text>
+            </view>
+            <view class="rule-name">{{item.name}}</view>
+          </view>
+          <view class="rule-text">
+            <block wx:for="{{item.rule}}" wx:for-item="ruleText" wx:key="ruleText">
+              <view class="text">{{ruleText}}</view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="desc">
+    <text>*</text>注：以PowerBI数据为准
+    </view>
+  </view>
+</view>

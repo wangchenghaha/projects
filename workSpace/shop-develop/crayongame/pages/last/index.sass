@@ -1,0 +1,42 @@
+@import '../../common/sass/index.sass'
+page
+    height: 100%
+.wrapper
+    position: relative
+    height: 100%
+    background-color: $main
+    +bg('mini-last')
+    padding-top: 106rpx
+    &.big
+        padding-top: 179rpx
+        +bg('last')
+    +b()
+    .btnbox
+        position: absolute
+        left: 0
+        top: 960rpx
+        width: 100%
+        display: flex
+        align-items: center
+        &.big
+            top: 1105rpx
+
+        .item
+            flex: 1
+            .btn
+                width: 320rpx
+                height: 63rpx
+                margin: 0 auto
+                &.get
+                    +bg('select')
+                    &.active
+                        +bg('select-a')
+                &.check
+                    +bg('checkc')
+                    &.active
+                        +bg('checkc-a')
+                &.checkpost
+                    +bg('checkpost')
+                    &.active
+                        +bg('checkpost-a')
+

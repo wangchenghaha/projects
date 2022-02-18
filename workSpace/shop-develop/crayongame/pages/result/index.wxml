@@ -1,0 +1,27 @@
+<view class="wrapper {{isBigPhone?'big':''}}">
+    <view class="preview" style="background-image: url('{{preview}}')" bindtap='showModal' bindlongtap='getSettings'>
+        <view class="tit">
+            <open-data class="name" type="userNickName"></open-data>
+            的烦恼
+        </view>
+
+        <view class="zhang {{showBeat?'animate':''}}"></view>
+    </view>
+
+    <view class="btnbox">
+        <!-- <view class="btn check" hover-class="active" wx:if="{{info.is_get_coupon}}" bindtap='goToLast'></view> -->
+        <view class="btn normal" hover-class="active" bindtap='goToLast'></view>
+    </view>
+    <footerBar/>
+    <poster id="poster" hide-loading="{{false}}" preload="{{true}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"></poster>
+
+    <showQr showImage='{{showImage}}' posterCatch='{{posterCatch}}' bindhandleHide='hideModal' wx:if='{{showImage}}' />
+    <!-- <view class="qrcodebox {{showImage?'fadeIn': 'fadeOut'}} {{isBigPhone?'big':''}}" catchtouchmove='stop' catchtap='hideModal'>
+        <navigateBar wx:if='{{options.isreset}}' style="z-index: 119" />
+        <view class="content" catchtap='hideModal'>
+            <image src='{{posterCatch}}' class="image {{modalActive?'bounceIn': 'bounceOut'}}"  catchtap='stop' />
+            
+            <view class="btn" catchtap='getSettings'></view>
+        </view>
+    </view> -->
+</view>

@@ -1,0 +1,44 @@
+<view class="bg">
+    <view class="topView">
+        <view class="colorView">购买了  颜色分类：{{detailDatas.color}} 尺码：{{detailDatas.chima}}</view>
+    </view>
+
+    <view class="bottomView">
+        <view class="bottomView-topView">
+            <view class="imgView" bindtap="goDetail">
+                <image src="{{detailDatas.shopImg}}" style="width:100%;height:100%;" mode="aspectFill" />
+            </view>
+
+            <view class="cloView">
+                <scroll-view class="commentView" scroll-y="{{true}}">
+                    <view class="text">{{detailDatas.shopName}}</view>
+                </scroll-view>
+                <view class="oriPrice">吊牌价：{{detailDatas.price}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="pinglunView">
+
+        <view class="topView">
+            
+            <view class="icon">
+                <image src="{{detailDatas.detail.icon}}" style="width:100%;height:100%;" />
+            </view>
+            <view class="nickName">{{detailDatas.detail.nickName}}</view>
+
+        </view>
+        <view class="xingView">
+            <view class="left">
+                <block wx:for="{{detailDatas.detail.xings}}" wx:key="xingxing">
+                    <image src="{{item}}" class="xing" />
+                </block>
+            </view>
+            <view class="right">{{detailDatas.detail.createTime}}</view>
+        </view>
+        <view class="comment">{{detailDatas.detail.comment}}</view>
+        <view class="imgs" wx:for="{{detailDatas.detail.imgs}}" wx:key="imgs">
+            <image src="{{item}}" style="width:100%;margin-top: {{index == 0 ? 20 : 0}}rpx;" mode="widthFix" />
+        </view>
+
+    </view>
+</view>

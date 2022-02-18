@@ -1,0 +1,56 @@
+<view class="wrapper {{isBigPhone ? 'big' : ''}}">
+    <view class="poster poster-{{qsIndex}} {{isBigPhone ? 'big' : ''}}">
+        <image src='{{qrcodex}}' class="qrcode {{isBigPhone ? 'big' : ''}}"></image>
+        <block wx:if='{{!info.is_get_coupon}}'>
+            <view class="btns {{isBigPhone ? 'big' : ''}}" wx:if='{{authorize}}' hover-class="active" bindtap='getSettings'>保存至相册</view>
+            <button class="btns {{isBigPhone ? 'big': ''}}" wx:else open-type="openSetting" hover-class="active" bindopensetting='handleSetting'>保存至相册</button>
+        </block>
+        
+        <view class="btns {{isBigPhone ? 'big' : ''}}" wx:else hover-class="active" bindtap='showOther'>邀请好友</view>
+          
+    </view>
+
+    <view class="award award-{{qsIndex}} {{isBigPhone ? 'big' : ''}}" hover-class="hover"></view>
+
+    <view class="footer {{isBigPhone ? 'big' : ''}}">
+        <view class="item item1">
+            <view class="btn clear" hover-class="hove" bindtap='playAgain'>再玩一次</view>
+        </view>
+        <view class="item item2">     
+            <block wx:if="{{unionid}}">
+                <view class="btn next" wx:if='{{info.is_get_coupon}}' bindtap='openCard'  hover-class="hove">
+                    我的公主福利
+                </view>
+                <button class="btn next" wx:else data-type='click' open-type="share" hover-class="active">
+                    <view class="tit">邀请好友</view>
+                    <view class="tit">领取公主福利</view>
+                </button>
+            </block>
+                 
+            <button class="btn next" wx:else hover-class="active" open-type="getUserInfo" bindgetuserinfo="getuserinfo">
+                <view class="tit">邀请好友</view>
+                <view class="tit">领取公主福利</view>
+            </button>
+            
+        </view>
+    </view>
+
+    <view class="shareMore" wx:if='{{showModal}}' catchtouchmove='stopmove' catchtap='closeModal'>
+        <view class="middle  {{isBigPhone ? 'big' : ''}} {{animate ? 'active':''}}">
+            <view class="item">
+                <button class="btns" open-type="share" data-type='custom' plain>
+                    <view class="tits">分享好友</view>
+                </button>
+            </view>
+            <view class="item">
+                <view class="btns" wx:if='{{authorize}}' plain bindtap='getSettings'>
+                    <view class="tits">生成分享海报</view>
+                </view>
+                <button class="btns" wx:else open-type="openSetting" plain bindopensetting='handleSetting'>
+                    <view class="tits">生成分享海报</view>
+                </button>
+            </view>
+        </view>
+    </view>
+    <poster id="poster" hide-loading="{{false}}" preload="{{true}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"></poster>
+</view>

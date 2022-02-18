@@ -1,0 +1,232 @@
+.wrap{
+  padding-bottom: 240rpx;
+  min-height: 100%;
+  box-sizing: border-box;
+  background: #E4E4E4;
+  overflow: hidden;
+  image{
+    display: block;
+    width: 100%;
+  }
+  .container{
+    margin: 20rpx auto;
+    width: 720rpx;
+    .banner{
+      position: relative;
+      height: 490rpx;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      .title{
+        color: #BBA876;
+        font-size: 34rpx;
+        font-weight: 400;
+      }
+      .desc{
+        position: relative;
+        padding: 10rpx;
+        margin: 20rpx auto 0;
+        width: 495rpx;
+        height: 163rpx;
+        border: dashed 1rpx #BBA876;
+        box-sizing: border-box;
+        overflow: hidden;
+        textarea{
+          width: 100%;
+          height: 180rpx;
+          font-size: 34rpx;
+          color: #727272;
+        }
+      }
+      .change{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 110rpx;
+        text-align: right;
+        font-size: 18rpx;
+        color: #727272;
+      }
+      .bottom{
+        position: absolute;
+        left: 0;
+        bottom:0;
+        width: 100%;
+        color: #fff;
+        border-bottom: solid 10rpx #C08EA9;
+        &::after{
+          content: '心愿清单';
+          position: absolute;
+          left: 50%;
+          top: -40rpx;
+          margin-left: -119rpx;
+          width: 238rpx;
+          height: 40rpx;
+          background: #C08EA9;
+          border-radius: 40rpx 40rpx 0 0;
+        }
+      }
+    }
+    .goods{
+      //padding: 30rpx 20rpx;
+      background: #fff;
+      box-sizing: border-box;
+      &-item{
+        padding: 30rpx 20rpx;
+        position: relative;
+        border-bottom: dashed 1rpx #626262;
+        &:last-child{
+          border: none;
+          &:after, &:before{
+            border: none;
+          }
+        }
+        &:before{
+          content: '';
+          position: absolute;
+          bottom: -20rpx;
+          left: 0;
+          border-style: solid;
+          border-width: 20rpx 0 20rpx 30rpx;
+          border-color: transparent transparent transparent #E4E4E4;
+        }
+        &::after{
+          content: '';
+          position: absolute;
+          bottom: -20rpx;
+          right: 0;
+          border-style: solid;
+          border-width: 20rpx 30rpx 20rpx 0;
+          border-color: transparent #E4E4E4 transparent transparent;
+        }
+        .icon{
+          margin-right: 20rpx;
+          width: 40rpx;
+          height: 40rpx;
+          border: solid 2rpx #ccc;
+        }
+        .goods-img{
+          margin: 0 10rpx;
+          width: 200rpx;
+        }
+        .goods-desc{
+          font-size: 24rpx;
+          .goods-name{
+            padding-bottom: 20rpx;
+            text{
+              padding-right: 20rpx;
+            }
+          }
+        }
+        .operation{
+          .btn{
+            margin: 20rpx;
+            width: 40rpx;
+          }
+        }
+      }
+      .no-goods{
+        padding: 80rpx 0;
+        margin: 0 auto;
+        width: 450rpx;
+      }
+    }
+  }
+  .fixed-bottom{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #F4F4F4;
+    z-index: 9;
+    .address{
+      position: relative;
+      margin: 0 auto;
+      padding: 20rpx 0;
+      width: 95%;
+      &-icon{
+        margin-right: 20rpx;
+        width: 50rpx;
+        filter:invert(8%);
+      }
+      &-name{
+        color: #000;
+        text{
+          padding-right: 20rpx;
+        }
+      }
+      &-detail{
+        font-size: 26rpx;
+        color: #909090;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 30rpx;
+        height: 30rpx;
+        border-top: solid 2rpx #626262;
+        border-right: solid 2rpx #626262;
+        transform-origin: center;
+        transform: rotate(45deg);
+      }
+    }
+    .btn-wrap{
+      border-top: solid 1rpx #000;
+      box-sizing: border-box;
+      background: #fff;
+      .btn-item{
+        flex: 1;
+        height: 100rpx;
+        line-height: 100rpx;
+        border-right: solid 1rpx #000;
+        box-sizing: border-box;
+        &:last-child{
+          border: none;
+          background: #000;
+          color: #fff;
+        }
+        &.my-wish{
+          flex-direction: column;
+          .icon{
+            width: 35rpx;
+          }
+          text{
+            font-size: 20rpx;
+            line-height: 25rpx;
+            color:#909090
+          }
+        }
+      }
+    }
+    .msg{
+      position: relative;
+      margin: 10rpx auto;
+      width: 90%;
+      .tip{
+        position: absolute;
+        right: 5rpx;
+        bottom: 5rpx;
+        font-size: 24rpx;
+        color: #000;
+      }
+      .desc{
+        display: inline-block;
+        width: 70rpx;
+        font-size: 28rpx;
+      }
+      .textarea{
+        padding: 10rpx;
+        width: 600rpx;
+        height: 150rpx;
+        font-size: 26rpx;
+        border: solid 1rpx #ccc;
+        box-sizing: border-box;
+        textarea{
+          width: 100%;
+          height: 90rpx;
+        }
+      }
+    }
+  }
+
+}

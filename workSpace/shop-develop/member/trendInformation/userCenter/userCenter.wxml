@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="userInfo flex-start">
+        <image class="avatarImg" src="{{avatarImg}}" mode="widthFix"></image>
+        <view class="info">
+            <view class="nickName">{{nickName}}</view>
+            <view class="detail">简单是终极的复杂</view>
+        </view>
+    </view>
+    <view class="selectTab flex-center">
+        <block wx:for="{{tabs}}" wx:key="tabs">
+            <view class="tab flex-center">
+                <view class="tab-item {{item.selected? 'selected':''}}" data-type="tab" data-item="{{item}}" bindtap="onClick">{{item.name}}   {{item.nums}}</view>
+            </view>
+        </block>
+    </view>
+    <trendList class="trend" listData="{{listData}}" wx:if="{{listData.length > 0}}"></trendList>
+    <view class="noContent flex-center" wx:if="{{!listData || listData.length === 0}}">暂无内容</view>
+</view>
+  

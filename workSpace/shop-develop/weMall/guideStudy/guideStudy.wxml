@@ -1,0 +1,3 @@
+<view>
+  <my-study video="{{guideStudy}}"></my-study>
+</view>

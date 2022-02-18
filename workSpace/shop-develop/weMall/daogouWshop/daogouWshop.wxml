@@ -1,0 +1,37 @@
+<view class="wrap">
+  <view class="li  {{isIphoneX ?'iphoneXMarginBottom':''}}" wx:for="{{List}}" wx:key="List">
+    <image src="{{item.picUrl}}" mode="widthFix"></image>
+    <view class="text-wrapper">
+      <view class="title">{{item.title}}
+        <view class="sub-title" wx:if="{{item.marketingWords}}">{{item.marketingWords}}</view>
+      </view>
+
+      <view class="showMessage">
+        <view class="tag_bg">
+          <view class="text_show bg_gray">{{item.tags}}</view>
+        </view>
+        <view class="text_show bg_red" bindtap="clickList" id="{{index}}">一键领取</view>
+        <view class="source">来源：
+          <text>{{item.source || 'DB'}}</text>
+          <view class="createTime">{{item.createTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+</view>
+
+<view class="article-tip" wx:if="{{showGif}}">
+  <view class="tip-img">
+    <image src="{{articleTipGif}}" mode="widthFix"></image>
+  </view>
+  <text class="close" bindtap="closeNotice"></text>
+</view>
+<view class="account" wx:if="{{accountShow}}">
+  <view class="account-wrapper">
+    <text class="account-tip">{{accountTip}}</text>
+    <official-account></official-account>
+  </view>
+  <text class="close" data-type="close" bindtap="onClick"></text>
+</view>

@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 20rpx;
+  height: 45px;
+}
+
+.header .back {
+  position: relative;
+  height: 45px;
+  width: 80rpx;
+}
+
+.header .back .ico {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 42rpx;
+  height: 42rpx;
+}

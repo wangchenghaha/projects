@@ -1,0 +1,19 @@
+<view class="wrapper {{isBigPhone ? 'big':''}}" style="padding-top: {{statusHeight}}px">
+  <view class="logo"></view>
+  <view class="content {{isBigPhone ? 'big':''}}">
+    <view bindtap='clickShow' style="opacity: {{showModal ? 0 : 1}}">
+      <view class="view tit-1"></view>
+      <view class="view title"></view>
+      <view class="view tit-2"></view>
+      <view class="view shake-icon {{animateStart?'animate':''}}"></view>
+      <view class="view descript"></view>  
+    </view>
+    
+    <view class="footer" style="opacity: {{showModal ? 0 : 1}}">
+      <text class="rule" catchtap='checkRule'>活动规则</text>
+    </view>
+  </view>
+  <preload bindimageAllLoad='imageAllLoad' wx:if='{{preload}}' />
+  <!-- 弹窗 -->
+  <confirmBox modalConfig='{{modalConfig}}' needType='{{needType}}' result='{{result}}' wx:if='{{showModal}}' id='modal' />
+</view>

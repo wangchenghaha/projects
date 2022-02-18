@@ -1,0 +1,172 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: #F5f5f5;
+  margin-bottom: 200rpx;
+}
+
+.container .statusInfo {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  background: linear-gradient(to right, #FF9348, #F03D53);
+}
+
+.container .statusInfo-status {
+  width: 30%;
+  line-height: 160rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+.container .statusInfo-price {
+  width: 70%;
+  line-height: 160rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.container .addressInfo {
+  width: 94%;
+  height: 200rpx;
+  margin-left: 3%;
+  background: #fff;
+  position: absolute;
+  top: 160rpx;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.container .addressInfo-icon {
+  width: 50rpx;
+  margin-left: 20rpx;
+}
+
+.container .addressInfo-detail {
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+}
+
+.container .addressInfo-detail .t1 {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.container .addressInfo-detail .t2 {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: gray;
+}
+
+.container .goodsInfo {
+  width: 94%;
+  margin-left: 3%;
+  background: #fff;
+  border-radius: 30rpx;
+  margin-top: 200rpx;
+}
+
+.container .goodsInfo-detail {
+  display: flex;
+}
+
+.container .goodsInfo-detail .goodsImg {
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+}
+
+.container .goodsInfo-detail .infos {
+  margin-left: 16rpx;
+  margin-top: 20rpx;
+}
+
+.container .goodsInfo-detail .infos .title {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.container .goodsInfo-detail .infos .orginalPrice {
+  font-size: 24rpx;
+  color: gray;
+  margin-top: 10rpx;
+}
+
+.container .goodsInfo-detail .infos .price {
+  font-size: 26rpx;
+  color: red;
+  margin-top: 10rpx;
+}
+
+.container .goodsInfo .darginPrice {
+  width: 90%;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  font-weight: 550;
+}
+
+.container .priceInfo {
+  width: 94%;
+  margin-left: 3%;
+  background: #fff;
+  border-radius: 30rpx;
+  margin-top: 30rpx;
+}
+
+.container .priceInfo-row {
+  width: 100%;
+  height: 100rpx;
+  font-size: 26rpx;
+}
+
+.container .priceInfo-row .left {
+  float: left;
+  line-height: 100rpx;
+  margin-left: 20rpx;
+}
+
+.container .priceInfo-row .right {
+  float: right;
+  line-height: 100rpx;
+  margin-right: 20rpx;
+}
+
+.container .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+}
+
+.container .footer .left {
+  float: left;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  margin-left: 50rpx;
+}
+
+.container .footer .right {
+  float: right;
+  line-height: 100rpx;
+  text-align: center;
+  width: 260rpx;
+  background: linear-gradient(to right, #FF9348, #F03D53);
+  color: white;
+  font-size: 28rpx;
+}
+
+.container .iphoneXFooter {
+  height: 148rpx;
+  background: #fff;
+}

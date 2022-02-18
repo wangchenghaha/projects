@@ -1,0 +1,22 @@
+<wxs src="../index/index.wxs" module="tools" />
+<view class="pages">
+    <view class="card-wrapper">
+        <image class="card-bg" src="{{couponbg}}"></image>
+        <view class="card-info">
+            <view class="card-box">
+                <view class="card-item" wx:for="{{couponlist}}" :key="index">
+                    <view style="color:{{brand == 'JACKJONES' || brand == 'ONLY' || brand == 'SELECTED' || brand == 'VEROMODA'? '#fff' : '#ff5715'}}">￥</view>
+                    <view class="price" style="color:{{brand == 'JACKJONES' || brand == 'ONLY' || brand == 'SELECTED' || brand == 'VEROMODA'? '#fff' : '#ff5715'}};font-size:{{tools.isNumber(item.price)?'36rpx':'46rpx'}}">{{item.price}}</view>
+                    <view style="color:{{brand == 'JACKJONES' || brand == 'ONLY' || brand == 'SELECTED' || brand == 'VEROMODA'? '#fff' : '#ff5715'}}">/</view>
+                    <view style="color:{{brand == 'JACKJONES' || brand == 'ONLY' || brand == 'SELECTED' || brand == 'VEROMODA'? '#fff' : '#ff5715'}}" class="tip">{{item.tip}}</view>
+                </view>
+            </view>
+            <view class="get-btn" wx:if="{{showbtn}}" bindtap="_getcoupon" style="background:{{basecolor}};">立即领取</view>
+        </view>
+    </view>
+    <view class="join-tip">
+        <image class="joinimg" src="{{jointip2}}"></image><text style="color:{{basecolor}};">恭喜您，组团成功啦！</text>
+    </view>
+</view>
+
+<alert showoption="{{showoption}}" bind:clicksure="clicksure"></alert>

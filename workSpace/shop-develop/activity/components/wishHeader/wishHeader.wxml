@@ -1,0 +1,25 @@
+<view class="banner">
+  <image src="{{banner}}" mode="widthFix"></image>
+</view>
+<view class="main">
+  <view class="share-info">
+    <view class="wx-info ~flex-center">
+      <view class="border ~flex-center">
+        <view class="avatar ~flex-center">
+          <image src="{{wishDetail.faceImg}}" mode="widthFix"></image>
+        </view>
+      </view>
+      <text class="nick-name">{{wishDetail.nickName}}</text>
+    </view>
+    <view class="wish-info ~flex-center">
+      <!--<view class="wish-icon">
+        <image src="{{wishIcon}}" mode="widthFix"></image>
+      </view>-->
+      <view class="wish-text">{{wishDetail.msg}}</view>
+    </view>
+    <view class="bottom ~text-c"></view>
+  </view>
+  <view class="goods-content">
+    <view class="~text-c title">这是我的双十一心愿单，快来帮我达成心愿吧！！</view>
+  </view>
+</view>

@@ -1,0 +1,520 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes titleAnimate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes titleAnimate1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.swiper .imgView {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.swiper .imgView .canvas1 {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  width: 55%;
+  height: 70%;
+  display: flex;
+}
+
+.swiper .imgView .canvas1-subViews {
+  width: 35rpx;
+  height: 100%;
+  margin-right: 25rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper .imgView .canvas1-subViews-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 35rpx;
+  line-height: 45rpx;
+  color: #E4411D;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .canvas2 {
+  position: absolute;
+  top: 15%;
+  left: 29%;
+  width: 71%;
+  height: 85%;
+  display: flex;
+}
+
+.swiper .imgView .canvas2-subViews {
+  width: 40rpx;
+  height: 100%;
+  margin-right: 25rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper .imgView .canvas2-subViews-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  color: #9A7CB0;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .canvas3 {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 95%;
+  height: 85%;
+}
+
+.swiper .imgView .canvas3-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  color: #F9FCF8;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .canvas3_6 {
+  top: 23%;
+  height: 77;
+}
+
+.swiper .imgView .topImg3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 600rpx;
+}
+
+.swiper .imgView .canvas4 {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 90%;
+  height: 85%;
+  text-align: center;
+}
+
+.swiper .imgView .canvas4-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  color: #7C4731;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .topImg4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.swiper .imgView .canvas5 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  text-align: center;
+}
+
+.swiper .imgView .canvas5-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .firstGoodImg {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240rpx;
+  opacity: 0;
+}
+
+.swiper .imgView .topImg5 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper .imgView .topImg5_x {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper .imgView .canvas6 {
+  position: absolute;
+  top: 12%;
+  left: 5%;
+  width: 90%;
+  height: 88%;
+  text-align: center;
+}
+
+.swiper .imgView .canvas6-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  color: #D5B1DF;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .topImg6 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 683rpx;
+}
+
+.swiper .imgView .topImg6_x {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 683rpx;
+}
+
+.swiper .imgView .canvas7 {
+  position: absolute;
+  top: 12%;
+  left: 5%;
+  width: 90%;
+  height: 88%;
+  text-align: center;
+}
+
+.swiper .imgView .canvas7-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  color: #813E39;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .topImg7 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.swiper .imgView .canvas8 {
+  position: absolute;
+  top: 12%;
+  left: 5%;
+  width: 90%;
+  height: 88%;
+  text-align: center;
+}
+
+.swiper .imgView .canvas8-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  color: #F2F5F4;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .topImg8 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper .imgView .canvas9 {
+  position: absolute;
+  top: 12%;
+  left: 7%;
+  width: 86%;
+  height: 88%;
+}
+
+.swiper .imgView .canvas9-titles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  color: #793D5E;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .topImg9 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.swiper .imgView .canvas10 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  color: #FFFFEC;
+  font-family: 'jxzk';
+  transform: translateY(-50%);
+}
+
+.swiper .imgView .canvas10-topTitle {
+  margin-top: 100rpx;
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 80rpx;
+}
+
+.swiper .imgView .canvas10-imgView {
+  width: 80%;
+  height: auto;
+}
+
+.swiper .imgView .canvas10-subTitles {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  width: 100%;
+  line-height: 70rpx;
+  font-size: 40rpx;
+  padding-left: 150rpx;
+  box-sizing: border-box;
+}
+
+.swiper .imgView .canvas10-btnView {
+  width: 80%;
+  height: 80rpx;
+  display: flex;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 34rpx;
+  font-family: 'jxzk';
+  position: relative;
+}
+
+.swiper .imgView .canvas10-btnView .shareView {
+  width: 276rpx;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.swiper .imgView .canvas10-btnView .zhanwei {
+  flex: 1;
+}
+
+.swiper .imgView .canvas10-btnView .share {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  width: 276rpx;
+  height: 100%;
+}
+
+.swiper .imgView .canvas10-btnView .share::after {
+  border: none;
+}
+
+.swiper .imgView .canvas12 {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+}
+
+.swiper .imgView .canvas12 .text {
+  text-shadow: 0.7px 0.7px 1px #1C00B5,-0.7px -0.7px 1px #1C00B5;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  color: #F7F2FF;
+  margin-bottom: 25rpx;
+  font-family: 'jxzk';
+  opacity: 0;
+}
+
+.swiper .imgView .canvas12 .right {
+  text-align: right;
+}
+
+.swiper .imgView .go {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #F7F2FF;
+  text-shadow: 0.7px 0.7px 1px #1C00B5,-0.7px -0.7px 1px #1C00B5;
+  font-size: 40rpx;
+  font-family: 'jxzk';
+  font-weight: 0;
+  opacity: 0;
+}
+
+.btnView {
+  position: fixed;
+  top: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.sanjiao {
+  position: fixed;
+  top: 4.5%;
+  left: 3%;
+  width: 42rpx;
+  height: 59rpx;
+  z-index: 8;
+}
+
+.bouncedBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .0;
+  animation: openBoxBgAnimate 0.2s linear 1 forwards;
+  z-index: 9;
+}
+
+.bouncedView {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.bouncedView-animateView {
+  animation: openBoxAnimate 0.2s linear 1 forwards;
+}
+
+.bouncedView-animateView .imgView {
+  width: 662rpx;
+  vertical-align: middle;
+  position: relative;
+}
+
+.bouncedView-animateView .imgView-qrImg {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170rpx;
+}
+
+.bouncedView-animateView .saveBtn {
+  margin-left: 20%;
+  width: 60%;
+  height: 100rpx;
+  border-radius: 100rpx;
+  background-color: white;
+  color: black;
+  line-height: 100rpx;
+}
+
+@keyframes openBoxBgAnimate {
+  0% {
+    opacity: .0;
+  }
+  100% {
+    opacity: .7;
+  }
+}
+
+@keyframes openBoxAnimate {
+  0% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.cavasView {
+  width: 500%;
+  height: 500%;
+  margin-top: 9999px;
+}

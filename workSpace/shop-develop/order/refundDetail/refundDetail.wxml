@@ -1,0 +1,59 @@
+<view class="wrap">
+  <view class="banner">
+    <view class="text">
+      <icon type="waiting" color="white" size="40rpx" />
+      {{title}}
+    </view>
+    <view class="text">{{refundText}}</view>
+    <text class="text refund-time" wx:if="{{refundTime}}">{{refundTime}}</text>
+  </view>
+  <view class="refund-address" wx:if="{{showRefundAddress && deliveryMode !== 'pickup'}}">
+    <view>退货信息：</view>
+    <view wx:for="{{refundAddress}}" wx:key="*this">{{item}}</view>
+    <view class="copy flex-center" bindtap="copy">
+      <copy-icon />
+      全部复制
+    </view>
+  </view>
+  <view class="refund-code title flex-bet" wx:if="{{refundDetail[0]}}">
+    <view class="flex-start">
+      订单号：{{refundDetail[0].oriorderCode}} <copy-icon text="{{refundDetail[0].oriorderCode}}" />
+    </view>
+    <text>{{refundDetail[0].createTime}}</text>
+  </view>
+  <view class="title">
+    <view wx:if="{{deliveryMode !== 'pickup'}}">退货信息：</view>
+    <view>收货人：{{refundDetail[0].consignee}}</view>
+    <view wx:if="{{refundDetail[0].refundStore}}">营业电话：{{refundDetail[0].refundStore.storePhone}}</view>
+    <view>收货地址：{{refundDetail[0].address}} <copy-icon text="{{refundDetail[0].consignee}} {{refundDetail[0].address}}" /></view>
+  </view>
+  <view class="refund">
+    <view wx:for="{{refundDetail}}" wx:key="*this">
+      <view wx:for="{{item.refundGsOrderList}}" wx:for-item="goodsItem" wx:key="goodsItem">
+        <view class="refund-code title" wx:if="{{item.refundCode}}">
+          <view class="flex-start">退单号：{{item.refundCode}} <copy-icon text="{{item.refundCode}}" /></view>
+          <view>申请退单时间：{{item.oriOrderTime}}</view>
+        </view>
+        <order-item order="{{goodsItem}}">
+          <view wx:if="{{item.refundReason}}" slot="reason">退款原因：{{item.refundReason}}</view>
+        </order-item>
+      </view>
+    </view>
+  </view>
+  <!-- 热销推荐/猜你喜欢 -->
+  <dmp-goods projeckName="{{projeckName}}"></dmp-goods>
+  <view class="footer">
+    <view class="contact text-c" bindtap="contact">联系客服 </view>
+    <!--<view class="contact text-c" bindtap="goBack">
+      <text>继续逛逛</text>
+    </view>-->
+  </view>
+  <view class="popup fixed flex-center" wx:if="{{helpData.show}}">
+    <view class="popup-img">
+      <image src="{{helpData.bouncedImage}}" mode="widthFix"></image>
+      <view class="close item" bindtap="closePop"></view>
+      <view class="save-img item" bindtap="saveImg"></view>
+      <view class="copy item" bindtap="copy" data-text="{{helpData.wxNum}}"></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+/* socialAdvertising/trySearch/trySearch.wxss */
+.frame{width: 100%;display: flex;flex-direction: column; clear:both; overflow:hidden;
+    background-color: #F5D15F;}
+.layout_swiper{width: 100%;height: 750rpx;}
+.img_swiper_item{width: 100%;}
+.layout_video{width: 100%;height: 432rpx;}
+.multi{width: 100%; text-align: center;position: relative;height: 118rpx;}
+.img_bar{width: 100%;}
+.tip{width:100%;position: absolute;top: 50%;transform: translateY(-50%);text-align: center;
+     color: #333;font-weight: bold;}
+.img_single{width: 100%;}
+.miniSize{font-size: 27rpx;}
+
+.font_22{font-size: 22rpx;}

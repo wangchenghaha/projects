@@ -1,0 +1,8 @@
+{
+    "disableScroll": true,
+    "navigationStyle" : "custom",
+    "usingComponents": {
+        "game_fol" : "../components/game_fol/game_fol",
+        "game_vm" : "../components/game_vm/game_vm"
+    }
+}

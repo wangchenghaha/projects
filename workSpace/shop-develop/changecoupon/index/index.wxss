@@ -1,0 +1,102 @@
+.pages {
+    position: relative;
+    padding-top: 60rpx;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    box-sizing: border-box;
+}
+.coupon-wrapper {
+    position: relative;
+    padding-top: 95rpx;
+    margin: 0 auto;
+    width: 712rpx;
+    height: 428rpx;
+    text-align: center;
+    box-sizing: border-box;
+}
+.couponbg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 712rpx;
+    height: 428rpx;
+}
+.couponbg .coupon-bg {
+    width: 712rpx;
+    height: 428rpx;
+}
+
+.brand {
+    width: 87rpx;
+    height: 56rpx;
+}
+.coupontip {
+    margin-top: 65rpx;
+    font-size: 32rpx;
+    color: #fff;
+}
+.coupontip.couponnum {
+    font-size: 50rpx;
+    color: #fff;
+}
+.pages .getbtn {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 90rpx;
+    width: 455rpx;
+    height: 100rpx;
+    background: #000;
+    border-radius: 40rpx;
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+    padding-bottom: 5rpx;
+    box-sizing: border-box;
+}
+.wxpaytip {
+    font-size: 24rpx;
+    color:#c9c9c9;
+}
+.rule-wrapper {
+    padding: 15rpx 0;
+    position: fixed;
+    left: 20rpx;
+    top: 50%;
+    width: 50rpx;
+    border-radius: 10rpx;
+    background: #ededed;
+    font-size: 24rpx;
+    color: #666;
+    box-sizing: border-box;
+}
+.content {
+    text-align: center;
+}
+.content text {
+    line-height: 30rpx;
+}
+.rule-wrapper .img-box {
+    text-align: center;
+}
+.rule-wrapper image {
+    margin: 0 auto;
+    width: 27rpx;
+    height: 27rpx;
+}
+
+.button-tip {
+    text-align: center;
+    font-size: 20rpx;
+    color: #666;
+}
+.button-tip text {
+    font-size: 20rpx;
+    color: #666;
+    line-height: 30rpx;
+}

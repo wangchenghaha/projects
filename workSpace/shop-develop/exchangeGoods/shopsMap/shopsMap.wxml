@@ -1,0 +1,6 @@
+<view class='frame'>
+    <!-- <text class='map_tip'>查找门店（请选择您附近的门店）</text>
+    <text class='bt' bindtap='onButtonClick'>点我显示所有店铺</text> -->
+    <map id="mMap" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="onMarkerClick" polyline="{{polyline}}" include-points="{{includePoints}}" show-location class='map'></map>
+
+</view>

@@ -1,0 +1,118 @@
+<import src="../tmpl/shopsPreviewItem2/shopsPreviewItem2" />
+<import src="../tmpl/popGoodsStockDetail/popGoodsStockDetail" />
+<view class="frame">
+  <view class="layout_product">
+    <view id="{{index}}">
+      <image class="img" mode="widthFix" src="{{picUrl}}" />
+    </view>
+    <view class="layout_product_right">
+      <view class="title">{{goodsName}}</view>
+      <view class="bar_1">
+        <view class="bar_inner1">
+          <view class="key">款号</view>
+          <view class="value">{{spu}}</view>
+        </view>
+        <view class="bar_inner2">
+          <view class="key">价格</view>
+          <view class="price_value_now">￥{{priceNow}}</view>
+          <view class="price_value_origin" wx:if="{{!priceNow==priceOriginal}}">￥{{priceOriginal}}</view>
+        </view>
+      </view>
+      <view class="bar_2">
+        <view class="bar_inner1">
+          <view class="key">颜色</view>
+          <view class="picker_wrap">
+            <picker mode="selector" bindchange="onColorChange" value="{{colorIndex}}" range="{{colorList}}" range-key="color">
+              <view class="picker">
+                <view class="picker_con_cs">{{colorList[colorIndex].color}}</view>
+              </view>
+            </picker>
+            <view class="arrow">
+              <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+        <view class="bar_inner3">
+          <view class="key">尺码</view>
+          <view class="picker_wrap">
+            <picker mode="selector" bindchange="onSizeChange" value="{{sizeIndex}}" range="{{sizeList}}" range-key="sizeAlias">
+              <view class="picker">
+                <view class="{{flagDefaultSize?'picker_con_cs_default':'picker_con_cs'}}">{{sizeList[sizeIndex].sizeAlias}}</view>
+              </view>
+            </picker>
+            <view class="arrow">
+              <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bar_3">
+        <image class="img_warning" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_warning_round.png" mode="aspectFit" />
+        <text>点击箭头可更改颜色和尺码</text>
+        <image class="img_point" mode="widthFix" src="/images/icon_point_to_above.png"/>
+      </view>
+    </view>
+  </view>
+  <map id="mMap" wx:if="{{flagShowMap}}" show-location="true" scale="12" class="map" markers="{{markers}}" include-points="{{includePoints}}"></map>
+  <!-- picker布局 -->
+  <view class="layout_picker">
+    <view class="picker_wrap_pca">
+      <picker mode="selector" bindchange="onPickerConfirm1" value="{{index1}}" range="{{proviceData}}" range-key="name">
+        <view class="picker">
+          <view class="picker_content">{{proviceData[index1].name}}</view>
+        </view>
+        <view class="arrow">
+          <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_arrow_down_blue.png" mode="widthFix"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="picker_wrap_pca">
+      <picker mode="selector" bindchange="onPickerConfirm2" value="{{index2}}" range="{{cityData}}" range-key="name">
+        <view class="picker">
+          <view class="picker_content">{{cityData[index2].name}}</view>
+        </view>
+      </picker>
+      <view class="arrow">
+        <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_arrow_down_blue.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="picker_wrap_pca">
+      <picker mode="selector" bindchange="onPickerConfirm3" value="{{index3}}" range="{{districtData}}" range-key="DisName">
+        <view class="picker">
+          <view class="picker_content">{{districtData[index3].DisName}}</view>
+        </view>
+      </picker>
+      <view class="arrow">
+        <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_arrow_down_blue.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="search" bindtap="searchShopsList">搜索</view>
+  </view>
+  <view class="layout_tip_0" wx:if="{{hasShop}}">
+    <view class="tip_0">该尺码颜色有货门店</view>
+    <view class="tip_1">（库存并非实时更新）</view>
+  </view>
+  <view class="layout_list" wx:if="{{hasShop}}">
+    <block wx:for="{{shopList}}" wx:for-item="item" wx:key="shopList">
+      <view bindtap="onShopsItemBarClick" data-shop-bean="{{item}}" data-curr-index="{{index}}">
+        <template is="shopsPreviewItem2Tmpl" data="{{...item,item,sku15}}" />
+      </view>
+    </block>
+    <view class="weui-loadmore" hidden="{{!flagLoading}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot" hidden="{{!flagLoadingComplete}}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+    </view>
+  </view>
+
+
+  <!-- 点击店铺列表的Item中的popup stock 按钮弹出的布局 -->
+  <view wx:if="{{flagShowStockDetail}}">
+    <template is="popGoodsStockDetailTmpl" data="{{goodsDetailBean,goodsStockBean,colorList,sizeList,colorIndex,sizeIndex,picUrl,shopDetailBean}}" />
+  </view>
+
+
+
+</view>

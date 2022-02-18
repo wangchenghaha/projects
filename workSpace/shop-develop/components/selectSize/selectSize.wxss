@@ -1,0 +1,81 @@
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; }
+
+.flex-bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
+
+.select-size {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 30rpx;
+  width: 100%;
+  background: #fff;
+  border: solid 1rpx black;
+  box-sizing: border-box;
+  transition: 0.3s;
+  transform: translateY(120%); }
+  .select-size.show {
+    transition: 0.3s;
+    transform: translateY(0); }
+  .select-size .close {
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx; }
+  .select-size .margin-auto {
+    margin: 0 auto;
+    width: 95%; }
+  .select-size image {
+    display: block;
+    width: 100%; }
+  .select-size .goods-base {
+    padding: 20rpx 0;
+    border-bottom: solid 2rpx #ccc;
+    font-size: 26rpx;
+    line-height: 30rpx; }
+    .select-size .goods-base .preview {
+      position: relative;
+      margin-top: -50rpx;
+      width: 160rpx; }
+    .select-size .goods-base .goods-info {
+      padding-top: 10rpx;
+      margin-left: 40rpx; }
+      .select-size .goods-base .goods-info .price {
+        font-size: 32rpx;
+        color: #ff580c; }
+      .select-size .goods-base .goods-info .stock, .select-size .goods-base .goods-info .size, .select-size .goods-base .goods-info .sku {
+        padding: 5rpx 0; }
+        .select-size .goods-base .goods-info .stock text, .select-size .goods-base .goods-info .size text, .select-size .goods-base .goods-info .sku text {
+          font-size: 32rpx; }
+    .select-size .goods-base .goods-title {
+      padding: 10rpx 0 0 10rpx; }
+    .select-size .goods-base .color {
+      padding: 10rpx 0; }
+      .select-size .goods-base .color-item {
+        display: inline-block;
+        padding: 0 12rpx;
+        margin-right: 15rpx;
+        height: 60rpx;
+        line-height: 60rpx;
+        border-radius: 10rpx; }
+        .select-size .goods-base .color-item.selected {
+          background: #ff580c;
+          color: #fff; }
+    .select-size .goods-base .goods-num text {
+      display: inline-block;
+      height: 52rpx;
+      line-height: 52rpx;
+      font-size: 40rpx;
+      text-align: center;
+      border: solid 2rpx #ccc;
+      border-right: none; }
+      .select-size .goods-base .goods-num text:nth-child(2) {
+        font-size: 28rpx; }
+      .select-size .goods-base .goods-num text:last-child {
+        border-right: solid 2rpx #ccc; }
+
+/*# sourceMappingURL=selectSize.wxss.map */

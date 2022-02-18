@@ -1,0 +1,44 @@
+<view class="container"
+    style="background:url({{isBigPhone ? comData.valentine.set_password_big_img : comData.valentine.set_password_sm_img}}); background-size:100%; background-repeat: repeat; width:100%;min-height:100vh;">
+    <comp-image-pre src='{{comData.valentine.decorate_img}}' class="set-pwd-title" mode="aspectFill" width="466"
+        height="99"></comp-image-pre>
+    <view class="input-warp"
+        style="background:url({{comData.valentine.set_receiver_input_img}});background-size:100% 100%;width:750rpx;height:160rpx;">
+        <input type="text" class="input"  maxlength="9"  bindinput="name" />
+    </view>
+
+    <swiper class="banner" circular current="{{current}}" bindchange='swiper2Change'>
+        <block wx:for="{{comData.valentine.blessings}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item.blessing_img}}" data-bltext="{{item.blessing_text}}" data-index="{{index}}"
+                    mode="widthFix" bindload="imageLoad"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="zuohua-warp">
+        <view class="text">
+            不喜欢?左滑查看更多
+        </view>
+        <comp-image-pre src='{{comData.valentine.heart_card_next_btn}}' mode="aspectFill" width="80" height="16">
+        </comp-image-pre>
+    </view>
+    <view class="pwd-warp"
+        style="background:url({{comData.valentine.password_input_img}});background-size:100% 100%;width:750rpx;height:142rpx;">
+        <input type="password" class="input1" placeholder-style="font-size:24rpx" bindinput="anhao"
+            placeholder="设置聆听暗号" />
+        <input type="password" class="input2" placeholder-style="font-size:24rpx" bindinput="anhaoAgain"
+            placeholder="再次输入聆听暗号" />
+    </view>
+
+    <view class="anhao" hover-class="none" hover-stop-propagation="false">
+        *对方只有对上暗号才能聆听您的录音
+    </view>
+
+    <view class="btn-warp">
+        <comp-image-pre src='{{comData.valentine.cancel_btn}}' bindtap="close" class="main-img" mode="widthFix"
+            width="375" height="153"></comp-image-pre>
+        <comp-image-pre src='{{comData.valentine.confirm_btn}}' bindtap="sendShare" class="main-img" mode="widthFix"
+            width="375" height="153"></comp-image-pre>
+    </view>
+</view>
+

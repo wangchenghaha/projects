@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="user flex-bet">
+        <view class="oneArea">
+          <image class="avatarImg" src="{{avatarImg}}" mode="widthFix" data-type="vistor" bindtap="onClick"></image>
+          <view class="text1">潮流资讯</view>
+        </view>
+        <view class="btn1" data-type="allFashion" bindtap="onClick">查看全部</view>
+    </view>
+    <scroll-view class="fashion-scroll" scroll-x style="width: 100%">
+        <view class="flex-start">
+          <block wx:for="{{fashionArr}}" wx:key="fashion">
+            <view class="fashionItem" data-item="{{item}}" data-type="item" bindtap="onClick">
+                <image class="left" src="{{item.coverPic}}" mode="aspectFill"></image>
+                <view class="right">
+                  <view class="title">{{item.title}}</view>
+                  <view class="content">{{item.createdTime}}</view>
+                </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+
+      <trendList listData="{{listData}}" vistorId="{{vistorId}}" wx:if="{{listData.length > 0}}" bind:praise='clickPraise'></trendList>
+</view>

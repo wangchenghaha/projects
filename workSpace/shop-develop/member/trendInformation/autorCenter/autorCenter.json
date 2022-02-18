@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "作者中心",
+  "usingComponents":{
+    "trendList": "/components/trendFlow/trendFlow"
+  }
+} 

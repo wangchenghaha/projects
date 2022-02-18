@@ -1,0 +1,8 @@
+
+.cavasView{
+    position: fixed;
+    top: 99999999px;
+    left: 0;
+    width: 500%;
+    height: 500%;
+}

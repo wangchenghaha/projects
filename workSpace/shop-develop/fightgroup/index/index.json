@@ -1,0 +1,7 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "rule" : "/fightgroup/components/rule/rule",
+        "alert" : "/fightgroup/components/alert/alert"
+    }
+}

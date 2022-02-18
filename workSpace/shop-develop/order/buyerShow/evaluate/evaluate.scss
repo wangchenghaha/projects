@@ -1,0 +1,150 @@
+.content{
+  background: #EDEDED;
+  min-height: 100%;
+  font-size: 28rpx;
+  .card{
+    width: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    image{
+      display: block;
+      width: 100%;
+    }
+    background: #fff;
+    margin-bottom: 16rpx;
+    &.goods{
+      align-items: flex-start;
+      .goods-img{
+        width: 168rpx;
+      }
+      .goods-info{
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20rpx;
+        height: 250rpx;
+        .size{
+          margin-top: 20rpx;
+          &-item{
+            display: inline-block;
+            margin-right: 10rpx;
+            padding: 3rpx 5rpx;
+            font-size: 24rpx;
+            background: #EDEDED;
+          }
+        }
+      }
+    }
+
+    &.evaluate{
+      .area-wrapper{
+        height: 336rpx;
+        background: #FAFAFA;
+        .text{
+          align-items: flex-start;
+          .edit-icon{
+            width: 35rpx;
+            height: 35rpx;
+          }
+          .text-area{
+            margin-left: 20rpx;
+            flex: 1;
+          }
+        }
+        .count{
+          font-size: 24rpx;
+          padding: 10rpx;
+          color: #000000;
+          box-sizing: border-box;
+        }
+      }
+      .upload{
+        margin-top: 20rpx;
+        flex-wrap: nowrap;
+        &-list{
+          width: auto;
+          max-width: 75%;
+          height: 208rpx;
+          white-space: nowrap;
+          .item{
+            position: relative;
+            display: inline-block;
+            width: 156rpx;
+            height: 208rpx;
+            .del{
+              position: absolute;
+              right: 0;
+              top: 0;
+              width: 40rpx;
+              height: 40rpx;
+              line-height: 36rpx;
+              background: #000;
+              color: #fff;
+              font-size: 40rpx;
+              border-radius: 50%;
+            }
+            image{
+              display: inline-block;
+              width: 100%;
+            }
+          }
+        }
+        &-btn{
+          margin-left: 2%;
+          flex: 0 1 23%;
+          flex-direction: column;
+          height: 208rpx;
+          color: #EAEAEA;
+          border: 1px solid #EAEAEA;
+          .icon{
+            width: 80rpx;
+            height: 80rpx;
+          }
+        }
+      }
+      .desc{
+        margin-top: 20rpx;
+        padding: 10rpx;
+        font-size: 28rpx;
+        font-weight: 500;
+        background: #F6F6F6;
+        border-radius: 10rpx;
+        text{
+          color: #FF5000;
+        }
+      }
+      .tip{
+        margin-top: 30rpx;
+        font-size: 26rpx;
+        font-weight: 500;
+        text{
+          padding-left: 15rpx;
+        }
+      }
+    }
+    &.serve{
+      .serve-title{
+        padding: 10rpx 0;
+        font-size: 32rpx;
+        font-weight: bold;
+      }
+      .serve-item{
+        padding: 10rpx 0;
+        font-size: 28rpx;
+        text{
+          padding-right: 60rpx;
+        }
+      }
+      .publish {
+        margin: 30rpx auto;
+        width: 560rpx;
+        height: 80rpx;
+        line-height: 80rpx;
+        font-size: 36rpx;
+        color: #fff;
+        background: #D60625;
+        border-radius: 50rpx;
+      }
+    }
+  }
+}

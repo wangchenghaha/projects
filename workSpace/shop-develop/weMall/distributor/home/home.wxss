@@ -1,0 +1,231 @@
+.content {
+  min-height: 100%;
+  background: #f3f3f3;
+}
+.content image {
+  display: block;
+  width: 100%;
+}
+.content .header {
+  position: relative;
+  height: 320rpx;
+  background: #232323;
+  border-bottom-left-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  overflow: hidden;
+}
+.content .header .outer {
+  transform: translateX(-10%) translateY(40rpx);
+  width: 700rpx;
+  height: 700rpx;
+  background: #252525;
+  border-radius: 50%;
+}
+.content .header .outer .center {
+  width: 500rpx;
+  height: 500rpx;
+  background: #27282a;
+  border-radius: 50%;
+}
+.content .header .outer .center .inner {
+  width: 300rpx;
+  height: 300rpx;
+  background: #252626;
+  border-radius: 50%;
+}
+.content .header .main-info {
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+}
+.content .header .main-info .avatar {
+  margin-left: 60rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.content .header .main-info .info {
+  margin-left: 30rpx;
+  color: #fff;
+}
+.content .header .main-info .info .identifier {
+  font-size: 30rpx;
+}
+.content .header .main-info .info .name {
+  font-size: 26rpx;
+  color: #f9f9f9;
+}
+.content .header .main-info .qr-img {
+  margin-left: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.content .header .main-info .qr-img image {
+  filter: invert(50%);
+}
+.content .header .level {
+  position: absolute;
+  right: 0;
+  top: 150rpx;
+  width: 202rpx;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  z-index: 999;
+}
+.content .cash {
+  position: relative;
+  margin: -60rpx auto 20rpx;
+  padding: 0 30rpx;
+  width: 680rpx;
+  height: 135rpx;
+  background-image: linear-gradient(#fa3d52, #fd5b80);
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  z-index: 9;
+}
+.content .cash-left {
+  color: #fff;
+}
+.content .cash-left .count {
+  font-size: 28rpx;
+}
+.content .cash-left .count text {
+  font-size: 40rpx;
+}
+.content .cash-left .tip {
+  font-size: 26rpx;
+}
+.content .cash-right {
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  color: #8e7846;
+  background: #fcde9b;
+  border-radius: 30rpx;
+}
+.content .card {
+  padding: 20rpx;
+  margin: 10rpx auto 0;
+  width: 700rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.content .card-title {
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  border-bottom: solid 1rpx #828282;
+  color: #000;
+}
+.content .card-title .desc {
+  font-size: 28rpx;
+}
+.content .card-title .more {
+  position: relative;
+  padding-right: 20rpx;
+  font-size: 24rpx;
+  color: #828282;
+}
+.content .card-title .more::after {
+  content: "";
+  position: absolute;
+  top: 12rpx;
+  right: 5rpx;
+  width: 15rpx;
+  height: 15rpx;
+  border-right: solid 2rpx #828282;
+  border-top: solid 2rpx #828282;
+  transform-origin: center;
+  transform: rotate(45deg);
+}
+.content .profit-item {
+  flex: 0 1 25%;
+  flex-direction: column;
+  border-right: solid 1rpx #828282;
+}
+.content .profit-item:last-child {
+  border-right: none;
+}
+.content .profit-item .number {
+  font-size: 28rpx;
+}
+.content .profit-item .number.color-red {
+  color: red;
+}
+.content .profit-item .number text {
+  font-size: 34rpx;
+}
+.content .profit-item .desc {
+  color: #828282;
+  font-size: 24rpx;
+}
+.content .notice-title {
+  flex: 0 1 25%;
+  border-right: solid 1rpx #828282;
+}
+.content .notice-title .notice-icon {
+  width: 64rpx;
+  height: 64rpx;
+  animation: swing 1s ease-in-out infinite;
+}
+.content .notice-title text {
+  font-size: 24rpx;
+  color: #FF505E;
+}
+.content .notice-text {
+  margin-left: 20rpx;
+  flex: 0 1 75%;
+  font-size: 28rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.content .notice-text text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: wordsLoop 10s linear infinite;
+}
+.content .tool-item {
+  margin-bottom: 20rpx;
+  flex: 0 1 25%;
+  flex-direction: column;
+}
+.content .tool-item .icon {
+  width: 65rpx;
+  height: 65rpx;
+}
+.content .tool-item text {
+  padding-top: 10rpx;
+  font-size: 26rpx;
+  color: #000;
+}
+
+@keyframes wordsLoop {
+  0% {
+    transform: translateX(300rpx);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes swing {
+  20% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/*# sourceMappingURL=home.wxss.map */

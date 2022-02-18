@@ -1,0 +1,81 @@
+@charset "UTF-8";
+.container {
+  width: 100%;
+  margin: 0 auto;
+  /* 没有待处理订单 */
+}
+
+.container .orderlist {
+  padding-bottom: 68rpx;
+}
+
+.container .bottomLine {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: -68rpx;
+}
+
+.container .bottomLine .line {
+  width: 30%;
+  height: 2rpx;
+  background: #999;
+}
+
+.container .bottomLine .lineText {
+  width: 40%;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.container .dingdanIsHidden {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.container .dingdanIsHidden .img {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+  padding: 150rpx 0;
+}
+
+.container .dingdanIsHidden .img image {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.container .dingdanIsHidden .img .tishi {
+  font-size: 30rpx;
+  width: 100%;
+  padding-top: 20rpx;
+  line-height: 50rpx;
+  color: #636363;
+  text-align: center;
+}
+
+.container .dingdanIsHidden .goShopping {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.container .dingdanIsHidden .goShopping .goToShopping {
+  width: 60%;
+  height: 80rpx;
+  margin-left: 20%;
+  background: #000;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #fff;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+<wxs src="./index.wxs" module="tools" />
+<view wx:if='{{options.isshow}}' class="couponlist">
+    <view class="couponlist-box">
+        <view class="close-coupon">
+            <image class="close-img" catchtap="closemodel" src="./close.png"></image>
+        </view>
+        <view class="coupon-swiper">
+            <scroll-view scroll-y class="swiper-box">
+                <view class='bg' wx:for="{{options.couponlist}}">
+                    <view class='flex pricegroup'>
+                        <view class="price" style='font-size:36rpx'>{{item.title}}</view>
+                        <view class="ptype">{{item.sub_title}}</view>
+                    </view>
+                    <view class='man'></view>
+                    <view class='timegroup'>领取时间：{{tools.timesplit(item.date_info.begin_date)}} 至 {{tools.timesplit(item.date_info.end_date)}}</view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

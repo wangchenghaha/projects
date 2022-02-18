@@ -1,0 +1,43 @@
+<import src="../stepper/stepper"></import>
+<template name="checkableOrderItemTmpl">
+  <view class='frame'>
+    <checkbox-group id="{{index}}" bindchange="checkboxChange" wx:if='{{checkable}}'>
+      <label>
+        <checkbox checked="{{item.checked}}" />
+      </label>
+    </checkbox-group>
+
+    <view id="{{index}}" class="global_thumbnail" bindtap="checkboxChange">
+      <image class="global_thumbnail" mode="widthFix" src="{{item.gscolPicPath}}" />
+    </view>
+    <view id="{{index}}"  class="global_thumbnail_right_txt" bindtap="checkboxChange">
+      <text style='font-size:26rpx;'>{{item.goodsName}}</text>
+      <view class="key">货号
+        <text>{{item.gcsSku}}</text>
+      </view>
+      <view class="key">颜色
+        <text>{{item.colorName}}</text>
+      </view>
+      <view class="key">尺码
+        <text>{{item.sizeName}}</text>
+      </view>
+      <view class="key">价格
+        <text>{{item.price}}</text>
+      </view>
+      <view class="key">数量
+        <text>{{item.goodsCount}}</text>
+        <!-- <view class="stepper_layout">
+                    <template is="tmplStepper" data="{{stepperIndex:index,count:item.goodsCount}}" />
+                </view> -->
+      </view>
+      <!-- <view class="stepper_combine_layout">
+            <text class="c_key">数量：</text>
+            <template is="tmplStepper" />
+        </view> -->
+    </view>
+
+    <view id='{{index}}' class='layout_delete' wx:if='{{canBeDeleted}}' bindtap='onItemDelete'>
+      <icon type="cancel" size="50rpx" color="#000" />
+    </view>
+  </view>
+</template>

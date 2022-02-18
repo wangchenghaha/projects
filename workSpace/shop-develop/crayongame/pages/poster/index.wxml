@@ -1,0 +1,16 @@
+<view class="wrapper {{isBigPhone ? 'big':''}}">
+    <!-- <navigateBar /> -->
+    <view class="frame">
+        <view class="box {{changing ? '':'animate'}}">
+            <view class="item l-{{frame[0]}}"></view>
+            <view class="item r-{{frame[1]}}"></view>
+        </view>
+        <view class="result {{showResult ? 'animate':''}}"></view>
+        <view class="handle {{changing ? 'animate':''}}"></view>
+    </view>
+
+    <view class="btnbox">
+        <view class="btn" hover-class="active" bindtap='navigateTo'></view>
+    </view>
+    <footerBar />
+</view>

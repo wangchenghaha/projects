@@ -1,0 +1,5 @@
+<view class="header" style="padding-top: {{sbH}}px">
+    <view class="back" catchtap='navigateBack'>
+        <image class="ico" src="../../common/image/back.png" />
+    </view>
+</view>

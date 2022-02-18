@@ -1,0 +1,479 @@
+/* pages/test/test.wxss */
+/* 全局公共样式 */
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.home-page{
+  min-height: 150%;
+  overflow-x: hidden;
+}
+.no-scroll {
+  height: auto;
+  overflow: hidden;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.fixed-top image {
+  display: block;
+  width: 100%;
+}
+.home-page .container{
+  padding-top: 110rpx;
+}
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+  box-sizing: border-box;
+}
+.search-header{
+  margin-right: 105px;
+  margin-left: 15px;
+  flex: 1;
+  padding: 0 20rpx;
+  height: 30px;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.search-header .search-left{
+  flex:1;
+}
+.search-header .icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.search-header .search-input{
+  display: block;
+  flex:1;
+  margin-left: 10rpx;
+  padding-left: 10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.search-wrapper{
+  margin: 0 auto;
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.search-wrapper .help{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 15rpx;
+}
+.search-wrapper .help image{
+  width:100%;
+}
+.search-wrapper .search-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  padding: 5rpx;
+  border:2rpx solid #bababa;
+  box-sizing:border-box;
+
+}
+.search-wrapper .search-box image{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 5px;
+}
+.search-box .search-input{
+  flex: 1;
+  height:60rpx;
+  font-size:24rpx;
+  line-height:60rpx;
+  box-sizing:border-box;
+}
+.search-box .scanning{
+  width: 50rpx;
+  height: 50rpx;
+  padding-left: 10rpx;
+  border-left: 2rpx solid #bababa;
+}
+.header-nav{
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: space-around;
+}
+.header-nav image{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}
+.header-nav .nav-item{
+  position: relative;
+  flex-direction: column;
+  flex: 1;
+}
+.header-nav .nav-item .cart-num{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: 15rpx;
+  width: 35rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  text-align: center;
+  font-size: 20rpx;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+}
+.header-nav .nav-text{
+  padding-top: 10rpx;
+  display:block;
+  font-size:24rpx;
+  line-height:25rpx;
+  color:#494949;
+  text-align:center;
+}
+
+.main{
+  position: relative;
+}
+.main .mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.video{
+  margin-bottom: -17rpx;
+}
+
+/* 上新结束 */
+
+/* 分类结束 */
+
+/* 瀑布流 */
+.flow-item{
+  flex: 1;
+}
+/* 瀑布流结束 */
+/* 品牌背书*/
+
+.voucher{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: 0.3s;
+  transform: translateY(-100%);
+}
+.voucher.show{
+  transform: translateY(0);
+}
+.voucher .advertisement{
+  position: relative;
+  width: 546rpx;
+}
+.voucher .close{
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  width:120rpx;
+  height: 120rpx;
+}
+.customer{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+}
+.customer .customer-icon{
+  margin-left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.add-coupon{
+  flex-direction: column;
+}
+.add-coupon .tip-img{
+  position: relative;
+  width: 72%;
+}
+.add-coupon .checkbox{
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 0.8);
+  vertical-align: middle;
+}
+.add-coupon .close{
+  position: absolute;
+  top: 5rpx;
+  right: 5rpx;
+  width: 70rpx;
+  height: 60rpx;
+  z-index: 9;
+}
+.add-coupon .navigator{
+  position: absolute;
+  transform: translateY(-100%);
+  width: 100%;
+  height: 85%;
+  z-index: 8;
+}
+.contact-button{opacity: 0;}
+.img_contact{position: absolute; width: 50rpx; height: 50rpx;}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.title{
+  padding: 20rpx 0;
+  font-size: 36rpx;
+  color: #000;
+}
+.video2{
+  width: 100%;
+  height: 348rpx;
+}
+/* 红包雨 */
+.hbyView{
+  position: fixed;
+  right: 0;
+  top: 270rpx;
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom-left-radius: 39px;
+  border-top-left-radius: 39px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  box-sizing: border-box;
+}
+.wish-icon{
+  position: fixed;
+  right: 0;
+  top: 380rpx;
+  width: 170rpx;
+  animation: wish 2s linear infinite;
+}
+.wish-icon image{
+  display: block;
+  width: 170rpx;
+  height: 153rpx;
+}
+@keyframes wish {
+  0%, 100%{
+    transform: scale(0.8) rotate(-5deg);
+  }
+  50%{
+    transform: scale(1) rotate(5deg);
+  }
+}
+.hbyView .gameView{
+  width: 100%;
+  height: 100%;
+  margin-top: 20rpx;
+}
+.hbyView .game-img{
+  width: 78rpx;
+  height: 78rpx;
+  border-radius: 50%;
+}
+.hbyView .game-item{
+  width: 186rpx;
+  height: 78rpx;
+}
+.hbyView .game-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.hbyView .text{
+  display: block;
+  font-size: 20rpx;
+  line-height: 25rpx;
+  color: #9D53F9;
+}
+.hbyView .game-name{
+  display: block;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color: #121212;
+}
+
+/* 群二维码 */
+.qunBg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .5;
+}
+.qunView{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%,-50%);
+  height: auto;
+  z-index: 999;
+}
+.qunView .qunErweimaImgView{
+  width: 100%;
+  vertical-align: middle;
+
+  position: relative;
+}
+.xiazaiView{
+  margin-top: 50rpx auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 60rpx;
+
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 60rpx;
+  border: 2rpx solid black;
+
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+
+}
+.xiazaiView .text{
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin-left: 30rpx;
+  text-align: center;
+}
+
+.hby_cavasBg-opa {
+  position: fixed;
+  top: 50%;
+  right: 20rpx;
+  transform: translateY(-50%);
+  width: 100rpx;
+  height: 100rpx;
+  background-color: black;
+  opacity: .7;
+  border-radius: 50%;
+  z-index: 999998;
+}
+
+.hby_cavasBg {
+  position: fixed;
+  top: 50%;
+  right: 20rpx;
+  transform: translateY(-50%);
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  z-index: 999999;
+}
+
+.hby_cavasBg .cavas_img {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60rpx;
+  height: 53rpx;
+}
+
+.hby_cavasBg .downNum {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 38rpx;
+  line-height: 100rpx;
+  color: #ffdb4c;
+}
+.fixed-top{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200rpx;
+  border-bottom: solid 1rpx #ccc;
+  background: #fff;
+  z-index: 999;
+}
+.fixed-top .search{
+  position: absolute;
+  left: 40rpx;
+  top: 20rpx;
+  width: 100px;
+}
+.fixed-top .logo{
+  margin-left: 50%;
+  height: 30rpx;
+  transform: translateX(-50%);
+}
+.add-tip{
+  position: fixed;
+  right: 0;
+  top: 60rpx;
+  padding: 5px 15rpx;
+  height: 60rpx;
+  width: 300rpx;
+  font-size: 20rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 30rpx;
+  z-index: 999999;
+}
+.add-tip .text{
+  padding-bottom: 12rpx;
+}
+.add-tip .point{
+  display: inline-block;
+  margin: 0 3rpx;
+  width: 10rpx;
+  height: 10rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+}
+.add-tip .close{
+  width: 30rpx;
+  height: 30rpx;
+}
+

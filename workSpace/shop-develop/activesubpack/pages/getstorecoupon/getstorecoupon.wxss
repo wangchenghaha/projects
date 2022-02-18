@@ -1,0 +1,130 @@
+page {
+    padding-top: 30rpx;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #c03535;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+.page-contaniner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.coupon-info-wrap {
+    margin: 0 auto;
+    width: 710rpx;
+    height: 680rpx;
+    background: url('https://tc.woaap.com/lingzhi/newcoupon/couponbg.png') no-repeat;
+    background-size: 100%;
+}
+.coupon-info-top {
+    height: 290rpx;
+    padding-top: 100rpx;
+    box-sizing: border-box;
+}
+.coupon-info-bottom {
+    padding-top: 50rpx;
+}
+.brandname {
+    font-size: 24rpx;
+    color: #999;
+}
+.coupon-title {
+    margin: 30rpx 0;
+    font-size: 48rpx;
+    color: #000;
+    font-weight: bold;
+}
+.coupon-time {
+    font-size: 24rpx;
+    color: #000;
+}
+.coupon-view {
+    text-align: center;
+}
+.codetip {
+    margin-top: 45rpx;
+    font-size: 48rpx;
+    color: #000;
+}
+.coupon-info {
+    padding: 40rpx 20rpx;
+    border: 1px solid #eee;
+    border-radius: 20rpx;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.coupon-name {
+    font-size: 32rpx;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.conpon-des {
+    margin-top: 30rpx;
+    font-size: 28rpx;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.coupon-text {
+    margin-top: 15rpx;
+    font-size: 28rpx;
+    color: #999;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.coupon-rule {
+    margin-top: 60rpx;
+    flex: 1;
+}
+
+.rule-title {
+    font-size: 32rpx;
+    color: #000;
+}
+
+.rule-cont {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    color: #999;
+    line-height: 40rpx;
+}
+
+.gohome {
+    margin: 160rpx auto 0 auto;
+    width: 280rpx;
+    border-radius: 30rpx;
+    font-size: 28rpx;
+    color: #c03535;
+}
+
+.qrcode {
+    margin-top: 60rpx;
+}
+
+.code {
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #999;
+    text-align: center;
+}
+
+.code_img {
+    display: block;
+    margin: 0 auto;
+    width: 400rpx;
+}

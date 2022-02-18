@@ -1,0 +1,88 @@
+
+html,
+body {
+  width: 100%;
+  height: 100px;
+  background-color: #f8f8f8;
+}
+
+
+.content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.iphoneXHeigth{
+  height: 96%;
+}
+.content>view{
+  flex:1;
+  width: 100%;
+  background: #000;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+}
+.content>view:first-child{
+  background-size: cover;
+}
+.content>view:nth-child(2){
+  background-size: cover;
+}
+.content>view:nth-child(3){
+  background-size: cover;
+}
+.name{
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.name1{
+  position:absolute;
+  top:60rpx;
+  left:0;right:0; margin:0 auto;
+}
+.units{
+  font-size: 24rpx;
+  text-align: center;
+}
+.units1{
+  position:absolute;
+  top:100rpx;
+  left:0;right:0; margin:0 auto;
+}
+.none{
+  font-size: 26rpx;
+}
+.store{
+  position: absolute;
+  right: 10px;
+  width: 40rpx;
+  height: 40rpx;
+  top:10px;
+  font-size: 22rpx;
+  color: #fff;
+  z-index: 9999;
+}
+.store image{
+  height: 100%;
+  width: 100%;
+}
+.store1{
+  position: absolute;
+  right: 10px;
+  top:10px;
+  font-size: 22rpx;
+  color: #fff;
+  z-index: 9999;
+}
+
+.scrollView{position:absolute; bottom:60rpx; left:0; right:0; margin:0 auto; width:700rpx; height:160rpx;}
+.bottom_ul{ width:700rpx; overflow:hidden; }
+.bottom_li{ width:282rpx; height:160rpx; float:left; box-sizing:border-box; margin:0 10rpx; background: red}

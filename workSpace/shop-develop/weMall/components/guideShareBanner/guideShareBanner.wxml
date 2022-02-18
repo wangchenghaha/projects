@@ -1,0 +1,44 @@
+<view wx:if="{{banner && banner.length && banner[0].isShow}}">
+  <swiper class="cover-img"
+          indicator-dots="{{banner.length > 1}}"
+          autoplay
+          circular
+          indicator-color="#aaa"
+          indicator-active-color="#fff"
+          style="height: {{banner[0].height || 126 }}rpx"
+          wx:if="{{banner[0].type}}">
+    <block wx:for="{{banner}}" wx:key="banner">
+      <swiper-item class="cover-item">
+        <navigator wx:if="{{item.miniProgram && item.miniProgram.appId}}"
+                   target="miniProgram"
+                   open-type="navigate"
+                   app-id="{{item.miniProgram.appId}}"
+                   path="{{item.miniProgram.path}}"
+                   extra-data="{{item.miniProgram.extraData}}">
+          <image src="{{item.bannerUrl}}" class="img" mode='widthFix'></image>
+        </navigator>
+        <image wx:else src="{{item.bannerUrl}}" data-index="{{index}}" data-link="{{item.linkUrl}}" mode="widthFix" bindtap="onClick"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view wx:else>
+    <block wx:for="{{banner}}" wx:key="banner">
+      <navigator wx:if="{{item.miniProgram && item.miniProgram.appId}}"
+                 target="miniProgram"
+                 open-type="navigate"
+                 app-id="{{item.miniProgram.appId}}"
+                 path="{{item.miniProgram.path}}"
+                 extra-data="{{item.miniProgram.extraData}}">
+        <image src="{{item.bannerUrl}}" class="img" mode='widthFix'></image>
+      </navigator>
+      <image wx:else src="{{item.bannerUrl}}" data-index="{{index}}" data-link="{{item.linkUrl}}" mode="widthFix" bindtap="onClick"></image>
+    </block>
+  </view>
+</view>
+
+<view class="video-wrapper" wx:if="{{shortVideo.url}}">
+  <image wx:if="{{shortVideo.shortVideoBg}}" mode="widthFix" src="{{shortVideo.shortVideoBg}}"></image>
+  <view class="video-item">
+    <video class="short-video" style="width: {{shortVideo.width}}; height: {{shortVideo.height}}" src="{{shortVideo.url}}" show-center-play-btn="false" controls="false" autoplay="true" loop="false"  show-mute-btn="true" muted="true"></video>
+  </view>
+</view>

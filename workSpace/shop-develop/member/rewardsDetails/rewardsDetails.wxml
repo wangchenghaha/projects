@@ -1,0 +1,27 @@
+<view class="rd-container" style="background: url('{{Coupon.activityURL}}') no-repeat center center; background-size: cover;">
+  <view class="rule-container {{ShowRule==1?'on':''}}">
+    <view class="icon-box">
+      <image class="icon-rule" src="https://cdn.bestseller.com.cn/assets/common/pub/image/handle_help.png" mode="aspectFill" bindtap="showRule"></image> 
+      <image class="icon-download {{showIconDownload==1?'on':''}}" src="https://cdn.bestseller.com.cn/assets/common/pub/image/handle_down.png" mode="aspectFill"  bindtap="showCoupon"></image>  
+    </view>
+    <view class="user">
+      <image src="{{user.header}}" mode="aspectFill"></image>
+      <view>{{user.name}}</view>
+    </view>
+    <view class="rule">
+      <view class="title">活动规则</view>
+      <block wx:for="{{Coupon.ruleIntroduction}}" wx:key="coupons">
+        <view>{{index+1}}: {{item}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="coupon-container {{showCoupon==1?'on':''}}">
+    <view class="coupon-box">
+      <image class="coupon" src="{{Coupon.couponCard}}" mode="aspectFit"></image>
+      <view class="button-area">
+        <view bindtap="getCoupon" data-coupon_number="{{Coupon.couponNumber}}" data-type="{{Coupon.type}}">确认</view>
+        <view bindtap="hideCoupon">取消</view>
+      </view>
+    </view>
+  </view>
+</view>

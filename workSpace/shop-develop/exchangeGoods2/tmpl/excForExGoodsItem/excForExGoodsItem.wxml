@@ -1,0 +1,40 @@
+<import src="../stepper/stepper"></import>
+<template name="excForExGoodsItemTmpl">
+  <view class='frame'>
+    <view id="{{index}}" class="global_thumbnail" bindtap="checkboxChange">
+      <image class="global_thumbnail" mode="widthFix" src="https://cdn.bestseller.com.cn{{item.gsMainPicPath}}" />
+      <!-- <image class="global_thumbnail_square" mode="widthFix" src="{{item.gsMainPicPath}}" /> -->
+    </view>
+    <view id="{{index}}" class="thumbnail_right_txt" bindtap="checkboxChange">
+      <text style='font-size:26rpx;'>{{item.goodsName}}</text>
+      <view class="key_0">货号
+        <text>{{item.gcsSku}}</text>
+      </view>
+      <view class="color_size">
+        <view class="key_1">
+          <text>{{item.colorName}}</text>
+        </view>
+        <view class="key_1">
+          <text>{{item.sizeName}}</text>
+        </view>
+      </view>
+      <view class="key_0">价格
+        <text>¥{{item.price}}</text>
+      </view>
+      <view class="key_0">数量
+        <text>{{item.goodsCount}}</text>
+        <!-- <view class="stepper_layout">
+                    <template is="tmplStepper" data="{{stepperIndex:index,count:item.goodsCount}}" />
+                </view> -->
+      </view>
+      <!-- <view class="stepper_combine_layout">
+            <text class="c_key">数量：</text>
+            <template is="tmplStepper" />
+        </view> -->
+    </view>
+
+    <view id='{{index}}' class='layout_delete' bindtap='onItemDelete'>
+      <image src='/images/icon_trash_grey_48.png' />
+    </view>
+  </view>
+</template>

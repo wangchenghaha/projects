@@ -1,0 +1,42 @@
+<view class="header flex-start" style="padding: {{headerStyle.paddingTop}} 0 {{headerStyle.paddingBottom}}">
+  <text class="back" bindtap="goBack"></text>
+  <view class="input-wrap" style="height: {{headerStyle.inputHeight}}">
+    <input class="input"
+           type="text"
+           style="height: {{headerStyle.inputHeight}}; line-height: {{headerStyle.inputHeight}}"
+           value="{{searchValue}}"
+           focus="true"
+           bindinput="searchInput"
+           bindconfirm="searchSubmit"
+           placeholder="{{placeholder}}" />
+    <icon wx:if="{{searchValue}}" class="clear" bindtap="clearSearch" type="cancel" color="#000" size="26rpx" />
+  </view>
+
+</view>
+<view class="content" style="padding-top: {{headerStyle.height}}">
+  <view wx:if="{{suggestList.length}}" class="suggest">
+    <view class="suggest-item" wx:for="{{suggestList}}" wx:key="index" data-text="{{item}}" data-type="hot" bindtap="searchKey">{{item}}</view>
+  </view>
+  <block wx:else>
+    <block wx:if="{{searchList.length}}">
+      <view class="title font-bold flex-start">搜索历史
+        <image class="icon-remove" src='/images/icon_trash_grey_48.png' mode="widthFix" data-type="history" bindtap="removeSearch"></image>
+      </view>
+      <view class="search">
+        <block wx:for="{{searchList}}" wx:key="date">
+          <text class="search-item" data-text="{{item.value}}" bindtap="searchKey">{{item.value}}</text>
+        </block>
+      </view>
+    </block>
+
+    <block wx:if="{{searchKeyWord.length}}">
+      <view class="title font-bold" >搜索发现</view>
+      <view class="search">
+        <block wx:for="{{searchKeyWord}}" wx:key="id">
+          <text wx:if="{{item.keyword}}" class="search-item" data-type="hot" data-text="{{item.keyword}}" bindtap="searchKey">{{item.keyword}}</text>
+        </block>
+      </view>
+    </block>
+  </block>
+</view>
+<dmp-goods sceneId="ss110" sceneType="1" itemId="" page="search"></dmp-goods>

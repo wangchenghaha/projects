@@ -1,0 +1,52 @@
+<view class="wrap">
+  <view>
+    <!-- 顶部标题和描述 -->
+    <view class="head">
+      <view class="title" wx:if="{{conList.title}}">{{conList.title}}</view>
+      <view class="description" wx:if="{{conList.createdTime}}">{{conList.createdTime}}</view>
+    </view>
+
+    <!-- 中间列表 -->
+    <view class="content">
+      <view wx:for="{{conList.data}}" wx:key="conList" class="li">
+        <block wx:if="{{item.link && item.code}}">
+          <navigator target="miniProgram" path="{{item.link}}" app-id="{{item.code}}">
+            <image src="{{item.detailPic}}" mode="widthFix" data-index="{{index}}"></image>
+          </navigator>
+        </block>
+        <block wx:else>
+          <view class="imgText" wx:if="{{item.detailPic}}">
+            <block wx:if="{{item.mediaType === 'video'}}">
+              <video style="width:100%;" src="{{item.detailPic}}" objectFit="fill" show-center-play-btn="false" muted="muted" show-mute-btn="true"></video>
+            </block>
+            <block wx:else>
+              <image lazy-load="true" show-menu-by-longpress="true" src="{{item.detailPic}}" mode="widthFix" data-index="{{index}}" bindtap='onClick'></image>
+            </block>
+            <view wx:if="{{item.description}}" class="text"><text>{{item.description}}</text></view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+
+    <!-- 底部关联资讯列表 -->
+    <view class="foot" wx:if="{{footList.length>0}}">
+      <view class="foot_title">相关资讯</view>
+      
+      <view class="scroll_wrapper">
+        <view class="scrollList" wx:for="{{footList}}" wx:key="footList" id='{{item.newsId}}' bindtap='openNewInformatCon'>
+          <view class='foot_left'>
+            <view class='title'>{{item.title}}</view>
+            <view class='createTime'>{{item.createTime}}</view>
+          </view>
+          <view class='foot_right'>
+            <image src="{{item.picImg}}" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+    <!-- IphoneX底部栏 -->
+    <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}">
+    </view>
+</view>

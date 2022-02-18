@@ -1,0 +1,24 @@
+<view class="mycoupon-contaniner" wx:if="{{showModal}}">
+    <view class="mycoupon-wrap">
+        <image class="mycoupon-bg" src="../../img/mycoupon-bg.png" />
+        <view class="mycoupon-content">
+           <view class="myrank">
+               <view class="my-info">我的喵币:{{integral}}</view>
+               <view class="my-info">排名:{{rank_key}}</view>
+           </view>
+           <view class="coupon-list">
+               <scroll-view class="coupon-scroll" scroll-y="true">
+                   <view class="coupon-item" wx:for="{{couponList}}" wx:key="index">
+                       <view class="coupon-box">
+                           <image class="coupon-img" catch:tap="couponHandle" data-couponInfo="{{item}}" src="../../img/coupon30-look.png" wx:if="{{item.award_type == 1 && item.is_add_card}}" />
+                            <image class="coupon-img" catch:tap="couponHandle" data-couponInfo="{{item}}" src="../../img/coupon30-get.png" wx:if="{{item.award_type == 1 && !item.is_add_card}}" />
+                            <image class="coupon-img" catch:tap="couponHandle" data-couponInfo="{{item}}" src="../../img/coupon100-look.png" wx:if="{{item.award_type == 5 && item.is_add_card}}" />
+                            <image class="coupon-img" catch:tap="couponHandle" data-couponInfo="{{item}}" src="../../img/coupon100-get.png" wx:if="{{item.award_type == 5 && !item.is_add_card}}" />
+                       </view>
+                   </view>
+               </scroll-view>
+           </view>
+        </view>
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+</view>

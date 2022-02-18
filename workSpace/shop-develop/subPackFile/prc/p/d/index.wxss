@@ -1,0 +1,449 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  14% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  42% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+@keyframes tada {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+@keyframes backInDown {
+  0% {
+    -webkit-transform: translateY(-1200px) scale(0.7);
+    transform: translateY(-1200px) scale(0.7);
+    opacity: .7;
+  }
+  80% {
+    -webkit-transform: translateY(0) scale(0.7);
+    transform: translateY(0) scale(0.7);
+    opacity: .7;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: url("https://tc.woaap.com/lingzhi/princess/bg-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 70rpx;
+  padding-bottom: 20rpx;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+.wrapper.big {
+  padding-top: 100rpx;
+  background: url("https://tc.woaap.com/lingzhi/princess/big-bg-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster {
+  position: relative;
+  width: 595rpx;
+  height: 884rpx;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 30rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  animation: zoomInDown .7s ease;
+}
+
+.wrapper .poster.big {
+  height: 1045rpx;
+}
+
+.wrapper .poster.poster-0 {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-0.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-0.big {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-0-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-1 {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-1.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-1.big {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-1-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-2 {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-2.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-2.big {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-2-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-3 {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-3.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-3.big {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-3-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-4 {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-4.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster.poster-4.big {
+  background: url("https://tc.woaap.com/lingzhi/princess/poster-4-b.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .poster .qrcode {
+  position: absolute;
+  right: 37rpx;
+  top: 656rpx;
+  width: 92rpx;
+  height: 92rpx;
+}
+
+.wrapper .poster .qrcode.big {
+  top: 813rpx;
+}
+
+.wrapper .poster .btns {
+  position: absolute;
+  left: 127rpx;
+  bottom: 19rpx;
+  width: 340rpx;
+  height: 85rpx;
+  font-size: 32rpx;
+  line-height: 85rpx;
+  text-align: center;
+  color: white;
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-s.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 0;
+}
+
+.wrapper .poster .btns:after {
+  display: none;
+}
+
+.wrapper .poster .btns.active {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-s-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .award {
+  margin: 0 auto;
+  animation: tada 1s ease 0.5s forwards;
+}
+
+.wrapper .award.hover {
+  animation: heartBeat 0.6s ease 1;
+}
+
+.wrapper .award.award-0 {
+  background: url("https://tc.woaap.com/lingzhi/princess/award-3.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 255rpx;
+  height: 206rpx;
+  margin: 10rpx auto 0;
+}
+
+.wrapper .award.award-0.big {
+  width: 317rpx;
+  height: 255rpx;
+  margin: 20rpx auto 0;
+}
+
+.wrapper .award.award-1 {
+  background: url("https://tc.woaap.com/lingzhi/princess/award-4.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 358rpx;
+  height: 198rpx;
+  margin: 10rpx auto;
+}
+
+.wrapper .award.award-1.big {
+  width: 470rpx;
+  height: 257rpx;
+  margin: 20rpx auto 10rpx;
+}
+
+.wrapper .award.award-2 {
+  background: url("https://tc.woaap.com/lingzhi/princess/award-5.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 335rpx;
+  height: 194rpx;
+  margin: 10rpx auto;
+}
+
+.wrapper .award.award-2.big {
+  width: 440rpx;
+  height: 253rpx;
+  margin: 20rpx auto 10rpx;
+}
+
+.wrapper .award.award-3 {
+  background: url("https://tc.woaap.com/lingzhi/princess/award-1.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 357rpx;
+  height: 200rpx;
+  margin: 10rpx auto;
+}
+
+.wrapper .award.award-3.big {
+  margin: 30rpx auto 10rpx;
+  width: 438rpx;
+  height: 243rpx;
+}
+
+.wrapper .award.award-4 {
+  background: url("https://tc.woaap.com/lingzhi/princess/award-2.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 345rpx;
+  height: 196rpx;
+  margin: 10rpx auto;
+}
+
+.wrapper .award.award-4.big {
+  width: 427rpx;
+  height: 241rpx;
+  margin: 30rpx auto 10rpx;
+}
+
+.wrapper .footer {
+  transform: translateY(-800px) scale(0.7);
+  opacity: .7;
+  display: flex;
+  animation: backInDown 0.7s ease .7s forwards;
+}
+
+.wrapper .footer .item {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.wrapper .footer .item.item1 {
+  padding-left: 40rpx;
+}
+
+.wrapper .footer .item.item2 {
+  padding-right: 40rpx;
+}
+
+.wrapper .footer .item .btn {
+  width: 226rpx;
+  height: 85rpx;
+  margin: 0 auto;
+  line-height: 85rpx;
+  font-size: 32rpx;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-l.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .footer .item .btn:after {
+  display: none;
+}
+
+.wrapper .footer .item .btn.hove {
+  background: url("https://tc.woaap.com/lingzhi/princess/btn-l-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .footer .item .btn .tit {
+  font-size: 26rpx;
+  line-height: 1;
+}
+
+.wrapper .footer .item .btn .tit:first-child {
+  padding-top: 10rpx;
+}
+
+.wrapper .shareMore {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.wrapper .shareMore .middle {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 30rpx 50rpx 50rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  transform: translateY(100%);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: 0.2s;
+}
+
+.wrapper .shareMore .middle.active {
+  transform: translateY(0);
+}
+
+.wrapper .shareMore .middle.big {
+  padding-bottom: 34rpx;
+}
+
+.wrapper .shareMore .middle .item {
+  flex: 1;
+  text-align: center;
+  height: 200rpx;
+}
+
+.wrapper .shareMore .middle .item:nth-child(1) {
+  background: url("https://tc.woaap.com/lingzhi/princess/wechat.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 144rpx 150rpx;
+}
+
+.wrapper .shareMore .middle .item:nth-child(2) {
+  background: url("https://tc.woaap.com/lingzhi/princess/friend.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 144rpx 150rpx;
+}
+
+.wrapper .shareMore .middle .item .btns {
+  width: 300rpx;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 170rpx 0;
+  border: 0;
+  border-radius: 0;
+  line-height: 1;
+  font-weight: normal;
+  color: black;
+}
+
+.wrapper .shareMore .middle .item .btns:after {
+  display: none;
+}

@@ -1,0 +1,42 @@
+<view class="container"
+    style="background:url({{isBigPhone ? comData.valentine.recording_bac_big_img : comData.valentine.recording_bac_sm_img}});background-repeat: repeat; background-size:100%; width:100%;min-height:100vh;">
+    <comp-image-pre src='{{comData.valentine.recording_title_img}}' class="record-title" mode="aspectFill" width="430"
+        height="99">
+    </comp-image-pre>
+    <view class="xinyika-warp">
+        <comp-image-pre src='{{heartSelect}}' class="main-img" mode="aspectFill" width="642" height="447">
+        </comp-image-pre>
+        <view class="border">
+        </view>
+        <comp-image-pre src="{{recordIng ? comData.valentine.recording_gif : comData.valentine.recording_def_gif}}"
+            class="recordStatus" mode="aspectFill" width="750" height="240">
+        </comp-image-pre>
+    </view>
+    <!-- 录音区 -->
+    <view class="record-warp" wx:if="{{!tempFilePath}}" bindlongpress='openRecording' bindtouchend="shutRecording">
+        <view class="long-btn"
+            style="display:{{openRecordingdis}};background:url({{comData.valentine.recording_btn_img}});background-size:100% 100%;width:331rpx;height:306rpx;"
+            mode="aspectFill">
+        </view>
+        <view class="long-btn2" style="display:{{shutRecordingdis}};width:241rpx;height:241rpx;position: relative;"
+            mode="aspectFill">
+            <view class="secordWarp" hover-class="none" hover-stop-propagation="false">
+                <view class="secord">
+                    {{recordingTime}}S
+                </view>
+                <view class="text">
+                    松开完成录制
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <view wx:if="{{tempFilePath}}" class="recordEnd-warp">
+        <comp-image-pre src='{{comData.valentine.try_recording_btn}}' bindtap="restartRecord" class="test-record"
+            mode="aspectFill" width="223" height="306"></comp-image-pre>
+        <comp-image-pre src='{{comData.valentine.recording_share_btn}}' bindtap="jumpToSetPwd" class="share-warp"
+            mode="aspectFill" width="331" height="306"></comp-image-pre>
+        <comp-image-pre src='{{comData.valentine.audition_btn}}' bindtap="recordingAndPlaying" class="test-record"
+            mode="aspectFill" width="223" height="306"></comp-image-pre>
+    </view>
+</view>

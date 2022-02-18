@@ -1,0 +1,82 @@
+image {
+  display: block;
+  width: 100%;
+}
+
+.contact .tab {
+  margin-top: 30rpx;
+  border-top: solid 2rpx #000;
+  border-bottom: solid 2rpx #000;
+}
+
+.contact .tab-item {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  border-left: solid 2rpx #000;
+}
+
+.contact .tab-item.selected {
+  background: #000;
+  color: #fff;
+}
+
+.contact .tab-item:nth-child(1) {
+  border-left: none;
+}
+
+.contact .content {
+  margin: 30rpx auto;
+  width: 95%;
+}
+
+.contact .content.default {
+  margin: 0;
+  width: 100%;
+}
+
+.contact .content .title {
+  padding: 20rpx 0rpx;
+  font-size: 32rpx;
+  line-height: 35rpx;
+}
+
+.contact .content .answer {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  line-height: 32rpx;
+}
+
+.contact .content .answer-icon {
+  padding: 10rpx 10rpx 0 0;
+}
+
+.contact .content .answer-item {
+  align-items: flex-start;
+}
+
+.contact .content .answer-text {
+  flex: 1;
+  display: block;
+  padding: 10rpx 0;
+}
+
+.contact .go-back {
+  margin: 40rpx auto;
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: solid 2rpx #000;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+}
+
+.contact .go-back .icon {
+  width: 35rpx;
+  margin-right: 15rpx;
+}
+
+.contact .bottomC {
+  height: 68rpx;
+}

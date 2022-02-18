@@ -1,0 +1,122 @@
+<import src="../tmpl/stepper/stepper" />
+<import src="../tmpl/classicOrderItem/classicOrderItem" />
+<view class="layout_father">
+  <!-- 普通订单，首次进入 -->
+  <view class="global_single_title_bar g_single_title_bg">
+    <text class="text_title_left">当前商品</text>
+  </view>
+  <view class="global_order_item">
+    <template is="classicOrderItemTmpl" data="{{item:itemBean,checkable:false}}"></template>
+  </view>
+  <view class="global_single_title_bar g_big_height g_margin_bottom_middle flex_r space_b g_border_top">
+    <text class='reason_title'>换货原因</text>
+    <view class="flex_r g_margin_right_default" bind:tap="onReasonLayoutClick" data-visible="1">
+      <view class="plz_choose">{{currReasonStr}}</view>
+      <image class="img_arrow_right" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_exchange_arrow_right.png" mode="widthFix" />
+    </view>
+  </view>
+  <view class="global_single_title_bar g_big_height g_margin_bottom_middle flex_r space_b g_border_top">
+    <text class='reason_title'>换货说明：</text>
+    <view class="flex_r reason_cus g_margin_right_default">
+      <input style="width:100%;" placeholder="选填..." placeholder-class="reason_input" maxlength="30" bindinput="onReasonInputChange" />
+    </view>
+  </view>
+  <view class="flex_c align_s g_margin_bottom_middle g_border_top">
+    <view class="flex_r align_s layout_upload_title">
+      <view class='reason_title'>上传凭证</view>
+      <image wx:if="{{isQualityIssues}}" class="img_snow" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_exchange_snowflake_0.png" mode="widthFix" />
+    </view>
+    <view class="layout_cam flex_c space_c g_margin_top_default g_margin_left_default" bind:tap="onUploadExPic">
+      <image class="img_cam" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_exchange_camera.png" mode="widthFix" />
+      <view class="img_tip">上传凭证</view>
+      <view class="">（最多3张）</view>
+    </view>
+    <view class="layout_pic_list flex_r align_s space_s" wx:if="{{picList.length>0}}">
+      <block wx:for="{{picList}}" wx:key="picList">
+        <view class="item_p" wx:if="{{item}}">
+          <image class="pic_p" src="{{item}}" mode="widthFix"/>
+          <image class="pic_delete" id="{{index}}" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_ex_delete_red.png" mode="widthFix" bind:tap="onPicDeleteClick"/>
+      </view>
+      </block>
+    </view>
+    <view class="flex_r g_margin_left_default {{isQualityIssues?'upload_tip_red':'upload_tip_0'}}">
+      如因产品质量问题，请上传凭证，以便我们今后提供更好的产品和服务
+    </view>
+  </view>
+  <view class="global_single_title_bar g_big_height g_margin_bottom_middle flex_r space_b g_border_top">
+    <text class='reason_title'>换货商品</text>
+    <view class="flex_r g_margin_right_default" bind:tap="onDetailLayoutClick" data-visible="1">
+      <view class="plz_choose">{{currChosenColorSizeStr}}</view>
+      <image class="img_arrow_right" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_exchange_arrow_right.png" mode="widthFix" />
+    </view>
+  </view>
+  <view class="ex_rules_tip g_margin_left_default">仅支持更换同款商品（不同尺码或不同颜色）</view>
+  <view class="r_bottom">
+    <view class="bt_confirm" bind:tap="onFakeConfirmClick">确认</view>
+  </view>
+
+
+  <view class="frame_pop" wx:if="{{showExReasons}}">
+    <view class="frame_opacity" />
+    <view class="frame_ex_reason_list">
+      <view class="pop_title">换货原因</view>
+      <radio-group class="layout_radio" bindchange="onExReasonChange">
+        <view class="radio_item flex_r align_c space_b" wx:for="{{stableReasonList}}" wx:key="stableReasonList">
+          <view>{{item.name}}</view>
+          <radio value="{{item.value}}" />
+        </view>
+      </radio-group>
+      <view class="pop_confirm" bind:tap="onReasonLayoutClick">确认</view>
+    </view>
+  </view>
+  <!-- 选择Item后的弹出框 -->
+  <view class="frame_goods_detail" wx:if="{{showDetailLayout}}">
+    <view class="frame_opacity"></view>
+    <view class="frame_popup">
+      <view class="frame_popup_upper">
+        <view class="layout_upper flex_r align_s">
+          <view class="thumbnail">
+            <image src="{{bigThumbUrl}}" mode="widthFix"></image>
+          </view>
+          <view class="layout_infos flex_c align_s">
+            <view class="goods_name" wx:if="{{false}}">{{goodsName}}</view>
+            <view class="price">¥{{colorList[colorIndex].price}}</view>
+            <view class="stock">
+              库存{{goodsStockBean[sizeList[sizeIndex].sku]?goodsStockBean[sizeList[sizeIndex].sku]:'0'}}件
+            </view>
+            <view class="tip_already_chose">已选 {{colorList[colorIndex].colorAlias}} {{sizeList[sizeIndex].sizeAlias}}</view>
+          </view>
+          <view class="upper_close" bindtap="onDetailLayoutClick">
+            <icon type="cancel" size="50rpx" color="#000" />
+          </view>
+        </view>
+        <view class="layout_size_and_color">
+          <view class="title">颜色分类</view>
+          <view class="item_outter">
+            <view id="{{index}}" wx:if="{{item.status == 'InShelf'}}" class="item_inner {{index==colorIndex?'item_selected':''}}" wx:for="{{colorList}}" wx:key="colorList" bindtap="onColorClick">
+              {{item.colorAlias}}
+            </view>
+          </view>
+        </view>
+        <view class="layout_size_and_color">
+          <view class="title">尺码</view>
+          <view class="item_outter">
+            <view id="{{index}}" class="item_inner {{index==0 && sizeList.length<2?'item_selected':''}} {{index==sizeIndex?'item_selected':''}} {{noStockList[index]?'item_no_stock':''}}" wx:for="{{sizeList}}" wx:key="sizeList" bindtap="onSizeClick">
+              {{item.sizeAlias}}
+            </view>
+          </view>
+        </view>
+        <view class="layout_count">
+          <view class="c_title">数量</view>
+          <view class="c_number">
+            <view class="c_add" bindtap="onCountPlus">+</view>
+            <input class="c_num" type="number" value="{{goodCount}}" disabled="true" />
+            <view class="c_jian" bindtap="onCountMinus">-</view>
+          </view>
+        </view>
+      </view>
+      <view class="bt_detail_confirm" bindtap="onDetailLayoutClick">确认</view>
+    </view>
+  </view>
+
+</view>

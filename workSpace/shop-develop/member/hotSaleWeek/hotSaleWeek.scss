@@ -1,0 +1,52 @@
+.main{
+  image{
+    display: block;
+    width: 100%;
+  }
+  .banner{
+    width: 100%;
+  }
+  .go-home{
+    margin: 20rpx 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    .logo{
+      margin-left: 30rpx;
+      width: 200rpx;
+      height: 25rpx;
+    }
+    text{
+      display: inline-block;
+      padding: 5rpx 10rpx 5rpx 30rpx;
+      font-size: 28rpx;
+      border: solid 2rpx #000;
+      border-right: none;
+      border-top-left-radius: 50rpx;
+      border-bottom-left-radius: 50rpx;
+    }
+  }
+
+  .goods{
+    margin: 20rpx auto;
+    width: 95%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    &-item{
+      flex: 0 1 49%;
+      margin-bottom: 10rpx;
+      .goods-name{
+        padding: 10rpx 0;
+        font-size: 26rpx;
+      }
+      .goods-price{
+        font-size: 24rpx;
+        color: #e23d4d;
+        text{
+          font-size: 34rpx;
+          line-height: 30rpx;
+        }
+      }
+    }
+  }
+}

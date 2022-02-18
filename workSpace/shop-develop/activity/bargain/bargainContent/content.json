@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents":{
+    "select-size":"/components/selectSize/selectSize",
+    "notice-pop": "/components/contentPop/contentPop",
+    "my-close":"/components/close/close"
+  }
+}

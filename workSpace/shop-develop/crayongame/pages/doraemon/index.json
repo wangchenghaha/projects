@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "preload": "../../components/preload3/index",
+    "modal": "../../components/doraModal/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

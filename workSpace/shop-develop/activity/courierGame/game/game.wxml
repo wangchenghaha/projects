@@ -1,0 +1,88 @@
+<view class="bg" style="background-image: url('{{splashImg}}');">
+    <block wx:if="{{downNum != 0}}">
+        <view class="downView">
+            <image src="{{downTopImg}}" style="width:100%;" mode="widthFix" />
+
+                <view class="downImg" style="animation: {{downAnimate}} .3s linear 1 forwards;">
+                    <image src="{{downImg}}" style="width:100%;height:100%;" />
+                </view>
+            
+        </view>
+    </block>
+    <block wx:else>
+        <view class="topViewBg">
+            <view class="positionView">
+                <view class="left">
+                    <image src="{{jindubiaoImg}}" style="width:100%;height:100%;" mode="widthFix" />
+                </view>
+                <view class="right">
+                    <image src="{{jinduBgImg}}" style="width:100%;height:100%;" mode="widthFix" />
+                    <view class="right-slt">
+                        <image src="{{jinduImg}}" style="width:{{overTimeSlider || 0}}%;height:100%;" />
+                    </view>
+                </view>
+                <view class="downNum">{{overTime}}</view>
+                <view class="sysj">剩余时间</view>
+            </view>
+            
+        </view>
+
+        <view class="gameView">
+            <view class="subView">
+            
+                <view class="imgViews" wx:for="{{courierDatas}}" wx:key="makeCourierDatas" style="width:{{item.width}}rpx;height:{{item.height}}rpx;left:{{item.x}}rpx;top:{{item.y}}rpx;z-index: {{item.index}};" data-detail="{{item}}" bindtouchend="touchend">
+                    <image src="{{item.img}}" id="{{index}}" style="width:100%;height:100%;opacity: 0;animation: {{item.animate}} {{item.shichang}}s linear {{item.yanchi}}s 1 forwards;animation-play-state: {{gameStatus}};" bindanimationend="animationend" />
+                </view>
+
+                <view class="sltImg" wx:for="{{saveTapArrs}}" wx:key="savejiaArrs" wx:if="{{item}}" style="width:{{item.width}}rpx;height:{{item.height}}rpx;left:{{item.x}}rpx;top:{{item.y}}rpx;">
+                    <image src="{{item.img}}" style="width:100%;height:100%;animation: sltImgAnimate {{item.shichang}}s linear 1 forwards;" />
+                </view>
+
+                <view class="jiaView" wx:for="{{saveTapArrs}}" wx:key="savejiaArr" wx:if="{{item}}" style="width:{{item.width}}rpx;line-height:{{item.height}}rpx;left:{{item.x}}rpx;top:{{item.y}}rpx;" id="{{index}}" bindanimationend="textAnimationend">{{item.text}}</view>
+                
+            </view>
+        </view>
+        
+    
+    </block>
+    
+</view>
+
+        <block wx:if="{{canNotGame}}">
+            <view class="bouncedBg"></view>
+                <view class="oneSubView">
+                    <view class="imgView">
+                        <image src="{{canNotPlay}}" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+                        
+                            <view class="subTitle" style="top: 41%;">{{canNotPlayText[0]}}</view>
+                            <view class="subTitle" style="top: 47%;">{{canNotPlayText[1]}}</view>
+                            <view class="subTitle" style="top: 53%;">{{canNotPlayText[2]}}</view>
+
+                            <view class="bottomViewsss" style="background-image: url('{{bouncedBtn}}');">立即邀请</view>
+                            <button open-type="share" class="bottomViewsssShare"></button>
+
+                            <view class="closed" bindtap="closed"></view>
+                    </view>
+                </view>
+        </block>
+        <block wx:if="{{endGame}}">
+            <view class="bouncedBg"></view>
+                <view class="oneSubView">
+                    <view class="imgView">
+                        <image src="{{canPlay}}" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+                        
+                            <view class="subTitle" style="top: 44%;">{{endGameText[0]}}</view>
+                            <view class="subTitle" style="top: 50%;">{{endGameText[1]}}</view>
+
+                            <view class="bottomViewsss" style="background-image: url('{{bouncedBtn}}');" bindtap="_startGame">再玩一次</view>
+
+                            <view class="closed" bindtap="closed"></view>
+                    </view>
+                </view>
+        </block>
+
+<view class="canTap" wx:if="{{gameOver}}"></view>
+<view class="sanjiao" bindtap="backTap">
+	<image src="{{backImg}}" style="width:100%;height:100%;" />
+</view>
+

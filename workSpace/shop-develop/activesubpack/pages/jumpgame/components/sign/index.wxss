@@ -1,0 +1,167 @@
+.sign-contaniner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.button-hover {
+    background: transparent;
+}
+
+.sign-wrap {
+    width: 551rpx;
+    height: 1081rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -275.5rpx;
+    margin-top: -580rpx;
+    z-index: 200;
+}
+
+.sign-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.sign-content {
+    display: flex;
+    flex-direction: column;
+    width: 531rpx;
+    height: 690rpx;
+    position: absolute;
+    top: 310rpx;
+    background: transparent;
+    left: 10rpx;
+    z-index: 20;
+    overflow-y: auto;
+}
+
+.sign-date {
+    padding: 0rpx 25rpx 0 25rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    min-height: 470rpx;
+    overflow-y: auto;
+}
+
+.sign-item {
+    position: relative;
+    margin: 25rpx 0;
+    width: 80rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #333;
+    font-weight: 900;
+}
+
+.signtip {
+    opacity: 0;
+    position: absolute;
+    font-size: 20rpx;
+    color: #f99aba;
+    top: -35rpx;
+    left: 15rpx;
+    z-index: 20;
+    font-weight: bold;
+}
+.texts {
+    font-size: 24rpx;
+    text-align: center;
+    color: #f99aba;
+}
+.signtip.animationed {
+    animation: myfirst 0.5s;
+    animation-fill-mode: backwards;
+}
+
+.sign-item.active {
+    background: url(https://tc.woaap.com/lingzhi/jumpgame/sign-icon.png) no-repeat;
+    background-position: center;
+    background-size: 54rpx 47rpx;
+}
+
+.sign-item.notsign {
+    color: #999;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: -125rpx;
+    left: 50%;
+    margin-left: -25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    z-index: 10;
+}
+
+.sign-tip {
+    margin-top: 10rpx;
+}
+
+.sign-tip .tip {
+    
+    font-size: 36rpx;
+    color: #f99aba;
+    font-weight: 900;
+    text-align: center;
+}
+
+.sign-tip .tip:nth-child(2) {
+    margin: 30rpx 0 10rpx 0;
+    font-size: 28rpx;
+}
+
+@keyframes myfirst {
+    0% {
+        opacity: 0.3;
+    }
+    25% {
+        opacity: 0.6;
+        top: -40rpx;
+    }
+    50% {
+        opacity: 0.9;
+        top: -45rpx;
+    }
+    75% {
+        opacity: 1;
+        top: -50rpx;
+    }
+    100% {
+        opacity: 0;
+        top: -50rpx;
+    }
+}
+
+.share-btn {
+    position: absolute;
+    bottom: -49rpx;
+    left: 50%;
+    width: 359rpx;
+    height: 98rpx;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    margin-left: -179rpx;
+    line-height: normal;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+}
+
+.share-btn::after {
+    display: none;
+}
+
+.address-btn {
+    width: 359rpx;
+    height: 98rpx;
+}

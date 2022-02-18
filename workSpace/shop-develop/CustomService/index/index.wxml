@@ -1,0 +1,53 @@
+<view class='wrapper'>
+  <view class='header'>
+    <!-- <image class='images_header' src='{{io.banner || "../common/image/13.jpg"}}'></image> -->
+    <swiper class="images_header" indicator-dots="{{indicatorDots}}"
+        circular="{{circular}}"
+        indicator-dots="true"
+        indicator-color="#eee"
+        indicator-active-color="rgba(0,0,0,0.6)"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" :key="index">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <view class="content">
+    <introduce title='{{io.title}}' img='{{io.detail_pic}}'/>
+    <view class="select-icon">
+      <image style="width:40rpx;height:25rpx;" class="select-img" src="../common/image/sel.png"></image>
+    </view>
+    <!-- 操作栏 -->
+    <view class="footer">
+      <view class="history" bindtap='checkOrderListfun'>
+        <image class="image" src='../common/icon/date-black.png'></image>
+      </view>
+      <view class="btnbox" hover-class="hoverclass">
+        <button class="btn" catchtap='activeRunningfun'>立即预约</button>
+      </view>
+      <button wx:if='{{!isAuth}}' open-type="getUserInfo" plain="{{true}}" class="getUserInfo getUserInfo2" bindgetuserinfo="getUserAuth2"></button>
+      <button wx:if='{{!isAuth}}' open-type="getUserInfo" plain="{{true}}" class="getUserInfo" bindgetuserinfo="getUserAuth"></button>
+      <!-- 活动未开始 -->
+      <button wx:if='{{isNotStart}}' plain="{{true}}" class="getUserInfo" bindtap='tn'></button>
+    </view>
+    <!-- 正在进行弹窗 -->
+    <view class="shadowbox" catchtouchmove='stop' wx:if='{{showModal}}'>
+      <view class="shadow_content">
+        <view class="closebtn" catchtap='hidemodal'>
+          <image class="img_close" src='../common/icon/close.png'></image>
+        </view>
+        <view class="content-text">{{isNotStart ? '活动暂未开始' : needCardModal ? '您当前还不是会员，请领取会员卡。':'您有正在进行的预约，点击确认查看'}}</view>
+        <view class="btnbox" hover-class="hoverclass">
+          <block wx:if="{{!isNotStart}}">
+            <button class="btn" catchtap='memberRegistration' wx:if='{{needCardModal}}'>立即领取</button>
+            <button class="btn" catchtap='checkOrder' wx:if='{{!needCardModal}}'>确认</button>
+          </block>
+          <button class="btn" catchtap='ik' wx:if='{{isNotStart}}'>确认</button>
+            
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

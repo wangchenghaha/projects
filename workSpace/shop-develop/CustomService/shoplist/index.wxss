@@ -1,0 +1,61 @@
+.wrapper {
+    background: #ffffff;
+}
+.wrapper .header {
+    height: 120rpx;
+    padding: 26rpx 32rpx;
+    box-sizing: border-box;
+}
+.wrapper .header .input {
+    border-radius: 4rpx;
+    background: rgba(0,0,0,0.05);
+    padding: 0 24rpx;
+    font-size: 32rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+}
+.input-placeholder {
+    color: #9C9C9D;
+    font-size: 32rpx;
+}
+
+.wrapper .scrollview {
+    background: #F4F4F4;
+
+}
+.wrapper .scrollview .item:first-child{
+    margin-top: 20rpx;
+}
+.wrapper .scrollview .item {
+    background: #ffffff;
+    padding: 30rpx 22rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+
+.wrapper .scrollview .item .title {
+    font-size: 32rpx;
+    color: #2b2b2b;
+    font-weight: bold
+}
+
+.wrapper .scrollview .item .address, .wrapper .scrollview .item .telephone {
+    color: #757575;
+    font-size: 28rpx;
+    line-height: 1.8;
+}
+.wrapper .scrollview .nodata {
+    text-align: center;
+    padding-top: 222rpx;
+    font-size: 0;
+}
+.wrapper .scrollview .nodata .content .imagebox .image{
+    width: 160rpx;
+    height: 160rpx;
+    display: inline-block;
+}
+.wrapper .scrollview .nodata .content .tips {
+    font-size: 28rpx;
+    margin-top: 40rpx;
+    color: #757575;
+}

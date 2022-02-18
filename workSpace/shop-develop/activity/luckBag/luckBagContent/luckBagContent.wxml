@@ -1,0 +1,98 @@
+<!-- <import src='../../../utils/wxParse/wxParse.wxml' /> -->
+<view class="content">
+  <!--轮播图  -->
+  <view class="swiper">
+    <swiper class="swiper-wrapper" indicator-dots="{{swiper.indicatorDots}}" circular="{{swiper.circular}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+      <block wx:for="{{swiper.data}}" wx:key="slider">
+        <swiper-item class="swiper-item">
+          <image src="{{item}}" mode="widthFix"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  
+    <view class="dargainInfo">
+        <view class="left">
+            <view class="priceShow">
+                <view class="priceShow-dargain">{{titleBar}}</view>
+            </view>
+            <!-- <view class="Trianglebox"></view> -->
+        </view>
+        <view class="right">
+             <view class="priceShow">惊喜价： ￥<text style="font-size: 46rpx; font-weight: 600;margin-left: 10rpx; margin-bottom:10rpx;">{{packagePrice}}</text></view>
+        </view>
+    </view>
+
+  <view class="goods margin-auto">
+    <view class="goods-name goods-item" wx:if="{{selectGoodsInfo[0].goodsName}}">{{selectGoodsInfo[0].goodsName}} + {{luckbagName}}</view>
+  </view>
+
+  <view class="shareGuide" wx:if="{{guideNo}}">分享员工：{{guideNo}}</view>
+  <view class="title margin-auto" data-type="selectGoods" bindtap="onClick">请选择 颜色分类 尺码<text style="margin-left: 440rpx;">></text></view>
+
+  <!-- <image class="detailPic" src="{{detailPic}}" mode="widthFix" /> -->
+  <image class="detailImage" src="{{detailImage}}" mode="widthFix" />
+  <!-- <view wx:if='{{detailShow}}'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view> -->
+ <view class="details_size" wx:if="{{showSelectSize}}">
+    <view class="details_opacity" bindtap="chicunHide1" style="opacity:0.5;"></view>
+    <view class="select-size {{showSelectSize ? 'show' : ''}} {{isIphoneX? 'iphone-bottom':'iphone-nor'}}">
+      <view class="close" data-type="close" bindtap="onClick">
+        <my-close color="#000" size="25"></my-close>
+      </view>
+      <view class="margin-auto">
+        <view class="goods-base flex-start">
+          <view class="preview" wx:if="{{goodsImg}}">
+            <image src="{{goodsImg}}" mode="widthFix"></image>
+          </view>
+          <view class="goods-info">
+            <view class="price">￥{{goodsColor[colorDefaultIndex].price}}</view>
+            <view class="stock">库存<text>{{stocks}}</text>件</view>
+            <view class="size">
+              <block wx:if="{{selectGoodsInfo[0].goodsSku}}">{{selectGoodsInfo[0].size.sizeAlias}}</block>
+              <block wx:else>{{sizeNameSlt? sizeNameSlt: '请选择尺码'}}</block>
+            </view>
+            <view class="sku">{{selectGoodsInfo[0].goodsSku || selectGoodsInfo[0].goodsCode}}</view>
+          </view>
+        </view>
+        <view class="goods-base">
+          <view class="goods-title">颜色分类</view>
+          <view class="color">
+            <block wx:for="{{goodsColor}}" wx:key="colorItem">
+              <form bindsubmit="onClick" report-submit="true">
+                <button form-type="submit" class="color-item {{colorDefaultIndex === index ? 'selected' : ''}}"  data-type="selectColor" data-index="{{index}}">{{item.colorAlias}}</button>
+              </form>
+            </block>
+          </view>
+        </view>
+        <view class="goods-base">
+          <view class="goods-title">尺码</view>
+          <view class="color">
+            <block wx:for="{{goodsColor[colorDefaultIndex].sizes}}" wx:key="sizeItem">
+              <form bindsubmit="onClick" report-submit="true">
+                <button form-type="submit" class="color-item {{!item.newSellStock ? 'no-stock' : ''}} {{item.selected ? 'selected' : ''}}" data-type="selectSize" data-index="{{index}}">{{item.sizeAlias}}</button>
+              </form>
+
+            </block>
+          </view>
+        </view>
+        <view class="goods-base flex-bet">
+          <view class="goods-title">购买数量</view>
+          <view class="goods-num flex-start">
+           x1
+          </view>
+        </view>
+      </view>
+  </view>
+  </view>
+</view>
+
+<view class="fixed-bottom {{isIphoneX? 'iphoneX-bottom':''}}">
+  <block wx:for="{{fixedBottom}}" wx:key="eventItem">
+    <view wx:if="{{item.isShow}}" class="text-c fixed-item {{item.event === 'bindGuide' ? 'border' : ''}}"
+          style="background: {{item.bgColor}}; color: {{item.color}}" data-type="{{item.event}}" bindtap="onClick">{{item.name}}
+    </view>
+  </block>
+</view>
+

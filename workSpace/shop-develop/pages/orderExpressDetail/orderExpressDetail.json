@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单及物流详情",
+  "usingComponents": {
+    "expressGoodItem" :"/components/expressGoodsItem/expressGoodsItem",
+    "expressDetail" : "/components/expressInfoItem/expressInfoItem"
+  }
+}

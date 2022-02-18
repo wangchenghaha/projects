@@ -1,0 +1,455 @@
+<view class="wrap">
+
+  <!-- 顶部信息 -->
+  <view class="header">
+    <view bindtap="toIndex">
+      <image src="{{titleLogo}}" mode="aspectFit" style="width:288rpx; height:30rpx;"></image>
+    </view>
+  </view>
+  <view wx:if="{{shareZan}}">
+    <navigator class="fixed-top" target="miniProgram" open-type="navigate" app-id="{{aiShowAppid}}" path="{{miniPath}}"
+               extra-data="" version="release">
+      <image src="{{imageUrl}}" style="width:100%" mode="widthFix"></image>
+    </navigator>
+  </view>
+  <view class="fixed-top" wx:if="{{orderDrawer}}" bindtap="jumpDrawer">
+    <image src="{{drawerImage}}" style="width:100%" mode="widthFix"></image>
+  </view>
+  <view class="content">
+    <!-- 导航条 -->
+    <view class="nav" style="padding-top: {{(shareZan || orderDrawer)? paddingTop : '100rpx'}}">
+      <block wx:for="{{nav}}" wx:key="nav">
+        <view
+            class="weui-form-preview__btn weui-form-preview__btn_default {{showPintuan ? 'li_FOL' : 'li'}} {{index==nav_id?'list':''}}"
+            style="{{showPintuan ? index == nav.length - 1 ? 'width:22%;' : 'width:15.6%;' : 'width:20%;'}}"
+            id="{{index}}" bindtap="{{showPintuan ? 'liClick_FOL' : 'liClick'}}">
+          <view class="flex-center">{{item.name}}
+            <view wx:if="{{item.dropDown}}" class="triangle"></view>
+          </view>
+          <view class='num_tishi' wx:if="{{item.shoppingCar!=0}}">{{item.shoppingCar>=99?99:item.shoppingCar}}</view>
+        </view>
+      </block>
+    </view>
+    <view class="nav_2 {{needAnimation ? (flagNavOpen ? 'slidedown' : 'slideup') : ''}}">
+      <view style="float: right;{{showPintuan ? 'width:22%;' : 'width:20%;'}}" wx:if="{{flagExNavShow}}">
+        <view id="7" class="li_2 {{nav_id_slide==7?'list_2':''}}" bindtap="{{showPintuan ? 'liClick_FOL' : 'liClick'}}">
+          退货单
+        </view>
+        <view id="8" class="li_2 {{nav_id_slide==8?'list_2':''}}" bindtap="{{showPintuan ? 'liClick_FOL' : 'liClick'}}"
+              wx:if="{{flagShowExBar}}">换货单
+        </view>
+      </view>
+    </view>
+    <navigator wx:if="{{showPreSale}}" url="/activity/advance/orderList/orderList"
+               class="pre-sale-item text-c flex-bet">
+      <view class="flex-start">
+        <text class="pre-sell">预售</text>
+        <view>
+          <view class="text">预售订单列表转这里了</view>
+          <view class="click">请点击查看预售订单</view>
+        </view>
+      </view>
+      <text class="icon"></text>
+    </navigator>
+
+    <!-- 非退货订单列表 -->
+    <view class="ul {{isIphoneX ?'iphoneXMarginBottom':''}}" wx:if="{{ul_show && !isTuihuo}}">
+      <view class="ul_li" wx:for="{{dingdanList}}" wx:key="dingdanList">
+        <view class="orderTilte_pintuan"
+              wx:if="{{item.isPintuan == 'pintuan' && !(item.status=='WaitingPay' || item.status=='TransactionCancel')}}">
+          <view class="orderNo">
+            订单号：
+            <text data-text="{{item.bigorderCode}}" bindlongpress="onClick">{{item.bigorderCode}}</text>
+            <image src="../../images/icon_copy.png" mode="widthFix" data-text="{{item.bigorderCode}}"
+                   bindtap="copyOrderNum"/>
+            <text style="color:green;"> 拼购</text>
+          </view>
+          <view class="pintuanView">
+            <view class="pintuanView-status">
+              {{item.status=='WaitingPay'?'待付款':item.status=='WaitingShipment'?'待发货':item.status=='WaitingReceive'?'待收货':item.status=='TransactionCancel'?'交易取消':item.status=='TransactionSuccess'?'交易完成':item.status=='TransactionClose'?'交易关闭':''}}
+              {{ item.isHaveRefund && item.isHaveRefund!='0'?'(有退)':''}}
+            </view>
+            <view class="pintuanView-status">
+              {{item.pintuanStatus=='WaitingPintuan'?pintuanText:item.pintuanStatus=='PintuanSuccess'?'拼团成功':item.pintuanStatus=='PintuanCancel'?'拼团失败':''}}
+            </view>
+          </view>
+        </view>
+        <view class="orderTilte" wx:else>
+          <view class="orderNo">
+            订单号：
+            <text data-text="{{item.bigorderCode}}" bindlongpress="onClick">{{item.bigorderCode}}</text>
+            <image src="../../images/icon_copy.png" mode="aspectFit" data-text="{{item.bigorderCode}}"
+                   bindtap="copyOrderNum"/>
+            <text wx:if="{{item.isPintuan == 'pintuan'}}" style="color:green;"> 拼购</text>
+          </view>
+          <view class="status" style="{{item.deliveryMode == 'pickup'?'padding-bottom:0;':''}}">
+            {{item.status=='WaitingPay'?'待付款':item.status=='WaitingShipment'?'待发货':item.status=='WaitingReceive'?'待收货':item.status=='TransactionCancel'?'交易取消':item.status=='TransactionSuccess'?'交易完成':item.status=='TransactionClose'?'交易关闭':''}}
+            {{item.isHaveRefund && item.isHaveRefund!='0'?'(有退)':''}}
+          </view>
+        </view>
+        <view>
+          <view data-index="{{index}}" mut-bind:tap="formSubmit" class="orderContent">
+            <view class="classname">
+              <image src="https://cdn.bestseller.com.cn{{item.picUrl}}" mode="aspectFit"/>
+              <view class="classright">
+                <view class="classtitle"> {{item.goodsOrderList[0].goodsName}}</view>
+                <text class="size-item">{{item.goodsOrderList[0].colorName}}</text>
+                <text class="size-item">{{item.goodsOrderList[0].sizeName}}</text>
+                <view class="classBottom flex-bet">
+                  <view class="classPirce">￥{{item.goodsOrderList[0].price}}
+                    <text style="color: black; font-size: 24rpx;background: #fff;"
+                          wx:if="{{item.goodsOrderList[0].pointPrice}}">+积分{{item.goodsOrderList[0].pointPrice}}
+                    </text>
+                  </view>
+                </view>
+                <view class="text-r" wx:if="{{item.showHideBtn}}">
+                  <text mut-bind:tap="formSubmit" class="hide-btn" data-type="remove" data-index="{{index}}">删除</text>
+                </view>
+              </view>
+            </view>
+            <view wx:if="{{item.deliveryMode == 'pickup'&&item.bigOrderStore}}" style='font-size:24rpx;'>
+              <view>店铺:{{item.bigOrderStore.name}}</view>
+              <view>营业时间:{{item.bigOrderStore.businessHours}}</view>
+              <view>联系方式:{{item.bigOrderStore.phone1}}</view>
+              <view>地址:{{item.bigOrderStore.address}}</view>
+            </view>
+          </view>
+          <view class="pick_ticket" mut-bind:tap="formSubmit"
+                  wx:if="{{item.deliveryMode == 'pickup'&&item.bigOrderStore && item.status=='WaitingReceive'}}"
+                  data-big-order-code='{{item.bigorderCode}}' data-checkcode='{{item.checkcode}}'>凭证
+          </view>
+        </view>
+        <view class="orderPrice">
+          <view class="orderPriceShow text-r">
+            <text wx:if="{{item.goodsTotalCount}}">共{{item.goodsTotalCount}}件 </text>
+            总价:
+            <text class="price-color"> ¥{{item.payPrice}}</text>
+            <block wx:if="{{item.wxCouponValueTotal}}">
+              优惠:
+              <text class="price-color"> ¥{{item.wxCouponValueTotal}}</text>
+            </block>
+            <text> {{item.payWay === 'SVCardPay' ? '储值卡付款' : '实付款'}}:</text>
+            <text class="price-color" wx:if="{{item.orderType=='EXCHANGE'}}">¥ {{item.exchangeAdditionalPrice}}</text>
+            <text class="price-color" wx:else>￥{{item.myUseWXCouponValue}}</text>
+          </view>
+        </view>
+        <view class="stateBtn flex-bet">
+          <text class="orderTime">{{item.createTime}}</text>
+          <view class="flex-bet">
+
+            <view data-index="{{index}}" class="wxPay" bindtap="wxPay" wx:if="{{item.status==='WaitingPay'}}">微信支付</view>
+            <view class="wxPay card" bindtap="cardPay" data-index="{{index}}" wx:if="{{STORE_VALUE && item.status==='WaitingPay' && item.channelId === CHANNEL_ID &&  totalBalance >= item.payPrice && storedValueCardOnline}}">储值卡支付</view>
+            <!-- <button open-type="share" class="share" id="{{index}}"> -->
+            <!-- <view id="{{index}}" class="waitingForPintuan" wx:if="{{item.status=='WaitingPay'?true:false}}">邀请好友拼单</view> -->
+            <view id="{{index}}" bindtap="shareAlterView" class="waitingForPintuan"
+                  wx:if="{{item.status=='WaitingPay' ? false : item.status == 'TransactionClose' ? false : item.status=='TransactionCancel' ? false : item.pintuanStatus=='WaitingPintuan'?true:false}}">
+              邀请好友拼单
+            </view>
+            <!-- </button> -->
+            <view id="{{index}}" class="receipt" bindtap="receipt"
+                  wx:if="{{item.status=='WaitingReceive' && item.deliveryMode !=='pickup'}}">确认收货
+            </view>
+            <view id="{{index}}" class="receipt" bindtap="remind" wx:if="{{item.status=='WaitingShipment'}}">
+              <block wx:if="{{item.warning === 'Y'}}">已</block>提醒发货
+            </view>
+            <!--<view id="{{index}}" class="returnGoods" bindtap="returnGoods"
+                  wx:if="{{item.status=='TransactionSuccess' && item.payPrice > 0.01}}">退货/售后
+            </view>-->
+            <view id="{{index}}" class="express" bindtap="express"
+                  wx:if="{{(item.status=='WaitingReceive' || item.status=='TransactionSuccess') && item.expressOrderNo}}">
+              查看物流
+            </view>
+            <!-- <view wx:if="{{showPintuan}}" id="{{item.id}}" class="express" bindtap="goZp" >抽奖</view> -->
+          </view>
+          </view>
+      </view>
+    </view>
+    <!-- 换货单列表 -->
+    <view class="ul {{isIphoneX ?'iphoneXMarginBottom':''}}" wx:if="{{flagShowExOrder&&!ul_show}}">
+      <view class="ul_li" wx:for="{{exchangeOrderList}}" wx:key="exchangeOrderList">
+        <view id="{{index}}" class="li_left" bindtap="onExchangeOrderItemClick">
+          <image src="https://cdn.bestseller.com.cn{{item.mainPicPath}}" mode="widthFix"></image>
+        </view>
+        <view id="{{index}}" class="li_right" bindtap="onExchangeOrderItemClick">
+          <view>订单号：{{item.oriorderCode}}</view>
+          <view>申请换货时间：{{item.createTime}}</view>
+          <view class="status">
+            {{item.status=='CREATED'?'换货审核中':item.status=='CHECK_VALID'?'已审核':item.status=='CHECK_FAIL'?'换货审核失败':item.status=='CONFIRM_TYPE'?item.exchangeType=='MAIL'?'待买家寄回':'到店换货':item.status=='STOCKING'?'店铺备货中':item.status=='STOCKED'?'店铺备货完成':item.status=='STOCK_FAIL'?'备货失败':item.status=='BUYER_MAILED'?'待卖家收货':item.status=='RECEIVED'?'待支付':item.status=='WAIT_SHIP'?'待卖家发货':item.status=='SHIPPED'?'待买家收货':item.status=='CLOSED'?'已关闭':item.status=='COMPLETE'?'换货成功':""}}
+          </view>
+          <view style="padding-bottom:15rpx;">共 {{item.sourceGoodsCount}} 件换货商品</view>
+          <view wx:if="{{item.status=='WAIT_SHIP'||item.status=='SHIPPED'||item.status=='COMPLETE'}}">实付：¥
+            {{item.targetGoodsAmount}}
+          </view>
+          <view id="{{index}}" class="wxPay" bindtap="onExchangeCancel"
+              wx:if="{{item.status!='SHIPPED'&&item.status!='CLOSED'&&item.status!='COMPLETE'&&item.status!='CHECK_FAIL'}}">
+          取消换货
+        </view>
+        </view>
+        
+
+      </view>
+    </view>
+
+    <!-- 提货凭证 -->
+    <view class='voucherD' wx:if="{{isVoucher}}">
+      <view class='mainV'>
+        <view class='titleV'>提货凭证</view>
+        <view class='closeV' bindtap="closeVoucher">关闭</view>
+        <view class='barcode'>
+          <!-- left:-273rpx;    left:-273rpx;  -->
+          <view style='position:relative; margin-top:10rpx;'>
+            <canvas style=" position: absolute; left:25rpx; top:50rpx;" canvas-id="barcode"/>
+          </view>
+          <view style='padding-top:137rpx;'>订单号：
+            <text data-text="{{bigorderCode}}" bindlongpress="onClick">{{bigorderCode}}</text>
+          </view>
+        </view>
+        <view class='qrcode' style=' position: relative;'>
+          <canvas style=" position: absolute;  left:25rpx;  top:50rpx;" canvas-id="qrcode"/>
+          <view style='padding-top:137rpx;'>提货码：{{checkcode}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 退货订单列表 -->
+    <view class="ul {{isIphoneX ?'iphoneXMarginBottom':''}}" wx:if="{{ul_show && isTuihuo}}">
+      <view class="ul_li" wx:for="{{dingdanList}}" wx:key="dingdanList">
+        <view id="{{index}}" class="li_left" bindtap="toDingdanCon1">
+          <image src="{{item.mainPicPath}}" mode="widthFix"></image>
+        </view>
+        <view id="{{index}}" class="li_right" bindtap="toDingdanCon1">
+          <view>退单号：{{item.refundCode}}
+            <copy-icon text="{{item.refundCode}}"/>
+          </view>
+          <view>{{item.createTime}}</view>
+          <!--根据自提只展示退款成功和退款中 2020-06-23-->
+          <view class="status">
+            <block wx:if="{{item.refundStatus== 'RefundSuccess'}}">退款成功</block>
+            <block wx:elif="{{item.refundStatus== 'RefundClose'}}">退款关闭</block>
+            <block wx:else>退款中</block>
+          </view>
+          <view style="padding-bottom:15rpx;">共{{item.refundTotalCount}}件商品</view>
+          <view>实付：¥ {{item.realPayPrice}}</view>
+        </view>
+        <view id="{{index}}" class="wxPay" bindtap="wxPay" wx:if="{{item.status ==='WaitingPay'}}">立即支付</view>
+        <!--根据自提需求，不在列表上传快递单号 2020-06-23-->
+        <view wx:if="{{item.refundStatus=='WaitingRefundGoods'}}">
+          <!--<view wx:if="{{item.refundStatus=='WaitingRefundGoods'}}">
+          <view id="{{index}}" class="wxPay" bindtap="wxPay" wx:if="{{item.status=='WaitingPay'?true:false}}">立即支付</view>
+
+          <view wx:if="{{item.refundStatus=='WaitingRefundGoods'}}">
+              <image bindtap="tip"  wx:if="{{isStoreOption}}" class='returnshop' src='../../images/returnshop.jpg'></image>
+               <view data-refundCode='{{item.refundCode}}'  data-oriorderCode='{{item.oriorderCode}}'  class="wxUp" bindtap='wxUp'>上传运单号</view> -->
+          <view bindtap='goReturned' wx:if="{{isStoreOption}}" data-index='{{index}}'
+                data-refundskus='{{item.refundSkus[0]}}' data-refundcode='{{item.refundCode}}'
+                data-oriordercode='{{item.oriorderCode}}' data-address='{{item.address}}' class="wxReturn">到店退货
+          </view>
+        </view>
+        <view wx:if="{{isShowWay == index}}">
+          <image bindtap="tip" wx:if="{{isStoreOption}}" class='returnshop' src='../../images/returnshop.jpg'></image>
+          <!-- <view data-refundCode='{{item.refundCode}}'  data-oriorderCode='{{item.oriorderCode}}'  class="wxUp" bindtap='wxUp'>上传运单号</view> -->
+          <view bindtap='goReturned' wx:if="{{isStoreOption}}" data-index='{{index}}'
+                data-refundskus='{{item.refundSkus[0]}}' data-refundcode='{{item.refundCode}}'
+                data-oriordercode='{{item.oriorderCode}}' data-address='{{item.address}}' class="wxReturn">到店退货
+          </view>
+        </view>
+        <view class="wxReset"
+              wx:if="{{ item.refundStatus == 'RefundGoodsReceive' && item.returnType == 'InStoreReturn'}}"
+              style='display:{{isResetWay}}' id="{{index}}" bindtap='resetWays'>修改退货方式
+        </view>
+      </view>
+      <!--根据功能注释-->
+      <!--<view class="wxReset" wx:if="{{ item.refundStatus == 'RefundGoodsReceive' && item.returnType == 'InStoreReturn'}}"   style='display:{{isResetWay}}'  id="{{index}}" bindtap='resetWays'>修改退货方式</view>-->
+
+    </view>
+  </view>
+
+  <!-- 没有该项订单 -->
+  <view class="dingdanIsHidden" wx:if="{{dingdanIsHidden}}">
+    <view class="img">
+      <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/order_empty.png" mode="widthFix"></image>
+      <view class="tishi">您还没有待处理订单</view>
+    </view>
+    <view class="goShopping">
+      <view class="goToShopping" bindtap="goToShopping">去逛逛</view>
+    </view>
+  </view>
+
+  <!-- 加载更多 -->
+  <view class="load_more" style="display:{{load_more_hidden}}">
+    <view class="more_text">
+      <view class="load_img" style="display:{{text_isHidden?'block':'none'}}">
+        <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/order_loading.png"
+               animation="{{animationLoad}}"></image>
+      </view>
+      <view class="loading" style="display:{{load_isHidden?'block':'none'}}">加载中</view>
+      <view class="loading" style="display:{{load_isHidden?'none':'block'}}">没有更多了</view>
+    </view>
+  </view>
+</view>
+<!-- 到店退提示信息 -->
+<view class='tip' bindtap='closeTip' wx:if="{{isTip}}">
+  <view class='tip-main'>
+    <view class='tip-title'>退货须知，以下情况不可到店退货</view>
+    <view class='tip-content'>
+      <text class='block'>* 直接接触皮肤的内衣类商品</text>
+      <text class='block'>* 商品吊牌、商标、票据等有缺失的商品；已经穿着过或洗涤过的商品；已经修改或加工过的商品；</text>
+      <text class='block'>* 目前仅为服务上海地区，其他地区敬请期待！</text>
+      <text class='block other'>更多退货政策请在首页下方查看退货说明！</text>
+    </view>
+    <view class='tip-btn'>我知道了</view>
+  </view>
+</view>
+<!-- 上传快递单号 - 弹出框  -->
+<view class="tishis" wx:if="{{submitDanhao}}">
+  <view class="opacity"></view>
+  <view class="tanchu">
+    <view class="h2">退款</view>
+    <view class="title">
+      <text class="h1">物流名称</text>
+      <input type="text" value="{{danhao_name}}" placeholder="请输入物流名称" bindinput="nameInput"/>
+    </view>
+    <view class="p" wx:if="{{danhao_name_tishi}}">{{danhao_name_text}}</view>
+
+    <view class="title">
+      <text class="h1">快递单号</text>
+      <input type="text" value="{{danhao_number}}" placeholder="请输入快递单号" bindinput="numberInput"/>
+    </view>
+    <view class="p" wx:if="{{danhao_tishi}}">{{danhao_text}}</view>
+
+    <view class="bott">
+      <view class="bot">
+        <view class="btn true" bindtap="danhao_true">确定</view>
+      </view>
+      <view class="bot">
+        <view class="btn false" bindtap="danhao_false">取消</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="customToast" wx:if="{{isNotice}}">
+  <text style="line-height:100%; text-align: center;">{{noticeContent}}</text>
+</view>
+<view class="bg" wx:if="{{isRecommd}}"></view>
+<view class="recommd" wx:if="{{isRecommd}}">
+  <view class="recommdP">
+    <image src="{{recommdNoticePic}}" class="recommd_img" mode='widthFix'></image>
+    <view class="callPhone" bindtap="callPhone"></view>
+    <image src="{{closePic}}" class="recommd_close" bindtap="clickClose" mode='widthFix'></image>
+  </view>
+</view>
+
+<view class="voucher {{isRecommdNew ? 'show':''}}">
+  <view class="advertisement">
+    <image class="recommdBg" src="{{recommdNoticePicNew}}"></image>
+    <view class="recommdView">
+      <view class="rch1">{{expressTitle}}</view>
+      <text class="rch2">{{expressNotice}}</text>
+      <view class="rcline"></view>
+      <view class="rch3">以为您分配专属微信时尚顾问</view>
+      <view class="rch2">一对一
+        <text class="rch4">售前售后</text>
+        专属服务 定期
+        <text class="rch4">超级福利</text>
+        大放送
+      </view>
+      <image class="rcImage" src="{{customer.imgUrl}}" mode="widthFix"/>
+      <view class="rch2" style="margin-top:30rpx;" bindtap="saveGuideImage">
+        方法1:
+        <text class="rch5">点击保存</text>
+        二维码，打开微信扫一扫
+      </view>
+      <view class="rch2" bindtap="saveName">
+        方法2:
+        <text class="rch5">点击复制微信号</text>
+        并在微信中搜索添加
+      </view>
+    </view>
+  </view>
+  <image class="close {{isIphoneX ?'topX':'topO'}}" src="{{closePic}}" bindtap="clickClose"/>
+</view>
+
+<!-- IphoneX底部栏 -->
+<view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+
+
+
+<!-- 支付成功弹框 -->
+<block wx:if="{{fromBuyView}}">
+  <view class="bouncesBg"></view>
+
+  <view class="bouncesView_hdBG">
+    <view class="imageBG">
+      <view class="imageView">
+        <image bindtap="hiddenBounces" src="/images/bounceClose.png" mode="widthFix" style="width:48rpx;height:100%;"/>
+      </view>
+    </view>
+
+    <view class="bouncesView">
+      <view class="bouncesView-view">
+        <icon type="success" size="35"/>
+        <view style="margin-top: 10rpx;">支付成功</view>
+      </view>
+      <view class="bouncesView-view" style="background-color: white;">
+        <view class="bouncesView-title">还差
+          <text style="color:red;">{{shengyuNum}}</text>
+          人
+        </view>
+        <view class="bouncesView-title" style="font-size: 32rpx;">赶快邀请好友来拼单吧!</view>
+        <view style="font-size: 23rpx; color: #878787;">拼单已发起,人满后立即发货</view>
+      </view>
+      <view class="bouncesView-view" style="background-color: white;">
+        <view class="bouncesView-view-centerView">
+
+
+          <view class="bouncesView-view-centerView-view" style="margin-right: 70rpx;">
+            <button open-type="share" class="share1">
+              <view class="imageView">
+                <image src="/images/weixin.png" mode="widthFix" style="width:70rpx;margin-top: 25rpx;"/>
+              </view>
+              <view style="font-size: 27rpx; color: #878787;">微信好友</view>
+            </button>
+          </view>
+
+
+          <view class="bouncesView-view-centerView-view">
+            <view bindtap="shareImage" class="imageView">
+              <image src="/images/zhaopian.png" mode="widthFix" style="width:70rpx;margin-top: 30rpx;"/>
+            </view>
+            <view bindtap="shareImage" style="font-size: 27rpx; color: #878787;margin-top: 16rpx;">分享图片</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 分享图片弹框 -->
+<block wx:if="{{shareView}}">
+  <view class="bouncesBg"></view>
+  <view class="bouncesView_hdBG bouncesView_hdBGForShareImage">
+    <view class="imageBG">
+      <view class="imageView">
+        <image bindtap="shareViewHiddenBounces" src="/images/bounceClose.png" mode="widthFix"
+               style="width:48rpx;height:100%;"/>
+      </view>
+    </view>
+
+    <view class="bouncesView">
+      <view class="bouncesView-view" style="background-color: white;padding-top:30rpx;">
+        <icon type="success" size="45" color="#D50023"/>
+      </view>
+      <view class="bouncesView-view" style="background-color: white;padding-top: 10rpx;">
+        <view class="bouncesView-title" style="font-size: 34rpx;padding-bottom:30rpx;color:black;">图片已生成</view>
+        <view class="bouncesView-title"
+              style="font-size: 25rpx;padding-left: 120rpx;padding-right: 120rpx;padding-bottom:80rpx;color:#666666;">
+          图片已生成并保存在手机相册,你也可以现在分享给好友。
+        </view>
+      </view>
+      <button open-type="share" class="share1"
+              style="color:white;border-radius: 0;width: 100%;background-color: #CC292E;line-height: 100rpx;text-align: center;font-size: 28rpx;">
+        分享给微信好友
+      </button>
+    </view>
+  </view>
+
+</block>

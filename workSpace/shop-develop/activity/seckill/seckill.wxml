@@ -1,0 +1,59 @@
+<view class="container" style="background: {{mainColor}}">
+    <view class="titlePic">
+         <image class="actImage" src="{{actImage}}" mode="widthFix" />
+         <view class="notice" data-type="rule" bindtap="onClick">
+            活动规则
+         </view>
+    </view>
+    <notice-pop wx:if="{{isShowRule}}" ruleList="{{ruleList}}" buttonColor="#3cd0c0" activityTitle="{{activityTitle}}" bindcloseThisPop="closeThisPop"></notice-pop>
+
+    <view class="actTab" style="background: {{mainColor}}">
+        <block wx:for="{{dateTabs}}" wx:key="date">
+            <view class="itemTab" data-id="{{index}}" data-type="tabCheck" bindtap="onClick">
+                <view class="title">{{item.title}}</view>
+                <view class="detail" wx:if="{{item.detail}}">{{item.detail}}</view>
+                <view class="line" wx:if="{{item.selected}}"></view>
+            </view>
+        </block>
+    </view>
+
+    <view class="timerShow">
+        <image class="timerBg" src="{{timerBg}}"></image>
+        <view class="remindTips">{{activityText}}</view>
+        <view class="timerRow flex-end">
+            <view class="timeTitle">{{showTimer}}</view>
+            <view class="timer"> {{timeObj.hou}} </view>
+            <view style="margin-left: 8rpx;">:</view>
+            <view class="timer"> {{timeObj.min}} </view>
+            <view style="margin-left: 8rpx;">:</view>
+            <view class="timer"> {{timeObj.sec}} </view>
+        </view>
+    </view>
+
+    <view class="shopping flex-bet">
+        <image class="logoImg" src="{{logoImg}}" mode="widthFix"></image>
+        <view class="into" data-type="goBack" bindtap="onClick">进入商城  ></view>
+    </view>
+
+    <view class="goodsList" style="background: {{mainColor}}">
+        <block wx:for="{{goodsItem}}" wx:key="goods">
+            <view class="goodsItem flex-center" >
+                <view class="imgArea  flex-center"  data-type="goDetail" data-code="{{item.spu}}" bindtap="onClick">
+                    <image class="goodsImg" src="{{item.goodsImg}}" mode="widthFix"></image>
+                </view>
+                <view class="goodsInfo">
+                    <view class="title"  data-type="goDetail" data-code="{{item.spu}}" bindtap="onClick">{{item.goodsName}}</view>
+                    <view class="flex-bet">
+                        <view class="flex-end"  data-type="goDetail" data-code="{{item.spu}}" bindtap="onClick">
+                            <view class="currentPrice">￥<text style="font-size: 42rpx;">{{item.seckillPrice}}</text>.00</view>
+                            <view class="originalPrice">￥{{item.originalPrice}}.00</view>
+                        </view>
+                        <view class="notice" wx:if="{{item.isNotice}}"  data-type="notice" bindtap="onClick">提醒我</view>
+                        <view class="buyNow" wx:else   data-type="goDetail" data-code="{{item.spu}}" bindtap="onClick">马上抢购</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+</view>

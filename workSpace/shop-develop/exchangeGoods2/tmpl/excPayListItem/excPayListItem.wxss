@@ -1,0 +1,4 @@
+@import "../../mycss.wxss";
+.multi_text_frame{ width:100%; clear:both; overflow:hidden;font-size:24rpx;border-top: 2rpx solid #dadada;display: flex;flex-direction: column;padding: 17rpx 0 17rpx 0;}
+.title_style{font-size: 26rpx;padding-left: 3rpx;}
+.padding{padding: 17rpx;}

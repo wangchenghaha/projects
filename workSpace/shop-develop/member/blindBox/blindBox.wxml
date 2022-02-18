@@ -1,0 +1,23 @@
+<view class="blind">
+  <view wx:for="{{imgList}}" wx:key="index">
+    <image src="{{item}}" mode="widthFix"></image>
+  </view>
+  <view class="fixed-bottom flex-center"  bindtap="onClick">
+    <view class="btn color-fff animated flash font-bold" >立即抢购</view>
+  </view>
+
+  <!--<view class="banner">
+    <image src="{{banner}}" mode="widthFix"></image>
+  </view>
+  <view class="blind-item" wx:for="{{boxList}}" wx:key="index" data-index="{{index}}" bindtap="onClick">
+    <view class="img {{item.type}}" >
+      <image class="{{item.type}}-img" wx:for="{{item.imgList}}" wx:for-item="imgItem" wx:key="index" src="{{imgItem}}" mode="widthFix"></image>
+    </view>
+    <view class="desc flex-bet color-fff">
+      <text class="name">{{item.text}}</text>
+      <view>
+        ￥<text class="price">{{item.price}}</text>
+      </view>
+    </view>
+  </view>-->
+</view>

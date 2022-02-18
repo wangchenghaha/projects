@@ -1,0 +1,10 @@
+<swiper class="swiper" autoplay="{{autoPlay}}" interval="{{3000}}" easing-function="linear" bindchange="change">
+    <swiper-item wx:for="{{imgs}}" wx:key="index">
+        <view class="imgView">
+            <view class="subView">
+                <image src="{{item}}" style="width:100%;" mode="widthFix" />
+                <view class="btn" wx:if="{{index === 2}}" bindtap="btnTap"></view>
+            </view>
+        </view>
+    </swiper-item>
+</swiper>1

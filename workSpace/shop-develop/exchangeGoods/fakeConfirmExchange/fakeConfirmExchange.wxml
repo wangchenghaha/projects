@@ -1,0 +1,125 @@
+<import src="../components/steps/index" />
+<import src="../tmpl/classicOrderItem/classicOrderItem" />
+<view class='frame'>
+    <!-- 换货审核中/失败 -->
+    <view class="global_order_status_bar_wrap">
+        <text class="order_key">订单状态</text>
+        <text class="order_status">换货确认中</text>
+        <!-- <text wx:if="{{prevDingdanStatus=='WaitingReceive'}}" class='lookWuliu' bindtap='lookWuliu'>查看物流</text> -->
+    </view>
+    <!-- 暂时不显示 -->
+    <!-- <view class="zan-cell">
+        <view class="zan-cell__bd">
+            <template is="zan-steps" data="{{ type: 'horizon', steps: steps }}"></template>
+        </view>
+    </view> -->
+    <view>
+        <view class='tip_1'>原购商品</view>
+        <view class='exchange_list'>
+            <view class="global_order_item" wx:for="{{applyList}}" wx:key="global_order_item">
+                <template is="classicOrderItemTmpl" data="{{item}}" />
+            </view>
+        </view>
+    </view>
+    <view class="global_layout_refresh">
+        <image class="global_img_refresh" src="/images/icon_refresh.png"></image>
+    </view>
+    <view>
+        <view class='tip_1'>新换商品</view>
+        <view class='exchange_list'>
+            <view class="global_order_item" wx:for="{{cartList}}" wx:key="global_order_item">
+                <template is="classicOrderItemTmpl" data="{{item}}" />
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{exchangeWay=='exchangeAtShopOnlineChoose'}}">
+        <view class='frame_delivery'>
+            <view class='d_left'>
+                <view class='d_key'>
+                    <text>提货人：</text>
+                    <input class="{{flagChangePeople==true?'d_value':'d_value_1'}}" bindinput="onCusNameChange" type="text" value="{{cusName}}" maxlength="12" disabled="{{flagChangePeople}}"></input>
+                </view>
+                <view class='d_key'>
+                    <text>提货手机号：</text>
+                    <input class="{{flagChangePeople==true?'d_value':'d_value_1'}}" bindinput="onCusPhoneChange" type="number" value="{{cusPhone}}" maxlength="11" disabled="{{flagChangePeople}}"></input>
+                </view>
+            </view>
+            <view class='d_right'>
+                <view class='bt' bindtap='onChangePicker'>{{bt_text}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='prices_bottom'>
+        <view class="item_padding">
+            <view class="key_left">新商品总金额：</view>
+            <view class="value_right">¥{{newPrice}}</view>
+        </view>
+        <view class="item_padding">
+            <view class="key_left">原商品总金额：</view>
+            <view class="value_right">-¥{{oldPrice}}</view>
+        </view>
+        <view class="item_padding">
+            <view class="key_left">运费（快递）</view>
+            <view class="value_right">￥0.00</view>
+        </view>
+        <!-- 如果是邮寄换货，且没有折扣商品则显示 。 因需求变更，本界面暂时移除此条目 -->
+        <view class='coupon_frame' bindtap='onCouponBarClick' wx:if="{{false&&exchangeWay=='exchangeExpress'}}">
+            <view class='coupon'>
+                <view class='coupon_left'>
+                    <view class='coupon_title'>优惠券</view>
+                    <view class='coupon_tip'>{{myCoupons}}张可用</view>
+                </view>
+                <view class='coupon_tip_right'>{{couponMore==0?'未使用':'-¥ '+couponMore}}</view>
+            </view>
+        </view>
+        <!-- 如果是在线选商品 -->
+        <view wx:if="{{false&&exchangeWay=='exchangeAtShopOnlineChoose'}}">
+            <view class="key_left">优惠</view>
+            <view class="value_right">￥{{0}}</view>
+        </view>
+        <!-- 到店还是邮寄都显示 -->
+        <!-- <view class='total'>
+            <view class="key_left">订单总价：</view>
+            <view class="value_right" wx:if="{{diffPrice>=0}}">￥{{diffPrice}}</view>
+            <view class="value_right" wx:if="{{diffPrice<0}}">-￥{{absDiffPrice}}</view>
+        </view> -->
+    </view>
+    <view wx:if="{{exchangeWay=='exchangeAtShopOnlineChoose'}}">
+        <view class='price_real' wx:if="{{diffPrice>=0}}">预计实付款 ￥{{diffPrice}}</view>
+        <view class='price_real' wx:if="{{diffPrice<0}}">预计实付款 -￥{{absDiffPrice}}</view>
+    </view>
+    <view wx:if="{{exchangeWay=='exchangeExpress'}}">
+        <view class='preview_wrap'>
+            <view class="preview_left">新商品合计：{{totalCount}}件</view>
+            <view class="preview_right" wx:if="{{diffPrice>=0}}">预计补差额：¥{{diffPrice}}</view>
+            <view class="preview_right" wx:elif="{{diffPrice<0}}">预计退款：¥{{absDiffPrice}}</view>
+        </view>
+        <view class='tip_bottom' wx:if="{{diffPrice<0}}">
+            您本次实际支付金额为0，随后我们会将订单中的应退的金额{{absDiffPrice}}元退还给您。退款金额会退回到您原支付方式的支付卡中。
+        </view>
+    </view>
+    <view class="layout_protocol">
+        <view class="protocal_wrapper">
+            <view class="protocol_detail">我已同意换货协议</view>
+            <view class="protocal_bt" bind:tap="onProtocolDetailClick">?</view>
+        </view>
+        <view class='tip_bottom'>
+            <switch checked="{{protocalChecked}}" bindchange="onProtocalSwitchChange" />
+        </view>
+    </view>
+    <view class='global_commit_black_matrix_wrap'>
+        <view class='global_commit_black_matrix' bind:tap='onConfirmExchange'>提交换货申请</view>
+    </view>
+
+    <view class="frame_pop" wx:if="{{showProtocol}}">
+        <view class="frame_opacity" />
+        <view class="frame_rule">
+            <view class="pop_title">换货协议</view>
+            <scroll-view scroll-y class="sv_rule">
+                <view class="rule_detail">{{txtProtocolDetail}}</view>
+            </scroll-view>
+            <view class="v_gap"></view>
+            <view class="pop_confirm" bind:tap="onProtocolConfirm">关闭</view>
+        </view>
+    </view>
+</view>

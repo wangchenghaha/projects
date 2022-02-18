@@ -1,0 +1,146 @@
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+.wrapper {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 0;
+  color: white;
+  text-align: center;
+}
+
+.wrapper .logo {
+  height: 88rpx;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/logo.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 247rpx 77rpx;
+}
+
+.wrapper .content {
+  position: relative;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/mini.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 510rpx;
+  height: 100%;
+  background-position: center -89rpx;
+  box-sizing: border-box;
+}
+
+.wrapper .content .view {
+  margin: 0 auto;
+}
+
+.wrapper .content .tit-1 {
+  position: absolute;
+  left: 246rpx;
+  top: 420rpx;
+  width: 249rpx;
+  height: 194rpx;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/mini-title.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .content .title {
+  width: 575rpx;
+  height: 115rpx;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/title.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 40rpx;
+}
+
+.wrapper .content .tit-2 {
+  width: 324rpx;
+  height: 51rpx;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/tit-2.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 45rpx;
+}
+
+.wrapper .content .shake-icon {
+  width: 153rpx;
+  height: 154rpx;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/shake_icon.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 30rpx;
+}
+
+.wrapper .content .shake-icon.animate {
+  animation: shake 1.5s ease infinite;
+}
+
+.wrapper .content .descript {
+  width: 445rpx;
+  height: 72rpx;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/descript.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 65rpx;
+}
+
+.wrapper .content .footer .rule {
+  font-size: 32rpx;
+  text-decoration: underline;
+}
+
+.wrapper .content.big {
+  background: url("https://tc.woaap.com/lingzhi/only_shop/big.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 640rpx;
+  height: 100%;
+  background-position: center -89rpx;
+}
+
+.wrapper .content.big .tit-1 {
+  top: 514rpx;
+}
+
+.wrapper .content.big .tit-2 {
+  margin-bottom: 60rpx;
+}
+
+.wrapper .content.big .shake-icon {
+  width: 153rpx;
+  height: 154rpx;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/shake_icon.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 60rpx;
+}
+
+.wrapper .content.big .descript {
+  width: 445rpx;
+  height: 72rpx;
+  background: url("https://tc.woaap.com/lingzhi/only_shop/descript.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 90rpx;
+}

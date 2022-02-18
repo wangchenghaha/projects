@@ -1,0 +1,92 @@
+<view class="bg">
+    <view class="imgBg">
+        <image src="{{indexImgBG}}" style="width:100%; height: 100%;" />
+    </view>
+
+    <block wx:if="{{showTwoGame}}">
+        <view class="views" style="transition: transform {{cssAnimateTime}}s linear;transform: translateY({{top}}px);">
+            <view class="views-subView" wx:for="{{datas}}" wx:key="subView">
+                <view class="item {{items.canShow ? 'itemTrue' : ''}}" style="width:{{items.width}}px;height:{{items.height}}px;" wx:for="{{item}}" wx:key="items" wx:for-item="items">
+                    <image src="{{jumpGameJinbi}}" style="width:100%;height:100%;" />
+                </view>
+            </view>
+        </view>
+    </block>
+    
+    <block wx:else>
+
+        <swiper class="yuns" current="{{currentIndex}}" duration="{{duration}}" circular="{{true}}" vertical="{{true}}" display-multiple-items="{{5}}">
+            <swiper-item wx:for="{{yunDatas}}" wx:key="yuns" class="yuns-subView">
+                <view class="yuns-subView-yun" style="width:{{item.width}}px;height:{{item.height}}px;left:{{item.left}}px;">
+                    <image src="{{item.image}}" style="width:100%;height:100%;" />
+                </view>
+            </swiper-item>
+        </swiper>
+
+    </block>
+
+    <view id="game" class="imgView" style="width:{{imgWidth}}rpx;top: {{jumpTop}}px;transition: transform {{cssAnimateTime}}s linear; transform:translateY({{transformY}}px) translateX({{transformX}}px);">
+        <image src="{{currentImg}}" class="img" mode="widthFix" bindload="getImgHeight" />
+    </view>
+
+
+    <view class="zhanwei" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend"></view>
+
+
+</view>
+
+<block wx:if="{{oneBounces}}">
+    <view class="bouncesView">
+        <view class="imgView">
+            <image src="{{jumpGameGongxi}}" style="width:100%;height:100%;" />
+
+            <view class="centerView" style="top: 44%;">
+                <view class="titles">得分:</view>
+                <view class="point">{{fenshu}}</view>
+            </view>
+            <view class="centerView" style="top: 58%;">
+                <view class="titles">获得:</view>
+                <view class="point" >{{currentNumber}}</view>
+                <view class="jinbiImg">
+                    <image src="{{jumpGameJinbi}}" style="width:100%;height:100%;" />
+                </view>
+            </view>
+
+            <view class="btnViews" style="left: 10%;color: #A310D8;" bindtap="agin">继续挑战</view>
+            <view class="btnViews" style="right: 10%;background-color: #FFDD57;">炫耀一下</view>
+            <button open-type="share" class="share"></button>
+
+            <image class="closed" src="{{closed}}" mode="widthFix" bindtap="backTap"/>
+        </view>
+    </view>
+</block>
+<block wx:if="{{twoBounces}}">
+    <view class="bouncesView1">
+        <view class="imgView">
+            <image src="{{jumpGameBounced}}" style="width:100%;height:100%;" />
+
+            <view class="title">今日次数已耗尽，</view>
+            <view class="title" style="top: 45%;">邀好友助力，再来一次吧~</view>
+
+            <view class="bottomTitle">立即邀请好友</view>
+
+            <button open-type="share" class="share1"></button>
+
+            <image class="closed" src="{{closed}}" mode="widthFix" bindtap="backTap"/>
+        </view>
+    </view>
+</block>
+
+<view class="sanjiao" bindtap="backTap">
+    <image src="{{sanjiao}}" style="width:100%;height:100%;" />
+</view>
+
+<view class="numberView" style="top:{{adapter.scoreTop}}">
+    <view class="jinViewOpa"></view>
+    <view class="jinView">
+        <view class="jinbi">
+            <image src="{{jinbi}}" style="width:100%;height:100%;" />
+        </view>
+        <view class="points" style="animation: {{jinbiAnimate}} 0.2s linear 1;">{{currentNumber}}</view>
+    </view>
+</view>

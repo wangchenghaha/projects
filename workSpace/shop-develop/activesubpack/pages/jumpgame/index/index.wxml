@@ -1,0 +1,22 @@
+<view class="page-contaniner">
+    <view class="mask" wx:if="{{!isLoading}}"></view>
+    <view class="bg-wrap">
+        <image class="bg-img" style="height:1624rpx" wx:if="{{isBigPhone}}" src="https://tc.woaap.com/lingzhi/jumpgame/bg-b-new2.png" />
+        <image class="bg-img" style="height:1334rpx" wx:else src="https://tc.woaap.com/lingzhi/jumpgame/bg-s-new.png" />
+    </view>
+    <view class="btn" data-type="1" bindtap="showModal" style="width:{{isBigPhone?'187rpx' : '162rpx'}};height:{{isBigPhone?'105rpx' : '98rpx'}};left:{{isBigPhone?'78rpx' : '86rpx'}};top:{{isBigPhone?'1446rpx' : '1157rpx'}}"></view>
+    <view class="btn" data-type="2" bindtap="showModal" style="width:{{isBigPhone?'187rpx' : '162rpx'}};height:{{isBigPhone?'105rpx' : '98rpx'}};left:{{isBigPhone?'284rpx' : '292rpx'}};top:{{isBigPhone?'1446rpx' : '1157rpx'}}"></view>
+    <view class="btn" data-type="3" bindtap="showModal" style="width:{{isBigPhone?'187rpx' : '162rpx'}};height:{{isBigPhone?'105rpx' : '98rpx'}};left:{{isBigPhone?'494rpx' : '501rpx'}};top:{{isBigPhone?'1446rpx' : '1157rpx'}}"></view>
+    <view class="signbtn" data-type="4" bindtap="showModal" style="width:120rpx;height:90rpx;right:{{isBigPhone?'60rpx' : '80rpx'}};top:{{isBigPhone?'360rpx' : '282rpx'}};"></view>
+    <image class="signbtn animat" bindtap="_play" src="https://tc.woaap.com/lingzhi/jumpgame/play.png" style="width:160rpx;height:154rpx;left:{{isBigPhone?'70rpx' : '90rpx'}};top:{{isBigPhone?'1186rpx' : '935rpx'}};"></image>
+</view>
+<rank-modal bind:address="address" id="rank-modal"></rank-modal>
+<rule-modal id="rule-modal"></rule-modal>
+<mycoupon-modal bind:openCard="openCard" bind:getCoupon="getCoupon" id="mycoupon-modal"></mycoupon-modal>
+<sign-modal bind:luckSignAward="luckSignAward" id="sign-modal"></sign-modal>
+<tip-modal id="tip-modal"></tip-modal>
+<endtip-modal bind:address="address" id="endtip-modal"></endtip-modal>
+<gameResult-modal bind:lucksuc="lucksuc" id="gameResult-modal"></gameResult-modal>
+<prize-modal bind:getCoupon="getCoupon" id="prize-modal"></prize-modal>
+<address-modal id="address-modal"></address-modal>
+<gametip-modal bind:paly="play" id="gametip-modal"></gametip-modal>

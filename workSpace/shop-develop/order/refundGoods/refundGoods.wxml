@@ -1,0 +1,50 @@
+<view class="content">
+  <view class="header font-bold">选择需要退款的商品</view>
+  <view class="main">
+    <view class="goods-item flex-start" wx:for="{{orderDetail.goodsOrderPoList}}" wx:key="goodsId">
+      <view class="check flex-center" data-type="checkGoods" data-index="{{index}}" bindtap="onClick">
+        <icon class="icon" wx:if="{{item.myChecked}}" type="success" size="40rpx"></icon>
+        <icon class="icon" wx:else type="circle" size="40rpx"></icon>
+      </view>
+      <view class="goods">
+        <order-item order="{{item}}"/>
+      </view>
+    </view>
+    <view class="confirm-btn text-c" bindtap="onClick" data-type="confirmGoods">确定</view>
+  </view>
+  <view class="reason {{showReasonList ? 'show' : ''}}">
+    <view class="bg" catchtap="onClick" data-type="hide"></view>
+    <view class="reason-wrapper">
+      <view class="title padding-20">{{selectReasonValue || '请选择原因'}}</view>
+      <view class="reason-list padding-20">
+        <view class="item flex-bet" wx:for="{{refundReason}}" wx:key="index" data-type="checkReason" data-index="{{index}}" catchtap="onClick">
+          <view>{{item.text}}</view>
+          <view class="check flex-center" >
+            <icon class="icon" wx:if="{{item.checked}}" type="success" size="40rpx"></icon>
+            <icon class="icon" wx:else type="circle" size="40rpx"></icon>
+          </view>
+        </view>
+      </view>
+      <view class="upload" wx:if="{{showUpload}}">
+        <view class="upload-title">
+          上传凭证
+          <text class="red-start">*</text>
+          <text class="">(请上传产品质量问题凭证，以便我们尽快处理)</text>
+        </view>
+        <view class="flex-start">
+          <my-upload bindtap="upload"></my-upload>
+          <view class="img-wrap flex-start" wx:for="{{tempUploadImg}}" wx:key="*this">
+            <image src="{{item}}" mode="aspectFit"></image>
+            <icon class="icon" type="cancel" color="#000" size="20" data-type="delImg" data-index="{{index}}" bindtap="delUploadImg" />
+          </view>
+        </view>
+
+      </view>
+      <view class="reason-my padding-20">
+        <input class="{{needMyReason ? 'error' : ''}}" bindblur="myInput" placeholder="自定义原因" type="text" />
+      </view>
+      <view class="reason-tip padding-20">请选择退货/退款原因，以便我们今后为您提供更好的产品服务</view>
+      <view class="reason-btn text-c" data-type="reasonConfirm" catchtap="onClick">确定</view>
+    </view>
+  </view>
+</view>

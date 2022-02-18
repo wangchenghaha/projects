@@ -1,0 +1,16 @@
+<view class="footer ~flex-around">
+  <view class="footer-item ~flex-center">
+    <button wx:if="{{shareSync}}" bindtap="shareUser" class="share-btn"></button>
+    <button wx:else open-type="share" class="share-btn"></button>
+    <view class="footer-img">
+      <image src="/images/shareToWx.jpg" mode="widthFix"></image>
+    </view>
+    <text>{{shareUserText || '分享给顾客'}}</text>
+  </view>
+  <view class="footer-item ~flex-center" bindtap="shareMoment">
+    <view class="footer-img">
+      <image src='/images/shareToWxq.jpg' mode='widthFix'></image>
+    </view>
+    <text>分享到朋友圈</text>
+  </view>
+</view>

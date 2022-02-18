@@ -1,0 +1,136 @@
+.rank-contaniner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.button-hover {
+    background: transparent;
+}
+
+.rank-wrap {
+    width: 551rpx;
+    height: 1059rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -275.5rpx;
+    margin-top: -580rpx;
+    z-index: 200;
+}
+
+.rank-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.rank-content {
+    display: flex;
+    flex-direction: column;
+    width: 531rpx;
+    height: 720rpx;
+    position: absolute;
+    top: 280rpx;
+    background: transparent;
+    left: 10rpx;
+    z-index: 20;
+}
+
+.rank-top {
+    width: 100%;
+    height: 635rpx;
+}
+
+.rank-item {
+    display: flex;
+    align-items: center;
+    height: 63rpx;
+    font-size: 24rpx;
+    color: #f99aba;
+    font-weight: bold;
+}
+
+.rank-item:nth-child(2n+1) {
+    background: #eaf8fb;
+}
+
+.rank-index {
+    margin-left: 25rpx;
+    width: 30rpx;
+    text-align: center;
+}
+
+.rank-avatar {
+    margin-left: 20rpx;
+    width: 46rpx;
+    height: 46rpx;
+    border-radius: 50%;
+    border: 3rpx solid #f99aba;
+    overflow: hidden;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+}
+
+.rank-name {
+    width: 195rpx;
+    margin-left: 75rpx;
+    margin-right: 30rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #000;
+}
+
+.rank-point {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.rank-my {
+    height: 80rpx;
+}
+
+.rank-my {
+    display: flex;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #000;
+    align-items: center;
+}
+
+.rank-my .rank-index {
+    width: 50rpx;
+}
+
+.rank-my .rank-name {
+    width: 150rpx;
+}
+
+.address-btn {
+    position: absolute;
+    bottom: -49rpx;
+    left: 50%;
+    margin-left: -179rpx;
+    width: 359rpx;
+    height: 98rpx;
+    z-index: 10;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: -125rpx;
+    left: 50%;
+    margin-left: -25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    z-index: 10;
+}

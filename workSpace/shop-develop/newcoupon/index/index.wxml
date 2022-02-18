@@ -1,0 +1,21 @@
+
+<view class="pages newcouponpage" >
+    <view class="bg-wrap" wx:if="{{activity_info.button_one_show}}">
+        <view bindtap="showrulefun" data-ruletype="1" class="rule">活动细则</view>
+        <image wx:if="{{isBigPhone}}" mode="widthFix" src="{{activity_info.big_background}}" style="width:750rpx;" />
+        <image wx:else mode="widthFix" src="{{activity_info.small_background}}" style="width:750rpx;" />
+    </view>
+    <view class="btn-wrap" wx:if="{{activity_info.button_one_show}}">
+        <view class="btn-item" style="background:{{activity_info.activity_one_background}};color:{{activity_info.activity_one_font}};" bindtap="goactive1_opnecard" wx:if="{{(is_join && is_get_coupon) && isloading2}}">{{activity_info.receive_content_one}}</view>
+        <view class="btn-item" style="background:{{activity_info.activity_one_background}};color:{{activity_info.activity_one_font}};" bindtap="goactive1_addcard" wx:else>{{activity_info.no_receive_content_one}}</view>
+    </view>
+    <view class="bg-wrap" wx:if="{{activity_info.button_two_show}}">
+        <view bindtap="showrulefun"  data-ruletype="2" class="rule">兑换细则</view>
+        <image wx:if="{{isBigPhone}}" mode="widthFix" src="{{activity_info.big_background_two}}" style="width:750rpx;" />
+        <image wx:else mode="widthFix" src="{{activity_info.small_background_two}}" style="width:750rpx;" />
+    </view>
+    <view class="btn-wrap" wx:if="{{activity_info.button_two_show}}">
+        <view class="btn-item" data-ruletype="2" bindtap="goactive2" style="background:{{activity_info.entry_button_two}};color:{{activity_info.activity_two_font}};">{{activity_info.activity_two_content}}</view>
+    </view>
+    <rule showrule="{{showrule}}" ruleimg="{{ruleimg}}" bind:closerule="closerule"></rule>
+</view>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "gender-icon": "../genderIcon/genderIcon",
+    "guide-screen": "../guideScreen/guideScreen"
+  }
+}

@@ -1,0 +1,25 @@
+<ticketView_fol
+ wx:if="{{brand == 'FOL'}}"
+ jinbi="{{jinbi}}"
+ imgPath="{{imgPath}}"
+ yhqArrs="{{yhqArrs}}"
+ showTwoBounced="{{showTwoBounced}}"
+ showThreeBounced="{{showThreeBounced}}"
+ qrImgJson="{{qrImgJson}}"
+ showGuize="{{showGuize}}"
+ bindjilu="jilu"
+ bindrequestGetCoupon="requestGetCoupon"
+ bindclosed="closed"
+ bindsaveImg="saveImg"
+ bindguize="guize"
+ bindguizeClose="guizeClose"
+/>
+<ticketView_vm
+ wx:if="{{brand == 'VEROMODA'}}"
+ jinbi="{{jinbi}}"
+ imgPath="{{imgPath}}"
+ yhqArrs="{{yhqArrs}}"
+ bindjilu="jilu"
+ bindrequestGetCoupon="requestGetCoupon"
+/>
+<canvas canvas-id="canvasID" class="cavasView" />

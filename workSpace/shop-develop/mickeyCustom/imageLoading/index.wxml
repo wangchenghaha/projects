@@ -1,0 +1,16 @@
+<view wx:if="{{isShow}}" class="main" catchtouchmove="catch" catchbind="catch">
+  <view class="load">
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+  </view>
+  <view class="text">
+    资源加载中...
+  </view>
+  <image src="{{item}}" class="loadImage" wx:for="{{imageList}}" binderror="loadImage" bindload="loadImage"/>
+</view>

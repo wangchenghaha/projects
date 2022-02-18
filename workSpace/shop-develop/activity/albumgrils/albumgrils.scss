@@ -1,0 +1,71 @@
+.container{
+    width: 100%;
+    background: #005ae7;
+    .images{
+        width: 100%;
+    }
+    .albumBottom{
+        width: 100%;
+        height: 400rpx;
+        display: flex;
+        .albumArea{
+            width: 50%;
+            height: 100rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .aImage{
+                width: 40rpx;
+                height: 40rpx;
+            }
+            .albumTxt{
+                font-size: 28rpx;
+                color: black;
+                margin-left: 10rpx;
+            }
+        }
+       
+        .line{
+            width: 2rpx;
+            height: 40rpx;
+            background: black;
+            margin: 30rpx;
+        }
+    }
+
+    .bottomImg{
+        width: 100%;
+        margin-top: 30rpx;
+    }
+    .albumShare{
+        width: 100%;
+        display: flex;
+        .albumArea{
+            width: 50%;
+            position: relative;
+            .albumBack{
+                width: 280rpx;
+                height: 80rpx;
+                background: black;
+                border-radius: 80rpx;
+                .aImage{
+                    width: 40rpx;
+                    height: 40rpx;
+                }
+                .albumTxt{
+                    font-size: 28rpx;
+                    color: white;
+                    margin-left: 10rpx;
+                }
+            }
+            .share{
+                position: absolute;
+                width: 280rpx;
+                height: 80rpx;
+                background:none;
+            }
+        }
+        
+    }
+}
+

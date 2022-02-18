@@ -1,0 +1,209 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.gameBg {
+  width: 100%;
+  position: relative;
+}
+
+.gameBg .topTitleView {
+  position: absolute;
+  opacity: 0;
+}
+
+.gameBg .topTitleView .toptitles {
+  background-color: #FFF9F1;
+  border-radius: 20rpx;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.gameBg .topTitleView .toptitles .titls {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: purple;
+  text-align: center;
+}
+
+.gameBg .topTitleView .toptitles .weiba {
+  position: absolute;
+  bottom: -15rpx;
+  left: 50rpx;
+  width: 0;
+  height: 0;
+  border-top: 25rpx solid #FFF9F1;
+  border-right: 15rpx solid transparent;
+  border-left: 15rpx solid transparent;
+}
+
+.gameBg .renwu {
+  width: 153rpx;
+  height: 273rpx;
+  position: absolute;
+  overflow: hidden;
+}
+
+.gameBg .renwu .jindu {
+  width: 100%;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: white;
+  text-shadow: 0 0 8rpx #7D1CAE;
+  overflow: hidden;
+}
+
+.gameBg .renwu-top {
+  width: 100%;
+  height: 45rpx;
+  position: relative;
+}
+
+.gameBg .renwu-top .processBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gameBg .renwu-top .process {
+  position: absolute;
+  top: 11rpx;
+  left: 11rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  background-image: linear-gradient(#FEF983, #FF3B00);
+}
+
+.back {
+  position: fixed;
+  top: 5%;
+  left: 30rpx;
+  width: 42rpx;
+  height: 59rpx;
+}
+
+.guize {
+  width: 130rpx;
+  height: 78rpx;
+  position: fixed;
+  right: 0;
+  top: 15%;
+}
+
+.img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.bottomImg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.play {
+  position: fixed;
+  bottom: 110rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 342rpx;
+  height: 264rpx;
+}
+
+.taps {
+  position: fixed;
+  bottom: 100rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.shengyu {
+  position: fixed;
+  bottom: 50rpx;
+  left: 0;
+  width: 100%;
+  height: 33rpx;
+}
+
+.shengyu .subView {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shengyu .subView-label {
+  color: white;
+  font-size: 33rpx;
+  line-height: 33rpx;
+  text-shadow: 0 0 8px #F9375B;
+}
+
+.shengyu .subView-num {
+  color: #00FDF0;
+  font-size: 33rpx;
+  line-height: 33rpx;
+  text-shadow: 0 0 8px #F9375B;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.shengyu .subView-img {
+  margin-top: -4rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+@keyframes jump {
+  0% {
+    height: 273rpx;
+    bottom: var(--b);
+    left: var(--l);
+  }
+  36% {
+    height: 243rpx;
+    bottom: var(--b);
+    left: var(--l);
+  }
+  58% {
+    height: 253rpx;
+    bottom: var(--b);
+    left: var(--l);
+  }
+  80% {
+    height: 273rpx;
+    bottom: var(--b1);
+    left: var(--l1);
+  }
+  100% {
+    height: 273rpx;
+    bottom: var(--tob);
+    left: var(--tol);
+  }
+}
+
+@keyframes topTitleAnimate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .9;
+  }
+}
+
+@keyframes topTitleAnimate1 {
+  0% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 0;
+  }
+}

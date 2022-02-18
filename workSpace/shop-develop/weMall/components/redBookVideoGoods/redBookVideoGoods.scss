@@ -1,0 +1,51 @@
+$scroll-height: 480rpx;
+.bg{
+  box-sizing: border-box;
+  &:nth-child(even){
+    background: #ededed;
+  }
+}
+.list{
+  margin-top: 20rpx;
+  image{
+    display: block;
+    width: 100%;
+  }
+  align-items: flex-start;
+  .list-img{
+    margin: 20rpx auto;
+    width: 96%;
+    overflow: hidden;
+  }
+  .scroll-view{
+    width: 100%;
+    height: $scroll-height;
+    overflow: hidden;
+    white-space: nowrap;
+    .goods-item{
+      display: inline-block;
+      margin-right: 15rpx;
+      width: 240rpx;
+      height: $scroll-height;
+      vertical-align: top;
+      &:last-child{
+         margin-right: 0;
+      }
+      .goods-img{
+        width: 100%;
+      }
+      .price{
+        margin-top: 20rpx;
+        &-origin{
+          font-size: 24rpx;
+          color: #ccc;
+          text-decoration: line-through;
+        }
+        &-pay{
+          font-size: 28rpx;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "goods-list":"../shareGoodsList/goodsList",
+    "good-list-one": "../goodsModelListOne/goodsList"
+  }
+}

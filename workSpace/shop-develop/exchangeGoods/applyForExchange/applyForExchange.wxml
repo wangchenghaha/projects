@@ -1,0 +1,47 @@
+<import src="../tmpl/stepper/stepper" />
+<import src="../tmpl/checkableOrderItem/checkableOrderItem" />
+<view class="layout_father">
+  <!-- 普通订单，首次进入 -->
+  <view class="global_bg_matrix_gray_300">
+    <text class="text_title_left">当前商品</text>
+  </view>
+  <scroll-view scroll-y="true" class="scroll_view">
+    <view class="global_order_item" wx:for="{{goodsList}}" wx:key="global_order_item">
+      <template is="checkableOrderItemTmpl" data="{{index,item,checkable:true}}"></template>
+    </view>
+  </scroll-view>
+
+  <view class="layout_multi  {{isIphoneX ?'fix-iphonex-button':''}}">
+    <view class='layout_exchange_reason'>
+      <text class='reason_title'>换货原因</text>
+      <view class='reason_layout'>
+        <view class='{{reason0Selected?"reason_1":"reason_0"}}' data-item-id='0' bindtap='onSelectReason'>尺码不符</view>
+        <view class='{{reason1Selected?"reason_1":"reason_0"}}' data-item-id='1' bindtap='onSelectReason'>颜色不喜欢</view>
+        <view class='{{reason2Selected?"reason_1":"reason_0"}}' data-item-id='2' bindtap='onSelectReason'>质量问题</view>
+        <view class='{{reason3Selected?"reason_1":"reason_0"}}' data-item-id='3' bindtap='onSelectReason'>7天无理由退换货</view>
+      </view>
+      <view class="reason_cus">
+        <input placeholder="自定义理由..." placeholder-class="reason_input" maxlength="30" bindinput="onReasonInputChange" />
+      </view>
+      <view class="tip">请选择换货原因，以便我们今后提供更好的产品和服务</view>
+
+      <!-- <view class='commit' bindtap='commitExchange'>提交换货申请</view> -->
+    </view>
+    
+    <view class="layout_bottom">
+      <view class='global_button_default_light' bindtap='onExchangeInShop' wx:if="{{flagShowWay && noShow}}">到店换货</view>
+      <image class="img_reward" wx:if="{{flagShowWay && noShow}}" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_reward.png" catch:tap="onRewardClick"/>
+      <view class='global_button_default_light' bindtap='onExchangeInExpress'>快递换货</view>
+    </view>
+     <!-- IphoneX底部栏 -->
+    <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+  </view>
+
+
+  <view class="layout_pop_reward" wx:if="{{ifShowPopReward}}">
+    <image class="img_pop_reward" src="https://cdn.bestseller.com.cn/assets/common/pub/image/pic_reward_popup_2.png" mode="widthFix"/>
+    <view class="txt_pop_reward_0" catch:tap="onNavToFQImg">如何换货？</view>
+    <view class="txt_pop_reward_1" catch:tap="onFAQCancel">我知道了</view>
+  </view>
+
+</view>

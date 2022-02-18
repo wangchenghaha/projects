@@ -1,0 +1,24 @@
+<view class="ba-container">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+              <view id="{{index}}" class="nav weui-navbar__item {{activeIndex == index ? 'on' : ''}}" bindtap="tabClick">
+                  <view class="weui-navbar__title">{{item}}</view>
+              </view>
+          </block>
+      </view>
+      <view class="foot weui-tab__panel">
+      <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+        <image class="foot-bg" src="https://cdn.bestseller.com.cn/assets/common/pub/image/ba_website.jpg" mode="aspectFill"></image>
+         <view class="text" bindtap="tonet">进入官网</view>
+      </view>
+      <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+        <image class="foot-bg" src="https://cdn.bestseller.com.cn/assets/common/pub/image/ba_2shop.jpg" mode="aspectFill"></image>
+        <view class="text" bindtap="toLbs">进入门店</view>
+      </view>
+    </view>
+        <image class="ba-bg" src="{{imgSrc}}" mode="aspectFill"></image>
+      </view>
+    </view>
+</view>

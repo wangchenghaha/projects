@@ -1,0 +1,80 @@
+<!-- 适配iphoneX -->
+<view class="iPhoneX" style="height: {{iphoneXHeight}}rpx;"></view>
+<view class="bottomView" style="bottom: {{iphoneXHeight}}rpx;">
+    <view wx:if="{{type == '2'}}" class="tietu" bindtap="save">保存并预览</view>
+    <view wx:if="{{type == '1'}}" wx:for="{{bottomDatas.datas}}" wx:key="bottomDatas" class="{{index == 3 ? 'saveView' : 'view'}}" style="width:{{item.width}}%;">
+        <view wx:if="{{index == 3}}" class="saveView-view" bindtap="save">{{item.title}}</view>
+        <view id="{{index}}" wx:else bindtap="bottomTap">
+            <image src="{{bottomDatas.selectIndex == index ? item.image_sel : item.image}}" class="view-image" />
+            <view class="view-title" style="color:{{bottomDatas.selectIndex == index ? 'black' : '#9D9D9D'}}">{{item.title}}</view>
+        </view>
+    </view>
+</view>
+<view class="topView" animation="{{jpAnimation}}">
+    <view class="top">
+        <scroll-view scroll-x enable-flex class="leftView" style="{{bottomDatas.selectIndex == 2 ? 'background-color: #ECEEF1;' : 'background-color: white;'}}">
+            <view id="{{index}}" wx:if="{{bottomDatas.selectIndex == 1}}" wx:for="{{xilieArrs.datas}}" wx:key="xilie" class="leftView-subView" style="{{xilieArrs.selectIndex == index ? 'background-color: black;color:white;' : ''}}" bindtap="topTap">{{item.title}}</view>
+            <view wx:if="{{bottomDatas.selectIndex == 2}}" class="zitiView">
+                <view data-type="ziti" class="ziti" bindtap="bouncedTap">
+                    <view class="ziti-title">{{ziti.datas[ziti.index].title}}</view>
+                    <image src="https://cdn.bestseller.com.cn/assets/wechat/JACKJONES/image/DZxiasanjiao.png" class="ziti-imageView" />
+                </view>
+                <view class="B" style="font-weight:{{isBold ? 900 : 0}};" bindtap="cu">B</view>
+                <view data-type="yanse" class="yanse" style="background-color: {{colors.datas[colors.index]}};" bindtap="bouncedTap"></view>
+                <view data-type="zihao" class="zihao" bindtap="bouncedTap">字号</view>
+            </view>
+        </scroll-view>
+
+    </view>
+
+    <view class="centerView" style="height:{{bottomDatas.selectIndex == 0 ? 170 : bottomDatas.selectIndex == 1 ? xilieArrs.height : 220}}rpx;">
+        
+        <scroll-view wx:if="{{bottomDatas.selectIndex == 0}}" scroll-x style=" white-space: nowrap; ">
+            <view wx:for="{{zdyArrs}}" data-type="zdy" id="{{index}}" data-id="{{item.id}}" wx:key="zdyArrs" class="centerView-xlView" bindtap="onClick">
+                <image wx:if="{{item.pic == ''}}" src="https://cdn.bestseller.com.cn/assets/wechat/JACKJONES/image/DZjia.png" class="centerView-xlView-image" />
+                <image wx:else src="{{item.pic}}" style="width:100%;height:100%;background-color: white;" />
+            </view>
+        </scroll-view>
+        <scroll-view wx:if="{{bottomDatas.selectIndex == 1}}" scroll-x style=" white-space: nowrap; ">
+            <view class="centerView-taView" style="height: {{xilieArrs.height - 20}}rpx;">
+                <block wx:for="{{xilieArrs.datas[xilieArrs.selectIndex].datas}}" wx:key="taView">
+
+                    <view class="centerView-taView-subView" style="{{index == 0 ? '' : 'margin-top: 10rpx;'}}">
+                        <image wx:for="{{item}}" wx:key="item" wx:for-item="items" class="centerView-taView-image" src="https://cdn.bestseller.com.cn/{{items.graphic_pic_thumbnail_url}}" data-type="xilie" data-item="{{items}}" bindtap="onClick" />
+                    </view>
+
+                </block>
+            </view>
+        </scroll-view>
+        <scroll-view wx:if="{{bottomDatas.selectIndex == 2}}" scroll-x style=" white-space: nowrap; ">
+            <view class="centerView-wzView">
+                <view class="leftView">
+                    <view class="leftView-left">
+                        <!-- <view wx:if="{{!auto_focus.status}}" class="input" bindtap="inputTap">{{auto_focus.value ? auto_focus.value : '点击这里可以输入文字哦最多可支持两行换行'}}</view> -->
+                        <textarea auto-focus="{{true}}" adjust-position="{{false}}" maxlength="20" class="input" value="{{auto_focus.value}}" placeholder="点击这里可以输入文字哦最多可支持两行换行" placeholder-class="input-pla" bindblur="inputEnd" bindinput="inputChange" bindlinechange="inputLineChange" bindfocus="bindfocus"></textarea>
+                    </view>
+                    <view class="leftView-right">{{strNum}}/20</view>
+                </view>
+                <view class="rightView">
+                    <view class="rightView-subView" bindtap="submit">提交</view>
+                </view>
+            </view>
+        </scroll-view>
+        
+    </view>
+</view>
+<view wx:if="{{type == '1'}}" class="line" style="left: 19%;bottom: {{20 + iphoneXHeight}}rpx;"></view>
+<view wx:if="{{type == '1'}}" class="line" style="left: 39%;bottom: {{20 + iphoneXHeight}}rpx;"></view>
+<!-- 弹框 -->
+<view class="bouncesView" wx:if="{{canShow}}">
+  <!-- 遮罩层 -->
+  <view class="zhezhao" animation="{{opacityView}}" bindtap="bouncesTap_colsed"></view>
+  <!-- 视图层 -->
+  <view class="bouncesView-view" style="bottom: {{iphoneXHeight}}rpx;" animation="{{bounecsViewAnimation}}">
+    <scroll-view scroll-x style=" white-space: nowrap; ">
+        <view data-type="ziti" id="{{index}}" wx:if="{{topTapIndex == 0}}" wx:for="{{ziti.datas}}" wx:key="tizib" class="bouncesView-view-ziti" style="font-family: {{item.family}};" bindtap="bouncedViewTap">{{item.title}}</view>
+        <view data-type="yanse" id="{{index}}" wx:if="{{topTapIndex == 1}}" wx:for="{{colors.datas}}" wx:key="yanseb" class="bouncesView-view-yanse" style="background-color: {{item}};" bindtap="bouncedViewTap"></view>
+        <view data-type="zihao" id="{{index}}" wx:if="{{topTapIndex == 2}}" wx:for="{{zihao.datas}}" wx:key="zihaob" class="bouncesView-view-zihao" style="font-size: {{item.number}}px;" bindtap="bouncedViewTap">{{item.title}}</view>
+    </scroll-view>
+  </view>
+</view>

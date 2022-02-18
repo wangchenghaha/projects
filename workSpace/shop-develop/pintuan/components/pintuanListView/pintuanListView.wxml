@@ -1,0 +1,101 @@
+<view class="bg {{noScroll ? 'bg-noScro' : ''}}" style="height:{{noScroll?'87%':'auto'}};" wx:if="{{!isBigImage && listData.length > 0}}">
+    <view class="box">
+        <block wx:for="{{listData}}" wx:key="list" wx:for-item="imgItem">
+            <view class="box-item">
+                    <view class="imageView">
+                        <image bindtap = "imageTap" data-sku="{{imgItem}}" src="{{imgItem.gscMaincolPath}}" mode="widthFix" style="width: 100%;">
+                        </image>
+                        <image src="../../images/pt-80x39.png" class="zhekou" mode="widthFix" />
+                        <view class="zhekou-text">拼团</view>
+
+                        <image class="wuhuoImage" src="/images/list_car_false.png" mode="widthFix" wx:if="{{imgItem.sellStock <= 0}}" />
+                        <view class="opaView"></view>
+                        <text class="opaText">{{imgItem.goodsName}}</text>
+                    </view>
+                    <view class="botomView" bindtap = "imageTap" data-sku="{{imgItem}}">
+                        <view class="botom-leftView">
+                            <view class = "titles" style = "font-size: 24rpx;margin-left: 10rpx;">￥</view>
+                            <view class = "titles" style = "font-size: 38rpx;">{{imgItem.pintuanPrice}}</view>
+                            <view class = "botom-lefView-s">
+                                <view class="titles-up">￥{{imgItem.originalPrice}}</view>
+                                <view class="titles-down">已拼{{imgItem.yipinNum}}件</view>
+                            </view>
+                        </view>
+                        <view class="botom-rightView">{{imgItem.personRequire}}人团</view>
+                    </view>
+            </view>
+        </block>
+    </view>
+    <!-- <block wx:for="{{listData}}" wx:key="list-key">
+        <view class="listBG">
+            <block wx:for="{{item}}" wx:key="list" wx:for-item="imgItem">
+                <view class="listView">
+                    <view class="imageView">
+                        <image bindtap = "imageTap" data-sku="{{imgItem}}" src="{{imgItem.gscMaincolPath}}" mode="widthFix" style="width: 100%;">
+                        </image>
+                        <image src="../../images/pt-80x39.png" class="zhekou" mode="widthFix" />
+                        <view class="zhekou-text">拼团</view>
+
+                        <image class="wuhuoImage" src="/images/list_car_false.png" mode="widthFix" wx:if="{{imgItem.sellStock <= 0}}" />
+                        <view class="opaView"></view>
+                        <text class="opaText">{{imgItem.goodsName}}</text>
+                    </view>
+                    
+                    <view class="botomView" bindtap = "imageTap" data-sku="{{imgItem}}">
+                        <view class="botom-leftView">
+                            <view class = "titles" style = "font-size: 24rpx;margin-left: 10rpx;">￥</view>
+                            <view class = "titles" style = "font-size: 38rpx;">{{imgItem.pintuanPrice}}</view>
+                            <view class = "botom-lefView-s">
+                                <view class="titles-up">￥{{imgItem.originalPrice}}</view>
+                                <view class="titles-down">已拼{{imgItem.yipinNum}}件</view>
+                            </view>
+                        </view>
+                        <view class="botom-rightView">2人团</view>
+                    </view>
+                    
+                    
+                </view>
+            </block>
+        </view>
+    </block> -->
+</view>
+
+<!-- 大图 -->
+<view class="columbg {{noScroll ? 'bg-noScro' : ''}}" style="height:{{noScroll?'87%':'auto'}};" wx:elif="{{listData.length > 0}}">
+
+        <view class="columListBG" wx:for="{{originaListData}}" wx:key="columListBGKey">
+            <view class="imageView">
+                <image bindtap = "imageTap" data-sku="{{item}}" src="{{item.gscMaincolPath}}" mode="widthFix" style="width: 100%;">
+                </image>
+                <image src="../../images/pt-125x60.png" class="zhekou" mode="widthFix" />
+                <view class="zhekou-text">拼团</view>
+                <image class="wuhuoImage" src="/images/list_car_false.png" mode="widthFix" wx:if="{{item.sellStock <= 0}}" />
+                    <view class="opaView"></view>
+                <text class="opaText">{{item.goodsName}}</text>
+            </view>
+
+            <view class="botomView" bindtap = "imageTap" data-sku="{{item}}">
+                <view class="botom-leftView">
+
+                    <view class = "titles" style = "font-size: 30rpx;margin-left: 20rpx;">￥</view>
+                    <view class = "titles" style = "font-size: 45rpx;margin-left: 5rpx;">{{item.pintuanPrice}}</view>
+                    <view class = "botom-lefView-s">
+                        <view class="titles-up">￥{{item.originalPrice}}</view>
+                        <view class="titles-down">已拼{{item.yipinNum}}件</view>
+                    </view>
+
+                </view>
+                <view class="botom-rightView">{{item.personRequire}}人团</view>
+            </view>
+            <!-- 收藏功能暂时先去掉19.1.11 3:52john沟通 -->
+            <!-- <view class="collectionView" bindtap = "imageTap" id="collection">
+                <image src="../../images/xin_def.png" mode="widthFix" class="collectionImage" />
+                <view class="collectionText">收藏商品</view>
+            </view> -->
+        </view>
+</view>
+<!-- 无数据展示 -->
+<view class="noDataView" wx:else>
+    <image class="image" src="/images/bag.png" mode="widthFix" style="width:200rpx;" />
+    <text class="text">亲,未找到您需要的商品哦!</text>
+</view>

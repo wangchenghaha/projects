@@ -1,0 +1,42 @@
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .imgView {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.bg .imgView .question {
+  width: 196rpx;
+  height: auto;
+  position: absolute;
+  bottom: 600rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bg .imgView .question750 {
+  bottom: 430rpx;
+}
+
+.bg .imgView .pic {
+  width: 196rpx;
+  height: auto;
+  position: absolute;
+  bottom: 480rpx;
+  left: 80rpx;
+}
+
+.bg .imgView .pic750 {
+  bottom: 310rpx;
+  left: 60rpx;
+}
+
+.bg image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,16 @@
+/* socialAdvertising/ads/ad20210224/ad20210224.wxss */
+.frame {
+    width: 100%;
+    height: auto;
+    clear: both;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  .img_with_full {
+    width: 100%;
+  }
+  .n {
+    margin-top: -1rpx;
+  }

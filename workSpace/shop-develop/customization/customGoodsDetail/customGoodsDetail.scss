@@ -1,0 +1,247 @@
+page{
+    width: 100%;
+    height: 100%;
+    background-color: #E6E6E6;
+}
+@mixin titleColorSize($color) {
+    color: $color;
+    margin-top: 30rpx;
+    font-weight: bold;
+    font-size: 32rpx;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    .swiperImg{
+        width:100%;
+        position: relative;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    // 商品名称
+    .bordTitle{
+        @include titleColorSize(#292929)
+    }
+    // 钱
+    .money{
+        @include titleColorSize(black);
+        font-size: 40rpx;
+    }
+    // 描述(单品价)
+    .miaoshu{
+        @include titleColorSize(#A4A4A4);
+        margin-top: 5rpx;
+        font-weight: normal;
+        font-size: 23rpx;
+    }
+    // 线条
+    .line{
+        margin: 40rpx 7% 40rpx 7%;
+        border: 2rpx solid #D0D0D0;
+    }
+    // 颜色框
+    .colorView{
+        margin-left: 15%;
+        margin-right: 15%;
+        height: auto;
+        .selectColorView{
+            width: 100%;
+            height: 80rpx;
+            border: 4rpx solid #D0D0D0;
+            display: flex;
+            flex-direction: row;
+            &-title{
+                line-height: 80rpx;
+                margin-left: 20rpx;
+                font-size: 25rpx;
+                flex: 1;
+            }
+            &-image{
+                width: 30rpx;
+                height: 30rpx;
+                margin-right: 20rpx;
+                margin-top: 25rpx;
+            }
+        }
+        .colorViews{
+            margin-bottom: 10rpx;
+            transition: .3s;
+            opacity: 0;
+            width: 100%;
+            height: 0;
+            text-align: center;
+            &-title{
+                transition: .3s;
+                opacity: 0;
+                height: 0;
+                line-height: 70rpx;
+                float: left;
+                font-size: 25rpx;
+                margin-right: 20rpx;
+                margin-left: 13rpx;
+                color: black;
+                &-show{
+                    opacity: 1;
+                    height: 70rpx;
+                }
+            }
+            &-show{
+                height: auto;
+                opacity: 1;
+                overflow: hidden;
+            }
+        }
+    }
+}
+// 填充层
+.customView{
+    width: 100%;
+    
+}
+// 最上层底部框
+.filxBotomView{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: #E6E6E6;
+    &-topView{
+        height: 100rpx;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        &-title{
+            font-size: 25rpx;
+            color: #A4A4A4;
+            line-height: 100rpx;
+            margin-left: 30rpx;
+            flex: 1;
+            &-right{
+                font-size: 40rpx;
+                color: #A4A4A4;
+                line-height: 95rpx;
+                margin-right: 30rpx;
+            }
+        }
+    }
+    &-bottomView{
+        height: 100rpx;
+        background-color: white;
+        margin-top: 10rpx;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        .view0{
+            width: 25%;
+            height: 100%;
+            &-image{
+                width: 40rpx;
+                height: 40rpx;
+                margin-top: 15rpx;
+            }
+            &-title{
+                font-size: 23rpx;
+                color: #A4A4A4;
+                width: 100%;
+                height: auto;
+                margin-top: -15rpx;
+            }
+        }
+        .view1{
+            width: 35%;
+            line-height: 100rpx;
+            font-size: 25rpx;
+            color: black;
+            border: 1rpx solid black;
+        }
+        .view2{
+            width: 40%;
+            line-height: 100rpx;
+            font-size: 25rpx;
+            color: white;
+            background-color: black;
+        }
+    }
+}
+
+.bouncedView{
+    position: fixed;
+    left: 0;
+    
+    width: 100%;
+    height: auto;
+    transition: .3s;
+    opacity: 0;
+    background-color: white;
+
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    box-sizing: border-box;
+    .wxParse-div image{
+        display: block;
+        margin:  0 auto;
+        width: 94%;
+    }
+    &-show{
+        opacity: 1;
+        overflow: hidden;
+    }
+}
+
+
+.bounced-close{
+    width: 75rpx;
+    height: 60rpx;
+    position: absolute;
+    bottom: 0rpx;
+    left: 45%;
+  }
+  .bounced-call{
+    position: absolute;
+    bottom: 13.5%;
+    right: 21%;
+    width: 37rpx;
+    height: 37rpx;
+  }
+  .bounced-save{
+    position: absolute;
+    bottom: 38%;
+    left: 29%;
+    width: 130rpx;
+    height: 48rpx;
+  }
+  .bounced-copy{
+    position: absolute;
+    bottom: 30%;
+    left: 29%;
+    width: 185rpx;
+    height: 48rpx;
+  }
+// 客服
+.helpBonucedBG{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 999998;
+  }
+  /* 客服弹框 */
+.helpBounced{
+    position: fixed;
+    top: 13%;
+    left: 0;
+    width: 100%;
+    height: auto;
+  
+  
+    z-index: 999999;
+  }

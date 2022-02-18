@@ -1,0 +1,8 @@
+.rob-bag{
+  flex-direction: column;
+}
+.rob-bag image{
+  margin-bottom: 40rpx;
+  width: 674rpx;
+  height: 221rpx;
+}

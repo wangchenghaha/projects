@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "goods-temp": "../redBookGoods/redBookGoods",
+    "video-goods": "../redBookVideoGoods/redBookVideoGoods"
+  }
+}

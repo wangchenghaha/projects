@@ -1,0 +1,12 @@
+var timesplit = function(t) {
+    var time = t.split(" ")[0];
+    return time;
+  }
+  var isnan = function(t) {
+    var is = !isNaN(t);
+    return is;
+  }
+  module.exports = {
+    timesplit: timesplit,
+    isnan: isnan
+  };

@@ -1,0 +1,128 @@
+<view class="bg">
+
+    <block wx:if="{{firstGame}}">
+        <view class="firstImgView">
+            <image src="{{firstImg.img}}" style="width:100%;" mode="widthFix" bindtap="firstBtn" />
+        </view>
+        
+    </block>
+    <block wx:elif="{{overTime > 0}}">
+            <image src="{{IMG.bgImg}}" style="width:100%;" mode="widthFix" />
+
+            <view class="topViewBg" style="height: {{topHeight}}rpx;">
+                <view class="qiziView">
+                    <image src="{{IMG.qiziImg}}" style="width:100%;height:100%;" />
+                </view>
+                <view class="daojishi">{{overTime}}</view>
+            </view>
+
+            <view class="gameViewbg" style="padding-top: {{topHeight}}rpx;">
+                    <view class="gameViewbg-pos">
+
+                        <view class="shuView">
+                                <view class="shu" wx:for="{{5}}" wx:key="a" style="animation: scaleAnimate 4s ease-out {{index * 0.8}}s infinite forwards;animation-play-state: {{shuAnimateStatu}};">
+                                    <view class="leftRight">
+                                        <image src="{{IMG.shuImg}}" style="width:100%;height:100%;" />
+                                    </view>
+                                    <view class="center"></view>
+                                    <view class="leftRight">
+                                        <image src="{{IMG.shuImg}}" style="width:100%;height:100%;" />
+                                    </view>
+                                </view>
+                        </view>
+
+
+                        <view class="zhangaiView" id="{{indexx}}" wx:for="{{datas}}" wx:key="aa" wx:for-index="indexx" wx:for-item="items" style="--var:{{transY}}rpx;animation:  zhangaiAnimate 4s ease-out {{indexx * 0.67}}s infinite forwards;animation-play-state: {{animateStatus}};" bindanimationiteration="animationiteration">
+                            
+                            <view class="zorjView" wx:for="{{3}}" wx:key="aaa">
+                                <view class="jorz" data-detail="{{items.subIndex}}" id="or{{indexx}}" wx:if="{{items.weizhi == index}}" style="width:{{items.imgJson.width}}rpx;height:{{items.imgJson.height}}rpx;">
+                                    <image src="{{items.imgJson.img}}" style="width:100%;height:100%;vertical-align: middle;" />
+                                </view>
+                            </view>
+                            
+                        </view>
+
+                        <view class="renwuView">
+                            <view class="postionView" style="height:{{IMG.renwuImg.height}}rpx;">
+                                <view class="renwu" style="transform: translate3d({{renwuIndex == 0 ? 0 : renwuIndex == 1 ? 85 : 170}}%,{{renwuJump ? -100 : 0}}%,0);width:{{IMG.renwuImg.width}}rpx;transition: transform {{jumpDusi}}s;">
+                                    <image src="{{renwuJump ? IMG.renwuImg.jumpImg : IMG.renwuImg.img}}" style="width:100%;height:100%;" />
+                                </view>
+                                <view class="fenshu" style="transform: translate3d({{renwuIndex == 0 ? 0 : renwuIndex == 1 ? 85 : 170}}%,{{renwuJump ? -100 : 0}}%,0);width:{{IMG.renwuImg.width}}rpx;transition: transform {{jumpDusi}}s;">
+                                    <view class="text" style="animation:  {{numJson.animate}} .5s ease-out 0s 1 forwards;color:{{numJson.color}};">{{numJson.currentNum}}</view>
+                                </view>
+                            </view>
+                        </view>
+
+                    </view>
+
+            </view>
+
+        <view class="xuehuaView" wx:for="{{xuehuaDatas}}" wx:key="xuehua">
+            <image class="xuehuaView-img xuehua{{index}}" src="{{item}}" />
+        </view>
+        <view class="touchView" bindtouchstart="touchstart" bindtouchmove="touchmove"></view>
+    </block>
+    <block wx:else>
+            <image src="{{IMG.overBgImg}}" style="width:100%;" mode="widthFix" />
+
+            <view class="topViewBg" style="height: {{topHeight}}rpx;">
+                <view class="qiziView">
+                    <image src="{{IMG.qiziImg}}" style="width:100%;height:100%;" />
+                </view>
+            </view>
+
+
+        <view class="xuehuaView" wx:for="{{xuehuaDatas}}" wx:key="xuehua">
+            <image class="xuehuaView-img xuehua{{index}}" src="{{item}}" />
+        </view>
+    </block>
+    
+</view>
+
+    <block wx:if="{{showBounced}}">
+        <view class="bounced" style="background-color: black;opacity: .8;"></view>
+        <view class="bounced">
+            <view class="bounced-imgView">
+
+                <view class="bouncedPostion">
+                    <image src="{{gameCount > 0 ? IMG.gongxiImg : IMG.yihanImg}}" style="width:100%;height:100%;" />
+                    <view class="texts" style="top: 41%;">{{bouncedText[0]}}</view>
+                    <view class="texts" style="top: 47%;">{{bouncedText[1]}}</view>
+                    <view class="texts" style="top: 53%;">{{bouncedText[2]}}</view>
+
+                    <block wx:if="{{gameCount > 0}}">
+                        <view class="bottomView" bindtap="_startGame">
+                            <view class="bottomView-img">
+                                <image src="{{IMG.bouncedBtnImg}}" style="width:100%;height:100%;" />
+                                <view class="bottomView-img-text">再玩一次</view>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="bottomView">
+                            <view class="bottomView-img">
+                                <image src="{{IMG.bouncedBtnImg}}" style="width:100%;height:100%;" />
+                                <view class="bottomView-img-text">立即邀请</view>
+                            </view>
+                        </view>
+                        <button open-type="share" class="bottomViewShare"></button>
+                    </block>
+
+                    <view class="closed" bindtap="bouncedClosed"></view>
+                </view>
+                
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{daojishiJson.show}}">
+        <view class="bounced" style="background-color: black;opacity: .5;"></view>
+        <view class="bounced">
+            <view class="bounced-daojishiView">
+                <image src="{{daojishiJson.numImg}}" style="width:100%;height:100%;" />
+            </view>
+        </view>
+    </block>
+
+<view class="sanjiao" bindtap="bouncedClosed">
+	<image src="{{IMG.backImg}}" style="width:100%;height:100%;" />
+</view>

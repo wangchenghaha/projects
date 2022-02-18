@@ -1,0 +1,5 @@
+<view class="wrap">
+    <view class="page">
+        <web-view src="{{bindUrl}}"></web-view>
+    </view>
+</view>

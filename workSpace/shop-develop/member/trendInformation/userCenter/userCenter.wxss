@@ -1,0 +1,64 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+
+.container .userInfo {
+  width: 100%;
+  height: 260rpx;
+  background: #fff;
+}
+
+.container .userInfo .avatarImg {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  margin-left: 20rpx;
+}
+
+.container .userInfo .info {
+  margin-left: 20rpx;
+}
+
+.container .userInfo .info .nickName {
+  font-size: 32rpx;
+  font-weight: 550;
+}
+
+.container .userInfo .info .detail {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.container .selectTab {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.container .selectTab .tab {
+  width: 50%;
+}
+
+.container .selectTab .tab-item {
+  width: 150rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  font-weight: 550;
+  color: #666;
+  text-align: center;
+}
+
+.container .selectTab .tab .selected {
+  border-bottom: 5rpx #000 solid;
+  color: black;
+}
+
+.container .trend {
+  margin-top: 20rpx;
+}
+
+.container .noContent {
+  width: 100%;
+  height: 500rpx;
+}

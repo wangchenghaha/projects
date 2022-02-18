@@ -1,0 +1,27 @@
+<view class="coupon-area" wx:if="{{!gzhData.banner}}">
+        <view class="item" wx:for="{{couponInfoDatas.coupon_list}}" bindtap="jumpToCard" data-index="{{index}}" wx:key="*this">
+            <image class="img" src="{{item.brand_logo}}" />
+            <view class="info">
+                <view class="txt">{{item.brand_name}}</view>
+                <view class="txt-l">{{item.title}}</view>
+                <view class="txt-s">{{item.begin_time}}</view>
+            </view>
+        </view>
+    </view>
+<scroll-view class="coupon-list" wx:else scroll-y="true" style="height: {{scrollHeight}}px;">
+    <view class="coupon-area">
+        <view class="item" wx:for="{{couponInfoDatas.coupon_list}}" bindtap="jumpToCard" data-index="{{index}}" wx:key="*this">
+            <image class="img" src="{{item.brand_logo}}" />
+            <view class="info">
+                <view class="txt">{{item.brand_name}}</view>
+                <view class="txt-l">{{item.title}}</view>
+                <view class="txt-s">{{item.begin_time}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="gzh-area" wx:if="{{ gzhData.banner}}" style="height:{{gzhImgHeight}}px" bindtap="jumpTo" hover-class="none" hover-stop-propagation="false">
+    <image class=""  bindload="imageLoad" src="{{gzhData.banner}}" mode="aspectFit" >
+  
+    </image>
+</view>

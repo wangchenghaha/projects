@@ -1,0 +1,30 @@
+<view class="content">
+  <view class="header">
+    <view class="flex-bet">
+      <text>累积客户</text>
+      <text class="icon text-c">?</text>
+    </view>
+    <view class="text-c count">
+      <text class="number font-bold">{{customerList.length}}</text>人
+    </view>
+  </view>
+  <view class="customer">
+    <view class="customer-wrapper">
+      <view class="title">新增<text class="font-bold">{{customerList.length}}</text>人</view>
+      <view class="list" wx:if="{{customerList.length}}">
+        <view class="list-item flex-bet" wx:for="{{customerList}}" wx:key="memberId">
+          <view class="info flex-start">
+            <view class="avatar">
+              <image src="{{item.customerFaceImg}}" mode="widthFix"></image>
+            </view>
+            <view>
+              <view class="name">{{item.customerNickname}}</view>
+              <view class="price">￥{{item.goodsPrice}}</view>
+            </view>
+          </view>
+          <view class="time">{{item.myTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

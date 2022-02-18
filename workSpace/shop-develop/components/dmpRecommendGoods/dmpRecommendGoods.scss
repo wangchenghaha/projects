@@ -1,0 +1,96 @@
+.hotGood {
+  flex-wrap: wrap;
+  padding-top: 20rpx;
+  margin-bottom: 128rpx;
+  background-color: #fff;
+  &-title {
+    margin: 30rpx auto;
+    width: 95%;
+    font-size: 32rpx;
+  }
+  .hot-box{
+    margin: 10rpx auto;
+    width: 95%;
+    flex-wrap: wrap;
+    &.scroll-view{
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      .hotGood-item{
+        display: inline-block;
+        margin-right: 20rpx;
+        width: 300rpx;
+        .hotItem-name{
+          white-space: pre-wrap;
+        }
+      }
+    }
+  }
+
+  &-item {
+    padding-bottom: 20rpx;
+    flex: 0 1 49%;
+    .hotItem-image {
+      width: 100%;
+    }
+    .hotItem-name {
+      margin-bottom: 10rpx;
+      padding: 10rpx 0;
+      width: 100%;
+      height: 50rpx;
+      font-size: 28rpx;
+      line-height: 30rpx;
+      color: #9B9B9B;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: horizontal;
+      -webkit-box-orient: vertical;
+      word-break: normal;
+      word-wrap: break-word;
+    }
+
+    .hotItem-price {
+      &-current {
+        font-size: 28rpx;
+      }
+      .icon-plus{
+        padding-bottom: 5rpx;
+        width: 40rpx;
+        height: 40rpx;
+        font-size: 32rpx;
+        background-color: #000;
+        box-sizing: border-box;
+        vertical-align: middle;
+      }
+    }
+
+  }
+}
+
+
+.user-like {
+  .like-scroll {
+    height: 440rpx;
+  }
+
+  .like-item {
+    margin-right: 10rpx;
+    width: 200rpx;
+
+    image {
+      width: 200rpx;
+      border-radius: 20rpx;
+    }
+
+    .name {
+      font-size: 26rpx;
+    }
+  }
+}
+
+.title {
+  padding: 20rpx 0;
+  font-size: 36rpx;
+  color: #000;
+}

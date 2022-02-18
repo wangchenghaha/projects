@@ -1,0 +1,17 @@
+.line-icon{
+    margin-left: 20px;
+    width: 40rpx;
+    height: 40rpx;
+    flex-direction: column;
+
+  }
+.line-icon text{
+  margin-bottom: 8rpx;
+  display: block;
+  width: 18px;
+  height: 4rpx;
+  background-color: #fff;
+}
+.line-icon text:last-child{
+  margin-bottom: 0;
+}

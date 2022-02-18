@@ -1,0 +1,30 @@
+.ad{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+.fixed-top{
+  width: 100%;
+}
+/*image{
+  display: block;
+  width: 100%;
+}*/
+.ad image{
+  margin: 0 auto;
+  width: 500rpx;
+}
+.ad-box{
+  position: relative;
+}
+.ad-box .close{
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+}

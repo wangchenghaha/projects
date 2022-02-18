@@ -1,0 +1,9 @@
+<!-- socialAdvertising/kuaikan/ad0103/ad0103.wxml -->
+<view class="frame">
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_ad_0105_010.gif?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_ad_0105_020.gif?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_ad_0105_030.gif?v={{randomMilli}}" mode="widthFix" data-bt-name="01" bind:tap="onCouponClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_ad_0105_040.gif?v={{randomMilli}}" mode="widthFix" data-bt-name="02" bind:tap="onCouponClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_ad_0105_050.gif?v={{randomMilli}}" mode="widthFix" bind:tap="onWebClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_ad_0105_060.gif?v={{randomMilli}}" mode="widthFix" />
+</view>

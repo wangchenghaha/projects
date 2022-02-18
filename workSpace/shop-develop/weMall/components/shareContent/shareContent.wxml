@@ -1,0 +1,19 @@
+<view>
+<!--  封面图-->
+  <share-banner wx:if="{{bannerUpList.length}}" banner="{{bannerUpList}}"></share-banner>
+  <view class="cover-img">
+    <image src="{{content.coverPic}}" mode="widthFix"></image>
+  </view>
+  <share-banner wx:if="{{bannerList.length || content.shortVideo}}" banner="{{bannerList}}" shortVideo="{{content.shortVideo}}"></share-banner>
+<!--  推荐理由-->
+  <block wx:if="{{content.myWxMoment.length}}">
+    <view wx:for="{{content.myWxMoment}}" wx:key="moment">
+      <image src="{{item.wxPic}}" mode="widthFix" data-index="{{index}}" bindtap="onClick"></image>
+    </view>
+  </block>
+  <block wx:if="{{content.wxSharePageSkuLists.length}}">
+    <good-list-one wx:if="{{content.goodsTemplateId === 'model2'}}" list="{{content.wxSharePageSkuLists}}"></good-list-one>
+    <goods-list wx:else list="{{content.wxSharePageSkuLists}}"></goods-list>
+  </block>
+  <view class="guide-id ~text-c">{{guideId || content.createByOpenid}}</view>
+</view>

@@ -1,0 +1,12 @@
+<image src="{{helpBgImg}}" style="width:100%;" mode="widthFix" />
+
+<view class="center">
+    <image src="{{helpImg}}" style="width:100%;" mode="widthFix" />
+
+    <view class="btn" id="1" style="left: 0;" bindtap="tap"></view>
+    <view class="btn" id="2" style="right:10rpx;" bindtap="tap"></view>
+</view>
+
+        <view class="goHome" bindtap="goHome">
+            <image src="{{goHomeImg}}" style="width:100%;height:100%;" />
+        </view>

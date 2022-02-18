@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "预售订单列表",
+  "usingComponents": {
+    "pre-item":"/components/preOrderListItem/preOrderListItem"
+  }
+}

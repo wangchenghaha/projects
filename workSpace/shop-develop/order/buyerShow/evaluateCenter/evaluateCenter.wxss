@@ -1,0 +1,104 @@
+.content {
+  font-size: 28rpx;
+  background: #FAF9FD;
+}
+.content .bg-color {
+  background: #fff;
+}
+.content .header {
+  height: 176rpx;
+}
+.content .header .avatar {
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 50%;
+}
+.content .header .number {
+  font-size: 50rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+}
+.content .header .number text {
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+.content .tab {
+  margin-top: 20rpx;
+  height: 100rpx;
+}
+.content .tab-item {
+  flex: 1;
+  font-size: 30rpx;
+}
+.content .tab-item.true {
+  position: relative;
+  font-weight: bold;
+}
+.content .tab-item.true:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80rpx;
+  height: 4rpx;
+  background: #000;
+}
+.content .container {
+  box-sizing: border-box;
+}
+.content .container image {
+  display: block;
+  width: 100%;
+}
+.content .container .order-item {
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  background: #fff;
+}
+.content .container .order-item .order-code {
+  font-size: 26rpx;
+}
+.content .container .order-item .order-code .status {
+  color: #FF5000;
+}
+.content .container .order-item .info {
+  margin-bottom: 20rpx;
+  align-items: flex-start;
+}
+.content .container .order-item .info .goods-img image {
+  width: 160rpx;
+  height: 267rpx;
+}
+.content .container .order-item .info .goods {
+  flex: 1;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.content .container .order-item .info .goods-name {
+  line-height: 30rpx;
+}
+.content .container .order-item .info .goods .color {
+  padding: 5rpx 0;
+}
+.content .container .order-item .info .goods .color-item {
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+.content .container .order-item .info .operate .count {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+.content .container .order-item .info .operate .evaluate-btn {
+  margin-top: 20rpx;
+  width: 120rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #FF5000;
+  border: solid 2rpx #FF5000;
+  border-radius: 20rpx;
+}
+
+/*# sourceMappingURL=evaluateCenter.wxss.map */

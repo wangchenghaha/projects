@@ -1,0 +1,80 @@
+.wrap{ 
+    position: relative;
+    width:100%; 
+    height: 100%;
+    .guideBg{
+        width: 100%;
+    }
+    .guidetitle{
+        width: 70%;
+        position: absolute;
+        top: 50rpx;
+        left: 15%;
+        z-index: 200;
+    }
+    .daogouInfo{
+        width: 100%;
+        position: absolute;
+        z-index: 200;
+        display: flex;
+        top: 270rpx;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .image_border {
+            width: 145rpx;
+            height: 145rpx;
+            background-color: white;
+            border-radius: 50%;
+            border-color: gray;
+            border-width: 2rpx;
+            box-shadow: 1rpx 1rpx 1rpx 1rpx lightgray inset;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .daogou-avatar {
+            width: 140rpx;
+            height: 140rpx;
+            border-top: white;
+            border-color: white;
+            border-width: 5px;
+            border-radius: 50%;
+        }
+        .daogou-nickname {
+            font-size: 32rpx;
+            color: white;
+            margin-top: 5rpx;
+        }
+    }
+
+    .qrCodeImage{
+        width: 100%;
+        position: absolute;
+        top: 500rpx;
+        display: flex;
+        justify-content: center;
+        .backgroundMask{
+            width: 400rpx;
+            height: 400rpx;
+            margin-top: 30%;
+            position: absolute;
+            z-index: 150;
+            opacity: 0.3;
+            background: #000;
+        }
+        .qrCode{
+            width: 400rpx;
+            height: 400rpx;
+            margin-top: 30%;
+            position: absolute;
+            z-index: 200;
+            color: white;
+        }
+    }
+   
+
+
+    
+    
+}

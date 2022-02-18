@@ -1,0 +1,87 @@
+<view class="tb_box" style="background:{{bigBackGround}}">
+
+    <image class="tb_backbg"  src="{{lotteryBg}}" mode="widthFix"></image>
+    
+    <view class="marquee_container" style="background:{{bigBackGround}}; --marqueeWidth--:-160em">
+      <view class="marquee_text">{{marqueeText}}</view>
+    </view>
+
+    <view class="brandTitle">
+        <image src="{{brandTitle}}"  mode='widthFix' />
+    </view>
+    <view class="turntableBox">
+  
+      <view class="plate-wrap-box">
+        <!------------------- 绘制转盘内容---------------- -->
+        <view class="plate-border" style="background:{{midBackGround}}" animation="{{ aniData }}">
+          <view class="plate-wrap" style="background:{{midBackGround}}" >
+            <view class="plate-box" wx:for="{{lotterys}}" wx:key="lotterys" 
+              style=" transform:translate(-50%,0) rotate({{ 360 / lotterys.length * ( index )}}deg);">
+              <image src="{{item.prizePicUrl}}" class="picStyle" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+        <view class="plate-btn-wrap" bindtap="startRollTap">
+          <image src="{{drawPointer}}" class="goImg"></image>
+        </view>
+        </view>
+      </view>
+  
+        <view class="btn">
+          <view class="btnP" style="background:{{midBackGround}}" bindtap="goCoupon" >查看奖品</view>
+          <view class="btnP" style="background:{{midBackGround}}" bindtap="goShop">去商城逛逛</view>
+        </view>
+  
+        <view class='notice_content' style="background:{{bigBackGround}};">
+            <view class="sigma-content" bindtap="showDetails" >
+                <view class="sigma-middle-line" >
+                    <view class="sigma-line-text"  style="background:{{bigBackGround}};">点击查看活动规则</view>
+                </view>
+            </view>
+            <view class="text">
+                <view class="textP">1、活动时间为2019年6月12日00:00:00 -7月14日23:59:59；</view>
+                <view class="textP">2、活动期间添加专属时尚顾问为微信好友即可获得一次抽奖机会；</view>
+                <view class="textP">3、优惠券仅限小程序商城及官网使用，有效期为自领取之日起一个月内优惠券将在使用时自动核销，取消订单或退货均无法退回优惠券；</view>
+                <view class="textP">4、此优惠券不与其他活动同时使用；</view>
+                <view class="textP">5、实物奖品将以赠品券形式发放至会员“个人中心”，在官网上直接使用赠品券抵扣全额进行购买即可，单个赠品需单次提交订单需自付1分钱；</view>
+                <view class="textP">6、腾讯视频年卡兑换码将由专属时尚顾问单独发送，顾客可自行兑换；</view>
+                <view class="textP">7、奖品数量有限，兑完即止；</view>
+                <view class="textP">8、活动最终解释权在法律规定范围内归{{noticeBrand}}所有。</view>
+            </view>
+      </view>
+  
+    <!-- ============中奖名单========== -->
+    <!-- ["屈臣氏￥188大礼包","袜子拖鞋套装","优惠券100","情侣T恤","智行火车票￥144礼包","腾讯视频月季卡优惠", "优惠券10"]; -->
+    <view class="bg" wx:if="{{blackBgShow}}"></view>
+    <view class="bgWhite" wx:if="{{tanShowWhite}}"></view>
+    <!-- 中奖提示 -->
+    <view class="tan" wx:if="{{tanShow}}">
+        <image src="{{drawNoticePic}}" class="tan_img" bindtap="goCoupon" mode='widthFix' ></image>
+        <view class="close" bindtap="clickClose">
+        </view>
+    </view>
+  
+    <view class="tan" wx:if="{{cheatsShow}}">
+      <image src="{{cheatsNoticePic}}" class="tan_img"  mode='widthFix' ></image>
+      <view class="myGift" bindtap="seeCoupon"></view>
+      <button open-type="share" class="btnShare"></button>
+    </view>
+
+    <view class="tan" wx:if="{{shareGetChance}}">
+      <image src="{{getChancePic}}" class="tan_img"  mode='widthFix' ></image>
+      <button open-type="share" class="btnShare2" wx:if="{{isShare}}"></button>
+      <view class="btnShare2" wx:else bindtap="goBack"></view>
+      <view class="close" bindtap="clickClose"></view>
+    </view>
+
+    <!-- 中奖提示 -->
+    <view class="errTan" wx:if="{{errTanShow}}">
+        <image src="{{errPic}}" class="err_img" mode='widthFix' ></image>
+        <view class="close" bindtap="clickClose">
+          <text></text>
+          <text></text>
+        </view>
+    </view>
+  
+  </view>
+  

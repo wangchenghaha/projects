@@ -1,0 +1,16 @@
+<view class="wrapper {{isBigPhone? 'big':''}}">
+    <view class="btnbox {{isBigPhone? 'big':''}}">
+        <view class="item">
+            <view class="btn check" wx:if='{{info.is_get_coupon}}' bindtap='openCard' hover-class="active"></view>
+            <view class="btn get" wx:else bindtap='getCoupon' hover-class="active"></view>
+        </view>
+        <view class="item">
+            <view class="btn checkpost" bindtap='reback' hover-class="active"></view>
+        </view>
+    </view>
+    <poster id="poster" hide-loading="{{false}}" preload="{{true}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"></poster>
+
+    <showQr showImage='{{showImage}}' posterCatch='{{posterCatch}}' bindhandleHide='hideModal' wx:if='{{showImage}}' />
+    <!-- 返回重建 -->
+    <!-- <view class="reback {{isBigPhone? 'big':''}}" hover-class="active" catchtap='reback'></view> -->
+</view>

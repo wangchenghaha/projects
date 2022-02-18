@@ -1,0 +1,11 @@
+<view class="content">
+  <image src="{{headerImg}}" mode="widthFix"></image>
+  <image src="{{mainImg}}" mode="widthFix"></image>
+  <image src="{{descImg}}" mode="widthFix"></image>
+  <image src="{{ruleImg}}" mode="widthFix"></image>
+
+  <view class="store-value">
+    <navigator class="store-value-btn text-c" target="miniProgram" path="{{STORE_VALUE_PATH}}" data-id="{{STORE_VALUE}}" app-id="{{STORE_VALUE}}" bindcomplete="onClick">立即充值</navigator>
+    <view class="store-value-btn back text-c" bind:tap="goBack">继续购物</view>
+  </view>
+</view>

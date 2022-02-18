@@ -1,0 +1,110 @@
+.container{
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+    margin-top: 10rpx;
+    .list {
+        width: 94%;
+        margin-left: 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        background: #f4f4f4;
+        .list-half {
+            width: 340rpx;
+            box-sizing: border-box;
+            background: #f4f4f4;
+            border-radius: 20rpx;
+            .card {
+                position: relative;
+                background-color: #fff;
+                border-radius: 20rpx;
+                margin-top: 30rpx;
+                .showImg{
+                    width: 100%;
+                    border-radius: 20rpx;
+                }
+                .picNum{
+                    width: 100rpx;
+                    height: 40rpx;
+                    position: absolute;
+                    color: white;
+                    background: #000;
+                    border-radius: 40rpx;
+                    opacity: .7;
+                    margin-left: 16rpx;
+                    margin-top: 20rpx;
+                    .icon{
+                        width: 30rpx;
+                    }
+                    .text{
+                        font-size: 20rpx;
+                        margin-left: 6rpx;
+                    }
+                }
+                .content{
+                    width: 94%;
+                    margin-left: 3%;
+                    font-size: 26rpx;
+                    line-height: 30rpx;
+                    font-weight: 500;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-wrap: break-word;
+                    white-space: normal !important;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+                .autorInfo{
+                    width: 94%;
+                    margin-left: 3%;
+                    .right{
+                        width: 70%;
+                        margin-top: 20rpx;
+                        .icon{
+                            width: 50rpx;
+                            height: 50rpx;
+                            border-radius: 50rpx;
+                            border:2rpx solid #EE8777;
+                        }
+                        .name{
+                            font-size: 24rpx;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            margin-left: 10rpx;
+                            color: #666;
+                            
+                        }
+                    }
+                    .left{
+                        width: 30%;
+                        margin-top: 20rpx;
+                        border-radius: 20rpx;
+                        .agreeNum{
+                            font-size: 24rpx;
+                            color: #666;
+                        }
+                        .icon{
+                            width: 28rpx;
+                            height: 28rpx;
+                            margin-left: 10rpx;
+                            margin-right: 10rpx;
+                        }
+                    }
+                }
+                .bottomV{
+                    height: 20rpx;
+                    border-radius: 20rpx;
+                }
+                
+            } 
+        }
+    }
+    .bottomView{
+        width: 100%;
+        height: 68rpx;
+        background: #f4f4f4;
+    }
+}

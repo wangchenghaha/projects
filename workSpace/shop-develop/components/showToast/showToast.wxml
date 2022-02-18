@@ -1,0 +1,10 @@
+<!--components/showToast/showToast.wxml-->
+<view class="toast-wrapper">
+  <view class="toast-container">
+    <view class="icon-wrapper">
+      <image src="/images/toast_icon.png" mode="widthFix"></image>
+    </view>
+    <text class="toast-title">成功加入收藏</text>
+    <slot></slot>
+  </view>
+</view>

@@ -1,0 +1,109 @@
+
+
+<view class="wrap">
+
+  <view class="top">
+    <text class="top_left">选择需要退款的商品</text>
+  </view>
+  <view  wx:for="{{dingdanCon.goodsOrderList}}" class="content {{item.refundCount ? 'disable' : ''}}" wx:key="goodsList">
+    <view class="con_left" id="{{index}}" bindtap='checked'>
+      <image src="{{item.goodsImg}}" mode="widthFix"></image>
+      <view class="icon-check" bindtap="checkGoods">
+        <icon type="success" wx:if="{{item.myChecked}}" color="red" size="40rpx" />
+        <icon type="circle" wx:else color="#000" size="40rpx" />
+      </view>
+    </view>
+    <view class="con_right" id="{{index}}" bindtap='checked'>
+      <view class="title">{{item.goodsName}}</view>
+      <view class="con">货号 {{item.gcsSku}}</view>
+      <view class="con">颜色 <text>{{item.colorName}}</text></view>
+      <view class="con">尺码 <text>{{item.sizeName}}</text></view>
+      <view class="con">价格 <text>¥{{item.price}}</text></view>
+      <view class="con">数量 <text>{{item.goodsCount}}</text><text wx:if="{{item.refundCount}}">(退款申请中)</text></view>
+      <view class="con">状态 <text>{{item.myGoodsStatus}}</text></view>
+      <view class="con gift" wx:if="{{item.isGift === 'Y'}}">赠品 </view>
+    </view>
+    <view class="c_number">
+      <view class="c_add" data-index="{{index}}" data-type="1" bindtap="changeGoodsCount">+</view>
+      <view class="c_num">{{item.myGoodsCount}}</view>
+      <view class="c_jian" data-index="{{index}}" data-type="-1" bindtap="changeGoodsCount">-</view>
+    </view>
+  </view>
+
+  <!-- 确定 -->
+  <view class='queding'>
+    <view class='btnTrue' bindtap='btnTrue'>确定</view>
+  </view>
+
+
+
+
+  <!-- 弹出 - 用户填写退单原因 -->
+  <view class="tanchu" wx:if="{{tcShow}}">
+    <view class="opacity" bindtap="close"></view>
+    <view class="tanchuCon">
+    <!-- 弹框-2级菜单 -->
+      <block wx:if="{{tcShow_two}}">
+        <view class="topView-two">退款原因</view>
+        <view id="{{index}}" data-type="{{item}}" class="centerViews" wx:for="{{refoundReason.messageText}}" wx:key="keys" bindtap="selectValue">
+          <view class="centerViews-title">{{item}}</view>
+          <icon wx:if="{{refoundReason.selectIndex == index}}" class="centerViews-iconSelect" type="success" size="35rpx" color="red"></icon>
+          <view wx:else class="centerViews-icon"></view>
+        </view>
+        <!-- 关闭按钮 -->
+        <view class="confirm" bindtap="selectTapClose">确认</view>
+
+      </block>
+      <block wx:else>
+
+        <!-- 请选择原因 -->
+        <view class="topView" bindtap="changeShowReason">
+          <view class="topView-leftTitle">{{refoundReason.selectName == '' ? '请选择原因' : refoundReason.selectName}}</view>
+          <image class="topView-rightImage" src="/images/pintuan-sanjiao.png" mode="widthFix"></image>
+        </view>
+        <view class="reason">
+          <view class="reason-item flex-bet" wx:for="{{refoundReason.messageText}}" wx:key="messageText" data-index="{{index}}" bindtap="selectValue" >
+            <text>{{item.text}}</text>
+            <icon wx:if="{{item.checked}}" type="success" color="red" size="30rpx" />
+            <text class="icon" wx:else></text>
+          </view>
+        </view>
+        <!-- 自定义原因 -->
+<!--        <input bindinput="inputTap" type="text" placeholder="自定义原因" class="input" value="{{refoundReason.inputContent}}" />-->
+        <!-- 静态文字 -->
+        <view class="miaoshu">请选择退货/退款原因，以便我们今后为您提供更好产品服务</view>
+
+        <view class="upload" wx:if="{{showUpload}}">
+          <view class="title">
+            上传凭证
+            <text class="red-star">*</text>
+            <text class="tip">(请上传产品质量问题凭证，以便我们尽快处理)</text>
+          </view>
+          <view class="upload-img flex-start">
+            <view class="upload">
+              <my-upload bindtap="upload"></my-upload>
+            </view>
+            <block wx:for="{{uploadImg}}" wx:key="*this">
+              <view class="img-wrap">
+                <image src="{{uploadDomain}}{{item}}" mode="aspectFit"></image>
+                <icon type="cancel" color="#000" size="20" data-index="{{index}}" bindtap="delUploadImg" />
+              </view>
+            </block>
+          </view>
+
+        </view>
+        <view class=""></view>
+        <!-- 确认按钮 -->
+        <view class="confirm" bindtap="qdTrue">确定</view>
+
+      </block>
+      <!-- IphoneX底部栏 -->
+      <view style="{{isIphoneX ? 'height:68rpx' : ''}}"></view>
+    </view>
+
+  </view>
+
+
+
+
+</view>

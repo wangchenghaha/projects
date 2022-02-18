@@ -1,0 +1,229 @@
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .redEnvelopBg{
+        width: 100%;
+        height: 100%;
+    }
+
+    .backImg{
+        position: absolute;
+        width: 40rpx;
+        top: 7%;
+        z-index: 9;
+        left: 5%;
+    }
+
+    .musicImg{
+        position: absolute;
+        width: 60rpx;
+        top: 14%;
+        z-index: 9;
+        right: 6%;
+    }
+
+    /* 旋转class */
+    .music-on {
+        animation: music-rotate 4s linear infinite;
+    }
+
+    .countNum{
+        position: absolute;
+        z-index: 20;
+        bottom: 15%;
+        font-size: 28rpx;
+        color: #fff;
+        font-family: 'YouSheBiao';
+    }
+
+    .startBtn{
+        width: 320rpx;
+        height: 120rpx;
+        position: absolute;
+        z-index: 20;
+        bottom: 7%;
+    }
+
+    .commonBtn{
+        width: 185rpx;
+        position: absolute;
+        z-index: 20;
+        bottom: 7%;
+    }
+}
+
+.voucher{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    .showModel{
+        position: relative;
+        width: 666rpx;
+        height: 888rpx;
+        .background{
+            position: absolute;
+            width: 86%;
+            margin-left: 7%;
+            }
+        .content{
+            position: absolute;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50rpx 30rpx;
+            box-sizing: border-box;
+            margin-left: 5%;
+            .cTitle{
+                font-size: 56rpx;
+                font-weight: 600;
+                color: #73EFFB;
+                font-family: 'YouSheBiao';
+                margin-bottom: 30rpx;
+            }
+            .contentClass{
+                max-height: 660rpx;
+                overflow-y: scroll; 
+                .cInfo{
+                    font-size: 28rpx;
+                    color: #73EFFB;
+                }  
+            } 
+            .coupon{
+                width: 96%;
+                max-height: 580rpx;
+                overflow-y: scroll; 
+                .couponImg{
+                    width: 100%;
+                }
+                .noCoupon{
+                    font-size: 28rpx;
+                    color: #73EFFB;
+                }
+            }
+            
+        }
+    
+        .tan_close{
+            width: 80rpx;
+            height: 80rpx;
+            position: relative;
+            top: 800rpx;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .tan_close_luckly{
+            width: 80rpx;
+            height: 80rpx;
+            position: relative;
+            top: 90rpx;
+            left: 480rpx;
+        }  
+    }
+}
+
+
+.bounced{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    &-getCoupon{
+        width: 100%;
+        height: 100%;
+        position: flex;
+        .background{
+            position: absolute;
+            width: 80%;
+        }
+        .background2{
+            width: 70%;
+            height: 140rpx;
+            position: absolute;
+        }
+        .friendInfo{
+            width: 60%;
+            height: 140rpx;
+            position: absolute;
+            .userImg{
+                width: 120rpx;
+                height: 120rpx;
+                border-radius: 50%;
+            }
+            .text1{
+                color: #73EFFB;
+                font-size: 28rpx;
+            }
+        }
+       
+        .text2{
+            position: absolute;
+            color: #73EFFB;
+            font-size: 28rpx;
+        }
+        .coupon{
+            position: absolute;
+            width: 460rpx;
+            z-index: 9;
+        }
+        .button{
+            position: absolute;
+            width: 400rpx;
+        }
+    }
+    &-noCoupon{
+        width: 100%;
+        height: 100%;
+        position: flex;
+        .background{
+            position: absolute;
+            width: 80%;
+        }
+        .text1{
+            position: absolute;
+            font-size: 44rpx;
+            color: #fff;
+            font-weight: 530;
+        }
+        .text2{
+            position: absolute;
+            font-size: 34rpx;
+            color: #fff;
+            font-weight: 530;
+        }
+        .text3{
+            position: absolute;
+            font-size: 34rpx;
+            color: #fff;
+            font-weight: 530;
+        }
+        .button{
+            position: absolute;
+            width: 400rpx;
+        }
+    }
+    
+}
+
+/* 旋转动画 */
+@keyframes music-rotate {
+    0% {
+      transform: rotateZ(0deg);
+    }
+   
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+@font-face {
+    font-family: 'YouSheBiao';
+    src:url('https://cdn.bestseller.com.cn/assets/common/JACKJONES/redEnvelop/YouSheBiaoTiHei-2.ttf') format('truetype');
+}

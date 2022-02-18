@@ -1,0 +1,56 @@
+.container{
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+    .userInfo{
+        width: 100%;
+        height: 260rpx;
+        background: #fff;
+        .avatarImg{
+            width: 200rpx;
+            height: 200rpx;
+            border-radius: 200rpx;
+            margin-left: 20rpx;
+        }
+        .info{
+            margin-left: 20rpx;
+            .nickName{
+                font-size: 32rpx;
+                font-weight: 550;
+            }
+            .detail{
+                font-size: 24rpx;
+                color: #666;
+            }
+
+        }
+    }
+    .selectTab{
+        width: 100%;
+        margin-top: 20rpx;
+        .tab{
+            width: 50%;
+            &-item{
+                width: 150rpx;
+                line-height: 60rpx;
+                font-size: 32rpx;
+                font-weight: 550;
+                color: #666;
+                text-align: center;
+            }
+            .selected{
+                border-bottom: 5rpx #000 solid;
+                color: black;
+            }
+        }
+    }
+
+    .trend{
+        margin-top: 20rpx;
+    }
+    
+    .noContent{
+        width: 100%;
+        height: 500rpx;
+    }
+}

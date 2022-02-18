@@ -1,0 +1,317 @@
+page {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.pages {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background: url('https://tc.woaap.com/lingzhi/sale/bg1.png') repeat-y;
+    background-size: 100%;
+    line-height: 1;
+    overflow-x: hidden;
+}
+.loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: url('https://tc.woaap.com/lingzhi/sale/bg.png') repeat-y;
+    background-size: 100%;
+}
+.loading-warp {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+    overflow: hidden;
+}
+.loading-item {
+    display: flex;
+    align-content: flex-end;
+    justify-content: center;
+    float: right;
+    height: 60rpx;
+    background: #ffffff;
+    -webkit-animation: load 2.4s ease infinite;
+    opacity: 0.2;
+}
+.loading-item .textlogo {
+    width: 330rpx;
+    height: 52rpx;
+}
+.loading-item:nth-child(1) {
+    margin-bottom: 10rpx;
+    width: 205rpx;
+    -webkit-animation-delay: 0.5s;
+    opacity: 1;
+}
+.loading-item:nth-child(2) {
+    margin-bottom: 20rpx;
+    width: 260rpx;
+    -webkit-animation-delay: 1s;
+}
+.loading-item:nth-child(3) {
+    margin-bottom: 30rpx;
+    width: 315rpx;
+    -webkit-animation-delay: 1.5s;
+}
+.loading-item:nth-child(4) {
+    width: 370rpx;
+    -webkit-animation-delay: 2s;
+}
+
+@-webkit-keyframes load {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.2;
+    }
+}
+
+.page-cont {
+    position: relative;
+    width: 100%;
+    padding-bottom: 80rpx;
+    overflow-x: hidden;
+}
+.page-tit-wrap {
+    padding-top: 75rpx;
+    text-align: center;
+}
+.page-tit-wrap image {
+    margin-bottom: 20rpx;
+    width: 328rpx;
+    height: 104rpx;
+}
+.page-tit {
+    margin-top: 22rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+    font-weight: bold;
+}
+.page-banner-wrap {
+    margin-top: 40rpx;
+}
+.page-vedio-wrap {
+    width: 100%;
+    height: 400rpx;
+    margin: 115rpx auto;
+    background: #fff;
+}
+.introduction-item {
+    width: 565rpx;
+    margin: 90rpx auto;
+    margin-bottom: 0;
+}
+.page-banner-wrap2 {
+    width: 470rpx;
+    margin: 40rpx auto;
+    margin-bottom: 0;
+}
+.introduction-left-right {
+    display: flex;
+}
+.cont-right {
+    margin-left: 30rpx;
+    width: 267rpx;
+    height: 400rpx;
+}
+.cont-right image {
+    width: 267rpx;
+    height: 400rpx;
+}
+.cont-left {
+    position: relative;
+    flex: 1;
+}
+.introduction-tit {
+    font-size: 36rpx;
+    color: #fff;
+    font-weight: bold;
+}
+.introduction-des {
+    margin-top: 5rpx;
+    font-size: 24rpx;
+    color: #fff;
+    font-weight: bold;
+}
+.introduction-cont {
+    width: 100%;
+    font-size: 20rpx;
+    color: #fff;
+    text-align: justify;
+    line-height: 32rpx;
+}
+.introduction-cont-left{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.introduction-item-ligth .introduction-cont:nth-child(1) {
+    margin-top: 60rpx;
+}
+.introduction-item-ligth .introduction-cont {
+    margin-top: 45rpx;
+}
+.finger-wrap image {
+    display: block;
+    margin: 35rpx auto;
+    margin-bottom: 0;
+    width: 87rpx;
+    height: 47rpx;
+}
+.finger-tit {
+    margin-top: 10rpx;
+    font-size: 20rpx;
+    color: #fff;
+    text-align: center;
+}
+.page-cloth-wrap {
+    margin-top: 80rpx;
+}
+.page-cloth-wrap image {
+    display: block;
+    margin: 0 auto;
+    width: 470rpx;
+    height: 578rpx;
+}
+.page-img-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-item {
+    margin: 0 auto;
+    margin-top: 30rpx;
+    width: 565rpx;
+    height: 90rpx;
+    font-size: 24rpx;
+    font-weight: bold;
+    line-height: 90rpx;
+    text-align: center;
+}
+.btn-item button {
+    font-size: 24rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.btn-item button::after {
+    display: none;
+}
+.page-btn-wrap {
+    text-align: center;
+}
+.btn-item:nth-child(1) {
+    margin-top: 60rpx;
+    color: #000;
+    background: #fff;
+}
+.btn-item:nth-child(3) {
+    color: #fff;
+    border: 1px solid #fff;
+}
+.btn-store {
+    margin-top: 70rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    font-size: 20rpx;
+    color: #fff;
+}
+.page-joint-wrap {
+    margin-top:90rpx;
+}
+.joint-tit {
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+    font-weight: bold;
+}
+.jointimg {
+    display: block;
+    width:22rpx;
+    height:26rpx;
+    margin: 0 auto;
+    margin-top: 35rpx;
+}
+.page-clotheslist-wrap {
+    width: 630rpx;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.clothes-item {
+    padding-top: 10rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30rpx;
+    width: 305rpx;
+    height: 600rpx;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+.clothimgs {
+    display: block;
+    width: 284rpx;
+    height: 455rpx;
+}
+.clothname {
+    line-height: 30rpx;
+}
+.clothname,.clothprice {
+    margin-top: 25rpx;
+    font-size: 20rpx;
+    color: #fff;
+    text-align: center;
+}
+.clothprice {
+    margin-top: 15rpx;
+}
+.animation-item {
+    position: absolute;
+    z-index: 20;
+}
+.animation-item1 {
+    top: 1414rpx;
+    left: -95rpx;
+    transition: all 0.5s ease-out;
+}
+.animation-item1.active {
+    left: 0rpx;
+}
+.animation-item2 {
+    top: 2130rpx;
+    right: -99rpx;
+    transition: all 0.5s ease-out;
+}
+.animation-item2.active {
+    right: 0rpx;
+}
+.animation-item3 {
+    top: 3025rpx;
+    left: -99rpx;
+    transition: all 0.5s ease-out;
+}
+.animation-item3.active {
+    left: 0rpx;
+}
+.animation-item4 {
+    top: 3950rpx;
+    right: -125rpx;
+    transition: all 0.5s ease-out;
+}
+.animation-item4.active {
+    right: 0rpx;
+}

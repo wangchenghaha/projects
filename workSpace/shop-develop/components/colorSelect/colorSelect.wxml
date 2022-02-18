@@ -1,0 +1,35 @@
+<view class="goods-fixed {{className ? 'show': ''}}" bindtransitionend="transitionend" wx:if="{{show}}">
+  <view class="goods">
+    <icon class="icon-close" type="cancel" color="#000" size="38rpx" bindtap="hidePop"></icon>
+    <view class="goods-color">
+      <text>颜色</text>
+      <view class="list">
+        <text wx:for="{{colorList}}" wx:key="colorCode"
+              class="item {{(colorCodeIndex === index && item.sellStock) ? 'active' : ''}} {{item.sellStock <= 0 ? 'no-stock': ''}}"
+              data-index="{{index}}" bindtap="selectColor">{{item.colorAlias}}</text>
+      </view>
+    </view>
+    <view class="goods-color">
+      <text>尺码</text>
+      <view class="list">
+        <text wx:for="{{colorList[colorCodeIndex].sizes}}"
+              wx:key="sku"
+              class="item {{sizeIndex === index ? 'active' : ''}} {{item.sellStock <= 0 ? 'no-stock': ''}}"
+              data-index="{{index}}"
+              bindtap="selectSize">{{item.sizeAlias}}</text>
+      </view>
+    </view>
+    <view class="~flex-bet goods-color">
+      <view class="~flex-start">
+        <text>数量：</text>
+        <view class="count">
+          <text class="change ~text-c" data-type="-1" bindtap="changeCount">-</text>
+          <text class="~text-c">{{count}}</text>
+          <text class="change ~text-c" data-type="1" bindtap="changeCount">+</text>
+        </view>
+      </view>
+      <view>库存：<text>{{sizeIndex > -1 ? colorList[colorCodeIndex].sizes[sizeIndex].sellStock : colorList[colorCodeIndex].sellStock}}</text></view>
+    </view>
+    <view class="confirm ~text-c" bindtap="confirmGoods">添加购物车</view>
+  </view>
+</view>

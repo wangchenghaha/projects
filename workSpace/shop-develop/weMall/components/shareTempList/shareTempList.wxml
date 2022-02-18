@@ -1,0 +1,40 @@
+<view>
+  <view class="share ~flex-start" wx:for="{{share}}" wx:key="id" data-index="{{index}}" id="{{item.id}}" data-title="{{item.pageTitle}}" mut-bind:tap="goDetail">
+    <view class="task {{item.task.className}} ~flex-start">
+      <image class="task-icon" wx:if="{{item.task.icon}}" src="/images/wx_{{item.task.icon}}.png" mode="aspectFit"></image>
+      <view class="icon-wrap ~flex-center" wx:else>
+        <icon wx:if="{{item.task.className === 'task-finish'}}" size="24rpx" type="success" color="#43ab2b" />
+        <icon wx:if="{{item.task.className === 'task-new'}}" size="24rpx" type="warn" color="#2a9ae9" />
+      </view>
+      <text>{{item.task.text}}</text>
+    </view>
+    <view class="share-img">
+      <image class="image" src="{{item.shareImg || item.coverPic}}" mode="aspectFit"></image>
+    </view>
+    <view class="share-info">
+      <view class="share-title share-item">{{item.title || item.pageTitle}}</view>
+      <view class="share-time share-item">发布时间： {{item.createTime}}</view>
+      <view class="share-person share-item">创建人： {{item.anchor || item.author}}</view>
+      <view class="share-count ~flex-start share-item">
+        <text>已分享：</text>
+        <view class="share-wrap ~flex-start share-num">
+          <view class="wx-icon">
+            <image src="/images/shareToWxq.jpg" mode="widthFix"></image>
+          </view>
+          <text>{{item.shareMomentCount}}</text>
+          <view class="wx-icon"><image src="/images/shareToWx.jpg" mode="widthFix"></image></view>
+          <text>{{item.shareCount}}</text>
+
+        </view>
+      </view>
+      <view class="share-author share-item">谁可见：
+        <text wx:if="{{item.type === 'guide'}}">仅自己</text>
+        <text wx:else>全国{{brand}}导购</text>
+      </view>
+    </view>
+    <view class="del-btn" wx:if="{{item.delBtnShow}}" id="{{item.id}}" data-index="{{index}}" mut-bind:tap="delShare">
+      <image class="icon-del" src="/images/address_deleted.png" mode="aspectFit" />
+    </view>
+  </view>
+
+</view>

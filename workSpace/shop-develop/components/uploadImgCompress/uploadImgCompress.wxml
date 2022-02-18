@@ -1,0 +1,4 @@
+<view class="upload ~text-c ~font-bold" bindtap="uploadImg">+</view>
+<button bindtap="upload">上传图片</button>
+<canvas canvas-id="myCanvas" class="canvas"
+        style="width: {{canvas.width}}rpx; height:{{canvas.height}}rpx"></canvas>

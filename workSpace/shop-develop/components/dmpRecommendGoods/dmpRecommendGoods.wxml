@@ -1,0 +1,26 @@
+
+<view class="hotGood" wx:if="{{hotSaleArr.length}}">
+    <!--放在上新下面-->
+  <view class="hotGood-title ~font-bold">{{ sceneType === '1' ? '猜你喜欢' : '推荐商品'}}</view>
+  <scroll-view scroll-x wx:if="{{page === 'search'}}" class="~flex-start hot-box scroll-view">
+    <view class="hotGood-item" wx:for="{{hotSaleArr}}" wx:key="hot" data-code="{{item.gsColorCode}}" data-item="{{item}}" bindtap="onClick">
+      <image class="hotItem-image" src="{{item.goodsImg}}" mode="widthFix"/>
+      <view class="hotItem-name">{{item.goodsName}}</view>
+      <view class="hotItem-price">
+        <view class="hotItem-price-current">￥{{item.discountPrice}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:else class="~flex-bet hot-box">
+    <view class="hotGood-item" wx:for="{{hotSaleArr}}" wx:key="hot" data-code="{{item.gsColorCode}}" data-item="{{item}}" mut-bind:tap="onClick">
+      <image class="hotItem-image" src="{{item.goodsImg}}" mode="widthFix"/>
+      <view class="hotItem-name">{{item.goodsName}}</view>
+      <view class="hotItem-price ~flex-bet">
+        <view class="hotItem-price-current">￥{{item.discountPrice}}</view>
+        <view class="icon-plus ~color-fff ~text-c ~flex-center" data-code="{{item.gsColorCode}}" mut-bind:tap="showGoodsDetail">+</view>
+      </view>
+    </view>
+  </view>
+  <color-select wx:if="{{showGoodsDetail}}" color-code="{{colorCode}}" color-list="{{colorList}}" bindconfirmGoods="confirmGoods" />
+</view>
+

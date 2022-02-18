@@ -1,0 +1,49 @@
+<view class="rule-wrapper" wx:if="{{showrule}}">
+  <view class="rule" style="height:{{bigPhone?1154:1100}}rpx;top:{{bigPhone?90:50}}rpx;">
+    <view class="topimg-wrapper">
+      <image class="topimg {{brand=='SELECTED'?'selclass' : ''}}" src="{{rulebg}}"></image>
+      <image catchtap="closerule" class="close-rule" src="{{rule_close}}"></image>
+    </view>
+    <view class="rule-cont" wx:if="{{brand!='SELECTED'}}">
+      <view class="rule-cont-wrapper">
+         <scroll-view scroll-y class="rule-scroll">
+           <text style="color:{{basecolor}}" class="rule-title">活动规则</text>
+           <view class="rule-item">
+             <view class="rule-text">组队活动时间，即组队允许邀请好友参与战队的时间，超出组队有效期后则好友无法参与战队；</view>
+             <view class="rule-text">每个战队在队伍发起后，组队期有效期为24小时（如发起战队时间离组队活动结束不到24小时，以组队结束时间为准），有效期内组队成功（包括队长在内凑齐战队人数共3人），则组队成功，否则组队失败；</view>
+             <view class="rule-text">每人可无次数限制参与其他队长所开的战队，进行助力；每人优惠券包活动期间内只可领取1次，红包封面活动期间内每日0点定量上线，数量有限，先抢先得；</view>
+             <view class="rule-text">组队成功后获得的优惠券商品，可在个人中心-我的优惠券中查看；</view>
+             <view class="rule-text">如组队最终失败，且组队活动仍未结束，可再次发起战队邀请好友共同组队；</view>
+             <view class="rule-text">在组队成功或失败时，该组队活动中所有参与者都会收到微信服务通知，为确保顺利收到提醒，请您在提交开启战队时选择“允许发送一次以下信息” </view>
+             <view class="rule-text">组队活动时间，2021年2月10日00:00至2021年2月25日23:59； </view>
+             <view class="rule-text">如在组队活动中存在作弊，或其他有损品牌或其他用户合法权益的行为，品牌有权终止服务并采取相关处理措施。</view>
+             <view class="rule-text">最终解释权归品牌所有。</view>
+           </view>
+        </scroll-view>
+      </view>
+    </view>
+     <view class="rule-cont" wx:if="{{brand=='SELECTED'}}">
+      <view class="rule-cont-wrapper">
+         <scroll-view scroll-y class="rule-scroll">
+           <text style="color:{{basecolor}}" class="rule-title">活动规则</text>
+           <view class="rule-item">
+             <view class="rule-text">拼团活动时间，即拼团允许邀请好友参团的时间，超出拼团有效期后则好友无法参团；</view>
+             <view class="rule-text">每个拼团在开团发起后，成团期有效期为7天，7天内成团（包括团长在内凑齐成团人数共3人），则拼团成功，否则拼团失败；</view>
+             <view class="rule-text">拼团活动时间内，每人只限开启一次团购，无法重复开团；</view>
+             <view class="rule-text">每人可无次数限制参与其他团长所开的拼团，进行助力，每次参与并拼团成功后，均可获得对应权益；</view>
+             <view class="rule-text">拼团成功后获得的优惠券，可在个人中心-我的优惠券中查看；</view>
+             <view class="rule-text">如拼团最终失败，且拼团活动仍未结束，可再次开团邀请好友共同拼团；</view>
+             <view class="rule-text">在拼团成功或失败时，该拼团活动中所有参与者都会收到微信服务通知或短信提醒；</view>
+             <view class="rule-text">拼团活动时间，2019年10月11日00:00至2019年10月27日23:59；</view>
+             <view class="rule-text">如在拼团活动中存在作弊，或其他有损品牌或其他用户合法权益的行为，品牌有权终止服务并采取相关处理措施。</view>
+             <view class="rule-text">最终解释权归品牌所有。</view>
+           </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="bottomimg-wrapper">
+      <!-- <image class="bottomimg" src="{{rule_bottom}}"></image> -->
+      <image class="bottomnext" src="{{rule_next}}"></image>
+    </view>
+  </view>
+</view>

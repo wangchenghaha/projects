@@ -1,0 +1,81 @@
+<view class="wrapper">
+    <!-- 配送方式 -->
+    <view class="expressType flex-bet">
+        <view class="onLeft">配送方式</view>
+        <view class="onRight">邮寄到家</view>
+    </view>
+
+    <!-- 配送地址详情 -->
+   <view class="address flex-bet" bindtap="goAddress" wx:if="{{address.userName}}">
+        <view class="onLeft">
+            <view class="addressDetail" >
+                <image  src="../../../images/address.png" mode="widthFix"/>
+                <view class="detailInfo">
+                    <view>{{address.userName}}<text style="margin-left: 30rpx;">{{address.phone}}</text></view>
+                    <view>{{address.province}} {{address.city}} {{address.area}} {{address.detailAddress}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="onRight">></view>
+    </view>
+
+    <!-- 添加配送地址 -->
+   <view class="addAderss" bindtap="goAddress"  wx:else>
+        <view class="text">添加您的配送地址</view>
+        <view class="mark">+</view>
+    </view>
+
+    <!-- 商品详情 -->
+    <view class="goodContainer" >
+        <block wx:for="{{goodsInfo}}" wx:key="goods">
+            <view class="goodsRow">
+                <view class="onLeft">
+                    <view class="goodsInfo">
+                        <view class="goodImg">
+                            <image src="{{item.gscolPicPath}}" mode="widthFix" />
+                        </view>
+                        <view class="baseInfo">
+                            <view class="goodsName">{{item.goodsName}}</view>
+                            <view class="goodsStyle">款式：{{item.colorName}}</view>
+                            <view class="goodsStyle">尺码：{{item.sizeName}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="onRight">
+                    <view  class="goodsStyle">数量：{{item.goodsCount}}</view>
+                    <view  class="goodsPice" >￥ {{item.price}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+   
+    
+   
+    <view class="couponActivity">
+        <view class="mark">满减</view>
+        <view class="content">{{promotionDescripe}}</view>
+    </view>
+    <view class="costInfo">
+        <block wx:for="{{costList}}" wx:key="cost">
+            <view class="costInfo-item flex-bet">
+                <view class="onLeft">
+                    {{item.explain}}
+                </view>
+                <view class="onRight">
+                    <view style="color: {{item.color}}"> <text wx:if="{{item.showReduce}}">-</text>￥{{item.price}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="bottomSubmit" style="height:{{isIphoneX ? '168rpx':'100rpx'}}">
+        <view class="payInfo">
+            <view class="onLeft">
+                <text >共计2件，合计：</text>
+                <text style="font-size: 36rpx; color: #000;">￥ {{payPrice}}</text>
+            </view>
+            <view class="onRight" bindtap="wxSubscribe">
+                {{isSell?'立即支付':'已售罄'}}
+            </view>
+        </view>
+    </view>
+</view>

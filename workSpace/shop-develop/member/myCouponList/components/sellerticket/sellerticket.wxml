@@ -1,0 +1,6 @@
+<view class='ant-sellerticket-wrapper'>
+  <send-coupon wx:if='{{renderDetail.isAddCard==0}}' catch:customevent="addCardHandle" send_coupon_params="{{renderDetail.couponDetail.send_coupon_params}}" sign="{{renderDetail.couponDetail.sign}}" send_coupon_merchant="{{renderDetail.couponDetail.send_coupon_merchant}}">
+    <view class='seat-area'></view>
+  </send-coupon>
+  <view class='seat-area' wx:if='{{renderDetail.isAddCard==1}}' catch:tap='openCardHandle'></view>
+</view>

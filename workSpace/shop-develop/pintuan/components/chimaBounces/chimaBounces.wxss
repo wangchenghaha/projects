@@ -1,0 +1,188 @@
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 8888;
+}
+
+.bg .opacity {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bg .opacityView {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  position: absolute;
+  bottom: -400rpx;
+}
+
+.bg .opacityView .topView {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #E9EAEB;
+}
+
+.bg .opacityView .topView .leftView {
+  width: 164rpx;
+  height: 262rpx;
+  border: 2rpx solid #e8e8e8;
+  margin-top: -40rpx;
+  margin-right: 20rpx;
+}
+
+.bg .opacityView .topView .centerView {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.bg .opacityView .topView .centerView .money {
+  font-size: 32rpx;
+  color: #F3623A;
+}
+
+.bg .opacityView .topView .centerView .kucun, .bg .opacityView .topView .centerView .chima, .bg .opacityView .topView .centerView .sku {
+  font-size: 26rpx;
+  color: #373738;
+}
+
+.bg .opacityView .topView .centerView .kucun .kucun-s, .bg .opacityView .topView .centerView .chima .kucun-s, .bg .opacityView .topView .centerView .sku .kucun-s {
+  font-size: 30rpx;
+  color: #373738;
+}
+
+.bg .opacityView .topView .rightView {
+  margin-top: 10rpx;
+}
+
+.bg .opacityView .buyNumView {
+  padding-top: 0;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bg .opacityView .buyNumView-leftView {
+  line-height: 100rpx;
+  background: none;
+  font-size: 28rpx;
+  color: #373738;
+  flex: 1;
+}
+
+.bg .opacityView .buyNumView-rightView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bg .opacityView .buyNumView-rightView .buyNum {
+  width: 50rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #373738;
+  border: 2rpx solid #D8D9DA;
+}
+
+.bg .opacityView .buyNumView-rightView .buyNum-c {
+  width: 80rpx;
+  border: 2rpx solid #D8D9DA;
+  border-left: none;
+  border-right: none;
+}
+
+.bg .opacityView .buyView {
+  height: 80rpx;
+  clear: both;
+  overflow: hidden;
+  background-color: #CC292E;
+  line-height: 80rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.bg .opacityView .buyView-zhezhao {
+  background-color: #818284;
+  opacity: .8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 80rpx;
+}
+
+.bg .opacityView .buyView-viewText {
+  color: white;
+  font-size: 30rpx;
+  width: 50%;
+  height: 80rpx;
+}
+
+.bg .opacityView .buyView-cantuanViewText {
+  background-color: black;
+  color: white;
+  font-size: 30rpx;
+  width: 100%;
+  height: 80rpx;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: 25rpx;
+  color: #373738;
+}
+
+.classView {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding-top: 10rpx;
+  border-bottom: 2rpx solid #E9EAEB;
+  overflow: hidden;
+}
+
+.selectRowView {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.select-li {
+  float: left;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  background: none;
+  margin-bottom: 20rpx;
+  color: #373738;
+  padding: 0 12rpx;
+  margin-right: 15rpx;
+}
+
+.select-list {
+  background: #ff5000;
+  color: #fff;
+}
+
+.select-noList {
+  background: #F4F5F6;
+  color: #D1D2D3;
+}

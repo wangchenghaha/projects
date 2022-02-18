@@ -1,0 +1,74 @@
+<import src="../tmpl/classicOrderItem/classicOrderItem" />
+<view class="layout_father">
+  <!-- 换货审核中/失败 -->
+  <view class="global_order_status_bar_wrap">
+    <text class="order_key">订单状态</text>
+    <text class="order_status" wx:if="{{exOrderBean.status=='CREATED'}}">换货审核中</text>
+    <text class="order_status" wx:elif="{{exOrderBean.status=='CHECK_FAIL'}}">换货审核失败</text>
+    <!-- <text wx:if="{{prevDingdanStatus=='WaitingReceive'}}" class='lookWuliu' bindtap='lookWuliu'>查看物流</text> -->
+  </view>
+  <!-- <view>
+        <view class="zan-cell">
+            <view class="zan-cell__bd">
+                <template is="zan-steps" data="{{ type: 'horizon', steps: steps }}"></template>
+            </view>
+        </view>
+    </view> -->
+  <!-- <view class="tip_0" wx:if="{{exOrderBean.status=='CREATED'}}">您的换货申请正在审核中</view>
+    <view class="tip_0" wx:if="{{exOrderBean.status=='CHECK_FAIL'}}">您的换货申请审核失败</view> -->
+  <view class="weui-loadmore global_my_loading_wrapper">
+    <!-- <view class="weui-loading my_loading"></view> -->
+    <image src="{{imgUrl}}" class="global_my_loading"/>
+    <view class="weui-loadmore__tips global_tip_loading">{{exOrderBean.status=='CREATED'?'换货申请审核中...':'抱歉，审核失败了'}}</view>
+  </view>
+  <view wx:if="{{flagSuccess&&exOrderBean.status=='CHECK_FAIL'}}">
+    <view class="tip_failed_detail">
+      您的换货申请失败，失败原因：{{exOrderBean.remark?exOrderBean.remark:'暂无'}}。详情可咨询在线客服或拨打400在线客服电话进行咨询。
+    </view>
+    <view class="hotline">客服电话：400-862-8888</view>
+  </view>
+  <view class="text_line_frame">
+    <view>
+      <text class="key_left txt_bold">换货单号：</text>
+      <text class="value_right txt_bold">{{exOrderBean.exchangeCode}}</text>
+    </view>
+    <view class="ex_time">
+      <text class="key_left grey_0">申请换货时间：</text>
+      <text class="value_right grey_0">{{exOrderBean.createTime}}</text>
+    </view>
+    <view class="ex_time" style="padding-top:0rpx;">
+      <text class="key_left grey_0">申请换货理由：{{reasonStr}}</text>
+    </view>
+    <view class="original_code">
+      <text class="key_left txt_bold">原单号：</text>
+      <text class="value_right txt_bold">{{exOrderBean.oriorderCode}}</text>
+    </view>
+    <view class="global_text_line_auto">
+      <view>
+        <text class="key_left">{{exOrderBean.oriConsignee}}   {{exOrderBean.oriContactTel}}</text>
+        <!-- <text class="value_right">电话：{{exOrderBean.oriContactTel}}</text> -->
+      </view>
+      <view class="key_left grey_1">
+        {{exOrderBean.oriAddress}}
+      </view>
+    </view>
+  </view>
+  <!-- <scroll-view scroll-y="true" class="scroll_view"> -->
+  <view class="tip_1">原购商品</view>
+  <view class="bottom_list">
+    <view class="global_order_item" wx:for="{{exOrderBean.applySourceList}}">
+      <template is="classicOrderItemTmpl" data="{{item}}" />
+    </view>
+  </view>
+  <view wx:if="{{exOrderBean.applyTargetList.length>0}}">
+    <view class="global_layout_refresh">
+      <image class="global_img_refresh" src="/images/icon_refresh.png"></image>
+    </view>
+    <view class="tip_1">新换商品</view>
+    <view class="bottom_list">
+      <view class="global_order_item" wx:for="{{exOrderBean.applyTargetList}}">
+        <template is="classicOrderItemTmpl" data="{{item}}" />
+      </view>
+    </view>
+  </view>
+</view>

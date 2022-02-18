@@ -1,0 +1,32 @@
+.listen-item {
+  position: relative;
+  width: 100%;
+  border-radius: 20rpx;
+  overflow: hidden; }
+  .listen-item .desc {
+    position: absolute;
+    left: 40rpx;
+    top: 20rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .listen-item .desc .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10rpx;
+      width: 120rpx;
+      height: 120rpx;
+      border-radius: 50%;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: #fff; }
+    .listen-item .desc .text {
+      margin-left: 10rpx;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      font-size: 30rpx;
+      color: white; }
+
+/*# sourceMappingURL=listen.wxss.map */

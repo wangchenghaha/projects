@@ -1,0 +1,28 @@
+<help_fol
+ wx:if="{{brand == 'FOL'}}"
+ zhanweiView="{{zhanweiView}}"
+ userData="{{userData}}"
+ imgPath="{{imgPath}}"
+ guize="{{guize}}"
+ zhuli="{{zhuli}}"
+ zhuliArr="{{zhuliArr}}"
+ canAuthPhone="{{canAuthPhone}}"
+ bindtapss="tapss"
+ bindclosed="closed"
+ bindgetPhoneNumber="getPhoneNumber"
+/>
+
+<help_vm
+ wx:if="{{brand == 'VEROMODA'}}"
+ zhanweiView="{{zhanweiView}}"
+ userData="{{userData}}"
+ imgPath="{{imgPath}}"
+ guize="{{guize}}"
+ zhuli="{{zhuli}}"
+ zhuliArr="{{zhuliArr}}"
+ canAuthPhone="{{canAuthPhone}}"
+ bindtapss="tapss"
+ bindclosed="closed"
+ bindgetPhoneNumber="getPhoneNumber"
+/>
+

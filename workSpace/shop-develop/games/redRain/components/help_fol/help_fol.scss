@@ -1,0 +1,186 @@
+.bg{
+    width: 100%;
+    height: auto;
+    background-color: #FFF685;
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .icon{
+            position: absolute;
+            bottom: 22%;
+            left: 23%;
+            width: 85rpx;
+            height: 80rpx;
+            border-radius: 50%;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+        .tapView{
+            position: absolute;
+            bottom: 9%;
+            
+            width: 300rpx;
+            height: 90rpx;
+        }
+    }
+}
+
+.guizeView{
+    margin-top: 50rpx;
+    width: 100%;
+    height: auto;
+    padding-right: 20rpx;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+    .title{
+        font-size: 28rpx;
+        color: black;
+        text-align: center;
+        line-height: 32rpx;
+        margin-bottom: 50rpx;
+    }
+    .subView_line{
+        margin-top: 10rpx;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+
+        font-size: 22rpx;
+        color: black;
+        line-height: 28rpx;
+        .left{
+            width: 50rpx;
+            height: auto;
+            text-align: center;
+        }
+        .right{
+            flex: 1;
+
+        }
+    }
+}
+
+
+
+.bouncedBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .7;
+
+    &-view{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .subView{
+            width: 636rpx;
+            height: 744rpx;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            .imgView{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                .title{
+                    position: absolute;
+                    
+                    left: 0;
+                    width: 100%;
+                    font-size: 32rpx;
+                    color: #0000F8;
+                    text-align: center;
+                }
+                .bouncedTapView{
+                    position: absolute;
+                    bottom: 20%;
+                    left: 49%;
+                    transform: translateX(-50%);
+                    width: 290rpx;
+                    height: 110rpx;
+                }
+            }
+            
+        }
+
+    }
+}
+
+.zhanweiView{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999999;
+    background-color: black;
+    opacity: 0.1;
+    
+}
+
+// 授权手机号
+.shouquanPhone{
+    width: 50%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    z-index: 999999999;
+    border-radius: 10rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-bottom: 20rpx;
+
+    
+    background-color: white;
+    text-align: center;
+    .topView{
+        margin-top: 20rpx;
+        width: 100%;
+        line-height: 40rpx;
+        font-size: 34rpx;
+        color: black;
+    }
+    .topSubView{
+        margin-top: 20rpx;
+        width: 100%;
+        line-height: 38rpx;
+        font-size: 28rpx;
+        color: black;
+    }
+
+    .getPhoneNumber{ 
+        margin-top: 40rpx;
+        display:inline-block;  
+        font-size:26rpx;
+        line-height:68rpx;
+        color:#fff; 
+        background:#000; 
+    
+        width: 60%;
+    
+        
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+.goHome{
+    position: fixed;
+    top: 50%;
+    right: 32rpx;
+
+    width: 68rpx;
+    height: 68rpx;
+
+}

@@ -1,0 +1,66 @@
+
+<view class="wrap">
+  <official-account></official-account>
+  <view class='logo'>
+    <image src='{{logoImg}}' mode='widthFix'></image>
+  </view>
+  <view class="fixed-right" bindtap="goBack">返回</view>
+  <view class="user">
+    <view class='user_img'>
+      <image src="{{user.img}}" mode="widthFix"></image>
+    </view>
+    <view class='user_name'>{{user.name}} <text wx:if="{{daogou_name}}"> {{daogou_name}}</text></view>
+  </view>
+
+  <view class='content'>
+    <view class='li'>
+      <view class='li_left'>员工账号：</view>
+      <view class='li_right'>
+        <input type="text" class='chaxun_left' data-inp='1' value="{{daogou_number}}" placeholder="请输入员工号后6位" maxlength="6" bindinput="inputing"/>
+      </view>
+    </view>
+    <view class='li'>
+      <view class='li_left' style='opacity:0;'>11</view>
+      <view class='li_right'>
+        <view class='chaxun'>
+          <text bindtap='queryInfo'>查询</text>
+        </view>
+      </view>
+    </view>
+    <view class='li'>
+      <view class='li_left'>店铺名称：</view>
+      <view class='li_right'>
+        <input type="text" data-inp='2' value="{{dp_name}}" bindinput="inputing" disabled="true"/>
+      </view>
+    </view>
+    <view class='li'>
+      <view class='li_left'>店铺代码：</view>
+      <view class='li_right'>
+        <input type="text" data-inp='3' value="{{dp_daima}}" bindinput="inputing" disabled="true"/>
+      </view>
+    </view>
+    <view class='li'>
+      <view class='li_left'>手 机 号 ：</view>
+      <view class='li_right'>
+        <input type="number" data-inp='4' maxlength='11' value="{{daogou_phone}}" disabled="true" bindinput="inputing"/>
+      </view>
+    </view>
+    <view class='li'>
+      <view class='li_left'>验 证 码  ：</view>
+      <view class='li_right'>
+        <input class='yanzhengma' data-inp='5' type="text" value="{{daogou_yanzhengma}}" bindinput="inputing"/>
+        <view class='fasong' bindtap='sendMsg'>
+          <text>{{fasong_text}}</text>
+        </view>
+      </view>
+    </view>
+    <!--<view class="li">
+      <view class="desc">当前登录手机：{{deviceType == 1 ? '企业手机' : '个人手机'}}</view>
+      <view class="desc">当前登录微信：{{phoneType == 1 ? '企业微信' : '个人微信'}}</view>
+      <view class="desc" wx:if="{{daogou_phone}}">企业手机号码：{{daogou_phone}}</view>
+    </view>-->
+  </view>
+
+  <view class='denglu' bindtap='loginWeMall'>登录导购个人微商城</view>
+
+</view>

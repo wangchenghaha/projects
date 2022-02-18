@@ -1,0 +1,21 @@
+<block wx:for="{{orderList}}" wx:for-item="orderListIndex" wx:for-index="rowIndex" wx:key="*this">
+  <view class="order-item" wx:for="{{orderListIndex}}" wx:key="bigorderCode">
+    <view class="order-code ~flex-bet">
+      <view class="~font-bold">订单号:{{item.bigorderCode}} <copy-icon text="{{item.bigorderCode}}" /></view>
+      <text class="status">{{item.myStatus}}</text>
+    </view>
+    <view wx:if="{{item.goodsOrderList && item.goodsOrderList.length}}">
+      <view class="goods-item {{item.showMore}}">
+        <block wx:for="{{item.goodsOrderList}}" wx:for-item="goodsItem" wx:key="id">
+          <rating-item  goodsItem="{{goodsItem}}" orderCode="{{item.bigorderCode}}"></rating-item>
+        </block>
+      </view>
+      <view class="~text-c show-more {{item.showMore}}" wx:if="{{item.goodsOrderList.length > 1 }}" data-row="{{rowIndex}}" data-index="{{index}}" bindtap="showMore">
+        <text></text>
+      </view>
+    </view>
+    <block wx:else>
+      <rating-item goodsItem="{{item}}"></rating-item>
+    </block>
+  </view>
+</block>

@@ -1,0 +1,4 @@
+<!--pages/nearbyShops/navMap/navMap.wxml-->
+<view class="frame">
+    <map id="mMap" scale="14" markers="{{markers}}" polyline="{{polyline}}" include-points="{{includePoints}}" show-location class="map"/>
+</view>

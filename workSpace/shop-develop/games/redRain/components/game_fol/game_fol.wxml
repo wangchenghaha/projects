@@ -1,0 +1,114 @@
+
+<view class="bg">
+    <image src="{{imgPath}}hby_gameBg.jpg" style="width:100%;height:100%;" mode="widthFix" />
+
+    <block wx:if="{{bouncedText != 0}}">
+
+        <view class="bouncedBg" style="opacity: .1;"></view>
+        <view class="bouncedBg-view">
+            <image src="{{imgPath}}hby_game_topImg.png" class="topImg" mode="widthFix" />
+            <view class="djsView" style="animation: {{bouncedAnimate}} 0.3s linear;">
+                <image src="{{bouncedImg}}" style="width:100%;height:100%;" mode="widthFix" />
+            </view>
+        </view>
+
+    </block>
+    <block wx:else>
+
+        <view class="views" wx:for="{{datas}}" wx:key="datas" style="left: {{item.left}}rpx;width:{{item.width}}rpx;top: 15%;z-index: {{item.z_index}};animation: {{item.animation}} {{item.speed}}s linear infinite;animation-play-state: {{animationPlayState}};" data-id="{{index}}" data-jifen="{{item.jifen}}" bindtap="tapss">
+            <image src="{{imgPath}}hby_hb{{item.hongbaoImg}}.png" class="img" style="transform: rotate({{item.angle}}deg);" mode="widthFix" />
+        </view>
+
+        <view class="views" wx:for="{{yudianDatas}}" wx:key="yudianDatas" style="left: {{item.left}}rpx;width:{{item.width}}rpx;height: {{item.height}}rpx;top: 15%;z-index: {{item.z_index}};animation: {{item.animation}} {{item.speed}}s linear infinite;animation-play-state: {{animationPlayState}};">
+            <image src="{{imgPath}}hbg_yudian.png" class="img" mode="widthFix" />
+        </view>
+
+
+        <view wx:if="{{canBaozha}}" class="animateJF" style="top: {{jinbiOffset.top + 20}}px;left: {{jinbiOffset.left - 30}}px;">
+            <image src="{{imgPath}}hby_baozha.gif" style="width:198rpx;height:200rpx;" mode="widthFix" />
+        </view>
+
+        <view wx:else class="animateJF" style="top: {{jinbiOffset.top}}px;left: {{jinbiOffset.left}}px;">
+            <view class="text" style="animation: {{jinbiOffset.textAnimate}} 0.5s linear;animation-fill-mode: forwards;">+{{jifenNum}}</view>
+            <image src="{{imgPath}}hby_gameJinbi.png" style="width: 80rpx;height: 80rpx;animation: {{jinbiOffset.animate}} 0.5s linear;animation-fill-mode: forwards;" />
+        </view>
+
+        <view class="topViewBg">
+            <view class="positionView">
+                <view class="left">
+                    <image src="{{imgPath}}hby_jindub.png" style="width:100%;height:100%;" mode="widthFix" />
+                </view>
+                <view class="right">
+                    <image src="{{imgPath}}hby_jindubg.png" style="width:100%;height:100%;" mode="widthFix" />
+                    <view class="right-slt">
+                        <image src="{{imgPath}}hby_jindu.png" style="width:{{gameDownNumSlider}}%;height:100%;" />
+                    </view>
+                </view>
+                <view class="downNum">{{gameDownNum}}</view>
+                <view class="sysj">剩余时间</view>
+            </view>
+        </view>
+
+        <block wx:if="{{endGame}}">
+            <view class="bouncedBg" style="opacity: .7;"></view>
+            <view class="bouncedBg-view">
+                <view class="subView">
+                    <view class="subViews">
+
+                        <view class="imgView">
+                            <image src="{{imgPath}}hby_bouncedEndGma.png" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+                            <view class="topText">
+                                <image wx:if="{{canPlayNum == 0}}" src="{{imgPath}}hby_henyihan.png" style="width:100%;height:100%;" />
+                                <image wx:else src="{{imgPath}}hby_gongxini.png" style="width:100%;height:100%;" />
+                            </view>
+                            <view class="centerText" style="font-size: 32rpx;">{{canPlayNum == 0 ? '抢到'+jifenNum+'金币!你今天的抢券次数已用完,携友助力,多抢一次!距离兑换大奖还需再参与游戏'+aboutNum+'次' : '红包一直下,拿券好潇洒,恭喜你,抢到'+jifenNum+'金币'}}</view>
+
+                            <block wx:if="{{canPlayNum == 0}}">
+                                <view class="bottomView">邀请好友助力</view>
+                                <button open-type="share" class="share"></button>
+                            </block>
+                            <view wx:else class="bottomView" bindtap="bottomTap">再抢1次</view>
+                        </view>
+
+                        <view class="closed" bindtap="{{canPlayNum == 0 ? 'oneClosed' : 'closed'}}">
+                            <image src="{{imgPath}}hby_guanbi.png" style="width:100%;height:100%;" />
+                        </view>
+
+
+                    </view>
+                </view>
+            </view>
+        </block>
+
+        <block wx:if="{{showTwoBounced}}">
+            <view class="bouncedBg" style="opacity: .7;"></view>
+            <view class="bouncedBg-view">
+                <view class="twoSubView">
+                    <view class="imgView">
+                        <image src="{{imgPath}}hby_twoBounced.png" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+                        <view class="centerText">真的要走吗?</view>
+                        <view class="centerText" style="top:37%;">你不邀，我不邀，50元红包</view>
+                        <view class="centerText" style="top:48%;">何时被撩~</view>
+                        <view class="bottomView" style="left: 12%;background-color: #B5B5B5;color: #FFFFFF;">默默放弃</view>
+                        <view class="bottomView" style="right: 12%;background-color: #EBEB49;color: #CB0031;">我要撩,去邀请</view>
+                        <button open-type="share" class="share"></button>
+                        <view class="closed" bindtap="twoClosed"></view>
+                    </view>
+                </view>
+            </view>
+        </block>
+
+        <image src="{{imgPath}}sanjiao-left.png" class="backImg" mode="widthFix" bindtap="backTap" />
+        
+    </block>
+
+
+</view>
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/mbg.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 1588rpx;
+  z-index: 100;
+}
+
+.wrapper .modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 605rpx;
+  height: 1022rpx;
+  overflow: visible;
+  opacity: 0;
+  will-change: opacity;
+  transition: all 0.3s ease;
+}
+
+.wrapper .modal.animate {
+  opacity: 1;
+}
+
+.wrapper .modal.award0 {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/1.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .modal.award1 {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/5.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .modal.award2 {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/3.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .modal.award3 {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/6.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .modal.award4 {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/4.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .modal.award5 {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/2.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .modal .awards {
+  width: 282rpx;
+  height: 67rpx;
+  position: absolute;
+  left: 153rpx;
+  bottom: 46rpx;
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/select.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .modal .awards.active {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/select-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .modal .close {
+  position: absolute;
+  left: 271rpx;
+  bottom: -90rpx;
+  width: 45rpx;
+  height: 45rpx;
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/close.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,9 @@
+<view class="bg">
+    <image src="{{img}}" style="width:100%;vertical-align: middle;" mode="widthFix" />
+    <view class="taps" id="1" style="left: 50rpx;" bindtap="taps"></view>
+    <view class="taps" id="2" style="right: 60rpx;" bindtap="taps"></view>
+</view>
+
+        <view class="goHome" bindtap="goHome">
+            <image src="{{goHomeImg}}" style="width:100%;height:100%;" />
+        </view>

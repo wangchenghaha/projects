@@ -1,0 +1,141 @@
+.bg {
+  width: 100%;
+  height: 100%;
+  background-color: #EDEDED;
+}
+
+.bg .topView {
+  width: 100%;
+  background-color: white;
+}
+
+.bg .topView .colorView {
+  width: 100%;
+  padding-left: 20rpx;
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+  box-sizing: border-box;
+  color: #A3A3A3;
+  font-size: 22rpx;
+}
+
+.bg .bottomView {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  width: auto;
+  flex: 1;
+  background-color: white;
+}
+
+.bg .bottomView-topView {
+  width: 100%;
+  height: 170rpx;
+  display: flex;
+}
+
+.bg .bottomView-topView .imgView {
+  width: 170rpx;
+  height: 100%;
+}
+
+.bg .bottomView-topView .cloView {
+  margin-left: 20rpx;
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.bg .bottomView-topView .cloView .commentView {
+  height: 70%;
+  padding-top: 5rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+
+.bg .bottomView-topView .cloView .commentView .text {
+  font-size: 26rpx;
+  color: black;
+  line-height: 40rpx;
+  text-align: justify;
+  text-justify: newspaper;
+  word-break: break-all;
+}
+
+.bg .bottomView-topView .cloView .oriPrice {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  color: #FF5E2F;
+  font-size: 36rpx;
+}
+
+.bg .pinglunView {
+  margin-top: 20rpx;
+  background-color: white;
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.bg .pinglunView .topView {
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+}
+
+.bg .pinglunView .topView .icon {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background-color: #EE8777;
+  overflow: hidden;
+}
+
+.bg .pinglunView .topView .nickName {
+  line-height: 75rpx;
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: black;
+}
+
+.bg .pinglunView .xingView {
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+}
+
+.bg .pinglunView .xingView .left {
+  width: 50%;
+  height: 40rpx;
+  display: flex;
+}
+
+.bg .pinglunView .xingView .left .xing {
+  margin-top: 4rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.bg .pinglunView .xingView .right {
+  color: #A3A3A3;
+  font-size: 22rpx;
+  width: 50%;
+  line-height: 40rpx;
+  text-align: right;
+}
+
+.bg .pinglunView .comment {
+  width: 100%;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  line-height: 45rpx;
+}
+
+.bg .pinglunView .imgs {
+  width: 100%;
+  vertical-align: middle;
+}

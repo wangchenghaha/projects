@@ -1,0 +1,39 @@
+<view class="bg">
+    <view class="topView">
+        <view class="left">
+            <view class="text">我的金币: {{userData.points}}</view>
+            <view class="jinbi">
+                <image src="{{jinbiImg}}" style="width:100%;height:100%;" mode="widthFix" />
+            </view>
+        </view>
+        <view class="right" bindtap="jilu">兑换记录</view>
+    </view>
+    <view class="bottomView">
+        <view class="imgView" wx:for="{{yhqArrs}}" wx:key="yhqArrs">
+            <image src="{{item.giftPic}}" style="width:100%;height:100%;" mode="widthFix" />
+            <view class="shoujia">售价:{{item.pointsRequire}}<image src="{{jinbiImg}}" style="margin-left: 10rpx;margin-top: 3rpx;width:24rpx;height:24rpx;" mode="widthFix" /></view>
+            <view class="dui">
+                <image wx:if="{{item.stock > 0}}" src="{{duihuanImg}}" style="width:100%;height:100%;" mode="widthFix" data-detail="{{item}}" bindtap="requestGetCoupon" />
+                <image wx:else src="{{noDuihuanImg}}" style="width:100%;height:100%;" mode="widthFix" />
+            </view>
+            <view class="shengyu" wx:if="{{item.type != 'U'}}">剩余:{{item.stock}}</view>
+        </view>
+    </view>
+</view>
+
+
+        <block wx:if="{{canShow}}">
+            <view class="bouncedBg"></view>
+                <view class="oneSubView">
+                    <view class="imgView">
+                        <image src="{{canPlay}}" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+                        
+                            <view class="subTitle" style="top: 44%;">成功兑换{{showTitle}}</view>
+                            <view class="subTitle" style="top: 50%;">请在[会员中心-我的优惠券]查看</view>
+
+                            <view class="bottomViewsss" style="background-image: url('{{bouncedBtn}}');" bindtap="closed">知道了</view>
+
+                            <view class="closed" bindtap="closed"></view>
+                    </view>
+                </view>
+        </block>

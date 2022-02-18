@@ -1,0 +1,54 @@
+<view class="content {{cardNum === 0 ? 'flex-center ovf' : ''}}">
+  <view class="main" wx:if="{{newAddCoupon.length}}">
+    <view class="title flex-bet">
+      <text class="font-bold">最新领取</text>
+    </view>
+    <view class="swiper">
+      <swiper class="swiper-wrapper" current="{{swiperIndex-1}}" data-type="swiper" bindchange="onClick" previous-margin="20px" next-margin="20px">
+        <block wx:for="{{newAddCoupon}}" wx:key="couponno">
+          <swiper-item class="swiper-item">
+            <view class="img" style="background-image: url('{{item.bgImg}}');" data-index="{{index}}" data-type="card" bindtap="onClick">
+              <image class="card-img" src="{{item.imgUrl}}" mode="widthFix"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="step flex-bet">
+      <slider class="slider" min="0" block-size="14" max="{{newAddCoupon.length}}" value="{{swiperIndex}}" data-type="slider" bindchange="onClick"></slider>
+      <text>{{swiperIndex}}/{{newAddCoupon.length}}</text>
+    </view>
+  </view>
+  <block wx:if="{{cardNum === 0}}">
+    <view class="voucher-bg">
+      <image src="{{noCouponImg}}" mode="widthFix"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{couponKind}}" wx:for-index="kindIndex" wx:key="kind">
+      <view class="main" wx:if="{{item.couponList.length}}" >
+        <view class="title flex-bet">
+          <text class="font-bold">{{item.title}}</text>
+          <view class="change-show {{item.showMore ? 'rotate' : ''}}" data-index="{{kindIndex}}" data-type="{{item.couponList.length ? 'changShow': '' }}" bindtap="onClick"></view>
+        </view>
+        <view class="coupon {{item.showMore ? '' : 'hide'}}">
+          <block wx:for="{{item.couponList}}" wx:for-item="couponItem" wx:key="voucherno">
+            <view class="coupon-item"
+                  style="background-image: url('{{couponItem.bgImg}}')" data-in="{{kindIndex}}" data-index="{{index}}" data-type="card" bindtap="onClick">
+              <view class="pentagon text-c color-fff font-bold" wx:if="{{couponItem.effectDay <=8 }}">
+                {{couponItem.effectDay}}天后过期
+                <text class="icon"></text>
+              </view>
+              <image mode="widthFix" class="card-img" src="{{couponItem.imgUrl}}" binderror="handleImgErr" />
+            </view>
+          </block>
+          <view class="cover-img {{item.showMore ? 'hide' : ''}}">
+            <image src="{{item.coverImg}}" mode="widthFix" />
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>
+<!-- ======================齐数修改=============== -->
+<sellert-ticket id="sellert-ticket"></sellert-ticket>

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "售后订单列表",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "order-item": "../components/orderItem/orderItem",
+    "refund-list": "../components/refundList/refundList",
+    "copy-icon": "../../components/copyIcon/copyIcon",
+    "go-top": "../../components/goTop/goTop"
+  }
+}

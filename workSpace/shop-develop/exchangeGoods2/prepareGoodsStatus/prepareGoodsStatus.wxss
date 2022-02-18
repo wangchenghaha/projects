@@ -1,0 +1,50 @@
+@import "../mycss.wxss";
+@import "../tmpl/shopMultiInfo/shopMultiInfo";
+@import "../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar";
+/* @import "../zanui.wxss"; */
+.wrapper_status{padding: 27rpx 37rpx 27rpx 37rpx;}
+.inner_s{width: 100%;font-size: 26rpx;}
+.inner_title{width: 100%;margin-bottom: 27rpx;}
+
+.inner_tip{width: 100%;border-top: 1rpx solid #EEE; padding-top: 17rpx;}
+.s_key{color:black;}
+.s_value{color:#D82226;}
+.s_tip{color: #666;}
+
+
+.bg_white{background-color: white;}
+
+.prepare_tip_frame{width: 100%;font-size: 26rpx;padding-bottom: 20rpx;padding-top: 17rpx;}
+.tip_time{padding-right: 20rpx;display: flex;align-items: center;color: #019FE8;width: 100%;justify-content:center;}
+.img_hourglass{width: 26rpx;height: 26rpx;}
+
+.frame_shop_info{display: flex;flex-direction: column; align-items: center;border-top: 10rpx solid #F6F5F5;
+    border-bottom: 10rpx solid #F6F5F5;padding: 37rpx;}
+.exchange_list{width: 100%;height: auto;overflow: hidden;padding-bottom: 27rpx;}
+
+/* .price_frame{padding: 20rpx;} */
+.price_expected{text-align: right;font-size: 26rpx;color: #333;border-top: 1rpx solid #E9EBED;line-height: 60rpx;padding-right: 20rpx;padding-bottom: 50rpx;}
+
+
+.layout_protocol,.protocal_wrapper{width: 100%; height: 87rpx;line-height: 87rpx;display: flex;flex-direction: row;
+    justify-content: space-between;align-items: center; border-top: 1px solid #EBEBEB;}
+.protocal_wrapper{justify-content: flex-start;padding: 0rpx;border-top:0rpx;padding-left: 17rpx;}
+.protocol_detail{font-size: 26rpx;color: #333;}
+.protocal_bt{ width: 37rpx;height: 37rpx;line-height: 37rpx; font-size: 27rpx;border-radius: 50rpx;
+    border: 3rpx solid #333;text-align: center;margin-left: 17rpx;}
+.tip_bottom{padding: 17rpx;color: red;font-size: 26rpx;}
+
+.frame_pop{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:100000;}
+.frame_opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.5;}
+.frame_rule{width: 100%;position: absolute;bottom: 0;height: 625rpx;background-color: white;
+display: flex;flex-direction: column;align-items: center;}
+.pop_title{width: 100%;text-align: center;height: 110rpx;line-height: 110rpx;font-size: 32rpx;}
+.sv_rule{width: 100%;height: 378rpx;text-align: left;}
+.rule_detail{font-size: 24rpx;margin-left: 75rpx;margin-right: 75rpx;white-space:pre-line;}
+.v_gap{width: 100%;height: 7rpx;background-color: #f7f7f7;}
+.pop_confirm{width: 100%;height: 130rpx;line-height: 130rpx; font-size: 30rpx;color: black;text-align: center;}
+
+.d_frame{padding: 17rpx; font-size: 26rpx;line-height: 57rpx;}
+.d_title{margin-bottom: 12rpx;}
+.d_value_bar{width: 100%;}
+.d_value_gray{color: #999;}

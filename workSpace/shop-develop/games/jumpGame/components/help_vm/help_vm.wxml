@@ -1,0 +1,30 @@
+<view class="bg">
+    <view class="imgView">
+        <image src="{{imgPath}}helpBg.jpg" style="width:100%;" mode="widthFix" />
+
+        <view class="img">
+            <image src="{{imgPath}}help1.png" style="width:100%;" mode="widthFix" />
+        </view>
+
+        <view class="icon" style="left: 23.6%;">
+            <image src="{{myIcon}}" style="width:100%;height:100%;" />
+        </view>
+        <view class="icon" style="right: 23.9%;">
+            <image src="{{otherIcon}}" style="width:100%;height:100%;" />
+        </view>
+
+        <view class="bottomView" bindtap="tiaozhan"></view>
+    </view>
+    <view class="logo">
+        <image src="{{imgPath}}logo.png" style="width:100%;" mode="widthFix" />
+    </view>
+</view>
+
+<view class="sanjiao" bindtap="backTap">
+    <image src="{{imgPath}}sanjiao-left.png" style="width:100%;height:100%;" />
+</view>
+<view class="goHome" bindtap="goHome">
+    <image src="{{imgPath}}goHome.png" style="width:100%;height:100%;" />
+</view>
+
+<view class="zhanwei" wx:if="{{zhanweiView}}"></view>

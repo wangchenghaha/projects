@@ -1,0 +1,256 @@
+.bg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .shuoming{
+        margin-left: -2rpx;
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 120rpx;
+        text-align: center;
+        color: #F9DC47;
+        font-size: 28rpx;
+        line-height: 60rpx;
+        border-top-right-radius: 30rpx;
+        border-bottom-right-radius: 30rpx;
+    
+        background-color: #0072BA;
+    }
+    .bgImageView{
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .jiangpinView{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .topView{
+            margin-top: 150rpx;
+            width: 100%;
+            height: 45rpx;
+
+            display: flex;
+            flex-direction: row;
+            .leftView{
+                flex: 1;
+                width: auto;
+                display: flex;
+                flex-direction: row;
+                .text{
+                    margin-left: 20rpx;
+                    font-size: 30rpx;
+                    color: black;
+                }
+                .leftImage{
+                    
+                    margin-left: 10rpx;
+                    width: 45rpx;
+                    height: auto;
+                }
+            }
+            .rightView{
+                width: 160rpx;
+                margin-right: 20rpx;
+            }
+    
+        }
+
+        .zhuliView{
+            margin-left: 80rpx;
+
+            width: 620rpx;
+            height: auto;
+        }
+        .zhuliView_only{
+            margin-left: 35rpx;
+
+            width: 684rpx;
+            height: auto;
+        }
+        .rowView{
+            width: 100%;
+            height: auto;
+
+            display: flex;
+            flex-direction: row;
+
+            padding-left: 30rpx;
+            padding-right: 30rpx;
+            box-sizing: border-box;
+
+            .subView{
+                width: 50%;
+                height: 100%;
+                position: relative;
+
+                .title{
+                    position: absolute;
+                    top: 2%;
+                    left: 0;
+                    font-size: 32rpx;
+                    text-align: center;
+                    line-height: 60rpx;
+
+                    width: 100%;
+
+                }
+                .imgView{
+                    position: absolute;
+                    top: 16%;
+                    left: 0;
+                    width: 100%;
+                    height: 280rpx;
+                }
+                .moneyView{
+                    position: absolute;
+                    bottom: 21%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: auto;
+                    height: 50rpx;
+
+                    border-radius: 25rpx;
+                    border: 1rpx solid #40763E;
+
+                    display: flex;
+                    flex-direction: row;
+                    .left{
+                        font-size: 28rpx;
+                        line-height: 50rpx;
+                        margin-left: 30rpx;
+                        margin-right: 10rpx;
+                    }
+                    .right{
+                        margin-top: 10rpx;
+                        width: 24rpx;
+                        height: 30rpx;
+                        margin-right: 30rpx;
+                    }
+                }
+                .duihuan{
+                    position: absolute;
+                    bottom: 4%;
+                    left: 0;
+                    width: 100%;
+                    line-height: 75rpx;
+
+                    font-size: 40rpx;
+                    font-weight: bold;
+                    color: #F9DC47;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+// 弹框
+.bouncedBG{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &-opaView{
+        @extend .bouncedBG;
+        position: absolute;
+        background-color: black;
+        opacity: 0.5;
+    }
+    &-view{
+        width: 85%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .imageView{
+            width: 100%;
+            height: auto;
+            position: relative;
+            .scroView{
+                position: absolute;
+                top: 26%;
+                left: 0;
+                width: 100%;
+                height: 500rpx;
+                .noListView{
+                    width: 100%;
+                    line-height: 500rpx;
+                    text-align: center;
+                    font-size: 40rpx;
+                    color: black;
+                }
+                .subRowView{
+                    margin-left: 4%;
+                    margin-right: 4%;
+                    width: 92%;
+                    height: 217rpx;
+                    display: flex;
+                    flex-direction: row;
+                    &-leftView{
+
+                        overflow: hidden;
+                        margin-top: 20rpx;
+                        width: 170rpx;
+                        height: 177rpx;
+
+                        border-radius: 12rpx;
+
+                        .leftImage{
+                            width: 100%;
+                            height: 100%;
+                            vertical-align: middle;
+
+                        }
+                    }
+                    &-rightView{
+                        margin-left: 50rpx;
+                        flex: 1;
+                        overflow: hidden;
+
+                        position: relative;
+                        .title{
+                            margin-top: 25rpx;
+                            font-size: 28rpx;
+                        }
+                        .bottomTitle{
+                            position: absolute;
+                            bottom: 25rpx;
+                            left: 0;
+
+                            width: auto;
+                            height: 28rpx;
+                            padding: 10rpx 20rpx;
+                            font-size: 23rpx;
+                            line-height: 28rpx;
+                            color: #F5D287;
+                            background-color: #0072BA;
+                            border-radius: 28rpx;
+                        }
+                    }
+                }
+            }
+            .closed{
+                position: absolute;
+                bottom: 1.5%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50rpx;
+                height: 50rpx;
+            }
+        }
+
+
+    }
+}
+// 线条
+.line{
+    width: 92%;
+    height: 2rpx;
+    background-color: #40763E;
+    margin-left: 4%;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "preload": "../../components/preload/index",
+    "footerBar": "../../components/footer/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

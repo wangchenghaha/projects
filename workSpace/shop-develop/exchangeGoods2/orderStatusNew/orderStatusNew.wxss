@@ -1,0 +1,110 @@
+@import "../mycss.wxss";
+@import "../../style/weui.wxss";
+@import "../tmpl/classicOrderItem/classicOrderItem";
+@import "../tmpl/excPayListItem/excPayListItem";
+@import "../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar";
+
+.layout_father{ width:100%; height:auto; clear:both; overflow:hidden;}
+.text_bold{font-weight: bold;}
+.grey_0{color:#B9B9B9;}
+.grey_1{color:#848484;}
+.tip_status{line-height: 100rpx;text-align: center;width: 100%;}
+
+.layout_mailed{padding: 17rpx 20rpx 17rpx 47rpx;}
+.img_mailed{width: 55rpx;}
+
+.mailed_right{width: 70%;margin-left: 47rpx;line-height: 47rpx;}
+.mailed_user{color: black;font-size: 30rpx;}
+.mailed_phone{color: #656668;font-size: 24rpx;margin-left: 27rpx;}
+.mailed_address{word-break: normal;color: #656668;font-size: 24rpx;}
+
+
+.store_0{padding: 7rpx 17rpx 7rpx 17rpx;}
+.store_tip_0{font-size: 24rpx;color:  #656668;}
+
+.store_cus_info{width: 100%;}
+.store_cus_info_b{width: 85%;}
+
+.diliver_item{height: 57rpx;line-height: 57rpx; display: flex;flex-direction: row;align-items: center;
+justify-content: flex-start;}
+.diliver_key{ color: black;font-size: 30rpx;margin-left: 20rpx;}
+.diliver_value{line-height: 57rpx; color: #656565;font-size: 26rpx;word-break: normal;margin-left: 22rpx;}
+
+.multi_text_frame{ width:100%; clear:both; overflow:hidden;font-size:24rpx;border-top: 1rpx solid #EBEBEB;display: flex;flex-direction: column;padding: 17rpx 0 17rpx 0;}
+.multi_text_frame_no_border{ width:100%; clear:both; overflow:hidden;font-size:24rpx;display: flex;flex-direction: row;justify-content: space-between; padding: 1rpx 0 1rpx 0;}
+.multi_text_auto{ width:100%;height:auto;clear:both; overflow:hidden;font-size:24rpx;border-top: 1rpx solid #EBEBEB;display: flex;flex-direction: column;padding: 17rpx 0 17rpx 0;}
+
+.express_layout{width: 100%; display: flex;flex-direction: column;align-items: flex-start;}
+
+.prices_padding{padding: 7rpx 0 7rpx 0;}
+.bottom_list{width: 100%;height: auto;overflow: hidden;}
+
+.pay_father{display: flex;flex-direction: column;}
+.pay_tip_frame{padding-left: 17rpx;height: 120rpx;}
+.pay_tip_frame .tip0{font-size: 26rpx;text-align: left;color: #656565;}
+
+.detail_frame{font-size: 26rpx;margin-bottom: 20rpx;}
+/* .detail_tip_0{font-size: 24rpx;font-weight: bold;padding:20rpx;background-color: #00A0E7;} */
+.detail_subtotal{width: 100%;align-items: center;padding: 17rpx 0 17rpx 0;}
+.preview_wrap{height: 45rpx; border-top: 1rpx solid #EBEBEB;font-size: 26rpx;padding: 10rpx 20rpx 10rpx 0;
+    justify-content: space-between; display: flex;flex-direction: row; align-items: center;}
+.v_divider{width: 100%;height: 1rpx; margin-left: 0 0 20rpx 20rpx;background-color: #EBEBEB;}
+.preview_left{ float:left;color:#666;font-size: 26rpx;}
+.preview_right{ float:right; color:black;font-size: 26rpx;}
+.preview_price{color: #d4020d;}
+.preview_tip{font-size: 22rpx; padding: 7rpx 17rpx 17rpx 17rpx;line-height: 37rpx;color: #999999;word-break: normal;}
+/* .preview_right{ float:right;padding:5rpx 7rpx 5rpx 7rpx; color:white;font-size: 26rpx;background-color: #E21536;border: #E21536 1rpx solid;border-radius: 17rpx;} */
+.address{border-bottom: 1rpx solid #EBEBEB;padding-bottom: 17rpx;}
+.bg_arrow{background:url(https://cdn.bestseller.com.cn/assets/common/pub/image/icon_arrow_right_dark_gray.png) no-repeat right center;background-size:auto 24rpx;background-position: 97%;}
+
+.coupon_frame{padding: 17rpx 17rpx 17rpx 17rpx;}
+.coupon{ width:100%; height:auto; clear:both; overflow:hidden; font-size:28rpx; line-height:50rpx; color:#000;
+background:url(http://m.veromoda.com.cn/mvc/orderSubmit_content/css/myImg/rightIcon.png) no-repeat right center; background-size:15rpx;}
+.coupon_left{ float:left;}
+.coupon_title{ line-height:50rpx; font-size:26rpx; float:left;color: #777777;}
+.coupon_tip{ line-height:34rpx; font-size:22rpx; float:left; color:red;margin-left: 17rpx;
+    position:relative; top:4px; left:5px; padding:0 10rpx;}
+.coupon_tip_right{ float:right; padding-right:20rpx;}
+
+
+.voucher-wrapper .voucher-container .voucher-item {display: flex;justify-content: space-between;align-items: center; }
+.voucher-wrapper {display: flex;justify-content: center;align-items: center; }
+
+.voucher-wrapper {position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.5);z-index: 9999; }
+.voucher-container {position: relative;padding: 15rpx 20rpx;width: 640rpx;background: #fdf5f2;box-sizing: border-box;border-radius: 10rpx;z-index: 9999; }
+.scroll-view {max-height: 950rpx;overflow-y: scroll; }
+.coupon_close {position: absolute;top: -50rpx;right: 0;display: block;width: 25rpx;height: 25rpx;border: solid 4rpx #ffffff;border-radius: 50rpx; }
+.coupon_close:after {content: '';position: absolute;left: 50%;top: 25rpx;margin-left: -2rpx;width: 4rpx;height: 25rpx;background: #ffffff; }
+.coupon_close text {position: absolute;left: 50%;top: 50%;margin: 0 0 0 -40%;display: block;width: 80%;height: 4rpx;background: #ffffff; }
+.coupon_close text:nth-child(1) {transform: rotate(45deg); }
+.coupon_close text:nth-child(2) {transform: rotate(-45deg); }
+.voucher-item {margin-bottom: 20rpx;padding: 20rpx 10rpx;background: #fff;border-radius: 10rpx; }
+.voucher-price {font-size: 45rpx;color: #d4020d;font-weight: bold;text-align: center; }
+.voucher-price text {font-size: 32rpx; }
+.voucher-limit {font-size: 26rpx;color: #666666;text-align: center;width: 150rpx;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; }
+.voucher-info {
+    width: 300rpx;
+    font-size: 24rpx;
+    color: #999999; }
+.voucher-info .name {
+    max-width: 300rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
+    word-break: normal;
+    word-wrap: break-word; }
+.voucher-item .card-img {width: 300rpx; }
+.bt_coupon_enable, .bt_coupon_disable {
+    width: 130rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 25rpx; }
+.bt_coupon_enable{background-color: #d4020d;}
+.bt_coupon_disable{background-color: #777777;}

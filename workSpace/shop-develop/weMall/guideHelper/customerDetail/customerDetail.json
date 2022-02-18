@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#ededed",
+  "navigationBarTitleText": "顾客详情",
+  "usingComponents": {
+    "new-member": "../../components/guideMember/guideMember",
+    "all-member": "../../components/guideAllMember/guideAllMember",
+    "no-member": "../../components/guideNoMember/guideNoMember"
+  }
+}

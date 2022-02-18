@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商品推荐",
+  "usingComponents": {
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods"
+  }
+}

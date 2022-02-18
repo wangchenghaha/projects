@@ -1,0 +1,31 @@
+<!--activesubpack/pages/egg/awardList/awardList.wxml-->
+<view class="list-container">
+  <image class="list-bg" mode="widthFix" src="{{bg}}"></image>
+  <!-- 列表 -->
+  <view class="list-box">
+    <scroll-view style="height: 970rpx" scroll-y>
+      <block wx:for="{{list}}">
+        <view class="item-box">
+          <view class="item-title">★ {{item.award_name}}</view>
+          <view class="item-btns">
+            <block wx:if="{{item.is_get_award == 0}}">
+              <send-coupon
+                  class="send-coupon"
+                  wx:if="{{item.coupon_type == 1}}"
+                  bindcustomevent="getcoupon"
+                  data-recordid="{{item.record_id}}"
+                  send_coupon_params="{{item.card_list.send_coupon_params}}"
+                  sign="{{item.card_list.sign}}"
+                  send_coupon_merchant="{{item.card_list.send_coupon_merchant}}"
+              >
+                <image src="{{record_add_btn_img}}" mode="widthFix"></image>
+              </send-coupon>
+              <image wx:else data-coupontype="{{item.coupon_type}}" data-cardlist="{{item.card_list}}" bindtap="addBtn" src="{{record_add_btn_img}}" mode="widthFix"></image>
+            </block>
+            <image wx:if="{{item.is_get_award == 1}}" data-coupontype="{{item.coupon_type}}" data-cardlist="{{item.card_list}}" bindtap="openBtn" src="{{record_btn_img}}" mode="widthFix"></image>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view>
+  <block wx:for="{{videoList}}" wx:key="videoList">
+    <view class="video-list" data-index="{{index}}" bindtap="toNextPage">
+      <image src="{{item.img}}" mode="widthFix"></image>
+    </view>
+  </block>
+</view>

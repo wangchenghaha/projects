@@ -1,0 +1,15 @@
+.close {
+  position: relative; }
+  .close icon {
+    display: block; }
+  .close .line {
+    position: absolute;
+    left: 11.5px;
+    width: 2rpx;
+    height: 40rpx; }
+    .close .line.bottom {
+      top: 22px; }
+    .close .line.top {
+      bottom: 22px; }
+
+/*# sourceMappingURL=close.wxss.map */

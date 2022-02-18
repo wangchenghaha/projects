@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="list">
+      <view class='list-half'>
+        <view wx:for="{{listData}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card'>
+            <image class="showImg" src="{{item.mainImg}}" mode="widthFix" data-type="detail"  data-item="{{item}}" bindtap="onClick"></image>
+            <view class="content">{{item.title}} </view>
+            <view class="autorInfo ~flex-center">
+              <view class="right ~flex-start" data-type="autor"  data-authorid="{{item.authorId}}" bindtap="onClick">
+                  <image class="icon" src="{{item.avatarUrl}}"></image>
+                  <view class="name">{{item.nickname}}</view>
+              </view>
+              <view class="left ~flex-end" data-type="praise" data-item="{{item}}" bindtap="onClick">
+                  <image class="icon" src="{{item.isPraise? praised: praise}}" mode="widthFix" ></image>
+                  <view class="agreeNum">{{item.praiseTotal}}</view>
+              </view>
+            </view>
+            <view class="bottomV"></view>
+        </view>
+      </view>
+      <view class='list-half'>
+        <view wx:for="{{listData}}" wx:key="index" wx:if="{{index%2 != 0}}" class='card'>
+            <image class="showImg" src="{{item.mainImg}}" mode="widthFix"  data-type="detail"  data-item="{{item}}" bindtap="onClick"></image>
+            <view class="content">{{item.title}}</view>
+            <view class="autorInfo ~flex-center">
+              <view class="right ~flex-start" data-type="autor" data-authorid="{{item.authorId}}" bindtap="onClick">
+                  <image class="icon" src="{{item.avatarUrl}}"></image>
+                  <view class="name">{{item.nickname}}</view>
+              </view>
+              <view class="left ~flex-end" data-type="praise" data-item="{{item}}" bindtap="onClick">
+                  <image class="icon"src="{{item.isPraise? praised: praise}}" mode="widthFix" ></image>
+                  <view class="agreeNum">{{item.praiseTotal}}</view>
+              </view>
+            </view>
+            <view class="bottomV"></view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomView"></view>
+</view>

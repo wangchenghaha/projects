@@ -1,0 +1,71 @@
+.goods {
+  background: #fff;
+  box-sizing: border-box;
+}
+.goods image {
+  display: block;
+  width: 100%;
+}
+.goods-item {
+  padding: 30rpx 20rpx;
+  position: relative;
+  border-bottom: dashed 1rpx #626262;
+}
+.goods-item:last-child {
+  border: none;
+}
+.goods-item:last-child .triangle {
+  display: none;
+}
+.goods-item .operation .btn {
+  margin: 20rpx;
+  width: 40rpx;
+}
+.goods-item .triangle {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1rpx;
+}
+.goods-item .triangle-item {
+  position: absolute;
+  bottom: -20rpx;
+  display: block;
+}
+.goods-item .triangle-item.left {
+  left: 0;
+  border-style: solid;
+  border-width: 20rpx 0 20rpx 30rpx;
+  border-color: transparent transparent transparent #E4E4E4;
+}
+.goods-item .triangle-item.right {
+  width: 0;
+  height: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 20rpx 30rpx 20rpx 0;
+  border-color: transparent #E4E4E4 transparent transparent;
+}
+.goods-item .icon {
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border: solid 2rpx #ccc;
+}
+.goods-item .goods-img {
+  margin: 0 10rpx;
+  width: 200rpx;
+}
+.goods-item .goods-desc {
+  max-width: 320rpx;
+  font-size: 24rpx;
+}
+.goods-item .goods-desc .goods-name {
+  padding-bottom: 20rpx;
+}
+.goods-item .goods-desc .goods-name text {
+  padding-right: 20rpx;
+}
+
+/*# sourceMappingURL=wishGoodsList.wxss.map */

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "点亮你我他，好券一起拿",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods"
+  }
+}

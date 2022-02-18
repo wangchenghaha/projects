@@ -1,0 +1,89 @@
+@charset "UTF-8";
+image {
+  display: block;
+  width: 100%;
+}
+
+.main {
+  margin: 0 auto;
+  width: 690rpx;
+  background: #fff;
+}
+.main .share-info {
+  position: relative;
+  height: 280rpx;
+  width: 100%;
+}
+.main .share-info .wx-info {
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: -40rpx;
+  transform: translateX(-50%);
+}
+.main .share-info .wx-info .border {
+  width: 156rpx;
+  height: 156rpx;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.main .share-info .wx-info .border .avatar {
+  width: 113rpx;
+  height: 113rpx;
+  border: dashed 1rpx #626262;
+  border-radius: 50%;
+}
+.main .share-info .wx-info .border .avatar image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.main .share-info .wx-info .nick-name {
+  transform: translateY(-20rpx);
+  font-size: 30rpx;
+  color: #131313;
+}
+.main .share-info .wish-info {
+  margin: 0 auto;
+  width: 550rpx;
+  padding-top: 160rpx;
+}
+.main .share-info .wish-info .wish-icon {
+  margin-right: 20rpx;
+  width: 80rpx;
+}
+.main .share-info .wish-info .wish-text {
+  font-size: 24rpx;
+  color: #E7AEB3;
+}
+.main .share-info .bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  border-bottom: solid 10rpx #C08EA9;
+}
+.main .share-info .bottom::after {
+  content: "心愿清单";
+  position: absolute;
+  left: 50%;
+  top: -40rpx;
+  margin-left: -119rpx;
+  width: 238rpx;
+  height: 40rpx;
+  background: #C08EA9;
+  border-radius: 40rpx 40rpx 0 0;
+}
+.main .goods-content {
+  border-top: dashed 2rpx #D06983;
+}
+.main .goods-content .title {
+  padding-top: 30rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #E7AEB3;
+}
+
+/*# sourceMappingURL=wishHeader.wxss.map */

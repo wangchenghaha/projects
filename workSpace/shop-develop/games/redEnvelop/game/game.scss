@@ -1,0 +1,442 @@
+@keyframes animate{
+    0% {
+        opacity: 0;
+        transform: translateY(-300rpx);
+    }
+    15%{
+        opacity: 1;
+    }
+    95%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(1300rpx);
+    }
+}
+@keyframes animate1{
+    0% {
+        opacity: 0;
+        transform: translateY(-300rpx);
+    }
+    15%{
+        opacity: 1;
+    }
+    95%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(1300rpx);
+    }
+}
+
+@keyframes animatesix{
+    0% {
+        opacity: 0;
+        transform: translateY(-300rpx);
+    }
+    15%{
+        opacity: 1;
+    }
+    95%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(1000rpx);
+    }
+}
+@keyframes animatesix1{
+    0% {
+        opacity: 0;
+        transform: translateY(-300rpx);
+    }
+    15%{
+        opacity: 1;
+    }
+    95%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(1000rpx);
+    }
+}
+
+@keyframes fenshuAnimate {
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    30%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-50rpx);
+    }
+}
+@keyframes fenshuAnimate1 {
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    30%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-50rpx);
+    }
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .gameBg{
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .backImg{
+        position: absolute;
+        width: 40rpx;
+        top: 7%;
+        z-index: 10001;
+        left: 5%;
+    }
+
+    .topImg{
+        position: absolute;
+        width: 300rpx;
+        top: 7%;
+        z-index: 9;
+        left: 30%;
+    }
+
+    .centerImg{
+        position: absolute;
+        width: 80%;
+        left: 10%;
+        top: 40%;
+        z-index: 3;
+    }
+
+    .bottomImg{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        z-index: 9;
+    }
+    .topView{
+        position: absolute;
+        width: 240rpx;
+        top: 12%;
+        z-index: 9;
+        .background{
+            width: 240rpx;
+        }
+        .showNum{
+            position: absolute;
+            right: 30rpx;
+            font-family: 'YouSheBiao';
+            color: #73EFFB;
+            font-weight: 900;
+        }
+    }
+
+    .views{
+        position: absolute;
+        height: auto;
+        vertical-align: middle;
+        opacity: 0;
+        z-index: 1000;
+        .img{
+            width:100%;
+            height:100%;
+        }
+        .pointsView{
+            font-size: 32rpx;
+        }
+    }
+
+    .imgView{
+        height: auto;
+        position: absolute;
+        bottom: 68rpx;
+        z-index: 99;
+        transition: transform 0.1s linear;
+        .img{
+            width:100%;
+            height:100%;
+            vertical-align: middle;
+        }
+    }
+
+    .pointNum{
+        font-size: 72rpx;
+        height: auto;
+        position: absolute;
+        left: 0;
+        bottom: 500rpx;
+        z-index: 888;
+        transition: transform 0.1s linear;
+    }
+    
+    .zhanwei{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        z-index: 999;
+    }
+}
+
+.bounced{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    &-daojishiView{
+        width: 100%;
+        height: 100%;
+        position: flex;
+        .hongBaoTime{
+            position: absolute;
+            width: 60%;
+        }
+        .downTime{
+            position: absolute;
+            width: 160rpx;
+        }
+    }
+    &-firstPop{
+        width: 100%;
+        height: 100%;
+        position: flex;
+        .background{
+            position: absolute;
+            width: 80%;
+        }
+        .point{
+            position: absolute;
+            font-family: 'YouSheBiao';
+            color: #73EFFB;
+            font-size: 40rpx;
+        }
+        .button{
+            position: absolute;
+            width: 400rpx;
+        }
+       
+    }
+    &-secondPop{
+        width: 100%;
+        height: 100%;
+        position: flex;
+        .background{
+            position: absolute;
+            width: 80%;
+        }
+        .text1{
+            position: absolute;
+            font-family: 'YouSheBiao';
+            color: #fff;
+            font-size: 52rpx;
+        }
+        .text2{
+            position: absolute;
+            font-family: 'YouSheBiao';
+            color: #73EFFB;
+            font-size: 52rpx;
+        }
+        .text3{
+            position: absolute;
+            color: #fff;
+            font-size: 20rpx;
+        }
+        .coupon{
+            position: absolute;
+            width: 460rpx;
+            z-index: 9;
+        }
+        .button{
+            position: absolute;
+            width: 400rpx;
+        }
+    }
+
+    &-thirdPop{
+        width: 100%;
+        height: 100%;
+        position: flex;
+        .background{
+            position: absolute;
+            width: 80%;
+        }
+        .text1{
+            position: absolute;
+            font-family: 'YouSheBiao';
+            color: #73EFFB;
+            font-size: 46rpx;
+        }
+        .coupon{
+            position: absolute;
+            width: 460rpx;
+            z-index: 9;
+        }
+        .text2{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            image{
+                width: 100rpx;
+            }
+            text{
+                font-size: 24rpx;
+                color: #73EFFB;
+                margin-left: 20rpx;
+                margin-right: 20rpx;
+            }
+        }
+        .invent{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .helpArea{
+                width: 120rpx;
+                height: 120rpx;
+                margin-left: 30rpx;
+                margin-right: 30rpx;
+                margin-top: 30rpx;
+                .helpImage{
+                    width: 100rpx;
+                    height: 100rpx;
+                    border-radius: 120rpx;
+                }
+                .nickName{
+                    bottom: 0;
+                    width: 100rpx;
+                    line-height: 40rpx;
+                    font-size: 24rpx;
+                    color: #73EFFB;
+                    text-align: center;
+                    border-radius: 40rpx;
+                    overflow:hidden; 
+                    text-overflow:ellipsis;
+                    white-space:nowrap;
+                }
+            }
+        }
+
+        .button{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .left{
+                width: 200rpx;
+                margin-right: 20rpx;
+            }
+            .right{
+                width: 200rpx;
+                margin-left: 20rpx;
+            }
+        }
+        
+        .share{
+            position: absolute;
+            width: 250rpx;
+            height: 100rpx;
+            left: 52%;
+            background: none;
+        }
+        .share::after{ 
+            border: none;
+        }
+
+        // .button2{
+        //     position: absolute;
+        //     width: 320rpx;
+        //     .left{
+        //         width: 240rpx;
+        //         margin-right: 20rpx;
+        //     }
+        //     .right{
+        //         width: 240rpx;
+        //         margin-left: 20rpx;
+        //     }
+        // }
+        .text3{
+            position: absolute;
+            color: #fff;
+            font-size: 24rpx;
+        }
+        .image2{
+            position: absolute;
+            width: 60rpx;
+        }
+
+    }
+
+    &-forthPop{
+        width: 100%;
+        height: 100%;
+        position: flex;
+        .background{
+            position: absolute;
+            width: 80%;
+        }
+        .text1{
+            position: absolute;
+            font-size: 44rpx;
+            color: #fff;
+            font-weight: 530;
+        }
+        .text2{
+            position: absolute;
+            font-size: 34rpx;
+            color: #fff;
+            font-weight: 530;
+        }
+        .text3{
+            position: absolute;
+            font-size: 34rpx;
+            color: #fff;
+            font-weight: 530;
+        }
+        .button{
+            position: absolute;
+            width: 400rpx;
+        }
+        .share{
+            position: absolute;
+            width: 400rpx;
+            height: 100rpx;
+            background:none;
+        }
+        .share::after{ 
+            border: none;
+        }
+        .text4{
+            position: absolute;
+            font-size: 32rpx;
+            color: #bbb;
+        }
+    }
+    
+}
+
+@font-face {
+    font-family: 'YouSheBiao';
+    src:url('https://cdn.bestseller.com.cn/assets/common/JACKJONES/redEnvelop/YouSheBiaoTiHei-2.ttf') format('truetype');
+}
+

@@ -1,0 +1,58 @@
+<view class="container">
+    <block wx:for="{{contents}}" wx:key="album">
+        <view class="contentArea" >
+            <image class="images" src="{{item.goodsImg}}" mode="widthFix"/>
+            <!-- 第一个的按钮 -->
+            <view   wx:if="{{item.goodsCodeOne}}" 
+                    class="buttonLeft" 
+                    style="top:{{item.buttonTopOne}}; left: {{item.buttonLeftOne}}; {{item.width?' width: 700rpx;height:450rpx;' : ''}}"
+                    data-type="One" 
+                    data-item='{{item}}' 
+                    bindtap="onClick"></view>
+            <navigator wx:if="{{item.pathUrlOne}}"
+                       class="buttonLeft"
+                       style="top:{{item.buttonTopOne}}; left: {{item.buttonLeftOne}};  {{item.width?' width: 700rpx;height:450rpx;' : ''}}"
+                       target="miniProgram"
+                       open-type="navigate"
+                       app-id="{{jumpAppid}}" path="{{item.pathUrlOne}}" extra-data="" version="release">
+            </navigator>
+             <!-- 第二个的按钮-->
+             <view   wx:if="{{item.goodsCodeTwo}}" 
+                    class="buttonLeft" 
+                    style="top:{{item.buttonTopTwo}}; left: {{item.buttonLeftTwo}};  {{item.width?' width: 700rpx;height:450rpx;' : ''}}"
+                    data-type="Two" 
+                    data-item='{{item}}' 
+                    bindtap="onClick"></view>
+            <navigator wx:if="{{item.pathUrlTwo}}"
+                       class="buttonLeft"
+                       style="top:{{item.buttonTopTwo}}; left: {{item.buttonLeftTwo}};  {{item.width?' width: 700rpx;height:450rpx;' : ''}}"
+                       target="miniProgram"
+                       open-type="navigate"
+                       app-id="{{jumpAppid}}" path="{{item.pathUrlTwo}}" extra-data="" version="release">
+            </navigator>
+            <!-- 第三个的按钮-->
+            <view   wx:if="{{item.goodsCodeThree}}" 
+                    class="buttonLeft" 
+                    style="top:{{item.buttonTopThree}}; left: {{item.buttonLeftThree}}"
+                    data-type="Three" 
+                    data-item='{{item}}' 
+                    bindtap="onClick"></view>
+            <navigator wx:if="{{item.pathUrlThree}}"
+                       class="buttonLeft"
+                       style="top:{{item.buttonTopThree}}; left: {{item.buttonLeftThree}}"
+                       target="miniProgram"
+                       open-type="navigate"
+                       app-id="{{jumpAppid}}" path="{{item.pathUrlThree}}" extra-data="" version="release">
+            </navigator>
+        </view>
+    </block>
+</view> 
+
+
+<view class="voucher flex-center" wx:if="{{isShow}}" >
+    <view class="showModel" >
+        <image class="background" src="{{backgroundImg}}" mode="widthFix"/>
+        <button open-type="share" class="content" wx:if="{{isShare}}"></button>
+        <view class="content"  data-type="close"  wx:else bindtap="onClick"></view>
+    </view>
+</view>

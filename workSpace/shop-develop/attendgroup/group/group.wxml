@@ -1,0 +1,71 @@
+<wxs src="../index/index.wxs" module="tools" />
+<view class="pages" style="padding-top:{{bigPhone?250:200}}rpx;">
+    <view class="bg-wrapper">
+        <image class="bg" style="height:1459rpx;" wx:if="{{bigPhone}}" src="{{imgList.groupbg ? imgUrl +  imgList.groupbg: ''}}"></image>
+        <image class="bg" style="height:1228rpx;" wx:if="{{!bigPhone}}" src="{{imgList.groupbgSmall ? imgUrl +  imgList.groupbgSmall: ''}}"></image>
+    </view>
+    <view class="card-wrapper">
+        <image class="card-bg" src="{{imgList.groupCardbg ? imgUrl +  imgList.groupCardbg: ''}}"></image>
+         <view class="card-info">
+<!--            <view class="card-item" wx:for="{{couponlist}}" :key="index">-->
+<!--                <view style="color:{{brand == 'JACKJONES'? '#fff' : '#666'}}">￥</view>                -->
+<!--                <view class="price" style="color:{{brand == 'JACKJONES'? '#fff' : basecolor}};font-size:{{tools.isNumber(item.price)?'36rpx':'46rpx'}}">{{item.price}}</view>-->
+<!--                <view style="color:{{brand == 'JACKJONES'? '#fff' : '#666'}}">/</view>-->
+<!--                <view style="color:{{brand == 'JACKJONES'? '#fff' : '#666'}}" class="tip">{{item.tip}}</view>-->
+<!--            </view>-->
+        </view>
+        <view class="card-join">
+            <view class="avter-wrapper">
+<!--                <view class="avter-item active" style="border-color:{{basecolor}}">-->
+<!--                    &lt;!&ndash; <image class="unkonw" src="{{imgmodel.unknow}}" wx:if="{{!item}}"></image> &ndash;&gt;-->
+<!--                    <view class="avter-box">-->
+<!--                        <open-data style="" type="userAvatarUrl"></open-data>-->
+<!--                    </view>-->
+<!--                </view>-->
+                <view class="avter-item {{Item?'active':''}}" wx:for="{{avterlist}}"  wx:for-item="Item" style="border-color:{{basecolor}}" :key="index">
+                    <image class="unkonw" src="{{Item.avatarUrl}}" wx:if="{{!Item}}"></image>
+                    <view class="avter-box" wx:else>
+                        <image class="avter" src="{{Item.avatarUrl}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="join-amount">
+                <view class="amount-line" style="background:{{basecolor}}"></view>
+                <view class="anount">成团还差<text style="color:{{basecolor}}">{{balance}}</text>人</view>
+<!--                {{avterNum-joinNum}}-->
+                <view class="amount-line" style="background:{{basecolor}}"></view>
+            </view>
+            <view class="join-btn-wrapper">
+                <!-- <view class="join-btn active">邀请好友参团</view> -->
+<!--                this.data.btnTextList.type_14,//'我知道了'-->
+                <view>
+                    <button form-type='submit' open-type="share" style="background:{{basecolor}}" class="join-btn active">{{btnTextList.type_2}}</button>
+<!--                    邀请好友参团-->
+                    <button form-type='submit' bindtap="shareposter" style="color:{{basecolor}}" class="join-btn">{{btnTextList.type_1}}</button>
+<!--                    生成分享海报-->
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="join-tip" style="margin-top:{{bigPhone?45:20}}rpx;">
+        <image class="joinimg" src="{{imgList.joinTip ? imgUrl +  imgList.joinTip: ''}}"></image><text style="color:{{basecolor}}">您已成功参团 - 拼团成功后您将收到小程序通知</text>
+    </view>
+</view>
+
+<view class="poster-wrapper" wx:if="{{showposter}}" style="padding-top:{{bigPhone?160:50}}rpx;" catchtap="closeposter">
+    <view class="poster-box" catchtap="catchclick">
+        <painter customStyle='' palette="{{canvas}}" bind:imgOK="onImgOK"></painter>
+    </view>
+    <view class="save-btn-wrapper" style="margin-top:{{bigPhone?60:28}}rpx;">
+        <!-- <view class="save-btn">保存至相册</view> -->
+        <view class="save-btn" style="background:{{basecolor}}" catchtap='getSettings' wx:if="{{authorize}}">
+            <text>{{btnTextList.type_4}}</text>
+        </view>
+        <button class="save-btn" style="background:{{basecolor}}" open-type="openSetting" bindopensetting="handleSetting"  plain="{{true}}" wx:elif="{{!authorize}}">
+            <text>{{btnTextList.type_4}}</text>
+        </button>
+    </view>
+</view>
+
+<!--<alert showoption="{{showoption}}" bind:clicksure="clicksure"></alert>-->
+<alert basecolor="{{basecolor}}" showoption="{{showoption}}" bind:clicksure="clicksure"></alert>

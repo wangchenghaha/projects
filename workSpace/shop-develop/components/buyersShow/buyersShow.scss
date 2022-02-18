@@ -1,0 +1,66 @@
+.maijiaxiu{
+    width: 100%;
+    height: auto;
+
+    padding: 0 20rpx;
+    box-sizing: border-box;
+
+    .pinglun{
+        width: 100%;
+        height: auto;
+        padding: 20rpx 0;
+        
+        .topView{
+            width: 100%;
+            display: flex;
+            .left{
+                width: 100%;
+                height: 50rpx;
+                font-size: 28rpx;
+                line-height: 50rpx;
+                font-weight: 550;
+            }
+            .right{
+                font-size: 24rpx;
+                line-height: 54rpx;
+                color: #8b8b8b;
+                width: 160rpx;
+                height: 50rpx;
+                background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/icon_arrow_right_dark_gray.png) no-repeat right center;
+                background-size: auto 24rpx;
+            }
+        }
+        .centerView{
+            width: 100%;
+            margin-top: 20rpx;
+            display: flex;
+            .buyerImage{
+                width: 150rpx;
+                margin-left: 10rpx;
+                height: 150rpx;
+                border-radius: 10rpx;
+            }
+            .icon{
+                width: 60rpx;
+                height: 60rpx;
+                border-radius: 50%;
+                background: #EE8777;
+            }
+            .name{
+                line-height: 60rpx;
+                font-size: 25rpx;
+                margin-left: 20rpx;
+                margin-right: 20rpx;
+            }
+            .xing{
+                margin-top: 11rpx;
+                width: 32rpx;
+                height: 32rpx;
+            }
+        }
+        .bottom{
+            font-size: 25rpx;
+            margin-top: 20rpx;
+        }
+    }
+}

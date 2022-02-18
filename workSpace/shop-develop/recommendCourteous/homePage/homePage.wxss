@@ -1,0 +1,240 @@
+/* recommendCourteous//homePage/homePage.wxss */
+page {
+  background-color: #87ccca;
+  width: 100%;
+  height: 100%;
+}
+
+
+.shade {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: .6;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+.rule, .success {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  background-color: #fff;
+  z-index: 2;
+}
+.ruleInfo {
+  padding: 5%;
+}
+.ruleTit {
+  display: block;
+  font-size: 32rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+}
+.ruleText {
+  font-size: 28rpx;
+  color: #333333;
+  display: inline-block;
+  line-height: 36rpx;
+}
+.releClose {
+  position: absolute;
+  right: 2%;
+  top: 1%;
+}
+.successInfo {
+  text-align: center;
+}
+.shareSuccess {
+  background-color: #3abbb6;
+  color: #000;
+}
+.poster, .coupons {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 70%;
+  z-index: 2;
+}
+.coupons {
+  top: 25%;
+}
+.posterBox {
+  position: relative;
+}
+.QRBox {
+  width: 174rpx;
+  height: 174rpx;
+  border-radius: 80rpx;
+  z-index: 3;
+  background-color: #fff;
+  position: absolute;
+  bottom: 10%;
+  left: 32%;
+  /* opacity: .6; */
+  text-align: center;
+  display: inline-block;
+}
+.QRImg {
+  margin-top: 11rpx;
+  width:150rpx!important;
+  height:150rpx!important;
+  border-radius: 75%;
+  display: inline-block!important;
+}
+.saveAlbum {
+  margin-top: 15%!important;
+}
+
+.bgImg {
+  width: 100%;
+  /* position: relative; */
+}
+.tjImg, .invite {
+  width: 80%;
+  position: absolute;
+  margin-bottom: 100rpx;
+  /* top: 65%; */
+  left: 10%;
+}
+.img{
+  width: 100%;
+  display: block;
+}
+.tjInfo, .inviteInfo {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6rpx;
+  text-align: center;
+}
+.activityDate {
+  font-size: 24rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.btn {
+  width: 70%;
+  background-color: #3abbb6;
+  border-radius: 50rpx;
+  font-weight: 600;
+  /* height: 80rpx;
+  list-style: 80rpx; */
+}
+.activityRule {
+  font-size: 24rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-weight: 600;
+}
+.inviteInfo {
+  width: 90%;
+  padding: 0 5%;
+  padding-bottom: 5%;
+  background:linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.4));
+  /* background: -webkit-linear-gradient(180deg, #fff , #87ccca); Safari 5.1 - 6.0 */
+  /* background: -o-linear-gradient(180deg, #fff, #87ccca); Opera 11.1 - 12.0 */
+  /* background: -moz-linear-gradient(180deg, #fff, #87ccca); Firefox 3.6 - 15 */
+  /* background: linear-gradient(180deg, #fff , #87ccca); 标准的语法 */
+}
+.headPicList{
+  display: flex;
+  justify-content: space-around;
+
+}
+.invitePic {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+  font-size: 60rpx;
+  line-height: 140rpx;
+  font-weight: bold;
+  color: #bcbcbc;
+  background-color: #fff;
+  border: 2rpx dashed #3abbb6;
+  display: inline-block;
+  margin: 10% 0;
+}
+.inviteHeader {
+	height:60rpx;
+	line-height:60rpx;
+	text-align:center;
+}
+.inviteLine {
+	display:inline-block;
+	width:30%;
+	border-top:1px solid #a3abab;
+}
+.inviteText {
+	color:#000;
+	vertical-align:-8rpx;
+  font-size:32rpx;
+  display:inline-block;
+  font-weight: bold;
+  width: 40%;
+}
+.inviteNum {
+  display: inline-block;
+  color: #3abbb6;
+  font-size: 34rpx;
+}
+.shareBtn, .posterBtn, .shareSuccess {
+  width: 60%;
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 32rpx;
+  background-color: #000;
+  border-radius: 37rpx;
+  color: #3abbb6;
+  margin: 8% 20% 5% 20%;
+}
+.posterBtn {
+  color: #000;
+  background-color: #fff;
+  margin: 0% 20% 5% 20%;
+}
+.endInfo {
+  padding-top: 8%;
+}
+.btnEnd, .btnGoTo {
+  width: 50%;
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 32rpx;
+  background-color: #3abbb6;
+  border-radius: 37rpx;
+  color: #000;
+  margin: 0 25% 5% 25%;
+}
+.btnGoTo {
+  background-color: #Fff;
+  border: 2rpx solid #3a3a3a;
+}
+.helpImg {
+  width: 90rpx;
+  height: 90rpx!important;
+  border-radius: 45rpx;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 90rpx;
+}
+.helpTextName, .helpTextTime {
+  font-size: 28rpx;
+  width: 52%;
+  height: 90rpx;
+  display: inline-block;
+  overflow:hidden;
+  white-space: nowrap;
+  line-height: 90rpx;
+  /* word-break:keep-all;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  vertical-align: sub; */
+}
+.helpTextName {
+  width: 25%;
+}

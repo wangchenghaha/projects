@@ -1,0 +1,62 @@
+$size: 20rpx;
+$manColor: #a8cafc;
+$womanColor: #fca8a8;
+@mixin  circle($color){
+  position: relative;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: solid 2rpx $color;
+}
+.gender{
+  transform: rotate(45deg);
+  transform-origin: center;
+  .woman{
+    @include circle($womanColor);
+    &:after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 24rpx;
+      width: 16rpx;
+      height: 2rpx;
+      background: $womanColor;
+      transform: translateX(-50%);
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 18rpx;
+      width: 2rpx;
+      height: 16rpx;
+      background: $womanColor;
+      transform: translateX(-50%);
+    }
+  }
+  .man{
+    @include circle($manColor);
+    transform: translateY(10rpx);
+    .line{
+      position: absolute;
+      left: 50%;
+      top: -15rpx;
+      display: inline-block;
+      width: 2rpx;
+      height: 15rpx;
+      background: $manColor;
+      transform: translateX(-50%) translateY(-2rpx);
+      &:before{
+        content: '';
+        position: absolute;
+        top: 4rpx;
+        width: 10rpx;
+        height: 10rpx;
+        border-top: solid 2rpx $manColor;
+        border-left: solid 2rpx $manColor;
+        transform: rotate(50deg) translateX(-63%);
+      }
+    }
+  }
+}

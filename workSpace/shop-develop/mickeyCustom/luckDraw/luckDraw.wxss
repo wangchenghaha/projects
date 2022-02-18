@@ -1,0 +1,197 @@
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+.wrapper .background-main .backgroundImg {
+  width: 750rpx;
+  vertical-align: bottom;
+}
+.wrapper .prizeNum {
+  position: absolute;
+  left: 300rpx;
+  top: 40rpx;
+  background: transparent;
+  color: #fff;
+  line-height: 40rpx;
+  text-align: center;
+}
+.wrapper .prizeNum .prizeNum_top {
+  text-align: center;
+  margin-bottom: 32rpx;
+  margin-left: 1rpx;
+  width: 260rpx;
+}
+.wrapper .prizeNum .prizeNum_bottom {
+  width: 92rpx;
+  background: #13406a;
+  margin-left: 54rpx;
+}
+.wrapper .header {
+  position: absolute;
+  left: 82rpx;
+  top: 488rpx;
+}
+.wrapper .header .frame_view {
+  width: 590rpx;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30rpx;
+}
+.wrapper .header .frame_row {
+  position: relative;
+  width: 580rpx;
+  height: 136rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.wrapper .header .frame_item {
+  width: 134rpx;
+  height: 127rpx;
+}
+.wrapper .header .frame_item_mickey {
+  position: absolute;
+  top: 2rpx;
+  left: 150rpx;
+  margin-right: 18rpx;
+  width: 272rpx;
+  height: 275rpx;
+  z-index: 9;
+}
+.wrapper .myreward {
+  position: absolute;
+  top: 1060rpx;
+  left: 120rpx;
+  width: 500rpx;
+  height: 150rpx;
+  background: transparent;
+  z-index: 2;
+}
+.wrapper .gotoGoods {
+  position: absolute;
+  top: 1260rpx;
+  left: 120rpx;
+  width: 500rpx;
+  height: 850rpx;
+  background: transparent;
+  z-index: 2;
+}
+.wrapper .content {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9;
+}
+.wrapper .content .finall {
+  position: absolute;
+  top: 350rpx;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.wrapper .content .finall .finall_no {
+  width: 545rpx;
+  height: 717rpx;
+}
+.wrapper .content .finall .finall_nos {
+  width: 588rpx;
+  height: 420rpx;
+}
+.wrapper .content .finall .goback {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 100rpx;
+  font-size: 34rpx;
+  opacity: 0.6;
+}
+.wrapper .content .finall_back {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.wrapper .content .finall_back .bg {
+  width: 750rpx;
+  height: 1208rpx;
+  vertical-align: bottom;
+}
+.wrapper .content .finall_back .big {
+  height: 1498rpx;
+}
+.wrapper .content .finall_back .finall_Img {
+  width: 750rpx;
+  height: 100%;
+}
+.wrapper .getMoreAlert {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+.wrapper .getMoreAlert .more {
+  width: 622rpx;
+  height: 460rpx;
+}
+.wrapper .getMoreAlert .haoyou,
+.wrapper .getMoreAlert .haibao {
+  width: 358rpx;
+  height: 90rpx;
+  padding: 0rpx;
+  border-radius: 0rpx;
+  border: none;
+  background-color: transparent;
+}
+.wrapper .getMoreAlert .haoyou:after,
+.wrapper .getMoreAlert .haibao:after {
+  border-radius: 0rpx;
+  border: none;
+}
+.wrapper .getMoreAlert button.haoyou {
+  margin-top: 100rpx;
+}
+.wrapper .getMoreAlert .haibao {
+  margin-top: 60rpx;
+}
+.wrapper .haibaoAlert {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .haibaoAlert .haibaoText {
+  width: 245rpx;
+  height: 30rpx;
+  margin: 36rpx 0rpx;
+  position: absolute;
+  bottom: 140rpx;
+}
+.wrapper .haibaoAlert .haibaoBack {
+  position: absolute;
+  width: 162rpx;
+  height: 68rpx;
+  bottom: 80rpx;
+}

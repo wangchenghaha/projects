@@ -1,0 +1,22 @@
+<view class="pages">
+    <view class="card-box">
+        <image class="card" src="{{card}}"></image>
+        <view class="tips">
+            <view class="button-item">
+                方法一:
+                <view class="save-btn-wrapper">
+                    <view class="save-btn" catchtap='getSettings' wx:if="{{authorize}}">
+                        <text>点击保存</text>
+                    </view>
+                    <button class="save-btn" open-type="openSetting" bindopensetting="handleSetting"  plain="{{true}}" wx:elif="{{!authorize}}">
+                        <text>点击保存</text>
+                    </button>
+                </view>
+                二维码，打开微信扫一扫
+            </view>
+            <view class="button-item">
+                方法二:<view class="save-btn-wrapper" bindtap="copyBtn">点击复制微信号</view>并在微信中搜索添加
+            </view>
+        </view>
+    </view>
+</view>

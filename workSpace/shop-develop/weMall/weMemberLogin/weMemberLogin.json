@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "导购登录",
+  "usingComponents": {
+    "my-close": "/components/close/close"
+  }
+}

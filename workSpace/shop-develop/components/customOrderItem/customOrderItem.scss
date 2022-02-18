@@ -1,0 +1,118 @@
+.itemContainer{
+    width: 100%;
+    clear: both;
+    border-top: 20rpx solid #eee;
+    padding-bottom: 30rpx;
+    .orderStatus{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 30rpx;
+        .orderNum{
+           margin-top: 20rpx;
+           margin-left: 20rpx;
+           display: flex;
+           align-items: center;
+           image{
+               margin-left: 20rpx;
+               width: 40rpx;;
+           }
+        }
+        .orderstatus{
+            font-weight: 600;
+            color: orangered;
+            margin-top: 20rpx;
+            margin-right: 20rpx;
+        }
+    }
+    .priceNotice{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20rpx;
+        margin-right: 20rpx;
+        font-size: 26rpx;
+        color: red;
+        font-weight: 550;
+    }
+    .goodsInfo{
+        display: flex;
+        margin-top: 20rpx;
+        image{
+            width: 200rpx;
+            margin-left: 20rpx;
+        }
+        .goodDetail{
+            margin-left: 20rpx;
+            font-size: 28rpx;
+            .goodName{
+                width: 500rpx;
+                margin-top:20rpx;
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                font-weight: 600;
+            }
+            .goodType{
+                 display: flex;
+                 margin-top: 50rpx;
+                .itemType{
+                    min-width: 200rpx;
+                    line-height: 60rpx;
+                    text-align: center;
+                    margin-left: 10rpx;
+                    background: #eee;
+                    border-radius: 20rpx;
+                }
+            }
+            .goodPrice{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 80rpx;
+                margin-right: 30rpx; 
+                .price{
+                    color: red;
+                    font-weight: 600;
+                    margin-left: 20rpx;
+                }
+            }
+        }
+    }
+    .optionsShow{
+        height: 100rpx;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 30rpx;
+        .priceShow{
+            color: #999;
+            margin-right: 30rpx;
+        }
+        .statusNotice{
+            color: black;
+        }
+        .options{
+            width: 200rpx;
+            line-height: 60rpx;
+            text-align: center;
+            border: 2rpx solid #999;
+            border-radius: 30rpx;
+            margin-right: 30rpx;
+        }
+        .payNotice{
+            color: red;
+            border: 2rpx solid red;
+        }
+        .lastPayNo{
+            color: #999;
+            border: 2rpx solid #999;
+        }
+    }
+    .baseLine{
+        width: 94%;
+        margin-left: 3%;
+        height: 2rpx;
+        background: #eee;
+    }
+}

@@ -1,0 +1,38 @@
+
+
+<view class="wrap">
+
+  <!-- 顶部信息 --> 
+  <view class="header">
+    <view class="h_item like"></view>
+    <view class="h_item logo">
+      <view bindtap="toIndex">
+        <image src="{{titleLogo}}" mode="aspectFit" style="width:288rpx; height:30rpx;"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="con1">
+      <text class="con1_left">支付金额</text>
+      <text class="con1_right">￥{{payCon.amountPaid}}</text>
+    </view>
+    <view class="con2">
+      <view class="title">支付方式</view>
+      <view class="li">
+        <view class="li_left">
+          <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/wxpay_rect.png" mode="widthFix"></image>
+        </view>
+        <view class="li_right">
+          <view class="text1">微信APP支付</view>
+          <view class="text2">推荐有微信APP的用户使用</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="zhifu" bindtap="zhifu">立即支付</view>
+  </view>
+
+  
+
+</view>

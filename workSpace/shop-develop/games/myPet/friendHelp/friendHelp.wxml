@@ -1,0 +1,9 @@
+<view class="container">
+    <image class="petBg" src="{{splashImg}}"/>
+
+    <view class="btnArea flex-center">
+        <image class="btn" src="{{helpBtn}}" mode="widthFix" data-type="help" bindtap="checkCRM"/>
+        <image class="btn" src="{{playBtn}}" mode="widthFix" data-type="play" bindtap="checkCRM"/>  
+    </view>
+
+</view>

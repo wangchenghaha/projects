@@ -1,0 +1,89 @@
+
+<view wx:if="{{collocationBanner.isShow}}" class="banner">
+  <image src="{{collocationBanner.imgUrl}}" mode="widthFix" bindtap="bannerClick"></image>
+</view>
+<view class="wrap">
+  <view class='head'>
+    <view class='head_li head_li3 head_list' bindtap='asCreateTime'>发布时间<view class='icon {{sortTimeClass}}'></view></view>
+    <view class='head_li head_li3' bindtap='asShare'>人气排序<view class='icon {{sortShareClass}}'></view></view>
+  </view>
+  <view class='content'>
+    <view class='title'>
+      <view class='t_left'></view>
+      <view class='h2'>推荐搭配</view>
+    </view>
+
+    <view class="ul  {{isIphoneX ?'iphoneXMarginBottom':''}}">
+      <view class='li' wx:for="{{mobanList}}" wx:key="mobanList">
+        <view class='liLeft' data-index='{{index}}' data-id='{{item.id}}' data-guide='{{daogouID == item.createByOpenid?1:0}}' bindtap='toLookMbCon'>
+          <view class="new-task task" wx:if="{{daogouID !== item.createByOpenid}}">新任务</view>
+          <block wx:else>
+            <view class="tasked task" wx:if="{{item.shareCount && item.shareMomentCount}}">任务已完成</view>
+            <view class="task no-task" wx:elif="{{!item.shareCount && !item.shareMomentCount}}">未做任何分享</view>
+
+            <view class="task no-task"wx:elif="{{!item.shareCount && item.shareMomentCount}}">
+              未分享给好友
+              <view class="wx-icon"><image src="/images/wx_msg.png" mode="widthFix"></image></view>
+            </view>
+            <view class="task no-task" wx:elif="{{item.shareCount && !item.shareMomentCount}}">
+              未分享到朋友圈
+              <view class="wx-icon"><image src="/images/wx_circle.png" mode="widthFix"></image></view>
+            </view>
+          </block>
+
+          <!--<text class="task no-task">未分享到朋友圈</text>-->
+          <image id="{{item.goodsCode}}" src="{{item.coverPic}}" mode="aspectFit"></image>
+        </view>
+        <view class='liRight' data-index='{{index}}' data-id='{{item.id}}' bindtap='toLookMbCon'>
+          <text class='googsname'>{{item.pageTitle}}</text>
+          <view class='text'>发布时间 {{item.createTimeDate}}</view>
+          <view class='text'>创建人 {{item.createGuide}}</view>
+          <view class='text share-list'>
+            <block wx:if="{{item.createByOpenid == daogouID}}">我</block>已分享
+            <view class="share-icon"><image src="/images/share_icon.jpg" mode="widthFix"></image></view>
+            <block wx:if="{{isOperate}}">
+              {{item.shareCount + (item.shareMomentCount || 0)}}
+            </block>
+            <block wx:else>
+              <block wx:if="{{daogouID == item.createByOpenid}}">
+                {{item.shareCount + (item.shareMomentCount || 0)}}
+              </block>
+              <block wx:else>0</block>
+            </block>
+            <view class="share-detail">
+              包含
+              <view class="wx-icon"><image src="/images/wx_msg.png" mode="widthFix"></image></view>
+              <block wx:if="{{isOperate}}">
+                {{item.shareCount}}
+              </block>
+              <block wx:else>
+                <block wx:if="{{daogouID == item.createByOpenid}}">
+                  {{item.shareCount || 0}}
+                </block>
+                <block wx:else>0</block>
+              </block>
+              <view class="wx-icon"><image src="/images/wx_circle.png" mode="widthFix"></image></view>
+              <block wx:if="{{isOperate}}">
+                {{item.shareMomentCount || 0}}
+              </block>
+              <block wx:else>
+                <block wx:if="{{daogouID == item.createByOpenid}}">
+                  {{item.shareMomentCount || 0}}
+                </block>
+                <block wx:else>0</block>
+              </block>
+            </view>
+          </view>
+          <view class='text'>谁可见 {{item.type === 'guide' ? '仅自己' : whoISLook}}</view>
+        </view>
+        <view wx:if="{{daogouID == item.createByOpenid}}" class='toLook remove' data-id='{{item.id}}' data-index='{{index}}' bindtap='toRemove'>删除</view>
+        <!-- <view  class='toLook' data-index='{{item.id}}' bindtap='toLookMbCon'>分享转发</view> -->
+      </view>
+    </view>
+
+    <view class='tishi' wx:if="{{mobanList.length==0}}">没有相应数组</view>
+     <!-- IphoneX底部栏 -->
+    <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+  </view>
+
+</view>

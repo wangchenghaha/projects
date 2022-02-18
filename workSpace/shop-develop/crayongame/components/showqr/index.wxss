@@ -1,0 +1,96 @@
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.qrcodebox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/bg.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 134rpx;
+  box-sizing: border-box;
+  opacity: 0;
+  will-change: opacity;
+  transition: all 0.1s ease;
+  z-index: -100;
+}
+
+.qrcodebox.big {
+  padding-top: 209rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/bigbg.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.qrcodebox.fadeIn {
+  z-index: 101;
+  opacity: 1;
+}
+
+.qrcodebox.fadeOut {
+  z-index: -100;
+  opacity: 0;
+}
+
+.qrcodebox .content {
+  font-size: 0;
+}
+
+.qrcodebox .content .image {
+  width: 693rpx;
+  height: 1080rpx;
+  margin-left: 41rpx;
+}
+
+.qrcodebox .content .image.bounceIn {
+  animation: zoomIn 0.2s forwards;
+}
+
+.qrcodebox .content .image.bounceOut {
+  animation: zoomOut 0.2s forwards;
+}
+
+.qrcodebox .content .btn {
+  width: 359rpx;
+  height: 71rpx;
+  border-radius: 41rpx;
+  margin: 0 auto;
+  text-align: center;
+  will-change: opacity;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/save.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.qrcodebox .content .btn.active {
+  opacity: 0.9;
+}

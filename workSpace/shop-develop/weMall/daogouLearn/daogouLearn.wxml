@@ -1,0 +1,8 @@
+<view class="wrap">
+
+  <view class='ul'>
+    <view class='li' wx:for="{{ulData}}" wx:key="ulData" data-index='{{index}}' data-desc='{{item.desc}}' bindtap='toNextPage'>
+      <image src='{{item.img}}' mode='widthFix'></image>
+    </view>
+   </view>
+</view>

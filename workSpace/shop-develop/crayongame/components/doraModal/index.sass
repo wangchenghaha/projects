@@ -1,0 +1,53 @@
+@import '..\\..\\common\\sass\\index.sass'
+
+
+.wrapper
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    +bg3('mbg')
+    background-position: 0 0 
+    background-size: 100% 1588rpx
+    z-index: 100
+    .modal
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate3d(-50%,-50%,0)
+        width: 605rpx
+        height: 1022rpx
+        overflow: visible
+        opacity: 0
+        will-change: opacity
+        transition: all 0.3s ease
+        &.animate
+            opacity: 1
+        &.award0
+            +bg3('1')
+        &.award1
+            +bg3('5')
+        &.award2
+            +bg3('3')
+        &.award3
+            +bg3('6')
+        &.award4
+            +bg3('4')
+        &.award5
+            +bg3('2')
+        .awards
+            width: 282rpx
+            height: 67rpx
+            position: absolute
+            left: 153rpx
+            bottom: 46rpx
+            +bg3('select')
+            &.active
+                +bg3('select-a')
+        .close
+            position: absolute
+            left: 271rpx
+            bottom: -90rpx
+            +square(45)
+            +bg3('close')

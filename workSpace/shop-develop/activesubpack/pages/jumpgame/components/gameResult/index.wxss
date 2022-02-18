@@ -1,0 +1,169 @@
+.gameResult-contaniner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.button-hover {
+    background: transparent;
+}
+
+.gameResult-wrap {
+    width: 615rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -307.5rpx;
+    z-index: 200;
+}
+
+.gameResultSuc {
+    height: 1000rpx;
+    margin-top: -530rpx;
+}
+
+.gameResultFail {
+    height: 889rpx;
+    margin-top: -475rpx;
+}
+
+.gameResult-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.gameResult-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 436rpx;
+    height: 300rpx;
+    position: absolute;
+    top: 405rpx;
+    background: transparent;
+    left: 95rpx;
+    z-index: 20;
+    overflow-y: auto;
+    font-size: 0rpx;
+    color: #f99aba;
+    font-weight: bold;
+}
+
+.gameResultSuc .gameResult-content {
+    display: block;
+    top: 440rpx;
+    height: 510rpx;
+}
+
+.gameResultFail .gameResult-content {
+    top: 405rpx;
+    height: 400rpx;
+}
+
+.gameResult-text {
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 50rpx;
+}
+
+.share-btn {
+    position: absolute;
+    bottom: -49rpx;
+    left: 50%;
+    width: 359rpx;
+    height: 98rpx;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    margin-left: -179rpx;
+    line-height: normal;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+}
+
+.share-btn::after {
+    display: none;
+}
+
+.address-btn {
+    width: 359rpx;
+    height: 98rpx;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: -125rpx;
+    left: 50%;
+    margin-left: -25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    z-index: 10;
+}
+
+.suc-tip {
+    font-size: 36rpx;
+    color: #f99aba;
+    text-align: center;
+}
+
+.gift-box {
+    margin-top: 10rpx;
+    text-align: center;
+}
+
+.gift {
+    margin: 0 20rpx;
+    width: 168rpx;
+    height: 166rpx;
+    animation: shake 0.3s infinite;
+}
+
+.gift:nth-child(1) {
+    margin: 0 auto;
+    display: block;
+    animation-delay: 0;
+}
+
+.gift:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.gift:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.suc-des {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.tip-text {
+    font-size: 30rpx;
+    color: #f99aba;
+    text-align: center;
+    line-height: 50rpx;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(2rpx, 2rpx);
+    }
+    25% {
+        transform: translate(-2rpx, -2rpx);
+    }
+    50% {
+        transform: translate(0px, 0px);
+    }
+    75% {
+        transform: translate(2rpx, -2rpx);
+    }
+    100% {
+        transform: translate(-2rpx, 2rpx);
+    }
+}

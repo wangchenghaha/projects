@@ -1,0 +1,46 @@
+.main{
+	width: 100%;
+	min-height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-color: #081148;
+}
+.content{
+	padding-top: 430rpx;
+	margin-bottom: 30rpx;
+	color: #fff;
+	border-bottom: dashed 6rpx #fff;
+}
+.play-btn{
+	margin: 20rpx auto;
+	width: 450rpx;
+	height: 130rpx;
+	line-height: 130rpx;
+	font-size: 50rpx;
+	color: #50320e;
+	background: #f8ce08;
+	border-radius: 10rpx;
+	box-shadow: 0 10rpx 5rpx #d06d18;
+}
+.play-btn.true{
+	background: #6e6e6b;
+	color: #251c0f;
+	box-shadow: none;
+}
+.title{
+	font-size: 50rpx;
+	/* transform: scaleY(1.6) */
+}
+.tip{
+	font-size: 32rpx;
+	margin-bottom: 20rpx;
+}
+.home{
+	position: fixed;
+  left: 30rpx;
+  top: 20px;
+	z-index: 999;
+	color:#fff;
+	font-size: 50rpx;
+}

@@ -1,0 +1,209 @@
+
+
+page{ background:#EEE;}
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden;}
+
+/* 顶部信息 */
+.header{ width:100%; border-bottom:2rpx solid #d1d1d1;clear:both; overflow: hidden;
+margin-bottom:20rpx; position:fixed; top:0; left:0; z-index:999; background:#fff;}
+.header .h_item{ float:left; position:relative; height:100rpx; font-size:30rpx; line-height:100rpx;}
+.header .like{ width:128rpx; height: 98rpx;}
+.header .like image{ width:36rpx; height:36rpx; position:absolute;left:20rpx; top:0; bottom:0; margin:auto 0;}
+.header .logo{ width:485rpx; height:98rpx;}
+.header .logo image{ width:220rpx; position:absolute;left:0; right:0; top:0; bottom:0; margin:auto;}
+
+
+.content{ width:100%; height:auto; clear:both; overflow: hidden; padding-top:120rpx;}
+/* 导航条 */
+.nav{ width:100%; height:auto; clear:both; overflow:hidden; border-left:2rpx solid #000; box-sizing:border-box;}
+.nav .li{ float:left; width:20%; box-sizing:border-box; border:2rpx solid #000; border-left:none; font-size:28rpx;
+line-height:64rpx; color:#000; text-align: center; background:#fff;}
+.nav .list{ color:#fff; background:#000;}
+.nav .li:nth-child(1){ width:15%;}
+.nav .li:nth-child(2){ width:20%;}
+.nav .li:nth-child(3){ width:20%;}
+.nav .li:nth-child(4){ width:20%;}
+.nav .li:nth-child(5){ width:25%;}
+
+
+/* 列表 */
+.ul,.ul_li{ width:100%; height:auto; clear:both; overflow:hidden; box-sizing:border-box; padding:20rpx;}
+.ul_li{ background:#fff; padding:15rpx; margin-bottom:15rpx; position:relative;}
+.li_left{ float:left; width:150rpx; margin-right:10rpx;}
+.li_left image{ display:block; width:100%; height:240rpx;}
+.li_right{ float:left; width:510rpx;}
+.li_right view{ font-size:26rpx; line-height:40rpx; color:#000;}
+.li_right .status{ padding:18rpx 0 12rpx; color:#d70715;}
+.wxPay{ font-size:26rpx;line-height:54rpx;color:#fff;background:#000;padding:0 20rpx; position:absolute;
+right:20rpx;top:192rpx;}
+
+
+
+/*到店退提示信息  */
+.wxReturn{
+  font-size:26rpx;line-height:54rpx;color:#d70715;background:#fff;padding:0 10rpx;
+  border: 1px solid #d70715;
+  position:absolute;
+  right:190rpx;top:192rpx;
+}
+.wxUp{
+  font-size:26rpx;line-height:54rpx;color:#000;background:#fff;padding:0 10rpx;
+  border: 1px solid #000;
+   position:absolute;
+right:20rpx;top:192rpx;
+}
+.returnshop{
+  width: 40rpx;
+  height: 40rpx;
+   position:absolute;
+  right:325rpx;top:200rpx;
+}
+.wxReset{
+  font-size:26rpx;line-height:54rpx;color:#000;background:#fff;padding:0 20rpx;
+  border: 1px solid #000;
+   position:absolute;
+right:20rpx;top:192rpx;
+}
+
+
+.tip{
+  padding: 0  60rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.tip-main{
+  display: block;
+ background: #fff;
+ padding: 0  0   30rpx;
+ position: absolute;
+ left:50%;
+ top: 50%;
+width: 80%;
+height: 490rpx;
+margin-left: -47%;
+margin-top: -245rpx;
+}
+.tip-title{
+    background: #000;
+    color: #fff;
+    font-size: 32rpx;
+    display: block;
+    height: 96rpx;
+    line-height: 96rpx;
+    text-align: center;
+}
+.tip-content{
+  padding:30rpx  26rpx 0;
+  background: #fff;
+}
+.block{
+  display: block;
+  font-size: 28rpx;
+  color: #000;
+  line-height: 53rpx;
+}
+.other{
+  color: #ccc;
+  font-size: 24rpx;
+}
+.tip-btn{
+    width: 490rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    font-size: 30rpx;
+    margin: 34rpx auto 0;
+}
+
+
+/* 上传快递单号 - 弹出框 */
+.tishis{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:9999;}
+.opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.6;}
+.tanchu{ width:672rpx; height:512rpx; position:absolute; left:0; top:0; right:0; bottom:0; margin:auto; background:#fff;}
+.h2{width:100%; height:112rpx; font-size:30rpx; line-height:112rpx; background:#000; color:#fff; text-align:center;}
+.tishis .title{ width:100%; height:auto; margin-top: 55rpx;}
+.tishis .title .h1{ width:30%; font-size:30rpx; float:left; text-align:center; display:block; line-height:72rpx; color:#000;}
+.tishis .title input{ float:left; width:60%; height:72rpx; border:4rpx solid #bdc3c7; margin:0 auto; font-size:30rpx; padding-left:15rpx;box-sizing:border-box;}
+.p{ font-size:24rpx; width:100%; box-sizing:border-box; padding-left:30%; display:block; line-height:40rpx;color:red; float: left;}
+.bott{ width:100%; height:110rpx; clear:both; overflow:hidden; position:absolute; left:0;bottom:0;}
+.bot{ float:left; width:50%; height:80rpx;}
+.btn{  font-size:30rpx; line-height:80rpx; width:284rpx; height:80rpx; text-align:center; background:#000;color:#fff;}
+.true{ float:right; margin-right:12rpx;}
+.false{ float:left; margin-left:12rpx;}
+
+
+/* 没有待处理订单 */
+.dingdanIsHidden{ width:100%; height: auto; clear:both; overflow:hidden;}
+.dingdanIsHidden .img{ width:100%; height: auto; clear:both; overflow:hidden; padding:150rpx 0;}
+.dingdanIsHidden image{ display:block; width:30%; margin:0 auto;}
+.dingdanIsHidden .tishi{ font-size:30rpx;width:100%;padding-top:20rpx; line-height:50rpx;color:#636363;text-align:center;}
+.goShopping{ width:100%; height:auto;clear:both; overflow:hidden; box-sizing:border-box; padding:0 20rpx;}
+.goShopping .goToShopping{ width:100%; height:80rpx; background:#000; font-size:30rpx;line-height:80rpx;color:#fff;
+text-align:center;}
+
+
+/* 加载更多 */
+.load_more{ width:100%; height:60rpx; position:fixed; bottom:0; left:0; background-color:#fff; z-index:99; text-align: center;}
+.load_more .more_text{ display:inline-block; font-size:30rpx; line-height:60rpx;}
+.load_more .load_img{ width:60rpx; height:60rpx; float:left;}
+.load_more .load_img image{ width:22rpx; height:22rpx;}
+.load_more .loading{ float:left;}
+
+
+/* 凭证 */
+.voucher {
+  box-sizing: border-box;
+   position: absolute;
+   right: 6rpx;
+   top: 170rpx;
+   width: 120rpx;
+   height: 66rpx;
+   padding-top: 12rpx;
+   text-align: center;
+   font-size: 34rpx;
+   background: #000;
+}
+.voucherD{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.mainV{
+  width: 60%;
+   margin: 0 auto;
+  height: 60%;
+  margin-top: 40%;
+  background: #fff;
+  position: relative;
+}
+.mainV  .closeV{
+ position: absolute;
+ right: 0rpx;
+ top: 0rpx;
+ padding: 15rpx;
+  font-size: 24rpx;
+  z-index: 2;
+}
+.titleV{
+  text-align: center;
+  font-weight: bold;
+  font-size: 34rpx;
+  border-bottom: 1px solid #000;
+  padding-bottom:10rpx;
+  padding-top: 50rpx;
+}
+.barcode,.qrcode{
+  text-align: center;
+  font-size: 24rpx;
+  height: 250rpx;
+
+}

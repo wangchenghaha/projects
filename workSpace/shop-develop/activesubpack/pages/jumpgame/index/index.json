@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "rank-modal": "../components/rank/index",
+        "rule-modal": "../components/rule/index",
+        "mycoupon-modal": "../components/mycoupon/index",
+        "sign-modal": "../components/sign/index",
+        "tip-modal": "../components/tip/index",
+        "gameResult-modal": "../components/gameResult/index",
+        "prize-modal": "../components/prize/index",
+        "endtip-modal": "../components/endtip/index",
+        "address-modal": "../components/address/index",
+        "gametip-modal": "../components/gametip/index"
+    },
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#ffffff"
+}

@@ -1,0 +1,13 @@
+.banner{
+  position: relative;
+}
+.banner .plugin{
+  position: absolute;
+  top: 580rpx;
+  left: 0;
+  width: 100%;
+}
+.banner .banner-img{
+  display: block;
+  width: 100%;
+}

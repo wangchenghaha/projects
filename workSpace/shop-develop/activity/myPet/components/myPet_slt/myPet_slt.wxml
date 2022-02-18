@@ -1,0 +1,104 @@
+<view class="container">
+    <image class="petBg" src="{{splashImg}}"/>
+
+    <!-- 显示用户头像和爱心值 -->
+    <view class="userInfo ~flex-start">
+        <image class="userAvatar" src="{{userAvatar}}"  mode="widthFix"></image>
+        <image class="loverIcon" src="{{loverIcon}}" mode="widthFix"></image>
+        <view class="loverNum">{{loverNum}}</view>
+    </view>
+    
+    <!-- 显示任务列表 -->
+    <view class="petTask">
+        <block wx:for="{{taskOptions}}" wx:key="opt">
+            <image class="img" src="{{item.pic}}" mode="widthFix" data-type="{{item.name}}" bindtap="onClick"/>
+        </block>
+    </view>
+
+    <!-- 显示操作列表 -->
+    <view class="petOpt ~flex-bet">
+        <view class="~flex-center">
+            <block wx:for="{{petOptions}}" wx:key="opt">
+                <image class="img" src="{{item.pic}}" mode="widthFix" data-type="{{item.name}}" bindtap="onClick"/>
+            </block>
+        </view>
+        <view class="feed">
+            <image class="feedImg" src="{{feedPic}}" mode="widthFix" data-type="feed" bindtap="onClick"/>
+            <view class="feedNum">{{feedNum}}g</view>
+        </view>
+    </view>
+
+   <view class="petArea">
+        <block wx:for="{{petCanvas}}" key="canvas">
+            <canvas id="canvas" type="2d" class="littlePet" wx:if="{{isCanvas}}"></canvas>
+        </block>
+    </view>
+
+    <!-- 邀请好友弹窗 -->
+    <view class="friendHelp"  wx:if="{{showHelp}}">
+        <view class="helpContent">
+            <image class="helpTitle" src="{{helpTitle}}" mode="widthFix"/>
+            <view class="title ~flex-bet">
+                <view class="helps">好友助力</view>
+                <image class="close" src="{{closeIcon}}" mode="widthFix" data-type="close" bindtap="onClick"/>
+            </view>
+            <view class="showFriend">
+                <view class="friendItem" wx:for="{{showFriends}}" wx:key="show">
+                    <image class="friendAvatar" src="{{item.icon}}" mode="widthFix"/>
+                    <view class="friendNick">{{item.nick}}</view>
+                </view>
+                
+            </view>
+            <view class="notice" style="margin-top: 40rpx;">每<text style="color:#F6614C;">1</text>位好友助力成功获得50g饲料，</view>
+            <view class="notice">每满<text style="color:#F6614C;">5</text>人可获得神秘礼物。</view>
+            <view class="helpBtn" data-type="invite" bindtap="onClick">喊好友来助力</view>
+        </view>
+    </view>
+
+    <!-- 任务弹窗 -->
+    <view class="task" wx:if="{{showTask}}">
+        <view class="taskContent">
+            <image class="taskTitle" src="{{taskTitle}}" mode="widthFix"/>
+            <view class="title ~flex-bet">
+                <view class="helps">领饲料</view>
+                <image class="close" src="{{closeIcon}}" mode="widthFix" data-type="close" bindtap="onClick"/>
+            </view>
+            <view class="showTask">
+                <view class="taskItem ~flex-center"  wx:for="{{tasks}}" wx:key="task">
+                    <view class="mark"></view>
+                    <image class="feedBag" src="{{item.feedIcon}}" mode="widthFix" />
+                    <view class="taskShow">
+                        <view class="taskCon">{{item.taskTitle}}</view>
+                        <view class="taskRate">进度<text style="color:#F6614C; margin-left: 10rpx;">{{item.number}}/{{item.total}}</text></view>
+                    </view> 
+                    <view class="taskBtn" data-type="{{item.task}}" bindtap="onClick">{{item.buttom}}</view> 
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <!-- 任务弹窗 -->
+    <view class="exchange" wx:if="{{showExchange}}">
+        <view class="exchangeContent">
+            <image class="exchangeTitle" src="{{exchangeTitle}}" mode="widthFix"/>
+            <view class="title ~flex-bet">
+                <view class="helps">我的爱心值: {{loverNum}}</view>
+                <image class="close" src="{{closeIcon}}" mode="widthFix" data-type="close" bindtap="onClick"/>
+            </view>
+            <view class="navi ~flex-bet">
+                <block wx:for="{{navis}}" wx:key="navi">
+                    <view class="{{item.selected? 'sel':'nor'}}" data-type="navi" data-status="{{item.selected}}" bindtap="onClick" >{{item.name}}</view>    
+                </block>
+            </view>
+            <view class="showExchange">
+                <block wx:for="{{coupons}}" wx:key="exchange">
+                    <image class="coupon" src="{{item.couponPic}}" mode="widthFix" />
+                </block>
+            </view>
+        </view>
+    </view>
+
+    <notice-pop wx:if="{{isShowNotice}}" ruleList="{{ruleList}}" activityTitle="{{activityTitle}}"  buttonColor="{{buttonColor}}" data-type="close" bindcloseThisPop="onClick"></notice-pop>
+</view>
+

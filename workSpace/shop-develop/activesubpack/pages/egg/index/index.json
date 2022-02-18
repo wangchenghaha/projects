@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "com-dialog": "../components/dialog/dialog",
+    "com-gif": "../components/gif/gif",
+    "com-share": "../components/share/share"
+  },
+  "navigationBarBackgroundColor": "#ffffff"
+}

@@ -1,0 +1,244 @@
+.pages {
+    position: relative;
+    padding-top: 250rpx;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+button::after {
+    border-radius: 0;
+    border: none;
+}
+
+.pages .bg-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-wrapper .bg {
+    width: 750rpx;
+}
+
+.card-wrapper {
+    margin: 0 auto;
+    position: relative;
+    width: 632rpx;
+    height: 885rpx;
+    overflow: hidden;
+}
+
+.card-wrapper .card-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 632rpx;
+    height: 885rpx;
+}
+
+.card-wrapper .card-info .card-amount {
+    font-size: 80rpx;
+    font-family: 'Regular'
+}
+
+.card-wrapper .card-info .card-tip {
+    margin-top: 25rpx;
+    font-size: 36rpx;
+}
+
+.card-wrapper .card-info .card-date {
+    margin-top: 60rpx;
+    font-size: 24rpx;
+}
+
+.card-wrapper .card-info .coupon {
+    position: absolute;
+    top: 50rpx;
+    right: 90rpx;
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.card-wrapper .card-info .card-amount text {
+    font-size: 36rpx;
+    vertical-align: middle;
+}
+.card-join {
+    padding-top: 125rpx;
+    box-sizing: border-box;
+}
+.avter-wrapper {
+    padding: 0 78rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 0;
+    box-sizing: border-box;
+}
+.avter-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    border: 1px dashed #ef6772;
+    overflow: hidden;
+}
+
+.avter-item.active {
+    border: 1px solid #ef6772;
+}
+
+.avter-item .unkonw {
+    width: 26rpx;
+    height: 40rpx;
+}
+.avter-box {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.avter-item .avter {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.join-amount {
+    margin-top: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-amount .amount-line {
+    height: 1px;
+    width: 190rpx;
+    background: #ef6772;
+    opacity: 0.4;
+}
+
+.join-amount .anount {
+    flex: 1;
+    text-align: center;
+    font-size: 34rpx;
+    color: #000;
+    letter-spacing: 2px;
+}
+.join-amount .anount text {
+    color: #ef6772;
+    margin: 0 8rpx;
+}
+.join-btn-wrapper {
+    margin-top: 60rpx;
+}
+.join-btn {
+    margin:  0 auto;
+    margin-top: 28rpx;
+    width: 400rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background: #fff;
+    font-size: 34rpx;
+    color:#ef6772;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.join-btn.active {
+    margin-top: 0;
+    background: #ef6772;
+    color:#fff;
+}
+
+.join-tip {
+    margin-top: 45rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #ef6772;
+}
+
+.join-tip .joinimg {
+    margin-right: 20rpx;
+    width: 26rpx;
+    height: 26rpx;
+    vertical-align: bottom;
+}
+
+.poster-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.poster-box {
+    margin: 0 auto;
+    width: 566rpx;
+    height: 943rpx;
+    border-radius: 40rpx;
+}
+
+.save-btn-wrapper .save-btn {
+    margin:  0 auto;
+    margin-top: 28rpx;
+    width: 400rpx;
+    height: 90rpx;
+    border-radius: 40rpx;
+    /*background: #ef6772;*/
+    font-size: 34rpx;
+    color:#fff;
+    line-height: 90rpx;
+    text-align: center;
+}
+
+.card-wrapper .card-info {
+    display: flex;
+    position: relative;
+    top: 30rpx;
+    left: 0;
+    width: 632rpx;
+    height: 230rpx;
+    /* border-bottom: 1rpx dashed #ec6a74; */
+    /* border-top-left-radius: 16rpx;
+    border-top-right-radius: 16rpx; */
+    z-index: 10;
+}
+.card-item {
+    padding-top: 20rpx;
+    flex: 1;
+    border-right: 1px solid #af9c9e;
+    box-sizing: border-box;
+}
+.card-item view{
+    margin-bottom: 30rpx;
+    text-align: center;
+    font-size: 14rpx;
+    color: #fff;
+}
+.card-item view:first-child {
+    margin-bottom: 40rpx;
+}
+.card-item view.price {
+    font-size: 48rpx;
+    /* color: #ef6772; */
+}
+.card-item view.tip {
+    font-size: 20rpx;
+    margin-bottom: 0;
+}
+.card-item:last-child {
+    border: none;
+}

@@ -1,0 +1,25 @@
+@import "../mycss.wxss";
+.frame{width: 100%;height: auto;display: flex;flex-direction: column; clear:both; overflow:hidden; }
+
+.a_a{overflow: hidden;padding: 20rpx;font-size: 31rpx;}
+.address_frame{width: 100%;background-color: #F4F4F4;color: black;padding-top: 17rpx;padding-bottom: 17rpx;
+    display: flex;flex-direction: row;align-items: flex-end;}
+.a_title{font-size: 31rpx;margin-bottom: 17rpx;}
+.a_content{font-size: 26rpx;padding-left: 20rpx;margin-bottom: 17rpx;margin-top: 17rpx;}
+.a_copy{width: 77rpx;margin-right: 7rpx;margin-bottom: 17rpx;}
+.shop_copy{width: 35rpx;height: 35rpx;}
+
+
+.b_b{margin-top: 100rpx;padding: 20rpx;display: flex;flex-direction: column;}
+.b_title{font-size: 31rpx;margin-bottom: 20rpx;}
+.b_combile{width: 100%;height: auto;}
+.b_border{ display: flex;flex-direction: row;justify-content: space-between;align-items: center;
+    border: 2rpx solid #D9DEE0;margin-bottom: 27rpx;font-size: 26rpx;padding-left: 17rpx;height: 70rpx;}
+
+.b_input2{border: 2rpx solid #D9DEE0;margin-bottom: 27rpx;font-size: 26rpx;padding: 7rpx 7rpx 7rpx 17rpx;height: 70rpx;}
+
+.b_right{width: 177rpx;display: flex;flex-direction: row; align-items: center;justify-content: flex-end;position: relative;}
+.b_picker{z-index: 777;width: 77rpx;}
+.fake_content{color: transparent;}
+.arrow{ position:absolute; right:0;top:0; z-index:1;margin-right: 17rpx;}
+.arrow image{width: 30rpx;height: 30rpx;}

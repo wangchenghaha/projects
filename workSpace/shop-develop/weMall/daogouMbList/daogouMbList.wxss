@@ -1,0 +1,226 @@
+
+.wrap, .head, .content, .ul, title {
+  width: 100%;
+  height: auto;
+  clear: both;
+}
+
+.wrap {
+  background: #fff;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+.banner{
+  margin-bottom: -20rpx;
+}
+.banner image{
+  display: block;
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 10rpx 0;
+}
+
+.head_li {
+  flex: 1;
+  height: 60rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color: #7c7c7c;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head_li3 {
+  text-align: left;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+.head_li .icon {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.head_li .icouUp {
+  background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/saa_mb_top.png) no-repeat;
+  background-size: 24rpx auto;
+}
+
+.head_li .icouDown {
+  background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/saa_mb_down.png) no-repeat;
+  background-size: 24rpx auto;
+}
+
+.head_list {
+  color: #000;
+}
+
+.title {
+  padding: 40rpx 0;
+  height: 30rpx;
+}
+
+.title .t_left {
+  float: left;
+  width: 6rpx;
+  height: 30rpx;
+  background: #000;
+}
+
+.title .h2 {
+  float: left;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #000;
+  padding-left: 20rpx;
+}
+
+.li {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-bottom: 22rpx;
+  margin-bottom: 22rpx;
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+.liLeft {
+  position: relative;
+  padding-top: 20rpx;
+  width: 230rpx;
+  margin-right: 15rpx;
+}
+.liRight{
+  flex: 1;
+}
+.liLeft image {
+  display: block;
+  width: 100%;
+  height: 220rpx;
+}
+
+.liRight .googsname {
+  font-size: 28rpx;
+  line-height: 34rpx;
+  color: #000;
+  display: inline-block
+}
+
+.liRight .text {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #7c7c7c;
+}
+
+.toLook {
+  font-size: 24rpx;
+  display: inline-block;
+  padding: 0 15rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  background: #e73f3e;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  bottom: 10rpx;
+  border-radius: 28rpx;
+}
+
+.remove {
+  right: 20rpx;
+  padding: 0 30rpx;
+  background: #000;
+}
+
+.tishi {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.task{
+  position: absolute;
+  top: 0;
+  left: -20rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #fff;
+  z-index: 99;
+}
+.new-task{
+  background: #0da8c9;
+}
+.no-task{
+  background: #ed4835;
+}
+.tasked{
+  background: #27aa29;
+}
+.wx-icon{
+  margin-left: 5rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.share-icon{
+  margin: 0 5rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+.share-icon image{
+  display: block;
+  width: 100%;
+}
+.share-list{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.share-detail{
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10rpx;
+  margin-left: 20rpx;
+  background: #c2c2c2;
+  color: #fff;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  border-top-left-radius: 18rpx;
+  border-bottom-left-radius: 18rpx;
+}
+.share-detail:after{
+  display: block;
+  content: '';
+  position: absolute;
+  left: -15rpx;
+  top: 10rpx;
+  width: 0;
+  height: 0;
+  border-top: 12rpx solid transparent;
+  border-right: 18rpx solid #c2c2c2;
+  border-bottom: 12rpx solid transparent;
+}
+.share-detail image{
+  display: block;
+  width: 100%;
+}
+.share-detail .wx-icon{
+  margin: 0 5rpx;
+}

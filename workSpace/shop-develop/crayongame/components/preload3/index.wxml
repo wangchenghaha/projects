@@ -1,0 +1,17 @@
+<view class="wrapper" style="opacity: {{isEnd?0:1}}">
+    <view class="image" wx:for='{{imageList}}' wx:key="item">
+        <image class="item" src='{{item}}' bindload="onload"></image>
+    </view>
+    <view class="content">
+        <view class="title">ONLY</view>
+        <view class="desc">
+            <view class="tit">穿哆啦A梦</view>
+            <view class="tit">抽超Q盲盒</view>
+        </view>
+        <view class="percent">
+            <view class="inner" style="width: {{percent}}%"></view>
+        </view>
+
+        <view class="animate">loading...</view>
+    </view>
+</view>

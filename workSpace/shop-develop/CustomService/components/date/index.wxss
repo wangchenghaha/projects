@@ -1,0 +1,120 @@
+.modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 10;
+}
+.modal .modal-body {
+    padding: 32rpx 60rpx;
+    box-sizing: border-box;
+    background: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%
+}
+.modal .modal-body .modal-header {
+    display: flex;
+    align-items: center;
+}
+.modal .modal-body .modal-header .title {
+    font-size: 26rpx;
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.modal .modal-body .modal-header .title .backicon {
+    font-size: 0;
+    display: inline-block;
+    padding-right: 24rpx;
+    position: relative;
+}
+.modal .modal-body .modal-header .title .backicon::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 60rpx;
+    height: 100%;
+    z-index: 10
+}
+
+.modal .modal-body .modal-header .title .backicon .image {
+    width: 20rpx;
+    height: 35rpx;
+}
+.modal .modal-body .modal-header .close_btn {
+    padding: 12rpx;
+    width: 48rpx;
+    height: 48rpx;
+    box-sizing: border-box;
+}
+.modal .modal-body .modal-header .close_btn .image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: -24rpx;
+    vertical-align: top;
+}
+.modal .modal-body .modal-content {
+    font-size: 0;
+    padding: 24rpx 0;
+    position: relative;
+    overflow: hidden;
+}
+.modal .modal-body .modal-content .timebox {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    padding: 24rpx 0;
+    box-sizing: border-box;
+    transition: all 0.1s ease-in;
+}
+.modal .modal-body .modal-content .date-item{
+    border-right: 1rpx solid #D0D0D0;
+    border-bottom: 1rpx solid #D0D0D0;
+    font-size: 24rpx;
+    color: #404040;
+    width: 156rpx;
+    height: 116rpx;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    line-height: 116rpx;
+}
+.modal .modal-body .modal-content .date-item.active {
+    background: rgba(0,0,0,0.5);
+    color: #ffffff;
+}
+.modal .modal-body .modal-content .date-item.disbaled {
+    background: #D0D0D0;
+    color: #939393;
+}
+.modal .modal-body .modal-content .date-item.bordertop {
+    border-top: 1rpx solid #D0D0D0
+}
+.modal .modal-body .modal-content .date-item.borderleft {
+    border-left: 1rpx solid #D0D0D0
+}
+
+.btnbox .btn {
+    width: 426rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    text-align: center;
+    padding: 0;
+    border-radius: 6rpx;
+    background: #3E3E3E;
+    color: #ffffff;
+    font-size: 32rpx;
+}
+.hoverclass {
+    opacity: 0.7;
+}

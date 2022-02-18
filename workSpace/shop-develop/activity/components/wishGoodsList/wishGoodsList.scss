@@ -1,0 +1,72 @@
+.goods{
+  //padding: 30rpx 20rpx;
+  background: #fff;
+  box-sizing: border-box;
+  image{
+    display: block;
+    width: 100%;
+  }
+  &-item{
+    padding: 30rpx 20rpx;
+    position: relative;
+    border-bottom: dashed 1rpx #626262;
+    &:last-child{
+      border: none;
+      .triangle{
+        display: none;
+      }
+    }
+    .operation{
+      .btn{
+        margin: 20rpx;
+        width: 40rpx;
+      }
+    }
+    .triangle{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1rpx;
+      &-item{
+        position: absolute;
+        bottom: -20rpx;
+        display: block;
+        &.left{
+          left: 0;
+          border-style: solid;
+          border-width: 20rpx 0 20rpx 30rpx;
+          border-color: transparent transparent transparent #E4E4E4;
+        }
+        &.right{
+          width: 0;
+          height: 0;
+          right: 0;
+          border-style: solid;
+          border-width: 20rpx 30rpx 20rpx 0;
+          border-color: transparent #E4E4E4 transparent transparent;
+        }
+      }
+    }
+    .icon{
+      margin-right: 20rpx;
+      width: 40rpx;
+      height: 40rpx;
+      border: solid 2rpx #ccc;
+    }
+    .goods-img{
+      margin: 0 10rpx;
+      width: 200rpx;
+    }
+    .goods-desc{
+      max-width: 320rpx;
+      font-size: 24rpx;
+      .goods-name{
+        padding-bottom: 20rpx;
+        text{
+          padding-right: 20rpx;
+        }
+      }
+    }
+  }
+}

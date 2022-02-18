@@ -1,0 +1,9 @@
+<web-view src='{{jump_url}}' wx:if='{{webView}}'></web-view>
+<!-- <navigator
+  target='miniProgram'
+  app-id='wxeb490c6f9b154ef9'
+  version='release'
+  extra-data="{{extraData}}"
+  bindfail="fail"
+  wx:if="{{true}}"
+>点击领卡</navigator>  -->

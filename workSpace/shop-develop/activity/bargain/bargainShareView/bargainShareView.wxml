@@ -1,0 +1,152 @@
+<view class="bg">
+    <view class="topView">
+        <view class="topView-hdgzView">
+            <view class="left"></view>
+            <view class="right" bindtap="showActivity">活动规则</view>
+        </view>
+        <view class="topView-centerView" wx:if="{{showGoods}}">
+            <image class="imgView" src="{{goodsDetail.picPath}}" mode="aspectFill"/>
+            <view class="rightView">
+                <view class="title">{{goodsDetail.goodsName}}</view>
+                <view class="subTitle">最低砍至:<text class="subTitle-text">{{goodsDetail.floorPrice}}元</text></view>
+            </view>
+
+            <view class="kjz"><view class="kjz-title">{{bargainInfo.isOver ? '砍价关闭': bargainInfo.isFinish ? '砍价成功':'砍价中…'}}</view></view>
+        </view>
+        <view class="topView-sliderBgView"  wx:if="{{showGoods}}">
+            <view class="sliderView"  style="width: {{widthPercent}}"></view>
+        </view>
+        <view class="topView-titleView"  wx:if="{{showGoods}}">
+            <view class="leftTitle">已砍 {{alreadyBargainPrice}}元</view>
+            <view class="rightTitle">还剩{{residuePrice}}元</view>
+        </view>
+         <view class="topView-titleView"  wx:if="{{showCoupon}}">
+            <view class="couponShow">已助力    {{alreadyBargainNum}} 次 <text style="margin-left:50rpx; color: #FFB900;">还需助力   {{residueNum}} 次</text></view>
+        </view>
+        <image class="topView-coupouImage" src="{{couponImage}}"  mode="widthFix" wx:if="{{showCoupon}}"/>        
+        <view class="zhanwei"></view>
+        <view class="topView-bottomView flex-center">
+            <view class="title">距离结束还剩:</view>
+            <view class="sfmView">{{timeObj.hou}}</view>
+            <view class="maohao">:</view>
+            <view class="sfmView">{{timeObj.min}}</view>
+            <view class="maohao">:</view>
+            <view class="sfmView">{{timeObj.sec}}</view>
+        </view>
+    </view>
+
+    <view class="toPay" bindtap="toPay" wx:if="{{bargainInfo.isOver ||  bargainInfo.isFinish}}">{{bargainInfo.isOver ? '已关闭': '去支付'}}</view>
+    <view class="shareView" wx:else>
+        <view class="subView">
+            <view class="subView-leftView">
+                <image class="img" src="{{yaoqingImg}}" />
+                <view class="rightView">
+                    <view class="title">邀请好友,</view>
+                    <view class="title">帮忙砍一刀</view>
+                </view>
+            </view>
+            <button open-type="share" class="share"></button>
+        </view>
+        <!-- <view class="subView subView-rightView" bindtap="shareImage"> <image src="{{wxFriendsImg}}" mode="widthFix" /><text style="margin-left: 6rpx;">分享到朋友圈</text></view> -->
+        <view class="subView subView-rightView" style="background: #EC6C2D;"  bindtap="shareImage"> 面对面邀请</view>
+    </view>
+    
+    <view class="shareSubTitle">邀请的好友越多,砍的就越多</view>
+    <view class="fuyongView">
+        <view class="fuyongView-subView flex-center">
+            <image class="img" src="{{fuyongLeftImg}}"  mode="widthFix"/>
+            <view class="centerTitle">好友砍价榜</view>
+            <image class="img" src="{{fuyongRightImg}}"  mode="widthFix"/>
+        </view>
+    </view>
+    <view class="kjView">
+        <view class="kjView-subView" wx:for="{{bargainRecodeList}}" wx:key="subViews">
+            <image class="icon" src="{{item.facePic}}" />
+            <view class="title">{{item.miniNickname}}</view>
+            <view class="subTitle" wx:if="{{showGoods}}">砍掉 {{item.price}}元</view>
+            <view class="subTitle" wx:if="{{showCoupon}}">已助力</view>
+        </view>
+    </view>
+    <view class="fuyongView" wx:if="{{bargainSuccessList.length > 0}}" style="margin-top: 30rpx;">
+        <view class="fuyongView-subView">
+            <image class="img" src="{{fuyongLeftImg}}" />
+            <view class="centerTitle">砍成晒单</view>
+            <image class="img" src="{{fuyongRightImg}}" />
+        </view>
+    </view>
+    <view class="kcView" wx:for="{{bargainSuccessList}}" wx:key="kcView">
+        <view class="topViews">
+            <image class="topViews-icon"  src="{{item.userPic}}"/>
+            <view class="topViews-title">{{item.userNikeName}} {{item.contactTel}}</view>
+            <view class="topViews-subTitle">{{item.createdTime}}</view>
+        </view>
+        <view class="bottomViews"  wx:if="{{showGoods}}">大小合适，面料舒适，物美价廉， 卖家服务好，能给你最好的穿搭建议，粉一波。</view>
+        <view class="bottomViews"  wx:if="{{showCoupon}}">手里有券就是好！想买啥买啥，哈哈哈哈哈。</view>
+    </view>
+    <view class="zhanwei" style="height: 20rpx;"></view>
+    
+</view>
+<view class="goBack flex-center" bindtap="goback">
+    <image src="{{goHomeImg}}"  mode="widthFix"/>
+</view>
+<notice-pop wx:if="{{isShowNotice}}" ruleList="{{ruleList}}" activityTitle="{{activityTitle}}" bindcloseThisPop="closeThisPop"></notice-pop>
+
+<!-- 砍价成功 -->
+<block wx:if="{{canShowSuccess}}">
+    <view class="bouncedBg"></view>
+    <view class="bouncedView popup">
+        <view class="title">恭喜你成功助力</view>
+        <view class="subTitle" wx:if="{{showGoods}}">{{dragainPrice}}元</view>
+        <view class="subTitle" wx:if="{{showCoupon}}">一次</view>
+        <view class="imgView">
+            <image class="imgView-img" src="{{bouncedSuccessImg}}" />
+        </view>
+        <view class="submitView" bindtap="bouncedTap">我知道了</view>
+        <view class="zhanwei" style="height: 30rpx;"></view>
+    </view>
+</block>
+<!-- 图片保存 -->
+<block wx:if="{{canShowPic && !isFol}}">
+    <view class="bouncedBg" bindtap="closeFaceToFace"></view>
+    <view class="bouncedImgView">
+        <view class="imgView">
+            <image src="{{bouncedPicImg}}" wx:if="{{showGoods}}" mode="widthFix" style="width:100%;" />
+            <image src="{{couponPicImg}}" wx:if="{{showCoupon}}" mode="widthFix" style="width:100%;" />
+            <view class="goodsInfo"  wx:if="{{showGoods}}">
+                <image class="goodsImg" src="{{goodsDetail.picPath}}" mode="widthFix" />
+                <view class="goodsBaseInfo">
+                    <view class="goodsName">{{goodsDetail.goodsName}}</view>
+                    <view class="goodsfloorprice">可砍至：{{goodsDetail.floorPrice}}元</view>
+                    <view class="goodsprice">吊牌价：{{goodsDetail.originalPrice}}元</view>
+                    <!-- 二维码图 -->
+                    <image class="erweima" src="{{qrImg}}" style="width: {{qrViewWidthRPX}}rpx;height: {{qrViewHeightRPX}}rpx;" mode="widthFix" />
+                </view>
+            </view>
+            <view class="couponInfo" wx:if="{{showCoupon}}">
+                <image class="couponImage" src="{{couponImage}}"  mode="widthFix"/>
+                <!-- 二维码图 -->
+                <image class="erweima" src="{{qrImg}}" style="width: {{qrViewWidthRPX}}rpx;height: {{qrViewHeightRPX}}rpx;" mode="widthFix" />
+            </view>
+            <!-- <view class="title">我发现一件<text style="font-size: 25rpx;">宝贝</text> 快来帮我<text style="font-size: 25rpx;">砍价吧!</text></view> -->
+            <view class="bouncedImgView-subMitView" wx:if="{{showGoods}}" bindtap="saveImageTap">保存图片</view>
+             <view class="bouncedImgView-couponSubMitView" wx:if="{{showCoupon}}" bindtap="saveImageTap">保存图片</view>
+        </view>
+    </view>
+    <canvas canvas-id="dargainCanvas" style=" margin-top: 9999rpx;width:589px;height:700px;opacity: 1;background: red;">
+    </canvas>
+</block>
+
+<!-- 图片保存 -->
+<block wx:if="{{canShowPic && isFol}}">
+    <view class="bouncedBg" bindtap="closeFaceToFace"></view>
+    <view class="bouncedImgView">
+        <view class="folImgView">
+            <image src="{{bouncedPicImg}}" mode="widthFix" style="width:100%;" />
+            <!-- <view class="title">我发现一件<text style="font-size: 25rpx;">宝贝</text> 快来帮我<text style="font-size: 25rpx;">砍价吧!</text></view> -->
+            <!-- 二维码图 -->
+            <image class="rqcode" src="{{qrImg}}" style="width: {{qrViewWidthRPX}}rpx;height: {{qrViewHeightRPX}}rpx;" mode="widthFix" />
+
+            <view class="bouncedImgView-saveImage" bindtap="saveImageTap">保存图片</view>
+        </view>
+    </view>
+</block>

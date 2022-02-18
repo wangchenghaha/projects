@@ -1,0 +1,31 @@
+.bg{
+    width: 100%;
+    height: 100%;
+
+    margin-top: 20rpx;
+    .list-row{
+        width: 100%;
+        height: auto;
+
+        padding-bottom: 20rpx;
+        display: flex;
+        flex-direction: row;
+        .listView{
+            margin-left: 20rpx;
+            width: 345rpx;
+            height: auto;
+            background-color: white;
+
+            box-shadow: 3rpx 4rpx 6rpx 4rpx rgb(214, 212, 214);
+            .imageView{
+                width: 345rpx;
+                height: auto;
+            }
+            .moneyView{
+                width: 100%;
+                height: 45rpx;
+                
+            }
+        }
+    }
+}

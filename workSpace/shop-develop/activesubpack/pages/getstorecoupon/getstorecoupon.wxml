@@ -1,0 +1,31 @@
+<view class="page-contaniner" wx:if="{{code || code_img}}">
+    <view class="coupon-info-wrap">
+        <view class="coupon-info-top">
+            <view class="brandname coupon-view">{{brandName}}</view>
+            <view class="coupon-title coupon-view">{{coupon_info.title}}</view>
+            <view class="coupon-time coupon-view">有效期：{{coupon_info.begin_time}} - {{coupon_info.end_time}}</view>
+        </view>
+        <view class="coupon-info-bottom">
+            <image wx:if="{{code_img}}" class="code_img" src="{{code_img}}" mode="widthFix" />
+            <view class="code" wx:if="{{code}}">{{code}}</view>
+            <view class="codetip coupon-view">请向导购出示此条形码</view>
+        </view>
+    </view>
+     <button wx:if="{{type == 2}}" class="gohome" bindtap="gohome">前往商城</button>
+    <!-- <view class="coupon-info">
+        <view class="coupon-name">{{coupon_info.title}}</view>
+        <view class="conpon-des">{{coupon_info.sub_title}}</view>
+        <view class="coupon-text">有效期：{{coupon_info.begin_time}} - {{coupon_info.end_time}}</view>
+    </view>
+    <view class="coupon-rule">
+        <view class="rule-title">使用须知</view>
+        <view class="rule-cont">{{coupon_info.describe}}</view>
+    </view>
+    <view class="qrcode">
+        <image wx:if="{{code_img}}" class="code_img" src="{{code_img}}" mode="widthFix" />
+          <view class="code" >
+              {{code}}
+          </view>
+    </view>
+    <button wx:if="{{type == 2}}" class="gohome" bindtap="gohome">前往商城</button> -->
+</view>

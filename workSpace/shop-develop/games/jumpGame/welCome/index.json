@@ -1,0 +1,10 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "welCome_jj" : "../components/welCome_jj/welCome_jj",
+    "welCome_fol" : "../components/welCome_fol/welCome_fol",
+    "welCome_only" : "../components/welCome_only/welCome_only",
+    "welCome_vm" : "../components/welCome_vm/welCome_vm",
+    "welCome_slt" : "../components/welCome_slt/welCome_slt"
+  }
+}

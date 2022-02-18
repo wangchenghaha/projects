@@ -1,0 +1,118 @@
+.content .tip {
+  padding: 100rpx 0;
+  font-size: 30rpx;
+}
+.content .share {
+  position: relative;
+  padding: 30rpx 20rpx 20rpx 20rpx;
+  font-size: 28rpx;
+  border-bottom: solid 1rpx #ccc;
+}
+.content .share .task {
+  position: absolute;
+  left: 0rpx;
+  top: 5rpx;
+  display: inline-block;
+  padding: 3rpx 20rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: #ccc;
+  border-radius: 20rpx;
+}
+.content .share .task-new {
+  background: #0da8c9;
+}
+.content .share .task-half {
+  background: #ed4835;
+}
+.content .share .task-finish {
+  background: #27aa29;
+}
+.content .share .task-icon {
+  width: 20rpx;
+  height: 20rpx;
+}
+.content .share-img {
+  padding-top: 20rpx;
+  width: 200rpx;
+  height: 300rpx;
+  border: solid 1rpx #ccc;
+  box-sizing: border-box;
+}
+.content .share-img .image {
+  display: block;
+  width: 100%;
+  height: 220rpx;
+}
+.content .share-info {
+  padding-left: 20rpx;
+}
+.content .share-info .share-num {
+  font-size: 22rpx;
+}
+.content .share-info .share-wrap {
+  flex-wrap: nowrap;
+  position: relative;
+  margin-left: 20rpx;
+  padding: 0 10rpx;
+  min-width: 200rpx;
+  height: 40rpx;
+  background: #c2c2c2;
+  color: #fff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+.content .share-info .share-wrap::after {
+  content: "";
+  position: absolute;
+  left: -15rpx;
+  top: 10rpx;
+  width: 0;
+  height: 0;
+  border-top: 12rpx solid transparent;
+  border-right: 18rpx solid #c2c2c2;
+  border-bottom: 12rpx solid transparent;
+}
+.content .share-info .share-wrap .wx-icon {
+  padding: 0 8rpx;
+}
+.content .share-info .share-wrap .wx-icon image {
+  width: 25rpx;
+  height: 25rpx;
+}
+.content .share-icon image {
+  width: 25rpx;
+  height: 25rpx;
+}
+.content .share .del-btn {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  background: #000;
+  border-radius: 30rpx;
+}
+.content .go-top {
+  position: fixed;
+  right: 10rpx;
+  bottom: 100rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border: solid 4rpx #ccc;
+  border-radius: 50%;
+  z-index: 999;
+}
+.content .go-top text {
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  border-left: solid 4rpx #ccc;
+  border-top: solid 4rpx #ccc;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/*# sourceMappingURL=liveList.wxss.map */

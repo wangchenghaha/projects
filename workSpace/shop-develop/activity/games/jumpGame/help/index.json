@@ -1,0 +1,6 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "help_slt" : "../components/help_slt/help_slt"
+  }
+}

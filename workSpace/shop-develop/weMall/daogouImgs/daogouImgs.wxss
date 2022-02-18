@@ -1,0 +1,4 @@
+
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden;}
+.li{ float:left; width:50%; height:auto; box-sizing:border-box; padding:3%;}
+image{ display:block; width:100%;}

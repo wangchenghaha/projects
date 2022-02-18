@@ -1,0 +1,22 @@
+.page {
+    padding: 40rpx;
+}
+.page .page-top {
+    margin-bottom: 40rpx;
+    font-size: 32rpx;
+    color : #666;
+    line-height : 50rpx;
+}
+
+.map {
+    position: relative;
+}
+.mask {
+    width: 100%;
+    height: 80rpx;
+    background: rgba(0,0,0,0.7);
+    font-size: 32rpx;
+    color:#fff;
+    text-align: center;
+    line-height: 80rpx;
+}

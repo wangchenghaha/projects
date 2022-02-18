@@ -1,0 +1,199 @@
+<view class="content" wx:if="{{dataRightShow}}">
+  <!--轮播图  -->
+
+  <view class="fixed-right">
+    <block wx:for="{{fixedRightArr}}" wx:key="fixedRight">
+      <view wx:if="{{item.isShow}}" class="fixed-item flex-center" data-type="{{item.type}}" bindtap="onClick">
+        <view class="fixed-img flex-center">
+          <image src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <block wx:if="{{item.type === 'share'}}">
+          <button open-type="share" class="share"></button>
+        </block>
+        <block wx:elif="{{item.type === 'recommend'}}">
+          <view class="recommend-btn">
+            <share-button
+              type="2"
+              size="80"
+              fore-color="#989898"
+              back-color="#fff"
+              product="{{product}}"
+              bind:error="on_error"
+            />
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="swiper">
+    <swiper class="swiper-wrapper" indicator-dots="{{swiper.indicatorDots}}" circular="{{swiper.circular}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+      <block wx:for="{{swiper.data}}" wx:key="slider">
+        <swiper-item class="swiper-item">
+          <image src="{{item}}" mode="widthFix"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 预售 start -->
+  <view class="advanceContainer">
+    <view class="leftInfo">
+        <view class="deposit">
+            定  金  ￥ <text class="depPrice">{{depPrice}}</text> <text class="lastPrice">尾款支付￥{{lastPrice}}</text> 
+        </view>
+        <view class="price">
+             预售价 ￥<text class="curPrice">{{curPrice}}</text> <text class="originalPrice">￥{{originalPrice}}</text>
+        </view>
+    </view>
+    <view class="rightTime">
+      <view>距预售结束</view>
+      <view>
+        {{timeObj.day}}天 
+        <text class="timer"> {{timeObj.hou}} </text> : 
+        <text class="timer"> {{timeObj.min}} </text> : 
+        <text class="timer"> {{timeObj.sec}} </text> <text style="color: #eee;">:</text>
+      </view>
+    </view>
+  </view>
+  <!-- 预售 end -->
+  <view class="goods margin-auto">
+    <view class="goods-name goods-item" wx:if="{{selectGoodsInfo.goodsName}}">【预售】{{selectGoodsInfo.goodsName}}</view>
+    <view class="goods-name-sub goods-item" wx:if="{{selectGoodsInfo.subGoodsName}}">{{selectGoodsInfo.subGoodsName}}</view>
+    <view class="goods-sku goods-item" wx:if="{{selectGoodsInfo.goodsCode}}">款号:{{selectGoodsInfo.goodsCode}}</view>
+  
+    <view class="payNotice">
+      尾款 <text class="price">￥{{lastPrice}}</text> <text class="timer"> （ <text style="font-weight: 600;">{{lastStartDate}}</text>  至  <text  style="font-weight: 600;">{{lastEndDate}}</text> ）</text>
+    </view>
+    <view class="payNotice">
+      流程 <text class="info">1.付定金-2.付尾款-3.发货</text><view class="mark" bindtap="markNotice">!</view>
+    </view>
+    <view></view>
+  </view>
+  <view class="title margin-auto" data-type="selectGoods" bindtap="onClick">请选择 颜色分类 尺码</view>
+  <!-- <view class="title margin-auto" data-type="queryShop" bindtap="onClick">查看附近在售门店</view> -->
+   
+  <view wx:if="{{hasCoupon}}" class="coupon margin-auto"  bindtap="getCoupon">
+    <text>领券尾款享优惠</text> 
+    <image class='couponImgClass' src="{{CoupontitleImage}}" mode='aspectFit' />
+  </view>
+
+ <!-- <view class="title margin-auto">推荐搭配</view>
+  <view class="margin-auto set-list flex-bet">
+    <block wx:for="{{setList}}" wx:key="{{item.colorCode}}">
+      <view class="set-item text-c">
+        <view class="set-img">
+          <image src="{{item.goodsImg}}" mode="widthFix"></image>
+        </view>
+        <view class="goods-name">{{item.goodsName}}</view>
+        <view class="price text">￥{{item.discountPrice}}</view>
+        <navigator class="btn-buy" url="/pages/content/content?colorCode={{item.goodsColorCode}}" open-type="redirect">购买</navigator>
+      </view>
+    </block>
+  </view>-->
+  <view wx:if='{{detailShow}}'>
+    <rich-text nodes="{{bodyContent}}"></rich-text>
+  </view>
+
+  <view class="details_size" wx:if="{{showSelecte}}">
+    <view class="details_opacity" bindtap="chicunHide1" style="opacity:0.5;"></view>
+    <view class="select-size {{showSelectSize ? 'show' : ''}}">
+      <view class="close" data-type="close" bindtap="onClick">
+        <my-close color="#000" size="25"></my-close>
+      </view>
+      <view class="margin-auto">
+        <view class="goods-base flex-start">
+          <view class="preview" wx:if="{{goodsImg}}">
+            <image src="{{goodsImg}}" mode="widthFix"></image>
+          </view>
+          <view class="goods-info">
+            <view class="price">
+              <view>订金：￥ <text style="font-size: 32rpx"> {{depPrice}} </text></view>
+              <view>尾款：￥ <text style="font-size: 32rpx"> {{lastPrice}} </text></view>
+            </view>
+            <view class="stock">库存<text>{{stock}}</text>件</view>
+            <view class="size">
+              <block wx:if="{{selectGoodsInfo.goodsSku}}">{{selectGoodsInfo.size.sizeAlias}}</block>
+              <block wx:else>请选择尺码</block>
+            </view>
+            <view class="sku">{{selectGoodsInfo.goodsSku || selectGoodsInfo.goodsCode}}</view>
+          </view>
+        </view>
+        <view class="goods-base">
+          <view class="goods-title">颜色分类</view>
+          <view class="color">
+            <block wx:for="{{goodsColor}}" wx:key="{{item.colorCode}}">
+              <form bindsubmit="onClick" report-submit="true">
+                <button form-type="submit" class="color-item {{colorDefaultIndex === index ? 'selected' : ''}}"  data-type="selectColor" data-index="{{index}}">{{item.colorAlias}}</button>
+              </form>
+            </block>
+          </view>
+        </view>
+        <view class="goods-base">
+          <view class="goods-title">尺码</view>
+          <view class="color">
+            <block wx:for="{{goodsColor[colorDefaultIndex].sizes}}" wx:key="{{item.sku}}">
+              <form bindsubmit="onClick" report-submit="true">
+                <button form-type="submit" class="color-item {{item.stock > 0 ? '' : 'no-stock'}} {{item.selected ? 'selected' : ''}}" data-type="selectSize" data-index="{{index}}">{{item.sizeAlias}}</button>
+              </form>
+
+            </block>
+          </view>
+        </view>
+        <view class="goods-base flex-bet">
+          <view class="goods-title">购买数量</view>
+          <view class="goods-num flex-start">
+            <!-- <block wx:for="{{goodsNumArr}}" wx:key="{{item.type}}">
+              <text style="width: {{item.width}}rpx" data-type="changeGoodsNum" data-index="{{index}}" bindtap="onClick">{{item.value}}</text>
+            </block> -->
+            <view class="limit">x1</view>
+          </view>
+        </view>
+        <view class="submitBtn" bindtap="submitBtn">立即下单</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="fixed-bottom flex-end contentBottom">
+  <!-- <view class="customService">
+    <image src="../../../images/customer_icon_2.png" />
+  </view> -->
+  <view class="lastPayNotice">
+    <view>{{endDateRemark}}结束</view>
+    <view>{{remark}}</view>
+  </view>
+  <view class="depositPay" data-type="selectGoods" bindtap="onClick">
+    <view class="h1">立即付定金</view>
+    <view class="h1">￥{{depPrice}}</view>
+  </view>
+</view>
+
+<view class="guide flex-center" wx:if="{{guideShow}}">
+  <view class="guide-wrapper">
+    <view class="guide-title guide-title-bg text-c color-fff">绑定导购</view>
+    <view class="guide-title text-c">线下导购信息登录</view>
+    <input type="number" class="guide-input" placeholder="请输入员工号后6位" />
+    <view class="btn-wrapper flex-bet">
+      <view class="btn color-fff text-c" data-type="confirmGuide" bindtap="onClick">确定</view>
+      <view class="btn color-fff text-c" data-type="cancelGuide" bindtap="onClick">取消</view>
+    </view>
+  </view>
+</view>
+
+<couponpop  coupon_display="{{coupon_display}}" activityInfo="{{activityInfo}}"  inputUrl="{{inputUrl}}" bindchangeShow="changeShow" wx:if="{{coupon_display}}"></couponpop>
+
+<notice-pop wx:if="{{isShowNotice}}" ruleList="{{ruleList}}" activityTitle="{{activityTitle}}" bindcloseThisPop="closeThisPop"></notice-pop>
+
+<!-- <view class="details_size {{isShowNotice?'animate':'hide'}}" >
+    <view class="details_opacity" style="opacity:0.5;"></view>
+    <view class="details_con {{isIphoneX ?'fix-iphonex-button':''}}" style="bottom:0;">
+       <image class = "close" src="../../../images/qr_close.png" bindtap="closeNotice"/>
+       <view class="dd_con">
+          <view class="title">预售规则</view>
+          <block wx:for="{{ruleList}}" wx:key="rule">
+            <view class="contentInfo">{{item.text}}</view>
+          </block>
+       </view>
+      <view class="konwThis" bindtap="closeNotice" >知道了</view>
+    </view>
+  </view> -->

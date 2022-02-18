@@ -1,0 +1,383 @@
+
+
+<view class="wrap"  style="padding-bottom:{{pd}}">
+
+  <!-- 不是退货单 -->
+  <view wx:if="{{!isTuihuo}}">
+    <view class="top">
+      <text class="top_left">订单状态</text>
+      <text id="{{prevDingdanStatus}}" class="top_right" wx:if="{{dingdanStatus}}">{{prevDingdanStatus=='TransactionCancel'?'交易取消':prevDingdanStatus=='WaitingShipment'?'待发货':prevDingdanStatus=='WaitingReceive'?'待收货':prevDingdanStatus=='WaitingPay'?'待付款':prevDingdanStatus=='TransactionSuccess'?'交易完成':prevDingdanStatus=='TransactionClose'?'交易关闭':''}} {{dingdanCon.isHaveRefund && dingdanCon.isHaveRefund!='0'?'(有退)':''}}</text>
+      <!-- <text wx:if="{{prevDingdanStatus=='WaitingReceive'}}" class='lookWuliu' bindtap='lookWuliu'>查看物流</text> -->
+    </view>
+
+    <view class="top1 flex-bet">
+      <view class="top1_left flex-start">订单号 {{dingdanCon.bigorderCode}}
+        <image src="../../images/icon_copy.png" class="copy-icon" mode="aspectFit" data-text="{{dingdanCon.bigorderCode}}" bindtap="onClick" />
+      </view>
+      <text class="top1_right">{{dingdanCon.createTime}}</text>
+    </view>
+
+    <view class="top2" wx:if="{{!tuihuoCon.bigOrderStore}}">
+      <view class="top2_1">
+        <text class="top2_left">收货人：{{dingdanCon.consignee}}</text>
+        <text class="top2_right">{{dingdanCon.contactTel}}</text>
+      </view>
+      <view class="top2_2">收货地址：{{dingdanCon.province}}{{dingdanCon.city}}{{dingdanCon.area}}{{dingdanCon.detailAddress}}</view>
+    </view>
+
+    <view class="top2" wx:if="{{dingdanCon.deliveryMode=='pickup'&&dingdanCon.bigOrderStore}}" style='position:relative;'>
+      <view class="top2_1">
+        <text class="top2_left">店铺信息</text>
+        <text class="top2_right">提货人联系方式：{{dingdanCon.contactTel}}</text>
+      </view>
+      <view class='top2_2' style='font-weight:bold; line-height:50rpx;'>{{dingdanCon.bigOrderStore.name}}</view>
+      <view class="top2_2">营业时间：{{dingdanCon.bigOrderStore.businessHours}}</view>
+      <view class="top2_2">联系方式1：{{dingdanCon.bigOrderStore.phone1}}</view>
+      <view class="top2_2">提货地址：{{dingdanCon.bigOrderStore.address}}</view>
+      <view class='lookDitu' data-index='{{index}}' bindtap='lookDitu'>查看地图</view>
+    </view>
+
+    <view class="content" wx:for="{{dingdanCon.goodsOrderList}}" wx:key="goodsList">
+      <view class="flex-start">
+        <view class="con_left">
+          <navigator url="../content/content?colorCode={{item.gcsSku}}">
+            <image src="{{item.goodsImg}}" mode="widthFix"></image>
+          </navigator>
+        </view>
+        <view class="con_right">
+          <view class="con goods-name">{{item.goodsName}}</view>
+          <view class="con">货号 {{item.gcsSku}}</view>
+          <view class="con">颜色 <text>{{item.colorName}}</text></view>
+          <view class="con">尺码 <text>{{item.sizeName}}</text></view>
+          <view class="con">价格 <text>¥{{item.price}}</text></view>
+          <view class="con">数量 <text>{{item.goodsCount}}</text><text wx:if="{{item.refundCount}}">({{item.refundText}})</text></view>
+          <view class=""></view>
+          <view class="btn-wrapper">
+            <!-- <view class="evaluate operation-btn text-c" data-index="{{index}}" wx:if="{{showRating}}" bindtap="evaluateClick">评价</view> -->
+            <view class="flex-start" wx:if="{{payment && showRefund && !item.refundCount && item.showRefundBtn}}">
+              <view class="operation-btn" bindtap="gotoExchange"  wx:if="{{!isWxReductionOrder&&!derivedFromExchangeOrder&&flagEnableApplyForEx&&prevDingdanStatus!='WaitingShipment' && dingdanCon.deliveryMode!=='pickup'}}">申请换货</view>
+              <view id="{{dingdanCon.id}}" class="operation-btn text-c" bindtap="tuikuan">
+                <block wx:if="{{prevDingdanStatus === 'WaitingShipment' || dingdanCon.deliveryMode === 'pickup'}}">退款</block>
+
+                <block wx:else>申请退货</block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+<!--      自提订单不显示物流 陈-->
+      <view class="express-info flex-start" wx:if="{{showExpress && dingdanCon.deliveryMode!=='pickup'}}" data-goodsid="{{item.goodsId}}" bindtap="lookWuliu">
+        <view class="cart flex-center" wx:if="{{item.expressInfo.eChildList[0].context}}">
+          <image src="{{expressCar}}" mode="aspectFit"></image>
+        </view>
+        <view class="cart flex-center no-cart" wx:else>
+          <image src="{{noExpressCar}}" mode="aspectFit"></image>
+        </view>
+        <view class="text">
+          <text class="address" wx:if="{{item.expressInfo.eChildList[0].context}}">{{item.expressInfo.eChildList[0].status}}  {{item.expressInfo.eChildList[0].context}}</text>
+          <text class="address tip" wx:else>温馨提示：仓库或门店处理中，待打包完成后将为您发货。</text>
+          <text class="time" wx:if="{{item.expressInfo.eChildList[0].fTime}}">{{item.expressInfo.eChildList[0].fTime}}</text>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- 热销推荐/猜你喜欢 -->
+    <!-- <dmpGoods projeckName="{{projeckName}}" wx:if="{{itemId}}" itemId="{{itemId}}"></dmpGoods> -->
+    <!-- 20210816 9999 -->
+    <dmpGoods sceneId="ddxqy106" sceneType="2" itemId="{{itemId}}" order="{{dingdanCon.bigorderCode}}"  wx:if="{{itemId}}"></dmpGoods>
+
+    <view class="footer {{isIphoneX ?'fix-iphonex-button':''}}"  wx:if="{{footer_isShow}}">
+      <view class="footer1">
+        <!--<view class="foot_left">快递费：免邮</view>-->
+        <view class="foot_right" wx:if="{{dingdanCon.orderType=='EXCHANGE'}}">共{{dingdanCon.goodsTotalCount}}件商品 实际支付：¥ {{dingdanCon.exchangeAdditionalPrice}}</view>
+        <view class="foot_right" wx:else>
+          <view class="text-r">共{{dingdanCon.goodsTotalCount}}件商品 </view>
+         总价:¥ {{dingdanCon.payPrice}}
+        <text wx:if="{{dingdanCon.wxCouponValueTotal}}">优惠：¥{{dingdanCon.wxCouponValueTotal}} </text>
+         实付款:¥{{dingdanCon.myUseWXCouponValue }}</view>
+      </view>
+
+      <!-- 待付款 -->
+      <view class="footer2 flex-bet" wx:if="{{!payment}}">
+        <button id="{{dingdanCon.id}}" class="foot2 cancel" disabled="{{cancelOrder}}" bindtap="quxiao">
+          <text wx:if="{{cancelOrder}}">{{cancelOrderCountDown}}s后</text>
+          取消订单
+        </button>
+        <text class="foot2 wxpay color-fff" bindtap="zhifu">微信支付</text>
+        <view class="foot2 card color-fff" wx:if="{{STORE_VALUE && storedValueCardOnline}}" bindtap="storedValueCardPay">
+          <view>储值卡支付</view>
+          <text>(可用￥{{totalBalance}})</text>
+        </view>
+      </view>
+
+      <!-- 待发货/待收货 -->
+      <view class="footer2 flex-end" wx:if="{{payment}}">
+        <!--<view class="foot3"  wx:if="{{showRefund}}">
+          <view id="{{dingdanCon.id}}" class="foot2Con" bindtap="tuikuan">申请退款</view>
+        </view>-->
+        <view class="foot3" wx:if="{{!isCome}}">
+          <view id="{{dingdanCon.id}}" class="foot2 tip" bindtap="cuidan">
+            <block wx:if="{{dingdanCon.warning === 'Y'}}">已</block>提醒发货
+          </view>
+        </view>
+        <view class="foot3" wx:if="{{isCome}}">
+          <view id="{{dingdanCon.id}}" wx:if="{{dingdanCon.deliveryMode !=='pickup'}}" class="foot2 tip" bindtap="Shouhuo">确认收货</view>
+        </view>
+      </view>
+    </view>
+    <!--  7天无理由退货   -->
+    <!--<view class="footer {{isIphoneX ?'fix-iphonex-button':''}}" wx:if="{{isSevenRPrd && prevDingdanStatus=='TransactionSuccess' && showRefund}}">
+        <view class="foot2">
+          <view class="foot2Con foot2ConList" bindtap="sevenReturnPrd">七天无理由退货</view>
+        </view>
+    </view>-->
+
+  </view>
+
+  <!-- 退货单 -->
+  <view wx:if="{{isTuihuo}}">
+    <view class="refund-banner" wx:if="{{tuihuoCon.bigOrderStore}}">
+      <view class="refund-title">
+        <icon type="waiting" color="white" size="40rpx" />
+        <text>{{refundTitle}}</text>
+      </view>
+      <view class="sub-title">{{refundSubTitle}}</view>
+    </view>
+    <view class="refund-address" wx:if="{{!refundTitle && !toShop && tuihuoCon.returnType !== 'InStoreReturn'}}">
+      <view class="refund-title font-bold flex-bet">
+        <text>退货信息</text>
+        <text bindtap="copy">全部复制</text>
+      </view>
+      <view class="flex-start" wx:for="{{returnGoodsAddressList}}" wx:key="*this">
+        <view class="flex-start">{{item.text}}</view>
+      </view>
+      <view class="reminder">{{reminder}}</view>
+    </view>
+
+    <!-- 到店退 -->
+    <view class='shop' wx:if="{{refundShopInfos}}">
+        <view class='s-title'><view class='s-name'>退货商店信息</view><view class='s-map'  data-longitude='{{refundShopInfos.longitude}}' data-name='{{refundShopInfos.name}}' data-address='{{refundShopInfos.address}}'  data-latitude='{{refundShopInfos.latitude}}' bindtap='lookMap'>查看地图</view></view>
+        <view class='s-info'>{{refundShopInfos.name}}</view>
+        <view class='s-info' wx:if="{{refundShopInfos.businessHours}}">营业时间：{{refundShopInfos.businessHours}}</view>
+        <view  class='s-info'>联系方式：{{refundShopInfos.phone1}}</view>
+        <view  class='s-info'>地址：{{refundShopInfos.address}}</view>
+        <view  class='s-info s-info-red' wx:if="{{refundShopInfos.endTime && tuihuoCon.refundStatus=='WaitingRefundGoods'}}">需要在{{refundShopInfos.endTime}}前到店铺完成退货</view>
+    </view>
+
+    <view class="top">
+      <text class="top_left">订单状态</text>
+      <text class="top_right">{{tuihuoCon.myRefundStatus}}</text>
+    </view>
+    <!--退单号隐藏及订单号可复制-->
+    <!--<view class="top3">
+      <view class="top1_left">退单号 {{tuihuoCon.refundCode}}</view>
+      <view class="top1_right" style='color:#646464;'>{{tuihuoCon.createTime}}</view>
+    </view>-->
+
+    <view class="top1 flex-bet">
+      <view class="top1_left">
+        订单号 {{tuihuoCon.oriorderCode}}
+        <copy-icon text="{{tuihuoCon.oriorderCode}}"></copy-icon>
+      </view>
+      <text class="top1_right">{{tuihuoCon.oriOrderTime}}</text>
+    </view>
+
+    <view class="top2" wx:if="{{!tuihuoCon.bigOrderStore}}">
+      <view class="top2_1">
+        <text class="top2_left">收货人：{{tuihuoCon.consignee}}</text>
+        <text class="top2_right">{{tuihuoCon.contactTel}}</text>
+      </view>
+      <view class="top2_2">收货地址：{{tuihuoCon.address}}</view>
+    </view>
+
+
+    <view class='shop' wx:if="{{tuihuoCon.bigOrderStore}}">
+        <view class='s-title'><view class='s-name'>退货商店信息</view><view class='s-map'  data-longitude='{{tuihuoCon.bigOrderStore.longitude}}' data-name='{{tuihuoCon.bigOrderStore.name}}' data-address='{{tuihuoCon.bigOrderStore.address}}'  data-latitude='{{tuihuoCon.bigOrderStore.latitude}}' bindtap='lookMap'>查看地图</view></view>
+        <view class='s-info'>{{tuihuoCon.bigOrderStore.name}}</view>
+        <view class='s-info' wx:if="{{tuihuoCon.bigOrderStore.businessHours}}">营业时间：{{tuihuoCon.bigOrderStore.businessHours}}</view>
+        <view  class='s-info'>联系方式：{{tuihuoCon.bigOrderStore.phone1}}</view>
+        <view  class='s-info'>地址：{{tuihuoCon.bigOrderStore.address}}</view>
+        <view  class='s-info s-info-red'wx:if="{{toShop}}" >需要在{{refundShopInfos.endTime}}前到店铺完成退货</view>
+    </view>
+
+    <view class="top2" wx:if="{{dingdanCon.deliveryMode=='pickup'&& !toShop && !yesShop }}" style='position:relative;'>
+      <view class="top2_1">
+        <text class="top2_left">店铺信息</text>
+        <text class="top2_right">提货人联系方式：{{dingdanCon.contactTel}}</text>
+      </view>
+      <view class='top2_2' style='font-weight:bold; line-height:50rpx;'>{{dingdanCon.bigOrderStore.name}}</view>
+      <view class="top2_2">营业时间：{{dingdanCon.bigOrderStore.businessHours}}</view>
+      <view class="top2_2">联系方式1：{{dingdanCon.bigOrderStore.phone1}}</view>
+      <view class="top2_2">提货地址：{{dingdanCon.bigOrderStore.address}}</view>
+      <view class='lookDitu' data-index='{{index}}' bindtap='lookDitu'>查看地图</view>
+    </view>
+
+    <!-- 到店退名字 -->
+    <view class='shop-name' wx:if="{{toShop}}">待退货商品</view>
+    <view class="content" wx:for="{{tuihuoCon.rgopList}}" wx:key="rgopList">
+      <view class="flex-start">
+        <view class="con_left">
+          <image src="{{item.gsMainPicPath}}" mode="widthFix"></image>
+        </view>
+        <view class="con_right">
+          <view class="con goods-name">{{item.goodsName}}</view>
+          <view class="con">货号 {{item.sku}}</view>
+          <view class="con">颜色 <text>{{item.colorName}}</text></view>
+          <view class="con">尺码 <text>{{item.sizeName}}</text></view>
+          <view class="con">价格 <text>¥{{item.price}}</text></view>
+          <view class="con">数量 <text>{{item.counts}}</text><text wx:if="{{item.refundCount}}">({{item.refundText}})</text></view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 到店退按钮 -->
+    <view class='toshop-btn' wx:if="{{toShop}}">
+        <view class='s-btn' bindtap='onConfirmToShopRefundClick'>确认到店退货</view>
+        <view class='s-btn' bindtap='noShop'>取消退货</view>
+    </view>
+    <view class='s-infos' wx:if="{{toShop}}" >
+        <view class='s-i-title'>
+            <image class='s-img' src='../../images/tanhao.png'></image>
+            <view class="refund-tip-title">退货须知，以下情况不可到店退货</view>
+        </view>
+        <view class='s-item'>*  直接接触皮肤的内衣类商品</view>
+        <view class='s-item'>*  商品吊牌，商标，票据等有缺失的商品；已经穿着过货洗涤过的商品；已经修改或加工过的商品</view>
+        <view  class='s-item'>*  更多退货政策请在首页下方查看退货说明</view>
+        <view class='s-i-title'>
+          <image class='s-img' src='../../images/tanhao.png'></image>
+          <text class="refund-tip-title">确认选择到店退后,退货方式与退货门店不可变更 \n如需变更,请取消当前申请,提交新的退货申请</text>
+        </view>
+    </view>
+
+    <!-- 上传退款单号 -->
+    <block wx:if="{{!tuihuoCon.bigOrderStore && tuihuoCon.returnType !== 'InStoreReturn' && !toShop && !yesShop && !tuihuoCon.refundStore}}">
+      <view wx:if="{{(tuihuoCon.refundStatus=='WaitingRefundGoods' || tuihuoCon.refundStatus=='RefundGoodsReceive')}}" class="submitCode" bindtap='submitCode'>{{tuihuoCon.refundStatus=='WaitingRefundGoods'?'上传退货单号':'更新退货单号'}}</view>
+      <view class="tuikuan_footer address" wx:if="{{(tuihuoCon.refundStatus=='WaitingRefundGoods' || tuihuoCon.refundStatus=='RefundGoodsReceive')}}" bindtap='tuihuodizhi'>
+        亲，请点击上方按钮上传快递单号
+        <view class="address" bindtap='tuihuodizhi'>
+          点击查看
+          <text>退货地址</text>
+        </view>
+      </view>
+      <view class='tuikuan_footer address' wx:if="{{tuihuoCon.refundStatus=='ApplyRefunding'  }}">
+        您的退款申请正在审核中
+        <view class="address" bindtap='tuihuodizhi'>
+          点击查看
+          <text>退货地址</text>
+        </view>
+      </view>
+      <view class='tuikuan_footer' wx:if="{{tuihuoCon.refundStatus=='RefundGoodsing' }}">
+        您的退货申请正在审核中
+        <view class="address" bindtap='tuihuodizhi'>
+          点击查看
+          <text>退货地址</text>
+        </view>
+      </view>
+      <view class='tuikuan_footer' wx:if="{{tuihuoCon.refundStatus=='REFUNDING' }}">
+        您的商品正在退款中
+        <view class="address" bindtap='tuihuodizhi'>
+          点击查看
+          <text>退货地址</text>
+        </view>
+      </view>
+      <view class='tuikuan_footer' wx:if="{{tuihuoCon.refundStatus=='RefundSuccess' }}" bindtap="tuihuodizhi">
+        已完成退款/退货
+        <view class="address" bindtap='tuihuodizhi'>
+          点击查看
+          <text>退货地址</text>
+        </view>
+      </view>
+      <view class='tuikuan_footer' wx:if="{{tuihuoCon.refundStatus=='RefundGoodsClose' }}">
+        已取消退货
+        <view class="address" bindtap='tuihuodizhi'>
+          点击查看
+          <text>退货地址</text>
+        </view>
+      </view>
+    </block>
+    <view class="refund-express flex-center">
+      <!-- 2021 3 11 柴 关闭退运费 -->
+      <!-- <view class="refund-wrap" wx:if="{{refundFreight}}">
+        <text class="text">因质量问题并已退回已购商品，申请退还寄回运费</text>
+        <text class="btn-text" bindtap="refundExpress"><block wx:if="{{tuihuoCon.otherWay}}">已</block>申请退运费</text>
+      </view> -->
+    </view>
+    <view  wx:if="{{!toShop  && yesShop}}"  style='border-top:2px solid #e0e0e0;    position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10; padding-top:6rpx;'>
+    	<view style='font-size:24rpx;color:#000; text-algin:center;padding:0 100rpx;'>
+	    <image style='width:25rpx;'  src='../../images/tanhao.png' mode="widthFix"></image> <text>您已成功预约退货，请尽快去店铺完成退货流程</text>
+	  </view>
+    </view>
+  </view>
+
+
+  <!-- 上传快递单号 - 弹出框 -->
+  <view class="tishi" wx:if="{{submitDanhao}}">
+    <view class="opacity"></view>
+    <view class="tanchu">
+
+      <view class="h2">退款</view>
+
+      <view class="title">
+        <view class="flex-start">
+          <text class="h1">物流名称</text>
+          <input type="text" value="{{danhao_name}}" placeholder="请输入物流名称" bindinput="nameInput"/>
+        </view>
+        <view class="p" wx:if="{{danhao_name_tishi}}">{{danhao_name_text}}</view>
+      </view>
+
+
+      <view class="title">
+        <view class="flex-start">
+          <text class="h1">快递单号</text>
+          <input type="text" value="{{danhao_number}}" placeholder="请输入快递单号" bindinput="numberInput"/>
+        </view>
+        <view class="p" wx:if="{{danhao_tishi}}">{{danhao_text}}</view>
+      </view>
+
+
+      <view class="bott">
+        <view class="bot">
+          <view class="btn true" bindtap="danhao_true">确定</view>
+        </view>
+        <view class="bot">
+          <view class="btn false" bindtap="danhao_false">取消</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="return-popup flex-center" wx:if="{{showReturnGoods}}">
+    <view class="popup-content">
+      <view class="text-c title font-bold">退货地址</view>
+      <block wx:for="{{returnGoodsAddressList}}" wx:key="returnGoods">
+        <view class="return-item flex-bet">
+          <view class="flex-start address">
+            <block wx:for="{{item.list}}" wx:for-item="itemList" wx:key="returnGoodsList">
+              <view class="text">
+                {{itemList}}<block wx:if="{{!index}}">:</block>
+              </view>
+              <!-- <text>绫致时装天津有限公司</text> -->
+            </block>
+          </view>
+          <view class="flex-center copy" bindtap="copy" data-text="{{item.text}}">
+            <image src="/images/icon_copy.png" mode="aspectFit" />
+            <text>复制</text>
+          </view>
+        </view>
+      </block>
+      <view class="btn-wrap flex-bet">
+        <view class="text-c btn-item" bindtap="copy">全部复制</view>
+        <view class="text-c btn-item" bindtap="hidePopup">确定</view>
+      </view>
+    </view>
+  </view>
+  <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+
+</view>
+    <!--抢红包入口-->
+<rob-bag wx:if="{{dingdanCon.status}}" orderStatus="{{dingdanCon.status}}"></rob-bag>
+
+
+
+

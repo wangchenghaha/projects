@@ -1,0 +1,24 @@
+<template name="shopsPreviewItemTmpl">
+  <view class='shop_pre_frame'>
+    <!-- <view class='{{ifShowStock||ifShowNav?"shop_pre_frame_left_0":"shop_pre_frame_left_1"}}'> -->
+    <view class='shop_pre_frame_left_1'>
+      <view class="shop_pre_frame_title">
+        <view class='shop_pre_shop_name'>{{shopNameCn}}</view>
+        <view class="shop_pre_distance" wx:if="{{distance}}">距您{{distance}}km</view>
+      </view>
+      <view class='shop_pre_address'>{{address}}</view>
+    </view>
+    <view class='shop_pre_frame_right' wx:if="{{ifShowStock||ifShowNav}}" >
+      <view class="frame_bag" wx:if="{{ifShowStock}}"  catch:tap="onTmplStockBagClick" data-shop-code="{{shopCode}}">
+        <image class="img_stock_bag" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_check_ inventory.png" mode="aspectFit"></image>
+        <view class="impl_txt_tip_func">查库存</view>
+      </view>
+      <view class='horizontal_line'  wx:if="{{ifShowNav}}" ></view>
+      <view class="frame_nav" wx:if="{{ifShowNav}}"  catch:tap="onTmplNavToShopClick" data-shop-bean="{{item}}">
+        <image class="img_nav" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_nav_3.png" mode="aspectFit"></image>
+        <view class="impl_txt_tip_func">去门店</view>
+      </view>
+    </view>
+    <image wx:if="{{!(ifShowStock||ifShowNav)}}" class="right_img" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_right_arrow_shop_list.png" mode="widthFix"></image>
+  </view>
+</template>

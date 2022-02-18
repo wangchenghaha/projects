@@ -1,0 +1,22 @@
+<view class="content">
+  <temp-header></temp-header>
+  <view class="main">
+    <image src="{{shareDetail.myPosterImg}}" mode="widthFix"></image>
+  </view>
+  <view class="popup ~flex-center" wx:if="{{showPopup}}">
+    <view class="wrap">
+      <text>{{shareDetail.roomDetail}}</text>
+      <view class="copy-btn ~text-c" bindtap="saveImg">复制文案并保存图片</view>
+    </view>
+    <icon type="cancel" size="50rpx" color="white" bindtap="hidePopup" />
+  </view>
+  <canvas class="canvas" canvas-id="myCanvas" style="width: 750px; height: 1332px;"></canvas>
+  <temp-footer shareSync="{{shareSync}}" bindshareMoment="showPopup" bindshareUser="shareUser"></temp-footer>
+  <view class="share-tip flex-center" wx:if="{{shareUserStatus}}">
+    <view class="share-content flex-around">
+      <text class="text-center">转发给好友/好友群</text>
+      <button class="confirm" type="primary" open-type="share">转发给好友或群</button>
+    </view>
+    <icon type="cancel" size="50rpx" color="#fff" bindtap="closeShare" />
+  </view>
+</view>

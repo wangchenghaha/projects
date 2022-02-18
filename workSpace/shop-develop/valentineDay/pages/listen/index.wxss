@@ -1,0 +1,141 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column
+}
+
+.container .main-img {
+  margin-top: 10rpx
+}
+
+.container .input-warp {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx
+}
+
+.container .input-warp .input {
+  width: 500rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  margin-right: 60rpx;
+  margin-top: 18rpx
+}
+
+.container .xinyika {
+  margin-top: 20rpx
+}
+.container .xinyika-warp{
+  position: relative;
+  margin-top: 20rpx;
+
+}
+
+.container .progift-warp{
+
+  position: absolute;
+  right:0;
+  top:700rpx;
+  z-index:9;
+}
+.container .logo-warp {
+  width: 640rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20rpx
+}
+
+.container .logo-warp .text {
+  font-size: 30rpx
+}
+
+.container .logo-warp .text .text-top {
+  margin-bottom: 15rpx
+}
+
+.container .logo-warp .play-warp .gaobai {
+  font-size: 24rpx
+}
+
+.container .logo {
+  width: 640rpx;
+  margin-top: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end
+}
+
+.container .wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+height:100%;
+}
+
+.container .wrapper .pwdModel-warp {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3)
+}
+
+.container .wrapper .pwdModel {
+  position: absolute;
+  left: 50%;
+  top: 450rpx;
+  transform: translateX(-50%);
+  z-index: 99;
+}
+
+.container .wrapper .pwdModel input {
+  width: 580rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 63rpx;
+  top: 155rpx;
+  text-align: center
+}
+
+.container .wrapper .pwdModel .btn {
+  width: 193rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 254rpx;
+  top: 280rpx;
+  z-index: 999
+}
+
+.container .post-warp {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative
+}
+
+.container .post-warp .sendGift {
+  width: 638rpx;
+  position: absolute;
+  left: 50%;
+  top: 100rpx;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.container .post-warp .sendGift .btn {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1)
+}
+
+.container .option-warp {
+  margin-top: 20rpx;
+  width: 600rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}

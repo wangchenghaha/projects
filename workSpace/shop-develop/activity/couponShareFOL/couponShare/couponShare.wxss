@@ -1,0 +1,410 @@
+.content {
+  position: relative;
+  width: 100%;
+}
+.content .couponShow {
+  width: 100%;
+}
+.content .main {
+  position: absolute;
+  left: 0;
+  top: 700rpx;
+  width: 100%;
+}
+.content .main .couponData {
+  width: 96%;
+  margin-left: 2%;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  overflow: hidden;
+}
+.content .main .couponData .couponArea {
+  width: 100%;
+  position: relative;
+  background-color: #f1daae;
+}
+.content .main .couponData .couponArea .couponbg {
+  width: 100%;
+  margin-top: 30rpx;
+}
+.content .main .couponData .couponArea .showInfo {
+  width: 100%;
+}
+.content .main .couponData .couponArea .showInfo .couponInfo {
+  display: flex;
+  justify-content: space-between;
+  height: 190rpx;
+}
+.content .main .couponData .couponArea .showInfo .couponInfo .priceInfo {
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.content .main .couponData .couponArea .showInfo .couponInfo .priceInfo .tag {
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  font-weight: 550;
+}
+.content .main .couponData .couponArea .showInfo .couponInfo .priceInfo .price {
+  font-size: 72rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-weight: 700;
+}
+.content .main .couponData .couponArea .showInfo .timeNotice {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-right: 30rpx;
+  justify-content: center;
+}
+.content .main .couponData .couponArea .showInfo .timeNotice .couponTitle {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.content .main .couponData .couponArea .showInfo .timeNotice .couponTime {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  display: flex;
+}
+.content .main .couponData .couponArea .showInfo .couponCount {
+  width: auto;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .leftNotice {
+  width: 88%;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .leftNotice .text {
+  font-size: 32rpx;
+  font-weight: 550;
+  margin-left: 40rpx;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .leftNotice .button {
+  font-size: 32rpx;
+  width: 160rpx;
+  line-height: 52rpx;
+  border-radius: 52rpx;
+  text-align: center;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .leftTime {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .leftTime .title {
+  font-size: 22rpx;
+  line-height: 38rpx;
+  margin-left: 10rpx;
+  font-weight: 550;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .leftTime .dayClass {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  margin-right: 10rpx;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .leftTime .sfmView {
+  width: 38rpx;
+  line-height: 38rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  text-align: center;
+  font-weight: 600;
+  background: #000;
+  color: #fff;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .leftTime .maohao {
+  font-size: 24rpx;
+  line-height: 3rpx;
+  font-weight: 600;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+}
+.content .main .couponData .couponArea .showInfo .couponCount .notice {
+  width: 36rpx;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 100%;
+  margin-right: 30rpx;
+  font-weight: 550;
+}
+.content .main .schedule {
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+  position: relative;
+}
+.content .main .schedule .lightSuccess {
+  font-size: 32rpx;
+  color: #000;
+  font-size: 550;
+}
+.content .main .schedule .title {
+  color: #000;
+  font-size: 32rpx;
+  font-weight: 530;
+}
+.content .main .schedule .helpArea {
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+.content .main .schedule .helpArea .helpImage {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+}
+.content .main .schedule .helpArea .nickName {
+  position: absolute;
+  bottom: 0;
+  width: 120rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.content .main .schedule .button {
+  width: 70%;
+  line-height: 90rpx;
+  text-align: center;
+  margin-top: 40rpx;
+  border-radius: 90rpx;
+  font-size: 32rpx;
+  font-weight: 550;
+}
+.content .main .schedule .bottoms {
+  height: 50rpx;
+}
+.content .main .schedule .share {
+  position: absolute;
+  bottom: 50rpx;
+  width: 70%;
+  height: 90rpx;
+  background: none;
+  border: none;
+}
+.content .main .schedule .share::after {
+  border: none;
+}
+.content .main .record {
+  width: 94%;
+  margin-left: 3%;
+  background: #fff;
+  border-radius: 30rpx;
+  margin-top: 30rpx;
+}
+.content .main .record-tab {
+  width: 100%;
+  display: flex;
+  background: #ededed;
+  height: 100rpx;
+  border-top: 10rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+.content .main .record-tab .nor {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+.content .main .record-tab .left-sel {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 40rpx;
+  border-top-left-radius: 10rpx;
+  background: #fff;
+  font-weight: 600;
+  color: #000;
+}
+.content .main .record-tab .rihgt-sel {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 10rpx;
+  border-top-left-radius: 40rpx;
+  background: #fff;
+  font-weight: 600;
+  color: #000;
+}
+.content .main .record .mySelfRecord {
+  display: flex;
+  align-items: center;
+  margin-top: 50rpx;
+}
+.content .main .record .mySelfRecord .userImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin-left: 30rpx;
+}
+.content .main .record .mySelfRecord .userBase {
+  width: 100rpx;
+  margin-left: 10rpx;
+}
+.content .main .record .mySelfRecord .userBase .user_name {
+  font-size: 24rpx;
+  color: black;
+}
+.content .main .record .mySelfRecord .userBase .user_option {
+  font-size: 24rpx;
+  color: gray;
+}
+.content .main .record .mySelfRecord .getCoupon {
+  width: 60%;
+  font-size: 30rpx;
+  text-align: end;
+}
+.content .main .record .noRecord {
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  width: 100%;
+  text-align: center;
+}
+.content .main .record .noRecord .goLightCoupon {
+  line-height: 40rpx;
+  text-align: center;
+  color: royalblue;
+  border-bottom: 1rpx solid royalblue;
+  margin-left: 20rpx;
+}
+.content .main .record .otherRecord {
+  width: 100%;
+}
+.content .main .record .otherRecord .contentItem {
+  display: flex;
+  width: 100%;
+  margin-top: 3rpx;
+  align-items: center;
+  height: 60rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+.content .main .record .otherRecord .contentItem .userPic {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 40rpx;
+  margin-left: 30rpx;
+}
+.content .main .record .otherRecord .contentItem .name {
+  width: 20%;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  color: #000;
+}
+.content .main .record .otherRecord .contentItem .coupon {
+  width: 60%;
+  font-size: 28rpx;
+  text-align: end;
+}
+.content .main .recordBottom {
+  height: 50rpx;
+}
+
+.bouncedBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bouncedImgView {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: auto;
+  border-radius: 8rpx;
+  transform: translate(-50%, -50%);
+}
+.bouncedImgView .imgView {
+  width: 80%;
+  margin-top: 100rpx;
+  position: relative;
+}
+.bouncedImgView .close {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 30rpx;
+  left: 47%;
+}
+
+.voucher {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: 0.3s;
+  transform: translateY(-100%);
+}
+.voucher .showModel {
+  position: relative;
+  width: 666rpx;
+}
+.voucher .showModel .tan_close {
+  position: absolute;
+  top: 30rpx;
+  right: 40rpx;
+  z-index: 99;
+}
+.voucher .showModel .content {
+  width: 94%;
+  background: white;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50rpx 30rpx;
+  box-sizing: border-box;
+  margin-left: 3%;
+}
+.voucher .showModel .content .cTitle {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 30rpx;
+}
+.voucher .showModel .content .contentClass {
+  max-height: 900rpx;
+  overflow-y: scroll;
+}
+.voucher .showModel .content .contentClass .cInfo {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.show {
+  transform: translateY(0);
+}
+
+/*# sourceMappingURL=couponShare.wxss.map */

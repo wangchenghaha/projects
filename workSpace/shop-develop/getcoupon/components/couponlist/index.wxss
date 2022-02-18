@@ -1,0 +1,108 @@
+.couponlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0,0,0,0.7);
+}
+
+.couponlist-box {
+    display: flex;
+    flex-direction: column;
+    width: 680rpx;
+    height: 1000rpx;
+    background: #fff;
+    border-radius: 8rpx;
+}
+.close-coupon {
+    padding:20rpx;
+    text-align: right;
+}
+.close-img {
+    display: inline-block;
+    width: 50rpx;
+    height: 50rpx;
+}
+.coupon-swiper {
+    position: relative;
+    flex: 1;
+}
+
+.swiper-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.bg {
+    background-image: linear-gradient(141deg, #fdb963 0%, #fd6a57 100%);
+    border-radius: 12px;
+    width: calc(100% - 36rpx);
+    margin: 20rpx 18rpx 40rpx;
+    padding-bottom: 22rpx;
+  }
+  
+  @media only screen and (min-device-width: 768px) {
+    .bg {
+      background-image: linear-gradient(141deg, #fdb963 0%, #fd6a57 100%);
+      border-radius: 12px;
+      width: calc(100% - 36rpx);
+      margin: 66rpx 18rpx 2rpx;
+      padding-bottom: 22rpx;
+    }
+  }
+  
+  .price {
+    font-family: PingFangSC-Medium;
+    font-size: 80rpx;
+    color: #fff;
+    letter-spacing: 0;
+    margin-top: 35rpx;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .ptype {
+      margin-bottom: 20rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .man {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: center;
+  }
+  
+  .pricegroup {
+    justify-content: center;
+  }
+  
+  .timegroup {
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 16rpx;
+  }

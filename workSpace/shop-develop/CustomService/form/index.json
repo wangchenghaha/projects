@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "datePicker": "../components/date/index"
+  },
+  "navigationBarTitleText": "特殊定制",
+  "disableScroll": true,
+  "navigationStyle" : "custom"
+}

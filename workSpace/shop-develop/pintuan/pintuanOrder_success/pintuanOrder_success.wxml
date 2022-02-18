@@ -1,0 +1,63 @@
+<view class="bg">
+
+    <view class="head">
+        <view class="head-leftView">
+            <view class="head-leftView-topTitle">拼团成功</view>
+            <view class="head-leftView-botomTitle">预计拼单成功后4天内发货</view>
+        </view>
+        <image src="../images/naozhong_white.png" mode="widthFix" class="head-image" />
+    </view>
+    <!-- 地址 -->
+    <view class="address">
+        <image src="../images/location.png" mode="widthFix" style="width: 40rpx;margin-top: 5rpx;margin-right: 20rpx;margin-left: 20rpx;" />
+        <view class="address-leftView">
+            <view class="address-leftView-title">{{address.consignee}}    {{address.contactTel}}</view>
+            <view class="address-leftView-title">{{requestaddressForAddress.province}}{{address.city}}{{address.area}}{{address.detailAddress}}</view>
+        </view>
+    </view>
+    <!-- 邀请好友 -->
+    <view class="yaoqing" wx:if="{{canShowFace}}">
+        <view class="topView">
+            <image src="../images/pt-yaoqing.png" mode="widthFix" class="topView-image" />
+            <view class="topView-title">拼单成功</view>
+        </view>
+        <view class="botomView">
+            <view class="botomView-leftView">
+                <view class="botomView-leftView-title">拼主</view>
+                    <image src="{{faceAndIcon.icon}}" mode="widthFix" class="icon"></image>
+                    <image wx:for="{{otherFaceAndIcon.icon}}" wx:key="otherIcon" src="{{item}}" mode="widthFix" class="icon"></image>
+            </view>
+        </view>
+    </view>
+    <!-- 订单信息 -->
+    <view class="yaoqing">
+        <view class="yaoqing-titles" bindlongpress="copy" data-text="{{detailData.bigorderCode}}">订单编号: {{detailData.bigorderCode}}</view>
+        <view class="yaoqing-titles">支付方式: 微信</view>
+    </view>
+    <!-- 商品信息 -->
+    <view class="shop" wx:for="{{detailData.goodsTotalCount}}" wx:key="detailDataList">
+        <image src="{{shopData.gscolPicPath}}" mode="widthFix" style="width:220rpx;margin: 20rpx; " />
+        <view class="shop-rightView">
+            <view class="title">{{shopData.goodsName}}</view>
+            <view class="title-small">货号 {{shopData.gcsSku}}</view>
+            <view class="title-small">颜色 {{shopData.colorName}}</view>
+            <view class="title-small">尺码 {{shopData.sizeName}}</view>
+            <view class="title-small">价格 ￥{{shopData.price}}</view>
+            <view class="title-small">数量 x{{shopData.goodsCount}}</view>
+        </view>
+    </view>
+    <!-- 支付信息 -->
+    <view class="zhifu">
+        <view style="margin-left: 20rpx;flex:1;">
+            <view class="title">快递费:0元<text class="title-red"></text></view>
+        </view>
+        <view style="margin-right: 20rpx;">
+            <view class="title">共{{detailData.goodsTotalCount}}件商品 合计:<text class="title-red">￥{{detailData.payPrice}}</text></view>
+        </view>
+    </view>
+    <view class="tempView"></view>
+</view>
+<!-- 底部按钮 -->
+<view class="buyView" wx:if="{{bol}}" style="{{isIphoneX ?'bottom:68rpx;':''}}">
+    <view class="buyView-viewText" bindtap="sevenReturnPrd">七天无理由退货</view>
+</view>

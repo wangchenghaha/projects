@@ -1,0 +1,78 @@
+<view class='layout_father'>
+  <view class='self_delivery'>
+    <view class='city'>
+      <picker mode="selector" bindchange="onPickerConfirm1" value="{{index1}}" range="{{proviceData}}" range-key="name">
+        <view class="picker">
+          <view class="picker1">{{proviceData[index1].name}}</view>
+        </view>
+      </picker>
+      <view class="close">
+        <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='city'>
+      <picker mode="selector" bindchange="onPickerConfirm2" value="{{index2}}" range="{{cityData}}" range-key="name">
+        <view class="picker">
+          <view class="picker1">{{cityData[index2].name}}</view>
+        </view>
+      </picker>
+      <view class="close">
+        <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='city'>
+      <picker mode="selector" bindchange="onPickerConfirm3" value="{{index3}}" range="{{districtData}}" range-key="DisName">
+        <view class="picker">
+          <view class="picker1">{{districtData[index3].DisName}}</view>
+        </view>
+      </picker>
+      <view class="close">
+        <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='search' bindtap='searchShopsList'>搜索</view>
+  </view>
+  <!-- 到店自提 的配送方式 -->
+  <!-- 店铺列表 -->
+  <view class="layout_shop_father  {{isIphoneX ?'iphoneXMarginBottom':''}}" wx:if="{{hasShop}}">
+    <view id="{{index}}" class='layout_shop_item' wx:for="{{shopList}}" wx:for-item="shopItem" wx:key="layout_shop_father" bindtap='onItemShopClick'>
+      <view class="shop_name txt_bold">{{shopItem.name||shopItem.shopNameCn}}</view>
+      <view class="shop_detail">
+        距您定位距离：
+        <text>
+          {{shopItem.distance?shopItem.distance:''}}{{shopItem.distance?intentType=='SHOP_TYPE_NEARBY'?'km':'m':'暂无'}}
+        </text>
+      </view>
+      <view class="shop_detail">
+        营业时间：
+        <text wx:if="{{intentType=='SHOP_TYPE_NEARBY'}}">
+          {{shopItem.openTime}}~{{shopItem.closeTime}}
+        </text>
+        <text wx:elif="{{intentType=='SHOP_TYPE_REFUND'}}">上午 10:00 ～ 晚上 22:00</text>
+      </view>
+      <view class="shop_detail">
+        联系方式：
+        <text id="{{index}}" catchtap="onShopPhoneCall" class="shop_phone">
+          {{shopItem.o2oShopPhone?shopItem.o2oShopPhone:shopItem.cellphone?shopItem.cellphone:shopItem.phone1?shopItem.phone1:'暂无'}}
+        </text>
+      </view>
+      <view class="shop_detail">
+        地址：
+        <text>{{shopItem.address}}</text>
+      </view>
+      <view class='layout_loc'>
+        <image class="loc_img" src='https://cdn.bestseller.com.cn/assets/common/pub/image/icon_positioning_white.png' mode="widthFix"></image>
+        <view class="loc_txt" id="{{index}}" catchtap='onMapClick'>查看地图</view>
+      </view>
+    </view>
+    <view class="weui-loadmore" hidden="{{!flagLoading}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" hidden="{{!flagLoadingComplete}}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">·</view>
+    </view>
+  </view>
+  <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+</view>

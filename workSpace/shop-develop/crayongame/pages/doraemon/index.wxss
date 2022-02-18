@@ -1,0 +1,155 @@
+page {
+  background: #006dd2;
+}
+
+.wrapper {
+  position: relative;
+  height: 1588rpx;
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/bg.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 256rpx;
+  box-sizing: border-box;
+}
+
+.wrapper .content {
+  position: relative;
+  width: 644rpx;
+  height: 644rpx;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.wrapper .content .turntable {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  heigth: 100%;
+  margin: auto;
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/turncircle.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .content .crayon {
+  position: absolute;
+  left: -33rpx;
+  top: -115rpx;
+  width: 157rpx;
+  height: 181rpx;
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/crayon.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .content .location {
+  position: absolute;
+  top: -27rpx;
+  left: 50%;
+  margin-left: -27.5rpx;
+  width: 55rpx;
+  height: 71rpx;
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/location.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.wrapper .content .start {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 207rpx;
+  height: 207rpx;
+  margin: auto;
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/start.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .content .start.active {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/start-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .btnbox {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 40rpx;
+  padding: 0 64rpx;
+  box-sizing: border-box;
+}
+
+.wrapper .btnbox .item {
+  width: 283rpx;
+  height: 67rpx;
+  border: none;
+  border-radius: none;
+  background: transparent;
+}
+
+.wrapper .btnbox .item:after {
+  display: none;
+}
+
+.wrapper .btnbox .item:nth-child(1) {
+  margin-right: 59rpx;
+}
+
+.wrapper .btnbox .item.check {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/checkaward.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .btnbox .item.check.active {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/checkaward-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .btnbox .item.get {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/get.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .btnbox .item.get.active {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/get-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .btnbox .item.shop {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/shop.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .btnbox .item.shop.active {
+  background: url("https://tc.woaap.com/lingzhi/doraemonMiniapp/img/shop-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,12 @@
+<view class="close">
+  <block>
+    <icon wx:if="{{size}}" size="{{size}}" type="cancel" color="{{color || '#fff'}}"></icon>
+    <icon wx:else type="cancel" color="{{color || '#fff'}}"></icon>
+  </block>
+  <view class="line text-c {{direction}}" wx:if="{{line && direction === 'top'}}"
+        style="background-color: {{color || '#fff'}}; left:{{size ? size/2 : '11' }}px; bottom:{{size ? size - 2 : 22}}px; height:{{lineHeight}}rpx">
+  </view>
+    <view class="line text-c {{direction}}" wx:if="{{line && direction === 'bottom'}}"
+          style="background-color: {{color || '#fff'}}; left:{{size ? size/2 : '11' }}px; top:{{size ? size - 2 : 22}}px; height:{{lineHeight}}rpx">
+  </view>
+</view>

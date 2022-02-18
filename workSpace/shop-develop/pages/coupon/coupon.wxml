@@ -1,0 +1,25 @@
+
+
+<view class="wrap">
+  <view class='header'>可用优惠券（{{myCoupons.length}}）</view>
+
+  <view class='content'>
+    <view class='li' wx:for="{{myCoupons}}" wx:key="myCoupons">
+      
+      <view class='li_left'>
+        <view class='money'>¥ <view class='jine'>{{item.value}}</view></view>
+        <view class='p'>
+          <view class='pCenter'>现金券</view>
+        </view>
+      </view>
+
+      <view class='li_right'>
+        <view class='title'>满{{item.threshold}}元可用</view>
+        <view class='descption'>金额满{{item.threshold}}元减{{item.value}}元</view>
+        <view class='true_time'>有效期：{{item.enddate}}</view>
+        <view class='btn' data-index='{{index}}' bindtap='gotoUse'>去使用 ></view>
+      </view>
+
+    </view>
+  </view>
+</view>

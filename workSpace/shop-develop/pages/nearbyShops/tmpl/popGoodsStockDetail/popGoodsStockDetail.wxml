@@ -1,0 +1,61 @@
+<template name="popGoodsStockDetailTmpl">
+  <view class="frame_goods_detail">
+    <view class="opacity"></view>
+    <view class="frame_popup">
+
+      <view class="frame_popup_padding">
+        <view class="layout_upper">
+          <view class="upper_common thumbnail">
+            <image src="{{thumbnailUrl}}" mode="widthFix"></image>
+          </view>
+          <view class="upper_common layout_infos">
+            <view class="name">{{goodsDetailBean.goodsName}}</view>
+            <view class="price_frame">
+              <view class="price_value_now">¥{{colorList[colorIndex].price}}</view>
+              <view class="price_value_origin" wx:if="{{!colorList[colorIndex].price==colorList[colorIndex].originalPrice}}">￥{{colorList[colorIndex].originalPrice}}</view>
+            </view>
+
+            <view class="tip">请选择颜色/尺码查看店铺库存</view>
+            <!-- <view class="stock_tip">{{}}</view> -->
+          </view>
+          <view class="upper_common upper_close" bindtap="onTmplPopGoodsStockClose">
+            <icon type="cancel" size="50rpx" color="#000" />
+          </view>
+        </view>
+        <view class="layout_size_and_color">
+          <view class="title">颜色选择</view>
+          <view class="item_outter">
+            <view id="{{index}}" wx:if="{{item.status == 'InShelf'}}" class="item_inner {{index==colorIndex?'item_selected':''}}" wx:for="{{colorList}}" wx:key="item_inner" bindtap="onTmplColorItemClick">{{item.colorAlias}}</view>
+          </view>
+
+        </view>
+        <view class="layout_size_and_color">
+          <view class="title">尺码选择</view>
+          <view class="item_outter">
+            <view id="{{index}}" class="item_inner {{index==0 && sizeList.length<2?'item_selected':''}} {{index==sizeIndex?'item_selected':''}} {{goodsStockBean[colorList[colorIndex].sizes[index].sku]?'':'item_no_stock'}}" wx:for="{{sizeList}}" wx:key="sizeList" bindtap="onTmplSizeItemClick">{{item.sizeAlias}}</view>
+          </view>
+        </view>
+
+        <view class="bottom_stock">
+          <view class="stock_key">门店库存</view>
+          <view class="stock_value">{{goodsStockBean[sizeList[sizeIndex].sku]?goodsStockBean[sizeList[sizeIndex].sku]:'0'}}件</view>
+        </view>
+        <view class="tmpl_frame_no_stock">
+          <view class="tmpl_no_stock_tip" wx:if="{{goodsStockBean[sizeList[sizeIndex].sku]?false:true &&sizeIndex>=0}}">很抱歉，该尺码在本店没有货了</view>
+          <view class="tmpl_no_stock_tip" wx:if="{{goodsStockBean[sizeList[sizeIndex].sku]?false:true &&sizeIndex>=0}}">您可以尝试搜索其他区域门店，或者换个尺码尝试</view>
+          <!-- <view class="stock_value">{{goodsStockBean[sizeList[sizeIndex].sku]?goodsStockBean[sizeList[sizeIndex].sku]:'0'}}件</view> -->
+        </view>
+        <!-- <view class="layout_count">
+          <view class="c_title">商品件数</view>
+          <view class="c_number">
+            <view class="c_add" bindtap="add_number">+</view>
+            <input class="c_num" type="number" value="{{nums}}" disabled="true" />
+            <view class="c_jian" bindtap="jian_number">-</view>
+          </view>
+        </view> -->
+      </view>
+
+
+    </view>
+  </view>
+</template>

@@ -1,0 +1,6 @@
+.icon{
+  margin-right: 10rpx;
+}
+.icon:last-child{
+  margin-right: 0;
+}

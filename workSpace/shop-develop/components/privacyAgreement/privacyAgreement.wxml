@@ -1,0 +1,13 @@
+<view class="privacy ~flex-center">
+  <view class="main">
+    <view class="title ~margin-b-30 ~text-c">隐私政策提示</view>
+    <view class="content">请您在使用{{appName}}小程序前点击<text class="clause" bind:tap="goClause">《隐私权政策》</text>并仔细阅读。如您同意<text class="clause" bind:tap="goClause">《隐私权政策》</text>的全部内容，请点击“同意并继续”开始使用我们的服务</view>
+    <view class="btn">
+      <view class="btn-agree ~text-c ~color-fff" bind:tap="agreePrivacy">同意并继续</view>
+      <view class="btn-cancel ~text-c" bind:tap="disagree">不同意</view>
+    </view>
+  </view>
+  <view class="logo">
+    <image src="{{logo}}" mode="aspectFit" style="height: 70rpx"></image>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+<view class="container">
+    <view class="myPoint"> 
+        <image class="pointImg" src="{{myPonitImg}}" mode="widthFix"></image>
+        <view class="point">{{myStep}}步</view>
+    </view>
+    
+    <view class="giftSchedule">
+        <view class="bottomLine">
+            <view class="topLine" style="width: {{widthPercent}}"></view>
+        </view>
+        <view class="pointArea flex-center">
+            <block wx:for="{{couponLogos}}" wx:key="logo">
+                <view class="Area_1 flex-end" style="width: {{item.width}}">
+                    <view class="centerArea">
+                        <view class="text1" style="color: {{item.color}}">{{item.couponNum}}</view>
+                        <view class="triang"></view>
+                        <image class="logo" src="{{item.logo}}" mode="widthFix" data-type="getCoupon" data-step="{{item.steps}}" bindtap="onClick"></image>
+                        <view class="text2">{{item.step}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="couponArea">
+        <image class="coupontitle" src="{{couponTitle}}" mode="widthFix"></image>
+        <view class="couponA" style="height: {{couponHeight}};">
+            <view class="coupon flex-center" wx:for="{{couponList}}" wx:key="coupons">
+                <image class="couponImg" src="{{item.giftPic}}" mode='widthFix'></image>
+                <view class="nowUsed" data-type="goHome" bindtap="onClick">立即使用</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<block wx:if="{{showCoupon}}">
+    <view class="bounced" style="background-color: black;opacity: .5;"></view>
+    <view class="bounced" style="animation: scaleAnimate 0.5s ease-out 0s 1 forwards;" >
+        <view class="bounced-firstPop flex-center">
+            <image class="couponbg" src="{{couponShowImg}}" mode="widthFix" data-type="close"  bindtap="onClick"/>
+            <view class="couponArea">
+                <view class="couponInfo">获得{{couponName}}</view>
+                <image class="couponImg" src="{{couponImg}}" mode="widthFix"></image>
+            </view>
+            
+        </view>
+    </view>
+</block>
+  

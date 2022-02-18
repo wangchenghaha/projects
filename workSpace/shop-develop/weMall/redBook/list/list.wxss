@@ -1,0 +1,72 @@
+.content {
+  min-height: 100%;
+  background: #f0f0f0;
+}
+.content .header {
+  margin: 0 auto;
+  width: 710rpx;
+  padding-top: 20rpx;
+  font-size: 28rpx;
+}
+.content .header .btn-item {
+  margin-right: 20rpx;
+  width: 162rpx;
+  height: 50rpx;
+  background: #fff;
+  border-radius: 25rpx;
+}
+.content .header .btn-item:last-child {
+  margin-right: 0;
+}
+.content .header .btn-item .sort-flag {
+  margin-left: 10rpx;
+}
+.content .header .btn-item .sort-flag text {
+  display: block;
+  margin: 2rpx 0;
+  width: 0;
+  height: 0;
+}
+.content .header .btn-item .sort-flag text.top {
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+  border-bottom: 12rpx solid #ccc;
+}
+.content .header .btn-item .sort-flag text.top.show {
+  border-bottom-color: #000;
+}
+.content .header .btn-item .sort-flag text.bottom {
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+  border-top: 12rpx solid #ccc;
+}
+.content .header .btn-item .sort-flag text.bottom.show {
+  border-top-color: #000;
+}
+
+.go-top {
+  position: fixed;
+  right: 10rpx;
+  bottom: 100rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border: solid 4rpx #ccc;
+  border-radius: 50%;
+  z-index: 999;
+}
+.go-top text {
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  border-left: solid 4rpx #ccc;
+  border-top: solid 4rpx #ccc;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.no-date {
+  padding: 60rpx 0;
+  font-size: 30rpx;
+}
+
+/*# sourceMappingURL=list.wxss.map */

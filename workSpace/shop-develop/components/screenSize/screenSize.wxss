@@ -1,0 +1,325 @@
+.nowrap, .screen-right .size-title .select-size, .screen-right .more .size-wrapper .size-row .size-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+image {
+  width: 100%;
+}
+
+.screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 100rpx;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  transform: translateX(100%);
+  box-sizing: border-box;
+  opacity: 0;
+  z-index: 99999;
+}
+
+.screen.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.screen-left {
+  width: 100rpx;
+  height: 100%;
+}
+
+.screen-right {
+  position: relative;
+  flex: 1;
+  padding: 0 25rpx;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  border-left: solid 2rpx #efefef;
+}
+
+.screen-right .brand {
+  flex-wrap: wrap;
+}
+
+.screen-right .brand-item {
+  margin-top: 10rpx;
+  margin-right: 4%;
+  height: 40rpx;
+  flex: 0 1 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.screen-right .brand-item.selected {
+  background: #000;
+  border-radius: 20rpx;
+}
+
+.screen-right .brand-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.screen-right .search {
+  margin-top: 20rpx;
+  background: #f2f2f2;
+  border-radius: 20rpx;
+  padding: 5rpx 15rpx;
+}
+
+.screen-right .search input {
+  flex: 1;
+  height: 35rpx;
+  margin-right: 15rpx;
+  font-size: 28rpx;
+}
+
+.screen-right .brand-title {
+  font-size: 36rpx;
+}
+
+.screen-right .brand-BG {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.screen-right .brand-BG .brand-image {
+  width: 30%;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+
+.screen-right .brand-BG .brand-image-only {
+  width: 25%;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+}
+
+.screen-right .brand-BG-only {
+  width: 18%;
+  margin-right: 20rpx;
+}
+
+.screen-right .brand-BG-nameit {
+  width: 25%;
+  margin-right: 20rpx;
+}
+
+.screen-right .brand-showBG {
+  background-color: #EFEFEF;
+  margin-top: 20rpx;
+  height: 60rpx;
+}
+
+.screen-right .brand-showBG .brand-show-view {
+  display: flex;
+  margin-top: 5rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  height: 50rpx;
+  background-color: white;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen-right .brand-line {
+  margin-top: 15rpx;
+  height: 3rpx;
+  background-color: #EFEFEF;
+}
+
+.screen-right .price {
+  padding-bottom: 20rpx;
+  border-bottom: solid 2rpx #efefef;
+}
+
+.screen-right .price-title {
+  padding-top: 20rpx;
+  font-size: 36rpx;
+}
+
+.screen-right .price-wrapper {
+  margin-top: 20rpx;
+}
+
+.screen-right .price-row {
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.screen-right .price-row .price-item {
+  font-size: 28rpx;
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #efefef;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.screen-right .price-row .price-item.checked {
+  border: 1px solid #e84d4d;
+  color: #e84d4d;
+  background-color: #ffedf0;
+}
+
+.screen-right .price-result {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx 10rpx;
+  background: #efefef;
+}
+
+.screen-right .price-result input {
+  display: inline-block;
+  width: 250rpx;
+  height: 40rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: #e84d4d;
+  text-align: center;
+}
+
+.screen-right .size-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  font-size: 36rpx;
+}
+
+.screen-right .size-title .select-size {
+  display: inline-block;
+  max-width: 500rpx;
+  font-size: 26rpx;
+  color: #e84d4d;
+}
+
+.screen-right .btn-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  z-index: 999;
+}
+
+.screen-right .btn-wrapper .btn {
+  margin-top: 10rpx;
+  width: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.screen-right .btn-wrapper .btn-confirm {
+  background: #000;
+  color: white;
+  margin-right: 20rpx;
+}
+
+.screen-right .btn-wrapper .btn-reset {
+  border: solid 2rpx #000;
+}
+
+.screen-right .iphoneXFooter {
+  height: 148rpx;
+}
+
+.screen-right .more {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 20rpx;
+  width: 100%;
+  height: 90%;
+  background: #fff;
+  z-index: 99;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.3s;
+  overflow-y: scroll;
+  transform: rotate(90deg);
+  transform-origin: left bottom;
+}
+
+.screen-right .more.show {
+  transform: rotate(0);
+  opacity: 1;
+}
+
+.screen-right .more .title {
+  padding-left: 15rpx;
+  font-size: 32rpx;
+  line-height: 36rp;
+  font-weight: bold;
+  border-left: solid 6rpx #000;
+}
+
+.screen-right .more .sub-title {
+  margin-top: 25rpx;
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  border-top: solid 1rpx #999;
+}
+
+.screen-right .more .size-wrapper {
+  margin-top: 20rpx;
+}
+
+.screen-right .more .size-wrapper .size-row {
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.screen-right .more .size-wrapper .size-row .size-item {
+  font-size: 28rpx;
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #efefef;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.screen-right .more .size-wrapper .size-row .size-item.checked {
+  border: 1px solid #e84d4d;
+  color: #e84d4d;
+  background-color: #ffedf0;
+}

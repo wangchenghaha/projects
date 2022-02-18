@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "直播分享详情",
+  "usingComponents": {
+    "temp-header": "../components/shareTempHeader/shareTempHeader",
+    "temp-footer": "/components/shareTempFooter/shareTempFooter"
+  }
+}

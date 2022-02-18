@@ -1,0 +1,62 @@
+<view class="content">
+  <view class="banner">
+    <image src="{{bgImg}}" mode="widthFix"></image>
+    <view class="tip flex-start" wx:if="{{robImg}}">
+      <image class="avatar" src="{{shareInfo.avatarUrl}}" mode="widthFix" />
+      <text class="tip-text">绫致给大家发红包了，快来抢啊！你也可以转发好友群分享红包</text>
+    </view>
+    <view class="rob flex-center" wx:if="{{robImg}}">
+      <text class="rob-text">拼手速 抢红包</text>
+      <view class="text-c rob-icon" data-type="robRedBag" bindtap="onClick">抢 <text class="light"></text></view>
+      <!-- <image src="{{robImg}}" mode="widthFix" /> -->
+    </view>
+  </view>
+  <view class="footer">
+    <view class="btn flex-around">
+      <view class="btn-item text-c" data-type="myRedBagClick" bindtap="onClick">我的红包</view>
+      <view class="btn-item text-c" data-type="shareRedBag" bindtap="onClick">转发分享红包</view>
+    </view>
+    <view class="rule">
+      <view class="top flex-center">
+        <text class="line"></text>
+        <text class="text">活动规则</text>
+        <text class="line"></text>
+      </view>
+      <text class="rule-item" wx:for="{{ruleList}}" wx:key="item">{{item}}</text>
+    </view>
+  </view>
+  <!-- 弹窗 -->
+  <view class="popup flex-center" wx:if="{{showMyRedBag || sharePopup}}">
+    <!-- 红包弹窗 -->
+    <view class="wrapper flex-center" wx:if="{{showMyRedBag}}">
+      <image class="img-top" src="{{myRedBagHeader}}" mode="widthFix" />
+      <view class="red-bag" wx:if="{{redBagList.length}}">
+        <view class="red-bag-item flex-bet" wx:for="{{redBagList}}" wx:key="index">
+          <view class="info flex-start">
+            <view class="value">¥ <text>{{item.exchangeGiftName}}</text></view>
+            <view class="desc">
+              <view class="threshold">满{{item.giftId}}减{{item.exchangeGiftName}}</view>
+              <view class="channel">线上及门店</view>
+              <view class="date">{{item.createdTime}}</view>
+            </view>
+          </view>
+          <view class="btn-use text-c" bindtap="goHome">使用</view>
+        </view>
+        <view class="tip text-c" data-type="myCouponList" bindtap="onClick">请在卡包/会员中心查看我的优惠券</view>
+      </view>
+      <view wx:else>
+        <image class="no-red-bag" src="{{noRedBag}}" mode="widthFix" />
+      </view>
+    </view>
+    <!-- 分享弹窗 -->
+    <view class="share flex-center" wx:if="{{sharePopup}}">
+      <text>您即将分享超级大红包，确认转发？</text>
+      <button open-type="share" class="share-btn">确认</button>
+    </view>
+    <icon type="cancel" size="60rpx" color="#fff" bindtap="closePopup" />
+  </view>
+</view>
+<view class="menu" style="{{menuStyle}}">
+  <view class='menu-back' wx:if="{{showBack}}" bindtap="goBack"></view>
+  <view class='menu-home icon iconfont icon-shouye' wx:else bindtap="goHome"></view>
+</view>

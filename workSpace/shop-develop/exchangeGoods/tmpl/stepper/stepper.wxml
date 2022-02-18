@@ -1,0 +1,8 @@
+<import src="../../components/stepper/index" />
+<template name="tmplStepper">
+    <view class="stepper_frame">
+        <view id="{{stepperIndex}}" class="plus" bindtap="onTmplCountIncrease">+</view>
+        <input id="{{stepperIndex}}" class="count" type="number" value="{{count}}"/>
+        <view id="{{stepperIndex}}" class="minus" bindtap="onTmplCountDecrease">-</view>
+    </view>
+</template>

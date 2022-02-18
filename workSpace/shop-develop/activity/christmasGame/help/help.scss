@@ -1,0 +1,149 @@
+
+.bg{
+    width: 100%;
+    height: auto;
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .iconView{
+            position: absolute;
+            top: 35.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 138rpx;
+            overflow: hidden;
+            
+            display: flex;
+            .icon{
+                width: 80rpx;
+                height: 80rpx;
+                border-radius: 50%;
+                vertical-align: middle;
+                margin-left: 40rpx;
+                margin-top: 26rpx;
+                margin-right: 30rpx;
+                overflow: hidden;
+
+            }
+            .icon1125{
+                margin-top: 29rpx;
+            }
+            .rightView{
+                flex: 1;
+                padding-right: 20rpx;
+                
+                box-sizing: border-box;
+                overflow: hidden;
+                .text{
+                    font-size: 28rpx;
+                    color: white;
+                    overflow: hidden;
+                }
+                .nowarap{
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+            .rightView750{
+                padding-top: 22rpx;
+            }
+            .rightView1125{
+                margin-top: 28rpx;
+            }
+        }
+        .iconView1125{
+            top: 28.5%;
+        }
+        .btnView{
+            position: absolute;
+            bottom: 7%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 91%;
+            height: 105rpx;
+
+            display: flex;
+            .tapView{
+                
+                width: 325rpx;
+                height: 115rpx;
+            }
+
+            .centerView{
+                flex: 1;
+            }
+        }
+        .btnView1125{
+            bottom: 13.5%;
+        }
+    }
+}
+
+
+
+.bouncedBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .7;
+
+}
+.canOpenView{
+    width: 557rpx;
+    height: 680rpx;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    .imgView{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .bottomViewsss{
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 360rpx;
+            height: 95rpx;
+
+            color: white;
+            line-height: 95rpx;
+            text-align: center;
+            font-size: 34rpx;
+            border-radius: 95rpx;
+
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        .title{
+            position: absolute;
+            
+            left: 0;
+            width: 100%;
+            font-size: 34rpx;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+    
+}
+
+
+.zhanwei{
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .1;
+
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+}

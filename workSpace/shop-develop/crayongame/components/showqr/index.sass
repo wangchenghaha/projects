@@ -1,0 +1,70 @@
+@import '../../common/sass/index.sass'
+@keyframes zoomIn 
+    0% 
+        opacity: 0
+        -webkit-transform: scale3d(.3,.3,.3)
+        transform: scale3d(.3,.3,.3)
+
+    50% 
+        opacity: 1
+
+@keyframes zoomOut 
+    0% 
+        opacity: 1
+
+    50% 
+        opacity: 0
+        -webkit-transform: scale3d(.3,.3,.3)
+        transform: scale3d(.3,.3,.3)
+
+    to 
+        opacity: 0
+
+.qrcodebox
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    +bg('bg')
+    padding-top: 134rpx
+    &.big
+        padding-top: 209rpx
+        +bg('bigbg')
+    +b()
+    opacity: 0
+    will-change: opacity
+    transition: all 0.1s ease
+    z-index: -100
+    &.fadeIn
+        z-index: 101
+        opacity: 1
+    &.fadeOut
+        z-index: -100
+        opacity: 0
+    .content
+        font-size: 0
+        .image
+            width: 693rpx
+            height: 1080rpx
+            margin-left: 41rpx
+        
+            &.bounceIn
+                // opacity: 0 
+                // transform: scale3d(.3,.3,.3)
+                animation: zoomIn 0.2s forwards
+            &.bounceOut
+                // opacity: 1
+                // transform: scale3d(1,1,1)
+                animation: zoomOut 0.2s forwards
+        .btn
+            width: 359rpx
+            height: 71rpx
+            border-radius: 41rpx
+            margin: 0 auto
+            text-align: center
+            will-change: opacity
+            +bg('save')
+            overflow: hidden
+            &.active
+                opacity: 0.9

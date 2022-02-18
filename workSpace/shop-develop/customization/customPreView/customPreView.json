@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设计预览",
+  "usingComponents": {
+    "share-pop":"../../components/sharePop/sharePop"
+  }
+}

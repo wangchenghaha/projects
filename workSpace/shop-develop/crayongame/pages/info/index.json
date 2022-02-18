@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "navigateBar": "../../components/navigate/index",
+    "footerBar": "../../components/footer/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

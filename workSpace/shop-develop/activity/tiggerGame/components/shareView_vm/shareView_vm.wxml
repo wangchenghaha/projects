@@ -1,0 +1,17 @@
+<view class="bg" catchtouchmove="return">
+        <image src="{{imagePath}}gameBg.jpg" class="bgImageView" mode="aspectFill" />
+
+    <view class="imageView">
+        <view class="imageView-subView">
+            <image src="{{imagePath}}shareIndexImg.png" style="width:100%;" mode="widthFix" />
+            <!-- 分享邀请 -->
+            <view class="fenxiangView">
+                    <button open-type="share" class="share"></button>
+            </view>
+            <!-- 面对面邀请 -->
+            <view class="mianduimian" bindtap="shareImage"></view>
+        </view>
+    </view>
+    <view class="shuoming" style="left: 0;border-top-right-radius: 30rpx;border-bottom-right-radius: 30rpx;" bindtap="backView">返回</view>
+    <view class="shuoming" style="right: 0;border-top-left-radius: 30rpx;border-bottom-left-radius: 30rpx;" bindtap="guize">规则</view>
+</view>

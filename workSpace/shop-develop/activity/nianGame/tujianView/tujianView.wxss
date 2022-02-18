@@ -1,0 +1,81 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #b9a0e8;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bg .topView {
+  width: 100%;
+  height: 25%;
+  position: relative;
+}
+
+.bg .topView .topImg {
+  position: absolute;
+  bottom: -40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  vertical-align: middle;
+  width: 717rpx;
+}
+
+.bg .bottomView {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 75%;
+}
+
+.bg .bottomView .subImgViews {
+  margin: 0 auto;
+  width: 670rpx;
+}
+
+.bg .bottomView .subImgViews-imgView {
+  width: 100%;
+  display: flex;
+  vertical-align: middle;
+  position: relative;
+}
+
+.bg .bottomView .subImgViews-imgView .subViews {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.bg .bottomView .subImgViews-imgView .subViews-img {
+  width: 250rpx;
+  position: absolute;
+  bottom: 95rpx;
+  left: 47.5%;
+  transform: translateX(-50%);
+}
+
+.bg .bottomView .subImgViews-imgView .subViews-text {
+  position: absolute;
+  bottom: 20rpx;
+  left: 0;
+  width: 100%;
+  line-height: 47rpx;
+  font-size: 28rpx;
+  text-align: center;
+  font-family: 'jxzk';
+}
+
+.sanjiao {
+  position: fixed;
+  top: 4.5%;
+  left: 3%;
+  width: 42rpx;
+  height: 59rpx;
+  z-index: 9;
+}

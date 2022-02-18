@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  background: #005ae7;
+}
+
+.container .images {
+  width: 100%;
+}
+
+.container .albumBottom {
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+}
+
+.container .albumBottom .albumArea {
+  width: 50%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .albumBottom .albumArea .aImage {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container .albumBottom .albumArea .albumTxt {
+  font-size: 28rpx;
+  color: black;
+  margin-left: 10rpx;
+}
+
+.container .albumBottom .line {
+  width: 2rpx;
+  height: 40rpx;
+  background: black;
+  margin: 30rpx;
+}
+
+.container .bottomImg {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.container .albumShare {
+  width: 100%;
+  display: flex;
+}
+
+.container .albumShare .albumArea {
+  width: 50%;
+  position: relative;
+}
+
+.container .albumShare .albumArea .albumBack {
+  width: 280rpx;
+  height: 80rpx;
+  background: black;
+  border-radius: 80rpx;
+}
+
+.container .albumShare .albumArea .albumBack .aImage {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container .albumShare .albumArea .albumBack .albumTxt {
+  font-size: 28rpx;
+  color: white;
+  margin-left: 10rpx;
+}
+
+.container .albumShare .albumArea .share {
+  position: absolute;
+  width: 280rpx;
+  height: 80rpx;
+  background: none;
+}

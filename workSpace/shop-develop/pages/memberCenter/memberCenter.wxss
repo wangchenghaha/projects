@@ -1,0 +1,611 @@
+.mc-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #fff;
+}
+
+.banner {
+  width: 100%;
+  height: 376rpx;
+  position: relative;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.goShopContent {
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  color: #000;
+  top: 40rpx;
+  left: 0;
+  font-size: 24rpx;
+  background-color: rgba(250, 250, 248, 0.7);
+  border-radius: 0 20px 20px 0;
+}
+
+.banner .goShopLogo {
+  width: 27rpx;
+  height: 30rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/package_small.png);
+  background-size: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 12rpx;
+  top: 14rpx;
+}
+
+.backToShopDetail {
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  color: #000;
+  top: 140rpx;
+  left: 0;
+  font-size: 24rpx;
+  background-color: rgba(250, 250, 248, 0.7);
+  border-radius: 0 20px 20px 0;
+}
+
+.ImgBackToShopDetail{
+  width: 30rpx;
+  height: 30rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/icon_back_to_shop.png);
+  background-size: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 12rpx;
+  top: 10rpx;
+}
+
+.layout_daily_check_in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 177rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  color: #000;
+  top: 40rpx;
+  right: 0;
+  font-size: 24rpx;
+  background-color: rgba(250, 250, 248, 0.7);
+  border-radius: 20px 0 0 20px ;
+}
+.ImgDailyCheckIn{
+  margin-right: 7rpx;
+  width: 32rpx;
+  height: 32rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/daily_checkin_gift_default.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.layout_daily_check_in text{color: #EAA060;}
+
+.nav {
+  position: relative;
+  padding-top: 108rpx;
+  padding-bottom: 16rpx;
+  z-index: 99;
+  color: #000;
+  background-color: #ededed;
+}
+
+.user {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+.user .nick-name{
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.user_img {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1px solid #8A8A8A;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+
+.user_img image {
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.sub-nav {
+  border-top: 1rpx solid #d5d5d6;
+  border-bottom: 1rpx solid #d5d5d6;
+  color: #fff;
+  display: flex;
+}
+
+.sub-nav view {
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.icon {
+  height: 46rpx;
+  width: 56rpx;
+}
+
+.sales {
+  background-color: #fff;
+  width: 100%;
+}
+
+.sales>view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  font-size: 28rpx;
+  padding-top: 30rpx;
+}
+
+.sales view::after, .sub-nav-2 view::after {
+  border: none;
+}
+
+.sub-nav-2 {
+  border-bottom: none;
+}
+
+.list {
+  width: 100%;
+  color: #000;
+}
+
+.list .singleView {
+  width: 87%;
+  height: 80rpx;
+  margin-left: 2%;
+  padding: 0 30rpx 0 50rpx;
+  border-bottom: 1px solid #dfdfdf;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.list image:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  left: 0;
+  top: 35%;
+}
+
+.secondImg {
+  width: 50rpx;
+  height: 20rpx;
+  margin-top:30rpx;
+}
+
+.num_tishi {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  font-size: 22rpx;
+  position: absolute;
+  text-align: center;
+  left: 40rpx;
+  right: 0;
+  top: 10rpx;
+  margin: 0 auto;
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border-radius: 50%;
+}
+
+.weui-form-preview__ft {
+  line-height: 46px;
+}
+
+.myCenter {
+  width: 94%;
+  height: 150rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 3%;
+  top: -12%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 10px #7b7878;
+  font-size: 28rpx;
+}
+
+.myCenter image{
+  display: block;
+  width: 50rpx;
+}
+
+.myCenter .nav-item {
+  flex: 1;
+  height: 90rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 1px solid #ccc;
+}
+.myCenter .nav-item:last-child{
+  border: none;
+}
+.duibaStyle {
+   border-right: 1px solid #ccc;
+}
+.duibaStyle image {
+ height: 36rpx !important;
+ width: 46rpx !important;
+}
+.cart-num{
+  position: absolute;
+  top: 10rpx;
+  margin-left: 20rpx;
+  width: 35rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  text-align: center;
+  font-size: 20rpx;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.shopCart, .integralMall, .memberCard {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+.shopCart {
+  width: 40rpx;
+  height: 40rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/car_small_black.png);
+}
+
+.collection{
+  width: 40rpx;
+  height: 40rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/image/member_collection.png);
+}
+
+.integralMall {
+  width: 40rpx;
+  height: 40rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/integral_samll_black.png);
+}
+
+.memberCard {
+  width: 48rpx;
+  height: 42rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/vip_small_black.png);
+}
+
+.centerSwiper {
+  width: 100%;
+  height: 140rpx;
+  position: relative;
+}
+
+.centerSwiper .swiper {
+  height: 140rpx;
+}
+
+.centerSwiper .swiper image {
+  height: 140rpx;
+}
+
+.myOrder {
+  padding: 0 20rpx;
+  margin-top: 15rpx;
+  background-color: #fff;
+  overflow: hidden;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.orderLogo {
+  width: 30rpx;
+  height: 30rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/order_small_black.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.list .adBanner {
+  width: 100%;
+  height: 160rpx;
+  margin-top: 20rpx;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-bottom: 10rpx;
+}
+
+/* 联系客服 */
+
+.call_wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.call_wrap .opacity {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: 0.6;
+}
+
+.callHelp {
+  width: 85%;
+  height: 333rpx;
+  clear: both;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #fff;
+}
+
+.help_title {
+  width: 100%;
+  height: 84rpx;
+  background-color: #f3f3f3;
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 84rpx;
+  color: #000;
+}
+
+.help_con {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+}
+
+.help_con .call {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.help_con .call text {
+  float: left;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #595959;
+  padding-left: 8%;
+}
+
+.help_con .call image {
+  float: right;
+  width: 27rpx;
+  margin: 22rpx 30rpx 0 0;
+}
+
+.help_close {
+  width: 100%;
+  height: 86rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 34rpx;
+  line-height: 86rpx;
+  background-color: #f3f3f3;
+  color: #afafaf;
+  text-align: center;
+  border-top: 2rpx solid #d9d9d9;
+}
+
+.hide{
+  display: none;
+}
+
+.helpBonucedBG{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 999998;
+}
+
+/* 客服弹框 */
+.helpBounced{
+  position: fixed;
+  top: 13%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 999999;
+}
+
+.bounced-close{
+  width: 75rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 0rpx;
+  left: 45%;
+}
+.bounced-call{
+  position: absolute;
+  bottom: 13.5%;
+  right: 21%;
+  width: 37rpx;
+  height: 37rpx;
+}
+.bounced-save{
+  position: absolute;
+  bottom: 38%;
+  left: 29%;
+  width: 130rpx;
+  height: 48rpx;
+}
+.bounced-copy{
+  position: absolute;
+  bottom: 30%;
+  left: 29%;
+  width: 185rpx;
+  height: 48rpx;
+}
+
+.tip-title{
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 36rpx;
+}
+
+.order-tel{
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.order-tel .flex-item{
+  font-size: 32rpx;
+}
+
+.order-tel .phone-icon{
+  display: block;
+  margin-left: 180rpx;
+}
+
+
+.order-tel .phone-icon image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.official-account{
+  width: 750rpx;
+  height: 190rpx;
+}
+.guide-fixed{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+.guide-fixed .guide-content{
+  position: absolute;
+  left: 50%;
+  top: 300rpx;
+  margin-left: -45%;
+  width: 90%;
+  height: 450rpx;
+  background: #fff;
+}
+.guide-content .guide-title{
+  display: block;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 36rpx;
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+.guide-content .sub-title{
+  display: block;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  text-align: center;
+}
+.guide-content .guide-form{
+  margin: 10rpx auto;
+  width: 90%;
+}
+.guide-content .guide-text{
+  flex: 1;
+  margin-right: 20rpx;
+  padding-left: 10rpx;
+  height: 72rpx;
+  font-size: 30rpx;
+  border: 4rpx solid #bdc3c7;
+}
+.guide-content .guide-btn{
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 50rpx;
+  text-align: center;
+  background: #e24f01;
+  color: #fff;
+  border-radius: 50%;
+}
+.guide-content .btn-wrapper{
+  margin: 50rpx auto 20rpx;
+  width: 90%;
+}
+.guide-content .btn-wrapper .btn{
+  flex: 1;
+  font-size:30rpx;
+  line-height:80rpx;
+  width:284rpx;
+  height:80rpx;
+  text-align:center;
+  background:#000;
+  color:#fff;
+}
+.guide-content .btn-wrapper .confirm-btn{
+  margin-right: 20rpx;
+}

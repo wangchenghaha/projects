@@ -1,0 +1,14 @@
+<view class="header">
+  <view class="banner">
+    <image src="{{bannerImg}}" mode="widthFix"></image>
+  </view>
+  <view class="user-info flex-center">
+    <view class="avatar">
+      <image src="{{avatarUrl || wxUserInfo.avatarUrl}}" mode="widthFix"></image>
+    </view>
+    <view class="title">
+      你的专属时尚顾问
+      <text>{{nickname || wxUserInfo.nickName}}推荐给您的</text>
+    </view>
+  </view>
+</view>

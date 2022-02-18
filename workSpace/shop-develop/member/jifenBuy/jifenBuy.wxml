@@ -1,0 +1,152 @@
+
+
+<view class="wrap">
+  <view class='top'>
+    <image src='{{imgSrc}}' mode='widthFix'></image>
+    <view class="tanchu">
+      <view class="opacity"></view>
+      <view class="opacity_con">
+        <view class="user">
+          <view class='user_img'>
+            <image src="{{user.img}}" mode="aspectFit"></image>
+          </view>
+        </view>
+        <view class='vip_con'>
+          <view class='name'>{{vip_con.name}}</view>
+          <view class='phone'>{{vip_con.phone}}</view>
+        </view>
+        <view class='vip_card'>
+          <image src='{{vip_cardImg}}' mode='widthFix'></image>
+          <view class='vip_name' bindtap='toMyPoints'>{{vip_con.level}}</view>
+          <view class='vip_fen' bindtap='toMyPoints'>{{vip_con.availablepoints}}积分>></view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class='content'>
+    <view class='con_h2'>
+      <view class='con_li {{syQh?"con_list":""}}' data-index="0" bindtap='syqh'>
+        <text>商品</text>
+      </view>
+      <view class='con_li {{!syQh?"con_list":""}}' data-index="1" bindtap='syqh'>
+        <text>优惠券</text>
+      </view>
+    </view>
+
+    <view class="con_con" wx:if="{{syQh}}">
+      <view class="li" wx:for="{{sp_list}}" wx:key="{{sp_list}}"  data-id='{{item.id}}' data-code='{{item.goodsCode}}'  data-score='{{item.score}}'  data-money='{{item.money}}' bindtap='toJifenBuyContent'>
+        <image src='{{item.picimg}}' mode="aspectFit"></image>
+        <view class="list_h2">{{item.goodsName}}</view>
+        <view class="oldprice">
+          <view class="line">¥{{item.goodsPrice}}<view class="border"></view></view>
+        </view>
+        <view class="nowprice">{{item.score}}积分+{{item.money}}元</view>
+      </view>
+    </view>
+    <view class="con_con con_con2" wx:if="{{!syQh}}">
+      <view class='yes'>
+
+        <!-- JACKJONES -->
+        <view class="quan_brand">
+          <view class="quan_left">
+            <view class='quan_logo'>
+            
+              <image src='{{squareLogo.jj}}' mode='widthFix' style='border-radius:50%;'></image>
+            </view>
+            <view class='text'>共{{brand_jj.length==0?'0':brand_jj.length}}张券</view>
+          </view>
+          <view class='quan_ul'>
+            <view class='quan_li' wx:for="{{brand_jj}}" wx:key="brand_jj">
+              <view class='li_left'>
+                <view class='li_title'>{{item.type}} — {{item.ruleIntroduction[0]}}</view>
+                <view class='li_con'>{{item.ruleIntroduction[1]}}</view>
+              </view>
+              <view class='li_right' data-brand='jj' data-json='{{item}}' bindtap='toLingqu'>
+                <view class='li_click'>点击领取</view>
+              </view>
+            </view>
+            <view class='zanwu' wx:if="{{brand_jj.length==0}}">暂无优惠券</view>
+          </view>
+        </view>
+
+
+        <!-- ONLY -->
+        <view class="quan_brand">
+          <view class="quan_left">
+            <view class='quan_logo'>
+              <image src='{{squareLogo.oy}}' mode='widthFix' style='border-radius:50%;'></image>
+            </view>
+            <view class='text'>共{{brand_only.length}}张券</view>
+          </view>
+          <view class='quan_ul'>
+            <view class='quan_li' wx:for="{{brand_only}}" wx:key="brand_only">
+              <view class='li_left'>
+                <view class='li_title'>{{item.type}} — {{item.ruleIntroduction[0]}}</view>
+                <view class='li_con'>{{item.ruleIntroduction[1]}}</view>
+              </view>
+              <view class='li_right' data-brand='only' data-json='{{item}}' bindtap='toLingqu'>
+                <view class='li_click'>点击领取</view>
+              </view>
+            </view>
+            <view class='zanwu' wx:if="{{brand_only.length==0}}">暂无优惠券</view>
+          </view>
+        </view>
+
+
+        <!-- VEROMODA -->
+        <view class="quan_brand">
+          <view class="quan_left">
+            <view class='quan_logo'>
+              <image src='{{squareLogo.vm}}' mode='widthFix'></image>
+            </view>
+            <view class='text'>共{{brand_vm.length}}张券</view>
+          </view>
+          <view class='quan_ul'>
+            <view class='quan_li' wx:for="{{brand_vm}}" wx:key="brand_vm">
+              <view class='li_left'>
+                <view class='li_title'>{{item.type}} — {{item.ruleIntroduction[0]}}</view>
+                <view class='li_con'>{{item.ruleIntroduction[1]}}</view>
+              </view>
+              <view class='li_right' data-brand='vm' data-json='{{item}}' bindtap='toLingqu'>
+                <view class='li_click'>点击领取</view>
+              </view>
+            </view>
+            <view class='zanwu' wx:if="{{brand_vm.length==0}}">暂无优惠券</view>
+          </view>
+        </view>
+
+        <!-- SELECTED -->
+        <view class="quan_brand">
+          <view class="quan_left">
+            <view class='quan_logo'>
+              <image src='{{squareLogo.slt}}' mode='widthFix'></image>
+            </view>
+            <view class='text'>共{{brand_slt.length}}张券</view>
+          </view>
+          <view class='quan_ul'>
+            <view class='quan_li' wx:for="{{brand_slt}}" wx:key="brand_slt">
+              <view class='li_left'>
+                <view class='li_title'>{{item.type}} — {{item.ruleIntroduction[0]}}</view>
+                <view class='li_con'>{{item.ruleIntroduction[1]}}</view>
+              </view>
+              <view class='li_right' data-brand='slt' data-json='{{item}}' bindtap='toLingqu'>
+                <view class='li_click'>点击领取</view>
+              </view>
+            </view>
+            <view class='zanwu' wx:if="{{brand_slt.length==0}}">暂无优惠券</view>
+          </view>
+        </view>
+
+      </view>
+      <view class='no'>
+        <view class='goToIndex' bindtap='goToIndex'>去商城逛逛</view>
+      </view>
+    </view>
+    
+  </view>
+
+
+
+</view>

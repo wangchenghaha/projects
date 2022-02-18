@@ -1,0 +1,20 @@
+<view class="bg">
+    <!-- 顶部 -->
+    <view class="topBg">
+        <view id="{{index}}" data-type="top" class="topView {{item.select ? 'topView-show' : ''}}" wx:for="{{topTitles}}" wx:key="top" bindtap="onClick">{{item.name}}</view>
+    </view>
+    <!-- 列表 -->
+    <view class="box">
+        <view class="box-item" wx:for="{{listData}}" wx:key="boxList" wx:if="{{item.status == 'InShelf'}}">
+            <image style="width:100%;" bindtap="onClick" data-item="{{item}}" src="{{item.coverImgUrl}}" mode="widthFix" />
+                <view class="zanView">
+                    <image src="../images/shortVideo_zan.png" style="width:35rpx;" mode="widthFix" />
+                    <view class="zan-title">{{item.priseCount}}</view>
+                </view>
+        </view>
+    </view>
+</view>
+  <!-- 回到顶部 -->
+  <view wx:if="{{goTopShow}}" class="go-top" bindtap="gotoTop">
+    <image src="/images/top3.png" mode="widthFix"></image>
+  </view>

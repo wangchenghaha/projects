@@ -1,0 +1,7 @@
+{
+    "navigationStyle" : "custom",
+    "usingComponents": {
+        "help_fol" : "../components/help_fol/help_fol",
+        "help_vm" : "../components/help_vm/help_vm"
+    }
+}

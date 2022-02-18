@@ -1,0 +1,9 @@
+
+<view class="comp-page">
+   <video class="myVideo" 
+   src="{{videosrc}}"
+   autoplay="{{false}}"
+   loop="{{true}}"
+   object-fit="fill"
+   controls></video>
+</view>

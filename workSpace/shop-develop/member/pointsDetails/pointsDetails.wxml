@@ -1,0 +1,31 @@
+<view class="mc-container">
+  <view class="banner">
+    <image src="{{banner.img}}" mode="aspectFill"></image>
+    <text class="points">可用积分：{{ponintsCanUse}}</text>
+    <text class="toMemberRewards" bindtap="toMemberRewards">{{banner.memberRewards}}</text>
+    <view class="user">
+      <image src="{{user.img}}" mode="aspectFill"></image>
+      <view>{{user.name}}</view>
+    </view>
+  </view>
+  <view class="main">
+    <view class="points-info">
+      <view>可用积分</view><view>{{ponintsCanUse}}</view>
+    </view>
+    <view class="points-info">
+      <view>累计积分</view><view>{{pointsTotal}}</view>
+    </view>
+    <view class="points-info">
+      <view>已用积分</view><view>{{pointsCost}}</view>
+    </view>
+    <view class="points-info">
+      <view>会员级别</view><view>{{memLevel}}</view>
+    </view>
+    <view class="points-info">
+      <view>账户周年日</view>
+    </view>
+    <view class="points-info">
+      <view>{{text}}</view>
+    </view>
+  </view>
+</view>

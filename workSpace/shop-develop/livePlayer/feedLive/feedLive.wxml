@@ -1,0 +1,9 @@
+<view class="feed" style="background: {{pageConfig.bgColor || 'none'}}">
+  <view wx:for="{{pageConfig.list}}" wx:key="img">
+    <view class="flex-center" wx:if="{{item.list}}">
+      <image wx:for="{{item.list}}" wx:key="list" src="{{splitImg + item.img}}" class="img img-2" data-room="{{item.roomid}}" data-sku="{{item.sku}}" mode="widthFix" bindtap="onClick"></image>
+    </view>
+    <image wx:else src="{{splitImg + item.img}}" class="img" data-room="{{item.roomid}}" data-sku="{{item.sku}}" mode="widthFix"  bindtap="onClick"></image>
+
+  </view>
+</view>

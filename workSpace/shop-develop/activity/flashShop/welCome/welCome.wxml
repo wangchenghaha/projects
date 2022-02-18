@@ -1,0 +1,9 @@
+<view class="wrap" style="background-image: url('{{splashImg}}');">
+  <text class='daojishi flex-center' bindtap='gotoIndex'>跳过\n{{time_value}}s</text>
+  
+  <view class="logoView">
+    <view class="top">{{logoJson.top}}</view>
+    <view class="center">{{logoJson.center}}</view>
+    <view class="bottom">{{logoJson.bottom}}</view>
+  </view>
+</view>

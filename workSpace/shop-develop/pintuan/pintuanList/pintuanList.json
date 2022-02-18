@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pintuan-list":"../components/pintuanListView/pintuanListView",
+    "screen-size":"/components/screenSize/screenSize"
+  },
+  "navigationBarTitleText": "商品列表"
+}

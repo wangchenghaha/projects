@@ -1,0 +1,22 @@
+import Conf from '../../config/index'
+export default {
+    logo: `${Conf.cdnUrl}/logo.png`,
+    go: `${Conf.cdnUrl}/GO.png`,
+    // big_modal: `${Conf.cdnUrl}/big_modal.png`,
+    card_1: `${Conf.cdnUrl}/card_1.png`,
+    descript: `${Conf.cdnUrl}/descript.png`,
+    getCard_1: `${Conf.cdnUrl}/getCard_1.png`,
+    tit1: `${Conf.cdnUrl}/mini-title.png`,
+    mini_modal: `${Conf.cdnUrl}/modal_bg.png`,
+    reward_bg: `${Conf.cdnUrl}/reward_bg.png`,
+    shake_icon: `${Conf.cdnUrl}/shake_icon.png`,
+    tit2: `${Conf.cdnUrl}/tit-2.png`,
+    title: `${Conf.cdnUrl}/title.png`,
+    turnbale: `${Conf.cdnUrl}/turntable.png`,
+    turnbale_ex: `${Conf.cdnUrl}/turntable_ex.png`,
+    reward1: `${Conf.cdnUrl}/reward1.png`,
+    reward2: `${Conf.cdnUrl}/reward2.png`,
+    reward3: `${Conf.cdnUrl}/reward3.png`,
+    reward4: `${Conf.cdnUrl}/reward4.png`,
+    reward5: `${Conf.cdnUrl}/reward5.png`,
+}

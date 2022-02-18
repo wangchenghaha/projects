@@ -1,0 +1,85 @@
+<!--index.wxml-->
+<view class="container">
+    <image  class="backgroundImg" src="{{springBg}}" mode="widthFix" ></image>
+    <image class="logoImg" style="top:{{logoTop}}" src="{{logo}}" mode="widthFix"></image>
+    <view class="pointArea flex-center" style="top:{{pointTop}}"><text style="font-size: 48rpx;">倒计时:{{downNum}}s</text></view>
+     
+    <!-- 返回logo --> 
+    <image class="backImg" src="{{backImg}}" mode="widthFix" data-type="back"  bindtap="onClick"/>
+
+    <image class="personImg" 
+    style="transform: translate3d(0,{{renwuJump ? -50 : 0}}%,0);animation: {{renwuAnim}} 1s ease-out 0s 1 forwards;"
+    src="{{renwuImg}}" mode="widthFix"  bindtap="onClick"/>
+
+    <block wx:for="{{platformList}}" wx:key="platform">
+        <image class="platformImg" style="top:{{item.top}}rpx; left:{{item.left}}rpx; animation: {{item.animation}} 1s ease-out 0s 1 forwards;"  src="{{item.stepImg}}" mode="widthFix" />
+        <image class="platformImg" style="top:{{item.top}}rpx; left:{{item.barrierleft}}rpx; animation: {{item.animation}} 1s ease-out 0s 1 forwards;"  src="{{item.barrieImg}}" mode="widthFix"  wx:if="{{item.barrier != 10}}"/>
+    </block>
+    
+    <view class="clickArea">
+        <view class="halfarea" data-type="left" bindtap="{{firstShow ? '': 'onClick'}}"></view>
+        <view class="halfarea" data-type="right" bindtap="{{firstShow ? '': 'onClick'}}"></view>
+    </view>
+    
+    
+    <block wx:if="{{firstShow}}">
+        <view class="bounced" style="background-color: black;opacity: .5;"></view>
+        <view class="bounced">
+            <view class="bounced-firstPop flex-center">
+                <image class="background" src="{{firstShowImg}}" mode="widthFix" data-type="firstShow"  bindtap="onClick"/>
+            </view>
+        </view>
+    </block>
+
+    <block wx:if="{{showCoupon}}">
+        <view class="bounced" style="background-color: black;opacity: .5;"></view>
+        <view class="bounced" style="animation: scaleAnimate 0.5s ease-out 0s 1 forwards;" >
+            <view class="bounced-firstPop flex-center">
+                <image class="couponbg" src="{{couponShowImg}}" mode="widthFix" data-type="close"  bindtap="onClick"/>
+                <view class="couponArea">
+                    <view class="couponInfo">获得{{couponName}}</view>
+                    <image class="couponImg" src="{{couponImg}}" mode="widthFix"></image>
+                </view>
+                
+            </view>
+        </view>
+    </block>
+
+    <block wx:if="{{gameOverShow}}">
+        <view class="bounced" style="background-color: black;opacity: .5;"></view>
+        <view class="bounced">
+            <view class="bounced-firstPop">
+                <view class="gameOverBg" wx:if="{{isFirstDeath}}">
+                    <image class="gameOverlogo" src="{{gameOverlogo}}" mode="widthFix"></image>
+                    <view class="txt1">得分： {{currentPoint}}</view>
+                    <view class="txt1">我的世界排名： {{myRank}}</view>
+                    <view class="txt2">{{isFol? '扶朕起来，点击复活，我要再战一次！':'您有一次复活机会， 分享即可复活'}}</view>
+                    <view class="btn1">立即复活</view>
+                    <button open-type="share" class="share" style="top: {{inventTop1}}"></button>
+                    <view class="btn2" data-type="gameAgain" bindtap="onClick">再玩一次</view>
+                    <view class="txt3" data-type="gift" bindtap="onClick">领取成就奖励 >></view>
+                </view>
+                <view class="gameOverBg" wx:if="{{haveGameCount}}">
+                    <image class="gameOverlogo" src="{{gameOverlogo}}" mode="widthFix"></image>
+                    <view class="txt1">得分： {{currentPoint}}</view>
+                    <view class="txt1">我的排名：{{myRank}}</view>
+                    <view class="txt4" >{{messages}}{{currentPoint}}分！！</view>
+                    <view class="txt4" style=" text-align: center;">您还有{{userData.gameCount> 0? userData.gameCount : 0}}次游戏机会，加油！</view>
+                    <view class="btn2"  style="margin-top: 50rpx;" data-type="gameAgain" bindtap="onClick">再玩一次</view>
+                    <view class="txt3" data-type="gift" bindtap="onClick">领取成就奖励 >></view>
+                </view>
+                <view class="regretBg" wx:if="{{noGameCount}}">
+                    <image class="regretlogo" src="{{regretlogo}}" mode="widthFix"></image>
+                    <view class="txt1">您的游戏次数为0，无法游戏！</view>
+                    <view class="txt2">{{gameOverStr}}</view>
+                    <view class="btn1">立即邀请好友助力</view>
+                    <button open-type="share" class="share" style="top: {{inventTop2}}"></button>
+                </view>
+                <image class="close" src="{{closeImg}}" data-type="gameOver" bindtap="onClick"></image>
+            </view>
+        </view>
+    </block>
+</view>
+
+<!-- 音乐开关 -->
+<image class="musicImg {{isMusicStart?'music-on':''}}" src="{{musicImg}}" mode="widthFix" data-type="music"  bindtap="onClick"/>

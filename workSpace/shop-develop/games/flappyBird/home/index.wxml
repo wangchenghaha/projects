@@ -1,0 +1,90 @@
+<view class="bg">
+    <view class="posistionView">
+        <image src="{{bgImg}}" style="width:100%; height:100%;" />
+
+        <view class="centerView">
+                <image src="{{centerImg}}" style="width:602rpx;" mode="widthFix" />
+
+                <view class="bottomView">
+                    <image wx:for="{{bottomImgs}}" wx:key="index" src="{{item}}" class="bottomView-img" id="{{index}}" bindtap="bottomTap" />
+                </view>
+                <view class="shengyu">剩余次数:{{userData.gameCount}}</view>
+                <view class="play" bindtap="play"></view>
+        </view>
+
+        <view class="num">
+            <image src="{{numImg}}" style="width:100%;" mode="widthFix" />
+            <view class="numView">{{userData.points}}</view>
+        </view>
+        <view class="birdNum">
+            <image src="{{birdNumImg}}" style="width:100%;" mode="widthFix" />
+            <view class="numView">{{userData.flopCount > 6 ? 6 : userData.flopCount}}</view>
+        </view>
+        <view class="guize" bindtap="guizeTap">游戏规则</view>
+    </view>
+        <view class="goHome" bindtap="goHome">
+            <image src="{{goHomeImg}}" style="width:100%;height:100%;" />
+        </view>
+</view>
+
+<block wx:if="{{showRenwu}}">
+    <view class="bouncedBg" style="animation: {{bouncedBgAnimate}} .2s ease 0s 1 normal forwards;"></view>
+    <view class="bouncedView" style="animation: {{renwuAnimate}} .2s ease {{renwuAnimate === 'moveUp' ? 0.1 : 0}}s 1 normal forwards;">
+        <image src="{{renwuImg}}" style="width:100%;height:100%" />
+
+        <view class="closed" bindtap="closed"></view>
+
+        <view class="subView">
+            <view class="bgview" wx:for="{{renwuDatas}}" wx:key="index" style="background-image: url({{item.bg}});">
+
+                <view class="left">
+                    <view class="title">{{item.title}}</view>
+                    <view class="subTitle">{{item.subTitle}}</view>
+                </view>
+                <view class="right" data-detail="{{item}}" bindtap="btnTap">
+                    <image src="{{item.btn}}" class="btn" />
+                    <button open-type="share" class="share" wx:if="{{item.type === 'share'}}"></button>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:if="{{showDuihuan || showGuize}}">
+    <view class="bouncedBg" style="animation: {{bouncedBgAnimate}} .2s ease 0s 1 normal forwards;"></view>
+    <view class="duihuan" style="animation: {{duhuanAnimate}} .2s ease {{duhuanAnimate === 'duihuanShow' ? 0.1 : 0}}s 1 normal forwards;background-image: url({{showDuihuan ? duihuanImg : guizeImg}});">
+        <block wx:if="{{showDuihuan}}">
+            <view class="closed" bindtap="closed"></view>
+            <view class="bottomView">
+                <view class="top">
+                    <view class="left" style="background-color: {{duihuanType === '1' ? 'white' : '#E4CE6F'}};color: {{duihuanType === '1' ? '#319600' : '#A68926'}};" id="1" bindtap="duihuanTypeTap">兑换奖品</view>
+                    <view class="right" style="background-color: {{duihuanType === '2' ? 'white' : '#E4CE6F'}};color: {{duihuanType === '2' ? '#319600' : '#A68926'}};" id="2" bindtap="duihuanTypeTap">兑换记录</view>
+                </view>
+                <view class="bottom">
+                    <view class="flexView" wx:for="{{couponDatas}}" wx:for-item="items" wx:key="index">
+                        <view wx:for="{{items}}" wx:key="index" class="bgImg" style="background-image: url({{duihuanImg_box}});">
+                            <view class="title" style="margin-top:{{duihuanType === '1' ? 20 : 45}}rpx;">优惠券</view>
+                            <image src="{{item.giftPic}}" class="img" mode="widthFix" />
+                            <view wx:if="{{duihuanType === '1'}}" class="subNum">{{item.pointsRequire}}<image src="{{xingImg}}" style="margin-left:5rpx;margin-top:20rpx;width:28rpx;height:29rpx;" /></view>
+                            <image src="{{duihuanType === '1' ? duihuan_1 : duihuan_2}}" style="width: 162rpx;margin-top:{{duihuanType === '1' ? 0 : 18}}rpx;" mode="widthFix" data-detail="{{item}}" bindtap="duihuanTap" />
+                            <view wx:if="{{duihuanType === '1'}}" class="shengyu">剩余:{{item.stock}}份</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="guizeClosed" bindtap="closed"></view>
+            <view class="guizeBottomView">
+                <view wx:for="{{guizeArrs}}" wx:key="index">
+                    {{item}}
+                </view>
+            </view>
+        </block>
+    </view>
+</block>
+<block wx:if="{{showPrice}}">
+    <view class="bouncedBg" style="animation: {{bouncedBgAnimate}} .2s ease 0s 1 normal forwards;"></view>
+    <view class="bounced-priceView" style="animation: {{duhuanAnimate}} .2s ease {{duhuanAnimate === 'duihuanShow' ? 0.1 : 0}}s 1 normal forwards;background-image: url({{priceImg}});">
+        <view class="priceClosed" bindtap="priceTap"></view>
+    </view>
+</block>

@@ -1,0 +1,83 @@
+<!--index.wxml-->
+<view class="tb_box {{noScroll?'no-scroll':''}}"
+      style="background:{{backgroundColor}} ;height:{{noScroll?indexHeight:'auto'}}">
+
+  <image class="tb_backbg" src="{{lottery[0].config.backgroundUrl}}"></image>
+
+  <!-- 跑马灯效果  -->
+  <view class="marquee_container" style="background:{{mainColor}}; --marqueeWidth--:-160em">
+    <view class="marquee_text">{{marqueeText}}</view>
+  </view>
+
+  <!--<view class="brandTitle" wx:if="{{brandTitle}}">
+    <image src="{{brandTitle}}" mode='widthFix'/>
+  </view>-->
+
+  <view class="container">
+    <view class='frame_view' wx:if="{{lottery[0].prizePicUrl}}">
+      <view class='frame_row'>
+        <view class="double_bg">
+          <image class='frame_double' style='opacity:{{color[0]}}' src='{{lottery[0].prizePicUrl}}'
+                 mode="aspectFit"></image>
+        </view>
+        <view class="item_bg">
+          <image class='frame_item' style='opacity:{{color[1]}}' src='{{lottery[1].prizePicUrl}}'
+                 mode="aspectFit"></image>
+        </view>
+      </view>
+
+      <view class='frame_row'>
+        <view class="item_bg">
+          <image class='frame_item' style='opacity:{{color[5]}}' src='{{lottery[5].prizePicUrl}}'
+                 mode="aspectFit"></image>
+        </view>
+        <image class='frame_item' src='{{btnconfirm}}' mode="aspectFit" bindtap='getLottery'></image>
+        <view class="item_bg">
+          <image class='frame_item' style='opacity:{{color[2]}}' src='{{lottery[2].prizePicUrl}}'
+                 mode="aspectFit"></image>
+        </view>
+      </view>
+
+      <view class='frame_row'>
+        <view class="item_bg">
+          <image class='frame_item' style='opacity:{{color[4]}}' src='{{lottery[4].prizePicUrl}}'
+                 mode="aspectFit"></image>
+        </view>
+        <!-- <image class='frame_item' style='opacity:{{color[5]}}' src='{{images[5]}}'></image> -->
+        <view class="double_bg">
+          <image class='frame_double' style='opacity:{{color[3]}}' src='{{lottery[3].prizePicUrl}}'
+                 mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="giftBtn" style="background:{{gfitColor}}; color: {{btnTxtColor}}" bindtap="giftBtn">查 看 奖 品</view>
+
+  <view class="homeBtn" style="background:{{homeColor}}" bindtap="homeBtn">去 商 城 购 物</view>
+
+  <view class="seeDetail" bindtap="seeDetail">
+    <text>点 击 查 看 细 则</text>
+  </view>
+
+  <view class="voucher {{isShowTModel ? 'show': ''}}">
+    <view class="showModel" wx:if="{{isluckly}}">
+      <image class="tan_close_luckly" mode="widthFix" bindtap="tanClose"/>
+      <image src="{{LuckshowImage}}" mode="widthFix" bindtap="openWxCard"></image>
+    </view>
+    <view class="showModel" wx:if="{{unluckly}}">
+      <image class="tan_close_luckly" mode="widthFix" bindtap="tanClose"/>
+      <view class="errMesage" wx:if="{{isErrTextShow}}" bindtap="tanClose">{{errMessage}}</view>
+      <image src="{{errShowImage}}" mode="widthFix" bindtap="tanClose"></image>
+    </view>
+    <view class="showModel" wx:if="{{isRule}}">
+      <image class="tan_close" src="../../../../images/qr_close.png" mode="widthFix" bindtap="tanClose"/>
+      <view class="content">
+        <view class="cTitle">活 动 细 则</view>
+        <view class="contentClass">
+          <text class="cInfo">{{rule}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

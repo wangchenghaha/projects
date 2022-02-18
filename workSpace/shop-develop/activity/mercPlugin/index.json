@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "速领惊喜福利",
+  "usingComponents": {
+    "lottery": "plugin://mercPlugin/lottery"
+  }
+}

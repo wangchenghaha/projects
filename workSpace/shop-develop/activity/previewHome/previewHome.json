@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "购物商城",
+  "navigationStyle" : "custom",
+  "usingComponents":{
+    "my-tip":"/components/tip/tip",
+    "my-footer": "/components/footer/footer",
+    "couponpop": "/components/couponPop/couponPop",
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods",
+    "contact-serve": "/components/contactServe/contactServe",
+    "home-page": "/components/home/home",
+    "home-fixed": "/components/homeFixed/homeFixed"
+  }
+}

@@ -1,0 +1,168 @@
+.wrap {
+  min-height: 100%;
+  background: #eee;
+  padding-top: 90rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+}
+.wrap .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  z-index: 99;
+}
+.wrap .header image {
+  width: 288rpx;
+  height: 30rpx;
+}
+.wrap .content .order-item {
+  padding: 20rpx;
+  min-height: 410rpx;
+  margin-bottom: 25rpx;
+  border-radius: 20rpx;
+  background: #fff;
+}
+.wrap .content .order-item .order-code {
+  padding-bottom: 5rpx;
+}
+.wrap .content .order-item .order-status {
+  color: red;
+}
+.wrap .content .store {
+  font-size: 26rpx;
+  border-bottom: solid 1rpx #ccc;
+}
+.wrap .content .goods-content {
+  border-bottom: solid 1rpx #ccc;
+  border-top: solid 1rpx #ccc;
+}
+.wrap .content .goods-content .goods {
+  padding: 20rpx 0;
+  align-items: flex-start;
+}
+.wrap .content .goods-content .goods-img {
+  margin-right: 10rpx;
+  width: 160rpx;
+}
+.wrap .content .goods-content .goods-img image {
+  display: block;
+  width: 100%;
+}
+.wrap .content .goods-content .goods-info {
+  max-width: 420rpx;
+}
+.wrap .content .goods-content .goods-count text {
+  font-size: 20rpx;
+}
+.wrap .content .goods-content .goods-text {
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+}
+.wrap .content .goods-content .goods-text text {
+  display: inline-block;
+  padding: 5rpx;
+  margin-right: 10rpx;
+  font-size: 20rpx;
+  background: #ebebeb;
+}
+.wrap .content .goods-content .goods-text:last-child {
+  margin-top: 50rpx;
+}
+.wrap .content .goods-content .voucher {
+  display: inline-block;
+  padding: 5rpx 25rpx;
+  background: #000;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+.wrap .content .time {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+}
+.wrap .content .time .pay-price {
+  padding-left: 20rpx;
+}
+.wrap .content .time .pay-price text {
+  color: red;
+}
+.wrap .content .btn {
+  margin-top: 20rpx;
+}
+.wrap .content .btn-item {
+  width: 170rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  border-radius: 30rpx;
+}
+.wrap .content .btn-pay {
+  background: #000;
+  color: #fff;
+}
+.wrap .content .btn-remind {
+  background: #d70715;
+  color: #fff;
+}
+.wrap .content .btn-refund {
+  border: solid 2rpx #000;
+}
+.wrap .content .no-order .order-img {
+  margin: 150rpx auto;
+  width: 300rpx;
+}
+.wrap .content .no-order .order-img image {
+  display: block;
+  width: 100%;
+}
+.wrap .content .no-order .order-img text {
+  color: #636363;
+  font-size: 30rpx;
+}
+.wrap .content .no-order .btn-go {
+  margin: 0 auto;
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  background: #000;
+  color: #fff;
+}
+.wrap .pickup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+.wrap .pickup-wrap {
+  display: inline-block;
+  position: relative;
+  padding: 20rpx 10rpx;
+  width: 540rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.wrap .pickup-wrap .title {
+  padding-bottom: 10rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  border-bottom: solid 1rpx #000;
+}
+.wrap .pickup-wrap .canvas {
+  margin: 40rpx auto 20rpx;
+  width: 500rpx;
+  height: 100rpx;
+}
+.wrap .pickup-wrap .close {
+  position: absolute;
+  right: 10rpx;
+  top: 5rpx;
+}
+
+/*# sourceMappingURL=orderList.wxss.map */

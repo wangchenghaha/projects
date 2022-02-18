@@ -1,0 +1,10 @@
+.feed{
+  background: #e13c29;
+}
+.img{
+  display: block;
+  width: 100%;
+}
+.img.img-2{
+  flex: 0 1 50%;
+}

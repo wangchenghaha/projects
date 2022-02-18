@@ -1,0 +1,67 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #ffe62a;
+  z-index: 10;
+  text-align: center;
+}
+
+.wrapper .image {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.wrapper .content {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 100%;
+  font-weight: bold;
+  color: white;
+}
+
+.wrapper .content .title {
+  font-size: 120rpx;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: 10rpx;
+}
+
+.wrapper .content .desc {
+  font-size: 54rpx;
+  line-height: 1;
+  letter-spacing: 10rpx;
+}
+
+.wrapper .content .percent {
+  width: 420rpx;
+  height: 20rpx;
+  padding: 2rpx;
+  border: 1rpx solid white;
+  margin: 40rpx auto 30rpx;
+}
+
+.wrapper .content .percent .inner {
+  width: 0;
+  height: 20rpx;
+  background: white;
+}
+
+.wrapper .content .animate {
+  opacity: 0;
+  will-change: opacity;
+  animation: fadeIn 1s linear infinite;
+}

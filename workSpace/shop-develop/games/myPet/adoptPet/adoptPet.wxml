@@ -1,0 +1,18 @@
+<view class="container">
+    <image class="petBg" src="{{petBg}}"/>
+
+    <view class="petArea">
+        <block wx:for="{{petChoose}}" wx:key="choose">
+            <canvas id="{{item.name}}" type="2d" class="littlePet" wx:if="{{item.seleted}}"></canvas>
+        </block>
+    </view>
+
+    <view class="petChoose flex-center">
+        <block wx:for="{{petChoose}}" wx:key="pet">
+            <image class="petBtn" src="{{item.pic}}" mode="widthFix" data-type="{{item.name}}" data-seleted="{{item.seleted}}" bindtap="onClick"/>
+        </block>
+    </view>
+    <view class="flex-center">
+        <image class="chooseBtn" src="{{chooseBtn}}" mode="widthFix" bindtap="myPet"/>
+    </view>
+</view>

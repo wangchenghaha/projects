@@ -1,0 +1,167 @@
+<!-- 轮播图 -->
+<swiper class="swiper" autoplay="{{swiper.autoplay}}" circular="{{swiper.circular}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" indicator-dots="{{swiper.indicatorDots}}" indicator-active-color="#fff">
+    <swiper-item wx:for="{{5}}" wx:key="swiperList">
+        <view class="imageView">
+            <image src="{{swiper.images[bouncesData.defalutColor][index]}}" bindtap="onClick" mode="widthFix" style="width:100%;"></image>
+        </view>
+    </swiper-item>
+</swiper>
+<image src="../images/pt-125x60.png" class="zhekou" mode="widthFix" />
+<view class="zhekou-text">拼团</view>
+<!-- 回到首页 -->
+<view class="fixed-right">
+    <block wx:for="{{fixedRightArr}}" wx:key="fixedRight">
+        <view class="fixed-item flex-center" data-type="{{item.type}}" bindtap="rightOnClick">
+            <view class="fixed-img flex-center">
+                <image src="{{item.url}}" mode="widthFix"></image>
+            </view>
+            <block wx:if="{{item.type === 'share'}}">
+                <button open-type="share" class="share"></button>
+            </block>
+        </view>
+    </block>
+</view>
+<!-- 拼团信息 -->
+<view class="ptBotomView" bindtap="imageTap" id="{{index}}">
+    <view class="botom-leftView">
+        <view class="titles" style="font-size: 30rpx;margin-left: 20rpx;">￥</view>
+        <view class="titles" style="font-size: 45rpx;margin-left: 15rpx;">
+            {{bouncesData.pintuanDatas.pintuanPrice}}
+        </view>
+        <view class="botom-lefView-s">
+            <view class="titles-up">
+                ￥{{bouncesData.datas.color[bouncesData.defalutColor].originalPrice}}
+            </view>
+            <view class="titles-down">已拼{{bouncesData.pintuanDatas.yipinNum}}件</view>
+        </view>
+    </view>
+    <view class="botom-rightView">{{pintuanPersonNum}}人团</view>
+</view>
+<!-- 商品名称、编号、收藏 -->
+<view class="descView">
+    <view class="leftView">
+        <view class="leftView-uptitle">{{bouncesData.datas.goodsName}}</view>
+        <view class="leftView-botomtitle">产品编号:{{bouncesData.datas.projectCode}}</view>
+        <view class="leftView-botomtitle">{{DANum}}</view>
+    </view>
+    <!-- 收藏功能暂时去掉19.1.11 3:52john沟通 -->
+    <!-- <view class="rightView">
+        <image src="../../images/xin_def.png" mode="widthFix" class="rightView-imageView" />
+        <view class="rightView-text">收藏商品</view>
+    </view> -->
+</view>
+<!-- 颜色、尺码 -->
+<view class="chimaView" id="chima" data-type="center" bindtap="onClick">
+    <view class="chimaView-s">
+        <view class="chimaView-leftView">请选择 颜色 尺码</view>
+        <image class="chimaView-rightView" mode="widthFix" style="width:30rpx;" src="/images/pintuan-sanjiao.png" />
+    </view>
+</view>
+<view class="chimaView" id="goBack" data-type="goBack" bindtap="onClick">
+  <view class="chimaView-s">
+    <view class="chimaView-leftView">查看更多拼团商品</view>
+    <image class="chimaView-rightView" mode="widthFix" style="width:30rpx;" src="/images/pintuan-sanjiao.png" />
+  </view>
+</view>
+<!-- 参团模块 -->
+<view class="cantuanView" wx:if="{{isShareForDetail.icon != ''}}">
+    <view class="topTitleView">
+        您的好友
+        <text class="topTitleView" style="color:red;margin-left: 0;">
+            {{isShareForDetail.name}}
+        </text>
+        已发起拼单,拼团立享当季新款8折
+    </view>
+    <view class="botomView">
+        <view class="botomView-leftView">
+            <block wx:for="{{isShareForDetail.otherIcons}}" wx:key="icons">
+                <view class="icon-z" wx:if="{{index == 0}}">
+                    <view class="icon-z-title">拼主</view>
+                    <image src="{{isShareForDetail.icon}}" mode="widthFix" class="icon"></image>
+                </view>
+                <image src="{{item}}" mode="widthFix" class="icon" style="margin-left: 10rpx;" wx:else></image>
+            </block>
+            <view class="icon" style="margin-left: 10rpx;border: dashed 2rpx #878787;font-size: 27rpx; color: #878787;text-align: center;line-height: 80rpx;">
+                ?
+            </view>
+        </view>
+    </view>
+    <view class="entTitleView">
+        仅剩
+        <text class="entTitleView" style="color:red;">{{shengyuNum}}</text>
+        个名额,{{endTimeObj.hou}}:{{endTimeObj.min}}:{{endTimeObj.sec}}后结束
+    </view>
+    <view class="lineView"></view>
+    <view class="pintuanguizView">
+        <view class="leftView">拼团规则</view>
+        <view class="guize">好友拼单</view>
+        <view class="guize">人满发货</view>
+        <view class="guize">人不满退款</view>
+    </view>
+</view>
+<view class="goPintuanView" wx:elif="{{goPindanArrs.length > 0}}">
+    <view class="topTitleView">以下{{goPindanArrs.length}}人在拼单,您可直接参与</view>
+    <view class="iconViews" wx:for="{{goPindanArrs}}" wx:key="iconViews">
+
+
+            <view class="subView">
+                <view class="icon">
+                    <image src="{{item.customerFaceImg}}" style="width:100%;height:100%;" />
+                </view>
+                <view class="phone">{{item.phone}}</view>
+            </view>
+            <view class="subView">
+                <view class="subView-views">
+                    <view class="topTitle">还差 <text style="font-size: 34rpx;color:#CB0000;">1</text> 人拼成</view>
+                    <view class="subTitle">剩余 {{goPindanDaojishi[index].obj.hou}}:{{goPindanDaojishi[index].obj.min}}:{{goPindanDaojishi[index].obj.sec}}</view>
+                </view>
+                <view class="subView-views" style="width: 48%;">
+                    <view class="goPT" id="chima" data-type="goPindan" data-detail="{{item.pintuanOrderPerson}}" data-canshow="{{goPindanDaojishi[index].obj.canShow}}" bindtap="onClick">去拼单</view>
+                </view>
+            </view>
+
+
+    </view>
+</view>
+<!-- 收藏功能暂时去掉19.1.11 3:52john沟通 -->
+<!-- 猜你喜欢 -->
+<!-- <view class="cainixihuan">
+    <view class="caini-toptitle">猜你喜欢,更多热拼商品疯抢中</view>
+    <pintuan-list></pintuan-list>
+</view> -->
+<!-- html页 -->
+<view wx:if='{{detailShow}}' class="html" style="{{isIphoneX ?'padding-bottom: 148rpx;':''}}">
+    <!-- 20200512 富文本 -->
+    <rich-text nodes="{{bodyContent}}"></rich-text>
+</view>
+<!-- 购买按钮 -->
+<view class="buyView" style="{{isIphoneX ?'bottom:68rpx;':''}}">
+    <view class="buyView-cantuanViewText" wx:if="{{isShareForDetail.icon != ''}}" id="chima" data-type="canyu" bindtap="onClick">
+        参与 {{isShareForDetail.name}} 的拼单
+    </view>
+    <block wx:else>
+        <view class="buyView-viewText" style="background-color: black;" id="chima" data-type="dandu" bindtap="onClick">
+            ￥{{bouncesData.datas.color[bouncesData.defalutColor].price}}单独购买
+        </view>
+        <view class="buyView-viewText" id="chima" data-type="canyu" bindtap="onClick">
+            ￥{{bouncesData.pintuanDatas.pintuanPrice}}发起拼团
+        </view>
+    </block>
+</view>
+<!-- 尺码弹框 -->
+<block wx:if="{{ischimaBounces}}">
+    <chima-bonuces bindselectColor="selectColor" selectType="{{buyBttonFrom}}" bouncesData="{{bouncesData}}" isShare="{{isShare.icon != ''}}" bindchimaHidden="chimaHidden" bindcallBack="chimaCallBack"></chima-bonuces>
+</block>
+<!-- 活动结束弹框 -->
+<block wx:if="{{huodongjieshu}}">
+    <view class="bouncesBg"></view>
+    <view class="bouncesView">
+        <view class="bouncesView-view">
+            <image src="../images/daku.png" mode="widthFix" style="width:110rpx;margin-top: 30rpx;" />
+            <view class="redTitle">拼团活动已结束</view>
+            <view class="submitTitle">亲,来晚了一步!该商品已被枪空,~</view>
+            <view class="submitTitle" style="margin-top: 10rpx;">换件衣服试试~</view>
+            <view class="whiteTitle" bindtap="gotoIndex">去商城逛逛</view>
+        </view>
+    </view>
+</block>

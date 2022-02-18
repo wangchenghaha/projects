@@ -1,0 +1,43 @@
+<view class="user-service">
+  <view>
+    <image src="{{banner}}" mode="widthFix"></image>
+  </view>
+  <view class="tab">
+    <view class="tab-title flex-bet">
+      <block  wx:for="{{userList}}" wx:key="tabName">
+        <view class="tab-item text-c {{item.active}}" data-index="{{index}}" bindtap="onClick">{{item.tabName}}</view>
+      </block>
+    </view>
+  </view>
+  <!--weMall/pages/userService/userService.wxml-->
+  <view class="tip" wx:if="{{userService.tip}}">
+    <view class="title text-c font-bold">{{userService.title}}</view>
+    <view class="sub-title text-c">{{userService.subTitle}}</view>
+    <view wx:for="{{userService.tip}}" wx:key="text">
+      <view class="{{item.className || ''}}">
+        <text wx:if="{{item.text}}">{{item.text}}</text>
+        <text wx:if="{{item.text1}}" class="{{item.text1.className || ''}}">{{item.text1.value}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="tip">
+    <view  wx:if="{{!userService.tip}}">
+      <view class="title text-c font-bold">{{userService.title}}</view>
+      <view class="sub-title text-c">{{userService.subTitle}}</view>
+    </view>
+    <view wx:for="{{userService.content}}" wx:key="className">
+      <view class="text-item {{item.className || ''}}">
+        <text wx:if="{{item.text}}">{{item.text}}</text>
+        <text wx:if="{{item.text1}}" class="{{item.text1.className || ''}}">{{item.text1.value}}</text>
+        <text wx:if="{{item.text2}}" class="{{item.text2.className || ''}}">{{item.text2.value}}</text>
+        <text wx:if="{{item.text3}}" class="{{item.text3.className || ''}}">{{item.text3.value}}</text>
+        <text wx:if="{{item.text4}}" class="{{item.text4.className || ''}}">{{item.text4.value}}</text>
+        <text wx:if="{{item.text5}}" class="{{item.text5.className || ''}}">{{item.text5.value}}</text>
+        <text wx:if="{{item.text6}}" class="{{item.text6.className || ''}}">{{item.text6.value}}</text>
+        <text wx:if="{{item.text7}}" class="{{item.text7.className || ''}}">{{item.text7.value}}</text>
+        <text class="text-rule" wx:if="{{item.textArr && item.textArr.length}}" wx:for="{{item.textArr}}" wx:key="text" wx:for-item="textItem">{{textItem.text}}</text>
+      </view>
+    </view>
+  </view>
+</view>

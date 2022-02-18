@@ -1,0 +1,91 @@
+
+
+<view class="wrap">
+  <view class="header">订单摘要</view>
+  
+  <view class="contentCon">
+    <view class="list">
+      <view class="li" wx:for="{{dingdanList}}" wx:key="dingdanList">
+        <view class="classname">
+          <text class="zhekou" wx:if="{{item.discount!=1}}">{{item.discount*10}}折</text>
+          {{item.goodsName}}
+        </view>
+        <view class="price">￥{{item.money}}+积分{{item.score}}</view>
+      </view>
+      <view class="li" style="border-bottom:2rpx solid #000;">
+        <view class="li_li li_left">合计：<text>{{Nums}}件</text></view>
+        <view class="li_li li_right">实付: <text>￥{{AllPrice}}</text></view>
+      </view>
+    </view>
+    <view class='fangshi' style='display:none;'>
+      <view class='fangshi_h2'>配送方式<text>（到店自提有惊喜）</text></view>
+      <view class='fangshi_ul'>
+        <view class='fangshi_li {{youji?"fangshi_list":""}}' data-id='0' bindtap='fangshi'>邮寄到家</view>
+        <view class='fangshi_li {{youji?"":"fangshi_list"}}' data-id='1' bindtap='fangshi'>到店自提</view>
+      </view>
+    </view>
+
+    <!-- 邮寄到家 的配送方式 -->
+    <view wx:if="{{youji}}" style='display:block;'>
+      <view class="shouhuo">
+        <view class="shCon" bindtap='shouhuoxinxi'>收货信息</view>
+      </view>
+      <view class="lli" wx:if="{{address.userName}}">
+        <view class="liCon">
+          <view class="name">{{address.userName}}</view>
+          <view class="dizhi">
+            <text class="left">{{address.province}}, {{address.city}}, {{address.area}}, </text>{{address.detailAddress}}
+          </view>
+          <view class="myTel">电话：{{address.phone}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 邮寄到家 的配送方式 -->
+
+    <!-- 到店自提 的配送方式 -->
+    <view class='ziti' wx:if="{{!youji}}" style='display:none;'>
+      <view class='city'>
+        <picker mode="selector" bindchange="bindPickerChange1" value="{{index1}}" range="{{proviceData}}" range-key="name">
+          <view class="picker">
+            <view class="picker1">{{proviceData[index1].name}}</view>
+          </view>
+        </picker>
+        <view class="close">
+          <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+        </view>  
+      </view>
+      <view class='city'>
+        <picker mode="selector" bindchange="bindPickerChange2" value="{{index2}}" range="{{cityData}}" range-key="name">
+          <view class="picker">
+            <view class="picker1">{{cityData[index2].name}}</view>
+          </view>
+        </picker>
+        <view class="close">
+          <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class='city'>
+        <picker mode="selector" bindchange="bindPickerChange3" value="{{index3}}" range="{{districtData}}" range-key="DisName">
+          <view class="picker">
+            <view class="picker1">{{districtData[index3].DisName}}</view>
+          </view>
+        </picker>
+        <view class="close">
+          <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_down_gray.png" mode="widthFix"></image>
+        </view> 
+      </view>
+      <view class='sousuo'>搜索</view>
+    </view>
+    <!-- 到店自提 的配送方式 -->
+
+    <view class='youhuiquan' bindtap='toCoupon' style='display:none;'>
+      <view class='yhq_left'>
+        <view class='yhq_name'>优惠券</view>
+        <view class='yhq_tishi'>{{myCoupons}}张可用</view>
+      </view>
+      <view class='yhq_right'>{{couponMore==0?'未使用':'-¥ '+couponMore}}</view>
+    </view>
+  </view>
+
+  <view class="submit" bindtap="submit">提交订单</view>
+</view>

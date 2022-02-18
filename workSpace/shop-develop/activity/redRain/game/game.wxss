@@ -1,0 +1,347 @@
+@keyframes animate {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(3000rpx);
+    }
+  }
+  
+  @keyframes animate1 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(3000rpx);
+    }
+  }
+  
+  @keyframes textAnimate {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+  
+  @keyframes textAnimate1 {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+  
+  @keyframes jibiAnimation {
+    0% {
+      opacity: 1;
+      transform: rotateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: rotateY(180deg);
+    }
+  }
+  
+  @keyframes jibiAnimation1 {
+    0% {
+      opacity: 1;
+      transform: rotateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: rotateY(180deg);
+    }
+  }
+  
+  @keyframes jinbiTextAnimation {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20rpx);
+    }
+  }
+  
+  @keyframes jinbiTextAnimation1 {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20rpx);
+    }
+  }
+  
+  .bg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .bg .views {
+    position: absolute;
+    height: auto;
+    vertical-align: middle;
+  }
+  
+  .bg .views .img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .topViewBg {
+    position: absolute;
+    top: 7%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding-left: 50rpx;
+    padding-right: 50rpx;
+    padding-top: 30rpx;
+    box-sizing: border-box;
+  }
+  
+  .topViewBg .positionView {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  
+  .topViewBg .positionView .left {
+    width: 112rpx;
+    height: 112rpx;
+    z-index: 3;
+  }
+  
+  .topViewBg .positionView .right {
+    margin-left: -15rpx;
+    margin-top: 38rpx;
+    width: 527rpx;
+    height: 36rpx;
+    z-index: 1;
+  }
+  
+  .topViewBg .positionView .right_slt {
+    position: absolute;
+    top: 38rpx;
+    left: 97rpx;
+    width: 527rpx;
+    height: 36rpx;
+    z-index: 2;
+  }
+  
+  .topViewBg .positionView .downNum {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 112rpx;
+    line-height: 112rpx;
+    text-align: center;
+    color: #724622;
+    font-size: 34rpx;
+    z-index: 4;
+  }
+  
+  .topViewBg .positionView .sysj {
+    position: absolute;
+    top: 16rpx;
+    left: 113rpx;
+    font-size: 22rpx;
+    line-height: 22rpx;
+    color: white;
+  }
+  
+  .bouncedBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 11;
+  }
+  
+  .bouncedBg-view {
+    z-index: 12;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .bouncedBg-view .twoSubView {
+    width: 557rpx;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .bouncedBg-view .twoSubView .imgView {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .bouncedBg-view .twoSubView .imgView .centerText {
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: black;
+    font-size: 34rpx;
+  }
+  
+  .bouncedBg-view .twoSubView .imgView .bottomView, .bouncedBg-view .twoSubView .imgView .share, .bouncedBg-view .twoSubView .imgView .closed {
+    position: absolute;
+    bottom: 14%;
+    width: 230rpx;
+    height: 70rpx;
+    color: #FFFFFF;
+    line-height: 73rpx;
+    text-align: center;
+    font-size: 30rpx;
+  }
+  
+  .bouncedBg-view .twoSubView .imgView .share {
+    right: 6%;
+    background: none;
+  }
+  
+  .bouncedBg-view .twoSubView .imgView .share::after {
+    border: none;
+  }
+  
+  .bouncedBg-view .twoSubView .imgView .closed {
+    left: 7%;
+  }
+  
+  .bouncedBg-view .subView {
+    width: 557rpx;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .bouncedBg-view .subView .imgView {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .bouncedBg-view .subView .imgView .topText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FA492F;
+    font-size: 34rpx;
+    line-height: 60rpx;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .bouncedBg-view .subView .imgView .centerText {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: auto;
+    text-align: center;
+    color: #FFFBD6;
+    font-size: 34rpx;
+  }
+  
+  .bouncedBg-view .subView .imgView .bottomView, .bouncedBg-view .subView .twoSubView .imgView .share, .bouncedBg-view .twoSubView .subView .imgView .share, .bouncedBg-view .subView .twoSubView .imgView .closed, .bouncedBg-view .twoSubView .subView .imgView .closed {
+    position: absolute;
+    bottom: 30.5%;
+    left: 15%;
+    width: 70%;
+    height: 110rpx;
+    color: #895B2F;
+    line-height: 110rpx;
+    text-align: center;
+    font-size: 34rpx;
+  }
+  
+  .bouncedBg-view .subView .imgView .share {
+    position: absolute;
+    bottom: 30.5%;
+    left: 15%;
+    width: 70%;
+    height: 110rpx;
+    background: none;
+  }
+  
+  .bouncedBg-view .subView .imgView .share::after {
+    border: none;
+  }
+  
+  .bouncedBg-view .subView .imgView .closed {
+    position: absolute;
+    bottom: 15rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80rpx;
+    height: 80rpx;
+  }
+  
+  .bouncedBg-view .topImg {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: auto;
+  }
+  
+  .bouncedBg-view .djsView {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 150rpx;
+    height: 170rpx;
+  }
+  
+  .animateJF {
+    position: fixed;
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+  
+  .animateJF .text {
+    font-size: 60rpx;
+    color: yellow;
+  }
+  
+  .backImg {
+    position: fixed;
+    top: 5.5%;
+    left: 30rpx;
+    width: 32rpx;
+    height: 56rpx;
+  }
+  

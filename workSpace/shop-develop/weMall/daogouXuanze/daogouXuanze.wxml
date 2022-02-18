@@ -1,0 +1,271 @@
+ <view class="wrap">
+  <view class='ziyou'>
+    <view class='ziyou_title'>自由组合 创建时间: {{nowDate}}</view>
+    <view class='zyShare_title'>
+      <view class='text-wrapper'>
+        <view class='icon'>
+          <text></text>
+          <text></text>
+          <text></text>
+        </view>
+        <text class='title'>导购问候语</text>
+      </view>
+
+      <view class="title-wrapper">
+        <textarea placeholder="{{phShareTitle}}" class='textarea' bindblur="onBindBlur"
+                  value="{{shareTitle}}"></textarea>
+        <view class="select-btn" bindtap="titleShow">
+          <text class="text">选择文案</text>
+          <text class="arrow {{titleListIsShow ? 'rotate':'' }}"></text>
+        </view>
+      </view>
+      <view class="title-list" wx:if="{{titleListIsShow}}">
+        <block wx:for="{{titleList}}" wx:key="titleList">
+          <view class="title-item {{item.active? 'select': ''}}" data-index="{{index}}" bindtap="selectTitle">
+            <view class="circle"></view>
+            <view class="text">{{item.text}}</view>
+          </view>
+        </block>
+      </view>
+      <!-- <input type='text' value='{{shareTitle}}' placeholder="{{phShareTitle}}" bindinput='shareTitleInput'></input> -->
+    </view>
+    <!--来源-->
+    <view class="source" wx:if="{{isOperate}}">
+      <view class="source-top">
+        <view class="source-icon">
+          <image src="{{source_icon}}" mode="widthFix"></image>
+        </view>
+        <text>来源</text>
+      </view>
+      <radio-group class="radio-group" bindchange="sourceChange">
+        <label class="radio" wx:for="{{source}}" wx:key="source">
+          <radio value="{{item.value}}" checked="{{item.checked}}" color="#7f7f7f"/>
+          {{item.name}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="send-time" wx:if="{{isOperate}}">
+      <view class="send-title">模板消息通知时间</view>
+      <radio-group class="radio-group" bindchange="sendTimeChange">
+        <label class="radio" wx:for="{{sendTime}}" wx:key="sendTime">
+          <radio value="{{item.value}}" checked="{{item.checked}}" color="#7f7f7f"/>
+          {{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <!-- 图片主题 -->
+  <view class="theme">
+
+    <view class="theme-wrapper">
+      <view class="theme-title">
+        <view class="theme-icon">
+          <image src="/images/wx_circle.png" mode="widthFix"></image>
+        </view>
+        朋友圈分享商品图片主题
+      </view>
+      <view class="ziyou">
+        <radio-group class="radio-group" bindchange="selectTheme">
+          <label class="radio" wx:for="{{themeArr}}" wx:key="themeArr">
+            <radio value="{{item.value}}" checked="{{item.checked}}" color="#000000"/>
+            {{item.name}}
+          </label>
+        </radio-group>
+        <view class="preview">
+          <block wx:for="{{themePreImg}}" wx:key="themePreImg">
+            <view class="img-item">
+              <view class="img">
+                <image mode="widthFix" src="{{item}}"></image>
+                <view class="mask" data-type="preview" data-code="{{item}}" bindtap="onClick">
+                  <view class="mask-icon"></view>
+                  <text>点击查看大图</text>
+                </view>
+              </view>
+              <view class="text">
+                <block wx:if="{{index === 0}}">单张图片</block>
+                <block wx:else>朋友圈预览</block>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <!--<picker bindchange="selectTheme" value="{{themeDefault}}" range="{{themeArr}}">
+      <view class="picker">
+        当前选择：{{themeArr[themeDefault]}}
+      </view>
+    </picker>-->
+  </view>
+  <view class='ziyou'>
+    <view>
+      <view class='reason'>
+        <view class='icon-img'>
+          <image src="/images/cover_img_icon.png" mode="widthFix"></image>
+        </view>
+        <text class="rec-title">封面图</text>
+      </view>
+    </view>
+    <view class='foot'>
+      <view class='foot_box'>
+        <view class="box_top {{coverImg?'': 'cover'}}">
+          <view class='box_top1' data-id='coverImg' bindtap='uploadImg'>
+            <view class='box_up'></view>
+            <text>封面图</text>
+          </view>
+          <view class='upImage' wx:if="{{coverImg!=''}}" data-id='coverImg' bindtap='uploadImg'>
+            <image src='{{coverImg}}' mode='aspectFit'></image>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='footShare' bindtap='shareToTanchu'>
+        <image src='/images/share.png' mode='widthFix'></image>
+      </view> -->
+    </view>
+    <view class='line'></view>
+    <view>
+      <view class='reason'>
+        <view class='icon-img'>
+          <image src="/images/recommend_icon.png" mode="widthFix"></image>
+        </view>
+        <view class="rec-title">推荐理由
+          <text class="title-desc">(店铺实拍，例如模特图、展桌图等)</text>
+        </view>
+      </view>
+    </view>
+    <view class='hightWrapper' wx:for='{{highLight}}' wx:key='highLight'>
+      <view class='hightList'>
+        <image src='{{item}}' mode='aspectFit'></image>
+      </view>
+      <text class="text">推荐理由{{index + 1}}</text>
+    </view>
+    <view class='foot'>
+      <view class='foot_box'>
+        <view class='box_top recommend'>
+          <view class='box_top1' data-id='highLight' bindtap='uploadImg'>
+            <view class='box_up'></view>
+            <text>{{uploadText}}</text>
+          </view>
+          <view class='upImage' wx:if="{{highLight!=''}}" data-id='highLight' bindtap='uploadImg'></view>
+        </view>
+      </view>
+    </view>
+
+    <view class='line'></view>
+
+
+    <view>
+      <view class='reason'>
+        <view class='icon-img'>
+          <image src="/images/goods_icon.png" mode="widthFix"></image>
+        </view>
+        <view class="rec-title">商品图
+          <view class="title-desc">(最多上传
+            <text class="high-light">8个</text>
+            产品)
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 模板主题 清明节后上线-->
+  <view   class="model">
+    <view class="model-wapper">
+        <radio-group class="radio-group" bindchange="selectModel">
+          <label class="radio" wx:for="{{goodsTemplateArr}}" wx:key="goodsTemplateArr">
+            <radio value="{{item.model}}"checked="{{item.checked}}" color="#000000"/>
+            {{item.title}}
+          </label>
+        </radio-group>
+        <view class="preview">
+            <view class="img-item">
+              <view class="img">
+                <image mode="widthFix" src="{{ModelpicUrl}}"></image>
+                <view class="mask" data-type="preview" data-code="{{ModelpicUrl}}" bindtap="onClick">
+                  <view class="mask-icon"></view>
+                  <text>点击查看大图</text>
+                </view>
+              </view>
+            </view>
+        </view>
+    </view>
+  </view>
+
+    <view class='ziyou_con'>
+
+      <view class='ziyou_li' wx:for="{{ziyouList}}" wx:key="ziyouList">
+        <view class='goods' wx:if="{{index < 8}}" data-goodscolorcode='{{item.gsColorCode}}' bindtap='removeThisGoods'>
+          <image src='{{item.goodsImg}}' mode='widthFix'></image>
+          <view class='text'>{{item.goodsName}}</view>
+          <view class="bottom {{item.discount==10?'nowPriceCenter':''}}">
+            <view class="zhekou" wx:if="{{item.discount!=10}}">{{item.discount}}折</view>
+            <view class="nowPrice">¥{{item.discountPrice}}</view>
+            <view class="oldPrice" wx:if="{{item.discount!=10}}">
+              ¥{{item.originalPrice}}
+              <view class="xian"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='ziyou_li' wx:if="{{ziyouList.length==0}}" bindtap='toList'>
+        <view class='icon-upload'></view>
+      </view>
+      <view class='ziyou_li' wx:if="{{ziyouList.length<=1}}" bindtap='toList'>
+        <view class='icon-upload'></view>
+      </view>
+      <view class='ziyou_li' wx:if="{{ziyouList.length<=2}}" bindtap='toList'>
+        <view class='icon-upload'></view>
+      </view>
+      <view class='ziyou_li' wx:if="{{ziyouList.length<8}}" bindtap='toList'>
+        <view class='icon-upload'></view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <view class='box_bottom'>
+    <view class='box_btn box_btn2'>
+      <button type="default" bindtap='shareToTanchu' hover-class="btn-active">保存至推荐分享</button>
+    </view>
+  </view>
+
+  <view class='wxShare' wx:if="{{wxShare}}">
+    <view class='opacity'></view>
+    <view class='wxShareCon'>
+      <view class='wxShare_list'>
+        <view class='ShareLiBox'>
+          <view class='ShareLi shareToWx'>
+            <!-- 分享给朋友 -->
+            <view class='shareBox'>
+              <button open-type="share" class="shareToFriend">
+                <image src="/images/shareToWx.jpg" mode="widthFix"></image>
+              </button>
+            </view>
+            <text>分享给顾客</text>
+          </view>
+        </view>
+        <view class='ShareLiBox'>
+          <view class='ShareLi shareToWxq' bindtap='toShareWxq'>
+            <view class='ShareBox' style='height:96rpx;'>
+              <image src='/images/shareToWxq.jpg' mode='widthFix'></image>
+            </view>
+            <text>分享到朋友圈</text>
+          </view>
+        </view>
+      </view>
+      <view class='wxShare_quxiao' bindtap='shareToCancel'>取消</view>
+    </view>
+  </view>
+
+  <view class="preview-theme {{preTheme.show ? 'select': ''}}">
+    <view class="preview-container">
+      <view class="close" data-type="closePreview" bindtap="onClick"></view>
+      <view class="theme-img">
+        <image src="{{preTheme.value}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+</view>

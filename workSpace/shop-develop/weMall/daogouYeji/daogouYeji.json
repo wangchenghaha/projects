@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "业绩查询",
+  "usingComponents":{
+    "all-share":"../components/allShare/allShare",
+    "money-share":"../components/moneyShare/moneyShare",
+    "sale-sum":"../components/saleSum/saleSum",
+    "order-center":"../components/orderCenter/orderCenter",
+    "ranking-list":"../components/rankingList/rankingList"
+  }
+}

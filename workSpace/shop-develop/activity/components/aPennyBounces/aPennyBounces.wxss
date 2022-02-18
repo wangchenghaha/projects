@@ -1,0 +1,96 @@
+.opacity {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.opacityView {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  position: fixed;
+  bottom: -400rpx;
+}
+
+.opacityView .topView {
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.opacityView .topView-rightView {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.opacityView .imageView {
+  width: 100%;
+  height: 300rpx;
+  text-align: center;
+}
+
+.wdithTitle, .topTitle, .kucun {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: black;
+  line-height: 40rpx;
+}
+
+.topTitle {
+  margin-bottom: 30rpx;
+}
+
+.kucun {
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.classView {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  padding-top: 10rpx;
+  overflow: hidden;
+}
+
+.selectRowView {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.select-li {
+  float: left;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  background: none;
+  margin-bottom: 20rpx;
+  color: #373738;
+  padding: 0 12rpx;
+  margin-right: 15rpx;
+}
+
+.select-list {
+  background: black;
+  color: #fff;
+}
+
+.select-noList {
+  background: #F4F5F6;
+  color: #D1D2D3;
+}
+
+.subMit {
+  background-color: black;
+  width: 100%;
+  line-height: 80rpx;
+  color: white;
+  font-size: 28rpx;
+  text-align: center;
+}

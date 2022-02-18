@@ -1,0 +1,182 @@
+<view class="bg">
+    <view class="bgImageView">
+        <image src="{{imagePath}}animationBG_tyg.png" class="bgImageView-image" mode="widthFix" />
+
+        <!-- 左上角 -->
+        <view class="topView">
+            <view class="rowView">
+                <view class="leftTitle">我的金币：<text style="font-weight: bold;">{{myNumber}}</text></view>
+                <image bindtap="searCh" src="{{imagePath}}chouma-image.png" class="leftImage" />
+            </view>
+            <view class="prizeDH" bindtap="duihuan">
+                <image class="rightImage" src="{{imagePath}}lw.png" mode="widthFix" />
+                <view class="rightTitle">兑换奖品</view>
+            </view>
+        </view>
+        <!-- 邀请好友助力 -->
+        <view class="yaoqing" bindtap="share">邀请好友助力立得金币>></view>
+
+        <!-- 老虎机动画框 -->
+        <view class="tiggerView">
+            <block wx:for="{{colors}}" wx:key="tigger">
+
+                <view class="animationView-bg{{index}}" style="height: {{animationViewHeightPX}}px;">
+                    <view class="animationView" style="transform: translateY({{index == 0 ? tiggersData.transY1 : index == 1 ? tiggersData.transY2 : tiggersData.transY3}}px);">
+
+                        <view style="width: 100%;height: {{animationViewHeightPX}}px;" wx:for="{{item}}" wx:for-item="items" wx:key="transView1">
+                            <image src="{{imagePath}}{{items}}" style="width:100%;height:100%;" />
+                        </view>
+                        <view style="width: 100%;height: {{animationViewHeightPX}}px;">
+                            <image src="{{imagePath}}{{item[0]}}" style="width:100%;height:100%;" />
+                        </view>
+                        
+                    </view>
+                </view>
+
+            </block>
+        </view>
+        <!-- 下注 -->
+        <view class="xiazhu">投币</view>
+        <!-- 加减码布局 -->
+        <view class="choumaView">
+            <view id="0" class="leftRightBtn" style="margin-left: 10rpx;float: left;" hover-class="btn-down" bindtap="onClick">
+                <image style="width:100%;height:100%;" src="{{imagePath}}leftBtn.png"  />
+            </view>
+            <view id="1" class="leftRightBtn" style="margin-right: 10rpx;float: right;" hover-class="btn-down" bindtap="onClick">
+                <image style="width:100%;height:100%;" src="{{imagePath}}rightBtn.png" />
+            </view>
+            <!-- 注码 -->
+            <view class="chouma">{{number}} <text style="font-size:18rpx;">/金币</text></view>
+        </view>
+        <!-- 抽奖按钮 -->
+        <view class="choujiang" hover-class="btn-down">
+            <image id="start" style="width: 216rpx;height: 220rpx;" src="{{imagePath}}choujiang.png" bindtap="onClick" />
+        </view>
+        <!-- 抽奖规则/排行榜 -->
+        <view class="rulesView">
+            <view id="choujiang" bindtap="onClick" class="leftRightView" style="float: left;">抽奖规则</view>
+            <view id="paihangbang" bindtap="onClick" class="leftRightView" style="float: right;">排行榜</view>
+        </view>
+    </view>
+
+    <!-- 底部奖品说明 -->
+    <view class="botomView">
+        <view class="djsm">
+            <view class="title">游戏规则:</view>
+            <view class="djsm-view" wx:for="{{youxiguize}}" wx:key="youxiguize">
+                <view class="leftView">{{index + 1}}.</view>
+                <view class="rightView">{{item}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+
+ <!-- 开始滚动时遮罩 -->
+ <view class="pageViews" style="{{canShow ? 'display: flex;' : 'display: none;'}}"></view>
+ <!-- 中奖和筹码不足弹框 -->
+ <view class="bouncedView" style="{{bouncedStatues.canShow ? 'display: flex;' : 'display: none;'}}">
+    <!-- 透明背景 -->
+    <view class="bouncedView-bg" bindtap="{{bouncedStatues.isPaiHang ? 'bouncedTap' : bouncedStatues.isChouJiang ? 'bouncedTap' : bouncedStatues.isCancel ? 'replaceStatus' : ''}}"></view>
+    <!-- 弹出层 -->
+    <view wx:if="{{bouncedStatues.isCancel || bouncedStatues.isMoneyWin || bouncedStatues.isNoWin}}" class="bouncedView-view">
+        <image class="topImage" style="width:100%" mode="widthFix" src="{{imagePath}}bouncedTopImage.png" />
+        <view class="titles">{{bouncedStatues.isCancel ? '很抱歉！金币不足，不能抽奖！' : bouncedStatues.isNoWin ? '很遗憾，没有抽中!' : '恭喜您,赢得'+bouncedStatues.winNum+'金币！！'}}</view>
+        <view class="titles" style="font-size: 23rpx;">{{bouncedStatues.isCancel ? '您可邀请好友助力，赢取金币' : bouncedStatues.isNoWin ? '' : '离汤圆国首富越来越近啦！！'}}</view>
+        <view bindtap="bouncedTap" class="btnView">{{bouncedStatues.isCancel ? '立即邀请好友助力' : '确定'}}</view>
+    </view>
+    <!-- 排行榜/抽奖规则 -->
+    <view wx:elif="{{bouncedStatues.isPaiHang || bouncedStatues.isChouJiang}}" class="bouncedView-paihangbang">
+        <image src="{{imagePath}}paihangbangBG.png" mode="widthFix" style="width:100%" />
+            <!-- 排行榜 -->
+            <block wx:if="{{bouncedStatues.isPaiHang}}">
+                <!-- title -->
+                <view class="title">排行榜</view>
+                <!-- 内容框 -->
+                <view class="contentView">
+                <!-- 顶部框 -->
+                <view class="topView">
+                    <view class="topView-title" style="text-align: center;width: 25%;">排行</view>
+                    <view class="topView-title" style="width: 45%;">用户</view>
+                    <view class="topView-title" style="width: 30%;">金币</view>
+                </view>
+                <!-- 中部框 -->
+                <view class="centerView" wx:for="{{paihangData}}" wx:key="centerView">
+                    <view class="centerView-other" style="{{index == 0 ? 'background-color: #9430C6;' : ''}}">
+                        <block wx:if="{{index == 0}}">
+                            <image class="centerView-other-sanjiao" src="{{imagePath}}sanjiao.png" />
+                            <view class="centerView-other-wo">我</view>
+                        </block>
+                        <block wx:else>
+                            <view class="centerView-other-bgView" style="{{index > 0 && index < 4 ? 'background-image: linear-gradient(to right,#FFE95D,#FC9B36);border-radius: 30rpx;' : ''}}">
+                                <view class="centerView-other-bgView-title" wx:if="{{index < 10}}">0{{index}}</view>
+                                <view class="centerView-other-bgView-title" wx:else>{{index}}</view>
+                            </view>
+                            <image src="{{item.facePic}}" class="centerView-other-icon" />
+                        </block>
+                    </view>
+                    <view class="centerView-title" style="{{index == 0 ? 'background-color: #9430C6;':''}}width: 45%;color:#E3DCE6;">{{item.nickName}}</view>
+                    <view class="centerView-title" style="{{index == 0 ? 'background-color: #9430C6;':''}}width: 30%;">{{item.points}}</view>
+                </view>
+                <!-- 我的奖品 -->
+                <view class="myPrize" bindtap="myPrize">我的奖品</view>
+                <!-- 底部 活动截止日期 -->
+                <view class="bottomView">活动日期:{{activityTimeJson.startTime}}--{{activityTimeJson.endTime}}</view>
+            </view>
+        </block>
+        <!-- 抽奖规则 -->
+        <block wx:else>
+            <!-- title -->
+            <view class="title">抽奖规则</view>
+            <!-- 内容框 -->
+            <view class="contentView">
+                <!-- 顶部框 -->
+                <view class="topView" style="height: 68rpx;">
+                    <view class="topView-title" style="color:#CD61FA;line-height: 68rpx;text-align: center;width: 60%;">结果</view>
+                    <view class="topView-title" style="color:#CD61FA;line-height: 68rpx;text-align: center;width: 40%;">奖励倍数</view>
+                </view>
+                <!-- 中部 -->
+                <view class="centerView-choujiang" wx:for="{{choujiangguize}}" wx:for-item="items" wx:key="choujiangguize">
+                    <view class="leftView">
+                        <image wx:for="{{3}}" wx:key="leftView-image" src="{{imagePath}}{{items.pic1}}" mode="widthFix" class="leftView-image" />
+                    </view>
+                    <image class="rightView" src="{{imagePath}}{{items.pic2}}" mode="widthFix" />
+                </view>
+                <!-- 底部 -->
+                <scroll-view scroll-y class="bottomView-choujiang">
+                    <view class="title" >中奖规则:</view>
+                    <view class="subTitleView" wx:for="{{zhongjiangguize}}" wx:key="sub">
+                        <view class="kong" wx:if="{{index == 0}}"></view>
+                        <view class="subTitles" wx:else>{{item}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+        </block>
+    </view>
+
+ </view>
+
+<!-- 兑奖记录 -->
+<view class="bouncedBG" wx:if="{{myPrize}}">
+    <!-- 透明层 -->
+    <view class="bouncedBG-opaView" bindtap="closed"></view>
+    <!-- 内容 -->
+    <scroll-view scroll-y class="bouncedBG-view">
+        <view class="title">兑奖记录</view>
+        <image src="{{imagePath}}close.png" class="bouncedBG-view-close" mode="widthFix" bindtap="closed" />
+        <!-- 线条 -->
+        <view class="line"></view>
+        <!-- 奖品列表 -->
+        <block wx:for="{{jiluDatas}}" wx:key="listView">
+            <view class="listView">
+                <image src="{{item.giftPic}}" class="listView-image" />
+                <view class="rightView">
+                    <view class="title">{{item.exchangeGiftName}}</view>
+                    <view class="botomTitle">宝贝已在账户中，快去使用吧</view>
+                </view>
+            </view>
+            <view class="line"></view>
+        </block>
+    </scroll-view>
+</view>

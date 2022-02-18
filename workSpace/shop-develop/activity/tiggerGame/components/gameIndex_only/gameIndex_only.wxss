@@ -1,0 +1,582 @@
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .bgImageView {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bg .bgImageView-image {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.bg .bgImageView .fixed-right {
+  position: absolute;
+  top: 270rpx;
+  right: 20rpx;
+  z-index: 9999;
+}
+
+.bg .bgImageView .fixed-right .fixed-item {
+  position: relative;
+  margin-bottom: 20rpx;
+  width: 76rpx;
+  height: 76rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 2rpx 2rpx 5rpx #ccc;
+  overflow: hidden;
+}
+
+.bg .bgImageView .fixed-right .fixed-item .fixed-img {
+  width: 50%;
+}
+
+.bg .bgImageView .fixed-right .fixed-item .fixed-img image {
+  width: 100%;
+}
+
+.bg .bgImageView .topView {
+  position: absolute;
+  top: 110rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg .bgImageView .topView .rowView {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: auto;
+}
+
+.bg .bgImageView .topView .rowView .guizeText {
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  color: black;
+  text-decoration: underline;
+}
+
+.bg .bgImageView .topView .rowView .leftTitle {
+  font-size: 28rpx;
+  color: black;
+}
+
+.bg .bgImageView .topView .rowView .leftImage {
+  margin-left: 10rpx;
+  width: 45rpx;
+  height: auto;
+}
+
+.bg .bgImageView .topView .prizeDH {
+  margin-top: 10rpx;
+  width: 180rpx;
+  height: 50rpx;
+  background-color: black;
+  border-radius: 50rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bg .bgImageView .topView .prizeDH-img {
+  margin-left: 19rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+}
+
+.bg .bgImageView .topView .prizeDH-text {
+  color: #F9DC47;
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+
+.bg .bgImageView .gameView {
+  width: 654rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg .bgImageView .gameView .yaoqing {
+  width: 75%;
+  height: 70rpx;
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bg .bgImageView .gameView .tiggerView {
+  position: absolute;
+  top: 34%;
+  left: 13%;
+  width: 75%;
+  height: 265rpx;
+  overflow: hidden;
+}
+
+.bg .bgImageView .gameView .tiggerView .animationView-bg0 {
+  width: 110rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 21.5rpx;
+}
+
+.bg .bgImageView .gameView .tiggerView .animationView-bg0 .animationView {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .bgImageView .gameView .tiggerView .animationView-bg1 {
+  width: 110rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg .bgImageView .gameView .tiggerView .animationView-bg1 .animationView {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .bgImageView .gameView .tiggerView .animationView-bg2 {
+  width: 110rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 21.5rpx;
+}
+
+.bg .bgImageView .gameView .tiggerView .animationView-bg2 .animationView {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .bgImageView .gameView .choumaView {
+  position: absolute;
+  bottom: 21%;
+  left: 20.5%;
+  width: 59%;
+  height: 70rpx;
+}
+
+.bg .bgImageView .gameView .choumaView .leftRightBtn {
+  width: 65rpx;
+  height: 70rpx;
+}
+
+.bg .bgImageView .gameView .choumaView .chouma {
+  line-height: 70rpx;
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.bg .bgImageView .gameView .choujiang {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390rpx;
+  height: 120rpx;
+}
+
+.bg .rulesView {
+  position: absolute;
+  bottom: 5%;
+  left: 8%;
+  width: 84%;
+  height: 90rpx;
+}
+
+.bg .rulesView .leftRightView {
+  width: 280rpx;
+  height: 100%;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: black;
+  text-align: center;
+  border-radius: 45rpx;
+  background-color: white;
+  box-shadow: 2rpx 2rpx 5rpx black;
+}
+
+.bg .botomView {
+  width: 100%;
+  height: auto;
+  background-color: #FF75FC;
+}
+
+.bg .botomView .djsm {
+  width: 100%;
+  height: auto;
+}
+
+.bg .botomView .djsm .title {
+  font-size: 28rpx;
+  color: white;
+  line-height: 70rpx;
+}
+
+.bg .botomView .djsm-view {
+  display: flex;
+  flex-direction: row;
+  line-height: 50rpx;
+  font-size: 25rpx;
+  color: white;
+}
+
+.bg .botomView .djsm-view .leftView {
+  text-align: center;
+  margin-right: 20rpx;
+}
+
+.bg .botomView .djsm-view .rightView {
+  flex: 1;
+}
+
+.pageViews, .bouncedView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouncedView-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .5;
+}
+
+.bouncedView-view {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bouncedView-view .imgView {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.bouncedView-view .imgView .topTitle {
+  width: 100%;
+  height: 35rpx;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #0072BA;
+}
+
+.bouncedView-view .imgView .subTitle {
+  width: 100%;
+  height: 35rpx;
+  position: absolute;
+  bottom: 26%;
+  left: 0;
+  font-size: 28rpx;
+  color: black;
+}
+
+.bouncedView-view .imgView .cancelView {
+  position: absolute;
+  bottom: -40rpx;
+  left: 50%;
+  width: 300rpx;
+  height: 80rpx;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 40rpx;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 80rpx;
+}
+
+.bouncedView-view .titles {
+  width: 100%;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #030303;
+  margin-bottom: 20rpx;
+}
+
+.bouncedView-view .btnView {
+  width: 70%;
+  height: 90rpx;
+  background-image: linear-gradient(to right, #FF6826, #E70000);
+  font-size: 30rpx;
+  color: white;
+  font-weight: bold;
+  line-height: 90rpx;
+  border-radius: 20rpx;
+  position: relative;
+  top: 50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bouncedView-paihangbang {
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bouncedView-paihangbang .choujiangView {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.bouncedView-paihangbang .choujiangView .paihangView {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 28%;
+  left: 0;
+  overflow: hidden;
+}
+
+.bouncedView-paihangbang .choujiangView .paihangView .titleView {
+  font-size: 24rpx;
+  color: #0072BA;
+  line-height: 59rpx;
+}
+
+.bouncedView-paihangbang .choujiangView .paihangView .centerView {
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+  width: auto;
+  height: 59rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bouncedView-paihangbang .choujiangView .paihangView .centerView-subView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.bouncedView-paihangbang .choujiangView .paihangView .centerView-subView .absView {
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bouncedView-paihangbang .choujiangView .paihangView .centerView-subView .absView .iconView {
+  display: flex;
+  flex-direction: row;
+}
+
+.bouncedView-paihangbang .choujiangView .paihangView .centerView-subView .absView .iconView .icon {
+  margin-left: 10rpx;
+  margin-top: 4.5rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border: 2rpx solid #0072BA;
+  border-radius: 50%;
+}
+
+.bouncedView-paihangbang .choujiangView .paihangView .centerView .index0View {
+  border: 1rpx solid #0072BA;
+  border-radius: 40rpx;
+}
+
+.bouncedView-paihangbang .choujiangView .paihang {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 26rpx;
+  text-align: center;
+  width: 100%;
+  line-height: 60rpx;
+  color: #F9DC46;
+}
+
+.bouncedView-paihangbang .choujiangView .bottomView-choujiang {
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  background-color: #0072BA;
+  width: 100%;
+  height: auto;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  max-height: 180rpx;
+}
+
+.bouncedView-paihangbang .choujiangView .bottomView-choujiang .title {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  color: #F5D287;
+  line-height: 60rpx;
+  text-align: left;
+}
+
+.bouncedView-paihangbang .choujiangView .bottomView-choujiang .subTitleView {
+  width: 100%;
+  height: auto;
+}
+
+.bouncedView-paihangbang .choujiangView .bottomView-choujiang .subTitleView .kong {
+  width: 100%;
+  height: 60rpx;
+}
+
+.bouncedView-paihangbang .choujiangView .bottomView-choujiang .subTitleView .subTitles {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #F5D287;
+  line-height: 40rpx;
+}
+
+.bouncedView-paihangbang .title {
+  width: 100%;
+  font-size: 32rpx;
+  color: white;
+  line-height: 70rpx;
+  text-align: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.bouncedView-paihangbang .contentView {
+  position: absolute;
+  top: 7.9%;
+  bottom: 6.9%;
+  left: 6%;
+  right: 6%;
+  width: auto;
+  height: auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.bouncedBG, .bouncedBG-opaView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouncedBG-opaView {
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bouncedBG-view {
+  width: 80%;
+  height: 700rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+
+.bouncedBG-view .title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #3B3B3B;
+  text-align: center;
+  width: 100%;
+  line-height: 80rpx;
+}
+
+.bouncedBG-view-close {
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  font-size: 32rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.bouncedBG-view .listView {
+  margin: 4%;
+  width: 92%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bouncedBG-view .listView-image {
+  width: 200rpx;
+  height: 140rpx;
+  margin-top: 5rpx;
+}
+
+.bouncedBG-view .listView .rightView {
+  flex: 1;
+  margin-left: 20rpx;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.bouncedBG-view .listView .rightView .title {
+  position: absolute;
+  top: 5rpx;
+  left: 0;
+  width: auto;
+  height: auto;
+  font-size: 25rpx;
+  line-height: 32rpx;
+  color: #3B3B3B;
+  text-align: left;
+}
+
+.bouncedBG-view .listView .rightView .botomTitle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 23rpx;
+  line-height: 28rpx;
+  color: #FF5761;
+  text-align: left;
+}
+
+.line {
+  width: 92%;
+  height: 2rpx;
+  background-color: #DBDBDB;
+  margin-left: 4%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

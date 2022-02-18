@@ -1,0 +1,48 @@
+@import "../mycss.wxss";
+@import "../tmpl/classicOrderItem/classicOrderItem";
+.father {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    clear: both;
+    overflow: hidden;
+}
+
+.top1{ width:100%; clear:both; overflow:hidden;font-size:24rpx;border-top: 2rpx solid #EBEBEB;
+    display: flex;flex-direction: column;padding: 30rpx 0 17rpx 0;}
+
+.key_left{ float:left; padding-left:20rpx; color:black;}
+.value_right{ float:right; padding-right:20rpx; color:black;}
+
+.grey_0{color:#B8B8B8;}
+.grey_1{color:#858585;}
+
+.layout_reason{padding-top: 17rpx;padding-bottom: 17rpx;border-top: 2rpx solid #EBEBEB;border-bottom: 2rpx solid #EBEBEB;}
+.scroll_view {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border-bottom: 2rpx solid #EBEBEB;
+}
+
+.layout_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    clear: both;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 2rpx solid #EBEBEB;
+    background: white;
+}

@@ -1,0 +1,15 @@
+
+
+<view class="bg">
+        <view class="topView">{{shortVideoList.title}}</view>
+        <view class="topView-rightView" data-type="more" bindtap="onClick">更多+</view>
+
+        <scroll-view class="botomListView" scroll-x="true">
+            <block wx:for="{{shortVideoList.list}}" wx:key="itemList" wx:if="{{item.status == 'InShelf'}}">
+                <view class="listView" data-detail="{{item}}" bindtap="onClick">
+                    <image src="{{item.coverImgUrl}}" mode="widthFix" style="width:100%" />
+                    <image class="playBtn" mode="widthFix" src="{{shortVideoList}}" />
+                </view>
+            </block>
+        </scroll-view>
+</view>

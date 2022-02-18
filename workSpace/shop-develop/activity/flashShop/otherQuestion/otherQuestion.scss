@@ -1,0 +1,37 @@
+.bg{
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .logoView{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    
+        width: 100%;
+        text-align: center;
+        color: white;
+      }
+      .top{
+        font-size: 58rpx;
+      }
+      .bottom{
+        font-size: 58rpx;
+      }
+    .logo{
+        position: absolute;
+        bottom: 80rpx;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 367rpx;
+    }
+}
+.bg image{
+    display: block;
+    width: 100%;
+    height: 100%;
+}

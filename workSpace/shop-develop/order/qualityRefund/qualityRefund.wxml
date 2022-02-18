@@ -1,0 +1,74 @@
+<view class="refund">
+  <text class="title">请提供以下信息，以便我们尽快为您处理退运费需求</text>
+  <view class="refund-info">
+    <view class="refund-text">退回运费及收款信息</view>
+    <view class="content">
+      <block wx:for="{{payee}}" wx:key="*this">
+        <view class="refund-item flex-start">
+          <view class="text">
+            <text>*</text>{{item.text}}
+          </view>
+          <input type="{{item.type}}" class="{{item.error ? 'border-red': ''}}" bindblur="blur" bindfocus="focus" data-type="payee" bindinput="input" data-ind="{{index}}" placeholder="{{item.placeholder}}" />
+        </view>
+      </block>
+      <view class="desc">上传支付宝账户截图:</view>
+      <view class="tip">(支付宝实名认证截图:手机打开支付宝--点击"我的"--点击上面支付宝账号)</view>
+      <view class="upload-img flex-start">
+        <view class="upload">
+          <my-upload bindtap="upload" count="1" data-type="zhiFuBao" data-num="{{zhiFuBaoImg.length}}"></my-upload>
+        </view>
+        <block wx:for="{{zhiFuBaoImg}}" wx:key="*this">
+          <view class="img-wrap">
+            <image src="{{uploadDomain}}{{item}}" mode="aspectFit"></image>
+            <icon class="icon" type="cancel" color="#000" size="20"  data-value="{{zhiFuBaoImg}}" data-type="zhiFuBaoImg" data-index="{{index}}" bindtap="delUploadImg" />
+          </view>
+        </block>
+      </view>
+<!--      <my-upload></my-upload>-->
+    </view>
+  </view>
+  <view class="refund-info">
+    <view class="refund-text"><text class="red-star">*</text>退回快递凭证</view>
+    <view class="content">
+      <block wx:for="{{express}}" wx:key="*this">
+        <view class="refund-item flex-start">
+          <view class="text">
+            <text>*</text>{{item.text}}
+          </view>
+          <input type="text" bindblur="blur" bindfocus="focus" data-type="express" data-ind="{{index}}" bindinput="input" placeholder="{{item.placeholder}}" />
+        </view>
+      </block>
+      <view class="desc">1.快递单拍照：运费底单，需要带有运费金额的快递面单照片</view>
+      <view class="desc">2.物流跟踪信息截图；如已签收，请截图物流查询信息。</view>
+      <view class="upload-img flex-start">
+        <view class="upload">
+          <my-upload bindtap="upload" count="3" data-type="express" data-num="{{expressImg.length}}"></my-upload>
+        </view>
+        <block wx:for="{{expressImg}}" wx:key="*this">
+          <view class="img-wrap">
+            <image src="{{uploadDomain}}{{item}}" mode="aspectFit"></image>
+            <icon class="icon" type="cancel" color="#000" size="20"  data-value="{{expressImg}}" data-type="expressImg" data-index="{{index}}" bindtap="delUploadImg" />
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="refund-info">
+    <view class="refund-text"><text class="red-star">*</text>商品问题质量凭证</view>
+    <view class="content">
+      <view class="desc">出现质量问题商品位置的图片</view>
+      <view class="upload-img flex-start">
+        <view class="upload">
+          <my-upload bindtap="upload" count="3" data-type="quality" data-num="{{qualityImg.length}}"></my-upload>
+        </view>
+        <block wx:for="{{qualityImg}}" wx:key="*this">
+          <view class="img-wrap">
+            <image src="{{uploadDomain}}{{item}}" mode="aspectFit"></image>
+            <icon class="icon" type="cancel" color="#000" size="20"  data-value="{{qualityImg}}" data-type="qualityImg" data-index="{{index}}" bindtap="delUploadImg" />
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="text-c submit" bindtap="submit">提交</view>
+</view>

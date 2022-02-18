@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "introduce": "../components/first/index"
+  },
+  "navigationBarTitleText": "特殊定制",
+  "disableScroll": true,
+  "navigationStyle" : "custom"
+}

@@ -1,0 +1,22 @@
+<!-- dailyCheckIn/points.wxml -->
+<view class="frame">
+    <view class="wrapper_tab" wx:if="{{false}}">
+        <van-tabs active="{{ 0 }}" bind:change="_onTabChange">
+            <van-tab wx:for="{{ tabTitles }}" wx:key="index" title="{{item }}"></van-tab>
+        </van-tabs>
+    </view>
+    <scroll-view scroll-y class="scroll_view_content">
+        <block wx:for="{{allRecordList}}" wx:key="dataList">
+            <view class="points_item" data="{{item}}">
+                <view class="points_item_left">
+                    <view class="item_title">{{item.titleStr}}</view>
+                    <view class="item_date">{{item.updatedTime||item.createdTime}}</view>
+                </view>
+                <view class="item_value">{{item.unit}} {{item.points}}</view>
+            </view>
+        </block>
+    </scroll-view>
+    <view class="layout_bottom" wx:if="{{false}}">
+        <view class="bt_exchange" bind:tap="onBtClick">积分兑换</view>
+    </view>
+</view>

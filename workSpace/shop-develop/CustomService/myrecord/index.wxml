@@ -1,0 +1,22 @@
+<view class="wrapper">
+    <scroll-view class="" scroll-y class='scrollview' style='height: {{screen}}px'>
+        <view class="item" bindtap='selectThis' wx:for='{{appoints}}' wx:key='{{index}}' data-item='{{item}}'>
+            <view class="title">
+                <view class="tit">{{item.store_name}}</view>
+                <view class="status {{item.status == 1? 'active':''}}">{{item.status == 1 ? '进行中' : item.status == 2 ? '已完成':'已取消'}}</view>
+            </view>
+            <view class="address">{{item.store_address}}</view>
+            <view class="telephone">到店时间：{{item.appoint_time}}</view>
+        </view>
+
+        <!-- 没有数据 -->
+        <view class="nodata" style='height: {{screen}}px' wx:if='{{nothing}}'>
+            <view class="content">
+                <view class="imagebox">
+                    <image class="image" src="../common/icon/appointment.png"></image>
+                </view>
+                <view class="tips">您当前暂无预约记录，请返回首页进行预约。</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

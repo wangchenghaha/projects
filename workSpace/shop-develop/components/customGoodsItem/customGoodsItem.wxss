@@ -1,0 +1,40 @@
+.good-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rxp;
+}
+
+.good-item image {
+  width: 100%;
+}
+
+.good-item .goodsName {
+  font-size: 24rpx;
+  color: #000;
+  margin-top: 10rpx;
+  max-width: 280rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.good-item .goodsPrice {
+  display: flex;
+  align-items: flex-end;
+}
+
+.good-item .goodsPrice .currentPrice {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #000;
+}
+
+.good-item .goodsPrice .orignalPrice {
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: #999;
+  margin-left: 16rpx;
+  text-decoration: line-through;
+}

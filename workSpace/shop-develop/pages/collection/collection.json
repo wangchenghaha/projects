@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收藏夹",
+  "usingComponents": {
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods"
+  }
+}

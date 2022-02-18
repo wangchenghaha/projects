@@ -1,0 +1,81 @@
+.container{
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+    .user{
+        width: 100%;
+        height: 100rpx;
+        background: white;
+        .oneArea{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            height: 80rpx;
+            .avatarImg{
+                width: 50rpx;
+                height: 50rpx;
+                border-radius: 50rpx;
+                margin-left: 20rpx;
+            }
+            .text1{
+                font-size: 32rpx;
+                font-weight: 550;
+                color: black;
+                margin-left: 20rpx;
+            }
+        }
+        .btn1{
+            width: 200rpx;
+            line-height: 60rpx;
+            background: black;
+            border-radius: 60rpx;
+            text-align: center;
+            color: white;
+            font-size: 28rpx;
+            margin-right: 20rpx;
+        }
+    }
+
+    .fashion-scroll{
+        width: 120%;
+        height: 200rpx;
+        margin-top: 30rpx;
+        .fashionItem{
+            display: flex;
+            width: 500rpx;
+            height: 100%;
+            border-radius: 20rpx;
+            margin-left: 20rpx;
+            background: #fff;
+            .left{
+                width: 200rpx;
+                height: 200rpx;
+                border-radius: 20rpx;
+            }
+            .right{
+                width: 230rpx;
+                height: 200rpx;
+                margin-left: 10rpx;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .title{
+                    font-size: 28rpx;
+                    line-height: 32rpx;
+                    margin-top: 10rpx;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-wrap: break-word;
+                    white-space: normal !important;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+                .content{
+                    font-size: 22rpx;
+                    color: gray;
+                }
+            }
+        }
+    }
+}

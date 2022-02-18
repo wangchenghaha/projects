@@ -1,0 +1,105 @@
+<!--components/shareGoodsList/goodsList.wxml-->
+<view class='high-light'>
+  <view wx:if="{{wxMoment.length}}">
+    <block wx:for="{{wxMoment}}" wx:key="wxMoment">
+      <view wx:if="{{item.isView}}">
+        <navigator wx:if="{{item.miniAppid}}"
+                   target="miniProgram"
+                   open-type="navigate"
+                   app-id="{{item.miniAppid}}"
+                   path="{{item.miniPath || '' }}" extra-data="{{item.miniExtraData}}">
+          <image src='{{item.wxPic}}' mode="widthFix"></image>
+        </navigator>
+        <navigator wx:else url="{{item.miniUrl || '' }}">
+          <image src='{{item.wxPic}}' mode="widthFix"></image>
+        </navigator>
+      </view>
+    </block>
+  </view>
+  <view wx:elseif="{{highLight.length}}">
+    <block wx:for="{{highLight}}" wx:key="highLight">
+      <image src='{{item}}' mode="widthFix"></image>
+    </block>
+  </view>
+</view>
+<view class="goods-list">
+  <block wx:for="{{list}}" wx:key="goodsList">
+    <!--   第1,2, 5, 6个 -->
+    <view class="goods-flex" wx:if="{{index === 0 || index === 4}}">
+        <view lazy-load="true" class="goods-item goods-item-wrapper goods-item1}}">
+          <view class="goods-image"  data-sku="{{item.sku}}" bindtap="onClick">
+            <image src="{{item.brand === 'FOL'? item.skuPic : item.skuPic1}}" mode="widthFix"></image>
+          </view>
+          <view class="pink_one"/>
+          <view class="goods-info">
+            <text class="goods-name">{{item.goodsName}}</text>
+            <view class="price-wrapper">
+              <text class="goods-discount" wx:if="{{SHOW_DISCOUNT && item.discount != 10}}">
+                <block wx:if="{{item.discount === 90}}">一口价</block>
+                <block wx:else>{{item.discount}}折</block>
+              </text>
+              <text class="goods-price">￥{{item.discountPrice}}</text>
+              <text class="goods-original" wx:if="{{item.discount !=10}}">￥{{item.originalPrice}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx:if="{{list[index+1]}}" class="goods-item goods-item-wrapper goods-item2}}">
+          <view class="goods-image"  data-sku="{{list[index+1].sku}}" bindtap="onClick">
+            <image lazy-load="true" src="{{list[index+1].brand === 'FOL'? list[index+1].skuPic : list[index+1].skuPic1}}" mode="widthFix"></image>
+          </view>
+          <view class="blue_one"></view>
+          <view class="goods-info">
+            <text class="goods-name">{{list[index+1].goodsName}}</text>
+            <view class="price-wrapper">
+              <text class="goods-discount" wx:if="{{SHOW_DISCOUNT && list[index+1].discount != 10}}">
+                <block wx:if="{{list[index+1].discount === 90}}">一口价</block>
+                <block wx:else>{{list[index+1].discount}}折</block>
+              </text>
+              <text class="goods-price">￥{{list[index+1].discountPrice}}</text>
+              <text class="goods-original" wx:if="{{list[index+1].discount !=10}}">￥{{list[index+1].originalPrice}}</text>
+            </view>
+          </view>
+        </view>
+    </view>
+     <!--  第3,4,7,8个 -->
+    <view class="goods-flex"wx:if="{{index === 2 || index === 6}}">
+        <view class="goods-item goods-item-wrapper goods-item3}}">
+          <view class="blue_second"/>
+          <view class="goods-image"  data-sku="{{item.sku}}" bindtap="onClick">
+            <image lazy-load="true" src="{{item.brand === 'FOL'? item.skuPic : item.skuPic1}}" mode="widthFix"></image>
+          </view>
+          <view class="goods-info">
+            <text class="goods-name">{{item.goodsName}}</text>
+            <view class="price-wrapper">
+              <text class="goods-discount" wx:if="{{SHOW_DISCOUNT && item.discount != 10}}">
+                <block wx:if="{{item.discount === 90}}">一口价</block>
+                <block wx:else>{{item.discount}}折</block>
+              </text>
+              <text class="goods-price">￥{{item.discountPrice}}</text>
+              <text class="goods-original" wx:if="{{item.discount !=10}}">￥{{item.originalPrice}}</text>
+            </view>
+          </view>
+          <view class="pink_second"></view>
+        </view>
+
+        <view wx:if="{{list[index+1]}}" class="goods-item goods-item-wrapper goods-item4}}">
+          <view class="goods-img2"  data-sku="{{list[index+1].sku}}" bindtap="onClick">
+            <image lazy-load="true" src="{{list[index+1].brand === 'FOL'? list[index+1].skuPic : list[index+1].skuPic1}}" mode="widthFix"></image>
+          </view>
+          <view class="goods-info">
+            <text class="goods-name">{{list[index+1].goodsName}}</text>
+            <view class="price-wrapper">
+              <text class="goods-discount" wx:if="{{SHOW_DISCOUNT && list[index+1].discount != 10}}">
+                <block wx:if="{{list[index+1].discount === 90}}">一口价</block>
+                <block wx:else>{{list[index+1].discount}}折</block>
+              </text>
+              <text class="goods-price">￥{{list[index+1].discountPrice}}</text>
+              <text class="goods-original" wx:if="{{list[index+1].discount !=10}}">￥{{list[index+1].originalPrice}}</text>
+            </view>
+          </view>
+        </view>
+    </view>
+  </block>
+
+</view>

@@ -1,0 +1,728 @@
+.nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.margin-auto {
+  margin: 10rpx auto 0;
+  width: 95%;
+}
+
+.content {
+  font-size: 32rpx;
+  color: #000;
+  padding-bottom: 100rpx;
+}
+
+.content image {
+  display: block;
+  width: 100%;
+}
+
+.content .swiper {
+  height: 750rpx;
+  width: 100%;
+}
+
+.content .swiper-wrapper {
+  height: 750rpx;
+}
+
+.content .goods {
+  padding: 0 0;
+}
+
+.content .goods .dargainInfo {
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  font-size: 26rpx;
+  color: white;
+}
+
+.content .goods .dargainInfo .left {
+  position: relative;
+  width: 75%;
+  background: #FD252F;
+  font-size: 26rpx;
+  color: white;
+}
+
+.content .goods .dargainInfo .left .priceShow {
+  display: flex;
+  height: 60rpx;
+  align-items: flex-end;
+}
+
+.content .goods .dargainInfo .left .priceShow-dargain {
+  margin-left: 20rpx;
+}
+
+.content .goods .dargainInfo .left .priceShow-single {
+  margin-left: 50rpx;
+  text-decoration: line-through;
+}
+
+.content .goods .dargainInfo .left-people {
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}
+
+.content .goods .dargainInfo .left .Trianglebox {
+  position: absolute;
+  right: 0;
+  top: 40rpx;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-color: transparent #F5C044 transparent transparent;
+  border-width: 10px;
+}
+
+.content .goods .dargainInfo .right {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #F5C044;
+  font-size: 26rpx;
+  color: #874016;
+}
+
+.content .goods .dargainInfo .right-endtime {
+  margin-top: 20rpx;
+}
+
+.content .goods-item {
+  padding: 3rpx 0;
+  line-height: 45rpx;
+}
+
+.content .goods-name {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-left: 20rpx;
+}
+
+.content .goods-name-sub {
+  font-size: 24rpx;
+  color: red;
+}
+
+.content .goods .dargainNotice {
+  width: 100%;
+  padding: 10rpx 0;
+}
+
+.content .goods .dargainNotice .first {
+  display: flex;
+  height: 50rpx;
+  align-items: center;
+  font-weight: 500;
+}
+
+.content .goods .dargainNotice .first image {
+  width: 50rpx;
+  max-height: 50rpx;
+  margin-left: 30rpx;
+}
+
+.content .goods .dargainNotice .first .text1 {
+  font-size: 32rpx;
+  color: red;
+  margin-left: 10rpx;
+}
+
+.content .goods .dargainNotice .first .text2 {
+  font-size: 25rpx;
+  color: red;
+  margin-left: 20rpx;
+}
+
+.content .goods .dargainNotice .first .refresh {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.content .goods .dargainNotice .first .refresh .refreshImg {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.content .goods .dargainNotice .first .refresh .refreshText {
+  font-size: 26rpx;
+  color: #FF9348;
+  margin-left: 8rpx;
+  line-height: 30rpx;
+  border-bottom: 1rpx solid #FF9348;
+}
+
+.content .goods .dargainNotice .text3 {
+  font-size: 25rpx;
+  color: #888;
+  margin-left: 80rpx;
+}
+
+.content .goods .dargainNotice .second {
+  width: 100%;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 25rpx;
+  color: #888;
+}
+
+.content .bargainContainer {
+  width: 94%;
+  margin-left: 3%;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  background: #fff;
+  padding: 10rpx 0rpx;
+  overflow: hidden;
+  position: relative;
+  border: red 2rpx solid;
+  border-radius: 10rpx;
+}
+
+.content .bargainContainer .mengceng {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 20rpx;
+}
+
+.content .bargainContainer .stocklessImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .bargainContainer .stocklessImg image {
+  width: 140rpx;
+}
+
+.content .bargainContainer .bargainMark {
+  width: 200rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  color: #000;
+  background: yellow;
+  border-radius: 40rpx;
+  text-align: center;
+  margin-left: 520rpx;
+  margin-top: 10rpx;
+}
+
+.content .bargainContainer .bargainMark image {
+  width: 26rpx;
+  margin-left: 5rpx;
+  margin-top: 5rpx;
+}
+
+.content .bargainContainer .bargainDetail {
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.content .bargainContainer .bargainDetail image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+}
+
+.content .bargainContainer .bargainDetail .bargainInfo {
+  width: 68%;
+  margin-left: 2%;
+}
+
+.content .bargainContainer .bargainDetail .bargainInfo .t1 {
+  font-size: 28rpx;
+  color: #000;
+  font-weight: 550;
+}
+
+.content .bargainContainer .bargainDetail .bargainInfo .t3 {
+  font-size: 24rpx;
+  color: #000;
+  margin-top: 10rpx;
+}
+
+.content .bargainContainer .bargainDetail .bargainInfo .t4 {
+  font-size: 28rpx;
+  color: red;
+  margin-top: 10rpx;
+}
+
+.content .bargainContainer .dargainTime {
+  display: flex;
+  margin-left: 50rpx;
+  margin-top: 10rpx;
+}
+
+.content .bargainContainer .dargainTime .rightTime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #000;
+}
+
+.content .bargainContainer .dargainTime .rightTime .timer {
+  width: 50rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background: #000;
+  border-radius: 8rpx;
+  color: white;
+  margin-left: 8rpx;
+}
+
+.content .bargainContainer .dargainTime .bargainBtn {
+  width: 160rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: white;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  background: linear-gradient(to right, #FF9348, #F03D53);
+  border-radius: 50rpx;
+}
+
+.content .bargainContainer .dargainTime .overbg {
+  background: gray;
+}
+
+.content .title {
+  font-size: 28rpx;
+  padding: 10rpx 0;
+  font-weight: 550;
+}
+
+.content .dargainUser {
+  width: 94%;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+  padding: 10rpx 0;
+  margin-left: 3%;
+  margin-top: 5rpx;
+}
+
+.content .dargainUser .userInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content .dargainUser .userInfo image {
+  width: 10%;
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+
+.content .dargainUser .userInfo .name {
+  width: 60%;
+  font-size: 28rpx;
+  color: gray;
+  margin-left: 10rpx;
+}
+
+.content .dargainUser .userInfo .time {
+  width: 30%;
+  font-size: 28rpx;
+  color: #8B8B8B;
+  text-align: end;
+}
+
+.content .dargainUser .describe {
+  font-size: 24rpx;
+  color: #8B8B8B;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+
+.content .mongolia {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.content .select-size {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 30rpx;
+  width: 100%;
+  height: 60%;
+  background: #fff;
+  box-sizing: border-box;
+  transition: 0.3s;
+  border-radius: 10rpx;
+  transform: translateY(120%);
+}
+
+.content .select-size.show {
+  transition: 0.3s;
+  transform: translateY(0);
+}
+
+.content .select-size .close {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.content .select-size .margin-auto {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.content .select-size image {
+  display: block;
+  width: 100%;
+}
+
+.content .select-size .goods-base {
+  padding: 10rpx 0;
+  border-bottom: solid 2rpx #ccc;
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+
+.content .select-size .goods-base .preview {
+  position: relative;
+  margin-top: -50rpx;
+  width: 160rpx;
+}
+
+.content .select-size .goods-base .preview image {
+  border-radius: 10rpx;
+}
+
+.content .select-size .goods-base .goods-info {
+  margin-left: 40rpx;
+}
+
+.content .select-size .goods-base .goods-info .price {
+  color: #ff580c;
+}
+
+.content .select-size .goods-base .goods-info .stock,
+.content .select-size .goods-base .goods-info .size,
+.content .select-size .goods-base .goods-info .sku {
+  padding: 5rpx 0;
+}
+
+.content .select-size .goods-base .goods-info .stock text,
+.content .select-size .goods-base .goods-info .size text,
+.content .select-size .goods-base .goods-info .sku text {
+  font-size: 32rpx;
+}
+
+.content .select-size .goods-base .goods-title {
+  padding: 10rpx 0 0 10rpx;
+}
+
+.content .select-size .goods-base .color {
+  padding: 10rpx 0;
+}
+
+.content .select-size .goods-base .color-item {
+  display: inline-block;
+  padding: 0 12rpx;
+  margin-right: 15rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  background: none;
+  border-radius: 10rpx;
+}
+
+.content .select-size .goods-base .color-item::after {
+  border: none;
+}
+
+.content .select-size .goods-base .color-item.selected {
+  background: #ff580c;
+  color: #fff;
+}
+
+.content .select-size .goods-base .color-item.no-stock {
+  background: #f5f5f5;
+  color: #cccccc;
+}
+
+.content .select-size .goods-base .goods-num text {
+  display: inline-block;
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 40rpx;
+  text-align: center;
+  border: solid 2rpx #ccc;
+  border-right: none;
+}
+
+.content .select-size .goods-base .goods-num text:nth-child(2) {
+  font-size: 28rpx;
+}
+
+.content .select-size .goods-base .goods-num text:last-child {
+  border-right: solid 2rpx #ccc;
+}
+
+.content .select-size .goodBottom {
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+
+.content .select-size .addressArea {
+  width: 100%;
+  margin-top: 30rpx;
+  margin-bottom: 100rpx;
+}
+
+.content .select-size .addressArea .addressTitel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+
+.content .select-size .addressArea .Area {
+  height: 600rpx;
+  clear: both;
+  overflow-y: scroll;
+  margin-top: 10rpx;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.content .select-size .addressArea .Area .addressList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+  border-bottom: #ccc 1rpx solid;
+  margin-top: 10rpx;
+}
+
+.content .select-size .addressArea .Area .addressList .left {
+  width: 95%;
+}
+
+.content .select-size .addressArea .Area .addressList .left .baseInfo {
+  font-size: 28rpx;
+  display: flex;
+}
+
+.content .select-size .addressArea .Area .addressList .left .detailInfo {
+  font-size: 24rpx;
+  color: gray;
+}
+
+.content .select-size .addressArea .Area .addressList .right {
+  width: 5%;
+}
+
+.content .select-size .addressArea .Area .addressList .right image {
+  width: 20rpx;
+}
+
+.content .select-size .addressArea .noAddress {
+  width: 100%;
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: gray;
+}
+
+.content .select-size .addressArea .againGetAddress {
+  width: 100%;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .select-size .addressArea .againGetAddress .toast {
+  font-size: 28rpx;
+  color: gray;
+}
+
+.content .select-size .addressArea .againGetAddress .loading {
+  width: 200rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 26rpx;
+  border-radius: 60rpx;
+  border: 1rpx #ccc solid;
+  color: gray;
+  margin-top: 20rpx;
+}
+
+.submitInfo {
+  position: fixed;
+  left: 0;
+  top: 25%;
+  padding-bottom: 30rpx;
+  width: 70%;
+  margin-left: 15%;
+  background: #fff;
+  box-sizing: border-box;
+  transition: 0.3s;
+  border-radius: 10rpx;
+  transform: translateY(-200%);
+}
+
+.submitInfo.show {
+  transition: 0.3s;
+  transform: translateY(0);
+}
+
+.submitInfo .close {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.submitInfo .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submitInfo .info image {
+  width: 40%;
+  margin-top: 20rpx;
+}
+
+.submitInfo .info-goodName {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 28rpx;
+}
+
+.submitInfo .info-goodSize {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  color: gray;
+}
+
+.submitInfo .info-address {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  color: gray;
+}
+
+.submitInfo .info-submitBtn {
+  font-size: 28rpx;
+  color: white;
+  width: 60%;
+  line-height: 80rpx;
+  text-align: center;
+  background: linear-gradient(to right, #FF9348, #F03D53);
+  border-radius: 80rpx;
+  margin-top: 10rpx;
+}
+
+.fixed-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fixed-bottom .fixed-item {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+
+.fixed-bottom .fixed-item.border {
+  border: solid 2rpx #000;
+}
+
+.iphoneXFooter {
+  height: 148rpx;
+  background: #fff;
+}
+
+.guide {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.guide-wrapper {
+  width: 672rpx;
+  height: 456rpx;
+  background: #fff;
+}
+
+.guide-title {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.guide-title.guide-title-bg {
+  background: #000;
+}
+
+.guide-input {
+  margin: 0 auto;
+  padding: 0 10rpx;
+  width: 580rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  border: solid 2rpx #ccc;
+  border-radius: 5rpx;
+}
+
+.guide .btn-wrapper {
+  margin: 50rpx auto 0;
+  width: 580rpx;
+}
+
+.guide .btn-wrapper .btn {
+  flex: 0 1 48%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #000;
+}
+
+.richImg {
+  max-width: 750rpx;
+}

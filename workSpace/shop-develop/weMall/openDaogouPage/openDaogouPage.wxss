@@ -1,0 +1,131 @@
+.wrap{
+  width:100%;
+  padding-bottom: 120rpx;
+  box-sizing:border-box;
+}
+
+
+/* 回到首页 */
+.gotoIndex{position:fixed; bottom:280rpx; right:20rpx; width:80rpx; height:80rpx; z-index:999;}
+.gotoIndex image{ width:80rpx; height:80rpx;}
+
+image{
+  display: block;
+  width: 100%;
+}
+.high-light,.goods-list,.code-wrapper{
+  margin: 30rpx auto;
+  width: 95%;
+  overflow: hidden
+}
+.fll{
+  float: left
+}
+.flr{
+  float: right
+}
+.banner{
+  padding-top: 30rpx;
+  position: relative;
+  flex-direction: column;
+}
+.banner .title-logo{
+  width: 166rpx;
+  height: 166rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.banner .title{
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  color: #7f7f7f;
+  text-align: center;
+}
+.banner .title .title-name{
+  color: #000;
+  font-weight: bold;
+  padding-top: 10rpx;
+  font-size: 32rpx;
+}
+.code-wrapper .code-img{
+  width: 270rpx;
+  height: 270rpx;
+}
+.code-wrapper .code-text{
+  padding-left: 30rpx;
+  font-size: 30rpx;
+}
+.cover-img{
+  width: 95%;
+  margin: 20rpx auto;
+}
+.fixed-right{
+  position: fixed;
+  bottom: 240rpx;
+  right: 0;
+  z-index: 999;
+}
+.fixed-right .fixed-item{
+  margin-top: 40rpx;
+  padding: 0 30rpx;
+  background: #eee;
+  font-size: 36rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #0ea8ca;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+}
+.fixed-right .fixed-item .icon{
+  padding-right: 10rpx;
+  font-size: 36rpx;
+}
+.guide{
+  display: block;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  font-size: 20rpx;
+  color: #8B8B8B;
+  text-align: center;
+  border-top: dashed 1rpx #8B8B8B;
+}
+.flex-1{
+  flex: 1;
+}
+.fixed-bottom{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 110rpx;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+}
+.fixed-bottom .flex-item{
+  flex: 1;
+  border-left: solid 2rpx #000;
+}
+.fixed-bottom .flex-item:nth-child(1){
+  border:none;
+}
+.fixed-bottom .flex-item .icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.fixed-bottom .flex-item .icon image{
+  display: block;
+  width: 100%;
+}
+.fixed-bottom .flex-item text{
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}
+
+.goods-wrapper{
+  padding-bottom: 50rpx;
+}
+
+.iphoneX_goods_wrapper{
+  padding-bottom: 118rpx;
+}

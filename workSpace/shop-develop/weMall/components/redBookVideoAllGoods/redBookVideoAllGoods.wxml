@@ -1,0 +1,23 @@
+<view>
+	<view class="~flex-bet goods">
+		<view class="goods-item" wx:for="{{goodsList}}" wx:key="gsColorCode">
+		<view class="goods-img">
+					<navigator url="/pages/content/content?colorCode={{item.gsColorCode}}">
+					<image src="{{item.goodsImg}}" mode="widthFix"></image>
+					</navigator>
+				</view>
+				<view class="goods-name ~text-c">{{item.goodsName}}</view>
+				<view class="price ~text-c">
+					<text class="pay-price">￥{{item.discountPrice}}</text>
+					<block wx:if="{{item.discountPrice !== item.originalPrice}}">
+						<text class="original-price">￥{{item.originalPrice}}</text>
+						<text class="discount">{{item.myDiscount}}</text>
+					</block>
+				</view>
+			
+		</view>
+	</view>
+  <view class="hide ~flex-center" bindtap="hideGoods">
+    <text></text>
+  </view>
+</view>

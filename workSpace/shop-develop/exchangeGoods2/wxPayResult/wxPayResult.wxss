@@ -1,0 +1,15 @@
+
+
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden; padding-bottom:134rpx;}
+.header{ width:100%; height:146rpx; background:#eeeeee; border-top:2rpx solid #b8b8b8; padding-left:96rpx; box-sizing:border-box; position:relative; border-bottom:1rpx solid #e9e9e9;}
+.header .title{ font-size:30rpx; font-weight:bold; line-height:54rpx;color:#000; padding-top:20rpx;}
+.header .description{ font-size:24rpx; line-height:48rpx; color:#888888;}
+.header .image{ display:block; width:50rpx; height:50rpx; position:absolute; left:20rpx; top:0;bottom:0;margin:auto 0;}
+
+.content{ width:100%;height:auto; clear:both; overflow:hidden; box-sizing:border-box; padding:60rpx 37rpx 0;}
+.content .li{ width:100%; height:auto; clear:both; overflow:hidden; padding:20rpx 0; font-size:30rpx; line-height:40rpx; color:#000;}
+
+.footer{ width:100%; height:82rpx; position:fixed; bottom:26rpx; left:0;}
+.foot_li{ width:50%; float:left; height:82rpx; box-sizing:border-box; padding:0 20rpx; font-size:30rpx; line-height:82rpx; text-align:center;}
+.foot_left .btn{ background:#fff; border:2rpx solid #000; color:#000;}
+.foot_right .btn{ background:#000; border:2rpx solid #000; color:#fff;}

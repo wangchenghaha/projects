@@ -1,0 +1,22 @@
+<!--components/saleSum/saleSum.wxml-->
+<view class="sale-wrapper">
+  <block wx:if="{{salesView && salesView.length}}">
+    <view class="flex sale-list" wx:for="{{salesView}}" wx:key="salesView">
+      <view class="sale-item">
+        <text class="sale-name">{{item.saleName}}销售(￥)</text>
+        <text class="sale-num">{{item.money}}</text>
+      </view>
+      <view class="sale-item">
+        <text class="sale-name">{{item.saleName}}订单</text>
+        <text class="sale-num">{{item.num}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="no-data ~text-c">暂无销售</view>
+  </block>
+  <view class="sale-desc">
+    <text>备注:</text>
+    <text>以上所有的销售金额及订单数量已付款且未退货订单，如果退货会实时更新数据。</text>
+  </view>
+</view>

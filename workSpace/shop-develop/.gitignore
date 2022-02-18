@@ -1,0 +1,12 @@
+.idea
+.vscode
+.DS_Store
+._.DS_Store
+.sass-cache
+yarn.lock
+npm-debug.*
+/node_modules
+package-lock.json
+project.config.json
+project.private.config.json
+*.map

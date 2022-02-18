@@ -1,0 +1,18 @@
+<view class="prize-contaniner" wx:if="{{showModal}}">
+    <view class="prize-wrap animated bounceIn">
+        <image class="prize-bg" src="../../img/prize-bg.png" />
+        <view class="prize-content {{prizeInfo.award_type == 2 ? 'point-content' : ''}}">
+            <image class="prize" src="../../img/prize30.png"  wx:if="{{prizeInfo.award_type == 1}}"/>
+            <view class="prizepoint-box" wx:if="{{prizeInfo.award_type == 2}}">
+                <image class="prizepoint" src="../../img/prize-point.png"  />
+                <view class="integral">
+                    {{prizeInfo.integral}}
+                </view>
+            </view>
+        </view>
+        <view class="share-btn" catchtap="getCouponHandle" wx:if="{{prizeInfo.award_type == 1}}">
+            <image class="address-btn" src="../../img/getcouponbtn.png" />
+        </view>
+        <image catchtap="close" class="close-btn" src="../../img/close.png" />
+    </view>
+</view>

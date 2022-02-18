@@ -1,0 +1,4 @@
+<view class="tb_box">
+    <!-- <truntableDraw phones="{{phones}}" bgColor="{{bgColorArr}}"></truntableDraw> -->
+    <ninelottery phones="{{phones}}" bgColor="{{bgColorArr}}" gameCode="{{gameCode}}"></ninelottery>
+</view>

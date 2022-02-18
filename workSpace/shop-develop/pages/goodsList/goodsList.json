@@ -1,0 +1,12 @@
+{
+  "navigationStyle" : "custom",
+  "navigationBarTitleText": "商品列表",
+  "enablePullDownRefresh": true,
+  "usingComponents":{
+    "goods-item":"/components/goodsItem/goodsItem",
+    "screen-size":"/components/screenSize/screenSize",
+    "my-loading":"/components/loading/loading",
+    "ad-pop": "/components/advertisement/advertisement",
+    "left-bar": "/components/leftTabBar/leftTabBar"
+  }
+}

@@ -1,0 +1,31 @@
+<import src="../tmpl/classicOrderItem/classicOrderItem"/>
+<view class='father'>
+    <view class="global_bg_matrix_gray_300">
+        <text class="global_text_title_left">选择换货方式</text>
+    </view>
+    <view class="top1">
+        <view>
+            <text class="key_left txt_bold">换货单号</text>
+            <text class="value_right txt_bold">{{exDetailBean.exchangeCode}}</text>
+        </view>
+        <view style="padding-bottom:17rpx;">
+            <text class="key_left grey_0">申请换货时间</text>
+            <text class="value_right grey_0">{{exDetailBean.createTime}}</text>
+        </view>
+        <view class="layout_reason">
+            <text class="key_left txt_bold">换货的理由：{{reasonProceeded}}</text>
+        </view>
+    </view>
+
+    <scroll-view scroll-y="true" class="scroll_view">
+        <view class="global_order_item" wx:for="{{exDetailBean.applySourceList}}" wx:key="global_order_item">
+            <template is="classicOrderItemTmpl" data="{{item}}"></template>
+        </view>
+    </scroll-view>
+
+    <view class="layout_bottom">
+        <view class='global_button_default_light' bindtap='onExchangeInShop' wx:if="{{flagShowWay && noShow}}">到店换货</view>
+        <view class='global_button_default_light' bindtap='onExchangeInExpress'>快递换货</view>
+    </view>
+
+</view>

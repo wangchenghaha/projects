@@ -1,0 +1,13 @@
+.upload{
+  width: 200rpx;
+  height: 200rpx;
+  font-size: 80rpx;
+  line-height: 200rpx;
+  border: solid 1rpx #ccc;
+}
+.canvas{
+  margin: 0 auto;
+  width: 500rpx;
+  height: 400rpx;
+  border: solid 1rpx #ccc;
+}

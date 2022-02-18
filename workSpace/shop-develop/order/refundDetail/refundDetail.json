@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "退款详情",
+  "usingComponents": {
+    "order-item": "../components/orderItem/orderItem",
+    "copy-icon": "../../components/copyIcon/copyIcon",
+    "dmp-goods": "../../components/dmpRecommendGoods/dmpRecommendGoods"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "truntableDraw": "../../components/turntableMidSeason/truntableDraw/truntableDraw",
+    "ninelottery": "../../components/turntableMidSeason/NineLottery/NineLottery"
+  }
+}

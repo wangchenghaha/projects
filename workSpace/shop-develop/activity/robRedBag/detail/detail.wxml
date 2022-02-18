@@ -1,0 +1,72 @@
+<view class="container">
+  <view class="header">
+    <image src="{{headerBg}}" mode="widthFix" />
+    <view class="title text-c color-fff" style="{{titleStyle}}">
+      领取详情
+      <text class='back' bindtap="goBack"></text>
+    </view>
+  </view>
+  <view class="wx-info flex-center">
+    <image class="avatar" src="{{wxInfo.avatarUrl}}" />
+    <text class="nick-name">{{wxInfo.nickName}}的红包</text>
+  </view>
+  <view class="main">
+    <view class="tip text-c" wx:if="{{!msg && redBagDetail.myCoupon}}">恭喜你获得</view>
+    <view class="coupon">
+      <image src="{{couponBg}}" mode="widthFix" />
+      <view class="info flex-center" >
+        <block wx:if="{{!msg && redBagDetail.myCoupon}}">
+          <view class="value">¥ <text>{{redBagDetail.myCoupon.exchangeGiftName}}</text></view>
+          <view class="threshold">满{{redBagDetail.myCoupon.giftInfo.pointsRequire}}减{{redBagDetail.myCoupon.exchangeGiftName}}</view>
+        </block>
+        <block wx:else>
+          <text class="no-bag text-c">{{msg}}</text>
+        </block>
+      </view>
+    </view>
+    <navigator class="my-coupon text-c" wx:if="{{redBagDetail.myCoupon}}" url="/member/myCouponList/myCouponList?name={{etoBrand}}">会员中心-我的优惠券 >
+    </navigator>
+    <view class="flex-around btn-wrapper">
+      <view class="text-c color-fff btn share-btn" bindtap="shareRedBag">转发分享红包</view>
+      <view class="text-c color-fff btn back-btn" bindtap="goHome">去逛逛</view>
+    </view>
+    <view class="desc text-c">亲～还可以转发其他群分享红包，快来行动吧</view>
+  </view>
+  <view class="user" wx:if="{{redBagDetail.giftOrderList}}">
+    <view class="title">已领取 {{redBagDetail.giftOrderList.length}}/{{allRedBagCount}} 个</view>
+    <view class="user-item flex-bet" wx:for="{{redBagDetail.giftOrderList}}" wx:key="id">
+      <view class="user-info flex-start" wx:if="{{item.userInfo}}">
+        <image class="avatar" wx:if="{{item.userInfo.facePic}}" src="{{item.userInfo.facePic}}"></image>
+        <view class="user-txt">
+          <view class="nick-name">{{item.userInfo.nickName}}</view>
+          <view class="flex-start">
+            <text class="time" wx:if="{{item.createdTime}}">{{item.createdTime}}</text>
+            <!-- giftId 为 '5' 领取数量全部领完才出最佳-->
+            <block wx:if="{{redBagDetail.giftOrderList.length === allRedBagCount && item.giftId === '5'}}">
+              <image class="best-luck-icon" src="{{bestLuckIcon}}" mode="widthFix"></image>
+              <text class="best-luck-text">手气最佳</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="user-coupon flex-center" wx:if="{{item.giftInfo}}" style="background-image: url({{userCouponBg}})">
+        <view class="value">{{item.giftInfo.giftName}}<text>元</text></view>
+        <text class="threshold">满{{item.giftInfo.pointsRequire}}减{{item.giftInfo.giftName}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="detail-banner">
+    <navigator url="/pages/goodsList/goodsList?list=116886">
+      <image src="{{detailBanner}}" mode="widthFix"></image>
+    </navigator>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view class="popup flex-center" wx:if="{{sharePopup}}">
+  <!-- 分享弹窗 -->
+  <view class="share flex-center">
+    <text>您即将分享超级大红包，确认转发？</text>
+    <button open-type="share" class="share-btn">确认</button>
+  </view>
+  <icon type="cancel" size="60rpx" color="#fff" bindtap="closePopup" />
+</view>

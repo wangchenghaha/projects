@@ -1,0 +1,7 @@
+<!--activesubpack/pages/egg/components/gif/gif.wxml-->
+<view class="gift-continer" wx:if="{{isShow}}">
+    <view class="gift-wrapper"></view>
+    <view class="gift-main-wrapper">
+        <image src="{{imgUrl}}" mode="widthFix" />
+    </view>
+</view>

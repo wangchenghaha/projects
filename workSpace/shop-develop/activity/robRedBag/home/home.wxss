@@ -1,0 +1,316 @@
+.content {
+  position: relative;
+  min-height: 100%;
+  background: #d83f5b;
+}
+
+.content image {
+  display: block;
+  width: 100%;
+}
+
+.content .banner {
+  position: relative;
+}
+
+.content .banner .tip {
+  position: absolute;
+  left: 50%;
+  top: 534rpx;
+  padding: 0 20rpx;
+  width: 496rpx;
+  height: 112rpx;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 56rpx;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+.content .banner .tip .avatar {
+  margin-right: 15rpx;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+}
+
+.content .banner .tip-text {
+  display: inline-block;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #fffde7;
+}
+
+.content .banner .rob {
+  position: absolute;
+  left: 0;
+  bottom: 20rpx;
+  width: 100%;
+  flex-direction: column;
+}
+
+.content .banner .rob-text {
+  padding-bottom: 20rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #feffaa;
+}
+
+.content .banner .rob-icon {
+  width: 140rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  font-size: 90rpx;
+  font-weight: bold;
+  color: #f62f36;
+  background: linear-gradient(180deg, #FFED88, #FFD445);
+  box-shadow: 0 5 0 0 #EB571D;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: robGif 1s infinite;
+}
+
+.content .banner .rob-icon .light {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40rpx;
+  height: 180rpx;
+  background: rgba(255, 255, 255, 0.3);
+  transform-origin: center;
+  animation: lightMove 1s infinite;
+}
+
+.content .footer {
+  margin-top: 40rpx;
+  width: 100%;
+  padding-bottom: 40rpx;
+}
+
+.content .footer .btn-item {
+  width: 240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #F40052;
+  background: linear-gradient(180deg, #FEE774, #FFCD45);
+  border-radius: 40rpx;
+}
+
+.content .footer .rule {
+  margin: 20rpx auto;
+  width: 640rpx;
+}
+
+.content .footer .rule .top {
+  padding-bottom: 20rpx;
+}
+
+.content .footer .rule .top .text {
+  font-size: 32rpx;
+  padding: 0 40rpx;
+  color: #fff;
+}
+
+.content .footer .rule .top .line {
+  position: relative;
+  flex: 1;
+  display: inline-block;
+  height: 4rpx;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), white);
+}
+
+.content .footer .rule .top .line:after {
+  content: '';
+  position: absolute;
+  right: -20rpx;
+  top: 50%;
+  width: 8rpx;
+  height: 8rpx;
+  background: #fff;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.content .footer .rule .top .line:last-child {
+  transform: rotate(180deg);
+}
+
+.content .footer .rule-item {
+  padding-bottom: 10rpx;
+  display: inline-block;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  color: #fff;
+}
+
+.content .popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+}
+
+.content .popup .wrapper {
+  position: relative;
+  margin: 200rpx 0 40rpx;
+  width: 640rpx;
+  height: 730rpx;
+  background: linear-gradient(0deg, #E1363C, #FF514A);
+  border-radius: 32rpx;
+}
+
+.content .popup .wrapper .no-red-bag {
+  width: 460rpx;
+}
+
+.content .popup .wrapper .img-top {
+  position: absolute;
+  top: -204rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 567rpx;
+}
+
+.content .popup .wrapper .red-bag {
+  width: 568rpx;
+  max-height: 520rpx;
+  overflow: scroll;
+}
+
+.content .popup .wrapper .red-bag-item {
+  margin-bottom: 20rpx;
+  width: 100%;
+  height: 160rpx;
+  background: #fff;
+  border-radius: 24rpx;
+}
+
+.content .popup .wrapper .red-bag-item:last-child {
+  margin-bottom: 0;
+}
+
+.content .popup .wrapper .red-bag-item .info {
+  flex: 1;
+}
+
+.content .popup .wrapper .red-bag-item .info .value {
+  padding: 0 30rpx;
+  font-size: 36rpx;
+  color: #ff0030;
+}
+
+.content .popup .wrapper .red-bag-item .info .value text {
+  font-size: 80rpx;
+}
+
+.content .popup .wrapper .red-bag-item .info .desc {
+  max-width: 260rpx;
+  line-height: 36rpx;
+}
+
+.content .popup .wrapper .red-bag-item .info .desc .threshold {
+  font-size: 32rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content .popup .wrapper .red-bag-item .info .desc .channel {
+  font-size: 24rpx;
+  color: #aaa;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content .popup .wrapper .red-bag-item .info .desc .date {
+  color: #aaa;
+  font-size: 20rpx;
+}
+
+.content .popup .wrapper .red-bag-item .btn-use {
+  margin: 0 20rpx;
+  width: 96rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  background: #ff0030;
+  color: #fff;
+  border-radius: 24rpx;
+}
+
+.content .popup .wrapper .red-bag .tip {
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  width: 100%;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.5);
+  transform: translateX(-50%);
+}
+
+.content .popup .share {
+  flex-direction: column;
+  margin-bottom: 40rpx;
+  width: 640rpx;
+  height: 276rpx;
+  font-size: 32rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+
+.content .popup .share-btn {
+  margin-top: 30rpx;
+  width: 240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 34rpx;
+  border: none;
+  background: #ffda5d;
+  color: #be4a23;
+}
+
+.menu {
+  position: fixed;
+  left: 30rpx;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.menu-back {
+  width: 30rpx;
+  height: 30rpx;
+  border-top: solid 4rpx #fff;
+  border-right: solid 4rpx #fff;
+  transform: translateY(50%) rotate(-135deg);
+}
+
+.menu-home {
+  font-size: 50rpx;
+  color: #fff;
+}
+
+@keyframes robGif {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes lightMove {
+  0% {
+    transform: translateX(0) rotate(45deg);
+  }
+  50% {
+    transform: translateX(160rpx) rotate(45deg);
+  }
+  100% {
+    transform: translateX(180rpx) rotate(45deg);
+  }
+}

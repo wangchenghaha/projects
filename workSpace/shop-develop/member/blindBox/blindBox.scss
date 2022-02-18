@@ -1,0 +1,85 @@
+.blind{
+  padding-bottom: 150rpx;
+  min-height: 100%;
+  box-sizing: border-box;
+  image{
+    display: block;
+    width: 100%;
+  }
+  .banner{
+    padding-top: 100rpx;
+  }
+  &-item{
+    margin-top: 110rpx;
+    .column{
+      &-img{
+        margin: 25rpx auto;
+        width: 610rpx;
+        border-radius: 15rpx;
+      }
+    }
+    .row{
+      margin: 20rpx auto;
+      width: 640rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      &-img{
+        width: 308rpx;
+        border-radius: 15rpx;
+      }
+    }
+    .desc{
+      margin: 20rpx auto;
+      padding: 0 30rpx;
+      width: 650rpx;
+      height: 120rpx;
+      border: solid 2rpx #bcdfbe;
+      border-radius: 20rpx;
+      box-sizing: border-box;
+      .name{
+        font-size: 32rpx;
+      }
+      .price{
+        font-size: 60rpx;
+      }
+    }
+  }
+}
+.fixed-bottom{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150rpx;
+  background-image: linear-gradient(to bottom, #b595ea, #bee0c7) ;
+  overflow: hidden;
+  .btn{
+    font-size: 40rpx;
+    height: 100%;
+    line-height: 120rpx;
+    letter-spacing: 8rpx;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+.flash {
+  animation-name: flash;
+}
+

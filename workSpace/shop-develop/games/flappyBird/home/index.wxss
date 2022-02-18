@@ -1,0 +1,408 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .posistionView {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bg .posistionView .centerView {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg .posistionView .centerView .bottomView {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg .posistionView .centerView .bottomView-img {
+  width: 211rpx;
+  height: 206rpx;
+}
+
+.bg .posistionView .centerView .shengyu {
+  position: absolute;
+  bottom: 26%;
+  left: 0;
+  width: 100%;
+  height: 30rpx;
+  text-align: center;
+  color: white;
+  font-size: 28rpx;
+}
+
+.bg .posistionView .centerView .play {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 140rpx;
+}
+
+.bg .posistionView .birdNum {
+  position: absolute;
+  left: 20rpx;
+  top: 200rpx;
+  width: 164rpx;
+}
+
+.bg .posistionView .birdNum .numView {
+  position: absolute;
+  top: 20rpx;
+  bottom: 25rpx;
+  left: 85rpx;
+  right: 0;
+  color: white;
+  font-size: 24rpx;
+  text-shadow: 0 0 #3F87FC;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.bg .posistionView .num {
+  position: absolute;
+  left: 20rpx;
+  top: 100rpx;
+  width: 336rpx;
+}
+
+.bg .posistionView .num .numView {
+  position: absolute;
+  top: 20rpx;
+  bottom: 25rpx;
+  left: 85rpx;
+  right: 0;
+  color: white;
+  font-size: 24rpx;
+  text-shadow: 0 0 #3F87FC;
+  text-align: center;
+  line-height: 46.5rpx;
+}
+
+.bg .posistionView .guize {
+  position: absolute;
+  top: 200rpx;
+  right: 0;
+  width: 150rpx;
+  height: 60rpx;
+  background-color: black;
+  opacity: .4;
+  border-top-left-radius: 60rpx;
+  border-bottom-left-radius: 60rpx;
+  color: white;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.goHome {
+  position: fixed;
+  top: 50%;
+  right: 32rpx;
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.bouncedBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.bounced-priceView {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 608rpx;
+  height: 1075rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+.bounced-priceView .priceClosed {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 115rpx;
+}
+
+.bouncedView {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 753rpx;
+}
+
+.bouncedView .closed {
+  position: absolute;
+  right: 35rpx;
+  top: 70rpx;
+  width: 95rpx;
+  height: 95rpx;
+}
+
+.bouncedView .subView {
+  position: absolute;
+  bottom: 50rpx;
+  left: 70rpx;
+  right: 70rpx;
+  height: 500rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bouncedView .subView .bgview {
+  width: 100%;
+  height: 138rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.bouncedView .subView .bgview .left {
+  width: 68%;
+  height: 100%;
+  padding-left: 30rpx;
+  padding-top: 25rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+}
+
+.bouncedView .subView .bgview .left .title {
+  font-size: 32rpx;
+  color: #EAFF00;
+}
+
+.bouncedView .subView .bgview .left .subTitle {
+  font-size: 24rpx;
+  color: #D7FF9B;
+  margin-top: 10rpx;
+}
+
+.bouncedView .subView .bgview .right {
+  width: 32%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bouncedView .subView .bgview .right .btn {
+  width: 144rpx;
+  height: 50rpx;
+}
+
+.bouncedView .subView .bgview .right .share {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72%;
+  height: 50rpx;
+  background: none;
+}
+
+.bouncedView .subView .bgview .right .share::after {
+  border: none;
+}
+
+.duihuan {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 709rpx;
+  height: 1133rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+.duihuan .guizeClosed {
+  position: absolute;
+  right: 30rpx;
+  top: 105rpx;
+  width: 95rpx;
+  height: 95rpx;
+}
+
+.duihuan .guizeBottomView {
+  position: absolute;
+  top: 20%;
+  left: 70rpx;
+  right: 70rpx;
+  bottom: 120rpx;
+  overflow-y: scroll;
+  font-size: 28rpx;
+  color: #49A813;
+}
+
+.duihuan .closed {
+  position: absolute;
+  right: 52rpx;
+  top: 90rpx;
+  width: 95rpx;
+  height: 95rpx;
+}
+
+.duihuan .bottomView {
+  position: absolute;
+  bottom: 80rpx;
+  left: 60rpx;
+  right: 60rpx;
+  top: 17%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.duihuan .bottomView .top {
+  width: 300rpx;
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+
+.duihuan .bottomView .top .left {
+  width: 50%;
+  border-top-left-radius: 70rpx;
+  border-bottom-left-radius: 70rpx;
+}
+
+.duihuan .bottomView .top .right {
+  width: 50%;
+  border-top-right-radius: 70rpx;
+  border-bottom-right-radius: 70rpx;
+}
+
+.duihuan .bottomView .bottom {
+  margin-top: 40rpx;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.duihuan .bottomView .bottom .flexView {
+  width: 100%;
+  height: 351rpx;
+  display: flex;
+}
+
+.duihuan .bottomView .bottom .flexView .bgImg {
+  width: 50%;
+  height: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.duihuan .bottomView .bottom .flexView .bgImg .title {
+  font-size: 30rpx;
+  color: #49A813;
+}
+
+.duihuan .bottomView .bottom .flexView .bgImg .img {
+  width: 80%;
+  margin-top: 10rpx;
+}
+
+.duihuan .bottomView .bottom .flexView .bgImg .subNum {
+  color: #77CB0D;
+  font-size: 28rpx;
+  margin-top: -20rpx;
+  margin-bottom: 5rpx;
+}
+
+.duihuan .bottomView .bottom .flexView .bgImg .shengyu {
+  font-size: 22rpx;
+  color: #848484;
+  margin-top: -10rpx;
+}
+
+@keyframes bouncedBgShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+
+@keyframes bouncedBgHidden {
+  0% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes duihuanShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes duihuanHidden {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-753rpx);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 1;
+    transform: translateY(-753rpx);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,89 @@
+<view class="container">
+    <image class="mainbg" src="{{mainbg}}" mode="widthFix"></image>
+    <image class="brandLogo" src="{{brandLogo}}" mode="widthFix"></image>
+    <!-- 返回logo --> 
+    <image class="backImg" src="{{backImg}}" mode="widthFix" data-type="back"  bindtap="onClick"/>
+
+    <view class="startGame1" style="top:{{startTop1}};" data-type="startGame" bindtap="onClick" wx:if="{{isBrandShow}}"></view>
+    <view class="startGame2" style="top:{{startTop2}};" data-type="startGame" bindtap="onClick"></view>
+    <view class="rule1" style="top: {{ruleTop1}}" data-type="rule" bindtap="onClick" wx:if="{{isBrandShow}}"></view>
+    <view class="rule2" style="top: {{ruleTop2}}"  data-type="rule" bindtap="onClick" wx:else></view>
+    <image class="ranking" src="{{rankImg}}" mode="widthFix" data-type="ranking" bindtap="onClick"></image>
+    <image class="giftList" src="{{giftImg}}" mode="widthFix" data-type="giftList" bindtap="onClick"></image>
+</view>
+
+<view class="voucher flex-center" wx:if="{{isShowRank}}">
+    <view class="showModel flex-center" >
+        <image class="rankbg" src="{{rankbg}}" mode="widthFix"></image>
+        <image class="tan_close" src="{{tan_close}}" mode="widthFix" data-type="tan_close" bindtap="onClick"></image>
+        <view class="tab" style="left:182rpx; color:{{isWorld ? '#ffef84': '#ba671e'}}"  data-type="world" bindtap="onClick">世界排名</view>
+        <view class="tab" style="left:366rpx; color:{{isWorld ? '#ba671e': '#ffef84'}}"  data-type="friends" bindtap="onClick">好友排名</view>
+        <view class="rankArea" wx:if="{{isWorld}}">
+            <view class="myPoint">我：第{{myRank}}名</view>
+            <view class="threeArea flex-center">
+                <view class="userInfo" style="margin-top: {{item.marginTop}};" wx:for="{{threeList}}" wx:key="three">
+                    <view class="avatarArea flex-center"> 
+                        <image class="avatarbg" src="{{item.avatarbg}}" mode="widthFix"></image>
+                        <image class="avatarImg" src="{{item.avatarImg}}" mode="widthFix"></image>
+                        <view class="level" style="background:{{item.bgcolor}}">{{item.level}}</view>
+                    </view>
+                    <view class="nickName">{{item.nickName}}</view>
+                    <view class="points">{{item.points}}</view>
+                </view>
+            </view>
+            <view class="otherArea flex-bet" wx:for="{{otherList}}" wx:key="other">
+                <view class="flex-center">
+                    <view class="otherId">NO.{{item.id}}</view>
+                    <image class="otherImg" src="{{item.otherImg}}" mode="widthFix"></image>
+                    <view class="otherName">{{item.nickName}}</view>
+                </view>
+                <view class="otherPoints">{{item.points}}</view>
+            </view>
+            <view class="showNum" wx:if="{{isShowLimte}}">- 只显示前10名 -</view>
+        </view>
+        <view class="friendRank" wx:else>
+            <view class="otherArea flex-bet" wx:for="{{friendList}}" wx:key="friends">
+                <view class="flex-center">
+                    <view class="otherId">NO.{{item.id}}</view>
+                    <image class="otherImg" src="{{item.otherImg}}" mode="widthFix"></image>
+                    <view class="otherName">{{item.nickName}}</view>
+                </view>
+                <view class="otherPoints">{{item.points}}</view>
+            </view>
+            <view class="showNum" wx:if="{{isShowFriendLimte}}">- 只显示前10名 -</view>
+        </view>
+    </view>
+</view>
+
+<view class="voucher flex-center"  wx:if="{{isShowRule}}">
+    <view class="showModel flex-center" >
+        <image class="rankbg" src="{{rulebg}}" mode="widthFix"></image>
+        <image class="tan_close" src="{{tan_close}}" mode="widthFix" data-type="tan_close" bindtap="onClick"></image>
+        <view class="rankArea ">
+            <block wx:for="{{ruleContent}}" wx:key="rule">
+                <view class="ruleTitle" style="font-size: {{isFol? '26rpx':'28rpx'}};">{{item.title}}</view>
+                <view class="ruleContent"  style="font-size: {{isFol? '22rpx':'24rpx'}};">{{item.contents}}</view>
+            </block>
+        </view>
+    </view>
+</view>
+
+
+<block wx:if="{{gameNoCount}}">
+    <view class="bounced" style="background-color: black;opacity: .5;"></view>
+    <view class="bounced">
+        <view class="bounced-firstPop">
+            <view class="regretBg">
+                <image class="regretlogo" src="{{regretlogo}}" mode="widthFix"></image>
+                <view class="txt1">您的游戏次数为0，无法游戏！</view>
+                <view class="txt2">{{gameOverStr}}</view>
+                <view class="btn1">立即邀请好友助力</view>
+                <button open-type="share" class="share" style="top: {{inventTop2}}"></button>
+            </view>
+            <image class="close" src="{{closeImg}}" data-type="tan_close" bindtap="onClick"></image>
+        </view>
+    </view>
+</block>
+
+ <!-- 音乐开关 -->
+ <image class="musicImg {{isMusicStart?'music-on':''}}" src="{{musicImg}}" mode="widthFix" data-type="music"  bindtap="onClick"/>

@@ -1,0 +1,227 @@
+image {
+  width: 100%;
+}
+
+.flex-bet, .order-list .goods .customer, .screen-content .screen-order .status, .screen-content .screen-channel, .screen-content .screen-date, .screen-content .screen-header, .screen {
+  display: flex;
+  justify-content: space-between;
+}
+
+.screen {
+  position: relative;
+  padding-bottom: 20rpx;
+  border-bottom: solid 1rpx #dfdfdf;
+}
+.screen text {
+  font-size: 30rpx;
+  line-height: 35rpx;
+}
+.screen-title {
+  padding-left: 10rpx;
+  border-left: solid 4rpx #000;
+}
+.screen-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.screen-icon {
+  margin-left: 10rpx;
+  width: 24rpx;
+}
+.screen-content {
+  position: absolute;
+  left: 0;
+  top: 55rpx;
+  padding: 10rpx 20rpx;
+  width: 100%;
+  background: #fff;
+  border: solid 1rpx #ccc;
+  box-sizing: border-box;
+  transform: scale(0);
+  transform-origin: right top;
+  transition: 0.3s;
+}
+.screen-content.animate {
+  transform: scale(1);
+}
+.screen-content.hide {
+  transform: scale(0);
+}
+.screen-content .screen-header {
+  padding: 10rpx 0;
+  border-bottom: solid 1rpx #e8e8e8;
+}
+.screen-content .screen-date {
+  margin-top: 30rpx;
+  align-items: center;
+}
+.screen-content .screen-date .date {
+  flex: 1;
+  background: #f2f2f2;
+  font-size: 30rpx;
+  border-radius: 30rpx;
+  text-align: center;
+}
+.screen-content .screen-channel {
+  margin-top: 30rpx;
+  align-items: center;
+}
+.screen-content .screen-channel .channel-item {
+  flex: 1;
+  margin: 0 10rpx;
+  background: #f2f2f2;
+  padding: 10rpx 0;
+  text-align: center;
+}
+.screen-content .screen-channel .channel-item.selected {
+  background: #f7d3d3;
+  color: #d92222;
+}
+.screen-content .screen-order {
+  margin-top: 10rpx;
+}
+.screen-content .screen-order .status {
+  margin-top: 20rpx;
+  margin-left: 80rpx;
+}
+.screen-content .screen-order .status text {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+  margin: 0 10rpx;
+  background: #f2f2f2;
+}
+.screen-content .screen-order .status text.selected {
+  background: #f7d3d3;
+  color: #d92222;
+}
+.screen-left {
+  display: block;
+  width: 80rpx;
+}
+
+.order-list {
+  flex-direction: column;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: solid 1rpx #e8e8e8;
+}
+.order-list .goods-img {
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+.order-list .order-code {
+  font-size: 30rpx;
+}
+.order-list .goods {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.order-list .goods text {
+  padding-bottom: 15rpx;
+  font-size: 28rpx;
+  line-height: 30rpx;
+}
+.order-list .goods-name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.order-list .goods-sku {
+  padding-bottom: 25rpx;
+  font-size: 38rpx;
+  color: #a5a5a5;
+}
+.order-list .goods .customer {
+  align-items: flex-end;
+}
+.order-list .goods .customer-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.order-list .goods .customer-wrapper .avatar {
+  margin: 0 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.order-list .goods .customer .order-status {
+  padding: 10rpx 15rpx;
+  color: #fff;
+}
+.order-list .goods .customer .order-status.watting-receive {
+  background: #000;
+}
+.order-list .goods .customer .order-status.watting-shipment {
+  background: #d92222;
+}
+.order-list .goods .customer .order-status.refunding {
+  background: #bebebe;
+}
+.order-list .arrow {
+  position: relative;
+  margin: 5rpx auto;
+  width: 40rpx;
+  height: 40rpx;
+  border-bottom: solid 2rpx #ccc;
+  border-left: solid 2rpx #ccc;
+  transition: 0.3s;
+  transform-origin: center;
+  animation: changeOpacity 1s infinite;
+}
+.order-list .arrow.rotate {
+  animation: changeOpacityShow 1s infinite;
+}
+.order-list .arrow::before {
+  content: "";
+  position: absolute;
+  left: -10rpx;
+  top: 9rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-bottom: solid 2rpx #ccc;
+  border-left: solid 2rpx #ccc;
+}
+.order-list .order-info {
+  padding: 10rpx 0;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  border-bottom: solid 1rpx #ccc;
+}
+.order-list .order-info .order-item {
+  line-height: 45rpx;
+}
+.order-list .order-info .order-item text {
+  text-decoration: line-through;
+  font-size: 24rpx;
+}
+.order-list .order-info .order-status {
+  color: red;
+}
+
+@keyframes changeOpacity {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8) rotate(-45deg);
+  }
+}
+@keyframes changeOpacityShow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(135deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8) rotate(135deg);
+  }
+}
+
+/*# sourceMappingURL=orderCenter.wxss.map */

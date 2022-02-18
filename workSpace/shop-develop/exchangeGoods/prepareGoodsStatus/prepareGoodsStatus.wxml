@@ -1,0 +1,103 @@
+<import src="../components/steps/index" />
+<import src="../tmpl/classicOrderItem/classicOrderItem" />
+<import src="../tmpl/shopMultiInfo/shopMultiInfo" />
+<view class="frame">
+  <!-- 店铺备货中/完成 -->
+  <view class="global_order_status_bar_wrap" wx:if="{{true}}">
+    <text class="order_key">订单状态</text>
+    <text class="order_status">{{orderStatus=='STOCKING'?'店铺备货中':orderStatus=='STOCKED'?'店铺备货完成':orderStatus=='STOCK_FAIL'?'备货失败':'到店换货'}}</text>
+    <!-- <text wx:if="{{prevDingdanStatus=='WaitingReceive'}}" class='lookWuliu' bindtap='lookWuliu'>查看物流</text> -->
+  </view>
+  <!-- 暂时不用 -->
+  <!-- <view class="zan-cell">
+        <view class="zan-cell__bd">
+            <template is="zan-steps" data="{{ type: 'horizon', steps: steps }}"></template>
+        </view>
+    </view> -->
+
+  <view class="global_order_status_bar_wrap bg_white" wx:if="{{orderStatus=='CONFIRM_TYPE'}}">
+    <text class="order_key">您已选择到店换货，已申请的换货店铺和商品信息如下：</text>
+  </view>
+  
+  <template is="shopMultiInfoTmpl" data="{{urlShopBG,shopBean}}"></template>
+
+  <view class="prepare_tip_frame">
+    <view class="tip_0" wx:if="{{orderStatus=='STOCKING'}}">店铺正在为您备货中，收到短信通知后，请您携带换货的商品到门店进行换货。</view>
+    <view class="tip_0" wx:if="{{orderStatus=='STOCKED'}}">店铺备货完成，请您在{{tipDataStr}}22点前到门店完成换货，超过该时间点,该换货申请将被关闭。</view>
+    <view class="tip_0" wx:if="{{orderStatus=='STOCK_FAIL'}}">店铺备货失败，请您联系客服进行相关处理。</view>
+    <view class="tip_0" wx:if="{{orderStatus=='CONFIRM_TYPE'}}">请您在{{tipDataStr}}22点前到门店完成换货，超过该时间点,该换货申请将被关闭。</view>
+    <view class="tip_time" wx:if="{{orderStatus=='STOCKED'||orderStatus=='CONFIRM_TYPE'}}">
+      <image class="img_hourglass" src="https://cdn.bestseller.com.cn/assets/common/pub/image/icon_hourglass_blue_32.png" />
+      <!-- <icon type="waiting" size="20" /> -->
+      {{leftDuringStr}}
+    </view>
+  </view>
+  <view class="text_line_frame" wx:if="{{orderStatus!='CONFIRM_TYPE'&&flagShowOrderText}}">
+    <view class="padding">
+      <text class="key_left text_bold">换货单号：{{exOrderBean.exchangeCode}}</text>
+      <text class="value_right">{{exOrderBean.createTime}}</text>
+    </view>
+    <view class="padding">
+      <text class="key_left text_bold">原单号：{{exOrderBean.oriorderCode}}2</text>
+      <!-- <text class="value_right">{{dingdanCon.createTime}}</text> -->
+    </view>
+    <view style="border-top:1rpx solid #E9EBED;padding-top:10rpx;">
+      <text class="key_left">提货人：{{exOrderBean.oriConsignee}}</text>
+    </view>
+    <view>
+      <text class="key_left">提货手机号：{{exOrderBean.oriContactTel}}</text>
+    </view>
+  </view>
+  <view>
+    <view class="tip_1" wx:if="{{orderStatus!='CONFIRM_TYPE'&&flagShowOrderText}}">门店备货完成后，请您到门店将如下商品</view>
+    <view class="tip_1" wx:if="{{orderstatus=='CONFIRM_TYPE'&&flagShowOrderText}}">门店备货完成后，请您携带如下商品到门店</view>
+    <view class="tip_1" wx:if="{{!flagShowOrderText}}">原购商品</view>
+    <view class="exchange_list">
+      <view class="global_order_item" wx:for="{{applySourceList}}" wx:key="applySourceList">
+        <template is="classicOrderItemTmpl" data="{{item}}" />
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{flagShowOrderText}}">
+    <view class="tip_2" wx:if="{{orderStatus!='CONFIRM_TYPE'}}">换新为如下商品</view>
+    <view class="exchange_list">
+      <view class="global_order_item" wx:for="{{applyTargetList}}" wx:key="applyTargetList">
+        <template is="classicOrderItemTmpl" data="{{item}}" />
+      </view>
+    </view>
+  </view>
+  <!-- <view class='price_frame'> -->
+  <view wx:if="{{!exOrderBean.exchangeType&&flagShowOrderText}}">
+    <view class="price_expected" wx:if="{{expectedPrice>=0}}">预计需要支付：¥{{expectedPriceABS}}</view>
+    <view class="price_expected" wx:if="{{expectedPrice<0}}">预计需要支付：-¥{{expectedPriceABS}}</view>
+  </view>
+  <view wx:if="{{exOrderBean.exchangeType}}" class="price_expected" wx:if="{{expectedPrice<0}}">总金额：¥{{expectedPriceABS}}</view>
+  <!-- </view> -->
+
+  <view class="layout_protocol" wx:if="{{!flagShowOrderText}}">
+    <view class="protocal_wrapper">
+        <view class="protocol_detail">我已同意换货协议</view>
+        <view class="protocal_bt" bind:tap="onProtocolDetailClick">?</view>
+    </view>
+    <view class='tip_bottom'>
+        <switch checked="{{protocalChecked}}" bindchange="onProtocalSwitchChange" />
+    </view>
+  </view>
+
+  <view class="global_commit_black_matrix_wrap">
+    <view wx:if="{{flagShowOrderText}}" class="global_commit_black_matrix" bindtap="onKnown">知道了</view>
+    <view wx:if="{{!flagShowOrderText}}" class="global_commit_black_matrix" bindtap="onCommit">提交换货申请</view>
+  </view>
+
+  <view class="frame_pop" wx:if="{{showProtocol}}">
+      <view class="frame_opacity" />
+      <view class="frame_rule">
+          <view class="pop_title">换货协议</view>
+          <scroll-view scroll-y class="sv_rule">
+              <view class="rule_detail">{{txtProtocolDetail}}</view>
+          </scroll-view>
+          <view class="v_gap"></view>
+          <view class="pop_confirm" bind:tap="onProtocolConfirm">关闭</view>
+      </view>
+  </view>
+</view>

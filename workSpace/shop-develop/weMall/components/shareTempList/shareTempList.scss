@@ -1,0 +1,115 @@
+.share{
+  position: relative;
+  margin: 60rpx auto 0;
+  width:710rpx;
+  padding: 25rpx 20rpx;
+  font-size: 28rpx;
+  border-bottom: solid 1rpx #ccc;
+  background: #fff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  .task{
+    position: absolute;
+    left: 20rpx;
+    top: -40rpx;
+    padding: 0 20rpx;
+    height: 40rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background: #ccc;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+    text{
+      padding-left: 10rpx;
+    }
+    .icon-wrap{
+      width: 26rpx;
+      height: 26rpx;
+      border: solid 1rpx #fff;
+      background: #fff;
+      border-radius: 50%;
+    }
+    &-new{
+      background: #2a9ae9;
+    }
+    &-half{
+      background: #ee5c5c;
+    }
+    &-finish{
+      background: #43ab2b;
+    }
+    &-icon{
+      width: 26rpx;
+      height: 26rpx;
+    }
+
+
+  }
+  &-img{
+    width: 220rpx;
+    height: 220rpx;
+    box-sizing: border-box;
+    .image{
+      display: block;
+      width: 220rpx;
+      height: 220rpx;
+    }
+  }
+  &-info{
+    flex: 1;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    color: #999;
+    .share-title{
+      color: #666;
+    }
+    .share-item{
+      margin-bottom: 10rpx;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    .share-num{
+      line-height: 25rpx;
+    }
+    .share-wrap{
+      text{
+        padding: 0 20rpx 0 10rpx
+      }
+      .wx-icon{
+        padding: 0 8rpx;
+        filter: grayscale(100%);
+        image{
+          width: 28rpx;
+          height: 28rpx;
+          border-radius: 50%;
+        }
+      }
+    }
+
+  }
+  &-icon{
+    image{
+      width: 25rpx;
+      height: 25rpx;
+    }
+  }
+  .del-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80rpx;
+    height: 80rpx;
+    background: #f2f2f2;
+    border-radius: 100% 0 0 0;
+    filter: grayscale(100%);
+    .icon-del{
+      width: 30rpx;
+      height: 30rpx;
+      transform: translateX(30rpx) translateY(30rpx);
+      filter: grayscale(100%)
+    }
+  }
+}

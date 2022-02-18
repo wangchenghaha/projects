@@ -1,0 +1,82 @@
+<web-view src='{{jump_url}}' wx:if='{{webView}}'></web-view>
+<!--pages/card/pages/userCollection/userCollection.wxml-->
+<view class='modalbg'></view>
+<image mode='widthFix' class='bgpic' src='{{bgsrc}}'></image>
+
+<view class='cont' wx:if="{{showimg}}">
+  <!-- <view class="brand-logo">
+    <image mode='widthFix' style="max-width:{{maxHeight}}rpx" src="{{botimg}}" ></image>
+  </view> -->
+  <wxs src="./getcoupon.wxs" module="tools" />
+  <image mode='widthFix' class="offimg" src='{{offimg}}'></image>
+  <view class='bg {{jsondata.is_package == "Y"?"bgimgs":""}}'>
+    
+    <view  style="background:rgba(0,0,0,0.3)" bindtap="debouncegetcoupon" wx:if="{{!isself&&!shopCardBtn&&!showCoupon}}" class='btn'>立即领取</view>
+    <send-coupon wx:if="{{!isself&&shopCardBtn&&!showCoupon}}" bindcustomevent="hadgetcoupon" send_coupon_params="{{couponDatas.cardList.send_coupon_params}}" sign="{{couponDatas.cardList.sign}}" send_coupon_merchant="{{couponDatas.cardList.send_coupon_merchant}}">
+      <view class="btn" style="background:rgba(0,0,0,0.3)">领取到卡包</view>
+    </send-coupon>
+    <view  style="background:rgba(0,0,0,0.3)" bindtap="tolookcoupon" wx:if="{{!isself&&showCoupon}}" class='btn'>立即查看</view>
+    <button  style="background:rgba(0,0,0,0.3);line-height:1.2;box-sizing: inherit;border-radius: 0" catchtap="showShare" wx:if="{{isself}}" class="btn">立即分享</button>
+    <!-- <image mode='widthFix' class='bgcard' src='{{cardbg}}'></image> -->
+    <view class='flex pricegroup zhigh'>
+      <view wx:if="{{jsondata.is_package == 'Y'}}" catchtap="lookpackage" data-coupon="{{jsondata.coupon_sub_list}}" class="price" style='font-size:{{jsondata.coupon_title.length>4&&!tools.isnan(jsondata.coupon_title)?"40":"50"}}rpx'>
+        <text wx:if="{{tools.isnan(jsondata.coupon_title)}}">￥</text>
+        <text class="texts">{{jsondata.coupon_title}}</text>
+      </view>
+      <view wx:else class="price" style='font-size:{{jsondata.coupon_title.length>4&&!tools.isnan(jsondata.coupon_title)?"40":"50"}}rpx'>
+        <text wx:if="{{tools.isnan(jsondata.coupon_title)}}">￥</text>{{jsondata.coupon_title}}</view>
+      <view>
+        <view class="ptype">{{jsondata.conditions_desc}}</view>
+        <view class='man zhigh'>{{jsondata.coupon_sub_title}}</view>
+      </view>
+    </view>
+    <view class='timegroup zhigh'>领取时间：{{jsondata.activity_start_time}} 至 {{jsondata.activity_end_time}}</view>
+  </view>
+  <view class="backpage" style="background:{{maincolor}}" bindtap="goback" wx:if="{{isself}}">返回领券管理中心</view>
+
+  <!-- <view class='bgcont' wx:if="{{showimg}}">
+  <wxs src="./getcoupon.wxs" module="tools" />
+  <view class='bg {{jsondata.is_package == "Y"?"bgimgs":""}}'> -->
+  <!-- <view class="coupon-btn" bindtap="lookpackage" data-coupon="{{jsondata.coupon_sub_list}}" wx:if="{{jsondata.is_package == 'Y'}}">券包</view> -->
+  <!-- <view class='flex pricegroup'>
+      <view wx:if="{{jsondata.is_package == 'Y'}}" catchtap="lookpackage" data-coupon="{{jsondata.coupon_sub_list}}" class="price" style='font-size:{{jsondata.coupon_title.length>4&&!tools.isnan(jsondata.coupon_title)?"40":"50"}}rpx'><text wx:if="{{tools.isnan(jsondata.coupon_title)}}">￥</text><text class="texts">{{jsondata.coupon_title}}</text></view>
+      <view wx:else class="price" style='font-size:{{jsondata.coupon_title.length>4&&!tools.isnan(jsondata.coupon_title)?"40":"50"}}rpx'><text wx:if="{{tools.isnan(jsondata.coupon_title)}}">￥</text>{{jsondata.coupon_title}}</view>
+      <view class="ptype">{{jsondata.conditions_desc}}</view>
+    </view>
+    <view class='man'>{{jsondata.coupon_sub_title}}</view>
+    <view class='timegroup'>领取时间：{{jsondata.activity_start_time}} 至 {{jsondata.activity_end_time}}</view>
+  </view>
+  <view bindtap="debouncegetcoupon" wx:if="{{!isself}}" class='btn'>立即领取</view>
+  <button wx:if="{{isself}}" open-type="share" style="line-height:normal;" class="btn">立即分享</button>
+  <button></button> -->
+  
+</view>
+<!-- 分享弹窗 -->
+<view class="mask" bindtap="hideTap" wx:if="{{showShare}}">
+  <view class="mask-content" catchtap="showShare">
+  <image wx:if="{{ifpop1}}" class="popleft" src="popleft.png"><text>点击分享（一次性领取）优惠券</text></image>
+  <image wx:if="{{ifpop2}}" class="popright" src="popright.png"><text>点击分享（不限次数）优惠券</text></image>
+    <view class="left">
+    <view wx:if="{{ifpop2}}" class="btnmodal"></view>
+    <label  catchtap="hideTap">
+      <image src="../../images/Once.png"></image>
+      <view>一次性分享</view>
+      <button style="display:hidden"  bindtap='onShareAppMessage'  open-type="share" data-type="1"></button>
+    </label>
+    </view>
+    <view class="right">
+      <view wx:if="{{ifpop1}}" class="btnmodal"></view>
+      <label catchtap="hideTap">
+        <image src="../../images/share_a.png"></image>
+        <view>立即分享</view>
+        <button style="display:hidden" bindtap='onShareAppMessage' open-type="share"   data-type="2"></button>
+      </label>   
+    </view>
+  </view>
+</view>
+
+<!-- <view class="bottom-img">
+  <image mode="widthFix" class="botimg" src="{{botimg}}"></image>
+</view> -->
+
+<couponlist bind:hidemodel="hidemodel" options="{{optionscouponlist}}"></couponlist>

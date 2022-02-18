@@ -1,0 +1,36 @@
+
+
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden;}
+
+/* 顶部信息 */
+.header{ width:100%; border-bottom:2rpx solid #d1d1d1;clear:both; overflow: hidden;
+margin-bottom:20rpx; position:fixed; top:0; left:0; z-index:999; background:#fff;}
+.header .h_item{ float:left; position:relative; height:100rpx; font-size:30rpx; line-height:100rpx;}
+.header .like{ width:128rpx; height: 98rpx;}
+.header .like image{ width:36rpx; height:36rpx; position:absolute;left:20rpx; top:0; bottom:0; margin:auto 0;}
+.header .logo{ width:485rpx; height:98rpx;}
+.header .logo image{ width:220rpx; position:absolute;left:0; right:0; top:0; bottom:0; margin:auto;}
+.header .search{ width:75rpx; height:98rpx;}
+.header .search image{ width:40rpx; height:38rpx; position:absolute;left:0; right:0; top:0; bottom:0; margin:auto;}
+.header .me{ width:52rpx; height:98rpx;}
+.header .me image{ width:34rpx; height:38rpx; position:absolute;left:0; right:0; top:0; bottom:8rpx; margin:auto;}
+.header .h_item navigator{ width:100%; height: 100%;}
+
+.content{ width:100%; height:auto; clear:both; overflow:hidden; box-sizing:border-box; padding:120rpx 20rpx 20rpx;}
+.con1{ width:100%; height:auto; box-sizing:border-box;padding:0 10rpx; clear:both; overflow:hidden; border-bottom:2rpx solid #000;
+ font-size:34rpx; line-height:70rpx; color:#000; margin-bottom:10rpx;}
+.con1_left{ float:left;}
+.con1_right{ float:right;}
+
+.con2{ width:100%; height:auto; clear:both; overflow:hidden; padding-top:10rpx; box-sizing:border-box; padding:0 20rpx;}
+.con2 .title{ font-size:34rpx; line-height:70rpx;color:#000;border-bottom:2rpx dashed #000;}
+.con2 .li{ width:100%; height:auto; clear:both; overflow:hidden; padding:20rpx 0; border-bottom:2rpx dashed #000;}
+.li_left{ float:left; width:120rpx; height:auto;}
+.li_left image{ display:block;width:100%;height:auto;}
+.li_right{ float:left; padding-left:20rpx;}
+.li_right .text1{ font-size:32rpx; line-height:36rpx;color:#666; font-weight:bold;}
+.li_right .text2{ font-size:28rpx; line-height:36rpx;color:#6F6F6F;}
+
+
+.zhifu{ width:100%; height:74rpx; background:#000; font-size:32rpx;line-height:74rpx;color:#fff;text-align:center;
+margin-top:100rpx;}

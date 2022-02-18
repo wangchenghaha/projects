@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "导购分享",
+  "usingComponents":{
+    "goods-list":"../components/shareGoodsList/goodsList",
+    "good-list-one": "../components/goodsModelListOne/goodsList",
+    "share-banner":"../components/guideShareBanner/guideShareBanner",
+    "my-tip":"/components/tip/tip"
+  }
+}

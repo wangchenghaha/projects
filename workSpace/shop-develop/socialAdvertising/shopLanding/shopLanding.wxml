@@ -1,0 +1,29 @@
+<!-- socialAdvertising/shopLanding/shopLanding.wxml -->
+<view class="frame">
+    <swiper class='layout_swiper' circular="true" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{swiperImgList}}" wx:key="layout_swiper">
+            <swiper-item>
+                <image src="{{item.picUrl}}" class="img_swiper_item" mode="widthFix" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_010.jpg" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_020.jpg" mode="widthFix" bind:tap="onCouponClick" />
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_030.jpg" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_040.jpg" mode="widthFix" bind:tap="onGotoShopClick" />
+    <view class="blank_00" />
+    <video class="layout_video" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_video_1.mp4" object-fit="fill" show-center-play-btn="true" muted="true" autoplay="autoplay" show-mute-btn="true"></video>
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_050.jpg" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_060.jpg" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_070.jpg" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_080.jpg" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_090.jpg" mode="widthFix" />
+    <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_100.jpg" mode="widthFix" />
+    <image wx:if="{{false}}" class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_110.jpg" mode="widthFix" />
+    <!-- <image class="img_with_full" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_waterfall_120.jpg" mode="widthFix" /> -->
+    <view class="wrapper_index_3">
+        <image class="img_index" src="{{imgBrandBaseUrl}}wechat_social_shop_landing_goto_index_to_buy.jpg" mode="widthFix" bind:tap="onRushToBuyClick" />
+    </view>
+    <!-- <official-account></official-account> -->
+    <view class="bottom_blank" />
+</view>

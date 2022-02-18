@@ -1,0 +1,11 @@
+<view class="rule-wrapper" wx:if="{{showrule}}">
+  <view class="rule-box">
+    <image catchtap="closerule" class="closerule" src="../../img/close.png" style="width:50rpx;height:50rpx;"></image>
+    <view class="rule-title">活动细则</view>
+    <view class="ruel-cont">
+      <scroll-view scroll-y class="scroll-box">
+        <image src="{{ruleimg}}" mode="widthFix" style="width:100%;"></image>
+      </scroll-view>
+    </view>
+  </view>
+</view>

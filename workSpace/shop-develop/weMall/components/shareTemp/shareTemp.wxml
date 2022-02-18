@@ -1,0 +1,11 @@
+<view class="temp">
+  <view class="cover-img">
+    <image src="{{content.coverPic}}" mode="widthFix"></image>
+  </view>
+  <view class="container">
+    <good-list-one wx:if="{{content.goodsTemplateId && content.goodsTemplateId === 'model2'}}" list="{{content.wxSharePageSkuLists}}" highLight="{{highLight}}" wxMoment="{{wxMoment}}"></good-list-one>
+    <goods-list wx:else list="{{content.wxSharePageSkuLists}}" highLight="{{highLight}}" wxMoment="{{wxMoment}}" />
+    <view class="guide-text text-c">{{guideId}}</view>
+  </view>
+
+</view>

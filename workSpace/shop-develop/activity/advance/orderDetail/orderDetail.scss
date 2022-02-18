@@ -1,0 +1,259 @@
+$red-color: rgb(229, 28, 35);
+.order-detail{
+  image{
+    display: block;
+    width: 100%;
+  }
+  padding-bottom: 150rpx;
+  font-size: 30rpx;
+  background: #eee;
+  .step{
+    padding: 20rpx 0;
+    background-image: linear-gradient(to right, #F88E2A , #F95822);
+    &-title{
+      color: #fff;
+      font-size: 34rpx;
+    }
+    &-wrapper{
+      padding: 20rpx;
+      margin: 20rpx auto;
+      width: 500rpx;
+      height: 80rpx;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 40rpx;
+      .step-item{
+        .circle{
+          position: relative;
+          margin: 0 auto;
+          width: 30rpx;
+          height: 30rpx;
+          border-radius: 50%;
+          border: solid 4rpx #fff;
+          &.active{
+            background-image: radial-gradient(rgba(255,255,255,0), #fff, rgba(255,255,255,0));
+          }
+          .active{
+            width: 12rpx;
+            height: 12rpx;
+            background: #fff;
+            border-radius: 50rpx;
+          }
+          &.line{
+            &:after{
+              content: '';
+              position: absolute;
+              right: -20rpx;
+              top: 15rpx;
+              width: 140rpx;
+              height: 4rpx;
+              background: #fff;
+              transform: translateX(100%);
+            }
+          }
+        }
+        font-size: 30rpx;
+        color: #fff;
+      }
+    }
+  }
+  .address{
+    padding: 20rpx 0;
+    margin-bottom: 20rpx;
+    background: #fff;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    &-icon{
+      margin: 0 20rpx;
+      width: 80rpx;
+    }
+    &-info{
+      flex: 1;
+      padding-right: 20rpx;
+      font-size: 30rpx;
+      .phone{
+        color: #999;
+      }
+    }
+  }
+  .goods{
+    &-img{
+      margin: 0 20rpx;
+      width: 200rpx;
+    }
+    .goods-item{
+      padding-top: 15rpx;
+    }
+    &-size{
+      margin-left: 20rpx;
+    }
+    &-price{
+      color: $red-color;
+      text{
+        font-size: 40rpx;
+      }
+    }
+    &-num{
+      text{
+        font-size: 36rpx;
+      }
+    }
+
+  }
+  .card-item{
+    padding: 20rpx;
+    margin-top: 20rpx;
+    background: #fff;
+    border-radius: 20rpx;
+  }
+  .pre-sale{
+    .pay-item{
+      .pay-title{
+        color: $red-color;
+        .icon{
+          display: block;
+          margin-right: 30rpx;
+          width: 40rpx;
+          height: 40rpx;
+          background: #ccc;
+          border-radius: 50%;
+          &.active{
+            border: solid 2rpx $red-color;
+            background-image: radial-gradient($red-color, #fff, #fff);
+          }
+        }
+      }
+      .pay-info{
+        margin-left: 20rpx;
+        padding: 10rpx 10rpx 20rpx 30rpx;
+        border-left: solid 2rpx #ccc;
+        &-item{
+          margin-left: 20rpx;
+          padding: 10rpx 0;
+          border-bottom: dashed 2rpx #ccc;
+          &.color-c{
+            color: #999;
+          }
+          .price{
+            font-size: 36rpx;
+            color: $red-color;
+            &.color-c{
+              color: #999;
+            }
+          }
+        }
+        .end-time{
+          padding-top: 15rpx;
+          padding-left: 15rpx;
+          font-size: 26rpx;
+        }
+      }
+    }
+  }
+  .voucher{
+    font-size: 30rpx;
+    line-height: 50rpx;
+    .num{
+      padding: 3rpx 10rpx;
+      border: solid 1rpx $red-color;
+      color: $red-color;
+      font-size: 26rpx;
+    }
+  }
+  .voucher-item{
+    margin-bottom: 20rpx;
+    padding: 20rpx 10rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    .voucher-price{
+      font-size: 36rpx;
+      color: #d4020d;
+      font-weight: bold;
+      text-align: center;
+      text{
+        font-size: 32rpx;
+      }
+    }
+    .voucher-limit{
+      font-size: 26rpx;
+      color: #666666;
+      text-align: center;
+      width: 150rpx;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+      overflow: hidden
+    }
+    .voucher-info{
+      width: 300rpx;
+      font-size: 24rpx;
+      color: #999999;
+      .name{
+        max-width: 300rpx;
+      }
+    }
+    .card-img{
+      width: 300rpx;
+    }
+    .user-btn{
+      width: 130rpx;
+      height: 50rpx;
+      line-height: 50rpx;
+      text-align: center;
+      font-size: 28rpx;
+      font-weight: bold;
+      color: #fff;
+      background: #d4020d;
+      border-radius: 25rpx;
+    }
+  }
+  .order{
+    &-item{
+      padding: 15rpx 0;
+    }
+    .icon-copy{
+      margin-left: 8rpx;
+      width: 40rpx;
+    }
+  }
+  .btn-wrapper{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120rpx;
+    background: #fff;
+    border-top: solid 2rpx #999;
+    overflow: hidden;
+    z-index: 9999;
+    .pay-price{
+      float: left;
+      padding-left: 20rpx;
+      padding-top: 30rpx;
+      font-size: 30rpx;
+      color: $red-color;
+      text{
+        font-size: 40rpx;
+      }
+    }
+    .btn{
+      float: right;
+      margin: 20rpx 30rpx 0 0;
+      height: 80rpx;
+      border-radius: 40rpx;
+      overflow: hidden;
+      &-item{
+        width: 180rpx;
+        height: 80rpx;
+        line-height: 80rpx;
+        background: $red-color;
+        border-left: solid 1rpx #fff;
+        box-sizing: border-box;
+        &:first-child{
+          border: none;
+        }
+        &.disabled{
+          background: #B9B4B4;
+        }
+      }
+    }
+  }
+}

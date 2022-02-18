@@ -1,0 +1,51 @@
+.ant-image-pre-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.ant-image-pre-wrapper view,
+.ant-image-pre-wrapper cover-view,
+.ant-image-pre-wrapper cover-image,
+.ant-image-pre-wrapper text,
+.ant-image-pre-wrapper swiper,
+.ant-image-pre-wrapper swiper-item,
+.ant-image-pre-wrapper input,
+.ant-image-pre-wrapper picker,
+.ant-image-pre-wrapper textarea,
+.ant-image-pre-wrapper form {
+  box-sizing: border-box;
+  word-break: break-all;
+}
+.ant-image-pre-wrapper image {
+  display: block;
+  overflow: hidden;
+}
+@keyframes loading_run {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.ant-image-pre-wrapper .image-hide {
+  opacity: 0;
+}
+.ant-image-pre-wrapper .loading-area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #f2f5f7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ant-image-pre-wrapper .loading-area .loading {
+  width: 50rpx !important;
+  height: 50rpx !important;
+}

@@ -1,0 +1,34 @@
+@import "../mycss.wxss";
+@import "../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar";
+.frame{width: 100%;height: auto;display: flex;flex-direction: column; clear:both; overflow:hidden; }
+
+.a_a{overflow: hidden;padding: 20rpx;font-size: 31rpx;}
+.address_frame{width: 100%;color: black;padding-top: 17rpx;padding-bottom: 17rpx;
+    display: flex;flex-direction: row;align-items: flex-end;}
+.a_title{font-size: 31rpx;margin-bottom: 17rpx;}
+.a_content{font-size: 26rpx;padding-left: 20rpx;margin-bottom: 17rpx;margin-top: 17rpx;}
+.a_copy{width: 77rpx;margin-right: 7rpx;margin-bottom: 17rpx;}
+.shop_copy{width: 35rpx;height: 35rpx;}
+
+
+.b_b{padding: 20rpx;display: flex;flex-direction: column;border-top: 10rpx solid #F6F5F5;font-size: 26rpx;}
+.b_title{font-size: 32rpx;font-weight: normal;}
+.b_combile{width: 100%;height: auto;}
+
+.b_input{font-size: 26rpx;padding: 7rpx;height: 70rpx;margin-left: 17rpx;}
+
+.b_right{min-width: 100rpx; height: 70rpx;position: relative;right:17rpx;}
+.b_picker{width: 177rpx;height: 70rpx;margin-left: 37rpx;
+background:url(https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_right_white.png) no-repeat right center;
+background-size: 10%;}
+.fake_content{color: transparent;}
+.img_qr_code{width: 45rpx;position: absolute;right:17rpx;margin-left: 37rpx;}
+
+.express_tip{word-break: normal;font-size: 24rpx;padding:37rpx 17rpx 7rpx 17rpx;color: #666;
+border-top: 1rpx solid #EEE;width: 90%;}
+.layout_tel{padding:17rpx;border-top: 10rpx solid #F6F5F5;border-bottom: 10rpx solid #F6F5F5;
+    font-size: 32rpx;
+}
+.layout_tel text{font-size: 26rpx;color: #666;}
+.utn_t{padding-left: 17rpx;}
+.layout_goods{padding: 17rpx;font-size: 26rpx;}

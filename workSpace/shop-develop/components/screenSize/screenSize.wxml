@@ -1,0 +1,119 @@
+<view class="screen {{isShow ? 'show' : ''}}">
+	<view class="screen-left" bindtap="onClick" data-type="hideScreen" />
+	<view class="screen-right">
+		<!-- FOL 和 BESTSELLER 品牌添加品牌选项 -->
+		<view style="display:{{brandDisplay}};flex-direction: column;">
+			<view class="brand-title">品牌</view>
+			<view class="brand flex-start">
+				<view class="brand-item {{item.selected ? 'selected' : ''}}" wx:for="{{brandImgArr}}" wx:key="brand" data-type="brand" data-index="{{index}}" bindtap="changeBrand">
+					<image style="width: {{item.width}}" src="{{item.logoImg}}" mode="widthFix"></image>
+				</view>
+			</view>
+			<!--<block wx:for="{{brandIconArrs}}" wx:key="brandDisplayKey" wx:for-index="disIndex">
+				<view class="brand-BG">
+					<block wx:for="{{item}}" wx:key="displayItemKey" wx:for-index="itemIndex">
+						<image class="{{item.title == 'ONLY' ? 'brand-image-only' : item.title == NAMEIT ? 'brand-image-nameit' : 'brand-image'}}"
+						src="{{item.link}}" mode="widthFix" lazy-load="false"
+						data-value="{{item.title}}" bindtap="brandImageTap" />
+					</block>
+				</view>
+			</block>-->
+      <view class="search flex-bet">
+				<input type="text" placeholder="搜索商品名" bindinput="onClick" data-type="search" />
+				<icon type="search" size="25"/>
+        <!--<view class="brand-show-view">{{brandTitle}}</view>-->
+      </view>
+      <view class="brand-line"></view>
+		</view>
+		<view class="price">
+			<view class="price-title">价格</view>
+			<view class="price-wrapper">
+				<block wx:for="{{priceList}}" wx:key="priceList" wx:for-item="priceListRow">
+					<view class="price-row">
+						<block wx:for="{{priceListRow}}" wx:key="priceListRow">
+							<view
+							 class="price-item {{item.checked ? 'checked' : ''}}"
+							 data-type="price"
+							 data-value="{{item.name}}"
+							 bindtap="onClick"
+							>￥{{item.name}}
+							</view>
+						</block>
+					</view>
+				</block>
+			</view>
+			<view class="price-result">
+				<input
+				 type="number"
+				 maxlength="5"
+				 placeholder="最低价"
+				 value="{{price.low}}"
+				 data-type="low"
+				 bindblur="inputPrice"
+				/>
+				<input
+				 type="number"
+				 maxlength="5"
+				 placeholder="最高价"
+				 value="{{price.high}}"
+				 data-type="high"
+				 bindblur="inputPrice"
+				/>
+			</view>
+		</view>
+		<!-- 尺码 -->
+		<view class="size">
+			<view class="size-title">
+				尺码
+				<text class="select-size">{{selectedSizes}}</text>
+			</view>
+			<view class="size-wrapper">
+				<block wx:for="{{sizeList}}" wx:key="sizeList" wx:for-item="sizeListRow">
+					<view class="price-row">
+						<block wx:for="{{sizeListRow}}" wx:key="priceListRow">
+							<view
+							 class="price-item {{item.checked ? 'checked' : ''}}"
+							 data-type="defaultSize"
+							 data-value="{{item.name}}"
+							 bindtap="onClick"
+							>{{item.name}}
+							</view>
+						</block>
+					</view>
+				</block>
+			</view>
+		</view>
+		<view class="more {{moreSizeShow ? 'show' : ''}}">
+
+			<block wx:for="{{moreList}}" wx:key="moreItem" wx:for-item="moreItem">
+				<view class="title">{{moreItem.name}}</view>
+				<block wx:for="{{moreItem.list}}" wx:for-item="moreList" wx:key="moreList">
+					<view class="sub-title">{{moreList.name}}</view>
+					<view class="size-wrapper">
+						<block wx:for="{{moreList.newList}}" wx:key="manJacketList" wx:for-item="itemRow">
+							<view class="size-row">
+								<block wx:for="{{itemRow}}" wx:key="manJacketRow">
+									<view
+									 class="size-item {{item.checked ? 'checked' : ''}}"
+									 bindtap="onClick"
+									 data-sex="{{moreItem.name}}"
+									 data-classify="{{moreList.name}}"
+									 data-type="moreSelect"
+									 data-value="{{item.name}}"
+									>{{item.name}}
+									</view>
+								</block>
+							</view>
+						</block>
+					</view>
+				</block>
+			</block>
+
+		</view>
+		<view class="btn-wrapper {{isIphoneX ? 'iphoneXFooter' : 'otherPhone'}}">
+			<view class="btn btn-confirm" data-type="{{moreSizeShow ? 'moreConfirm' : 'confirm'}}" bindtap="onClick">确定</view>
+			<view class="btn btn-reset" data-type="{{moreSizeShow ? 'moreReset' : 'reset'}}" bindtap="onClick">重置</view>
+		</view>
+	</view>
+</view>
+

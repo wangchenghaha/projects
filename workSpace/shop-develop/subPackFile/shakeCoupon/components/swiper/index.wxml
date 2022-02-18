@@ -1,0 +1,7 @@
+<view class="wrapper">
+    <swiper class="swiper" autoplay interval="5000" duration="1000" circular>
+        <swiper-item class="item" wx:for="{{image}}" wx:key='index'>
+            <view class="good" style="background-image:url({{item}})"></view>
+        </swiper-item>
+    </swiper>
+</view>

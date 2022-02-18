@@ -1,0 +1,49 @@
+<view class='main'>
+    <view class="mask" catchtouchmove="mask" catchtap="mask" wx:if="{{showMask}}">
+        
+    </view>
+    <image class="bg" src="https://alioss.woaap.com/bestseller/campaign2001/images/tiger_bg.png"></image>
+    <view class="balance">{{balance}}</view>
+    <view class="betCoin">{{betCoin}}</view>
+    <view class="winCoin">{{winCoin}}</view>
+    <view class="button add" data-type="+" bindtap="changeBetCoin"></view>
+    <view class="button sub" data-type="-" bindtap="changeBetCoin"></view>
+    <view class="button start" bindtap='start'></view>
+    <view class="button getMore" bindtap="getMore"></view>
+    <view class="button goLuck" bindtap="goLuck"></view>
+    <view class="button goRules" bindtap="goRules"></view>
+    <view class="button goCoupon" bindtap="checkIsMember"></view>
+    <image class="left" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_left.png'></image>
+    <image class="right" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_left.png'></image>
+
+
+    <view wx:for="{{rotate}}" class='{{"wrap wrap" + (index + 1)}}'>
+        <view class='imageList' style='{{"transform: translateZ(-480rpx) rotateX("+item+"deg);"}}'>
+            <view class='imageBox' wx:for="{{imageList}}" style='{{"transform:rotateX("+20*index+"deg) translateZ(620rpx);"}}'>
+                <image mode='aspectFit' src='{{item}}'></image>
+                <image class="line" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_line.png'></image>
+            </view>
+        </view>
+    </view>
+
+</view>
+
+<view class="getMoreAlert" wx:if="{{getMoreAlert}}" bindtap="closeAlert" catchtouchmove="catchtouchmove">
+    <image class="more" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_more.png'></image>        
+    <button class="haoyou" open-type="share">
+        <image class="haoyou" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_haoyou.png'></image>
+    </button>
+    <image class="haibao" bindtap="haibao" src='https://alioss.woaap.com/bestseller/campaign2001/images/tiger_haibao.png'></image>
+</view>
+
+<view class="haibaoAlert" wx:if="{{haibaoAlert}}">
+    <painter class="haibaoBg" customStyle='margin:0;width:563rpx;height:930rpx;;margin-top:-200rpx;' palette="{{template}}" bind:imgOK="ok" bind:longpress="onImgOK" />
+    <image class="haibaoText" src='https://alioss.woaap.com/bestseller/campaign2001/images/haibao_text.png'></image>
+    <image class="haibaoBack" bindtap="haibaoBack" src='https://alioss.woaap.com/bestseller/campaign2001/images/haibao_back.png'></image>
+</view>
+
+<view class="newUserAlert" wx:if="{{is_new}}" bindtap="closeNewAlert">
+    <image class="newBg" catchtap="checkIsMember" src='https://alioss.woaap.com/bestseller/campaign2001/images/new_user_bg.png'></image>
+    <image class="view" catchtap="checkIsMember" src='https://alioss.woaap.com/bestseller/campaign2001/images/new_user_view.png'></image>
+</view>
+<imageLoading imageList="{{loadImageList}}"></imageLoading>

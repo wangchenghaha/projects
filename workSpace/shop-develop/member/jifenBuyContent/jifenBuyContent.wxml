@@ -1,0 +1,185 @@
+
+
+<view class="wrap" style="display:{{shouye}}">
+
+  <!-- 回到顶部 -->
+  <view class="goTop" wx:if="{{goTop_show}}" catchtap="goTopFun">
+    <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/2top.png" mode="aspectFit"></image>
+  </view>
+
+  <!-- 回到首页 -->
+  <view class="gotoIndex" wx:if="{{goTop_show}}" bindtap="gotoIndex">
+    <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/2index.png" mode="aspectFit"></image>
+  </view>
+
+
+
+  <!-- 竖排手动轮播 -->
+  <view class="lunbo">
+    <view class="imgs" wx:for="{{slider}}" wx:key="slider">
+      <image id="{{index+1}}" src="{{item.picUrl}}" mode="widthFix"></image>
+    </view>
+    <view class="leftNav" wx:if="{{leftNav}}">
+      <view class="spans {{index==imgIndex?'spanList':''}}" wx:for="{{slider}}" wx:key="spans"></view>
+      <view class="down">
+        <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/2down.png" mode="widthFix" bindtap="toDown"></image>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 详细信息 -->
+  <view class="con">
+    <view class="h1">{{contentCon.goodsName}}</view>
+    <view class="kuanhao">款号 {{contentCon.projectCode}}</view>
+    
+    <!-- 现价 -->
+    <view class="nowPrice">
+      <view class="fuhao"></view>
+      <view class="money">{{score}}积分+{{money}}元</view>
+    </view>
+
+    <!-- 原价 -->
+    <view class="oldPrice">
+      <view class="jiage">价格</view>
+      <view class="money">¥{{contentCon.color[0].originalPrice}}
+        <view class="xian"></view>
+      </view>
+    </view>
+
+    <view class="liebie" bindtap="xuanze">请选择 颜色分类 尺码</view>
+
+  
+  </view>
+
+
+  <!-- 底部栏 -->
+  <view class="footer">
+    <view class="f_list daogou" bindtap="daogou">获取免费邮寄特权</view>
+    <view id="goumai1" class="f_list goumai" bindtap="goumai">立即购买</view>
+  </view>
+
+
+  <!-- 导购专享服务 - 弹出框 -->
+  <view class="tishi" style="display:{{daogou_display}}">
+    <view class="opacity"></view>
+    <view class="tanchu">
+      <view class="h2">绑定导购</view>
+      <view class="title">
+        <text class="h1">线下导购信息登录</text>
+        <input type="text" value="{{daogou_number}}" placeholder="请输入员工号后6位" maxlength="10" bindinput="numberInput"/>
+        <text class="p" wx:if="{{daogou_tishi}}">{{daogou_text}}</text>
+      </view>
+      <view class="bott">
+        <view class="bot">
+          <view class="btn true" bindtap="daogou_true">确定</view>
+        </view>
+        <view class="bot">
+          <view class="btn false" bindtap="daogou_false">取消</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 选择尺码 - 弹出框 -->
+  <view class="details_size" style="display:{{details_display}}">
+    <view class="details_opacity" bindtap="chicunHide" animation="{{animationOpacity}}"></view>
+    <view class="details_con" animation="{{animationBottom}}">
+      <view class="dd_con">
+        <view class="details_sizeOne_A">
+          <view class="a_list a_left">
+            <image src="{{slider[0].picUrl}}" mode="widthFix"></image>
+          </view>
+          <view class="a_list a_center">
+            <view class="money">{{score}}积分+{{money}}元</view>
+            <view class="kucun">库存<text>{{kucun_nums}}</text>件</view>
+            <view class="chicun">{{xzChicun}}</view>
+          </view>
+          <view class="a_list a_right" bindtap="chicunHide">
+            <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/point_cls.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">颜色分类</view>
+          <view class="b_ul">
+            <view id="{{index}}" class="b_li {{index==color_list_num?'b_list':''}}" wx:for="{{contentCon.color}}" wx:key="b_li" bindtap="color_list">{{item.colorAlias}}</view>
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">尺码</view>
+          <view class="b_ul">
+            <view id="{{index}}" class="b_li {{index==0 && c_li.length<2?'b_list':''}} {{index==chima_list_num?'b_list':''}} {{chimaList[index]?'chima_list':''}}" wx:for="{{c_li}}" wx:key="c_li" bindtap="chima_list">{{item.sizeAlias}}</view>
+          </view>
+        </view>
+        <view class="details_sizeOne_D">
+          <view class="c_title">每次限购一件</view>
+          <view class="c_number">
+            <view class="c_add">+</view>
+            <input class="c_num" type="number" value="{{nums}}" disabled="true"/>
+            <view class="c_jian">-</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="d_bottom">
+        <view class="d_daogou" bindtap="daogou">获取免费邮寄特权</view>
+        <view id="goumai2" class="d_goumai" bindtap="goumai">立即购买</view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 选择尺码 - 弹出框 - 这是从购物车点“我要买”跳转过来的 -->
+  <view class="details_size" wx:if="{{details_display1}}">
+    <view class="details_opacity" bindtap="chicunHide1" style="opacity:0.5;"></view>
+    <view class="details_con" style="bottom:0;">
+      <view class="dd_con">
+        <view class="details_sizeOne_A">
+          <view class="a_list a_left">
+            <image src="{{slider[0].picUrl}}" mode="widthFix"></image>
+          </view>
+          <view class="a_list a_center">
+            <view class="money">¥{{contentCon.color[0].price}}</view>
+            <view class="kucun">库存<text>{{kucun_nums}}</text>件</view>
+            <view class="chicun">{{xzChicun}}</view>
+          </view>
+          <view class="a_list a_right" bindtap="chicunHide1">
+            <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/point_cls.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">颜色分类</view>
+          <view class="b_ul">
+            <view id="{{index}}" class="b_li {{index==color_list_num?'b_list':''}}" wx:for="{{contentCon.color}}" wx:key="b_li" bindtap="color_list">{{item.colorAlias}}</view>
+          </view>
+        </view>
+        <view class="details_sizeOne_B">
+          <view class="b_title">尺码</view>
+          <view class="b_ul">
+            <view id="{{index}}" class="b_li {{index==0 && c_li.length<2?'b_list':''}} {{index==chima_list_num?'b_list':''}} {{chimaList[index]?'chima_list':''}}" wx:for="{{c_li}}" wx:key="c_li" bindtap="chima_list">{{item.sizeAlias}}</view>
+          </view>
+        </view>
+        <view class="details_sizeOne_D">
+          <view class="c_title">购买数量</view>
+          <view class="c_number">
+            <view class="c_add" bindtap="add_number">+</view>
+            <input class="c_num" type="number" value="{{nums}}" disabled="true"/>
+            <view class="c_jian" bindtap="jian_number">-</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="d_bottom">
+        <view id="goumai2" class="d_goumai" bindtap="goumai" style="width:100%;">确认购买</view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 分享给朋友 -->
+  <!--<button open-type="share" class="shareToFriend">
+    <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/share_gray.png" mode="widthFix"></image>
+  </button>-->
+  
+
+</view>

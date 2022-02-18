@@ -1,0 +1,100 @@
+.goods-flex{
+  display: flex;
+  justify-content: space-between;
+}
+.fll{
+  float: left;
+
+}
+.clear{
+  clear: both;
+}
+.flr{
+  float: right;
+}
+image{
+  display: block;
+}
+.goods-list{
+  margin: 30rpx auto;
+  width: 95%;
+  overflow: hidden;
+  .goods-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+    margin-top: 15rpx;
+    text{
+      margin-right: 15rpx;
+      &.goods-name{
+        display: inline-block;
+        max-width: 380rpx;
+        line-height: 30rpx;
+        text-align: center;
+        text-overflow: clip;
+        white-space: nowrap;
+        overflow: hidden
+      }
+      &.goods-discount{
+        font-size: 30rpx;
+        color: red;
+      }
+      &.goods-original{
+        font-size: 24rpx;
+        text-decoration: line-through;
+        color: #ccc
+      }
+    }
+
+  }
+  .goods-item{
+    margin-bottom: 30rpx;
+    &1{
+      margin-top: 30rpx;
+      .goods-img{
+        margin: 0 auto;
+        width: 68%;
+      }
+    }
+    &-wrapper{
+      .goods-info{
+        flex-direction: column;
+        .goods-name{
+          display: inline-block;
+          max-width: 310rpx;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+          overflow: hidden
+        }
+        .price-wrapper{
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+    &2{
+      width: 48%;
+    }
+    &3{
+      margin-top: 100rpx;
+      width: 49%;
+    }
+    &4{
+      .img-wrapper{
+        overflow: hidden;
+        view{
+          border: solid 1rpx #eee;
+          &.img-left{
+            width: 43%;
+          }
+          &.img-right{
+            width: 55%;
+          }
+        }
+
+      }
+    }
+  }
+
+}

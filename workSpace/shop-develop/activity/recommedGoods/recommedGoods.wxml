@@ -1,0 +1,14 @@
+  <view class="hotGood-area" wx:for="{{hotSaleArr}}" wx:key="hot" wx:for-item="hotRow">
+    <view class="hotItem" wx:for="{{hotRow}}"  wx:key="flowArrRow" data-code="{{item.colorCode}}" bindtap="onClick">
+        <image class="hotItem-image" src="{{item.goodsImg}}" mode="widthFix"/>
+        <view class="hotItem-name">{{item.goodsName}}</view>
+        <view class="hotItem-price">
+            <view class="hotItem-price-current">￥{{item.price}}</view>
+            <view class="hotItem-price-orginal" wx:if="{{item.price != item.originalPrice}}">￥{{item.originalPrice}}</view>
+        </view>
+    </view>
+</view>
+
+<view class="goBack flex-center" bindtap="goback">
+    <image src="{{goHomeImg}}"  mode="widthFix"/>
+</view>

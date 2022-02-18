@@ -1,0 +1,22 @@
+
+<welCome_slt
+ imgPath="{{imgPath}}"
+ autoPlay="{{autoPlay}}"
+ renwuArrs="{{renwuArrs}}"
+ userData="{{userData}}"
+ paihangSelect="{{paihangSelect}}"
+ ticketSelect="{{ticketSelect}}"
+ zhanweiView="{{zhanweiView}}"
+ noGameCount="{{noGameCount}}"
+ couponImage="{{couponImage}}"
+ isNew="{{isNew}}"
+ adapter="{{adapter}}"
+ bindrenwuTap="renwuTap"
+ bindbtn="btn"
+ bindplay="play"
+ bindpaihangTap="paihangTap"
+ bindduihuan="duihuan"
+ bindclosed="closed"
+ bindbackTap="backTap"
+/>
+

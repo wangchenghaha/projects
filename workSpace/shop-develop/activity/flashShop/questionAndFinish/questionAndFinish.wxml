@@ -1,0 +1,45 @@
+<view class="bg">
+
+    <view class="imgView">
+        <image src="{{splashImg}}" style="width:100%;" mode="widthFix" />
+
+        <block wx:if="{{isQuestion}}">
+                <view class="questionView">
+                    <view class="q">Q{{question.num + 1}}</view>
+                    <view class="title" style="margin-top: 30rpx;">{{question.title[0]}}</view>
+                    <view class="title" style="margin-bottom: 80rpx;">{{question.title[1]}}</view>
+                    <view class="subTitleView">
+                        <view class="subTitles" wx:for="{{question.arrs}}" wx:key="subtitles" style="color:{{selectIndex == index ? 'red' : '#E9E4E7'}};" data-index="{{index}}" bindtap="selectTap">{{item}}</view>
+                    </view>
+                    
+                </view>
+        </block>
+        <block wx:else>
+            <view class="questionView">
+                <view class="topColorView" style="background-color: {{colorJson.titlebgColor}};">{{colorJson.title}}</view>
+                <view class="subDesc" wx:for="{{colorJson.subTitles}}" wx:key="desc">{{item}}</view>
+                <view class="dakaFinishView"># 打卡成功 #</view>
+                
+                <view class="bottomView" bindtap="goCoupon">
+                    <view class="bottomView-text">{{quanText.top}}</view>
+                    <view class="bottomView-text">{{quanText.bottom}}</view>
+                </view>
+                <view class="bottomView" wx:if="{{havePrize}}">
+
+                        <view class="bottomView-centerView">已领取</view>
+
+                </view>
+                <view class="bottomView" wx:else bindtap="getAward">
+
+                        <view class="bottomView-text">{{lingquText.top}}</view>
+                        <view class="bottomView-text">{{lingquText.bottom}}</view>
+
+                </view>
+            </view>
+        </block>
+
+    </view>
+
+</view>
+
+<view class="logo">{{bottomText}}</view>

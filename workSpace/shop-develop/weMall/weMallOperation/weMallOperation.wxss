@@ -1,0 +1,10 @@
+.video-list{
+  margin-bottom: 20rpx;
+}
+.video-list:last-child{
+  margin-bottom: 0;
+}
+.video-list image{
+  display: block;
+  width: 100%;
+}

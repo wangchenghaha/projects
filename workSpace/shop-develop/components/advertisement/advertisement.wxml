@@ -1,0 +1,6 @@
+<view class="{{page === 'search' ? 'fixed-top ' : 'ad ~flex-center'}}" wx:if="{{isShow}}">
+  <view class="ad-box">
+    <image src="{{adImg}}" mode="widthFix" mut-bind:tap="goLink" binderror="loadImg"></image>
+    <view class="close" mut-bind:tap="close" wx:if="{{page === 'home'}}"></view>
+  </view>
+</view>

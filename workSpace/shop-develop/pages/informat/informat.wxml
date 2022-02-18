@@ -1,0 +1,7 @@
+<view class="wrap">
+  <view class="li" wx:for="{{List}}" wx:key="List" id="{{index}}" bindtap="clickList">
+    <image lazy-load="true" src="{{item.coverPic}}" mode='widthFix'></image>
+    <view class="title">{{item.title}}</view>
+    <view class='createTime'>{{item.createdTime}}</view>
+  </view>
+</view>

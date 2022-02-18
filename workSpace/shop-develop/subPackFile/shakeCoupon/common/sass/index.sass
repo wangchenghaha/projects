@@ -1,0 +1,19 @@
+$baseUrl: 'https://tc.woaap.com/lingzhi/'
+$Brand: "only"
+@mixin bgimage($key)
+    background: url($baseUrl+$Brand+'_shop/'+$key+'.png')
+    background-size: 100% 100%
+    background-position: center center
+    background-repeat: no-repeat
+
+@mixin button($w:300,$h:80,$f:30)
+    width: $w + rpx
+    height: $h + rpx
+    line-height: $h + rpx
+    padding: 0
+    margin: 0 auto
+    border-radius: $h + rpx
+    border: none
+    background: #D84B91
+    color: white
+    font-size: $f + rpx

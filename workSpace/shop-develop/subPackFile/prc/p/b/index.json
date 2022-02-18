@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navigate": "../../component/navigate/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

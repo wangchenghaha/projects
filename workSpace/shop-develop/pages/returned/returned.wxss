@@ -1,0 +1,79 @@
+.page{
+  padding: 30rpx;
+}
+.list{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  text-align: center;
+  color:#000;
+  background:#fff;
+  font-size:28rpx;
+   height: 68rpx;
+  line-height: 68rpx;
+}
+.li{
+  flex: 1;
+  border: 2rpx solid #ccc;
+  margin-right: 15rpx;
+   height: 100%;
+   overflow:hidden; 
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
+    word-break:keep-all; 
+  }
+.li:nth-of-type(4){
+   margin-right: 0;
+   flex: 0.7;
+   background: #000;
+   color: #fff;
+   border-radius: 15rpx;
+}
+.name_tishi{
+  color:#ccc;
+ font-size:28rpx;
+ display: block;
+ margin-top: 20rpx;
+}
+
+
+/*附近店铺列表  */
+.s-li{
+  border: 2rpx solid #000;
+  padding: 15rpx;
+  margin-top: 36rpx;
+  position: relative;
+}
+.s-li .name{
+     font-size:34rpx;
+     font-weight: bold;
+     color: #000;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+.lookMap{
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  background: #000;
+  padding: 0 20rpx;
+  font-weight: normal;
+}
+.info{
+  font-size: 28rpx;
+  color: #000;
+}
+.arrow{
+  position: absolute;
+  right:30rpx;
+  top: 130rpx;
+  width: 16rpx;
+  height: 32rpx;
+}
+.arrow image{
+  display: block;
+   width: 16rpx;
+  height: 32rpx;
+}

@@ -1,0 +1,202 @@
+.text-c{
+  text-align: center;
+}
+.font-bold{
+  font-weight: bolder;
+}
+$main-color: #2d2d2d;
+image{
+  display: block;
+  width: 100%;
+}
+.content{
+  width: 100%;
+}
+.ranking{
+  .title{
+    padding-top: 30rpx;
+    font-size: 38rpx;
+    color: #a71f24;
+    @extend .text-c;
+    @extend .font-bold;
+  }
+  .sub-title{
+    font-size: 32rpx;
+    color: $main-color;
+    @extend .text-c
+  }
+  .tab{
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    &-item{
+      flex: 0 1 21%;
+      margin: 10rpx;
+      font-size: 30rpx;
+      height: 60rpx;
+      line-height: 60rpx;
+      border-radius: 35rpx;
+      @extend .font-bold;
+      @extend .text-c;
+      border: solid 2rpx $main-color;
+      &.active{
+        background: #000;
+        color: #fff;
+      }
+      &.item4{
+        flex: 0 1 25%;
+      }
+    }
+  }
+  &-content{
+    margin-top: 30rpx;
+    .ranking-item{
+      padding: 60rpx 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      &:nth-child(odd){
+        background: #f0f0f0;
+      }
+      .num{
+        font-size: 36rpx;
+        width: 120rpx;
+        text-align: center;
+        color: $main-color;
+        .new{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #999999;
+          font-size: 20rpx;
+          .icon{
+            width: 15rpx;
+            margin-right: 5rpx;
+          };
+        }
+      }
+      .avatar{
+        width: 100rpx;
+        height: 100rpx;
+        &.little-avatar{
+          padding: 20rpx;
+          box-sizing: border-box;
+          border-radius: 50%;
+          &1{
+            background: #f0f0f0;
+          }
+          &0{
+            background: #fff;
+          }
+        }
+      }
+      .user{
+        padding-left: 15rpx;
+        font-size: 26rpx;
+        line-height: 40rpx;
+        color: $main-color;
+        &-item{
+          padding: 5rpx 0;
+        }
+      }
+      .money{
+        flex: 1;
+        margin-left: 30rpx;
+        font-size: 28rpx;
+        color: #e3868a;
+        text-align: center;
+        &-icon{
+          margin-right: 10rpx;
+          width: 30rpx;
+          height: 30rpx;
+        }
+        &-name{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        &total{
+
+        }
+      }
+    }
+  }
+  .footer{
+    padding: 40rpx 20rpx;
+    background: #f0f0f0;
+    &-title{
+      margin-bottom: 30rpx;
+      font-size: 42rpx;
+      text-align: center;
+      color: #000;
+      @extend .font-bold;
+    }
+    &-sub-title{
+      font-size: 34rpx;
+      color: $main-color;
+      text-align: center;
+    }
+    .rule{
+      margin-top: 30rpx;
+      width: 100%;
+      &-item{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 40rpx 0;
+      }
+      &-left{
+        width: 120rpx;
+        margin-right: 30rpx;
+        .top{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .avatar{
+            width: 50rpx;
+            height: 50rpx;
+          }
+          .arrow{
+            width: 40rpx;
+            height: 40rpx;
+            border-left: solid 1rpx #bdbdbd;
+            border-top: solid 1rpx #bdbdbd;
+            transform-origin: center;
+            &-right{
+              transform: rotate(135deg);
+            }
+            &-left{
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+      &-name{
+        font-size: 30rpx;
+        line-height: 40rpx;
+        text-align: center;
+        color: $main-color;
+      }
+      &-text{
+        padding: 5rpx 0;
+        flex: 1;
+        font-size: 26rpx;
+        line-height: 40rpx;
+        color: $main-color;
+      }
+    }
+    .desc{
+      padding: 20rpx 0;
+      text-align: right;
+      font-size: 30rpx;
+      color: $main-color;
+      text{
+        color: red;
+        padding-right: 10rpx;
+      }
+    }
+  }
+}

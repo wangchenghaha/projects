@@ -1,0 +1,49 @@
+{
+  "adds": [
+    {
+      "menuCode": "10",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    },
+    {
+      "menuCode": "1",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    },
+    {
+      "menuCode": "40",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    },
+    {
+      "menuCode": "4010",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    },
+    {
+      "menuCode": "4020",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    },
+    {
+      "menuCode": "402010",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    },
+    {
+      "menuCode": "402020",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    },
+    {
+      "menuCode": "402030",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    },
+    {
+      "menuCode": "4030",
+      "roleCode": "DA00525610",
+      "userCode": "DA00525610"
+    }
+  ]
+}

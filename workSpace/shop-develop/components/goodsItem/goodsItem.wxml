@@ -1,0 +1,74 @@
+<!-- components/goodsItem/goodsItem.wxml -->
+<view class="goods-item" bindtap="onClick" data-type="content" data-sku="{{goodsInfo.gsColorCode}}">
+  <view class="goods-img" style="background-image: url({{defaultBg}})">
+    <image lazy-load="true" src="{{goodsInfo.goodsImg}}" mode="widthFix" data-sku="{{goodsInfo.gsColorCode}}"></image>
+    <view wx:if="{{!goodsInfo.sellStock&&!goodsInfo.isShopGoods}}" class="sell-stock">
+      <image src="/images/list_car_false.png" mode="widthFix"></image>
+    </view>
+    <block wx:else>
+      <view wx:if="{{!isShare&&!goodsInfo.isShopGoods}}" class="cart" data-type="cart" data-color="{{goodsInfo.gsColorCode}}" data-sku="{{goodsInfo.goodsCode}}" catchtap="onClick">
+        <image src="/images/list_car_true.png" mode="widthFix"></image>
+      </view>
+    </block>
+    <view class="videoIcon" wx:if="{{goodsInfo.reminderPc}}"></view>
+    <!-- 去掉商品item的心愿单图标动画 防止下拉卡顿 -->
+    <view class="add-wish" wx:if="{{wishIcon.show}}" data-type="cart" data-color="{{goodsInfo.gsColorCode}}" data-sku="{{goodsInfo.goodsCode}}"  data-desc="addWish" catchtap="onClick">
+      <image src="{{wishIcon.url}}" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="goods-name">{{goodsInfo.goodsName}}</view>
+  <view class="price">
+    <text class="pay-price text-c">￥{{goodsInfo.discountPrice}}</text>
+    <text class="origin-price" wx:if="{{goodsInfo.myDiscount}}">￥{{goodsInfo.originalPrice}}</text>
+    <text class="discount" wx:if="{{goodsInfo.myDiscount && SHOW_DISCOUNT}}">{{goodsInfo.myDiscount}}</text>
+  </view>
+  <block wx:if="{{isShare}}">
+    <text class="select-goods {{goodsInfo.checked ? 'checked' : ''}}" data-type="dao" data-goods="{{goodsInfo}}" catchtap="onClick">导</text>
+  </block>
+  <block wx:else>
+<!--    商品打标-->
+    <image wx:if="{{goodsInfo.tagPic}}" class="activity-image" src="{{goodsInfo.tagPic}}"  mode="heightFix"/>
+    <image wx:elif="{{goodsInfo.markImg}}" class="mark-img" src="{{goodsInfo.markImg}}" mode="widthFix" />
+
+  </block>
+</view>
+<!-- 选择尺码 - 弹出框 -->
+<view class="details_size" style="display:{{details_display}}">
+  <view class="details_opacity" bindtap="chicunHide" animation="{{animationOpacity}}"></view>
+  <view class="details_con {{isIphoneX ?'fix-iphonex-button':''}}" animation="{{animationBottom}}">
+    <view class="dd_con ">
+      <view class="goods-img" wx:if="{{goodsImg}}">
+        <image src="{{goodsImg}}" mode="widthFix"></image>
+      </view>
+      <view class="goods-sku">{{goodsSku}}</view>
+      <view class="details_sizeOne_B">
+        <view class="b_title">颜色分类</view>
+        <view class="b_ul">
+          <view data-index="{{index}}" class="b_li {{index==color_list_num?'b_list':''}} {{yanseList[index]?'chima_list':''}}" wx:for="{{colors}}" wx:key="color" bindtap="colorChange">
+            {{item.colorAlias}}
+          </view>
+        </view>
+        <view class="a_list a_right" bindtap="chicunHide">
+          <icon type="cancel" size="50rpx" color="#000" />
+        </view>
+      </view>
+      <view class="details_sizeOne_B">
+        <view class="b_title">尺码</view>
+        <view class="b_ul">
+          <view data-index="{{index}}" class="b_li {{index==0 && c_li.length<2?'b_list':''}} {{index==size_list_num?'b_list':''}} {{chimaList[index]?'chima_list':''}}" wx:for="{{sizes}}" wx:key="size" bindtap="sizeChange">
+            {{item.sizeAlias}}
+          </view>
+        </view>
+      </view>
+      <view class="details_sizeOne_D">
+        <view class="c_number">
+          <view class="c_add" catchtap="add_number">+</view>
+          <input class="c_num" type="number" value="{{nums}}" disabled="true" />
+          <view class="c_jian" catchtap="jian_number">-</view>
+        </view>
+        <text>库存：{{stock_nums}}</text>
+      </view>
+      <view class="buy_true" bindtap="submitChange">加入{{ addWishFlag ? '心愿单' : '购物车'}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,101 @@
+.wrap {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.body {
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  clear: both;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+
+.listitem {
+  width: 96%;
+  height: 160rpx;
+  clear: both;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid lightgray;
+  margin-left: 2%;
+  margin-right: 2%;
+  background: white;
+  margin-bottom: 10rpx;
+}
+
+.item-left {
+  width: 40%;
+  height: 80%;
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+}
+
+.item-center {
+  width: 40%;
+  height: 100%;
+  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.showPrice {
+  font-size: 60rpx;
+  color: white;
+}
+
+.showtap {
+  font-size: 20rpx;
+  color: white;
+}
+
+.showCondition {
+  font-size: 20rpx;
+  color: white;
+}
+
+.textDescribe {
+  font-size: 32rpx;
+  color: black;
+}
+
+.textTime {
+  font-size: 20rpx;
+  color: black;
+}
+
+.item-right {
+  width: 20%;
+  height: 100%;
+  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.textUse {
+  width: 70%;
+  height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: white;
+  background: black;
+}
+
+.no-coupon {
+  padding-top: 50rpx;
+  font-size: 30rpx;
+}
+

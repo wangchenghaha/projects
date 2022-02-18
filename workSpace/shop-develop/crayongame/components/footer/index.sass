@@ -1,0 +1,26 @@
+@import  '../../common/sass/index.sass'
+.footer
+    position: fixed
+    left: 0
+    bottom: 0
+    // width: 750rpx
+    // height: 612rpx
+    &.needAnimate
+        transform: translate3d(0,3000px,0)
+        overflow: hidden
+        &.animate
+            animation: bounceInUp 0.4s forwards
+    .desc
+        width: 750rpx
+        height: 467rpx
+        +bg('mini-figure')
+        &.big
+            height: 612rpx
+            +bg('figure')
+    .crimp
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 750rpx
+        height: 242rpx
+        +bg('crimp')

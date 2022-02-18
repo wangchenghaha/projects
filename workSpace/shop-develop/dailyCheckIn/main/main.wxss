@@ -1,0 +1,281 @@
+/* dailyCheckIn/main.wxss */
+.frame{width: 100%;height: auto;display: flex;flex-direction: column; clear:both; overflow:hidden;
+    position: relative; background-color: #9F0406;}
+.avatar_bar,.avatar_info,.layout_make_up_card_count,.wrapper_avatar,.wrapper_integral,.integral_left,.layout_value{width: 100%; display: flex;
+    flex-direction: row;align-items: center;justify-content: center;background-color: transparent;}
+.img_top_main{width: 100%;height: auto; position: absolute;top: 0;}
+.img_top_main_2{width: 100%;height: auto;}
+.avatar_bar{justify-content: space-between;position: relative;margin: 27rpx 4%;width: auto;
+    /* background-image: url(https://cdn.bestseller.com.cn/assets/common/FOL/image/daily_checkin_top_black_bg.png); */
+}
+
+
+.frame_top{width: 100%;height: 550rpx;z-index: 100;}
+.layout_days{position: absolute; top: 350rpx; left: 50%; transform: translate(-50%, -50%);
+display: flex;flex-direction: column;align-items: center;}
+.multi_days{position: relative;width: 150rpx;height: 150rpx;}
+.multi_days image{width: 150rpx;}
+.actual_days{position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);
+   color: #CF2C2E;font-size: 60rpx;}
+.multi_b{color: white;font-size: 30rpx;margin-top: 17rpx;}
+
+
+.frame_middle_bonus{padding-left: 5%;display: flex;flex-direction: column;align-items: flex-start;z-index: 100;}
+.bonus_title{color: white;font-size: 28rpx;margin-bottom: 25rpx;}
+.bonus_title_2{color: white;font-size: 28rpx;margin-bottom: 25rpx;margin-top: 37rpx;}
+.bonus_scroll{height: 300rpx;display: flex;flex-direction: row;align-items: center;justify-content: flex-start;}
+.bonus_scroll_2{height: 300rpx;display: flex;flex-direction: row;align-items: center;}
+.bonus_item{width: 230rpx;height: 300rpx;margin-right: 30rpx;position: relative;
+  color: #333;font-size: 22rpx;}
+
+.bonus_item_img{position: absolute; width: 230rpx;height: 290rpx;}
+.bonus_t_wrapper{position: relative;width: 230rpx;height: 100%; display: flex;flex-direction: column;align-items: center;
+justify-content: flex-start;}
+.bonus_t_1{color: #666;margin-top: 30rpx;}
+.bonus_t_2{font-weight: bold;}
+.bonus_t_3{display: flex;flex-direction: row;width: 60%;height: 77rpx; align-items: center;justify-content:center;
+   font-size: 22rpx;margin-top: 17rpx;}
+.bonus_t_3_l{margin-right: 17rpx;}
+.bonus_t_3_value{color: #CF2C2E;font-size: 98rpx;}
+.bonus_t_3_r{margin-left: 17rpx;}
+.bonus_t_4{ background-color: #FFE6DF;border-radius: 50rpx;padding: 7rpx 27rpx;margin-top: 17rpx;}
+
+
+
+.test{background-color: rgba(200, 200, 200, 0.7);width: 100%;height: 500rpx;position: absolute;top: 0;}
+.wrapper_avatar{width: auto;justify-content: flex-start;}
+.user_img,.user_img_mini {width: 97rpx;height: 97rpx;border-radius: 50%;border: 1px solid #8A8A8A;overflow: hidden;
+    position: relative;background: #fff;}
+.user_img_mini{width: 70rpx;height: 70rpx;}
+.user_img_no_border{border: 0px solid transparent;}
+.user_img_inner {display: block;width: 100%;height: 100%;position: absolute;
+    left: 0;right: 0;bottom: 0;top: 0;margin: auto;}
+.avatar_info{width: auto;flex-direction: column;background-color: transparent;margin-left: 10rpx;align-items: flex-start;}
+.check_in_days{width: 400rpx; font-size: 27rpx;color: white;margin-bottom: 12rpx;}
+.layout_make_up_card_count{display: flex;flex-direction: row;align-items: center;justify-content: flex-start;}
+.txt_tip0{font-size: 22rpx;color: white;margin-right: 17rpx;}
+.card_0{width: 28rpx;height: 24rpx;}
+
+.wrapper_integral{width: auto;}
+.integral_left{width: auto;flex-direction: column;margin-right: 17rpx;}
+.layout_value{width: auto;display: flex;flex-direction: row;align-items: center;}
+.txt_integral_value{color: #E5C397; font-size: 28rpx;}
+.txt_integral_arrow{color: white; font-size: 25rpx;margin-left: 10rpx;}
+.tip_my_integral{font-size: 22rpx;color: #878787;}
+.layout_coin{width: auto;position: relative;top: -10rpx;}
+.img_integral_coin{width: 57rpx;}
+.coin_value{font-size: 18rpx;color: white;position: absolute;
+    top:45%;left:50%;transform:translate(-50%,-50%);
+}
+
+
+.wrapper_calendar,.wrapper_invite{width: 90%;position: relative;display: flex; background-color: white;
+flex-direction: column;justify-content: flex-start;margin: 0 auto;border-radius: 22rpx;}
+
+.wrapper_calendar{
+  /* background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/daily_checkin_main_calendar_bg.png)
+  no-repeat bottom center;background-size: auto ; */
+  /* padding-bottom: 99rpx; */
+}
+
+.calendar_bg_class{width: 100%; position: absolute;bottom: -27rpx;}
+.calendar_stable{width: 100%; min-height: 600rpx;margin-top: 27rpx;
+position: relative;top: -45rpx;}
+.class_calendar{width: 100%;min-height: 600rpx;margin-top: 27rpx;}
+
+.under_calendar{width: 100%;height: 183rpx; position: relative;}
+.under_calendar .con_tip{width: 100%;margin-top: 87rpx; text-align: center;color: #FF8815;font-size: 28rpx;position: relative;}
+.u_bg{width: 100%;height: 100%; background-color: white;position: absolute;top: 0;}
+.img_act_01{width: 100%;position: absolute;margin-top: 12rpx;}
+.layout_look_activity_first,.layout_look_activity_second{position: absolute;display: flex;flex-direction: row;
+    align-items: center;left: 50%;transform: translateX(-50%);background-color: transparent;}
+.bt_txt_look{font-size: 24rpx;color: #F52200;margin-right: 7rpx;}
+.bt_img_act{width: 24rpx;height: 24rpx;}
+
+
+.txt_c_title{color: #CF2C2E;font-weight: bold;padding-left: 7.14%;
+  height: 47rpx;padding-top: 37rpx;
+  line-height: 47rpx;}
+.txt_rule,.txt_rule_2{
+    color: white;
+    width: 120rpx;
+    height: 47rpx;
+    line-height: 47rpx;
+    position: absolute;
+    top: 37rpx;
+    left: 0;
+    text-align: center;
+    font-size: 23rpx;
+    background-color: #E5759C;
+    border-radius: 0 20px 20px 0;
+}
+.check_in_remind{position: absolute;top: 37rpx;right: 17rpx;z-index: 200;
+  display: flex;flex-direction: row;align-items: center;}
+.remind_tip_0{font-size:25rpx; color: #666;margin-right: 37rpx;}
+.wx-switch-input{
+    width:80rpx !important;
+    height:40rpx !important;
+    background: #CF2C2E !important;
+    border: #CF2C2E !important; /* 2018-07-18 重置开关边框颜色 */
+}
+/*（false的样式）*/
+.wx-switch-input::before{
+    width:80rpx !important;
+    height: 40rpx !important;
+}
+/*（true的样式）*/
+.wx-switch-input::after{
+    width: 40rpx !important;
+    height: 40rpx !important;
+}
+
+.wrapper_invite{background-color: white;align-items: center;}
+.txt_receive_award{width: 504rpx;height: 100rpx;line-height: 110rpx;text-align: center;
+    font-size: 37rpx;color: white;margin: 17rpx auto;
+    background:url(https://cdn.bestseller.com.cn/assets/common/pub/image/daily_checkin_receive_prize.png)
+    no-repeat center;background-size: contain ;}
+
+.layout_invite_top{width: 100%;position: relative;}
+.txt_rule_2{top: 27rpx;width: 100rpx;
+    left: auto;
+    right: 0;
+    text-align: center;
+    background-color: #CF2B2A;
+    border-radius: 20px 0 0 20px;}
+.img_invite_act_bg{width: 100%;}
+.layout_invite_tips{position: absolute;top: 20rpx;color: white;
+    width: 100%;display: flex;flex-direction: column;align-items: center;
+}
+.layout_invite_tips .title{font-size: 28rpx;}
+.layout_invite_tips .dates{font-size: 24rpx;margin-top: 17rpx;margin-bottom: 17rpx;}
+.layout_invite_tips .date_range{color:#FC4700;border-radius: 10rpx;padding: 8rpx;
+     background: linear-gradient( rgba(255,255,255,1),rgba(255,238,187,1))}
+.layout_invite_tips .content{font-size: 32rpx;font-weight: bold;}
+.layout_look_activity_second{bottom: 17rpx;}
+.txt_white{color: white;}
+
+.layout_invite_middle{width: 90%;height: 317rpx;display: flex;flex-direction: column;align-items: center;
+background-color: #F9E4D8;border-radius: 17rpx;margin-top: 47rpx;margin-bottom: 97rpx; position: relative;}
+.txt_invite_tip_0{font-size: 30rpx;color:#A74A41;margin-top: 27rpx;}
+.txt_invite_tip_1{font-size: 28rpx;color:#A74A41;position: absolute;bottom: 22rpx;}
+.invite_list{width: 100%;margin: 35rpx 35rpx 0 35rpx;
+    display: flex;flex-direction: row;align-items: center;justify-content: space-around;}
+.invite_item_none{width: 70rpx;height: 70rpx;background-color: #EFAD89;}
+.invite_list .img_add{width: 30rpx;pointer-events: none;
+    position: absolute; margin:auto; left:0; top:0; right:0; bottom:0;}
+
+
+.layout_invite_bottom{width: 500rpx;height: 90rpx; position: relative;margin-bottom: 47rpx;}
+.img_bt_invite{width: 500rpx;height: 90rpx;}
+.bt_invite_now{font-size: 37rpx;color: white;width: 100%;height: 100%;text-align: center;
+background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/daily_checkin_bt_invite_friend_now.png)
+ no-repeat right center;background-size: contain ;
+    /*  position:absolute;left:50%;top:50%;transform: translate(-50%,-50%); */
+}
+button::after {border: none;}
+button { background-color: #fff;}
+
+
+.frame_pop_points{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:100000;}
+.frame_opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.5;}
+.frame_points_actual{width: 100%;height: auto; min-height: 300rpx;position: absolute;bottom: 0;background-color: #FBCDCD;
+display: flex;flex-direction: column;align-items: center;border-radius: 20px 20px 0 0;}
+.pop_points_title{width: 355rpx;text-align: center;height: 99rpx;line-height: 99rpx;position: relative;top: -17rpx;}
+.pop_tip{width: 100%;text-align: center;font-size: 29rpx;color: #F51516;margin-bottom: 17rpx;margin-top: 12rpx;}
+.sv_activity_list{width: 100%;height: auto;display: flex;flex-direction: column;align-items: center;
+    position: absolute;bottom: 17rpx;}
+.pop_activity_item{width: 90%;height: 136rpx;background-color: white;border-radius: 12rpx;position: relative;
+margin: 0 auto 17rpx auto;display: flex;flex-direction: row;align-items: center;justify-content: flex-start;}
+.img_activity_item{width: 64rpx;height: 64rpx;margin-left: 45rpx;margin-right: 30rpx;}
+.activity_item_info{display: flex;flex-direction: column;align-items: flex-start;height: 100%;justify-content: center;}
+.activity_item_title{font-size: 35rpx;color: #333;font-weight: bold;}
+.activity_item_des{font-size: 28rpx;color: #9A9A9A;}
+.activity_item_bt_do_it{font-size: 32rpx;color: white;width: 162rpx;height: 64rpx;line-height: 64rpx; text-align: center;
+background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/daily_checkin_points_activity_do_it.png) no-repeat right center;
+background-size: contain ;position: absolute;right: 20rpx;}
+.activity_done{font-size: 32rpx;width: 162rpx;height: 64rpx;line-height: 64rpx; text-align: center;
+background-size: contain ;position: absolute;right: 20rpx;background-color: white;
+border: 1rpx solid gray;color: gray;border-radius: 50rpx;}
+
+
+.img_points_close{position: absolute;top: 17rpx;right: 25rpx;width: 40rpx;height: 40rpx;}
+
+
+.frame_popup_result{ width:100%; height:100%; position:fixed; left:0; top:0;z-index: 800;}
+.opacity_result{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.7;}
+.frame_popup_result_actual{ width:575rpx; height: 570rpx; clear:both; position:absolute; 
+    margin: auto;left: 0;right: 0;top: 0;bottom: 0; background:white;display: flex;flex-direction: column;
+align-items: center;text-align: center;border-radius: 30rpx;}
+.img_result_top{width: 575rpx;}
+.txt_congratulate{width: auto; font-size:35rpx ;color: black;margin-top: 45rpx;}
+.txt_acquired_points_value{font-size: 32rpx;color: #F51516;font-weight: bold;margin-top: 17rpx;}
+.wrapper_pop_makeup_checkin_img{width: auto;display: flex;flex-direction: row;align-items: center;
+justify-content: center;}
+.img_pop_checkin_card{width: 97rpx;}
+.txt_card_num{font-size: 32rpx;color: #E33C2A;margin-left: 17rpx;padding-top: 10rpx;font-weight: bold;}
+.txt_below_points_value{font-size: 25rpx;color: #333;margin-top: 37rpx;}
+.bt_accept{background-color: #EC6C68;border-radius: 50rpx;width: 400rpx;color: white;font-size: 35rpx;
+height: 78rpx;line-height: 78rpx;margin-top: 17rpx;}
+.txt_tip_bottom{font-size: 28rpx;color: #9A9A9A;margin-top: 22rpx;margin-bottom: 7rpx;}
+
+.txt_card_title{font-size:35rpx ;color: #222;margin-top: 130rpx;}
+.layout_makeup_bt{width: 100%; display: flex;flex-direction: row;align-items: center;
+    justify-content: center;}
+
+
+.bt_card_cancel,.bt_card_confirm{width: 225rpx;height: 77rpx; color: white;font-size: 35rpx;
+    margin-top: 77rpx;border-radius: 100rpx;text-align: center;
+    line-height: 77rpx;
+    text-align: center;
+    margin-right: 15rpx;
+    margin-left: 15rpx;
+}
+.bt_card_cancel{background-color: #BFBFBF;}
+.bt_card_confirm{background-color: #EC6C68;}
+
+.flex_r{display: flex;flex-direction: raw;align-items: center;}
+.flex_c{display: flex;flex-direction: column;align-items: center;}
+
+.align_c{align-items: center;}
+.align_s{align-items: flex-start;}
+.align_e{align-items: flex-end;}
+
+
+.space_a{justify-content: space-around;}
+.space_b{justify-content: space-between;}
+.space_c{justify-content: center;}
+.space_s{justify-content: flex-start;}
+.space_e{justify-content: flex-end;}
+
+.main_wrapper_coupon{width: 100%;min-height: 200rpx; padding-top: 7rpx;color: black;background-color: white;}
+.coupon_top{width: 100%;position: relative;}
+.coupon_top .top_1{font-size: 20rpx;color: #8E8E8E;width: 100%;text-align: center;}
+.coupon_top .top_2{font-size: 20rpx;color: #8E8E8E;text-align: right;position: relative;right: 50rpx;line-height: 37rpx;}
+.top_0 .line{height: 2rpx;background-color: black;width: 177rpx;color: #000;}
+.top_0 .title{line-height: 57rpx;font-size: 32rpx;margin: 0 27rpx 0 27rpx;}
+.main_coupon_list{width: 100%;margin-bottom: 27rpx;}
+.main_coupon_list .item_wrapper{width: 265rpx;}
+.main_coupon_list .item{position: relative;font-size: 20rpx;color: #999;margin: 7rpx auto 7rpx auto;}
+.main_coupon_list .item .value{color: black;}
+.main_coupon_list .item .coupon_mask{width: 67rpx;position: absolute;right: 37rpx;top: 50%;transform: translateY(-50%);}
+.main_coupon_list .item .coupont_left{left: 227rpx;}
+.main_coupon_list .item .sale_price{position: absolute;bottom: 57rpx;}
+.main_coupon_list .item .remaining_amount{position: absolute;bottom: 27rpx;}
+
+.wrapper_pop_rules{width: 80%;height: 500rpx;}
+.txt_rules_content{font-size: 32rpx;color: black;margin: 37rpx;word-break: break-all;}
+.bt_rules_bottom{width: 100%; font-size: 28rpx;color: black;padding-top: 27rpx;padding-bottom: 17rpx;}
+
+.invite_hw{min-width: 80%;min-height: 200rpx; margin-top: 227rpx;padding: 17rpx;}
+.invite_bt_stable{position: absolute;bottom: 0rpx;}
+.invite_actual{background: transparent;justify-content: center;height: 70%;bottom:20%;}
+.invite_actual .img_main{width: 100%;}
+.invite_actual .img_coupon{width: 257rpx;position: absolute;top: 50%;}
+.invite_actual .img_close{width: 80rpx;}
+.invite_actual .txt_0{color: #F9AD1C;font-size: 46rpx;}
+.invite_actual .txt_1{color: white;font-size: 36rpx;}
+.invite_actual .nag{position: relative;bottom: -87rpx;}
+
+page {
+  background-color: #9F0406;
+}

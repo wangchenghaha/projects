@@ -1,0 +1,6 @@
+<view class="bg" style="background-image: url('{{splashImg}}');">
+    <view class="register_shanghai" bindtap="registerTap">注册会员</view>
+    <view class="logo">
+        <image src="{{logoImg}}" style="width:100%;" mode="widthFix" />
+    </view>
+</view>

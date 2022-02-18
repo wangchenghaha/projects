@@ -1,0 +1,147 @@
+.goods-flex {
+  display: flex;
+  position: relative;
+}
+
+.clear {
+  clear: both;
+}
+
+.blue_one {
+  position: absolute;
+  width: 20%;
+  height: 15%;
+  right: 0;
+  margin-top: -90rpx;
+  background: #c0d7dd;
+  z-index: 10;
+}
+
+.pink_one {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  margin-top: -60rpx;
+  background: #f3e7dc;
+  left: -10rpx;
+  z-index: 10;
+}
+
+.blue_second {
+  position: absolute;
+  width: 6%;
+  height: 1%;
+  left: 20%;
+  background: #c0d7dd;
+  margin-top: -30rpx;
+  z-index: 10;
+}
+
+.pink_second {
+  position: absolute;
+  width: 15%;
+  height: 10%;
+  margin-top: -14rpx;
+  background: #f3e7dc;
+  left: 37%;
+  z-index: 10;
+}
+
+image {
+  display: block;
+}
+
+.goods-list {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  margin-top: 50rpx;
+  margin-bottom: 30rpx;
+}
+
+.goods-list .goods-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  margin-top: 40rpx;
+  position: relative;
+  z-index: 99;
+}
+
+.goods-list .goods-info text {
+  margin-right: 15rpx;
+}
+
+.goods-list .goods-info text.goods-name {
+  display: inline-block;
+  max-width: 300rpx;
+  line-height: 30rpx;
+  text-align: center;
+  text-overflow: clip;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.goods-list .goods-info text.goods-discount {
+  font-size: 30rpx;
+  color: red;
+}
+
+.goods-list .goods-info text.goods-price {
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.goods-list .goods-info text.goods-original {
+  font-size: 26rpx;
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.goods-list .goods-item {
+  margin-bottom: 30rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.goods-list .goods-item1 {
+  width: 55%;
+}
+
+.goods-list .goods-item-wrapper .goods-image {
+  position: relative;
+  z-index: 99;
+}
+
+.goods-list .goods-item-wrapper .goods-info {
+  flex-direction: column;
+}
+
+.goods-list .goods-item-wrapper .goods-info .goods-name {
+  display: inline-block;
+  max-width: 300rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.goods-list .goods-item-wrapper .goods-info .price-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-list .goods-item2 {
+  width: 43%;
+  margin-top: 30rpx;
+}
+
+.goods-list .goods-item3 {
+  width: 45%;
+  margin-top: 80rpx;
+}
+
+.goods-list .goods-item4 {
+  width: 55%;
+}

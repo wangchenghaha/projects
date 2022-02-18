@@ -1,0 +1,62 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sale-wrapper .no-data {
+  padding: 20rpx 0;
+  font-size: 32rpx;
+}
+.sale-wrapper .sale-list {
+  position: relative;
+  border-bottom: solid 1rpx #ccc;
+}
+.sale-wrapper .sale-list:last-of-type {
+  border-bottom: none;
+}
+.sale-wrapper .sale-list:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -50rpx;
+  content: "";
+  width: 2rpx;
+  height: 100rpx;
+  background: #ccc;
+}
+.sale-wrapper .sale-list .sale-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.sale-wrapper .sale-list .sale-item .sale-name {
+  font-size: 26rpx;
+  color: #7b7b7b;
+}
+.sale-wrapper .sale-list .sale-item .sale-num {
+  font-size: 34rpx;
+  color: #d92222;
+  font-weight: bold;
+}
+.sale-wrapper .sale-desc {
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.sale-wrapper .sale-desc text {
+  display: inline-block;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  color: #7b7b7b;
+}
+.sale-wrapper .sale-desc text:nth-child(1) {
+  width: 120rpx;
+  flex-wrap: nowrap;
+}
+
+/*# sourceMappingURL=saleSum.wxss.map */

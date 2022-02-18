@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "历史专辑列表",
+  "usingComponents": {
+    "go-top": "../../components/goTop/goTop"
+  }
+}

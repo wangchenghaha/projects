@@ -1,0 +1,32 @@
+<view class="bg">
+    <view class="subViews" wx:for="{{evaluateList.list}}" wx:key="sub" data-id="{{item.id}}" bindtap="onClick">
+        <view class="topView flex-bet">
+            <view class="flex-start">
+                <image class="icon" src="{{item.headimgurl}}"/>
+                <view class="name">{{item.nickname}}</view>
+            </view>
+            <view class="agreeView flex-end" wx:if="{{false}}">
+                <view class="title">{{item.buyerShowLikeCount}}</view>
+                <image class="agreeIcon" src="{{agreeIcon}}" mode="widthFix" />
+            </view>
+        </view>
+        <view class="centerView">
+            <view class="chima">{{item.createTime}} | 尺码:{{item.sizeName}} 颜色分类:{{item.colorName}}</view>
+        </view>
+        <view class="bottomView">{{item.reviewContent}}</view>
+        <scroll-view scroll-x="{{true}}" class="imageView" wx:if="{{item.evaluateImgs[0]}}">
+            <block wx:for="{{item.evaluateImgs}}" wx:key="scro" >
+                <image class="buyerImage" src="{{item}}" mode="aspectFill"></image>
+            </block>
+        </scroll-view>
+        <view class="replyView" wx:if="{{item.sellerReply}}">
+            <view class="flex-start">
+                <image class="icon" src="{{replyIcon}}" mode="{{widthFix}}"></image>
+                <view class="title">卖家回复</view>
+            </view>
+            <view class="content">{{item.sellerReply}}</view>
+            <view class="default_h"></view>
+        </view>
+        
+    </view>
+</view>

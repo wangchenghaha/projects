@@ -1,0 +1,7 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "painter": "/fightgroup/components/painter/painter",
+        "alert" : "/fightgroup/components/alert/alert"
+    }
+}

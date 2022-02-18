@@ -1,0 +1,62 @@
+<import src="../tmpl/classicOrderItem/classicOrderItem" />
+<import src="../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar" />
+<view class='frame g_cus_serv_padding_bottom'>
+    <view class="g_layout_red_top">
+        <view class="g_tip_00">请退货并填写物流信息</view>
+        <view class="g_tip_01">请您于<span class="g_span_time"> {{remainTimeArray[0]}} </span>天<span class="g_span_time"> {{remainTimeArray[1]}} </span>小时<span class="g_span_time"> {{remainTimeArray[2]}} </span>分内进行退货处理，超时系统自动默认退货失败。</view>
+    </view>
+    <!-- 退回原商品 -->
+    <view class="global_single_title_bar flex_r space_b g_border_top g_border_bottom g_big_height">
+        <view class='utn_t b_title'>退货方式</view>
+        <view class="flex_r g_margin_right_default" bind:tap="onRefundWayClick">
+            <view class="g_twins_tab_default g_twins_tab_nagtive_margin {{returnMethod=='returnThroughExpress'?'g_twins_tab_checked':''}}" data-way="returnThroughExpress">
+                邮寄退回
+            </view>
+            <view class="g_twins_tab_default g_margin_right_default {{returnMethod=='returnThroughExpress'?'':'g_twins_tab_checked'}}" data-way="returnThroughShop">
+                到店退回
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{returnMethod=='returnThroughExpress'}}">
+        <view class='a_a flex_c align_s space_s'>
+            <view class='address_frame'>
+                <view>
+                    <view class='a_content'>退货收件人：{{recipient}}</view>
+                    <view class='a_content'>退货地址：{{refundAddress}}</view>
+                    <view class='a_content'>联系电话：{{phoneNo}}</view>
+                </view>
+                <view class="a_copy">
+                    <image class="shop_copy" src="/images/icon_copy_black.png" mode="widthFix" bind:tap="onTmplShopInfoCopy" />
+                </view>
+            </view>
+            <view class="express_tip">{{tip0}}</view>
+        </view>
+        <view class='b_b'>
+            <view class="flex_r align_c space_s g_big_height">
+                <view class="b_title">物流单号：</view>
+                <input class='b_input' maxlength="30" type="digit" placeholder='请填写运单号' confirm-type="done" bindinput="onExpressCodeInput"></input>
+                <image class="img_qr_code" src="https://cdn.bestseller.com.cn/assets/common/pub/image/exchange_icon_qr_code.png" mode="widthFix"></image>
+            </view>
+            <view class="flex_r align_c space_b g_big_height">
+                <view class="b_title">物流公司:</view>
+                <input class='b_input' maxlength="15" placeholder='请选择物流公司' value="{{companyName}}" bindinput="onExpressCompanyInput" confirm-type="next"></input>
+                <view class="b_right flex_r align_c">
+                    <picker class="b_picker" mode="selector" bind:change="onPickerClick" value="{{index}}" range="{{expressList}}">
+                        <view class="fake_content">777</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class='g_ex_frame_shop flex_c' wx:elif="{{returnMethod=='returnThroughShop'}}">
+        <template is="shopMultiBarTmpl" data="{{shopBean:singleShopBean}}" />
+        <view class="g_another_shop" bind:tap="onGotoShopListClick">换一个 ></view>
+        <view class="express_tip">{{tip1}}</view>
+    </view>
+    <view class="layout_tel g_big_height">联系电话：<text>{{exOrderBean.contactTel}}</text></view>
+    <view class="layout_goods flex_c align_s">
+        <view class="b_title g_big_height">退回商品</view>
+        <template is="classicOrderItemTmpl" data="{{item:sourceBean}}"></template>
+    </view>
+    <ex-button-layout exchangeCode="{{exchangeCode}}" flagShowCommit="true" bindonCommitClick="onCommitClick"></ex-button-layout>
+</view>

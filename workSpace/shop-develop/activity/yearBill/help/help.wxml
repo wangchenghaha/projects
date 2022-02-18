@@ -1,0 +1,20 @@
+<view class="imgView">
+    <image src="{{bgImg}}" style="width:577rpx;height:100%;" />
+    <view class="imgView-textView">
+        <view class="text" style="margin-left: 24%;">{{datas[0]}}</view>
+        <view class="text" style="margin-left: 24%;">{{datas[1]}}</view>
+        <view class="text" style="margin-left: 24%;">{{datas[2]}}</view>
+        <view class="text right" style="margin-right: 28%;">{{datas[3]}}</view>
+        <view class="text right" style="margin-right: 18%;">{{datas[4]}}</view>
+        <view class="text right" style="margin-right: 11%;">{{datas[5]}}</view>
+        <view class="text right" style="margin-right: 32%;">{{datas[6]}}</view>
+        <view class="text right" style="margin-right: 14%;">{{datas[7]}}</view>
+        <view class="text right" style="margin-right: 33%;">{{datas[8]}}</view>
+        <view class="text right" style="margin-right: 33%;">{{datas[9]}}</view>
+    </view>
+    <view class="go" bindtap="go">我的年度省钱账单>></view>
+</view>
+
+<cover-view class="sanjiao" bindtap="backTap">
+    <cover-image src="{{backImg}}" style="width:100%;height:100%;" />
+</cover-view>

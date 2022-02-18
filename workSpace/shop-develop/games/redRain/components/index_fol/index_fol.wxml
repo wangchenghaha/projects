@@ -1,0 +1,169 @@
+<view class="bg">
+    
+    <view class="indexBgImg">
+        <image src="{{indexBgImage}}" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+        <image src="{{imgPath}}hby_logo.png" class="logo" mode="widthFix" />
+
+
+        <view class="opaView"></view>
+        <view class="opaView1">
+            <view class="leftView">
+                <view class="subView">
+                    <view class="textView" style="color:yellow;">{{userData.points?userData.points:0}}<image src="{{imgPath}}hby_jinbi.png" class="jinbi" /></view>
+                    <view class="textView" style="font-size: 22rpx;line-height: 26rpx;">我的金币</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="centerView">
+            <view class="centerView-text">剩余次数:{{userData.gameCount}}次</view>
+            <view style="centerView-start" bindtap="startGame">
+                <image src="{{imgPath}}hby_indexPlay.png" style="width:100%;height:100%;" mode="widthFix" />
+            </view>
+
+        </view>
+
+        <view class="duihuan" style="left: 60rpx;" bindtap="duihuan">
+            <image src="{{imgPath}}hby_dhjb.png" style="width:100%;height:100%;" />
+        </view>
+        <view class="duihuan" style="right: 60rpx;" bindtap="zhuanjinbi">
+            <image src="{{imgPath}}hby_zjb1.png" style="width:100%;height:100%;" />
+        </view>
+
+        <view class="listBg-opa" wx:if="{{jpListText != ''}}"></view>
+        <view class="listBg" wx:if="{{jpListText != ''}}">
+            <view class="textView">{{jpListText}}</view>
+        </view>
+
+        <view class="goHome" bindtap="goHome">
+            <image src="{{imgPath}}hby_goHome1.png" style="width:100%;height:100%;" />
+        </view>
+    </view>
+
+
+    <view class="bottomView">
+        <image src="{{imgPath}}hby_botomBg.png" style="width:100%;height:100%;" mode="widthFix" />
+        <view class="title">{{userData.nickName}}的队伍</view>
+        <view class="bottomView-centerView">
+            <view class="iconView" wx:for="{{friends}}" wx:key="icons" style="margin-left: {{index == 0 ? 0 : 10}}rpx;">
+                <block wx:if="{{item.icon != ''}}">
+                    <image src="{{item.icon}}" class="icon" mode="widthFix" />
+                    <view class="name">{{item.name}}</view>
+                </block>
+                <block wx:else>
+                    <image src="{{imgPath}}hby_zw.png" class="icon-zhanwei" mode="widthFix" />
+                    <view class="name-zhanwei">
+                        <image src="{{item.otherIcon}}" style="width:100%;height:100%;" mode="widthFix" />
+                        <view class="text">{{item.otherName}}</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+
+        <view wx:if="{{isFiveNum}}" class="subTitle" bindtap="openTap">开启宝箱</view>
+        <block wx:else>
+            <view class="subTitle">邀请好友</view>
+            <button open-type="share" class="share"></button>
+        </block>
+    </view>
+
+    <view class="guizeView">
+        <view class="title">——————— 活动规则 ———————</view>
+        <view class="subView_line" wx:for="{{guize}}" wx:key="guizes">
+            <view class="left">{{index + 1}}</view>
+            <view class="right">{{item}}</view>
+        </view>
+    </view>
+    
+</view>
+
+
+        <block wx:if="{{canOpen}}">
+            <view class="bouncedBg" bindtap="closed"></view>
+                <view class="canOpenView">
+                    <view class="imgView">
+                        <image src="{{baoxiangJson.bgImage}}" style="width: 100%;height: 100%;" mode="widthFix" />
+                        <view class="topTitle">恭喜你</view>
+                        <view class="subTitle">获得"{{baoxiangJson.title}}"</view>
+                        <image src="{{baoxiangJson.image}}" class="jiangpinImg" mode="widthFix" />
+                    </view>
+                </view>
+        </block>
+
+
+        <block wx:if="{{showOneBounced}}">
+            <view class="bouncedBg"></view>
+                <view class="oneSubView">
+                    <view class="subViews">
+                        <view class="imgView">
+                            <image src="{{imgPath}}hby_bouncedEndGma.png" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+                            <view class="topText">
+                                <image src="{{imgPath}}hby_henyihan.png" style="width:100%;height:100%;" />
+                            </view>
+                            <view class="centerText">抱歉,你今天抢红包的次数已用完,邀请好友助力,可获得额外抢红包次数.</view>
+
+                                <view class="bottomView">邀请好友助力</view>
+                                <button open-type="share" class="share"></button>
+
+                        </view>
+                        <view class="closed" bindtap="oneClosed">
+                            <image src="{{imgPath}}hby_guanbi.png" style="width:100%;height:100%;" />
+                        </view>
+                    </view>
+                    
+                </view>
+        </block>
+
+        <block wx:if="{{showTwoBounced}}">
+            <view class="bouncedBg"></view>
+                <view class="twoSubView">
+                    <view class="imgView">
+                        <image src="{{imgPath}}hby_twoBounced.png" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+                        <view class="centerText">真的要走吗?</view>
+                        <view class="centerText" style="top:37%;">你不抢，我不抢，77元红包</view>
+                        <view class="centerText" style="top:48%;">等的多凄惨~</view>
+                        <view class="bottomView" style="left: 12%;background-color: #B5B5B5;color: #FFFFFF;" bindtap="closed">默默放弃</view>
+                        <view class="bottomView" style="right: 12%;background-color: #EBEB49;color: #CB0031;">我要抢,去邀请</view>
+                        <button open-type="share" class="share"></button>
+
+                    </view>
+                </view>
+        </block>
+
+        <view class="bouncedBg {{showZhuanjinbi ? 'bouncedBg-show' : 'bouncedBg-hidden'}}" bindtap="closedZhuanjinbi"></view>
+        <view class="zhuanjinbiView {{showZhuanjinbi ? 'zhuanjinbiView-show' : ''}}">
+            <view class="imgView">
+                <image src="{{imgPath}}zhuanjinbi.png" style="width:100%;height:100%;vertical-align: middle;" mode="widthFix" />
+
+                <scroll-view scroll-y="{{true}}" class="scroView">
+                    <view class="rowViews" wx:for="{{taskArrs}}" wx:key="rows">
+                        <view class="icon">
+                            <image src="{{item.taskIco}}" style="width:100%;height:100%;" />
+                        </view>
+                        <view class="textView">
+                            <view class="topTitle">{{item.taskName}}</view>
+                            <view class="subTitle">任务达成可获得金币{{item.rewardPoints}}</view>
+                        </view>
+                        <view class="btnViewFinish" wx:if="{{item.isFinish}}">已完成</view>
+                        <view wx:elif="{{item.taskCode}}" class="btnView" data-detail="{{item}}" bindtap="goFinish">去完成</view>
+                        <button wx:else open-type="share" class="taskShare">去邀请</button>
+                        
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+
+
+<image src="{{imgPath}}sanjiao-left.png" class="backImg" mode="widthFix" bindtap="backTap" />
+<view class="zhanweiView" wx:if="{{zhanweiView}}"></view>
+
+<block wx:if="{{canAuthPhone}}">
+
+    <view class="bouncedBg"></view>
+    <view class="shouquanPhone">
+        <view class="topView">提示</view>
+        <view class="topSubView">兑换优惠券需要指定手机号,点击授权</view>
+
+        <button class="getPhoneNumber" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+    </view>
+</block>

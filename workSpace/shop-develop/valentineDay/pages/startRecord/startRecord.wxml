@@ -1,0 +1,41 @@
+<view class="container"
+    style="background:url({{isBigPhone ? comData.valentine.activity_bac_big_img : comData.valentine.activity_bac_small_img}});background-repeat: repeat; background-size:100%; width:100%;min-height:100vh;">
+    <comp-image-pre src='{{comData.valentine.activity_title}}' class="main-img" mode="aspectFill" width="472" height="333">
+    </comp-image-pre>
+    <view class="warp">
+        <swiper class="banner" indicator-dots="{{is3DStyle}}" circular="{{is3DStyle}}"
+            indicator-color="rgba(255,255,255,0.8)" indicator-active-color="rgba(0,0,0,0.2)" autoplay="{{autoplay}}"
+            interval="{{interval}}" style="height: {{bannerHeight}}rpx" current="{{swiper2Index}}" bindchange='swiper2Change' previous-margin='83rpx'
+            next-margin='83rpx'>
+            <block wx:for="{{comData.valentine.heart_cards}}" wx:key="index">
+                <swiper-item class="style3d">
+                    <image src="{{item.card_url}}" data-index="{{index}}" mode="widthFix"
+                        class="slide-image {{swiper2Index==index?'active':''}}" bindload="imageLoad" bindtap="link"
+                        data-isBig="{{is3DStyle}}" data-pic="{{item.card_url}}" data-currentitem="{{item}}"></image>
+                    <view style="text-align: center;">{{item.text}}</view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="slide-text" hover-class="none" hover-stop-propagation="false">
+        <comp-image-pre src='{{comData.valentine.heart_card_prev_btn}}' mode="widthfix" width="84" height="33" borderRadius="20">
+        </comp-image-pre>
+        <view class="text" hover-class="none" hover-stop-propagation="false">
+            左右滑动选择你的心意卡
+        </view>
+        <comp-image-pre src='{{comData.valentine.heart_card_next_btn}}' mode="widthfix" width="84" height="33" borderRadius="20">
+        </comp-image-pre>
+    
+    </view>
+    <swiper class="banner" circular current="{{swiper2Index}}"  bindchange='swiper2Change'>
+        <block wx:for="{{comData.valentine.heart_cards}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item.card_sub_title_img}}"  data-index="{{index}}"
+                    mode="widthFix" bindload="imageLoad"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <!-- <comp-image-pre src='{{imgModel.xinyika}}' bindtap="startRecord" class="btn2" mode="aspectFill" width="463" height="120" borderRadius="20"></comp-image-pre> -->
+    <comp-image-pre src='{{comData.valentine.record_btn_img}}' bindtap="startRecord" class="luzhigaobai" mode="aspectFill" width="393"
+        height="183"></comp-image-pre>
+</view>

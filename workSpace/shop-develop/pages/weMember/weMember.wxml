@@ -1,0 +1,69 @@
+<view class="we-member">
+  <view class="logo">
+    <image src="{{logo}}" mode="aspectFit"></image>
+  </view>
+  <view class="login-list">
+    <block wx:for="{{loginList}}" wx:key="login">
+      <view class="text-c login-item font-bold">{{item}}</view>
+    </block>
+  </view>
+
+  <view wx:if="{{isWeMemberLogin}}">
+    <view wx:if="{{wxInfo && wxPhone}}" class="text-c">正在登录</view>
+    <view class="operation" wx:else>
+      <view class="font-bold tip">请完成以下{{wxWork ? '1' : '2'}}歩操作:</view>
+      <view class="step">
+        <block wx:for="{{steps}}" wx:key="steps">
+          <view class="step-item" wx:if="{{item.show}}">
+            <text class="text-c">{{index+1}}</text>. 允许{{item.text}}
+          </view>
+        </block>
+      </view>
+      <view class="clause flex-start {{animate ? 'animated shake' : ''}}" mut-bind:tap="changeCheck">
+        <icon type="{{agreePrivacy ? 'success': 'circle'}}" color="#000" size="30rpx" class="margin-r-10"></icon>
+        <view class="clause-content">我已阅读并同意<text mut-bind:tap="goClause">《隐私权政策》</text>的全部内容。</view>
+      </view>
+      <view class="btn-wrapper">
+        <block wx:if="{{!wxInfo}}">
+<!--          <button class="btn-color" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">-->
+          <button wx:if="{{wxWork}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" hover-class="btn-active">
+            <view class="icon">
+              <image src="/images/weixin.png" mode="widthFix"></image>
+            </view>
+            ① {{steps[0].text}}
+          </button>
+          <button wx:else type="primary" bindtap="getUserProfile" hover-class="btn-active">
+            <view class="icon">
+              <image src="/images/weixin.png" mode="widthFix"></image>
+            </view>
+            ① {{steps[0].text}}
+          </button>
+        </block>
+        <block wx:else>
+          <button class="btn-bg" type="default" disabled>
+            <view class="icon">
+              <image src="/images/weixin.png" mode="widthFix"></image>
+            </view>
+            ① {{steps[0].text}}
+          </button>
+        </block>
+        <block wx:if="{{!wxWork}}">
+          <block wx:if="{{!wxPhone && wxInfo}}">
+            <button class="btn-color" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">② 允许{{steps[1].text}}</button>
+          </block>
+          <block wx:else>
+            <button class="btn-bg" type="default" disabled>② 允许{{steps[1].text}}</button>
+          </block>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view wx:if="{{wxInfo}}" class="text-c">正在登录</view>
+    <view wx:else>
+<!--      <button class="btn-color" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">{{steps[0].text}}</button>-->
+      <button type="primary" bindtap="getUserProfile" hover-class="btn-active">好</button>
+
+    </view>
+  </view>
+</view>

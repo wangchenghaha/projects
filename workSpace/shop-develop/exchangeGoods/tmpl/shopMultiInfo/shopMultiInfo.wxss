@@ -1,0 +1,22 @@
+.frame_info{width: 100%;}
+.shop_img{width: 100%; background-color: white;height: auto;display: flex;flex-direction: column;}
+.shop_img image{width: 100%;}
+.shop_info_tip_tmpl{font-size: 20rpx;color: #333;position: relative;top: -37rpx;right: 7rpx; text-align: right;}
+
+
+.shop_bottom{float: left;width: 100%;}
+.shop_wrap{padding: 17rpx 17rpx 17rpx 30rpx;background-color: white;line-height: 37rpx;}
+.shop_bottom .bar{width: 100%; line-height:70rpx;display: flex;flex-direction: row;justify-content: space-between;align-items: center;}
+.shop_name{float: left;color: #333;width: 100%; font-size: 28rpx;font-weight: bold;color: #019FE8;line-height: 70rpx;}
+
+.layout_loc{height: 70rpx; font-size:26rpx;line-height:70rpx;color:white;background:white;
+    display: flex;flex-direction: row;align-items: center;justify-content: flex-end;width: auto;}
+.loc_img{width: 32rpx;height: 32rpx;margin-right: 3rpx;}
+.loc_txt{font-size: 26rpx;margin-left: 3rpx;color: black;width: 80rpx;height: 70rpx; line-height: 70rpx;}
+
+.layout_info{ width: 100%;display: flex;flex-direction: row;align-items: flex-end;font-size: 26rpx;}
+.layout_info2{width: 100%;display: flex;flex-direction: row;align-items: flex-start;}
+.info_left{width: 100%;display: flex;flex-direction: column;align-items: flex-start;border-bottom: 1rpx solid #EBEBEB;padding-bottom: 27rpx;}
+.info_text2{text-decoration: underline;}
+
+.shop_copy{width: 40rpx;height: 40rpx;margin-right:17rpx;margin-bottom: 35rpx;}

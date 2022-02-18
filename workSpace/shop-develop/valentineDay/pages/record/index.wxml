@@ -1,0 +1,67 @@
+
+
+<view class="page" style='padding-top: {{navHeight}}px;'>
+ <com-index class="index" bindisShow="isShow" startRecord="{{startRecord}}" wx:if="{{indexShow}}"  comData="{{data.valentine}}" userId="{{data.user_id}}" heartSelect="{{heartSelect}}" heartId="{{heartId}}"></com-index>
+ <com-record class="index" bindisShow="isShow" wx:if="{{recordShow}}"  comData="{{data.valentine}}"></com-record>
+ <com-setPwd class="index" bindisShow="isShow" wx:if="{{setPwdShow}}" comData="{{data}}" soundUrl="{{soundUrl}}" heartId="{{heartId}}" heartSelect="{{heartSelect}}"></com-setPwd>
+ <com-readyShare class="index" bindisShow="isShow" navHeight="{{navHeight}}" wx:if="{{shareReady}}" comData="{{data}}" soundId="{{soundId}}" blessingText="{{blessingText}}" heartSelect="{{heartSelect}}" name="{{name}}" soundUrl="{{soundUrl}}"></com-readyShare>
+  <!-- <image class="" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+      
+    </image> -->
+  <!-- <view class="posterContainer" style="padding-top: {{navHeight}}px;" wx:if="{{canvasImage}}">
+    <view class="poster-bg"></view>
+    <view class="poster-wrap">
+      <view class="poster-close-icon" bind:tap="handleClosePoster" ><image src="{{imgModel.close_icon}}" /></view>
+      <image src="{{canvasImage}}" style="width:670rpx;height:990rpx;" />
+      <view class="poster-btn" catchtap='getSettings' wx:if="{{authorize}}">保存至相册</view>
+      <button class="poster-btn" open-type="openSetting" bindopensetting="handleSetting" wx:else>保存至相册</button>
+      <button open-type="share" class="poster-btn">分享好友</button>
+    </view>
+  </view> -->
+  <!-- <view class="" hover-class="none" hover-stop-propagation="false">
+    {{recordingTimeqwe}}
+  </view>
+  <view class="play-record" wx:if="{{tempFilePath}}">
+    <view class="record" bindtap="recordingAndPlaying">
+      <view class="process" style="width: {{listenTime/recordingTimeqwe*100}}%"></view>
+    </view>
+    <view class="play-status">{{playStatus}}</view>
+  </view>
+  <view class="bottom">
+    <view class='progress_box' bindlongpress='openRecording' bindtouchend="shutRecording">
+      <view class="progress_bgs">
+        <view class="progress_bg">
+          {{recordStatus == 1?'长按录制':recordStatus == 2?'松开完成录制':'重新录制'}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mask-model"  wx:if="{{maskIsShow3}}" hover-class="none" hover-stop-propagation="false">
+    <view class="model" hover-class="none" hover-stop-propagation="false">
+      <view class="" bindtap="recordingAndPlaying">
+        试听一下
+      </view>
+      <view bindtap="save" class="">
+        立即保存
+      </view>
+    </view>
+  </view>
+  <view class="mask-model"  wx:if="{{maskIsShow}}" hover-class="none" hover-stop-propagation="false">
+    <view class="model" hover-class="none" hover-stop-propagation="false">
+     <input class="pwdInput" type="password" bindinput="pwdInput" />
+      <view class="" bindtap="surePwd" hover-class="none" hover-stop-propagation="false">
+        确定
+      </view>
+    </view>
+  </view>
+  <view class="mask-model"  wx:if="{{maskIsShow2}}" hover-class="none" hover-stop-propagation="false">
+    <view class="model" hover-class="none" hover-stop-propagation="false">
+      <button class=""open-type="share">
+        分享好友
+      </button>
+      <button bind:tap="handleCanvasPoster" class="">
+        分享朋友圈
+      </button>
+    </view>
+  </view> -->
+</view>

@@ -1,0 +1,57 @@
+<view class="contact">
+  <view class="banner">
+    <image src="{{bannerImg}}" mode="widthFix"></image>
+  </view>
+  <view class="tab flex-bet">
+    <block wx:for="{{tabBar}}" wx:key="tabBar">
+      <view class="tab-item text-c {{index === defaultIndex ? 'selected' : ''}}"
+        data-type="tab"
+        data-index="{{index}}"
+        bindtap="onClick">{{item.tabName}}</view>
+    </block>
+  </view>
+  <view class="content {{defaultIndex === 0 ? 'default' : ''}}">
+    <block wx:for="{{tabBar[defaultIndex].list}}" wx:key="{{tabContent}}">
+      <block wx:if="{{tabBar[defaultIndex].tabName === '联系客服'}}">
+        <view class="img">
+          <image src="{{item.imgUrl}}" mode="widthFix" data-type="{{item.eventType || ''}}" data-phone="{{item.telNum || ''}}" bindtap="onClick"></image>
+        </view>
+      </block>
+      <block wx:else>
+        <text wx:if="{{item.title}}" class="title font-bold">{{item.title}}</text>
+        <view class="answer">
+          <block wx:for="{{item.answers}}"
+                 wx:for-item="answerItem"
+                 wx:for-index="answerIndex"
+                 wx:key="answer">
+            <block wx:if="{{item.icon}}">
+              <view class="flex-start answer-item">
+                <block wx:if="item.icon === 1">
+                  <text class="answer-icon">{{answerIndex + 1}}.</text>
+                </block>
+                <block wx:else>
+                  <text class="answer-icon">{{item.icon}}</text>
+                </block>
+                <text class="answer-text">{{answerItem}}</text>
+              </view>
+            </block>
+            <block wx:else>
+              <text class="answer-text">{{answerItem}}</text>
+            </block>
+          </block>
+        </view>
+      </block>
+    </block>
+  </view>
+
+  <view class="go-back flex-center" data-type="goBack" bindtap="onClick">
+    <view class="icon">
+      <image src="{{buyGoodsIcon}}" mode="widthFix"></image>
+    </view>
+    继续购物
+  </view>
+  <!-- IphoneX底部栏 -->
+  <view class="bottomC"></view>
+  <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+</view>

@@ -1,0 +1,20 @@
+<view class="footer">
+<!--  <view class="box" data-type="sendCoupon" bindtap="onClick"></view>-->
+  <view class="version">版本号：{{version}}</view>
+  <view class="record-item ~text-c">{{recordInfo.reserved}}</view>
+  <view class="record-item ~text-c">{{recordInfo.icp}}</view>
+  <view class="record-item ~flex-center">
+    <view class="record-img" wx:if="{{recordInfo.rec}}">
+      <image src="{{recordImg}}" mode="widthFix"></image>
+    </view>
+  {{recordInfo.rec}}</view>
+  <view class="record-item ~text-c" bindtap="makePhone">违法和不良信息举报电话: {{reportPhone}}</view>
+  <view class="text">
+    <block wx:for="{{textList}}" wx:key="textList">
+      <view class="text-item" wx:if="{{item.show}}" data-type="{{item.type}}" bindtap="onClick">{{item.value}}</view>
+    </block>
+  </view>
+</view>
+<view class="business" wx:if="{{business.show}}" data-type="business" bindtap="onClick">
+  <image src="{{business.img}}" mode="widthFix"></image>
+</view>

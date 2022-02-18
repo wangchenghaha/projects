@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加我的心愿",
+  "usingComponents": {
+    "goods-list": "../../components/wishGoodsList/wishGoodsList"
+  }
+}

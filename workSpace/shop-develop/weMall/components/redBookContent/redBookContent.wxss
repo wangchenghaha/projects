@@ -1,0 +1,93 @@
+.content {
+  margin: 20rpx 0;
+  font-size: 26rpx;
+}
+.content image {
+  display: block;
+  width: 100%;
+}
+.content .nav {
+  height: 60rpx;
+  border-radius: 60rpx;
+  flex-wrap: wrap;
+  border: solid 2rpx #ccc;
+  overflow: hidden;
+}
+.content .nav-item {
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+}
+.content .nav-item.active {
+  background: #000;
+  color: #fff;
+}
+.content .banner {
+  margin-top: 20rpx;
+}
+.content .banner .swiper {
+  height: 200rpx;
+}
+.content .banner .swiper-item {
+  width: 100%;
+  height: 200rpx;
+}
+.content .banner .swiper-item .img {
+  width: 100%;
+  height: 200rpx;
+  background: #0BB20C;
+}
+.content .goods-title {
+  padding: 20rpx 0;
+}
+.content .goods-title .desc {
+  padding: 0 20rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.content .goods-title .line {
+  display: inline-block;
+  flex: 1;
+  height: 2rpx;
+  background: #000;
+}
+.content .goods {
+  margin-top: 20rpx;
+}
+.content .goods-item {
+  position: relative;
+  align-items: flex-start;
+}
+.content .goods-item .goods-img {
+  width: 200rpx;
+}
+.content .goods-item .goods-info {
+  position: relative;
+  padding-left: 20rpx;
+  flex: 1;
+}
+.content .goods-item .goods-info .origin-price {
+  padding: 10rpx 0;
+  font-size: 24rpx;
+  color: #ccc;
+  text-decoration: line-through;
+}
+.content .goods-item .goods-info .pay-price {
+  font-size: 30rpx;
+}
+.content .goods-item .btn-buy {
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+  padding: 10rpx 30rpx;
+  border: solid 1rpx #ccc;
+  border-radius: 40rpx;
+}
+.content .goods-item image {
+  display: block;
+  width: 100%;
+}
+
+/*# sourceMappingURL=redBookContent.wxss.map */

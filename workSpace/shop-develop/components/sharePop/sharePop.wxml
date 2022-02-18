@@ -1,0 +1,10 @@
+    
+<view class="details_size"  wx:if="{{showCoupon}}">
+    <view class="details_opacity"></view>
+    <view class="details_con">
+        <view class="dd_con">
+            <image class="close" src="../../images/qr_close.png" bindtap="closeCoupon"/>
+            <image src="{{templateImage}}" mode="widthFix"  bindtap="bouncedSave"/>
+        </view>
+    </view>
+</view>

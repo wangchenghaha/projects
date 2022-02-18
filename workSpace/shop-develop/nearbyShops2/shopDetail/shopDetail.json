@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "店铺详情",
+    "usingComponents": {
+        "van-tab": "../components/tab/index",
+        "van-tabs": "../components/tabs/index"
+      }
+}

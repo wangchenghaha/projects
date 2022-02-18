@@ -1,0 +1,29 @@
+.king{
+  background: #000;
+  color: #fff;
+  image{
+    display: block;
+    width: 100%;
+  }
+  .video{
+    width: 750rpx;
+    height: 1334rpx;
+  }
+  .btn{
+    margin: 40rpx auto 50rpx;
+    background: #000;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+  }
+  .footer{
+    padding: 60rpx 0 120rpx 0;
+    &-item{
+      margin: 30rpx auto;
+      width: 440rpx;
+      height: 80rpx;
+      line-height: 80rpx;
+      font-size: 30rpx;
+    }
+  }
+}

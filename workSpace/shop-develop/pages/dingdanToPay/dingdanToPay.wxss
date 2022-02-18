@@ -1,0 +1,421 @@
+
+
+
+.wrap{ width:100%; height:auto;clear:both; overflow:hidden; padding-bottom:176rpx;}
+.top{ width:100%; height:74rpx; background:#dadada; clear:both; overflow:hidden;font-size:24rpx;line-height:74rpx;font-weight:bold;}
+.top_left{ float:left; padding-left:20rpx; color:#000;}
+.top_right{ float:right; padding-right:20rpx; color:#d70715;}
+.lookWuliu{ float:right; padding:0 12rpx; line-height:48rpx; border:1px solid #000;  margin:12rpx 50rpx 0 0;background:#000;background:#fff;}
+
+.top3{ width:100%; height:auto; clear:both; overflow:hidden;font-size:24rpx;line-height:74rpx;border-bottom:2rpx solid #e0e0e0; color:#000;}
+
+.top1{ width:100%; height:74rpx; clear:both; overflow:hidden;font-size:24rpx;line-height:74rpx;border-bottom:2rpx solid #e0e0e0;}
+.top1_left{ padding-left:20rpx; color:#000;}
+.copy-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+.top1_right{ padding-right:20rpx; color:#646464;}
+
+.top2{ width:100%; height:auto;clear:both; overflow:hidden; border-bottom:2rpx solid #e0e0e0;padding-bottom:20rpx;}
+.top2_1{width:100%;height:auto;clear:both;overflow: hidden;font-size:26rpx;line-height:70rpx;color:#000;}
+.top2_left{ float:left; padding-left:20rpx; font-weight:600;}
+.top2_right{ float: right;padding-right:20rpx;}
+.top2_2{ font-size:24rpx;line-height:34rpx;color:#000; box-sizing:border-box;padding:0 20rpx;}
+.lookDitu{ padding:0 20rpx; font-size:30rpx; line-height:50rpx; background:#000; color:#fff; position:absolute; right:20rpx; top:70rpx; border-radius:10rpx;}
+
+.content{ width:100%; height:auto; clear:both; overflow:hidden; box-sizing:border-box;padding:20rpx; position:relative; border-bottom: solid 1rpx #ccc}
+.con_left{width:150rpx; margin-right:10rpx; height:250rpx; position:relative;}
+.con_left image{ display:block; width:100%; height:240rpx; position:absolute; left:0; right:0; bottom:0; top:0;}
+.con_right{
+  flex: 1;
+  position: relative;
+}
+.con_right .con{font-size:26rpx;line-height: 40rpx;color:#a3a3a3; width: 400rpx; overflow:hidden; text-overflow:ellipsis;white-space:nowrap;}
+.con_right .con.goods-name{
+  color: #000;
+}
+.con_right .con text{color:#000;}
+.con_right .btn-wrapper{
+  position: absolute;
+  right: 5rpx;
+  bottom: 10rpx;
+}
+.btn-wrapper .operation-btn{
+  margin-left: 15rpx;
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  border: solid 2rpx #ccc;
+  border-radius: 30rpx;
+  text-align: center;
+}
+.btn-wrapper .operation-btn.evaluate{
+  margin-bottom: 10rpx;
+  color: #d70715;
+  border: solid 2rpx #d70715;
+  box-sizing: border-box;
+}
+.content .express-info{
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 50rpx;
+  font-size: 25rpx;
+  border: solid 1rpx rgb(229, 229, 229);
+}
+.content .express-info:after{
+  content: '';
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 50rpx;
+  bottom: 60rpx;
+  border-top: solid 10rpx #000;
+  border-left: solid 10rpx #000;
+  transform-origin: center;
+  transform: rotate(135deg);
+}
+.content .express-info .cart{
+  margin-right: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: #3997DD;
+  border-radius: 50%;
+}
+.content .express-info .cart.no-cart{
+  background: none;
+}
+.content .express-info .cart image{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+}
+.content .express-info .text{
+  flex: 1;
+  max-width: 500rpx;
+  position: relative;
+}
+
+.content .express-info .text .address{
+  display: block;
+  width: 100%;
+  color: #3997DD;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.content .express-info .text .address.tip{
+  white-space: normal;
+  color: #000;
+}
+  /* 底部操作 */
+.footer{ width:100%; height:auto;clear:both; overflow:hidden;position:fixed; bottom:0;left:0;border-top:2rpx solid #e0e0e0; padding:10rpx 0;background:#fff;}
+.footer1,.footer2{
+  margin: 0 auto;
+  width: 96%;
+}
+.foot_left,.foot_right{font-size:26rpx; line-height: 50rpx;color:#000;}
+.foot_left{float:left;  padding-left:20rpx;}
+.foot_right{float:right;  padding-right:20rpx;}
+.foot2{
+  margin: 0;
+  padding: 10rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  box-sizing:border-box;
+  border-radius: 10rpx;
+}
+.foot2.cancel{
+  flex-direction: column;
+  flex: 0 1 18%;
+  background-color: transparent;
+}
+.foot2.wxpay{
+  flex: 0 1 30%;
+  background-color: #000;
+}
+.foot2.card{
+  flex: 0 1 45%;
+  flex-direction: column;
+  color: #fff;
+  background-color: #FF3F4A;
+}
+.foot3{
+  margin: 0 auto;
+  width: 95%;
+}
+/*.foot3{float:left; width:33%; box-sizing:border-box; padding:20rpx 20rpx 10rpx;}*/
+.foot2.tip{
+  background:#000;
+  color:#fff;
+  font-size: 32rpx;
+  border:2rpx solid #000;
+}
+/* 上传退货单号 */
+.submitCode{
+  position:fixed;
+  bottom:185rpx;
+  left:0;
+  right:0;
+  width:80%;
+  height:80rpx;
+  margin:0 auto;
+  font-size:26rpx;
+  line-height:80rpx;
+  color:#fff;
+  background:#000;
+  text-align:center;
+}
+
+/* 退款申请的底部样式 */
+.tuikuan_footer{
+  width:100%;
+  height:80rpx;
+  border-top:2rpx solid #e0e0e0;
+  font-size:26rpx;
+  line-height:80rpx;
+  color:#000;
+  position:fixed;
+  left:0;
+  bottom:90rpx;
+  text-align: center;
+  background: #fff;
+}
+.refund-express{
+  position: fixed;
+  bottom: 16rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  background: #fff;
+}
+.refund-express .refund-wrap{
+  width: 68%;
+}
+.refund-express .text{
+  font-size: 26rpx;
+}
+.refund-express .btn-text{
+  padding: 5rpx 10rpx;
+  font-size: 26rpx;
+  border: solid 1rpx red;
+  color: red;
+  border-radius: 20rpx;
+}
+.tuikuan_footer .address{
+  display: inline-block;
+}
+.tuikuan_footer text{
+  display: inline-block;
+  padding: 5rpx 10rpx;
+  color:#d70715;
+  line-height: 30rpx;
+  border: solid 1rpx #d70715;
+  border-radius: 10rpx;
+}
+
+
+/* 上传快递单号 - 弹出框 */
+.tishi{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:9999;}
+.opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.6;}
+.tanchu{ width:672rpx; height:512rpx; position:absolute; left:0; top:0; right:0; bottom:0; margin:auto; background:#fff;}
+.h2{width:100%; height:112rpx; font-size:30rpx; line-height:112rpx; background:#000; color:#fff; text-align:center;}
+.title{
+  margin: 20rpx auto 10rpx;
+  width:80%;
+}
+.title .h1{
+  font-size:30rpx;
+  margin-right: 20rpx;
+ }
+.title input{
+  height:72rpx;
+  border:4rpx solid #bdc3c7;
+  font-size:30rpx;
+  padding-left:15rpx;
+  box-sizing:border-box;
+}
+.p{ font-size:24rpx; width:100%; box-sizing:border-box; padding-left:30%; display:block; line-height:40rpx;color:red;}
+.bott{ width:100%; height:110rpx; clear:both; overflow:hidden; position:absolute; left:0;bottom:0;}
+.bot{ float:left; width:50%; height:80rpx;}
+.btn{  font-size:30rpx; line-height:80rpx; width:284rpx; height:80rpx; text-align:center; background:#000;color:#fff;}
+.true{ float:right; margin-right:12rpx;}
+.false{ float:left; margin-left:12rpx;}
+
+
+
+.shop{
+    border-bottom: 2rpx solid #e0e0e0;
+    padding: 20rpx ;
+    padding-top: 10rpx;
+    font-size: 24rpx;
+}
+.s-title{
+  font-weight: bold;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.s-name{
+  flex: 3;
+  font-size: 34rpx;
+}
+.s-map{
+  flex: 1;
+  background: #000;
+  color: #fff;
+  height: 50rpx;
+  text-align: center;
+}
+.shop-name{
+  font-weight: bold;
+  font-size: 30rpx;
+  padding: 10rpx 0  0  20rpx;
+}
+.toshop-btn{
+   border-top: 2rpx solid #e0e0e0;
+   padding: 20rpx 60rpx  ;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.s-btn{
+    font-size: 24rpx;
+    text-align: center;
+  margin: 0 30rpx;
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 2rpx solid #e0e0e0;
+}
+.s-img{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 7rpx;
+}
+.s-infos{
+   font-size: 20rpx;
+    padding: 20rpx ;
+     border-top: 2rpx solid #e0e0e0;
+}
+.s-i-title{
+  color: #d70715;
+  font-size: 24rpx;
+  margin-bottom: 5rpx;
+  display: flex;
+  flex-direction: row;
+}
+.refund-tip-title{word-break: break-all;}
+.s-item{
+  padding-left: 30rpx;
+  margin-bottom: 5rpx;
+}
+.s-info-red{
+  color: #d70715;
+}
+
+.hide{
+  display: none;
+}
+.return-popup{
+  position: fixed;
+  left:0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3)
+}
+.return-popup .popup-content{
+  padding: 20rpx 20rpx 0 20rpx;
+  width: 640rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+.return-popup .popup-content .title{
+  font-size: 28rpx;
+}
+.return-popup .popup-content .return-item{
+  padding: 15rpx 0;
+  font-size: 26rpx;
+  border-bottom: solid 1rpx #ccc;
+}
+.return-popup .popup-content .return-item .address{
+  align-items: flex-start;
+}
+.return-popup .popup-content .return-item .text:nth-child(1){
+  width: 130rpx;
+}
+.return-popup .popup-content .return-item .text:nth-child(2){
+  max-width: 370rpx;
+}
+.return-popup .popup-content .return-item .copy{
+  width: 105rpx;
+  background: #f2f2f2;
+  border-radius: 20rpx;
+}
+.return-popup .popup-content .return-item .copy image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.return-popup .popup-content .btn-wrap{
+  margin-top: 100rpx;
+}
+.return-popup .popup-content .btn-item{
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  border-top: solid 2rpx #ccc;
+  color: #606d8b;
+}
+.return-popup .popup-content .btn-item:nth-child(1){
+  border-right: solid 2rpx #ccc;
+}
+.tuihuodizhi{
+  border: solid 2rpx
+}
+
+.refund-address{
+  margin-bottom: 10rpx;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  border-bottom: solid 1rpx #ccc;
+}
+.refund-address .text{
+  width: 100rpx;
+}
+.refund-banner{
+  padding: 50rpx;
+  width: 100%;
+  background: rgb(255,85,0);
+  color: #fff;
+  box-sizing: border-box;
+}
+.refund-banner .refund-title{
+  font-size: 36rpx;
+}
+.refund-banner .refund-title text{
+  padding-left: 30rpx;
+}
+.refund-banner .sub-title{
+  font-size: 30rpx;
+}
+.contact{
+  margin-top: 30rpx;
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #000;
+  color: #fff;
+  border-radius: 40rpx;
+}

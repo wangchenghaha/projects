@@ -1,0 +1,296 @@
+.bg-noScro{
+    height: 87%;
+    overflow: hidden;
+}
+.bg{
+    width: 100%;
+    height: auto;
+    padding-bottom: 20rpx;
+    .box{
+        width: 100%;
+        margin-top: 30rpx;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        &-item{
+            margin-bottom: 20rpx;
+            margin-left: 20rpx;
+            flex: 0 1 345rpx;
+    
+            .imageView{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                position: relative;
+                .wuhuoImage{
+                    position: absolute;
+                    right: 0;
+                    bottom: 50rpx;
+                    width: 150rpx;
+                    height: 150rpx;
+                }
+                .zhekou{
+                    position: absolute;
+                    top: 15rpx;
+                    right: 0;
+
+                    width: 80rpx;
+                    height: 40rpx;
+                }
+                .zhekou-text{
+                    position: absolute;
+                    top: 15rpx;
+                    right: 0;
+                    width: 75rpx;
+                    line-height: 40rpx;
+
+                    font-size: 28rpx;
+                    color: white;
+                    text-align: center;
+                }
+                .opaView{
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+
+                    background-color: white;
+                    height: 40rpx;
+                    opacity: .6;
+
+                }
+                .opaText{
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+
+                    margin-left: 20rpx;
+                    color: #1B1C20;
+                    height: 40rpx;
+                    line-height: 40rpx;
+                    font-size: 22rpx;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow:clip;
+                
+                }
+            }
+            .botomView{
+                background-color: #CC292E;
+                width: 100%;
+                height: 80rpx;
+                display: flex;
+                flex-direction: row;
+                .titles{
+                    color: white;   
+                    line-height: 80rpx; 
+                    
+                }
+                .botom-leftView{
+                    display: flex;
+                    flex-direction: row;
+                    flex: 1;
+                    align-items: center;
+                    .botom-lefView-s{
+                        margin-left: 10rpx;
+                    
+                        height: 60rpx;
+                        width: auto;
+                        overflow: hidden;
+                        .titles-up{
+                            color: #C0BCBC;  
+                            font-size: 22rpx;
+                            text-decoration: line-through;
+                            line-height: 30rpx;
+                        }
+                        .titles-down{
+                            display: block;
+                            color: white;  
+                            font-size: 22rpx;
+                            line-height: 30rpx;
+                        }
+                    }
+                }
+                .botom-rightView{
+                    display: flex;
+                    background-color: white;
+                    border-radius: 5rpx;
+                    width: 90rpx;
+                    height: 50rpx;
+                    margin-right: 10rpx;
+                    margin-top: 15rpx;
+                    margin-bottom: 15rpx;
+                
+                    line-height: 50rpx;
+                    justify-content: center;
+                    font-size: 28rpx;
+                    color: #CC292E;
+                }
+            }
+        }
+    }
+}
+// 竖版
+.columbg{
+    width: 100%;
+    height: auto;
+    padding-bottom: 20rpx;
+    .columListBG{
+        width: 95%;
+        height: auto;
+        margin: 20rpx;
+        .imageView{
+
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            position: relative;
+            .wuhuoImage{
+                position: absolute;
+                right: 0;
+                bottom: 50rpx;
+                width: 200rpx;
+                height: 200rpx;
+            }
+            .zhekou{
+                position: absolute;
+                top: 20rpx;
+                right: 0;
+
+                width: 125rpx;
+                height: 60rpx;
+            }
+            .zhekou-text{
+                position: absolute;
+                top: 20rpx;
+                right: 0;
+                width: 120rpx;
+                line-height: 60rpx;
+            
+                font-size: 32rpx;
+                color: white;
+                text-align: center;
+            }
+            .opaView{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                background-color: white;
+                height: 60rpx;
+                opacity: .6;
+            }
+            .opaText{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+        
+                margin-left: 20rpx;
+                color: #1B1C20;
+                line-height: 60rpx;
+                font-size: 28rpx;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow:clip;
+            
+            }
+        }
+        .botomView{
+            background-color: #CC292E;
+            width: 100%;
+            height: 90rpx;
+            display: flex;
+            flex-direction: row;
+            .titles{
+                color: white;   
+                line-height: 90rpx; 
+            }
+            .botom-leftView{
+                display: flex;
+                flex-direction: row;
+                flex: 1;
+                align-items: center;
+                .botom-lefView-s{
+                    margin-left: 30rpx;
+                
+                    height: 70rpx;
+                    width: auto;
+                    
+                    overflow: hidden;
+                    .titles-up{
+                        color: #C0BCBC;  
+                        font-size: 26rpx;
+                        text-decoration: line-through;
+                        line-height: 35rpx;
+                    }
+                    .titles-down{
+                        color: white;  
+                        font-size: 26rpx;
+                        line-height: 35rpx;
+                    
+                    }
+                }
+            }
+            .botom-rightView{
+                display: flex;
+                background-color: white;
+                border-radius: 5rpx;
+                width: 120rpx;
+                height: 60rpx;
+                margin: 15rpx;
+            
+                line-height: 60rpx;
+                justify-content: center;
+                font-size: 30rpx;
+                color: #CC292E;
+            }
+        }
+        .collectionView{
+            margin-left: 30%;
+            margin-top: 10rpx;
+            margin-bottom: 20rpx;
+            width: 300rpx;
+            height: 60rpx;
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+        
+        
+            border-radius: 8rpx;
+            border: solid 2rpx #CC292E;
+            align-items: center;
+            justify-content: center;
+            .collectionImage{
+                margin-right: 10rpx;
+                width: 35rpx;
+            }
+            .collectionText{
+                font-size: 25rpx;
+                color: #CC292E;
+            }
+        }
+    }
+}
+// 无数据
+.noDataView{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    .image{
+        margin-top: 40%;
+    }
+    .text{
+        margin-top: 20rpx;
+        font-size: 32rpx;
+        color: black;
+    }
+}

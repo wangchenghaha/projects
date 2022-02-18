@@ -1,0 +1,37 @@
+<view class="main">
+  <text class="title text-c">换购商品</text>
+  <view class="content flex-bet">
+    <view class="goods" wx:for="{{giftList}}" wx:key="goodsCode" data-index="{{index}}" bindtap="selectedGoods">
+      <view class="goods-img">
+        <image lazy-load="true" src="{{item.goodsImg}}" mode="widthFix" />
+      </view>
+      <view class="goods-name text-c">{{item.goodsName}}</view>
+      <view class="price flex-center">
+        <view class="price-item price-discount {{item.discount==1?'discountPrice':''}}">
+          ¥{{item.discountPrice}}
+        </view>
+        <view class="price-item price-origin" wx:if="{{item.discount!=1}}">
+          ¥{{item.originalPrice}}
+        </view>
+        <view class="price-item discount" wx:if="{{item.discount!=1}}">{{item.newDiscount}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{showDetail}}">
+    <view class="bottom {{showDetail}}">
+      <view class="bottom-title">颜色分类 (库存:{{selectColorList[0].sellStock}})</view>
+      <view class="color">
+        <!-- <text class="color-item active">红色</text> -->
+        <text class="color-item true" wx:for="{{selectColorList}}" wx:key="colorCode">{{item.colorAlias}}</text>
+      </view>
+      <view class="bottom-title">尺码<text></text></view>
+      <view class="color">
+        <text class="color-item {{item.myActive}} {{item.sellStock <= 0 ? 'no-stock' : ''}}" wx:for="{{selectColorList[0].sizes}}" wx:key="sku" data-index="{{index}}" bindtap="selectSize">{{item.sizeAlias}}</text>
+        <!-- <text class="color-item active">180</text> -->
+      </view>
+      <view class="flex-bet count">购买数量: 1</view>
+      <button class="confirm-btn" bindtap="confirmBuy">确认购买</button>
+      <icon class="close" type="cancel" size="50rpx" color="#000" bindtap="closeDetail" />
+    </view>
+  </view>
+</view>

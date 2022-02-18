@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "poster": "../../components/qrcode/poster/index",
+    "footerBar": "../../components/footer/index",
+    "showQr": "../../components/showqr/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

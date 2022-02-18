@@ -1,0 +1,7 @@
+<view class="qrcodebox {{animate?'fadeIn': 'fadeOut'}} {{isBigPhone?'big':''}}" catchtouchmove='stop' catchtap='hideModal'>
+    <view class="content" catchtap='hideModal'>
+        <image src='{{posterCatch}}' class="image {{modalActive?'bounceIn': 'bounceOut'}}"  catchtap='stop' />
+        <!-- <view class="tips"></view> -->
+        <view class="btn" catchtap='getSettings'></view>
+    </view>
+</view>

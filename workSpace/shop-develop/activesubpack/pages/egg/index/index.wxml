@@ -1,0 +1,46 @@
+<!--activesubpack/pages/egg/index/index.wxml-->
+<view class="egg-container">
+    <!-- 背景 -->
+    <view class="egg-bg-wrapper">
+        <image src="{{activity.big_img}}" wx:if="{{isBigPhone}}" mode="widthFix" />
+        <image src="{{activity.small_img}}" mode="widthFix" wx:else />
+    </view>
+
+    <!-- 扭蛋机 -->
+    <view class="egg-wrapper">
+        <image src="{{activity.egg_img}}"/>
+        <view class="window-area">
+            <image wx:for="{{awards}}" wx:key="index" class="award_{{isStart ? index : ''}}" src="{{item.award_img}}" style="top: {{item.y}}rpx;left: {{item.x}}rpx; transform:rotate({{item.deg}}deg)" />
+        </view>
+        <view class="egg-btn-area">
+            <view class="btn1-box" bindtap="showWin">
+                <!-- <image src="{{activity.rule_btn_img}}" /> -->
+            </view>
+            <view class="btn2-box" bindtap="toRule">
+                <image src="{{activity.rule_btn_img}}" />
+            </view>
+        </view>
+        <view class="play-btn" bindtap="play"></view>
+    </view>
+
+    <!-- 我的奖品 -->
+    <image class="egg-my-award" bindtap="toList" src="{{activity.open_my_prize_img}}"></image>
+
+    <!-- 次数 -->
+    <view class="egg-start-num-box">
+        <view class="egg-num">可免费抽奖 {{can_join_num}} 次，分享好友得抽奖机会</view>
+    </view>
+
+    <!-- 画海报 -->
+    <view class="canvas-box" wx:if="{{isCanvas}}">
+        <view bindtap="setIsCanvas" class="canvas-shard"></view>
+        <canvas id="posterCanvas" type="2d"></canvas>
+    </view>
+</view>
+
+
+<!-- 分享 -->
+<com-share id="com-share" bind:sharecircle="shareCircle"></com-share>
+
+<com-gif gifConfig="{{gifConfig}}"></com-gif>
+<com-dialog dialogConfig="{{dialogConfig}}" bindawardShare="awardShare" bindcustomevent="closeWin" bindlookPrize="lookPrize" bindopenPrize="openPrize" bindtoHome="toHome"></com-dialog>

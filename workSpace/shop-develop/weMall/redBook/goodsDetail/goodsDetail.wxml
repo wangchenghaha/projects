@@ -1,0 +1,24 @@
+<temp-header></temp-header>
+<view class="content">
+  <view class="cover-img">
+    <image src="{{goodsDetail.imgUrl}}" mode="widthFix"></image>
+  </view>
+  <view class="flex-bet goods">
+    <view class="goods-item" wx:for="{{goodsDetail.goodsList}}" wx:key="gsColorCode">
+      <navigator url="/pages/content/content?colorCode={{item.gsColorCode}}">
+        <view class="goods-img">
+          <image src="{{item.goodsImg}}" mode="widthFix"></image>
+        </view>
+        <view class="goods-name text-c">{{item.goodsName}}</view>
+        <view class="price text-c">
+          <text class="pay-price">￥{{item.discountPrice}}</text>
+          <block wx:if="{{item.discountPrice !== item.originalPrice}}">
+            <text class="original-price">￥{{item.originalPrice}}</text>
+            <text class="discount">{{item.myDiscount}}</text>
+          </block>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<temp-footer></temp-footer>

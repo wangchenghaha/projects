@@ -1,0 +1,34 @@
+<view class="fixed">
+  <view class="">
+    <block wx:for="{{rightList}}" wx:key="list">
+      <view class="fixed-item ~flex-center" wx:if="{{item.show || (item.eventName === 'goTop' && showGoTop)}}" bindtap="{{item.eventName}}">
+        <button class="share-btn" wx:if="{{item.type === 'share'}}" open-type="share"></button>
+        <button class="share-btn" wx:if="{{item.showContact}}" open-type="contact"></button>
+        <image class="icon" src="{{item.icon}}" mode="widthFix"></image>
+        <text>{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+  <block wx:for="{{roomInfo}}" wx:key="roomid">
+    <view class="live-btn" wx:if="{{isHomePageLive || item.live_status === 103}}" >
+      <view class="~flex-center" bindtap="goLiveRoom" data-room="{{item.roomid}}">
+        <view class="avatar">
+          <image mode="aspectFill" src="{{item.share_img || item.anchor_img}}" ></image>
+        </view>
+        <text class="text">{{item.text}}</text>
+        <view class="icon">
+          <text></text>
+          <text></text>
+          <text></text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="fixed-center ~flex-center" wx:if="{{showNickName}}">
+  <view class="box ~flex-center">
+    <text class="title ~text-c">尊敬的顾客您好 \n 您绑定的专属时尚顾问微信昵称是</text>
+    <text class="nickname">{{nickName}}</text>
+    <icon class="close" type="cancel" color="#000" size="40rpx" bindtap="close" />
+  </view>
+</view>

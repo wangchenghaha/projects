@@ -1,0 +1,17 @@
+    
+<view class="details_size {{isShowNotice?'animate':'hide'}}" >
+    <view class="details_opacity" style="opacity:0.5;"></view>
+    <view class="details_con {{isIphoneX ?'fix-iphonex-button':''}}" style="bottom:0;">
+      <icon type="cancel" color="#000" size="50rpx" class = "close"  bindtap="closeNotice" />
+<!--       <image  src="../../images/qr_close.png"/>-->
+       <view class="dd_con">
+          <view class="title">{{activityTitle}}</view>
+          <view class="text">
+            <block wx:for="{{ruleList}}" wx:key="rule">
+              <text class="contentInfo">{{item.text}}</text>
+            </block>
+          </view>
+       </view>
+      <view class="konwThis" style="background:{{color}};" bindtap="closeNotice" >知道了</view>
+    </view>
+  </view>

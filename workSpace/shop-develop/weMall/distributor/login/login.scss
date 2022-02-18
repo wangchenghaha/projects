@@ -1,0 +1,87 @@
+.content{
+  width: 100%;
+  min-height: 100%;
+  image{
+    display: block;
+    width: 100%;
+  }
+  .header{
+    padding: 30rpx 0;
+    flex-direction: column;
+    .avatar{
+      width: 150rpx;
+      height: 150rpx;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+  .form{
+    margin: 200rpx auto 0;
+    width: 640rpx;
+    &-item{
+      padding: 10rpx;
+      margin-bottom: 10rpx;
+      border-bottom: solid 2rpx #000;
+      box-sizing: border-box;
+      &.shake {
+        animation: shake 1s;
+      }
+      &.error{
+        border-bottom: solid 2rpx red;
+      }
+      input{
+        flex: 1;
+        height: 60rpx;
+        line-height: 60rpx;
+        font-size: 36rpx;
+        box-sizing: border-box;
+        //border: solid 1rpx red;
+      }
+      .code-img{
+        width: 220rpx;
+        height: 80rpx;
+        border: solid 1rpx #ccc;
+      }
+      .btn-send{
+        text{
+          display: inline-block;
+          width: 220rpx;
+          height: 80rpx;
+          line-height: 80rpx;
+          font-size: 26rpx;
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+    .btn-login{
+      margin: 40rpx auto;
+      font-size: 34rpx;
+      color: #fff;
+      background: #000;
+    }
+  }
+
+
+  .login-text{
+    padding-top: 120rpx;
+    font-size: 40rpx;
+  }
+  @keyframes shake {
+    0%,100% {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0)
+    }
+    10%,30%,50%,70%,90% {
+      -webkit-transform: translateX(-10rpx);
+      -ms-transform: translateX(-10rpx);
+      transform: translateX(-10rpx)
+    }
+    20%,40%,60%,80% {
+      -webkit-transform: translateX(10rpx);
+      -ms-transform: translateX(10rpx);
+      transform: translateX(10rpx)
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "couponpop": "/components/couponPop/couponPop",
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods",
+    "line-icon": "../lineIcon/lineIcon",
+    "lineIcon": "/components/lineIcon/lineIcon"
+  }
+}

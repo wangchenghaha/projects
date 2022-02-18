@@ -1,0 +1,90 @@
+.rule-contaniner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.rule-wrap {
+    width: 551rpx;
+    height: 1081rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -275.5rpx;
+    margin-top: -599rpx;
+    z-index: 200;
+}
+
+.rule-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.rule-content {
+    width: 531rpx;
+    height: 700rpx;
+    position: absolute;
+    top: 300rpx;
+    background: transparent;
+    left: 10rpx;
+    z-index: 20;
+}
+
+.rule-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    font-size: 22rpx;
+    color: #666;
+    padding: 0 45rpx;
+    line-height: 34rpx;
+    box-sizing: border-box;
+}
+
+.address-btn {
+    position: absolute;
+    bottom: -49rpx;
+    left: 50%;
+    margin-left: -179rpx;
+    width: 359rpx;
+    height: 98rpx;
+    z-index: 10;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: -125rpx;
+    left: 50%;
+    margin-left: -25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    z-index: 10;
+}
+
+.rule-title {
+    text-align: center;
+    font-size: 28rpx;
+    color: #000;
+    padding: 20rpx 0;
+    margin-bottom: 15rpx;
+    font-weight: bold;
+}
+
+.rule-cont {
+    text-align: center;
+    font-size: 26rpx;
+    color: #333;
+    line-height: 48rpx;
+    margin: 15rpx 0;
+}
+
+.rule-left {
+    text-align: left;
+}

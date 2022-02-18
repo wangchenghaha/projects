@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="bottom">
+    <view class='progress_box' bindtap='openRecording' style="display:{{openRecordingdis}}">
+      <view class="progress_bgs">
+        <view class="progress_bg">
+          <image class="progress_img" src='/images/luyin.jpg'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='progress_box' bindtap='shutRecording' style="display:{{shutRecordingdis}}">
+    <view class="progress_bgs">
+      <view class="progress_bg">
+        <image class="progress_img" src='/images/jieshu.jpg'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="" hover-class="none" hover-stop-propagation="false">
+  {{recordingTimeqwe}}
+</view>
+<view class="play-record" bindtap="recordingAndPlaying">
+  播放录音
+</view>

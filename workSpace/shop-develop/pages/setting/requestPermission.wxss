@@ -1,0 +1,124 @@
+/* components/authorize/authorize.wxss */
+.authorize-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.authorize-wrapper .container{
+  /*margin:0 auto;*/
+  width: 100%;
+}
+.authorize-wrapper .authorize-main{
+  padding-bottom: 20rpx;
+  background: #fff;
+}
+.authorize-wrapper .authorize-main .banner{
+  position: relative;
+}
+.authorize-wrapper .authorize-main .banner .logo{
+  position: absolute;
+  left: 50%;
+  bottom: 100rpx;
+  margin-left: -250rpx;
+  width: 500rpx;
+  height: 150rpx;
+}
+.authorize-wrapper .authorize-main .banner .logo image{
+  height: 150rpx;
+}
+.authorize-wrapper .authorize-main .banner image{
+  width: 100%;
+}
+.authorize-wrapper .authorize-main text{
+  display: block;
+}
+.authorize-main .sub-title{
+  padding: 20rpx 0;
+  color: rgba(160,160,160,1);
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+  border-top: solid 1rpx #8a8a8a;
+}
+.authorize-main .desc{
+  padding: 20rpx;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: rgba(160,160,160,1);
+}
+.authorize-wrapper .title{
+  margin: 15rpx auto;
+  width: 540rpx;
+  font-size: 36rpx;
+  text-align: center;
+}
+.authorize-wrapper .server-list image{
+  display: block;
+  width: 75rpx;
+  height: 75rpx;
+  margin-right: 25rpx;
+}
+.server-list{
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 30rpx;
+  width: 90%;
+}
+.server-list .list-row{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+.server-list .list-item{
+  flex: 0 1 50%;
+}
+.server-list .list-item .text1{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.server-list .list-item .text2{
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+.authorize-btn{
+  margin-top:20rpx;
+  background: #fff;
+  color: #22b415;
+}
+.btn-wrapper .btn-item{
+  margin-top: 20rpx;
+  flex: 0 1 50%;
+  height: 100%;
+}
+.btn-active{
+  animation: click 0.5s;
+  transform-origin: center;
+}
+@keyframes click {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0.8);
+  }
+}
+.back{
+  position: fixed;
+  left: 0;
+  top: 40rpx;
+  padding: 5rpx 30rpx 5rpx 20rpx;
+  font-size: 30rpx;
+  background: rgba(255,255,255,0.8);
+  color: #000;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+.clause{
+  padding: 20rpx;
+  align-items: flex-start;
+  font-size: 24rpx;
+}
+.clause text{
+  color: #c30202;
+}

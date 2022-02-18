@@ -1,0 +1,7 @@
+<!-- 火龙国和汤圆国区分：去掉_tyg是火龙国 -->
+<image src="{{imagePath}}index_bg_tyg.png" class="bg" mode="aspectFill" />
+
+<view class="bg-btn" bindtap="onClick">立即参与</view>
+<view class="shuoming" bindtap="guize">规则</view>
+
+

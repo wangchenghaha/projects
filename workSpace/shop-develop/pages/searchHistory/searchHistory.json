@@ -1,0 +1,6 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "dmp-goods": "/components/dmpRecommendGoods/dmpRecommendGoods"
+  }
+}

@@ -1,0 +1,126 @@
+@keyframes animation-fadeIn {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animation-fadeIn {
+  animation: animation-fadeIn 0.5s linear both;
+}
+@keyframes animation-zoomIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.animation-zoomIn {
+  left: 50%;
+  top: 50%;
+  animation: animation-zoomIn 0.3s linear both;
+}
+.ant-sellerticket-modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+.ant-sellerticket-modal-wrapper view,
+.ant-sellerticket-modal-wrapper cover-view,
+.ant-sellerticket-modal-wrapper cover-image,
+.ant-sellerticket-modal-wrapper text,
+.ant-sellerticket-modal-wrapper swiper,
+.ant-sellerticket-modal-wrapper swiper-item,
+.ant-sellerticket-modal-wrapper input,
+.ant-sellerticket-modal-wrapper picker,
+.ant-sellerticket-modal-wrapper textarea,
+.ant-sellerticket-modal-wrapper form {
+  box-sizing: border-box;
+  word-break: break-all;
+}
+.ant-sellerticket-modal-wrapper button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  line-height: initial;
+}
+.ant-sellerticket-modal-wrapper button::after {
+  border-radius: 0;
+  border: none;
+}
+.ant-sellerticket-modal-wrapper .mask-area {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.ant-sellerticket-modal-wrapper .content-area {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 630rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ant-sellerticket-modal-wrapper .content-area .title-box {
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ant-sellerticket-modal-wrapper .content-area .title-box .title {
+  font-size: 32rpx;
+  color: #000;
+  margin-bottom: 30rpx;
+}
+.ant-sellerticket-modal-wrapper .content-area .title-box .desc {
+  font-size: 28rpx;
+  color: #000;
+}
+.ant-sellerticket-modal-wrapper .content-area .btns-box {
+  width: 100%;
+  height: 140rpx;
+  padding: 0 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.ant-sellerticket-modal-wrapper .content-area .btns-box .btn-success,
+.ant-sellerticket-modal-wrapper .content-area .btns-box .btn-cancel {
+  width: 194rpx;
+  height: 70rpx;
+  letter-spacing: 2rpx;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.ant-sellerticket-modal-wrapper .content-area .btns-box .btn-success {
+  color: #fff;
+  background: #000;
+}
+.ant-sellerticket-modal-wrapper .content-area .btns-box .btn-cancel {
+  color: #fff;
+  background: #b3b3b3;
+}

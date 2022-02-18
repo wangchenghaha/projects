@@ -1,0 +1,28 @@
+<view class="position {{show}}" mut-bind:tap="hideScreen">
+    <view class="screen" mut-bind:tap="showScreen">
+    <view class="title">筛选</view>
+    <view class="screen-list" wx:for="{{screenList}}" wx:key="screen">
+      <text class="text">{{item.text}}</text>
+      <block wx:if="{{item.list && item.list.length}}">
+        <view class="time ~flex-bet">
+          <block wx:for="{{item.list}}" wx:key="list" wx:for-item="timeItem" wx:for-index="ind">
+            <view class="time-item {{timeItem.checked}}" data-index="{{index}}" data-ind="{{ind}}" bindtap="selectTime">{{timeItem.text}}</view>
+          </block>
+        </view>
+        <view class="date ~flex-bet">
+          <picker mode="date" value="{{startDate}}" data-type="startDate" bindchange="changeTime">
+            <view class="picker ~text-c">  {{startDate || '开始日期'}} </view>
+          </picker>
+          —
+          <picker mode="date" value="{{endDate}}" data-type="endDate" bindchange="changeTime">
+            <view class="picker ~text-c"> {{endDate || '结束日期'}} </view>
+          </picker>
+        </view>
+      </block>
+    </view>
+    <view class="wrap ~flex-start">
+      <view class="btn btn-reset ~text-c">重置</view>
+      <view class="btn btn-confirm ~text-c ~color-fff">确定</view>
+    </view>
+  </view>
+</view>

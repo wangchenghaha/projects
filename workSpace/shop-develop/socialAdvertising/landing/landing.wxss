@@ -1,0 +1,11 @@
+/* socialAdvertising/landing/landing.wxss */
+.frame_landing{width: 100%;height: auto;display: flex;flex-direction: column; clear:both; overflow:hidden;background-color: white;}
+.img_with_full{width: 100%;}
+.wrapper_index ,.wrapper_index_2{width: 100%;height:140rpx;display: flex;justify-content: center;
+    flex-direction: column;align-items: center;}
+.img_index{width: 377rpx;}
+.wrapper_index_2{height: 217rpx;}
+
+.wrapper_side_by_side{width: 100%;display: flex;flex-direction: row;justify-content: center;align-items: center;}
+.img_single{width: 320rpx;}
+.img_vertical{width: 36rpx;}

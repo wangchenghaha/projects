@@ -1,0 +1,3 @@
+<view>
+  <subscribe room-id="{{roomId}}"></subscribe>
+</view>

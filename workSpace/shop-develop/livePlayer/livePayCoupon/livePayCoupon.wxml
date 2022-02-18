@@ -1,0 +1,5 @@
+<view>
+	<view class="bg">
+		<image class="bg-img" src="{{cover_img}}" mode="widthFix"></image>
+	</view>
+</view>

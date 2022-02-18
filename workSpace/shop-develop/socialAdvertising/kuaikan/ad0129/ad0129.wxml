@@ -1,0 +1,7 @@
+<view class="frame" bind:tap="onFrameClick">
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_wenxuan_0129_010.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_wenxuan_0129_020.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="领券包" bind:tap="onCouponClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_wenxuan_0129_030.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="袜子" bind:tap="onSockClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_wenxuan_0129_040.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="红包封面" bindtap="onFolderClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_wenxuan_0129_050.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="小程序首页" bind:tap="onIndexClick" />
+</view>

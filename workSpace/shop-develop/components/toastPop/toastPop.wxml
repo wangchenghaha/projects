@@ -1,0 +1,6 @@
+<view class="details_size {{toast_display?'animate':'hide'}}" >
+    <view class="details_con" >
+        <view>您已成功领取，</view>
+        <view>结账时系统自动使用！</view>
+    </view>
+</view>

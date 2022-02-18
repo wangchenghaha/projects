@@ -1,0 +1,5 @@
+<view class="pages">
+    <view class="bg">
+        <image class="bgimg" src="{{whitebg}}"></image>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "购物商城",
+  "navigationStyle" : "custom",
+  "enablePullDownRefresh": true,
+  "usingComponents":{
+    "my-tip":"/components/tip/tip",
+    "my-footer": "/components/footer/footer",
+    "couponpop": "/components/couponPop/couponPop",
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods",
+    "contact-serve": "/components/contactServe/contactServe",
+    "home-page": "/components/home/home",
+    "home-fixed": "/components/homeFixed/homeFixed",
+    "ad-pop": "/components/advertisement/advertisement",
+    "line-icon": "/components/lineIcon/lineIcon",
+    "bind-guide": "/components/bindGuide/bindGuide"
+  }
+}

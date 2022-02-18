@@ -1,0 +1,18 @@
+<view class="main">
+  <view class="banner">
+    <image src="{{record.bannerImgUrl}}" mode="widthFix" ></image>
+  </view>
+  <view class="go-home flex-bet">
+    <image class="logo" src="{{logo}}" mode="heightFix"></image>
+    <text bindtap="goHome">进入商城 > </text>
+  </view>
+  <view class="goods flex-bet">
+    <view class="goods-item" wx:for="{{goodsList}}" wx:key="id">
+      <navigator url="/pages/content/content?colorCode={{item.gsColorCode}}">
+        <image src="{{item.goodsImg}}" mode="widthFix"></image>
+      </navigator>
+      <view class="goods-name text-c">{{item.goodsName}}</view>
+      <view class="goods-price text-c">￥<text>{{item.discountPrice}}</text></view>
+    </view>
+  </view>
+</view>

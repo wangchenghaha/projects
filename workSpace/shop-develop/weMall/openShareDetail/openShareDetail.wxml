@@ -1,0 +1,4 @@
+<view>
+  <temp-header wx:if="{{shareDetail.nickname}}" nickname="{{shareDetail.nickname}}" avatarUrl="{{shareDetail.portrait}}"></temp-header>
+  <temp-content wx:if="{{shareDetail.id}}" content="{{shareDetail}}"></temp-content>
+</view>

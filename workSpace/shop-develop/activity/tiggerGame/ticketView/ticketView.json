@@ -1,0 +1,9 @@
+{
+  "navigationStyle" : "custom",
+  "navigationBarTitleText" : "兑换奖品",
+  "usingComponents": {
+    "customView_vm" : "../components/ticketView_vm/ticketView_vm",
+    "customView_only" : "../components/ticketView_only/ticketView_only",
+    "customView_fol" : "../components/ticketView_fol/ticketView_fol"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pintuan-list":"../components/pintuanListView/pintuanListView",
+    "chima-bonuces":"../components/chimaBounces/chimaBounces"
+  },
+  "navigationBarTitleText": "商品详情"
+}

@@ -1,0 +1,128 @@
+
+
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden;}
+
+/* 回到顶部 */
+.goTop{position:fixed; bottom:200rpx; right:20rpx; width:80rpx; height:80rpx; z-index:999;}
+.goTop image{ width:80rpx; height:80rpx;}
+
+
+/* 回到首页 */
+.gotoIndex{position:fixed; bottom:280rpx; right:20rpx; width:80rpx; height:80rpx; z-index:999;}
+.gotoIndex image{ width:80rpx; height:80rpx;}
+
+
+/* 顶部信息 */
+.header{ width:100%; border-bottom:2rpx solid #d1d1d1;clear:both; overflow: hidden;
+margin-bottom:20rpx; position:fixed; top:0; left:0; z-index:999; background:#fff;}
+.header .h_item{ float:left; position:relative; height:100rpx; font-size:30rpx; line-height:100rpx;}
+.header .like{ width:128rpx; height: 98rpx;}
+.header .like image{ width:36rpx; height:36rpx; position:absolute;left:20rpx; top:0; bottom:0; margin:auto 0;}
+.header .logo{ width:485rpx; height:98rpx;}
+.header .logo image{ width:220rpx; position:absolute;left:0; right:0; top:0; bottom:0; margin:auto;}
+.header .search{ width:75rpx; height:98rpx;}
+.header .search image{ width:40rpx; height:38rpx; position:absolute;left:0; right:0; top:0; bottom:0; margin:auto;}
+.header .me{ width:52rpx; height:98rpx;}
+.header .me image{ width:34rpx; height:38rpx; position:absolute;left:0; right:0; top:0; bottom:8rpx; margin:auto;}
+.header .h_item navigator{ width:100%; height: 100%;}
+
+/* 竖排手动轮播 */
+.lunbo{ width:100%; height:auto; clear:both; overflow:hidden; padding:0 0 10rpx;}
+.lunbo .imgs{ width:100%; height:auto; clear:both; overflow:hidden;}
+.lunbo .imgs image{ display:block; width:100%; height:1200rpx;}
+
+.leftNav{ width:32rpx; height:auto; position:fixed; left:30rpx; top:467rpx;}
+.leftNav .spans{ width:13rpx; height:13rpx; border-radius:50%; border:2rpx solid #000; margin-bottom:12rpx; background:#fff;}
+.leftNav .spanList{ background:#000;}
+.leftNav .down{ width:32rpx; height:32rpx;}
+.leftNav .down image{ display:block; width:32rpx; margin-left:-8rpx;}
+
+/* 主体部分 */
+.con{ width:100%; height:auto; clear:both; overflow:hidden; box-sizing:border-box; padding:0 20rpx 80rpx;}
+.h1{ font-size:30rpx; line-height:40rpx; color:#000; padding-bottom:6rpx;}
+.kuanhao{ font-size:28rpx; line-height:40rpx; color:#000; padding-bottom:5rpx;}
+.nowPrice{ width:100%; height: 40rpx; overflow:hidden; color:#ff5000; padding-bottom:6rpx;}
+.nowPrice .fuhao{ float:left; font-size:32rpx; line-height:46rpx; padding-right:10rpx;}
+.nowPrice .money{ float:left; font-size:32rpx; line-height:40rpx;}
+.oldPrice{font-size:24rpx; line-height:34rpx; color:#8B8B8B; clear:both; overflow:hidden; padding-bottom:8rpx;}
+.oldPrice .jiage{ float:left;  padding-right:3rpx;}
+.oldPrice .money{ float:left; position:relative; padding-left:3rpx;}
+.oldPrice .money .xian{ width:100%; height:2rpx; background:#8B8B8B; position:absolute; top:0; bottom:0;left:0;margin:auto 0;}
+
+.liebie{ width:100%; height:80rpx; font-size:28rpx; line-height:80rpx; border:2rpx solid #ccc; border-left:none;
+ border-right:none; background:url(https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_right_white.png) no-repeat right center; background-size:auto 24rpx;
+ margin-bottom:30rpx;}
+
+
+/* 底部栏 */
+.footer{ width:100%; height:80rpx; clear:both; overflow:hidden; position:fixed; bottom:0; left:0;}
+.f_list{ float:left; width:65%; height:80rpx; font-size:28rpx; line-height:80rpx; color:#000; text-align:center;}
+.daogou{ background:#fff; box-sizing:border-box; border:2rpx solid #000;}
+.goumai{ background:#d70715; color:#fff; width:35%;}
+
+/* 绑定导购 - 弹出框 */
+.tishi{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:9999;}
+.opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0.5;}
+.tanchu{ width:672rpx; height:456rpx; position:absolute; left:0; top:0; right:0; bottom:0; margin:auto; background:#fff;}
+.h2{width:100%; height:112rpx; font-size:30rpx; line-height:112rpx; background:#000; color:#fff; text-align:center;}
+.title .h1{ font-size:30rpx; width:100%; text-align:center; display:block; line-height:110rpx; color:#000;}
+.title input{ display:block; width:88%; height:72rpx; border:4rpx solid #bdc3c7; margin:0 auto; font-size:30rpx; 
+  padding-left:15rpx;box-sizing:border-box;}
+.title .p{ font-size:24rpx; width:100%; box-sizing:border-box; padding-left:6%; display:block; line-height:40rpx;
+ color:red;}  
+.bott{ width:100%; height:110rpx; clear:both; overflow:hidden; position:absolute; left:0;bottom:0;}
+.bot{ float:left; width:50%; height:80rpx;}
+.btn{  font-size:30rpx; line-height:80rpx; width:284rpx; height:80rpx; text-align:center; background:#000;
+ color:#fff;}
+.true{ float:right; margin-right:12rpx;}
+.false{ float:left; margin-left:12rpx;}
+
+/* 选择尺码等 - 弹出框 */
+.details_size{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:8888;}
+.details_opacity{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; opacity:0;}
+.details_con{width:100%; height:auto; clear:both; position:absolute; left:0; bottom:-400px; 
+background:#fff;}
+.dd_con{ box-sizing:border-box; padding:0 20rpx;}
+.details_sizeOne_A{width:100%; height:242rpx; clear:both; position:relative;border-bottom:2rpx solid #e8e8e8;}
+.a_list{ float:left; height:162rpx;}
+.a_left{ width:164rpx; height:262.3rpx; border:2rpx solid #e8e8e8; margin-top:-40rpx;}
+.a_left image{ width:100%; height: 100%;}
+
+.a_center{ width:430rpx; height: 162rpx; float:left; font-size:32rpx; line-height:38rpx; padding-left:20rpx;}
+.a_center .money{ color:#ff580c; font-size:32rpx; padding-top:10rpx;}
+.a_center .kucun,.a_center .chicun{ color:#000; font-size:26rpx;}
+.a_center .kucun text{ font-size:32rpx;}
+
+.a_right{ width:60rpx; height:60rpx; position:absolute; right:0; top:10rpx;}
+.a_right image{ width:42rpx; margin:9rpx 0 0 9rpx;}
+
+
+/* 颜色分类 */
+.details_sizeOne_B{ width:100%; height: auto; clear: both; overflow: hidden; border-bottom:2rpx solid #e8e8e8;}
+.b_title{ font-size:24rpx; line-height:60rpx; color:#000;}
+.b_ul{ width:100%; height:auto; clear:both; overflow:hidden;}
+.b_li{ float:left; border-radius:10rpx; font-size:24rpx; line-height:60rpx; background:none; margin-bottom:20rpx;
+ color:#000; padding:0 12rpx; margin-right:15rpx;}
+.b_list{ background:#ff5000; color:#fff; }
+.details_sizeOne_B .chima_list{ background:#f5f5f5; color:rgb(204, 204, 204);}
+
+
+/* 购买数量 */
+.details_sizeOne_D{ width:100%; height:auto; clear:both; overflow:hidden; border-bottom:2rpx solid #e8e8e8;}
+.c_title{ float:left; width:50%; font-size:28rpx; padding:30rpx 0; color:#000;}
+.c_number{ float:left; width:50%; height:52rpx; padding-top:22rpx;}
+.c_add{ float:right; width:52rpx; height:52rpx; line-height:52rpx; text-align: center; border:2rpx solid #ccc; background:#ccc;}
+.c_num{ float:right; width:100rpx; height:52rpx; text-align: center; border:2rpx solid #ccc; border-right:none;
+ font-size:28rpx; line-height:52rpx;}
+.c_jian{ float:right; width:52rpx; line-height:52rpx; height:52rpx; text-align: center; border:2rpx solid #ccc; border-right:none; background:#ccc;}
+
+
+.d_bottom{ width:100%; height:80rpx; font-size:28rpx; line-height:80rpx; color:#000; text-align:center;}
+.d_bottom .d_daogou{ float:left; width:65%; height:80rpx; background:#fff; border:2rpx solid #000; box-sizing:border-box;}
+.d_bottom .d_goumai{ float:left; width:35%; height:80rpx; background:#d70715; color:#fff;}
+
+
+/* 分享给朋友 */
+.shareToFriend{ background:none; border:none; margin:0; padding:0; width:70rpx; height:70rpx; position:fixed; top:40%; right:20rpx;}
+.shareToFriend::after{ border:1px solid rgba(0, 0, 0, 0);}
+.shareToFriend image{ display:block;width:100%;height:100%;}

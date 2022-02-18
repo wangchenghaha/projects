@@ -1,0 +1,200 @@
+page{
+    background-color: #F3F4F5;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+}
+.head{
+    background-color: #CC292E;
+    width: 100%;
+    height: 150rpx;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    &-leftView{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-left: 40rpx;
+        &-topTitle{
+            font-size: 34rpx;
+            color: white;
+        }
+        &-botomTitle{
+            font-size: 23rpx;
+            color: white;
+        }
+    }
+    &-image{
+        margin-right: 50rpx;
+        width: 60rpx;
+        height: auto;
+    }
+}
+// 地址
+.address{
+    width: 100%;
+    height: 100rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &-leftView{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        
+        &-title{
+            font-size: 25rpx;
+            color: black;
+        }
+    }
+}
+
+// 邀请好友
+.yaoqing{
+    margin-top: 20rpx;
+    width: 100%;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    background-color: white;
+    &-titles{
+        padding: 0 0 0 20rpx;
+        font-size: 25rpx;
+        color: #878787;
+        height: auto;
+    }
+    .topView{
+        width: 100%;
+        height: 30rpx;
+        display: flex;
+        flex-direction: row;
+        line-height: 30rpx;
+        &-image{
+            width: 30rpx;
+            margin-left: 20rpx;
+            margin-right: 20rpx;
+            height: auto;
+        }
+        &-title{
+            font-size: 25rpx;
+            width: 100%;
+            flex: 1;
+            color: black;
+        }
+    }
+    .botomView{
+        position: relative;
+        margin-top: 10rpx;
+        width: 100%;
+        height: 85rpx;
+        display: flex;
+        flex-direction: row;
+
+        &-leftView{
+            flex: 1;
+            width: 100%;
+            height: 85rpx;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 60rpx;
+            .icon{
+                height: 70rpx;
+                width: 70rpx;
+                border-radius: 37rpx;
+                border: solid 2rpx #CC292E;
+                margin-left: 10rpx;
+            }
+            &-title{
+                position: absolute;
+                top: 5rpx;
+                left: 67rpx;
+                width: 50rpx;
+                height: 23rpx;
+                background-color: #CC292E;
+                border-radius: 21rpx;
+    
+                font-size: 20rpx;
+                line-height: 20rpx;
+                color: white;
+                text-align: center;
+    
+            }
+        }
+    }
+}
+// 商品
+.shop{
+    margin-top: 20rpx;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    
+    &-rightView{
+        display: flex;
+        flex-direction: column;
+        margin: 20rpx 20rpx 20rpx 0;
+        .zhekou{
+            background-color: #DD0000;
+            font-size: 24rpx;
+            text-align: center;
+            color: white;
+            padding: 5rpx;
+        }
+    }
+}
+// 支付信息
+.zhifu{
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+}
+.title{
+    font-size: 25rpx;
+    color: #373738;
+    &-small{
+        font-size: 23rpx;
+        color: #878787;
+    }
+    &-red{
+        font-size: 26rpx;
+        color: red;
+    }
+}
+.tempView{
+    width: 100%;
+    height: 100rpx;
+}
+// // 底部购买按钮
+.buyView{ 
+    height:100rpx; 
+    clear:both; 
+    overflow:hidden; 
+    position:fixed; 
+    bottom:0; 
+    left:0; 
+    right: 0;
+    background-color: black;
+
+    display: flex;
+    flex-direction: row;
+    &-viewText{
+        color: white;
+        font-size: 30rpx;
+        width: 100%;
+        height: 100rpx;
+        line-height: 100rpx;
+        text-align: center;
+    }
+}

@@ -1,0 +1,180 @@
+
+<view class="topImgView">
+    <image src="{{bgImg}}" style="width:100%;" mode="widthFix" />
+    
+    <image src="{{xuanyunImg}}" mode="widthFix" class="nianshouView" style="bottom: {{isIphone6 ? 11 : 10.3}}%;opacity: {{showXuanyun ? 1 : 0}};" />
+    <image src="{{baozhaImg}}" mode="widthFix" class="baozha" style="opacity: {{showBaozha ? 1 : 0}};" bindload="baozhaLoad" />
+    
+    <view class="nianshouView" style="opacity: {{showXuanyun ? 0 : 1}};bottom: 9%;">
+        <image src="{{nianshou}}" style="width:100%" mode="widthFix" />
+    </view>
+
+    <view wx:if="{{topTitles.length > 0}}" class="topTitleView" style="bottom: {{isIphone6 ? 53 : 48}}%;">
+        <view class="toptitles">
+            <view class="titls" wx:for="{{topTitles}}" wx:key="titles">{{item}}</view>
+            <view class="weiba"></view>
+        </view>
+    </view>
+    <view class="gonglueView">
+        <image src="{{gonglueImg}}" class="gonglue" data-type="gonglue" bindtap="rightTap" />
+        <image src="{{tujianImg}}" class="gonglue" data-type="tujian" bindtap="rightTap" />
+    </view>
+</view>
+    <view class="centerView">
+        <view class="left" style="background-image: url('{{leftImg}}');" data-type="prize" bindtap="rightTap"></view>
+        <view class="center">
+            <image src="{{playBtn}}" style="width:400rpx;" mode="widthFix" bindtap="openBox" />
+            <button wx:if="{{!showOpenbox}}" open-type="share" class="share"></button>
+        </view>
+        <view class="right">
+            <view class="top" style="animation: {{attackAnimate}} 0.4s linear 1 forwards;overflow: {{attackAnimate == '' ? 'hidden' : 'visible'}};" bindanimationend="acttackEnd">
+                <image src="{{renwuImgJson.img}}" class="top-img" style="animation: {{upAnimate}} 0.4s {{attackAnimate == '' ? 'linear' : 'cubic-bezier(.3,.59,.31,1.07)' }} 1 forwards;" mode="widthFix" />
+            </view>
+            <view class="bottom" style="background-image: url('{{rightBgImg}}');" bindtap="danianshou">
+                <image src="{{rightImg}}" class="bottom-img" />
+            </view>
+
+            <view class="miaoshu">
+                <view class="miaoshu-titles">(每集一个生肖</view>
+                <view class="miaoshu-titles">即可打1次年兽)</view>
+            </view>
+        </view>
+    </view>
+    <view class="bottomView">
+        <view class="topView" style="background-image: url({{mangheTitleImg}});margin: 40rpx auto {{isIphone6 ? 20 : 50}}rpx auto;">我的盲盒</view>
+        <scroll-view class="scroView" scroll-x="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
+            <view class="imgView" wx:for="{{boxArrs}}" wx:key="box" id="{{index}}" bindtap="chaiTap">
+                <image src="{{item.img}}" style="width:100%;height:100%;" />
+                <view class="imgView-text" style="color:{{item.color}};font-size: 24rpx;">x<text style="font-size: 32rpx;">{{item.num}}</text></view>
+            </view>
+        </scroll-view>
+    </view>
+
+<block wx:if="{{chaiBoxTotal}}">
+    <view class="bouncedBg"></view>
+    <view class="bouncedView" wx:if="{{chaiBoxOne}}">
+
+            <view class="bouncedView-imgView">
+                <image src="{{chaiOpenBoxOneImg}}" style="width:475rpx;opacity: {{chaiBoxOne_animate ? 0 : 1}};" mode="widthFix" />
+                <image wx:if="{{chaiBoxOne_animate}}" src="{{chaiGif}}" class="bouncedView-imgView-gifImg" style="opacity: {{chaiBoxOne_animate ? 1 : 0}};" mode="widthFix" bindload="chaiLoad" />
+            </view>
+            <view class="bouncedView-btnView" style="opacity: {{chaiBoxOne_animate ? 0 : 1}};" bindtap="openBoxOneTap">立即拆开</view>
+            <icon type="cancel" color="#BAB5BB" class="icon" style="opacity: {{chaiBoxOne_animate ? 0 : 1}};" size='40' bindtap="bouncedClosed" />
+
+    </view>
+    <view class="bouncedView" wx:if="{{chaiBoxTwo}}">
+        <view class="bouncedView-animateView">
+            <image src="{{mangheJson.img}}" style="width:475rpx;" mode="widthFix" />
+            <view class="centerImgView" style="background-image: url({{chaiTwoCenterImg}});">{{mangheJson.title}}</view>
+            <image src="{{mangheJson.goodsPic || mangheJson.giftPic}}" mode="widthFix" style="width:{{mangheJson.isSKU ? mangheJson.otherW : mangheJson.yhqW}}rpx;" bindtap="concentTap" />
+            <view class="yhqTitle" wx:if="{{!mangheJson.isSKU}}">{{mangheJson.subTitle}}</view>
+
+            <view class="iconView">
+                <icon type="cancel" color="#BAB5BB" size='40' bindtap="bouncedClosedTwo" />
+            </view>
+        </view>
+        
+    </view>
+
+</block>
+
+<block wx:if="{{showOpenbox_animate}}">
+    <view class="bouncedBg"></view>
+    <view class="bouncedView">
+        <view class="bouncedView-animateView">
+            <view class="gongxiBouncedView" style="background-image: url({{gongxiBouncedJson.img}});">
+                <view class="gongxiBouncedView-title">{{gongxiBouncedJson.title}}</view>
+                <image src="{{gongxiBouncedJson.yhqImg}}" class="gongxiBouncedView-yhq" mode="widthFix" />
+                <view class="gongxiBouncedView-subTitle">{{gongxiBouncedJson.subTitle}}</view>
+            </view>
+            <icon style="margin-top: 50rpx;" type="cancel" color="#BAB5BB" size='40' bindtap="closed" />
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{canNotPlay || noManghe}}">
+    <view class="bouncedBg"></view>
+    <view class="bouncedView">
+        <view class="bouncedView-animateView">
+            <view class="gongxiBouncedView" style="background-image: url({{yihanBouncedImg}});width: 519rpx;height: 635rpx;">
+                <view class="yihanBtnView">立即邀请好友</view>
+                <button open-type="share" class="yihanShare"></button>
+            </view>
+            <icon style="margin-top: 50rpx;"  type="cancel" color="#BAB5BB" size='40' bindtap="closed" />
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{showIs12}}">
+    <view class="bouncedBg"></view>
+    <view class="bouncedView">
+        <view class="bouncedView-animateView">
+            <view class="gongxiBouncedView" style="background-image: url({{is12Img}});width: 519rpx;height: 630rpx;">
+                <view class="is12View">
+                    <view class="is12View-text">您已集齐12生肖</view>
+                    <view class="is12View-text">{{is12Text}}</view>
+                </view>
+            </view>
+            <icon style="margin-top: 50rpx;"  type="cancel" color="#BAB5BB" size='40' bindtap="closed" />
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{showMyPrize}}">
+    <view class="bouncedBg"></view>
+    <view class="bouncedView">
+        <view class="bouncedView-animateView">
+            <view class="gongxiBouncedView" style="background-image: url({{myPrizeImg}});width: 603rpx;height: 1016rpx;">
+                <scroll-view class="myPrizeScroView" scroll-y="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
+                    <view class="myPrizeScroView-imgView" wx:for="{{myPrizeDatas}}" wx:key="myPrizeDatas" bindtap="goMyCoupons" >
+                        <image src="{{item.giftPic}}" style="width:100%;" mode="widthFix" />
+                        <view wx:if="{{item.count > 1}}" class="yuandian">{{item.count}}</view>
+                    </view>
+                    <view class="myPrizeScroView-text" wx:if="{{myPrizeDatas.length <= 0}}">暂无奖励,打年兽赢奖励!</view>
+                    
+                </scroll-view>
+            </view>
+            <icon style="margin-top: 50rpx;"  type="cancel" color="#BAB5BB" size='40' bindtap="closed" />
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{showGonglue}}">
+    <view class="bouncedBg"></view>
+    <view class="bouncedView">
+        <view class="bouncedView-animateView">
+            <view class="gongxiBouncedView" style="background-image: url({{gonglueDatas.bgImg}});width: 590rpx;height: 920rpx;">
+                <scroll-view class="guizeSCroView" scroll-y="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
+                    <view class="guizeSCroView-subViews" wx:for="{{gonglueDatas.texts}}" wx:key="texts">
+                        <image src="{{item.img}}" style="width:153rpx;" mode="widthFix" />
+                        <view class="texts">{{item.text}}</view>
+                    </view>
+                    
+                </scroll-view>
+            </view>
+            <icon style="margin-top: 50rpx;"  type="cancel" color="#BAB5BB" size='40' bindtap="closed" />
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{showZongji}}">
+    <view class="bouncedBg"></view>
+    <view class="bouncedView">
+        <view class="bouncedView-animateView">
+            <view class="gongxiBouncedView" style="background-image: url({{zhongjiBouncedJson.img}});width: 542rpx;height: 839rpx;">
+                
+                <image src="{{zhongjiBouncedJson.yhqImg}}" class="gongxiBouncedView-yhq" style="top: 57%;" mode="widthFix" />
+                <view class="gongxiBouncedView-subTitle" style="top: 75%;">{{zhongjiBouncedJson.subTitle}}</view>
+
+            </view>
+            <icon style="margin-top: 50rpx;"  type="cancel" color="#BAB5BB" size='40' bindtap="closed" />
+        </view>
+    </view>
+</block>
+
+<view class="sanjiao" bindtap="backTap">
+    <image src="{{backImg}}" style="width:100%;height:100%;" />
+</view>
+
+<image src="{{icon_voice}}" class="playVideo" wx:if="{{playVideo}}" bindtap="playVideoTap" />
+<image src="{{icon_voice_no}}" class="playVideo" wx:else bindtap="playVideoTap" />

@@ -1,0 +1,281 @@
+@charset "UTF-8";
+.wrapper {
+  width: 100%;
+  /*checkbox*/
+}
+
+.wrapper .goodsRow {
+  width: 100%;
+  font-size: 32rpx;
+  color: #000;
+  clear: both;
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.wrapper .goodsRow .onLeft {
+  width: 70%;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.wrapper .goodsRow .onRight {
+  width: 30%;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.wrapper .commonRow {
+  width: 100%;
+  height: 120rpx;
+  font-size: 32rpx;
+  color: #000;
+  clear: both;
+}
+
+.wrapper .commonRow .onLeft {
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.wrapper .commonRow .onRight {
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+
+.wrapper .costClass {
+  height: 60rpx;
+  color: #555;
+}
+
+.wrapper .dividing-line-10 {
+  border-top: 10rpx solid #eee;
+}
+
+.wrapper .addressDetail {
+  display: flex;
+}
+
+.wrapper .addressDetail image {
+  width: 25rpx;
+  margin-top: 50rpx;
+}
+
+.wrapper .addressDetail .detailInfo {
+  max-width: 600rpx;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+}
+
+.wrapper .goodsInfo {
+  display: flex;
+}
+
+.wrapper .goodsInfo .goodImg {
+  display: flex;
+  width: 260rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .goodsInfo image {
+  max-width: 260rpx;
+}
+
+.wrapper .goodsInfo .baseInfo {
+  margin-left: 20rpx;
+}
+
+.wrapper .tiebiaoMargin {
+  margin-bottom: 30rpx;
+}
+
+.wrapper .goodsName {
+  font-size: 32rpx;
+  color: #000;
+  max-width: 280rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrapper .goodsStyle {
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  color: #555;
+}
+
+.wrapper .goodsPice {
+  font-size: 32rpx;
+  margin-top: 80rpx;
+  color: #000;
+}
+
+.wrapper .markTag {
+  width: 100rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: orangered;
+  text-align: center;
+  border: 1rpx solid orangered;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+
+.wrapper .couponShow {
+  display: flex;
+  align-items: flex-end;
+}
+
+.wrapper .couponShow .freeClass {
+  color: orangered;
+}
+
+.wrapper .couponShow .limitClass {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  text-decoration: line-through;
+}
+
+.wrapper .coupon-dividing-line {
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+
+.wrapper .dividing-line_1rpx {
+  width: 100%;
+  background: #eee;
+  height: 10rpx;
+}
+
+.wrapper .protocol {
+  position: relative;
+  display: flex;
+  clear: both;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 30rpx;
+  margin-bottom: 260rpx;
+  overflow: hidden;
+}
+
+.wrapper .protocol .title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-top: 20rpx;
+}
+
+.wrapper .protocol .content {
+  font-size: 26rpx;
+  background: #eee;
+  padding: 10rpx;
+  border-radius: 5rpx;
+  margin-top: 20rpx;
+}
+
+.wrapper .protocol .content .ruleTitle {
+  font-weight: 550;
+  margin-top: 10rpx;
+}
+
+.wrapper .protocol .content .tipContent {
+  font-size: 24rpx;
+}
+
+.wrapper .protocol .content .redTip {
+  font-size: 24rpx;
+  font-weight: 550;
+  color: red;
+}
+
+.wrapper .protocol image {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  bottom: 0;
+}
+
+.wrapper .bottomSubmit {
+  position: fixed;
+  bottom: 0;
+  background: white;
+}
+
+.wrapper .bottomSubmit .explain {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 30rpx;
+}
+
+.wrapper .bottomSubmit .explain .content {
+  font-size: 24rpx;
+  color: #000;
+  line-height: 25rpx;
+  margin-left: 10rpx;
+}
+
+.wrapper .bottomSubmit .payInfo {
+  width: 100%;
+  clear: both;
+}
+
+.wrapper .bottomSubmit .payInfo .onLeft {
+  float: left;
+  font-size: 28rpx;
+  color: #555;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 30rpx;
+}
+
+.wrapper .bottomSubmit .payInfo .onRight {
+  float: right;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  width: 240rpx;
+  background: #000;
+  color: white;
+  font-size: 32rpx;
+}
+
+.wrapper checkbox .wx-checkbox-input {
+  /*未选中状态*/
+  border-radius: 8rpx;
+  height: 36rpx;
+  width: 36rpx;
+  border: 3rpx solid #000;
+}
+
+.wrapper checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border-radius: 8rpx;
+  height: 36rpx;
+  width: 36rpx;
+  line-height: 36rpx;
+  border: none;
+  border: 3rpx solid #000;
+}
+
+.wrapper checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 8rpx;
+  /* 圆角 */
+  width: 36rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 36rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 32rpx;
+  /* 对勾大小 */
+  color: #000;
+  /* 对勾颜色 白色 */
+  border: 3rpx solid #000;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

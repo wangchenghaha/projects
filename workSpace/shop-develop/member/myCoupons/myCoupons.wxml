@@ -1,0 +1,11 @@
+<view class="mc-container">
+  <view class="list {{isIphoneX ?'iphoneXMarginBottom':''}}">
+    <block wx:for="{{imgList}}" wx:key="imgList">
+      <view class="brand-box" data-index="{{index}}"  bindtap="toCouponList">
+        <image class="img" src="{{item.imgUrl}}" mode="widthFix"></image>
+      </view>
+    </block>
+  </view>
+   <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+</view>

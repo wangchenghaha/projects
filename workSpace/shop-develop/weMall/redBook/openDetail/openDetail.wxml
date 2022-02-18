@@ -1,0 +1,5 @@
+<view wx:if="{{bookDetail.id}}" class="red-book">
+  <temp-header nickname="{{bookDetail.nickname}}" avatarUrl="{{avatarUrl}}"/>
+  <red-book wx:if="{{bookDetail.matchJson}}" matchJson="{{bookDetail.matchJson}}" />
+  <view class="guide-id text-c" v-if="{{share_by}}">{{share_by}}</view>
+</view>

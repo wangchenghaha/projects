@@ -1,0 +1,8 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "customView_vm" : "../components/shareView_vm/shareView_vm",
+    "customView_only" : "../components/shareView_only/shareView_only",
+    "customView_fol" : "../components/shareView_fol/shareView_fol"
+  }
+}

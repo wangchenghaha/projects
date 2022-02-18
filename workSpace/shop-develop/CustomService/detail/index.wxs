@@ -1,0 +1,13 @@
+module.exports = {
+    formatStatus: function (status) {
+        var str = ''
+        if(status == 1) {
+            str = '预约成功'
+        } else if (status == 2) {
+            str = '已完成'
+        } else if (status == 3) {
+            str = '已取消'
+        }
+        return str
+    }
+}

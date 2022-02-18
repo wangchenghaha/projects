@@ -1,0 +1,6 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "rule" : "/changecoupononline/components/rule/rule"
+    }
+}

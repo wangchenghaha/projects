@@ -1,0 +1,237 @@
+@import './theme/iconfont.wxss';
+@import './theme/theme-default.wxss';
+@import './theme/theme-elegant.wxss';
+
+.b {
+    display: flex;
+}
+
+.lr {
+    flex-direction: row;
+}
+
+.tb {
+    flex-direction: column;
+}
+
+.pc {
+    justify-content: center;
+}
+
+.ac {
+    align-items: center;
+}
+
+.cc {
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.flex {
+    flex-grow: 1;
+}
+
+.bg {
+    background-image: linear-gradient(to bottom, #faefe7, #ffcbd7);
+    overflow: hidden;
+}
+
+.white-color {
+    color: #fff;
+}
+
+.fs24 {
+    font-size: 24rpx;
+}
+
+.fs28 {
+    font-size: 28rpx;
+}
+
+.fs32 {
+    font-size: 32rpx;
+}
+
+.fs36 {
+    font-size: 36rpx;
+}
+
+.calendar {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 日历操作栏 */
+
+.handle {
+    height: 80rpx;
+}
+
+.prev-handle,
+.next-handle {
+    padding: 20rpx;
+}
+
+.date-in-handle {
+    height: 80rpx;
+}
+
+.mini_handle{height: 50rpx;}
+
+/* 星期栏 */
+
+.weeks {
+    height: 50rpx;
+    line-height: 50rpx;
+    opacity: 0.5;
+}
+
+.week {
+    text-align: center;
+}
+
+.grid,
+.week {
+    width: 14.286014285714286%;
+}
+
+.date-wrap {
+    width: 100%;
+    height: 90rpx;
+    position: relative;
+    left: 0;
+    top: 0;
+    /* border: solid 1px black; */
+}
+
+.date {
+    position: absolute;
+    top: 2rpx;
+    width: 67rpx;
+    height: 67rpx;
+    text-align: center;
+    line-height: 67rpx;
+    font-size: 30rpx;
+    font-weight: 200;
+    border-radius: 50%;
+    transition: all 0.3s;
+    animation-name: choosed;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    /* background-color: aquamarine; */
+}
+
+.date-area-mode {
+    width: 100%;
+    border-radius: 0;
+}
+
+.date-desc {
+    width: 110%;
+    height: 32rpx;
+    font-size: 22rpx;
+    line-height: 32rpx;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
+    text-align: center;
+    background-color: #F8AE2F;
+    color: white;
+    border-radius: 20rpx;
+}
+
+
+@keyframes choosed {
+    from {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* 日期圆圈标记 */
+.todo-circle {
+    border-width: 1rpx;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+/* 待办点标记相关样式 */
+.todo-dot {
+    width: 30rpx;
+    height: 30rpx;
+    /* border-radius: 50%; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.todo-dot-top {
+    top: 3rpx;
+}
+
+.todo-dot.todo-dot-top-always {
+    top: -8rpx;
+}
+
+/* 0_0 */
+.todo-dot.todo-dot-bottom {
+    bottom: -20rpx;
+}
+
+.todo-dot.todo-dot-bottom-always {
+    bottom: -20rpx;
+    background-color: white;
+    color: #FF8826;
+    border-radius: 0;
+    font-size: 16rpx;
+}
+
+/* 日期描述文字（待办文字/农历）相关样式 */
+
+.date-desc.date-desc-top {
+    top: -6rpx;
+}
+
+.date-desc.date-desc-top-always {
+    top: -20rpx;
+}
+
+/* - */
+.date-desc.date-desc-bottom {
+    bottom: -20rpx;
+}
+
+.todo-circle .date-desc.date-desc-bottom {
+    bottom: -20rpx;
+}
+
+.date-desc.date-desc-bottom-always {
+    bottom: -20rpx;
+    background-color: white;
+    color: #FF8826;
+    border-radius: 0;
+    font-size: 16rpx;
+}
+
+.year_color{color: white;background-color: transparent;align-items: flex-start;}
+.panel_padding{padding: 0 17rpx 0 17rpx;}
+.week_bar_padding{margin: 17rpx 17rpx 0 17rpx;}
+.date_img_gift{width: 80%; position: absolute;top: 0;left: 0;right: 0;margin: 0 auto;}
+

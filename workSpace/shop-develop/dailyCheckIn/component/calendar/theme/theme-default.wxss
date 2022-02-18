@@ -1,0 +1,57 @@
+
+/* 日历主要颜色相关样式 */
+
+.default_color,
+.default_weekend-color,
+.default_handle-color,
+.default_week-color {
+    color: black;
+}
+
+.default_today {
+    color: black;
+    /* background-color: #0c1a96; */
+    background-color: transparent;
+    border: 5rpx solid #CF2C2E;
+    border-radius: 12rpx;
+}
+
+.default_choosed {
+    color: #222222;
+    background-color: white;
+}
+
+.default_date-disable {
+    color: black;
+}
+
+.default_prev-month-date,
+.default_next-month-date {
+    color: #e2e2e2;
+}
+
+.default_normal-date {
+    color: #222222;
+}
+
+.default_todo-circle {
+    border-color: #88d2ac;
+}
+
+.default_todo-dot {
+    /* background-color: #e54d42; */
+    background: url(https://cdn.bestseller.com.cn/assets/common/pub/image/daily_checkin_already_checkin_green.png) no-repeat right center;
+    background-size: contain ;
+}
+
+.default_date-desc {
+    color: #c2c2c2;
+}
+
+.default_date-desc-lunar {
+    color: #e54d42;
+}
+
+.default_date-desc-disable {
+    color: black;
+}

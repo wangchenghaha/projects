@@ -1,0 +1,7 @@
+<view class="container">
+    <block wx:for="{{rules}}" wx:key="rule">
+        <view class="title">{{item.title}}</view>
+        <view class="subTitles" wx:for="{{item.subTitles}}"  wx:key="subItem">{{item}}</view>
+    </block>
+    <view class="bottomV"></view>
+</view>

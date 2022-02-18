@@ -1,0 +1,23 @@
+/* dailyCheckIn/history/histroy.wxss */
+@import "../main/main";
+.frame{width: 100%;height: 100%;display: flex;flex-direction: column; clear:both; overflow:hidden;
+    position: relative; background-color: white;}
+.wrapper_tab{height: 8%;}
+.scroll_view_content{width: 100%;position: absolute;top: 85rpx; bottom: 110rpx;}
+.points_item{width: auto;height: 110rpx;background-color: white;margin: 20rpx;display: flex;
+  flex-direction: row;align-items: center;justify-content: space-between;border-bottom: 1px solid #EEE;}
+.points_item_left{height: 100%;display: flex;flex-direction: column;align-items: flex-start;
+    justify-content: space-around;}
+.item_title{font-size: 28rpx;color: black;}
+.item_date{font-size: 20rpx;color: black;}
+.item_value{font-size: 24rpx;color: #D8352F;}
+
+.layout_bottom{width: 100%;height: 77rpx;display: flex;flex-direction: column;align-items: center;
+background-color: white;position: absolute;bottom: 12px;}
+.bt_exchange{width: 370rpx;height: 77rpx; background-color: #D8352F;border-radius: 50rpx;
+    color: white;
+    position: absolute;
+    line-height: 77rpx;
+    text-align: center;
+    font-size: 25rpx;
+}

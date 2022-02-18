@@ -1,0 +1,35 @@
+<view class="info ~flex-bet">
+  <view class="goods-img">
+    <image mode="widthFix" src="{{goodsItem.goodsImg}}"></image>
+  </view>
+  <view class="goods ~flex-bet">
+    <view class="goods-desc ~flex-bet">
+      <view class="goods-name">{{goodsItem.goodsName}}</view>
+      <view class="color">
+        <text class="color-item">{{goodsItem.colorName}}，</text>
+        <text class="color-item">{{goodsItem.sizeName}}</text>
+      </view>
+      <five-star disabled size="40"></five-star>
+    </view>
+    <view class="operate">
+      <view class="price ~text-r ~font-bold" wx:if="{{goodsItem.price}}">￥{{goodsItem.price}}</view>
+      <view class="count ~text-r">x1</view>
+      <view class="evaluate-btn ~text-c" wx:if="{{goodsItem.isGift}}" bindtap="evaluate">评价</view>
+    </view>
+  </view>
+</view>
+<view class="rating" wx:if="{{goodsItem.reviewType}}">
+  <view class="title ~flex-bet">
+    <view class="~flex-start">
+      <image class="avatar" src="{{goodsItem.headimgurl}}" mode="widthFix"></image>
+      <text class="nick-name">{{goodsItem.nickname}}</text>
+    </view>
+    <view class="time">{{goodsItem.createTime}}</view>
+  </view>
+  <view class="msg">{{goodsItem.reviewContent}}</view>
+  <scroll-view scroll-x class="show-img" wx:if="{{goodsItem.showImgList && goodsItem.showImgList.length}}">
+    <block wx:for="{{goodsItem.showImgList}}"  wx:key="item">
+      <image src="{{item}}" mode="aspectFit" data-url="{{item}}" bindtap="prevImg"/>
+    </block>
+  </scroll-view>
+</view>

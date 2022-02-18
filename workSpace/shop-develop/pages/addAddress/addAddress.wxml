@@ -1,0 +1,116 @@
+
+
+<view class="wrap">
+
+  <view class="opacity" wx:if="{{opacity}}" bindtap="hideOpacity"></view>
+
+  <!-- 头部 -->
+  <view class="head">添加地址</view>
+
+  <view class="content">
+    <view class="ul">
+    <button class="atuoAddress"  bindtap="getAddress">自动添写地址</button>
+    <button class="atuoAddress"  bindtap="getwxAddress" style="margin-left: 20rpx;">使用微信地址</button>
+      <view class="li">
+        <view class="title">姓名</view>
+        <view class="li_con">
+          <input type="text" value="{{User.name.value}}" placeholder="请填写姓名" bindblur="checkUsername"/>
+          <view class="close" bindtap="clearName">
+            <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/addr_cls.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="tishi name_tishi" wx:if="{{User.name.tishi}}">姓名不能为空</view>
+      </view>
+
+        <view class="li">
+        <view class="title">手机</view>
+        <view class="li_con">
+          <input type="number" maxlength="11" value="{{User.phone.value}}" placeholder="请填写手机号" bindblur="checkPhone" bindinput="userPhone"/>
+          <!-- <button class="getPhoneNumber" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">快速填写</button> -->
+        </view>
+        <view class="tishi name_tishi" wx:if="{{User.phone.tishi}}">{{User.phone.tishiValue}}</view>
+      </view>
+     
+    </view>
+     <view class="li">
+      <view class="title">省市区</view>
+      <view class="li_con">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <view class="picker">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+      <!--<view class="li">
+        <view class="title">省/市</view>
+       
+        <view class="li_con">
+          <picker mode="selector" bindchange="bindPickerChange1" value="{{index1}}" range="{{proviceData}}" range-key="name">
+            <view class="picker">
+              <view class="picker1">{{proviceData[index1].name}}</view>
+            </view>
+          </picker>
+          <view class="close">
+            <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/addr_nabla.png" mode="widthFix"></image>
+          </view>  
+        </view>
+        <view class="tishi name_tishi" wx:if="{{User.shengshi.tishi}}">省份不能为空</view>
+      </view>
+
+      <view class="li">
+        <view class="title">城市</view>
+        <view class="li_con">
+          <picker mode="selector" bindchange="bindPickerChange2" value="{{index2}}" range="{{cityData}}" range-key="name">
+            <view class="picker">
+              <view class="picker1">{{cityData[index2].name}}</view>
+            </view>
+          </picker>
+          <view class="close">
+            <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/addr_nabla.png" mode="widthFix"></image>
+          </view>  
+        </view>
+        <view class="tishi name_tishi" wx:if="{{User.chengshi.tishi}}">城市不能为空</view>
+      </view>
+
+      <view class="li">
+        <view class="title">地区</view>
+        <view class="li_con">
+          <picker mode="selector" bindchange="bindPickerChange3" value="{{index3}}" range="{{districtData}}" range-key="DisName">
+            <view class="picker">
+              <view class="picker1">{{districtData[index3].DisName}}</view>
+            </view>
+          </picker>
+          <view class="close">
+            <image style="width:20rpx;margin:24rpx;" src="https://cdn.bestseller.com.cn/assets/common/pub/image/addr_nabla.png" mode="widthFix"></image>
+          </view>  
+        </view>
+        <view class="tishi name_tishi" wx:if="{{User.diqu.tishi}}">地区不能为空</view>
+      </view>-->
+      <view class="li">
+        <view class="title">地址</view>
+        <view class="li_con">
+          <input type="text" value="{{User.address.value}}" placeholder="请填写地址" bindblur="checkAddress" />
+          <!--<view class="close" bindtap="clearName">
+            <image src="../../images/cls1.png" mode="widthFix"></image>
+          </view>-->  
+        </view>
+        <view class="tishi name_tishi" wx:if="{{User.address.tishi}}">请填写详细地址</view>
+         <view style = "margin-top: 20rpx;">
+          <switch style="float: right;" checked="{{isChecked}}" bindchange="switchChange"></switch>
+          <text style="font-size: 32rpx; color: #AEAEAE; float: left;">设置默认地址</text>
+      </view>
+      </view>
+  
+    <view class="saveAddress  {{isIphoneX ?'fix-iphonex-button':''}}" bindtap="saveAddress">
+        <view class="text">保存地址</view>
+    </view>
+
+  </view>
+  
+
+  
+
+</view>
+

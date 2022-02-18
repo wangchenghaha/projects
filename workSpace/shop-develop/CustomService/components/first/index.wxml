@@ -1,0 +1,48 @@
+<view class="first_wrapper">
+      <view class="title">{{title || 'JACK & JONES  LAB'}}</view>
+      <view class="decorition">
+        <!-- <block wx:if="{{!img}}">
+          <view class="item">
+            <view class="tit_1">介绍：</view>
+            <view class="con_1">这里有JACK&JONES会员专属定制服务</view>
+            <view class="con_1">为你提供个性化的设计体验</view>
+            <view class="con_1">挑选指定JACK&JONES服饰</view>
+            <view class="con_1">你可随意选择喜爱的图案或贴标</view>
+            <view class="con_1">打印或制作独一无二的个性化服饰</view>
+          </view>
+          <view class="item">
+            <view class="tit_1">定制步骤：</view>
+            <view class="con_1">挑选指定服饰，另支付RMB50(开业期间1个月免费)，即享受以下所有定制化体验服务：</view>
+            <view class="con_1">
+              <text class="tit_2">第一步：</text>
+              选择喜爱的图案及配色，店内提供多种风格的图库及配色方案；
+            </view>
+            <view class="con_1">
+              <text class="tit_2">第二步：</text>
+              选择喜爱的贴标（最多3个）；
+            </view>
+            <view class="con_1">
+              <text class="tit_2">第三步：</text>
+              定制结束，可选择第二天到店取货或邮寄到付服务。
+            </view>
+          </view>
+          <view class="item">
+             <view class="tit_1">定制规则：</view>
+              <view class="con_1">定制区开放时间14:00-20:00</view>
+              <view class="con_1">每店每日接受20名消费者预约定制服务，先到先得，请尽早预约。</view>
+          </view>
+           <view class="item">
+             <view class="tit_1">预约须知&温馨提示：</view>
+              <view class="con_1">1、需为JACK&JONES会员；</view>
+              <view class="con_1">2、图片成品仅供参考，请以实际定制图案与颜色为准；</view>
+              <view class="con_1">3、不同颜色服饰在呈现打印效果是会有差异，请以实际定制成品为准；</view>
+              <view class="con_1">4、指定定制服饰尺码以店铺实际库存为主。</view>
+          </view>
+        </block> -->
+        <block>
+          <image class="image" src="{{img}}" mode="widthFix"/>
+            
+        </block>
+          
+      </view>
+    </view>

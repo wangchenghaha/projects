@@ -1,0 +1,79 @@
+
+
+.wrap{ width:100%; height:auto; clear:both; overflow:hidden; box-sizing:border-box; }
+.wrap .line{
+    width: 100%;
+    height: 6rpx;
+    background-image:linear-gradient(
+      -45deg,
+      #f04a4e 0%,
+    #f04a4e 30%,
+    #fff 30%,
+    #fff 50%,
+    #00b0f3 50%,
+    #00b0f3 80%,
+    #fff 80%,
+    #fff 100%     
+  );
+  /*把刚才的背景压缩到100px * 100px以内的，没有设定不重复所以是重复的*/
+  background-size: 130rpx 8rpx;
+}
+
+.header{ width:100%; height:76rpx; clear:both; overflow:hidden; border-bottom:2rpx solid #f2f2f2; display: flex; align-items: center;}
+
+.header text{font-size:24rpx;  color:#000; text-indent: 20rpx;}
+
+.contentCon{ width:100%; height:auto; clear:both; overflow:hidden;}
+.li{ width:100%; height:auto ;clear:both; overflow:hidden; border-bottom:2rpx solid #f2f2f2; box-sizing:border-box; 
+padding:20rpx;font-size:26rpx; line-height:36rpx; color:#666; }
+
+.li .classname{float:left; width:100%; display: flex; flex-direction: row;}
+.li .classname image{width: 200rpx; height: 200rpx;}
+.li .classname .classright{width: 100%; height: 200rpx; clear:both; overflow:hidden; box-sizing:border-box;}
+.li .classname .classright .classtitle{color: black; font-size: 24rpx;}
+.li .classname .classright text{font-size:20rpx; line-height:50rpx; 
+    color:#000; padding:0 30rpx; margin-right:20rpx; margin-top: 20rpx; background: #ebebeb; }
+.li .classname .classright .classBottom{width: 100%; margin-top:80rpx;}
+.li .classname .classright .classBottom .classPirce{float: left; color: black; font-size: 24rpx; }
+.li .classname .classright .classBottom .classCount{float: right; color: black; font-size: 24rpx;}
+.li .classNotice{ color:#666; font-size: 16rpx;}
+.li .nums{ float:left; width:16%; text-align:center; font-size:28rpx;}
+.li .price{ float:left; width:36%; text-align:right;}
+
+.li_left{ float:left; width:50%; font-size:28rpx; color:#000;}
+.li_right{ float:right; font-size:28rpx; color:#000;}
+.li_li text{ color:#000;}
+
+.shouhuo{ width:100%; height:auto; clear:both; overflow:hidden;box-sizing:border-box; padding:0 20rpx;
+border-bottom:2rpx solid #000; margin-bottom:30rpx;}
+.shCon{ width:100%; font-size:32rpx; line-height:76rpx; color:#000;
+background:url(https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_right_gray.png) no-repeat right center; background-size:15rpx;}
+
+.lli{ width:100%; height:auto; clear:both; overflow:hidden; display: flex; flex-direction: row;}
+.lli .addressIcon{width: 50rpx; height: 70rpx; margin: 60rpx 20rpx 0rpx 0rpx;}
+.liCon{ width:100%; height:auto;}
+.liCon .name{ font-size:30rpx; line-height:50rpx; color:#000; padding-bottom:6rpx;}
+.liCon .dizhi{ width:100%; height:auto; clear:both; overflow:hidden; font-size:26rpx; line-height:45rpx; color:#000;}
+.liCon .dizhi .addressDetail{ color:#AEAEAE; line-height: 30rpx;}
+.liCon .myTel{ width:100%; height:44rpx; font-size:26rpx; line-height:30rpx; color:#AEAEAE; border-bottom:2rpx solid #000;}
+.lli .arrow{width: 20rpx; height: 30rpx; margin-top: 50rpx;}
+
+.noAddress{ width:100%; height:12vh; clear:both; overflow:hidden; display: flex; align-items: center; align-items: center; justify-content: center;
+        font-size: 36rpx; color:#AEAEAE;}
+
+.bottomSub{width:100%; position: fixed; bottom: 0rpx; background: #f2f2f2;}
+.bottomSub .showTotal{float: left; width:65%; display: flex; justify-content: flex-end; text-align:center; line-height:70rpx;}
+.submit{float: left; width:35%; background:#000; color:#fff; font-size:32rpx; line-height:70rpx; text-align:center; }
+
+/* 购买数量 */
+.details_sizeOne_D{ width:100%; height:auto; clear:both; overflow:hidden; border-bottom:2rpx solid #f2f2f2;}
+.c_title{ float:left; width:47%; font-size:28rpx; padding:30rpx 0; color:#000; margin-left: 3%;}
+.c_number{ float:left; width:48%; height:52rpx; padding-top:22rpx; margin-right: 2%;}
+.c_add{ float:right; width:52rpx; height:52rpx; line-height:52rpx; text-align: center; border:2rpx solid #ccc; background:#ccc;}
+.c_num{ float:right; width:100rpx; height:52rpx; text-align: center; font-size:28rpx; line-height:52rpx;}
+.c_jian{ float:right; width:52rpx; line-height:52rpx; height:52rpx; text-align: center; border:2rpx solid #ccc; border-right:none; background:#ccc; }
+
+.statistics{width: 97%; display: flex; flex-direction: row; display: flex; justify-content: flex-end; margin-top: 20rpx;}
+.statistics .notice{ font-size:28rpx; color:#000; }
+.statistics .content{display: flex; flex-direction: column; justify-content: flex-end;}
+.statistics .content .content-right{display: flex; justify-content: flex-end;  font-size: 36rpx; color:#d70715; font-weight: 600;}

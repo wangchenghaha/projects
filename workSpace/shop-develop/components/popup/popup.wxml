@@ -1,0 +1,14 @@
+<view class="popup">
+  <view class="popup-wrapper" style="background: {{bgColor || '#fff'}}">
+    <!--<view class="close" catchtap="closePopup">
+      <text></text>
+      <text></text>
+    </view>-->
+    <view class="close-icon" catchtap="closePopup">
+      <my-close color="#fff" line="true" direction="bottom" line-height="70"></my-close>
+    </view>
+    <view class="container">
+      <slot></slot>
+    </view>
+  </view>
+</view>

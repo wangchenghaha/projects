@@ -1,0 +1,9 @@
+<view class="good-item">
+    <image src="{{goodsPic}}" mode="widthFix" data-goodsCode="{{goodsCode}}" bindtap="onClick"/>
+    <view class="goodsName">{{goodsName}}</view>
+    <view class="goodsPrice">
+        <view class="currentPrice">￥  {{goodsPrice}}</view>
+        <view class="orignalPrice" wx:if="{{goodsPrice != orginalPrice}}">￥ {{orginalPrice}}</view>
+    </view>
+    <view style="width: 100%; height:30rpx;"></view>
+</view>

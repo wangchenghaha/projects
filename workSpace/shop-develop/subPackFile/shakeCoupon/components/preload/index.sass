@@ -1,0 +1,42 @@
+@import '../../common/sass/index.sass'
+.wrapper
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    transitiion: all 0.5s linear
+    background: white
+    
+    .image
+        width: 0
+        height: 0
+        overflow: hidden
+    .content
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        text-align: center
+        .logo 
+            width: 307rpx 
+            height: 33rpx
+            +bgimage('logo')
+            background-size: 307rpx 33rpx
+            margin: 0 auto
+        .rate
+            margin-top: 60rpx
+            color: black
+            font-weight: bold
+            font-size: 36rpx
+            margin-bottom: 20rpx
+        .percent
+            width: 420rpx
+            height: 20rpx
+            padding: 2rpx
+            border: 1rpx solid black
+            .inner
+                width: 0
+                height: 20rpx
+                background: black

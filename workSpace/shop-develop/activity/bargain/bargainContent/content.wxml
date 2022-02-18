@@ -1,0 +1,207 @@
+<view class="content">
+  <!-- 轮播图 -->
+  <view class="swiper">
+    <swiper class="swiper-wrapper" indicator-dots="{{swiper.indicatorDots}}" circular="{{swiper.circular}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+      <block wx:for="{{swiper.data}}" wx:key="slider">
+        <swiper-item class="swiper-item">
+          <image src="{{item}}" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="goods">
+    <view class="dargainInfo">
+      <view class="left">
+        <view class="priceShow">
+          <view class="priceShow-dargain">
+            可砍至 ￥
+            <text style="font-size: 32rpx;">{{selectGoodsInfo.floorPrice}}</text>
+          </view>
+          <view class="priceShow-single">单买价 ￥{{selectGoodsInfo.discountPrice}}</view>
+        </view>
+        <view class="left-people">
+          累计已砍
+          <text style="font-size: 30rpx;">{{selectGoodsInfo.helpNums}}</text>
+          件
+        </view>
+        <view class="Trianglebox"></view>
+      </view>
+      <view class="right">
+        <view>活动结束时间</view>
+        <view class="right-endtime">{{selectGoodsInfo.endTime}}</view>
+      </view>
+    </view>
+    <view class="goods-name goods-item" wx:if="{{selectGoodsInfo.goodsName}}">
+      {{selectGoodsInfo.goodsName}}
+    </view>
+    <view class="goods-name goods-item" wx:if="{{selectGoodsInfo.goodsCode}}">
+      款号:{{selectGoodsInfo.goodsCode}}
+    </view>
+    <view class="dargainNotice" wx:if="{{bargainListSuccess.length > 0}}">
+      <view class="first">
+        <image src="{{freeIcon}}" mode="widthFix" />
+        <view class="text1">我的砍价订单</view>
+        <view class="refresh" data-type="refresh" bindtap="onClick">
+          <image class="refreshImg" src="{{refresh}}" mode="widthFix"/>
+          <view class="refreshText">刷新</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <block wx:for="{{bargainListSuccess}}" wx:if="{{bargainListSuccess.length > 0}}" wx:key="bargain">
+      <view class="bargainContainer" >
+          <view class="bargainDetail" wx:if="{{!item.orderType || item.orderType === 0}}" data-index="{{index}}" data-code="{{item.id}}" data-type="goShare" bindtap="onClick">
+              <image src="{{item.bargainGoodsDetail.picImage}}" mode="aspectFill" />
+              <view class="bargainInfo">
+                  <view class="t1">{{item.bargainGoodsDetail.goodsName}}</view>
+                  <view class="t3">单买价 ￥{{item.bargainGoodsDetail.goodsPrice}}</view>
+                  <view class="t4">可砍至 ￥{{item.bargainGoodsDetail.floorPrice}}</view>
+              </view>
+          </view>
+          <view class="dargainTime">
+              <view class="rightTime">
+                  <view>距离结束还剩:</view>
+                  <!-- <view style="margin-left: 20rpx;">{{item.countDownTime.day}}天 </view> -->
+                  <view class="timer"> {{item.countDownTime.hou}} </view>
+                  <view style="margin-left: 8rpx;">:</view>
+                  <view class="timer"> {{item.countDownTime.min}} </view>
+                  <view style="margin-left: 8rpx;">:</view>  
+                  <view class="timer"> {{item.countDownTime.sec}} </view>
+              </view>
+              <view class="bargainBtn {{item.isOver? 'overbg':''}}"  data-index="{{index}}" data-code="{{item.id}}" data-type="goBargain" bindtap="onClick">{{item.isOver? "砍价过期": item.isFinish?  item.orderType === 0? "去支付" : "查看优惠券":"继续砍价"}}</view>
+          </view>
+          <!-- 售罄蒙层 -->
+          <view class="mengceng" wx:if="{{item.isStockLess}}"></view>
+          <view class="stocklessImg" wx:if="{{item.isStockLess}}">
+              <image src="{{stockless}}" mode="widthFix"/>
+          </view>
+      </view>
+    </block> 
+
+
+  <view class="title margin-auto" data-type="selectGoods" bindtap="onClick">砍成晒单</view>
+  <block wx:for="{{dargainSuccess}}" wx:key="success">
+    <view class="dargainUser">
+      <view class="userInfo">
+        <image src="{{item.userPic}}" mode="widthFix" />
+        <view class="name">{{item.userNikeName}}  {{item.contactTel}}</view>
+        <view class="time">{{item.createdTime}}</view>
+      </view>
+      <view class="describe">大小合适，面料舒适，物美价廉， 卖家服务好，能给你最好的穿搭建议，粉一波。</view>
+    </view>
+  </block>
+  <view class="richImg" wx:if='{{detailShow}}'>
+    <!-- 20200512 富文本 -->
+    <rich-text nodes="{{bodyContent}}"></rich-text>
+  </view>
+  <view class="mongolia" wx:if="{{showSelectSize}}"></view>
+  <view class="select-size {{showSelectSize ? 'show' : ''}}">
+    <view class="close" data-type="close" bindtap="onClick">
+      <my-close color="#000" size="25"></my-close>
+    </view>
+    <view class="margin-auto">
+      <view class="goods-base flex-start">
+        <view class="preview" wx:if="{{goodsImg}}">
+          <image src="{{goodsImg}}" mode="widthFix"></image>
+        </view>
+        <view class="goods-info">
+          <view class="price">
+            可砍至: ￥
+            <text style="font-size: 32rpx;">{{selectGoodsInfo.floorPrice}}</text>
+          </view>
+          <view class="sku">单买价: ￥{{selectGoodsInfo.discountPrice}}</view>
+          <view class="stock">
+            库存
+            <text>{{selectGoodsInfo.stock}}</text>
+            件
+          </view>
+          <view class="size">
+            <block wx:if="{{selectGoodsInfo.goodsSku}}">{{selectGoodsInfo.sizeAlias}}</block>
+            <block wx:else>请选择尺码</block>
+          </view>
+          <view class="sku">{{selectGoodsInfo.sku}}</view>
+        </view>
+      </view>
+      <view class="goods-base">
+        <view class="goods-title">颜色分类</view>
+        <view class="color">
+          <block wx:for="{{goodsColor}}" wx:key="item">
+            <form bindsubmit="onClick" report-submit="true">
+              <button form-type="submit" class="color-item {{item.sizes[0] ? '' : 'no-stock'}}  {{colorDefaultIndex === index ? 'selected' : ''}}" data-type="selectColor" data-index="{{index}}">
+                {{item.colorAlias}}
+              </button>
+            </form>
+          </block>
+        </view>
+      </view>
+      <view class="goods-base">
+        <view class="goods-title">尺码</view>
+        <view class="color">
+          <block wx:for="{{goodsColor[colorDefaultIndex].sizes}}" wx:key="itemSku">
+            <form bindsubmit="onClick" report-submit="true">
+              <button form-type="submit" class="color-item {{ item.stock > 0 ? '' : 'no-stock'}} {{item.selected ? 'selected' : ''}}" data-type="selectSize" data-index="{{index}}">
+                {{item.sizeAlias}}
+              </button>
+            </form>
+          </block>
+        </view>
+      </view>
+      <view class="goodBottom"></view>
+    </view>
+  </view>
+  <view class="mongolia" wx:if="{{showAddress}}"></view>
+  <view class="select-size {{showAddress ? 'show' : ''}}">
+    <view class="close" data-type="close" bindtap="onClick">
+      <my-close color="#000" size="25"></my-close>
+    </view>
+    <view class="addressArea">
+      <view class="addressTitel">选择收货地址</view>
+      <view class="Area" wx:if="{{haveAddress}}">
+        <view class="addressList" wx:for="{{addressList}}" wx:key="address" data-type="chooseAddress" data-index="{{index}}" bindtap="onClick">
+          <view class="left">
+            <view class="baseInfo">
+              <text>{{item.userName}}</text>
+              <text style="margin-left:20rpx;">{{item.phone}}</text>
+            </view>
+            <view class="detailInfo">
+              {{item.province}} {{item.city}}{{item.area}} {{item.detailAddress}}
+            </view>
+          </view>
+          <view class="right">
+            <image src="../../../images/jiantou_right.jpg" mode="widthFix" />
+          </view>
+        </view>
+      </view>
+      <view class="noAddress" wx:if="{{showNoAddress}}">您还没有添加收货地址，请点击下方按钮进行添加。</view>
+      <view class="againGetAddress" wx:if="{{showError}}">
+        <view class="toast">拉取地址失败！</view>
+        <view class="loading" bindtap="againGetAddress">重新加载</view>
+      </view>
+    </view>
+  </view>
+  <view class="mongolia" wx:if="{{showInfo}}"></view>
+  <view class="submitInfo {{showInfo ? 'show' : ''}}">
+    <view class="close" data-type="close" bindtap="onClick">
+      <my-close color="#000" size="25"></my-close>
+    </view>
+    <view class="info">
+      <image src="{{orderGoodsInfo.picImage}}" mode="widthFix" />
+      <view class="info-goodName">{{orderGoodsInfo.goodName}}</view>
+      <view class="info-goodSize">{{orderGoodsInfo.goodColor}}   {{orderGoodsInfo.goodSize}}</view>
+      <view class="info-address">{{orderGoodsInfo.userName}}   {{orderGoodsInfo.userPhone}}</view>
+      <view class="info-address">{{orderGoodsInfo.userArea}}</view>
+      <view class="info-address">{{orderGoodsInfo.detailAddress}}</view>
+      <view class="info-submitBtn" bindtap="submitBargainOrder">立即砍价</view>
+    </view>
+  </view>
+</view>
+<view class="fixed-bottom {{isIphoneX ?'iphoneXFooter':''}}" wx:if="{{showBottom}}">
+  <block wx:for="{{fixedBottom}}" wx:key="event">
+    <view wx:if="{{item.isShow}}" class="text-c fixed-item {{item.event === 'bindGuide' ? 'border' : ''}}" style="background: {{item.bgColor}}; color: {{item.color}}" data-type="{{item.event}}" bindtap="onClick">
+      {{item.name}}
+    </view>
+  </block>
+</view>
+
+<notice-pop wx:if="{{isShowNotice}}" ruleList="{{ruleList}}" activityTitle="{{activityTitle}}" bindcloseThisPop="closeThisPop"></notice-pop>

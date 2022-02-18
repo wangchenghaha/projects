@@ -1,0 +1,60 @@
+<template name="header">
+  <view class="box-info"><!-- 商品信息 -->
+    <view class="user-info">
+      <image src="{{bargain_record.coverPic}}" class="avatarUrl" />
+      <view class="over-hide nickName">{{bargain_record.username}}</view>
+      <view class="over-hide slogan">#朋友一生一起走，帮砍一刀有没有#</view>
+    </view>
+    <view class="product-info">
+      <image src="{{imgModel.icon_activity_finished}}" class="icon_activity_finished" wx:if="{{activity_status==2}}" />
+      <image src="{{bargain_record.product_pic}}" class="pro-img" />
+      <view class="pro-detail">
+        <view class="pro-name">{{bargain_record.product_name}}</view>
+        <view class="over-hide pro-sku">{{bargain_record.plato_group_cn}}</view>
+        <view class="pro-price">
+          <text class="yen present">{{bargain_record.base_price}}</text>
+          <text class="yen original">{{bargain_record.origin_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<template name="record">
+  <view class="box-record">
+    <view class="record-title">砍价记录</view>
+    <view class="record-content">
+      <view class="empty" wx:if="{{arrData.length==0}}">
+        <image src="{{imgModel.icon_bargain_empty}}" style="width:77rpx;height:100rpx" />
+        <view>暂无砍价记录</view>
+      </view>
+      <block wx:if="{{arrData.length>0}}">
+        <view class="record-item" wx:for="{{arrData}}" wx:key="index">
+          <view class="record-item-friend">
+            <image src="{{item.coverPic}}" class="avatar" style="width:66rpx;height:66rpx;" />
+            <text>{{item.username}}</text>
+          </view>
+          <view class="record-item-amount">砍掉<text class="yen color-red">{{item.money}}</text>元</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>
+
+<template name="productlist">
+  <view class="box-product">
+    <view class="box-product-tit">推荐商品</view>
+    <view class="box-product-list">
+      <view class="box-product-item">
+        <image src="https://alioss.woaap.com/miniapp/20201116/647665c51578fb2d568f39f333ebf61e.png" />
+        <view>雅戈尔长袖衬衫秋季新款男士官方商 务休闲汉麻职业蓝色衬衣</view>
+        <view class="yen color-red">179.00</view>
+      </view>
+      <view class="box-product-item">
+        <image src="https://alioss.woaap.com/miniapp/20201116/647665c51578fb2d568f39f333ebf61e.png" />
+        <view>雅戈尔长袖衬衫秋季新款男士官方商 务休闲汉麻职业蓝色衬衣</view>
+        <view class="yen color-red">179.00</view>
+      </view>
+    </view>
+  </view>
+</template>

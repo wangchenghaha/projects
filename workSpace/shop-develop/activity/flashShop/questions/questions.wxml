@@ -1,0 +1,13 @@
+<view class="bg">
+
+    <view class="imgView">
+        <image src="{{splashImg}}" style="width:100%;" mode="widthFix" />
+        <view class="question {{adapter == 0 ? 'question750' : ''}}" data-type="que" bindtap="tap">
+            <image src="{{imgJson[0].isSelect ? imgJson[1].isSelect ? imgJson[1].selectPath : imgJson[1].path : imgJson[1].noTapPath}}" style="width:100%;" mode="widthFix" />
+        </view>
+        <view class="pic {{adapter == 0 ? 'pic750' : ''}}" data-type="pic" bindtap="tap">
+            <image src="{{imgJson[0].isSelect ? imgJson[0].selectPath : imgJson[0].path}}" style="width:100%;" mode="widthFix" />
+        </view>
+    </view>
+
+</view>

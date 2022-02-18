@@ -1,0 +1,237 @@
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+page {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  background-color: #ffb400;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/bg.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 164rpx;
+  box-sizing: border-box;
+}
+
+.wrapper.big {
+  padding-top: 239rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/bigbg.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .header-tit {
+  width: 654rpx;
+  height: 103rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/info-title.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.wrapper .form {
+  position: relative;
+  z-index: 100;
+}
+
+.wrapper .form .form-item {
+  width: 100%;
+  padding-left: 145rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  will-change: transform;
+}
+
+.wrapper .form .form-item .form-control {
+  width: 459rpx;
+  height: 128rpx;
+}
+
+.wrapper .form .form-item:nth-child(1) .form-control {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/select-1.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-item:nth-child(1) .form-control.active {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/select-1-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-item:nth-child(2) .form-control {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/select-2.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-item:nth-child(2) .form-control.active {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/select-2-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-item:nth-child(3) .form-control {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/select-3.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-item:nth-child(3) .form-control.active {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/select-3-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-item:nth-child(4) .form-control {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/select-4.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-item:nth-child(4) .form-control.active {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/select-4-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-item .is-check {
+  width: 71rpx;
+  height: 71rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/check.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 73rpx 71rpx;
+  background-position: -2rpx center;
+}
+
+.wrapper .form .form-item .is-check.zoomOut {
+  animation: zoomOut 0.4s forwards;
+}
+
+.wrapper .form .form-item .is-check.zoomIn {
+  animation: zoomIn 0.3s forwards;
+}
+
+.wrapper .form .form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 42rpx;
+}
+
+.wrapper .form .form-btn .btn {
+  width: 306rpx;
+  height: 75rpx;
+}
+
+.wrapper .form .form-btn .btn.clear {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/clear.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 55rpx;
+}
+
+.wrapper .form .form-btn .btn.clear.active {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/clear-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .form .form-btn .btn.next {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/next.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.wrapper .form .form-btn .btn.next:after {
+  display: none;
+}
+
+.wrapper .form .form-btn .btn.next.active {
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/next-a.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.wrapper .footer .desc {
+  width: 750rpx;
+  height: 467rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/mini-figure.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .footer .desc.big {
+  height: 612rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/figure.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper .footer .crimp {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 242rpx;
+  background: url("https://tc.woaap.com/lingzhi/crayon/poster/crimp.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

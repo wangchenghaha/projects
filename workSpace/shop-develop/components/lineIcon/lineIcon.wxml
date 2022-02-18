@@ -1,0 +1,5 @@
+<view class="line-icon ~flex-center" bindtap="onclick">
+  <text style="background-color: {{color}}"></text>
+  <text style="background-color: {{color}}"></text>
+  <text style="background-color: {{color}}"></text>
+</view>

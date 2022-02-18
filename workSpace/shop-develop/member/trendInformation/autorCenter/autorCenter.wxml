@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="userInfo flex-bet">
+        <view class="flex-start">
+            <image class="avatarImg" src="{{avatarImg}}" mode="widthFix"></image>
+            <view class="info">
+                <view class="nickName">{{nickName}}</view>
+                <view class="detail">{{personalProfile}}</view>
+            </view>
+        </view>
+        <view class="foucsed" wx:if="{{autorData.isFocusAuthor}}" bindtap="onClick">√  已关注</view>
+        <view class="foucs" wx:else bindtap="onClick">+  关注</view>
+    </view>
+    <view class="selectTab flex-center">
+        <view class="tab" >发布   {{publishTotal}}</view>
+    </view>
+    <trendList class="trend" listData="{{listData}}" wx:if="{{listData.length > 0}}" bind:praise='clickPraise'></trendList>
+</view>
+  

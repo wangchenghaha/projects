@@ -1,0 +1,40 @@
+<view class="refund" wx:if="{{list.length}}">
+  <view class="refund-item" wx:for="{{list}}" wx:key="refundCode">
+    <view class="refund-code ~flex-bet">
+      <view class="~flex-start">
+        <text wx:if="{{item.refundCode}}">退单:{{item.refundCode}}</text>
+        <text wx:elif="{{item.exchangeCode}}">换货单:{{item.exchangeCode}}</text>
+        <copy-icon text="{{item.refundCode || item.exchangeCode}}" />
+      </view>
+      <text>{{item.createTime}}</text>
+    </view>
+    <view class="refund-code ~flex-bet">
+      <view class="~flex-start">
+        <text>订单:{{item.oriorderCode}}</text>
+        <copy-icon text="{{item.oriorderCode}}" />
+      </view>
+      <text wx:if="{{item.oriOrderTime}}">{{item.oriOrderTime}}</text>
+    </view>
+    <view class="refund-status ~flex-bet">
+      <view>共{{item.refundTotalCount || item.sourceGoodsCount}}件商品
+        <block wx:if="{{item.refundCode}}">
+          , 实付: <text class="price">￥{{item.realPayPrice || 0}}</text>
+        </block>
+      </view>
+      <view>
+        <text class="status {{item.refundStatus === 'RefundSuccess' ? 'success' : 'fail'}}">{{item.myOrderStatus}}</text>
+        <text class="store-refund ~text-c" wx:if="{{item.showStoreRefund}}" data-index="{{index}}" bindtap="storeRefund">到店退货</text>
+      </view>
+
+    </view>
+    <view class="goods-wrap" style="{{item.showMore ? 'height: 330rpx; overflow:hidden' :''}}">
+      <view wx:for="{{item.refundGsOrderPoList}}" wx:for-item="goodsItem" wx:key="id">
+        <order-item order="{{goodsItem}}" data-refund="{{item.refundCode}}" data-code="{{item.oriorderCode}}" bindtap="goRefundDetail"></order-item>
+      </view>
+    </view>
+    <view class="~text-c" wx:if="{{item.refundGsOrderPoList.length > 1}}" data-index="{{index}}" bindtap="showMore">
+      <block wx:if="{{item.showMore}}">显示更多</block>
+      <block wx:else>收起</block>
+    </view>
+  </view>
+</view>

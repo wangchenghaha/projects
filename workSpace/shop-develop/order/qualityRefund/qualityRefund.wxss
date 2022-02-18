@@ -1,0 +1,71 @@
+.refund {
+  padding-bottom: 100rpx;
+  font-size: 30rpx;
+}
+.refund .title {
+  font-size: 32rpx;
+  padding: 20rpx;
+}
+.refund-text {
+  display: block;
+  padding: 20rpx;
+  background: #DADADA;
+}
+.refund-text .red-star {
+  color: red;
+}
+.refund .content {
+  margin: 20rpx auto;
+  width: 95%;
+}
+.refund .content .desc {
+  font-size: 26rpx;
+}
+.refund .content .tip {
+  font-size: 24rpx;
+}
+.refund-item {
+  margin-bottom: 20rpx;
+}
+.refund-item .text {
+  width: 235rpx;
+  vertical-align: middle;
+}
+.refund-item .text text {
+  color: red;
+}
+.refund-item input {
+  flex: 1;
+  padding: 5rpx 10rpx;
+  border: solid 2rpx #ccc;
+}
+.refund-item input.border-red {
+  border: solid 2rpx red;
+}
+.refund .upload-img .img-wrap {
+  position: relative;
+  border: solid 1rpx #ccc;
+}
+.refund .upload-img .img-wrap .icon {
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.refund .upload-img image {
+  margin-right: 20rpx;
+  width: 150rpx;
+  height: 300rpx;
+}
+.refund .submit {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 40rpx;
+  background: #000;
+  color: #fff;
+}
+
+/*# sourceMappingURL=qualityRefund.wxss.map */

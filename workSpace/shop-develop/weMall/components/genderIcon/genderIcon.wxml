@@ -1,0 +1,6 @@
+<view class="gender">
+  <view wx:if="{{type === 0}}" class="woman"></view>
+  <view wx:if="{{type === 1}}" class="man">
+    <text class="line"></text>
+  </view>
+</view>

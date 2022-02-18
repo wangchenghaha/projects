@@ -1,0 +1,9 @@
+<view class="nav">
+  <view wx:for="{{navBar}}" class="nav-item {{item.list ? 'last-item' : 'normal'}} {{item.checked ? 'active' : ''}}" wx:key="status" data-index="{{index}}" bindtap="changeNav">
+    <text>{{item.text}}</text>
+    <text wx:if="{{item.iconNum}}" class="icon-num">{{item.iconNum}}</text>
+    <view class="drop" wx:if="{{item.checked && item.list.length}}">
+      <view class="drop-item" wx:for="{{item.list}}" wx:key="text">{{item.text}}</view>
+    </view>
+  </view>
+</view>

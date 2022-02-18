@@ -1,0 +1,27 @@
+<scroll-view style="height: {{wh}}px" scroll-y scroll-with-animation="{{true}}">
+    <view class="wrapper">
+        <view class="content">
+            <!-- 人物 -->
+            <view class="crayon"></view>
+            <!-- 按钮 -->
+            <view class="start" hover-class="active" bindtap='startaward'></view>
+            <!-- 指针 -->
+            <view class="location"></view>
+            <!-- 转盘 -->
+            <view class="turntable" animation='{{animationData}}'></view>
+        </view>
+
+        <view class="btnbox">
+            <!-- 已抽奖，且已领取 用check -->
+            <view class="item check" wx:if='{{info.is_add_card}}' bindtap='checkcard' hover-class="active"></view>
+            <!-- 默认显示 get -->
+            <view class="item get" wx:if='{{!info.is_add_card && unionid}}' hover-class="active" bindtap='handleCoupon'></view>
+            <button class="item get" wx:if='{{!info.is_add_card && !unionid}}' hover-class="active" open-type="getUserInfo" bindgetuserinfo="getuserinfo"></button>
+            <view class="item shop" hover-class="active" bindtap='toShop'></view>
+        </view>
+    </view>
+
+    <!-- 预加载 -->
+    <preload bindimageAllLoad='imageAllLoad' wx:if='{{preload}}' />
+    <modal modalconfig='{{modalconfig}}' showModal='{{showModal}}' wx:if='{{showModal}}' bindclose='closemodal' />
+</scroll-view>

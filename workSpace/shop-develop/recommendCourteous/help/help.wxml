@@ -1,0 +1,19 @@
+<!--recommendCourteous//homePage/homePage.wxml-->
+<view>
+  <view class="shade" wx:if="{{showShade}}" bindtap="hideShade"></view>
+  <view class="coupons" wx:if="{{showCoupons}}">
+    <image mode="widthFix" src="{{couponsImg}}" class="img"></image>
+  </view>
+  <view>
+    <image mode="widthFix" src="{{bgImg}}" class="bgImg"></image>
+    <view class="invite" style="top: {{topInvite}}" wx:if="{{showInvite}}">
+      <image mode="widthFix" src="{{zlImg}}" class="img"></image>
+      <view class="inviteInfo">
+        <image mode="widthFix" src="{{zlsImg}}" class="img"></image>
+        <button class="havaBtn" wx:if="{{haveHelp}}">已为好友助力</button>
+        <button class="shareBtn" wx:else bindtap="goHelp">为Ta助力</button>
+        <button class="posterBtn" bindtap="goInvite">我也抢神券</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,140 @@
+.content {
+  overflow: hidden;
+  min-height: 100%;
+  background: #F3F3F3;
+}
+.content image {
+  display: block;
+  width: 100%;
+}
+.content .container {
+  margin: 30rpx auto;
+  width: 690rpx;
+}
+.content .container .banner {
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 45rpx;
+  height: 395rpx;
+  background: #000;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 0);
+  box-sizing: border-box;
+  border-radius: 30rpx;
+}
+.content .container .banner .rule {
+  font-size: 30rpx;
+  color: #fff;
+}
+.content .container .banner .rule .icon {
+  margin-right: 10rpx;
+  font-size: 24rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border: solid 2rpx #fff;
+  border-radius: 50%;
+}
+.content .container .banner .employee {
+  font-size: 24rpx;
+  color: #8E8A5E;
+}
+.content .container .banner .info {
+  width: 100%;
+}
+.content .container .banner .info .avatar {
+  position: relative;
+  width: 132rpx;
+  height: 132rpx;
+}
+.content .container .banner .info .avatar image {
+  border-radius: 50%;
+}
+.content .container .banner .info .avatar:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -75rpx 0 0 -75rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border: solid 2rpx rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.content .container .banner .info .step {
+  margin-left: 40rpx;
+  flex: 1;
+}
+.content .container .banner .info .step .text {
+  align-items: flex-end;
+}
+.content .container .banner .info .step .text .desc {
+  color: #D0B863;
+  font-size: 24rpx;
+}
+.content .container .banner .info .step .text .score {
+  color: #EBDB72;
+  font-size: 72rpx;
+  line-height: 70rpx;
+}
+.content .container .banner .info .progress {
+  margin: 15rpx 0;
+  flex: 1;
+  height: 6rpx;
+  background: #7D7D7D;
+}
+.content .container .banner .info .progress .value {
+  display: block;
+  width: 20%;
+  height: 6rpx;
+  background: #D0B863;
+}
+.content .container .banner .info .desc {
+  font-size: 24rpx;
+  color: #959A9F;
+}
+.content .container .level {
+  margin-top: 25rpx;
+  position: relative;
+  height: 140rpx;
+}
+.content .container .level .slider {
+  flex: 1;
+}
+.content .container .level-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 140rpx;
+}
+.content .container .level-item {
+  color: #717476;
+  flex-direction: column;
+}
+.content .container .level-item .icon {
+  width: 70rpx;
+  height: 70rpx;
+}
+.content .container .level-item .text {
+  font-size: 26rpx;
+}
+.content .container .level-item .value {
+  font-size: 28rpx;
+}
+.content .container .title {
+  position: relative;
+  margin-top: 60rpx;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+.content .container .title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  width: 5rpx;
+  height: 25rpx;
+  background: #000;
+}
+
+/*# sourceMappingURL=profit.wxss.map */

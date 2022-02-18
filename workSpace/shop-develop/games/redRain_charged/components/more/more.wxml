@@ -1,0 +1,25 @@
+<view class="bouncedBg" style="animation: {{bgAnimate}} .2s linear 0s 1 forwards;"></view>
+<view class="bounced" style="animation: {{animate}} .2s linear 0s 1 forwards;">
+    <view class="subView">
+        <image src="{{img}}" style="width:100%;height:100%;" />
+        <view class="closedTap" bindtap="closed"></view>
+        <view class="renwuViews">
+            <view class="renwuViews-sub" wx:for="{{renwuImgs}}" wx:key="index">
+                <view class="left">
+                    <image src="{{item.taskIcon}}" style="width:80rpx;height:80rpx;" />
+                </view>
+                <view class="center">
+                    <label class="center-title">{{item.taskName}}</label>
+                    <label class="center-subTitle">{{item.subTitle}}</label>
+                </view>
+                <view class="right">
+                    <view wx:if="{{item.isOK < 0}}" class="tap" data-detail="{{item}}" bindtap="goFinish">去完成
+                        <button open-type="share" class="share" wx:if="{{item.taskCode === 'help'}}"></button>
+                    </view>
+                    <view wx:else class="tap" style="background-color: gray;">已完成</view>
+
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

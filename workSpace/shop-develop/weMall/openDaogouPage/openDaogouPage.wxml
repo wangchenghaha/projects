@@ -1,0 +1,46 @@
+<view class="wrap" wx:if="{{wrapIsShow}}">
+  <view class="banner flex-center">
+    <view class='title-logo'>
+      <image src='{{daogouImage}}' mode="widthFix"></image>
+    </view>
+    <view class='title'>
+      你的专属时尚顾问
+      <view class="title-name">{{pageTitle}}</view>
+    </view>
+  </view>
+    <!--封面图  -->
+  <share-banner wx:if="{{bannerUpList.length > 0}}" banner="{{bannerUpList}}"></share-banner>
+  <view class='cover-img'>
+    <image src='{{upImage}}' mode="widthFix"></image>
+  </view>
+  <share-banner banner="{{bannerList}}" shortVideo="{{shortVideo}}"></share-banner>
+
+  <view class="{{isIphoneX?'iphoneX_goods_wrapper':'goods-wrapper'}}">
+    <good-list-one wx:if="{{modelType && modelType === 'model2'}}" list="{{goodsList}}" highLight="{{highLight}}" wxMoment="{{wxMoment}}"></good-list-one>
+    <goods-list wx:else  list="{{goodsList}}"  highLight="{{highLight}}" wxMoment="{{wxMoment}}"></goods-list>
+    <text wx:if='{{guideId}}' class='guide'>{{guideId}}</text>
+  </view>
+  <view class='code-wrapper'  wx:if="{{false}}">
+    <view class='code-img'>
+      <image src='{{QRCodeImg}}' mode="widthFix"></image>
+    </view>
+  </view>
+
+  <view class="fixed-bottom flex-center  {{isIphoneX ?'iphoneXMarginBottom':''}}" wx:if="{{fixBottom.show}}">
+    <view class="flex-bet flex-1">
+      <block wx:for="{{fixBottom.list}}" wx:key="fixBottom">
+        <view class="flex-item flex-center" data-type="{{item.type}}" bindtap="onClick">
+          <view class="icon">
+            <image src="{{item.icon}}" mode="widthFix"></image>
+          </view>
+          <text>{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- IphoneX底部栏 -->
+  <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}"></view>
+</view>
+
+

@@ -1,0 +1,142 @@
+<view class="wrapper">
+    <!-- 配送方式 -->
+    <view class="commonRow dividing-line-10">
+        <view class="onLeft">配送方式</view>
+        <view class="onRight">邮寄到家</view>
+    </view>
+
+    <!-- 配送地址详情 -->
+   <view class="commonRow dividing-line-10" bindtap="goAddress" wx:if="{{address.userName}}">
+        <view class="onLeft">
+            <view class="addressDetail" >
+                <image  src="../../images/address.png" mode="widthFix"/>
+                <view class="detailInfo">
+                    <view>{{address.userName}}<text style="margin-left: 30rpx;">{{address.phone}}</text></view>
+                    <view>{{address.province}} {{address.city}} {{address.area}} {{address.detailAddress}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="onRight">></view>
+    </view>
+
+    <!-- 添加配送地址 -->
+   <view class="commonRow dividing-line-10" bindtap="goAddress"  wx:else>
+        <view class="onLeft">添加您的配送地址</view>
+        <view class="onRight">></view>
+    </view>
+
+    <!-- 商品详情 -->
+    <view class="goodsRow dividing-line-10">
+        <view class="onLeft">
+            <view class="goodsInfo">
+                <view class="goodImg">
+                    <image src="{{goodsPic}}" mode="widthFix" />
+                </view>
+                <view class="baseInfo">
+                    <view class="goodsName">{{goodDetail.goodsName}}</view>
+                    <view class="goodsStyle">款式：{{goodDetail.colorName}}</view>
+                    <view class="goodsStyle">尺码：{{goodDetail.sizeName}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="onRight">
+            <view  class="goodsStyle">数量：{{goodDetail.goodsCount}}</view>
+            <view  class="goodsPice" >￥ {{goodDetail.price}}</view>
+        </view>
+    </view>
+
+    <block wx:for="{{markList}}" wx:key="mark">
+        <view class="goodsRow tiebiaoMargin" >
+            <view class="onLeft">
+                <view class="goodsInfo">
+                    <view class="goodImg">
+                         <image style="width: 50rpx;" src="{{item.picUrl}}" mode="widthFix" />
+                    </view>
+                    <view class="baseInfo">
+                        <!-- <view class="goodsName">{{item.goodsName}}</view> -->
+                        <view class="markTag">贴标</view>
+                    </view>
+                </view>
+            </view>
+            <view class="onRight">
+                <view  class="goodsStyle">数量：{{markNums}}</view>
+            </view>
+        </view>
+    </block>
+    
+    <view class="dividing-line_1rpx"/>
+    <!-- <view class="commonRow coupon-dividing-line" style="">
+        <view class="onLeft">
+            优惠券
+        </view>
+        <view class="onRight">
+            <view class="couponShow">
+                <view>优惠 ￥10.00元</view>
+                <view>></view>
+            </view>
+        </view>
+    </view> -->
+
+    <block wx:for="{{costList}}" wx:key="cost">
+        <view class="commonRow costClass ">
+            <view class="onLeft">
+                {{item.explain}}
+            </view>
+            <view class="onRight">
+                <view class="couponShow">
+                    <view class="freeClass" wx:if="{{item.limitTime}}">{{item.limitTile}} ￥{{item.limitPrice}}</view>
+                    <view class="{{item.limitTime? 'limitClass':''}}">￥{{item.price}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+
+    <scroll-view scroll-y="{{true}}" style="height:800rpx;">
+        <view class="protocol dividing-line-10" >
+            <view class="title">{{rule.tabName}}</view>
+            <view class="content">
+                <view class="ruleTitle">{{rule.content.title}}</view>
+                <block wx:for="{{rule.content.contents}}" wx:key="content" wx:for-item="item">
+                    <view class="ruleTitle">{{item.subTitle}}</view>
+                    <block wx:for="{{item.tip}}" wx:key="tips" wx:for-item="tipItem">
+                        <view class="{{tipItem.className ? 'redTip': 'tipContent'}}">{{tipItem.text}}</view>
+                    </block>
+                </block>
+                <view  class="ruleTitle">{{rule.content.endContext}}</view>
+            </view>
+        </view>
+    </scroll-view>
+
+    <!-- <view class="protocol dividing-line-10" style="height: {{isShowAll? '1900rpx' : '450rpx'}}">
+        <view class="title">{{rule.tabName}}</view>
+        <view class="content">
+            <view class="ruleTitle">{{rule.content.title}}</view>
+            <block wx:for="{{rule.content.contents}}" wx:key="content" wx:for-item="item">
+                <view class="ruleTitle">{{item.subTitle}}</view>
+                <block wx:for="{{item.tip}}" wx:key="tips" wx:for-item="tipItem">
+                    <view class="{{tipItem.className ? 'redTip': 'tipContent'}}">{{tipItem.text}}</view>
+                </block>
+            </block>
+            <view  class="ruleTitle">{{rule.content.endContext}}</view>
+        </view>
+        <image src="{{ isShowAll ? '../../images/take_up.png' : '../../images/pull_down.png'}}" bindtap="showRlue"/>
+    </view> -->
+
+    <view class="bottomSubmit" style="height:{{isIphoneX ? '300rpx':'235rpx'}}">
+        <view class="explain">
+            <checkbox-group  bindchange="checkboxChange" data-checked="{{isChecked}}">
+                <checkbox  checked="{{isReader}}"  checked="{{isChecked}}"/>
+            </checkbox-group>
+            <view class="content">{{contentBotm}}</view>
+        </view>
+        <view class="payInfo">
+            <view class="onLeft">
+                <text >共计1件，合计：</text>
+                <text style="font-size: 36rpx; color: #000;">￥ {{totlePrice}}</text>
+            </view>
+            <view class="onRight" bindtap="submitOrder">
+                立即支付
+            </view>
+        </view>
+    </view>
+</view>

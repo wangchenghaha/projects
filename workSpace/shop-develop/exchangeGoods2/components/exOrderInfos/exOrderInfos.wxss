@@ -1,0 +1,2 @@
+@import "../../mycss.wxss";
+.ex_order_evi_pic{width: 150rpx;position: relative;margin: 17rpx 0 0 17rpx;}

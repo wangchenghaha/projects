@@ -1,0 +1,45 @@
+<view class="content {{isIphoneX?'iphoneXHeigth':''}}" wx:if="{{hideLoding}}">
+    <view style='background:url({{couponImg[0]}}) no-repeat; background-size: cover;'>
+        <view class="name {{coupon1.length!=0?'name1':''}}">门店专享</view>
+        <view class="units {{coupon1.length!=0?'units1':''}}">共<text>{{coupon1.length}}</text>张</view>
+        <view class="none" wx:if="{{coupon1.length==0}}">暂无优惠券</view>
+        <view class="store" bindtap="golink" data-id="1">
+            <image src="https://cdn.bestseller.com.cn/assets/common/pub/image/coupon_location.png"></image>
+        </view>
+
+        <scroll-view scroll-x class='scrollView' wx:if='{{coupon1.length>0}}'>
+          <view class='bottom_ul' style="width:{{coupon1.length*350}}rpx">
+            <view class='bottom_li' wx:for="{{coupon1}}" wx:key="coupon1" id="1" data-index='{{index}}' bindtap='openQuan'>
+              <image style="width: 100%" src="{{item.cardImg}}" mode="widthFix"></image>
+            </view>
+          </view>
+        </scroll-view>
+    </view>
+    <view style='background:url({{couponImg[1]}}) no-repeat;background-size: cover;'>
+        <view class="name {{coupon2.length!=0?'name1':'name2'}}">官网专享</view>
+        <view class="units {{coupon2.length!=0?'units1':''}}">共<text>{{coupon2.length}}</text>张</view>
+        <view class="none" wx:if="{{coupon2.length==0}}">暂无优惠券</view>
+        <view class="store1" bindtap="golink" data-id="2">进入官网 ></view>
+
+        <scroll-view scroll-x class='scrollView' wx:if='{{coupon2.length>0}}'>
+          <view class='bottom_ul' style="width:{{coupon2.length*350}}rpx">
+            <view class='bottom_li' wx:for="{{coupon2}}" wx:key="coupon1" id="2" data-index='{{index}}' bindtap='openQuan'>
+              <image style="width: 100%" src="{{item.cardImg}}" mode="widthFix"></image>
+            </view>
+          </view>
+        </scroll-view>
+    </view>
+    <view style='background:url({{couponImg[2]}}) no-repeat;background-size: cover;'>
+        <view class="name {{coupon3.length!=0?'name1':'name2'}}">门店官网通用</view>
+        <view class="units {{coupon3.length!=0?'units1':''}}">共<text>{{coupon3.length}}</text>张</view>
+        <view class="none" wx:if="{{coupon3.length==0}}">暂无优惠券</view>
+
+        <scroll-view scroll-x class='scrollView' wx:if='{{coupon3.length>0}}'>
+          <view class='bottom_ul' style="width:{{coupon3.length*350}}rpx">
+            <view class='bottom_li' wx:for="{{coupon3}}" wx:key="coupon1" id="3" data-index='{{index}}' bindtap='openQuan'>
+              <image style="width: 100%" src="{{item.cardImg}}" mode="widthFix"></image>
+            </view>
+          </view>
+        </scroll-view>
+    </view>
+</view>

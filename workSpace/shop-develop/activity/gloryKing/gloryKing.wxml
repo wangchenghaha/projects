@@ -1,0 +1,24 @@
+<view class="king">
+  <block wx:for="{{imgList.mainImgList}}" wx:key="imgUrl">
+    <view class="main">
+      <block wx:if="{{item.imgUrl}}">
+        <image src="{{item.imgUrl}}" mode="widthFix"  data-type="detail" data-index="{{index}}" bindtap="onClick"></image>
+      </block>
+      <block wx:elif="{{item.videoUrl}}">
+        <video autoplay="{{item.autoplay}}" class="video" src="{{item.videoUrl}}"></video>
+      </block>
+      <block wx:else>
+        <view class="btn text-c" style="width: {{item.width}}rpx; background: {{item.bgColor}}; border: {{imgList.border}}">
+          <navigator wx:if="{{item.appId}}" target="miniProgram" app-id="{{item.appId}}" path="{{item.linkUrl}}">{{item.text}}</navigator>
+          <navigator wx:else url="{{item.linkUrl}}">{{item.text}}</navigator>
+        </view>
+      </block>
+    </view>
+  </block>
+  <view class="footer">
+    <block wx:for="{{footer.list}}" wx:key="text">
+      <view class="footer-item text-c color-fff"
+            style="background: {{footer.bgColor}}; border: {{footer.border}}" data-index="{{index}}" data-type="footer" bindtap="onClick">{{item.text}}</view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+
+
+<view class="wrap">
+ 
+    <view class="null" wx:if="{{null_isShow}}">
+      <text>您还没有添加过您的常用地址</text>
+    </view>
+
+    <view class="addAddress {{isIphoneX ?'fix-iphonex-button':''}}" style="{{null_isShow ? 'bottom: 50%;' : ''}}" bindtap="addAddress">
+      <view class="text">新增地址</view>
+    </view>
+
+    <!-- 已有地址列表 -->
+    <view class="addressList  {{isIphoneX ?'fix-iphonex-button':''}}">
+        <view class="li" wx:for="{{addresses}}" wx:key="addresses">
+          <view id="{{index}}" class="liCon" bindtap="liCon">
+            <view class="name">
+              <text style="color:black; line-height: 60rpx; font-size:32rpx;">{{item.userName}}</text>
+              <text style="color:black; margin-left: 50rpx; line-height: 60rpx; font-size:32rpx;"> {{item.phone}}</text>
+            </view>
+            <view class="dizhi">
+              <text class="left">{{item.province}} {{item.city}} {{item.area}} {{item.detailAddress}} </text>
+            </view>
+          </view>
+          <view class="liBottom">
+            <!-- <radio id="{{item.id}}" value="{{index}}" checked="{{item.checked}}"></radio>设为默认 -->
+            <switch id="{{index}}" checked="{{item.checked}}" bindchange="switchChange"></switch>
+            <text style="font-size: 32rpx; color: black; margin-left: 10rpx;">默认地址</text>
+            <view data-index="{{index}}" class="options" bindtap="deleteAddress">
+              <image src="../../images/address_deleted.png" mode="aspectFit"></image>
+              <text>删除</text>
+             </view>
+            <view data-index="{{index}}" class="options" bindtap="xiugaiAddress">
+              <image src="../../images/address_edited.png" mode="aspectFit"></image>
+              <text>编辑</text>
+             </view>
+          </view>
+        </view>
+    </view>
+
+    <view class="bottomA"></view>
+
+</view>
+
+
+

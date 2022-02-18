@@ -1,0 +1,292 @@
+<view class="wrap">
+    <!-- 导航栏 -->
+    <view class="navi">
+        <image class="{{isShowImg?'':'hide'}}" src="{{titleLogo}}" mode="widthFix" style="width:30%; height:8vh;"></image>
+        <block wx:for="{{navi}}" wx:key="index">
+            <text id="{{index}}" class="{{index == navi_id ? 'textSelected' : ''}}" bindtap="clickNavi">{{item}}</text>
+        </block>
+        <view class="navimg"  bindtap="changeLayout">
+            <image src="{{navi_img}}" mode="aspectFit"></image>
+        </view>
+    </view>
+    <!-- 品牌筛选 -->
+    <view class="filter" wx:if="{{isShow}}">
+        <view class="filterContent">
+            <block wx:for="{{filterBrand}}" wx:key="index">
+                <view class="filterLayout" style="margin-left: 25rpx;">
+                    <text  id="{{index}}" class="{{index == brand_id ? 'itemSelected':'itemNoSelected'}}" bindtap="clickFilter">{{item}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="filterContent">
+            <view class="confirm">
+                <text bindtap="btnClear" data-type="brand">清空</text>
+            </view>
+            <view class="confirm">
+                <text bindtap="btnSubmit">确认</text>
+            </view>
+        </view>
+        <view class="takeUp">
+            <image src="../../../images/take_up.png" mode="aspectFit"  bindtap="takeUp"/>
+        </view>
+    </view>
+   <!-- 礼品筛选 -->
+  <view class="filter" wx:if="{{isShow_01}}">
+        <text class="filter_text" style="margin-top:30rpx;">商品/优惠券</text>
+        <view class="filterContent">
+            <text  class="classification" style="margin-top:30rpx;">一级分类</text>
+            <block wx:for="{{filterGift}}" wx:key="index">
+                <view class="filterLayout" style="margin-left: 50rpx;">
+                    <text  id="{{index}}" class="{{index == gift_id ? 'itemSelected':'itemNoSelected'}}" bindtap="clickFilter_01">{{item}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="filterContent">
+            <view class="confirm">
+                <text bindtap="btnClear" data-type="goods">清空</text>
+            </view>
+            <view class="confirm">
+                <text bindtap="btnSubmit">确认</text>
+            </view>
+        </view>
+        <view class="takeUp">
+            <image src="../../../images/take_up.png" mode="aspectFit"  bindtap="takeUp"/>
+        </view>
+    </view>
+
+     <!-- 礼品筛选 -->
+    <view class="filter" wx:if="{{isShow_01_02}}">
+        <text class="filter_text" style="margin-top:30rpx;" bindtap="close_01_02">{{back}}</text>
+        <view class="filterContent">
+            <view class="classification" style="margin-top:20rpx;">二级分类</view>
+            <view class = "classify">
+            <block wx:for="{{filterGoods}}" wx:key="index">
+                <view class="filterClass" style="margin-left: 25rpx;">
+                    <text  id="{{index}}" class="{{index == goodsClassify_id? 'itemSelected':'itemNoSelected'}}" bindtap="clickFilter_01_02">{{item}}</text>
+                </view>
+            </block>
+            </view>
+        </view>
+        <view class="filterContent">
+            <view class="confirm">
+                <text bindtap="btnClear" data-type="classify">清空</text>
+            </view>
+            <view class="confirm">
+                <text bindtap="btnSubmit">确认</text>
+            </view>
+        </view>
+        <view class="takeUp">
+            <image src="../../../images/take_up.png" mode="aspectFit"  bindtap="takeUp"/>
+        </view>
+    </view>
+
+
+    <!-- 范围筛选 -->
+    <view class="filter" wx:if="{{isShow_02}}">
+        <text class="filter_text" style="margin-top:30rpx;">积分范围</text>
+        <view class="filterContent">
+            <block wx:for="{{filterContentRange}}" wx:key="index">
+                <view class="filterLayout" style="flex:1;">
+                    <text  id="{{index}}" class="{{index == range_id ? 'itemSelected':'itemNoSelected'}}" bindtap="clickFilter_02">{{item}}</text>
+                </view>
+            </block>
+        </view>
+        <text class="filter_text" style="margin-top:30rpx;">兑换能力</text>
+        <view class="filterContent">
+            <block wx:for="{{filterContentAble}}" wx:key="index">
+                <view class="filterLayout" style="flex:1;">
+                    <text  id="{{index}}" class="{{index == able_id ? 'itemSelected':'itemNoSelected'}}" bindtap="clickFilter_03">{{item}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="filterContent">
+            <view class="confirm">
+                <text bindtap="btnClear" data-type="able">清空</text>
+            </view>
+            <view class="confirm">
+                <text bindtap="btnSubmit">确认</text>
+            </view>
+        </view>
+        <view class="takeUp">
+            <image src="../../../images/take_up.png" mode="aspectFit"  bindtap="takeUp"/>
+        </view>
+    </view>
+
+
+    <!-- 商品列表 -->
+    <view class="gift {{isList? '':'hide'}}">
+        <view class="{{isShowCoupon? '':'hide'}}">
+                    <text>| 优惠券</text>
+                    <block wx:for="{{couponList}}" wx:key="index">
+                        <view class="gift-item" bindtap="torcGetCoupon" id="{{index}}">
+                            <view class="class_bg">
+                                <image class="couponImg" src="{{item.picBg_02}}" mode="widthFix"></image>
+                                <view class="coupon-describe">
+                                    <label>
+                                    <text style="font-size: 25rpx; font-weight: 600;">[{{item.brandCode}}]</text>
+                                    <text class="typeClass">{{item.type}}</text>
+                                    </label>
+                                    <text style="font-size: 25rpx; color:#000; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{item.goodsName}}</text>
+                                </view>
+                            </view>
+                            <view class="couponBtn">点击领取</view>
+                        </view>
+                    </block>
+                </view>
+
+        <view class="{{isShowGift? '':'hide'}}">
+            <text>| 礼品</text>
+            <block wx:for="{{giftList}}" wx:key="index">
+                <view class="gift-item" bindtap="torcGoodsDetail" id="{{index}}">
+                    <view class="imageArea">
+                        <image class="backImg" src="{{item.picBg_02}}" mode="widthFix"></image>
+                        <image class="noStock" src="../../../images/list_car_false.png" mode="widthFix" wx:if="{{!item.isStock}}"/>
+                    </view>
+                    <view class="gift-describe">
+                        <text style="font-size: 25rpx; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">[{{item.brandCode}}] {{item.goodsName}}</text>
+                        <label>
+                            <text style="font-size: 25rpx; color:#4faded; font-weight: 600;">{{item.score}}</text>
+                            <text style="font-size: 25rpx; color:#000">积分+</text>
+                            <text style="font-size: 25rpx; color:#4faded; font-weight: 600;">{{item.money}}</text>
+                            <text style="font-size: 25rpx; color:#000">元</text>
+                        </label>
+                        <text style="font-size: 20rpx; color:#aaa; text-decoration:line-through;">吊牌价￥{{item.goodsPrice}}</text>
+                    </view>
+                    <view class="gift-btn">立即兑换</view>
+                </view>
+            </block>
+        </view>
+
+    </view>
+
+ <!-- Grid布局展示 -->
+
+    <view class="giftSwp {{isGrid? '':'hide'}}">
+        <view style="width:100%; height:8vh;"/>
+         <view class='idx-swiper'>
+            <view   class='box'
+                    data-index="{{index}}"
+                    bindtouchstart="touchStart"
+                    bindtouchmove="touchMove"
+                    bindtouchend="touchEnd" >
+
+                <!-- 最左边布局 -->
+                <view class="isShow {{showLeft?'':'hide'}} {{isIphoneX ? 'iPhoneXHeigth':''}}" animation="{{animation1}}" bindtap="scrollLeft">
+                    <view class="idx-cswp">
+                        <image class="swp-tilte" src="{{leftOut.imgLogo}}" mode="aspectFit"/>
+                       <view style="display:flex;  flex-direction: row;">
+                            <view style="width: 400rpx; font-size: 26rpx; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;text-align: center;">{{leftOut.goodsName}}</view>
+                            <text class="{{leftOut.isCounpon?'':'hide'}}" style="font-size: 26rpx; color:#4faded;">({{leftOut.couponScope}})</text>
+                        </view>
+                        <label  class="{{leftOut.isCounpon?'hide':''}}" >
+                            <text style="font-size: 30rpx; color:#4faded; ">{{leftOut.score}}积分+{{leftOut.money}}元</text>
+                            <text style="font-size: 24rpx; color:#aaa; text-decoration:line-through;">吊牌价￥{{leftOut.goodsPrice}}</text>
+                        </label>
+                        <text  class="{{leftOut.isCounpon?'':'hide'}}"  style="font-size: 30rpx; color:#4faded; ">{{leftOut.score}}积分可兑换</text>
+                        <image class= "swp-content" src='{{leftOut.picBg_01}}' mode='scaleFill'></image>
+                    </view>
+                </view>
+
+                <!-- 左边第二个布局 -->
+                 <view class="isShow {{showLeft01?'':'hide'}} {{isIphoneX ? 'iPhoneXHeigth':''}}" animation="{{animation2}}" bindtap="scrollLeft">
+                    <view  class="idx-cswp">
+                        <image class="swp-tilte" src="{{leftIn.imgLogo}}" mode="aspectFit"/>
+                        <view style="display:flex;  flex-direction: row;">
+                            <view style="width: 400rpx; font-size: 26rpx; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;text-align: center;">{{leftIn.goodsName}}</view>
+                            <text class="{{leftIn.isCounpon?'':'hide'}}" style="font-size: 26rpx; color:#4faded;">({{leftIn.couponScope}})</text>
+                        </view>
+                        <label  class="{{leftIn.isCounpon?'hide':''}}" >
+                            <text style="font-size: 30rpx; color:#4faded; ">{{leftIn.score}}积分+{{leftIn.money}}元</text>
+                            <text style="font-size: 24rpx; color:#aaa; text-decoration:line-through;">吊牌价￥{{leftIn.goodsPrice}}</text>
+                        </label>
+                        <text  class="{{leftIn.isCounpon?'':'hide'}}"  style="font-size: 30rpx; color:#4faded; ">{{leftIn.score}}积分可兑换</text>
+                        <image class= "swp-content" src='{{leftIn.picBg_01}}' mode='scaleFill'></image>
+                    </view>
+                </view>
+                <!-- 中间布局 -->
+                <view class="isShow {{showCenter?'':'hide'}} {{isIphoneX ? 'iPhoneXHeigth':''}}" animation="{{animation3}}" bindtap='chooesGoods'>
+                    <view  class="idx-cswp">
+                        <image class="swp-tilte" src="{{center.imgLogo}}" mode="aspectFit"/>
+                        <view style="display:flex;  flex-direction: row; clear:both; overflow:hidden;">
+                            <view style="font-size: 26rpx; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;text-align: center; max-width:400rpx;">{{center.goodsName}}</view>
+                            <text class="{{center.isCounpon?'':'hide'}}" style="font-size: 26rpx; color:#4faded;">({{center.couponScope}})</text>
+                        </view>
+                        <label  class="{{center.isCounpon?'hide':''}}" >
+                            <text style="font-size: 30rpx; color:#4faded; ">{{center.score}}积分+{{center.money}}元</text>
+                            <text style="font-size: 24rpx; color:#aaa; text-decoration:line-through;">吊牌价￥{{center.goodsPrice}}</text>
+                        </label>
+                        <text  class="{{center.isCounpon?'':'hide'}}"  style="font-size: 30rpx; color:#4faded; ">{{center.score}}积分可兑换</text>
+                        <image class="noStock" src="../../../images/list_car_false.png" mode="widthFix" wx:if="{{!center.isCounpon && !center.isStock}}"/>
+                        <image class= "swp-content" src='{{center.picBg_01}}' mode='aspectFill'></image>
+                    </view>
+                </view>
+
+                <!-- 右边第二个布局 -->
+                 <view class="isShow {{showRight01?'':'hide'}} {{isIphoneX ? 'iPhoneXHeigth':''}}" animation="{{animation4}}" bindtap="scrollRight">
+                    <view  class="idx-cswp" >
+                        <image class="swp-tilte" src="{{rightIn.imgLogo}}" mode="aspectFit"/>
+                        <view style="display:flex;  flex-direction: row;">
+                            <view style="width: 400rpx; font-size: 26rpx; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;text-align: center;">{{rightIn.goodsName}}</view>
+                            <text class="{{rightIn.isCounpon?'':'hide'}}" style="font-size: 26rpx; color:#4faded;">({{rightIn.couponScope}})</text>
+                        </view>
+                        <label  class="{{rightIn.isCounpon?'hide':''}}" >
+                            <text style="font-size: 30rpx; color:#4faded; ">{{rightIn.score}}积分+{{rightIn.money}}元</text>
+                            <text style="font-size: 24rpx; color:#aaa; text-decoration:line-through;">吊牌价￥{{rightIn.goodsPrice}}</text>
+                        </label>
+                        <text  class="{{rightIn.isCounpon?'':'hide'}}"  style="font-size: 30rpx; color:#4faded; ">{{rightIn.score}}积分可兑换</text>
+                        <image class= "swp-content" src='{{rightIn.picBg_01}}' mode='scaleFill'></image>
+
+                    </view>
+                </view>
+
+                <!-- 左右边布局 -->
+                <view class="isShow {{showRight?'':'hide'}} {{isIphoneX ? 'iPhoneXHeigth':''}}" animation="{{animation5}}" bindtap="scrollRight">
+                    <view  class="idx-cswp">
+                        <image class="swp-tilte" src="{{rightOut.imgLogo}}" mode="aspectFit"/>
+                        <view style="display:flex;  flex-direction: row;">
+                            <view style="width: 400rpx; font-size: 26rpx; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;text-align: center;">{{rightOut.goodsName}}</view>
+                            <text class="{{rightOut.isCounpon?'':'hide'}}" style="font-size: 26rpx; color:#4faded;">({{rightOut.couponScope}})</text>
+                        </view>
+                        <label  class="{{rightOut.isCounpon?'hide':''}}" >
+                            <text style="font-size: 30rpx; color:#4faded; ">{{rightOut.score}}积分+{{rightOut.money}}元</text>
+                            <text style="font-size: 24rpx; color:#aaa; text-decoration:line-through;">吊牌价￥{{rightOut.goodsPrice}}</text>
+                        </label>
+                        <text  class="{{rightOut.isCounpon?'':'hide'}}"  style="font-size: 30rpx; color:#4faded; ">{{rightOut.score}}积分可兑换</text>
+                        <image class= "swp-content" src='{{rightOut.picBg_01}}' mode='scaleFill'></image>
+                    </view>
+                </view>
+            </view>
+       </view>
+    </view>
+
+    <!-- 商品为空 -->
+    <view class="noCoupon {{showNoCoupon? '':'hide'}}">
+        <image src="http://m.bestseller.com.cn/_nuxt/img/conN.58fd3cc.png"  mode="scaleToFill"/>
+        <view style="font-size: 35rpx; margin-left:37%;">{{nothingText}}</view>
+    </view>
+
+    <view class="transparent_bg {{isShowNotice? '':'hide'}}">
+        <view class="noticeShow">
+            <image src="{{notEnghtPoint}}"  mode="aspectFit"/>
+            <text>抱歉，您的积分暂不足，请继续积累把。</text>
+            <text>更多惊喜优惠等着您呦！</text>
+            <view class="toShop" bindtap="toShop">去商场购物</view>
+            <view class="toOther" bindtap="toOther">查看其他积分商品</view>
+        </view>
+        <icon type="cancel" size="80rpx" color="white" class="close" bindtap="toOther" />
+<!--        <image class="close" src="../../../images/round_close.png" mode="aspectFit"  />-->
+    </view>
+
+    <!-- IphoneX底部栏 -->
+    <view class="bottomCommon  {{isIphoneX ?'fix-iphonex-button':''}}">
+    </view>
+</view>
+
+<!-- 红包雨倒计时 -->
+<view class='hby_cavasBg-opa' wx:if="{{hbyJson.canShow}}"></view>
+<view class='hby_cavasBg' wx:if="{{hbyJson.canShow}}" bindtap="{{hbyJson.canTap ? 'hbyTap' : ''}}">
+    <view class="cavas_img">
+        <image src="{{hbyJson.img}}" style="width:100%;opacity: {{hbyJson.canTap ? '1' : '.2'}};" mode="widthFix" />
+    </view>
+    <view class="downNum">{{hbyJson.downNum}}</view>
+</view>

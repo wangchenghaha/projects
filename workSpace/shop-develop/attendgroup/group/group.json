@@ -1,0 +1,7 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "painter": "/attendgroup/components/painter/painter",
+        "alert" : "/attendgroup/components/alert/alert"
+    }
+}

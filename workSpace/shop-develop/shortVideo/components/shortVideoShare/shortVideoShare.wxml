@@ -1,0 +1,14 @@
+<cover-view class="bg-black"></cover-view>
+<cover-view class="shareView">
+    <cover-view class="topView">
+        <cover-view class="topView-leftView"></cover-view>
+        <cover-view class="topView-rightView" bindtap="onClick" data-code="close">
+            <cover-image src="../../images/shortVideo_close_50.png" style="width:50rpx;height:50rpx;" />
+        </cover-view>
+    </cover-view>
+    <cover-view class="imageView">
+        <cover-image mode="widthFix" style="width:100%;" src="{{detailData.coverImgUrl}}" />
+    </cover-view>
+    <cover-view class="textView">{{detailData.shareContent}}</cover-view>
+    <button open-type="share" class="share bottomShare">分享</button>
+</cover-view>

@@ -1,0 +1,114 @@
+    .content {
+  font-size: 24rpx;
+}
+.content .header {
+  padding: 0 20rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #dadada;
+  box-sizing: border-box;
+}
+.content .main .check {
+  width: 50rpx;
+  height: 200rpx;
+}
+.content .main .goods {
+  flex: 1;
+}
+.content .main .confirm-btn {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #000;
+  color: #fff;
+}
+.content .reason {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.content .reason.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.content .reason .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 8;
+}
+.content .reason-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 90%;
+  background: #fff;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  z-index: 9;
+  overflow: scroll;
+}
+.content .reason-wrapper .upload .img-wrap {
+  position: relative;
+  width: 150rpx;
+  height: 200rpx;
+}
+.content .reason-wrapper .upload .img-wrap image {
+  display: block;
+  width: 150rpx;
+  height: 200rpx;
+}
+.content .reason-wrapper .upload .img-wrap .icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.content .reason .padding-20 {
+  padding: 0 20rpx;
+}
+.content .reason .title {
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #e1e1e1;
+}
+.content .reason-list {
+  padding: 0 20rpx;
+}
+.content .reason-list .item {
+  padding: 5rpx 0;
+}
+.content .reason-my {
+  margin-top: 20rpx;
+}
+.content .reason-my input {
+  height: 40rpx;
+  line-height: 40rpx;
+  border-bottom: solid 1rpx #ccc;
+}
+.content .reason-my input.error {
+  border-color: red;
+}
+.content .reason-tip {
+  margin: 20rpx 0;
+  font-size: 22rpx;
+  color: #ccc;
+}
+.content .reason-btn {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #000;
+  color: #fff;
+}
+
+/*# sourceMappingURL=refundGoods.wxss.map */

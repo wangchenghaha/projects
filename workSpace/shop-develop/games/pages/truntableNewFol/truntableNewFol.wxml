@@ -1,0 +1,9 @@
+<view class="tb_box">
+
+  <!-- <view wx:if="{{types}}"> -->
+  <view hidden="{{!types}}">
+    <truntableFOL id="truntableFOL" wx:if="{{brand == 'FOL'}}" phones="{{phones}}"></truntableFOL>
+  </view>
+  
+
+</view>

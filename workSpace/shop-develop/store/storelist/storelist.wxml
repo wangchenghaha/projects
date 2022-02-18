@@ -1,0 +1,57 @@
+<view class="ba-container">
+  <view class="page">
+      <!-- <view class="page-top">
+        {{address}}
+      </view> -->
+      <view class="page-img">
+          <image src="{{imgurl}}" mode="widthFix" />
+      </view>
+      <view class="map" wx:if="false">
+          <map
+              id="map"
+              longitude="{{longitude}}"
+              latitude="{{latitude}}"
+              scale="16"
+              show-location
+              style="width: 100%; height: 250px;"
+          ></map>
+      </view>
+      <view class="section">
+          <picker mode="multiSelector"  bindchange="setRangeData" bindcolumnchange="rangeChange" value="{{multiIndex}}" range="{{range}}">
+              <view wx:if="{{!ischange}}" class="section-wrap">{{address}}</view>
+              <view wx:else class="section-wrap">{{text}}</view>
+          </picker>
+      </view>
+      <!-- <view class="section">
+        <view class="section-wrap">
+          <picker data-name="province" bindchange="bindPickerChange" value="{{provinceindex}}" range="{{provincearr}}">
+            <view class="picker">
+              省：{{provincearr[provinceindex]}}
+            </view>
+          </picker>
+          <picker data-name="city" bindchange="bindPickerChange" value="{{cityindex}}" range="{{cityarr}}">
+            <view class="picker">
+              市：{{cityarr[cityindex]}}
+            </view>
+          </picker>
+          <picker data-name="area" bindchange="bindPickerChange" value="{{areaindex}}" range="{{areaarr}}">
+            <view class="picker">
+              区：{{areaarr[areaindex]}}
+            </view>
+          </picker>
+        </view>
+      </view> -->
+      <view class="storelist">
+          <view wx:for="{{list}}" :key="index">
+            <view class="store-item" data-id="{{item.id}}"  bindtap="seedetail">
+                <view class="store-name">{{item.business_name}}{{item.branch_name}}</view>
+                <view class="store-address">{{item.province}}{{item.city}}{{item.district}}{{item.address}}</view>
+                <view class="store-bottom">
+                    <view class="phone">电话：{{item.telephone}}</view>
+                    <view class="distance">距您{{item.distance}}KM</view>
+                </view>
+            </view>
+          </view>
+      </view>
+  </view>
+</view>

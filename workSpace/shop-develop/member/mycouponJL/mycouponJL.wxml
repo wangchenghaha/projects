@@ -1,0 +1,27 @@
+<view class="wrap">
+
+  <view class="body" wx:if="{{couponList && couponList.length}}">
+    <view class="list" wx:for="{{couponList}}" wx:key="property">
+      <view class="listitem">
+        <view class="item-left" data-index="{{index}}" bindtap="openCard" style="background-image: url({{leftImage}});  background-size:100% 100%;">
+          <label>
+            <text class="showPrice">{{item.amount}}</text>
+            <text class='showtap'>RMB</text>
+          </label>
+          <view class="showCondition">{{item.threshold}}</view>
+        </view>
+        <view class="item-center">
+          <text class="textDescribe">{{item.channel}}</text>
+          <view class="textTime">{{item.startdate}} — {{item.enddate}}</view>
+        </view>
+
+        <view class="item-right" wx:if="{{isUsed}}">
+          <view class='textUse'>使用</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="text-c no-coupon" wx:else>
+    暂无优惠券
+  </view>
+</view>

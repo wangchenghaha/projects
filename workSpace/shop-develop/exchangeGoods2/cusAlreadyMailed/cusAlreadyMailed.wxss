@@ -1,0 +1,23 @@
+/* exchangeGoods2/cusAlreadyMailed/cusAlreadyMailed.wxss */
+@import "../mycss.wxss";
+@import "../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar";
+.order_tip{white-space: pre-line; font-size: 22rpx;margin-top: 17rpx;margin-bottom: 17rpx;color: #666;
+    padding: 17rpx 0 17rpx 27rpx;width: 85%;}
+
+.layout_refund{padding: 0 17rpx 17rpx 17rpx;}
+.w_price{width: 100%;}
+.v_divider{width: 100%;height:1rpx; background-color: #EEEFF1;}
+.title_m{font-size: 28rpx;font-weight: bold;}
+
+.total_p{font-size: 28rpx;color: #D93830;}
+.total_r{font-size: 20rpx;color: #D93830;margin-right: 17rpx;}
+
+.shop_wrapper{padding: 17rpx;}
+
+.exp_img{width: 55rpx;margin-left: 17rpx;}
+.exp_txt{font-size: 28rpx;color: #999;margin-left: 17rpx;}
+
+.exp_img2{width: 20rpx;position: absolute;right: 37rpx;}
+
+.w_exp{width: 100%;height: 140rpx;}
+

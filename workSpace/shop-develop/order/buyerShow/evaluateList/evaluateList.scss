@@ -1,0 +1,105 @@
+.bg{
+    width: 100%;
+    height: 100%;
+    .subViews{
+        padding: 20rpx;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        .topView{
+            width: 100%;
+            height: 60rpx;
+            display: flex;
+            .icon{
+                width: 60rpx;
+                height: 60rpx;
+                border-radius: 50%;
+                background: #EE8777;
+            }
+            .name{
+                font-size: 25rpx;
+                line-height: 60rpx;
+                margin-left: 20rpx;
+            }
+            .agreeView{
+                width: 20%;
+                margin-top: 10rpx;
+                .agreeIcon{
+                    width: 28rpx;
+                    height: 28rpx;
+                    margin-left: 10rpx;
+                    border: 2rpx dashed #000;
+                }
+                .title{
+                    font-size: 24rpx;
+                    color: #666;
+                }
+            }
+        }
+        .centerView{
+            margin-top: 20rpx;
+            width: 100%;
+            height: 32rpx;
+            display: flex;
+            overflow: hidden;
+            .xing{
+                width: 32rpx;
+                height: 100%;
+            }
+            .chima{
+                line-height: 37rpx;
+                font-size: 21rpx;
+                color: #AEAEAE;
+                white-space: nowrap;
+            }
+        }
+        .imageView{
+            width: 100%;
+            margin-top: 20rpx;
+            display: flex;
+            .buyerImage{
+                width: 200rpx;
+                margin-left: 10rpx;
+                height: 200rpx;
+                border-radius: 2rpx;
+            }
+        }
+        .bottomView{
+            width: 100%;
+            height: auto;
+            margin-top: 20rpx;
+            font-size: 28rpx;
+            color: #222222;
+        }
+        .replyView{
+            width: 96%;
+            margin-top: 20rpx;
+            margin-left: 2%;
+            background: #efefef;
+            border-radius: 20rpx;
+            .icon{
+                width: 40rpx;
+                height: 40rpx;
+                margin-left: 20rpx;
+                margin-top: 20rpx;
+            }
+            .title{
+                margin-left: 10rpx;
+                font-size: 30rpx;
+                font-weight: 550;
+                margin-top: 20rpx;
+                color: #000;
+            }
+            .content{
+                font-size: 26rpx;
+                color: #AEAEAE;
+                margin-left: 30rpx;
+            }
+            .default_h{
+                width: 100%;
+                height: 20rpx;
+            }
+        }
+     
+    }
+}

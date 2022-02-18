@@ -1,0 +1,31 @@
+<view class="coupon">
+  <view class="banner">
+    <image src="{{bannerImg}}" mode="widthFix"></image>
+    <view class="coupon-icon flex-center">
+      <view class="coupon-img">
+        <image src="{{couponIcon}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class="coupon-content">
+    <view class="coupon-bg">
+      <image src="{{sendCouponImg}}" mode="widthFix"></image>
+    </view>
+    <view class="card-wrapper">
+      <view class="card" style="background: url({{cardBg}})">
+        <view class="card-info flex-center">
+          <text>￥</text>
+          <view class="value">{{couponInfo.orderPrice}}</view>
+          <text>券</text>
+        </view>
+        <view class="card-threshold text-c">满{{couponInfo.promotionId}}可用</view>
+      </view>
+      <view class="btn text-c color-fff" data-type="getCard" bindtap="onClick">立即领取</view>
+      <view class="dot"></view>
+      <view class="card-desc">
+        <view class="item">仅限{{couponInfo.pageTilte}}使用</view>
+        <view class="item">有效期: {{couponInfo.startTime}}至{{couponInfo.endTime}}</view>
+      </view>
+    </view>
+  </view>
+</view>

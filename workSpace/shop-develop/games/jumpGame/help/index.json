@@ -1,0 +1,10 @@
+{
+  "navigationStyle" : "custom",
+  "usingComponents": {
+    "help_jj" : "../components/help_jj/help_jj",
+    "help_fol" : "../components/help_fol/help_fol",
+    "help_only" : "../components/help_only/help_only",
+    "help_vm" : "../components/help_vm/help_vm",
+    "help_slt" : "../components/help_slt/help_slt"
+  }
+}

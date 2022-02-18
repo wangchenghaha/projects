@@ -1,0 +1,37 @@
+<view class="container">
+  <temp-header></temp-header>
+
+  <temp-content wx:if="{{shareDetail.id}}" content="{{shareDetail}}"></temp-content>
+
+
+  <temp-footer bindshareMoment="shareMomentTip" bindshareUser="shareUser" shareSync="true" ></temp-footer>
+
+  <view class="tip flex-center" wx:if="{{shareUserTip || friendCircle}}">
+    <view class="tip-wrapper flex-center" style="{{friendCircle?'height:930rpx':''}}" >
+      <view class="example-img" style="{{friendCircle?'width:70%':'width:80%'}}">
+        <image src="{{exampleImg.shareUserImg}}" mode='widthFix' wx:if="{{shareUserTip}}"></image>
+        <image src="{{exampleImg.friendCircle}}" mode='widthFix' wx:else></image>
+      </view>
+      <view class="tip-detail flex-center">
+        <text class="detail-text">详细操作演示视频请点击</text>
+        <image src="/images/right_click.png"></image>
+        <navigator class="detail-sub" url="/weMall/daogouVideo/daogouVideo?videoName=20190515_2">无师自通</navigator>
+      </view>
+      <!--<view class="no-tip-wrapper flex-center text-c" bindtap="changeUserCheck">
+        <label wx:if="{{shareUserTip}}">
+          <checkbox checked="{{shareUserChecked}}"></checkbox>
+          <text class="label-1__text">不在提示此消息</text>
+        </label>
+        <label wx:else>
+          <checkbox checked="{{friendChecked}}"></checkbox>
+          <text class="label-1__text">不在提示此消息</text>
+        </label>
+      </view>-->
+      <view class="confirm-wrapper">
+        <button class="confirm" open-type="share" wx:if="{{shareUserTip}}">确定</button>
+        <button class="confirm" bindtap="confirmSaveImg" wx:else>确定</button>
+      </view>
+    </view>
+    <icon type="cancel" color="#fff" size="60rpx" class="close" bindtap="closeTip"></icon>
+  </view>
+</view>

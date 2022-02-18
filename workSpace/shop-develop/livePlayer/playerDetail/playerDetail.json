@@ -1,0 +1,7 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    
+    "footShareView":"/components/shareTempFooter/shareTempFooter"
+  }
+}

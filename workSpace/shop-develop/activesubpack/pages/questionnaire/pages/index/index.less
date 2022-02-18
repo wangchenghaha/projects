@@ -1,0 +1,264 @@
+.questionnaire{
+    padding: 30rpx 42rpx;
+    box-sizing: border-box;
+    .store-information{
+        position: relative;
+        margin-bottom: 50rpx;
+        padding-top: 30rpx;
+        .shop-name{
+            font-size: 30rpx;
+            margin-bottom: 20rpx;
+            color: #000000;
+        }
+        .order-num{
+            font-size: 30rpx;
+            color: #000000;
+            text{
+                color: #999999;
+            }
+        }
+    }
+    .title{
+        text-align: justify;
+        font-size: 26rpx;
+        margin-bottom: 38rpx;
+        color: #666666;
+    }
+    .questionnaire-description{
+        font-size: 24rpx;
+        color: #666666;
+        margin-bottom: 70rpx;
+    }
+    .question-list{
+        margin-bottom: 50rpx;
+        .list{
+            .typeOne,.typeTwo,.typeThree,.typeFour{
+                margin-bottom: 40rpx;
+                .list-title{
+                    font-size: 24rpx;
+                    margin-bottom: 10rpx;
+                    color: #000000;
+                    font-weight: bold;
+                    .sort-index{
+                        margin-right: 20rpx;
+                    }
+                    .sort-title{
+                        margin-right: 18rpx;
+                    }
+                    .must{
+                        color: #ff0000;
+                    }
+                }
+                .list-tips{
+                    font-size: 24rpx;
+                    color: #999999;
+                    margin-bottom: 30rpx;
+                    padding-left: 40rpx;
+                    box-sizing: border-box;
+                }
+                .pointed-star{
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    position: relative;
+                    padding-left: 40rpx;
+                    box-sizing: border-box;
+                    .star-list{
+                        width: 44rpx;
+                        height: 43rpx;
+                        margin-right: 20rpx;
+                        image{
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                    }
+                    .score-list{
+                        width: 35rpx;
+                        height: 35rpx;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: #e8e8e8;
+                        margin-right: 29rpx;
+                        color: #999999;
+                        font-size: 24rpx;
+                        &.active{
+                            background: #ff0000;
+                            color: #fff;
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                    .step{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        // margin-right: 60rpx;
+                        width: 20%;
+                        position: relative;
+                        &.active{
+                            .step-circular{
+                                background: #ff0000;
+                            }
+                            .step-name{
+                                color: #ff0000;
+                            }
+                            // &::before{
+                            //     background: #ff0000;
+                            // }
+                            // &::after{
+                            //     background: #ff0000;
+                            // }
+                            // &:last-child{
+                            //     &::after{
+                            //         background: #e8e8e8;
+                            //     } 
+                            // }
+                        }
+                        &::before{
+                            content: '';
+                            width: 50%;
+                            height: 2rpx;
+                            position: absolute;
+                            top: 8rpx;
+                            left: 0;
+                            background: #e8e8e8;
+                        }
+                        &::after{
+                            content: '';
+                            width: 50%;
+                            height: 2rpx;
+                            position: absolute;
+                            top: 8rpx;
+                            right: 0;
+                            background: #e8e8e8;
+                        }
+                        &:first-child{
+                            &::before{
+                                display: none;
+                            }
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                            &::after{
+                                display: none;
+                            }
+                        }
+                        .step-circular{
+                            width: 17rpx;
+                            height: 17rpx;
+                            border-radius: 50%;
+                            background: #e8e8e8;
+                            margin-bottom: 20rpx;
+                            position: relative;
+                            z-index: 1;
+                        }
+                        .step-name{
+                            font-size: 22rpx;
+                            color: #999999;
+                        }
+                    }
+                    .textarea{
+                        width: 100%;
+                        height: 235rpx;
+                        font-size: 24rpx;
+                        color: #999999;
+                    }
+                    .movable-view{
+                        width: 100%;
+                        height: 100rpx;
+                        position: absolute;
+                        top: 0;
+                        left: 40rpx;
+                        .movable-area{
+                            width:100%;
+                            height:35rpx;
+                            padding-left:40rpx;
+                            box-sizing:border-box;
+                            .movable-views{
+                                width:35rpx;
+                                height:35rpx;
+                                background:transparent;
+                                border-radius: 50%;
+                                left:0;
+                                // background: yellow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .pointed-textarea{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid #999999;
+        border-radius: 10rpx 10rpx;
+        padding: 10rpx 10rpx 12rpx 10rpx;
+        box-sizing: border-box;
+        .limit{
+            color: #999999;
+            font-size: 18rpx;
+            text-align: right;
+            width: 100%;
+        }
+    }
+    .sub-btn{
+        width: 665rpx;
+        height: 90rpx;
+        margin: 0 auto;
+    }
+    .store-coverImg{
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 30rpx;
+        right: 0;
+        left: auto;
+        z-index: 99;
+        image{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+}
+.model{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    // background: rgba(0, 0, 0, 0.1);
+    image{
+        width: 100%;
+    }
+    .model{
+        width: 550rpx;
+        height: 360rpx;
+        position: absolute;
+        top: 505rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        .btn{
+            width: 100%;
+            height: 95rpx;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}

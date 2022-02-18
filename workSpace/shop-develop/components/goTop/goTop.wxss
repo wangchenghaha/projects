@@ -1,0 +1,19 @@
+.go-top{
+  position: fixed;
+  right: 10rpx;
+  bottom: 100rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border: solid 4rpx #ccc;
+  border-radius: 50%;
+  z-index: 999;}
+.go-top text{
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  border-left: solid 4rpx #ccc;
+  border-top: solid 4rpx #ccc;
+  transform: rotate(45deg);
+  transform-origin: center;
+
+}

@@ -1,0 +1,171 @@
+<view class="bg">
+    <!-- 背景图 -->
+    <image  class="bgImg" src="{{adapter.img}}"  mode="widthFix" />
+    <!-- logo -->
+    <image class="logo" style="top:{{adapter.logoTop}}" src="{{mainLogo}}"  mode="widthFix" />
+    <!-- 选择任务按钮左 -->
+    <view class="mainBtn" style="left: 50rpx;top:{{adapter.selecteTop}}" bindtap="chooseRenwu"></view>
+    <!-- 选择任务按钮右 -->
+    <view class="mainBtn"  style="right: 50rpx;top:{{adapter.selecteTop}}"  bindtap="chooseRenwu"></view>
+    <!-- 选择人物 -->
+    <view class="chooseRenWu"  style="top:{{adapter.renWutop}}">
+       <view class="renName">{{renwuName}}</view>
+       <image class="renImg" src="{{renwuImg}}" mode='widthFix'></image>
+    </view>
+
+    <!-- 活动规则 -->
+    <view class="guizeBtnViewOpa"></view>
+    <view class="guizeBtnView" bindtap="guizeTap">活动规则</view>
+
+    <!-- home按钮 -->
+    <view class="goHome"  style="top:{{adapter.goHomeTop}}"  bindtap="goHome">
+        <image src="{{goHome}}" style="width:100%;height:100%;" />
+    </view>
+    <!-- 显示金币 -->
+    <view class="showPoint" style="top:{{adapter.pointTop}}">{{userData.points}}</view>
+    <!-- 排行榜 -->
+    <image class="mainActivity" style="left: 30rpx;top:{{adapter.activityTop}}" src="{{mainRank}}" data-type="paihangbang" bindtap="btn" mode="widthFix" />
+    <!-- 兑换奖品 -->
+    <image class="mainActivity" style="right: 30rpx;top:{{adapter.activityTop}}" src="{{mainGoods}}"  data-type="duihuan" bindtap="btn"mode="widthFix" />
+    <!-- 开始按钮 -->
+    <view class="play" style="top:{{adapter.startTop}}"  data-renwu="{{renwuArrs}}" bindtap="play"></view>
+</view>
+
+<block wx:if="{{paihangSelect.paihangbang}}">
+    <view class="bouncedBgOpa"></view>
+    <view class="bouncedBg">
+        
+        <view class="imgView">
+            <image src="{{paihangbang}}" style="width:100%;" mode="widthFix" />
+
+            <view class="closed" bindtap="closed"></view>
+            <view class="subView">
+                <view class="topView">
+                    <view class="{{paihangSelect.currentIndex == 0 ? 'sjphNO' : 'sjph'}}" data-type="haoyou" bindtap="paihangTap">好友排行</view>
+                    <view class="{{paihangSelect.currentIndex == 1 ? 'sjphNO' : 'sjph'}}" data-type="shijie" bindtap="paihangTap">世界排行</view>
+                </view>
+                <view class="wzView">
+                    <view class="pm">排名</view>
+                    <view class="yh">用户</view>
+                    <view class="fs">分数</view>
+                </view>
+                <view class="meView">
+                    <view class="me">
+                        <image src="{{rankMe}}" style="width:57rpx;height:100%;" />
+                    </view>
+                    <view class="name">{{paihangSelect.meJson.nickName}}</view>
+                    <view class="fenshu">{{paihangSelect.meJson.maxScore}}</view>
+                </view>
+
+                <view class="otherViews" wx:for="{{paihangSelect.currentIndex == 1 ? paihangSelect.shijieArrs : paihangSelect.haoyouArrs}}" wx:key="other">
+                    <view class="me">
+                        <view class="jianbian">
+                            <view class="jianbian-bg" style="background-image: {{index == 0 || index == 1 || index == 2 ? 'linear-gradient(to right,#FFE261,#FFB14E)' : 'none'}};">
+                                <view class="text" style="color:{{index == 0 || index == 1 || index == 2 ? '#FFEBE1' : '#484349'}};">{{index == 9 ? (index+1) : '0'+(index+1)}}</view>
+                                <view class="iconView">
+                                    <image src="{{item.facePic}}" style="width:100%;height:100%;" />
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="name">{{item.nickName}}</view>
+                    <view class="fenshu">{{item.maxScore}}</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</block>
+
+<block wx:if="{{ticketSelect.ticket}}">
+    <view class="bouncedBgOpa"></view>
+    <view class="bouncedBg">
+
+        <view class="imgView">
+            <image src="{{ticket}}" style="width:100%;" mode="widthFix" />
+
+            <view class="closed" bindtap="closed"></view>
+
+            <view class="subView">
+
+                <view class="topView">
+                    <view class="{{ticketSelect.currentIndex == 0 ? 'sjphNO' : 'sjph'}}" data-type="list" bindtap="paihangTap">商品列表</view>
+                    <view class="{{ticketSelect.currentIndex == 1 ? 'sjphNO' : 'sjph'}}" data-type="jilu" bindtap="paihangTap">兑换记录</view>
+                </view>
+
+                <scroll-view scroll-y="{{true}}" class="bottomView">
+                    <view class="rowViews" wx:for="{{ticketSelect.currentIndex == 0 ? ticketSelect.listArrs : ticketSelect.jiluArrs}}" wx:key="rows">
+                        <view class="row" wx:for="{{item}}" wx:key="row" style="margin-left: {{index == 1 ? '20' : '0'}}rpx;">
+                            <image src="{{ticketImg}}" style="width:100%;height:100%;" />
+
+                            <block wx:if="{{ticketSelect.currentIndex == 0}}">
+                                <view class="quanImg_list">
+                                    <image src="{{item.giftPic}}" style="width:100%;height:100%;" />
+                                </view>
+                                <view class="sockNum">剩余:{{item.stock}}</view>
+                                <view class="jinbiView">
+                                    <view class="textView">
+                                    <view class="jinbi">
+                                        <image src="{{jinbi}}" style="width:100%;height:100%;" />
+                                    </view>
+                                        <view class="text">{{item.pointsRequire}}</view>
+                                    </view>
+                                </view>
+                                <view wx:if="{{item.stock > 0}}" class="duihuanView" data-detail="{{item}}" bindtap="duihuan">兑换</view>
+                                <view wx:else class="duihuanView">已兑完</view>
+                            </block>
+
+                            <block wx:else>
+                                <view class="quanImg_jilu">
+                                    <image src="{{item.giftPic}}" style="width:100%;height:100%;" />
+                                </view>
+                                <view  class="duihuanView" style="font-size: 28rpx; bottom: 10%;"  bindtap="goHome">立即使用</view>
+                            </block>
+
+                        </view>
+                    </view>
+                </scroll-view>
+
+            </view>
+        </view>
+
+    </view>
+</block>
+
+<view class="sanjiao" bindtap="backTap">
+    <image src="{{sanjiao}}" style="width:100%;height:100%;" />
+</view>
+
+
+
+<block wx:if="{{noGameCount}}">
+    <view class="bouncedBgOpa"></view>
+    <view class="noGameCountBounced">
+        <view class="imgView">
+            <image src="{{bounced}}" class="imgView-img" mode="widthFix" />
+                <view class="closed" bindtap="closed">
+                    <image src="{{closed}}" style="width:100%;height:100%;" />
+                </view>
+                <view class="title">今日次数已耗尽，</view>
+                <view class="title" style="top: 45%;">邀好友助力，再来一次吧~</view>
+
+                <view class="bottomTitle">立即邀请好友</view>
+                <button open-type="share" class="share1"></button>
+
+        </view>
+    </view>
+</block>
+
+<block wx:if="{{isNew}}">
+    <view class="bouncedBgOpa"></view>
+    <view class="noGameCountBounced">
+        <view class="imgView">
+            <image src="{{newCouponBg}}" class="imgView-img" mode="widthFix" />
+            <image src="{{couponImage}}" class="imgView-coupon" mode="widthFix" ></image>
+            <view class="closeToast" bindtap="closed">
+            </view>
+        </view>
+        
+    </view>
+</block>
+<view class="zhanwei" wx:if="{{zhanweiView}}"></view>

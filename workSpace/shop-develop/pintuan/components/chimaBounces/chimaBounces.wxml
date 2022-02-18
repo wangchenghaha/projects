@@ -1,0 +1,53 @@
+<view class="bg" style="opacity:{{bgOpacity}};">
+    <view class="opacity" bindtap="opacityHidden" animation="{{animationOpacity}}"></view>
+    <view class="opacityView" animation="{{animationView}}">
+        <view class="topView">
+            <view class="leftView">
+                <image class="image" src="{{bouncesData.thumImages[bouncesData.selectColor.index]}}" />
+            </view>
+            <view class="centerView">
+                <view class="money">￥{{money}}</view>
+                <view class="kucun">库存<text class="kucun-s">{{bouncesData.selectChima.name.length > 0 ? bouncesData.kucuns[bouncesData.selectChima.sku] : bouncesData.totalKucun}}</text>件</view>
+                <view class="chima">{{bouncesData.selectChima.name.length > 0 ? bouncesData.selectChima.name : '请选择尺码'}}</view>
+                <view class="sku">{{bouncesData.datas.color[bouncesData.selectColor.index].colorCode}}</view>
+            </view>
+            <view class="rightView">
+                <icon type="cancel" size="45rpx" color="black" bindtap="opacityHidden" />
+            </view>
+        </view>
+        <view class="classView">
+            <view class="title">颜色分类</view>
+            <view class="selectRowView">
+                <block wx:for="{{bouncesData.colors}}" wx:key="color">
+                    <view id="{{index}}" data-type="color" data-name="{{item}}" bindtap="onClick" class="select-li {{item==bouncesData.selectColor.name?'select-list':'select-noList'}}" >{{item}}</view>
+                </block>
+            </view>
+        </view>
+        <view class="classView">
+            <view class="title">尺码</view>
+            <view class="selectRowView">
+                <block wx:for="{{bouncesData.sizes[bouncesData.selectColor.index]}}" wx:key="chima">
+                    <view id="{{index}}" data-type="chima" data-name="{{item.sizeAlias}}" data-sku="{{item.sku}}" bindtap="{{bouncesData.kucuns[item.sku]?'onClick' : ''}}" class="select-li {{item.sizeAlias==bouncesData.selectChima.name?'select-list':''}} {{bouncesData.kucuns[item.sku]?'':'select-noList'}}">{{item.sizeAlias}}</view>
+                </block>
+            </view>
+        </view>
+        <view class="classView buyNumView">
+            <view class="buyNumView-leftView">购买数量</view>
+            <view class="buyNumView-rightView">
+                <view class="buyNum" bindtap="onClick" data-type="jian">-</view>
+                <view class="buyNum buyNum-c">{{bouncesData.buyNum}}</view>
+                <view class="buyNum" bindtap="onClick" data-type="jia">+</view>
+            </view>
+        </view>
+        <!-- 购买按钮 -->
+        <view class="buyView">
+            <view class="buyView-cantuanViewText" wx:if="{{isShare}}" data-type="pintuan" bindtap="onClick">确定</view>
+            <block wx:else>
+                <view class="buyView-viewText" style="background-color: black;" data-type="dandu" bindtap="onClick">单独购买</view>
+                <view class="buyView-viewText" data-type="pintuan" bindtap="onClick">发起拼团</view>
+                <view class="buyView-zhezhao" wx:if="{{selectType == 'canyu'}}"></view>
+                <view class="buyView-zhezhao" style="left: 50%;" wx:elif="{{selectType == 'dandu'}}"></view>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="main" style="background-image: url({{banner}})">
+	<view class="content">
+		<view wx:if="{{playUser.awardName}}">
+			<view class="title ～text-c ~font-bold">{{playUser.awardName}}</view>
+			<view wx:if="{{wxPhone}}" class="play-btn ~text-c ~font-bold {{isJoined}}" bindtap="playGame">
+				<block wx:if="{{isJoined}}">
+					<block wx:if="{{currentAwardIsOpen}}">已开奖</block>
+					<block wx:else>等待开奖</block>
+				</block>
+				<block wx:else>点击参与抽奖</block>
+			</view>
+			<button wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="play-btn ~text-c ~font-bold">授权手机号抽奖</button>
+			<view class="tip ～text-c ~font-bold" wx:if="{{userTotal}}">已有{{userTotal}}位用户参与抽奖</view>
+		</view>
+		<view wx:else class="tip ～text-c ~font-bold ~color-fff">当前活动空空如也！</view>
+	</view>
+	
+	<block wx:if="{{allSuccessList.length}}">
+		<view 
+			wx:for="{{allSuccessList}}"
+			wx:key="id"
+			class="tip ～text-c ~font-bold ~color-fff">恭喜手机{{item.phone}}用户获得{{item.awardName}}</view>
+	</block>
+</view>
+<view class="home icon iconfont icon-shouye" bindtap="goHome">
+</view>

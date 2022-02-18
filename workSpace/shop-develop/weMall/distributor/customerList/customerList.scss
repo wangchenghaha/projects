@@ -1,0 +1,85 @@
+.content{
+  image{
+    display: block;
+    width: 100%;
+  }
+  .header{
+    padding: 40rpx;
+    height: 280rpx;
+    background: #000;
+    color: #fff;
+    box-sizing: border-box;
+    text{
+      font-size: 32rpx;
+      &.icon{
+        display: inline-block;
+        width: 40rpx;
+        height: 40rpx;
+        border: solid 2rpx #fff;
+        border-radius: 50%;
+      }
+    }
+    .count{
+      font-size: 24rpx;
+      .number{
+        padding-right: 30rpx;
+        font-size: 60rpx;
+      }
+    }
+  }
+  .customer{
+    padding-top: 40rpx;
+    margin-top: -40rpx;
+    background: #fff;
+    border-top-right-radius: 30rpx;
+    border-top-left-radius: 30rpx;
+    &-wrapper{
+      margin: 0 auto;
+      width: 720rpx;
+      .title{
+        position: relative;
+        padding-left: 20rpx;
+        font-size: 30rpx;
+        &:before{
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 10rpx;
+          width: 5rpx;
+          height: 25rpx;
+          background: #000;
+        }
+      }
+      .list{
+        margin-top: 30rpx;
+        &-item{
+          padding-bottom: 20rpx;
+          margin-bottom: 30rpx;
+          border-bottom: solid 1rpx #ccc;
+          .info{
+            .avatar{
+              margin-right: 30rpx;
+              width: 130rpx;
+              height: 130rpx;
+              border-radius: 50%;
+              overflow: hidden;
+            }
+            .name{
+              font-size: 30rpx;
+              color: #2C2C2C;
+            }
+            .price{
+              font-size: 24rpx;
+              color: #828282;
+            }
+          }
+          .time{
+            font-size: 24rpx;
+            color: #B3B5BA;
+          }
+        }
+
+      }
+    }
+  }
+}

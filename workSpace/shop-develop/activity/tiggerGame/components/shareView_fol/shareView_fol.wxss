@@ -1,0 +1,53 @@
+.bg {
+  width: 100%;
+  height: 100%;
+  background-color: #9125FF;
+}
+
+.bg .imageView {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.bg .imageView-image {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.bg .imageView .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150rpx;
+  height: 100rpx;
+}
+
+.bg .imageView .fenxiangView {
+  position: absolute;
+  bottom: 18.7%;
+  left: 16%;
+  right: 16%;
+  width: auto;
+  height: 88rpx;
+}
+
+.bg .imageView .mianduimian {
+  position: absolute;
+  bottom: 8%;
+  left: 16%;
+  right: 16%;
+  width: auto;
+  height: 88rpx;
+}
+
+.share {
+  background: none;
+  width: 100%;
+  height: 100%;
+}
+
+.share::after {
+  border: none;
+}

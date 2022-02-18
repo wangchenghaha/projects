@@ -1,0 +1,178 @@
+<view class="bg">
+
+    <view class="head">
+        <view class="head-leftView">
+            <view class="head-leftView-topTitle">拼团还未成功</view>
+            <view class="head-leftView-botomTitle">让小伙伴们都来拼单吧</view>
+        </view>
+        <image src="../images/pt-daojishi.png" mode="widthFix" class="head-image" />
+    </view>
+    <!-- 地址 -->
+    <view class="address">
+        <image src="../images/location.png" mode="widthFix" style="width: 40rpx;margin-top: 5rpx;margin-right: 20rpx;margin-left: 20rpx;" />
+        <view class="address-leftView">
+            <view class="address-leftView-title">{{address.consignee}}    {{address.contactTel}}</view>
+            <view class="address-leftView-title">{{requestaddressForAddress.province}}{{address.city}}{{address.area}}{{address.detailAddress}}</view>
+        </view>
+        <!-- <view class="address-rightView" bindtap="gotoAddress">修改</view> -->
+    </view>
+    <!-- 邀请好友 -->
+    <view class="yaoqing">
+        <view class="topView">
+            <image src="../images/pt-yaoqing.png" mode="widthFix" class="topView-image" />
+            <view class="topView-title">待分享,还差{{shengyuNum}}人,剩余{{endTimeObj.hou}}:{{endTimeObj.min}}:{{endTimeObj.sec}}</view>
+        </view>
+        <view class="botomView">
+            <view class="botomView-leftView">
+                <view class="botomView-leftView-title">拼主</view>
+                <block wx:for="{{faceAndIcon.otherIcon}}" wx:key="face">
+                    <image src="{{faceAndIcon.icon}}" mode="widthFix" class="icon" wx:if="{{index == 0}}"></image>
+                    <image src="{{item}}" mode="widthFix" class="icon" wx:else></image>
+                </block>
+                <view class="icon" style="border: dashed 2rpx #878787;font-size: 27rpx; color: #878787;text-align: center;line-height: 70rpx;">?</view>
+            </view>
+            <view class="botomView-rightView" bindtap="onShare">邀请好友</view>
+        </view>
+    </view>
+    <!-- 订单信息 -->
+    <view class="yaoqing">
+        <view class="yaoqing-titles" bindlongpress="copy" data-text="{{detailData.bigorderCode}}">订单编号: {{detailData.bigorderCode}}</view>
+        <view class="yaoqing-titles">支付方式: 微信</view>
+        <view class="yaoqing-titles">下单时间: {{xiadanTime}}</view>
+    </view>
+    <!-- 商品信息 -->
+    <view class="shop" wx:for="{{detailData.goodsTotalCount}}" wx:key="detailDataList">
+            <image src="{{shopData.gscolPicPath}}" mode="widthFix" style="width:220rpx;margin: 20rpx; " />
+        <view class="shop-rightView">
+            <view class="title">{{shopData.goodsName}}</view>
+            <view class="title-small">货号 {{shopData.gcsSku}}</view>
+            <view class="title-small">颜色 {{shopData.colorName}}</view>
+            <view class="title-small">尺码 {{shopData.sizeName}}</view>
+            <view class="title-small">价格 ￥{{shopData.price}}</view>
+            <view class="title-small">数量 x{{shopData.goodsCount}}</view>
+        </view>
+    </view>
+    <!-- 支付信息 -->
+    <view class="zhifu">
+        <view style="flex:1;"></view>
+        <view style="margin-right: 20rpx;">
+            <view class="title">实付:<text class="title-red">￥{{detailData.payPrice}}</text> (免运费)</view>
+        </view>
+    </view>
+    <view class="tempView" style="{{isIphoneX ?'height: 168rpx;':''}}"></view>
+</view>
+<!-- 底部按钮 -->
+<view class="buyView" style="{{isIphoneX ?'bottom:68rpx;':''}}">
+    <view class="buyView-viewText" style="background-color: black;"bindtap="canceButton">取消订单</view>
+    <view class="buyView-viewText" bindtap="onShare">邀请好友拼单</view>
+</view>
+
+<!-- 支付成功弹框 -->
+<block wx:if="{{fromBuyView}}">
+    <view class="bouncesBg"></view>
+    <view class="bouncesView_hdBG">
+        <view class="imageBG">
+            <view class="imageView">
+                <image bindtap="hiddenBounces" src="/images/bounceClose.png" mode="widthFix" style="width:48rpx;height:100%;" />
+            </view>
+        </view>
+
+        <view class="bouncesView">
+            <view class="bouncesView-view">
+                <icon type="success" size="35" />
+                <view style="margin-top: 10rpx;">支付成功</view>
+            </view>
+            <view class="bouncesView-view" style="background-color: white;">
+                <view class="bouncesView-title">还差 <text style="color:red;">{{shengyuNum}}</text> 人</view>
+                <view class="bouncesView-title" style="font-size: 32rpx;">赶快邀请好友来拼单吧!</view>
+                <view style="font-size: 23rpx; color: #878787;">拼单已发起,人满后立即发货</view>
+            </view>
+            <view class="bouncesView-view" style="background-color: white;">
+                <view class="bouncesView-view-centerView">
+
+
+
+                    <view  class="bouncesView-view-centerView-view" style="margin-right: 70rpx;">
+                        <button open-type="share" class="share">
+                            <view class="imageView">
+                                <image src="/images/weixin.png" mode="widthFix" style="width:70rpx;margin-top: 25rpx;" />
+                            </view>
+                            <view style="font-size: 27rpx; color: #878787;">微信好友</view>
+                        </button>
+                    </view>
+
+
+                    <view class="bouncesView-view-centerView-view">
+                        <view bindtap="shareImage" class="imageView">
+                            <image src="/images/zhaopian.png" mode="widthFix" style="width:70rpx;margin-top: 30rpx;" />
+                        </view>
+                        <view bindtap="shareImage" style="font-size: 27rpx; color: #878787;margin-top: 16rpx;">分享图片</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 取消订单弹框 -->
+<block wx:if="{{canceButton}}">
+    <view class="bouncesBg"></view>
+    <view class="canceButonView">
+        <view class="canceButonView-view">
+            <icon type="warn" size="40" color="red" />
+        </view>
+        <view class="canceButonView-view" style="padding-top: 0;color:red;height:auto;font-size:34rpx;">您好!未拼单成功暂时无法取消!</view>
+        <view class="canceButonView-view title" style="padding-top: 0;height:auto;">拼单成功后可取消订单,或24小时内拼单失败</view>
+        <view class="canceButonView-view title" style="padding-top: 0;height:auto;">系统自动取消并退还欠款,谢谢</view>
+        <view class="canceButonView-buyView">
+            <view class="canceButonView-buyView-viewText" style="background-color: black;" bindtap="hiddenBounces">暂不取消</view>
+            <view class="canceButonView-buyView-viewText" bindtap="onShare">去邀请</view>
+            
+        </view>
+    </view>
+</block>
+
+<!-- 分享图片弹框 -->
+<block wx:if="{{shareView}}">
+    <view class="bouncesBg"></view>
+        <view class="bouncesView_hdBG" style="left: 80rpx;right: 80rpx;">
+        <view class="imageBG">
+            <view class="imageView">
+                <image bindtap="shareViewHiddenBounces" src="/images/bounceClose.png" mode="widthFix" style="width:48rpx;height:100%;" />
+            </view>
+        </view>
+
+    <view class="bouncesView">
+        <view class="bouncesView-view" style="background-color: white;padding-top:30rpx;">
+            <icon type="success" size="45" color="#D50023" />
+        </view>
+        <view class="bouncesView-view" style="background-color: white;padding-top: 10rpx;">
+            <view class="bouncesView-title" style="font-size: 34rpx;padding-bottom:30rpx;color:black;">图片已生成</view>
+            <view class="bouncesView-title" style="font-size: 25rpx;padding-left: 120rpx;padding-right: 120rpx;padding-bottom:80rpx;color:#666666;">图片已生成并保存在手机相册,你也可以现在分享给好友。</view>
+        </view>
+        <button open-type="share" class="share1" style="color:white;border-radius: 0;width: 100%;background-color: #CC292E;line-height: 100rpx;text-align: center;font-size: 28rpx;">分享给微信好友</button>
+    </view>
+    </view>
+</block>
+
+<!-- 活动结束弹框 -->
+<block wx:if="{{huodongjieshu}}">
+    <view class="bouncesBg_hd"></view>
+    <view class="bouncesView_hdBG">
+        <view class="imageBG">
+            <view class="imageView">
+                <image bindtap="huodongTap" src="/images/bounceClose.png" mode="widthFix" style="width:48rpx;height:100%;" />
+            </view>
+        </view>
+        <view class="bouncesView_hd">
+            <view class="bouncesView_hd-view">
+                <image src="../images/daku.png" mode="widthFix" style="width:110rpx;margin-top: 30rpx;" />
+                <view class="redTitle">拼团活动已结束</view>
+                <view class="submitTitle">亲,来晚了一步!该商品已被枪空,~</view>
+                <view class="submitTitle" style="margin-top: 10rpx;">换件衣服试试~</view>
+
+                <view class="whiteTitle" bindtap="gotoIndex">去商城逛逛</view>
+            </view>
+        </view>
+
+    </view>
+</block>

@@ -1,0 +1,41 @@
+<view class="bg">
+    <view class="imgView">
+        <image src="{{splashImg}}" style="width:100%;height:100%;" mode="widthFix" />
+        <view class="iconView {{adapter == 1 ? 'iconView1125' : ''}}">
+            <view class="icon {{adapter == 1 ? 'icon1125' : ''}}">
+                <image src="{{userData.picUrl}}" style="width:100%;height:100%;" mode="widthFix" />
+            </view>
+            <view class="rightView {{adapter == 1 ? 'rightView1125' : 'rightView750'}}">
+                <view class="text nowarap">{{userData.nickName}}邀请你加入他的战队,</view>
+                <view class="text">助力开启神秘宝箱!</view>
+            </view>
+            
+        </view>
+        <view class="btnView {{adapter == 1 ? 'btnView1125' : ''}}">
+            <view class="tapView" data-type="help" bindtap="tapss"></view>
+            <view class="centerView"></view>
+            <view class="tapView" data-type="game" bindtap="tapss"></view>
+        </view>
+    </view>
+</view>
+
+
+<block wx:if="{{zhuli}}">
+
+            <view class="bouncedBg"></view>
+            <view class="canOpenView">
+                <view class="imgView">
+                    <image src="{{zhuliBgImg}}" style="width: 100%;height: 100%;" mode="widthFix" />
+                    <view class="title" style="bottom: 36%;">快递堆积如山</view>
+                    <view class="title" style="bottom: 29%;">考验手速的时候到了！</view>
+
+                    <view class="bottomViewsss" style="background-image: url('{{bouncedBtn}}');" bindtap="closed">知道了</view>
+                </view>
+            </view>
+</block>
+
+
+
+
+<view class="zhanwei" wx:if="{{zhanweiView}}" />
+

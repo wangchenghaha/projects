@@ -1,0 +1,12 @@
+<view class="frame">
+    <image class="img_with_full" src="{{imgBaseUrl}}ad_20210413_010.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_020.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120407026H85" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_030.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="120407026H85" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_040.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121107160C02" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_050.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121107160C02" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_060.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121207032H45" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_070.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121207032H45" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_080.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121207039H1G" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_090.jpg?v={{randomMilli}}" mode="widthFix" data-color-code="121207039H1G" bind:tap="onGoodClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}ad_20210413_100.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onMultiClick" />
+</view>

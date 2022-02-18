@@ -1,0 +1,16 @@
+.temp image {
+  display: block;
+  width: 100%;
+}
+.temp .container {
+  padding-bottom: 200rpx;
+}
+.temp .container .guide-text {
+  padding: 30rpx 0;
+  font-size: 26rpx;
+  color: #ccc;
+  text-align: center;
+  border-top: dashed 1rpx #ccc;
+}
+
+/*# sourceMappingURL=shareTemp.wxss.map */

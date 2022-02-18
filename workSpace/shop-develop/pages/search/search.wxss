@@ -1,0 +1,224 @@
+
+page {
+  background: #f1f1f1;
+  height: 100%;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  clear: both;
+  overflow: hidden;
+}
+
+/* 顶部信息 */
+.header {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 20rpx;
+  z-index: 999;
+}
+
+.header_box {
+  border: 2rpx solid #BABABA;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.header .search {
+  flex: 1;
+  padding-left: 20rpx;
+  height: 60rpx;
+  font-size: 24rpx;
+  color: #ccc;
+  line-height: 60rpx;
+}
+
+.header .button {
+  width: 60rpx;
+  height: 50rpx;
+  border-left: solid 1rpx #ccc;
+  box-sizing: border-box;
+}
+
+.header .button image {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.header_box1 {
+  width: 100%;
+  height: auto;
+  clear: both;
+  overflow: hidden;
+  border: 2rpx solid #BABABA;
+  padding-right: 10%;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+
+.header_box1 .button {
+  border-right: 1rpx solid #BABABA;
+}
+
+.header_box1 .saomiao {
+  width: 10%;
+  height: 60rpx;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.header_box1 .saomiao image {
+  display: block;
+  width: 41rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+/* 全部商品 */
+.box {
+  width: 100%;
+  height: 100%;
+  clear: both;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.list {
+  width: 100%;
+  height: 100%;
+  clear: both;
+  overflow: hidden;
+}
+
+.list_con {
+  width: 100%;
+  height: 100%;
+  clear: both;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.list_con_top {
+  width: 100%;
+  height: 100rpx;
+  white-space: nowrap;
+}
+
+.top_li {
+  width: 180rpx;
+  height: 100rpx;
+  font-size: 26rpx;
+  line-height: 100rpx;
+  color: #000;
+  text-align: center;
+  border-bottom: 1px solid #f1f1f1;
+  display: inline-block;
+}
+
+.top_list {
+  background: #fff;
+}
+
+.list_con_left {
+  width: 250rpx;
+  height: 100%;
+}
+
+.left-li {
+  width: 100%;
+  height: 100rpx;
+  font-size: 26rpx;
+  color: #000;
+  text-align: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+.left-li.true{
+  background: #fff;
+}
+.more:last-child {
+  padding-bottom: 100rpx;
+}
+.list-con-right {
+  width: 500rpx;
+  height: 100%;
+  background: #fff;
+}
+.right_li {
+  padding: 0 20rpx;
+  height: 100rpx;
+  font-size: 26rpx;
+  color: #000;
+  background: #fff;
+  border-bottom: 1px solid #f1f1f1;
+  box-sizing: border-box;
+}
+.right-view {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 20rpx;
+}
+.right-view.true {
+  display: block;
+}
+.right-view:last-child{
+  padding-bottom: 100rpx;
+}
+.right-view .sub-views {
+  flex-direction: column;
+  flex: 0 1 48%;
+}
+.right-view .sub-views image{
+  display: block;
+  width: 100%;
+}
+.right-view .title{
+  padding-left: 10rpx;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+.right-view .cover-img{
+  width: 500rpx;
+  height: 220rpx;
+}
+.right-view.true .title{
+  border: none;
+}
+.right-view.true .sub-views {
+  display: block;
+}
+.right-view .sub-views .subText {
+  padding-left: 5rpx;
+  font-size: 26rpx;
+  color: #000;
+}
+.right-view.true .subText {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f1f1
+}

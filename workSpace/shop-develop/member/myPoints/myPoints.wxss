@@ -1,0 +1,623 @@
+.mc-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/point_background.jpg);
+  background-repeat: round;
+}
+
+.banner {
+  width: 100%;
+  height: 326rpx;
+  position: relative;
+  color: #fff;
+}
+
+.banner .memberCard {
+  width: 76%;
+  height: 286rpx;
+  margin-top: 5%;
+  margin-left: 12%;
+  position: relative;
+  background-size: 100% 100%;
+  font-size: 26rpx;
+}
+
+.banner .points {
+  position: absolute;
+  right: 3%;
+  bottom: 8%;
+}
+
+.banner .memberName {
+  color: #000;
+  position: absolute;
+  top: 20%;
+  left: 33%;
+}
+
+.banner .myLevel {
+  position: absolute;
+  right: 7%;
+  bottom: 20%;
+}
+
+.banner .toHistory {
+  font-size: 30rpx;
+  position: absolute;
+  top: 60%;
+  left: 5%;
+}
+
+.banner .toMemberRewards {
+  font-size: 30rpx;
+  position: absolute;
+  top: 60%;
+  right: 5%;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.user {
+  position: absolute;
+  top: 6%;
+  left: 5%;
+}
+
+.user image {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1rpx solid #fff;
+}
+
+.main {
+  padding: 120rpx 40rpx 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.main .card-list {
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+
+.main .card-list .card-box {
+  display: flex;
+  align-items: flex-start;
+}
+
+.main .card-list .card-box .arrow-blue {
+  width: 84rpx;
+  height: 10rpx;
+}
+
+.main .card-list .card-box .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+  margin-right: 10rpx;
+}
+
+.main .card-list .card-box .card image {
+  width: 229rpx;
+  height: 137rpx;
+  border-radius: 10rpx;
+}
+
+.main .card-list .card-box .card view {
+  text-decoration: underline;
+}
+
+.standard {
+  width: 15rpx;
+  height: 300px;
+  background: linear-gradient(#ccc, #efefef 90%, white);
+  position: relative;
+  overflow: hidden;
+  margin-right: 10rpx;
+}
+
+.standard .dot {
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #009fe8;
+  border-radius: 50%;
+  margin-bottom: 100px;
+}
+
+.standard .dot-black {
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.cost {
+  position: relative;
+}
+
+.cost .level {
+  height: 224rpx;
+  font-size: 25rpx;
+  padding-left: 20rpx;
+  font-weight: bold;
+}
+
+.cost .info {
+  position: absolute;
+  /*top: 0;*/
+  left: 0;
+  width: 84rpx;
+  height: 10rpx;
+}
+
+.cost .info image {
+  display: block;
+  width: 84rpx;
+  height: 10rpx;
+}
+
+.cost .info .info-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  width: 200rpx;
+  font-size: 24rpx;
+  margin-left: 120rpx;
+}
+
+.model {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.modelCenter {
+  height: 80%;
+  width: 80%;
+  background: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.toplogo {
+  width: 240rpx;
+  height: 160rpx;
+}
+
+.toplogo image {
+  width: 240rpx;
+  height: 160rpx;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  margin: 40rpx 0;
+}
+
+.detail {
+  width: 80%;
+  font-size: 24rpx;
+  text-indent: 30rpx;
+  position: relative;
+  line-height: 50rpx;
+}
+
+.detail::before {
+  content: '';
+  height: 16rpx;
+  width: 16rpx;
+  background: #000;
+  border-radius: 16rpx;
+  position: absolute;
+  top: 9px;
+  left: 0px;
+}
+
+.slogo {
+  width: 80%;
+  margin: 50rpx auto 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.slogo view {
+  flex: 1;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogo view image {
+  width: 160rpx;
+  height: 120rpx;
+}
+
+.closemodel {
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 80%;
+  background: #0095e7;
+  margin: 50rpx auto 0px;
+  border-radius: 30rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.topclose {
+  height: 40px;
+  width: 110px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.topclose image {
+  height: 40px;
+  width: 110px;
+}
+
+.content {
+  height: 300px;
+  width: 90%;
+  margin: 60px auto 0;
+  position: relative;
+}
+
+.left {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left>view {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.left>view::before {
+  height: 5px;
+  width: 50px;
+  content: '';
+  background: url('https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_long_blue.png');
+  top: 2px;
+  right: 0px;
+  position: absolute;
+  background-size: 100%;
+}
+
+.left>view image {
+  height: 58px;
+  width: 97px;
+}
+
+.left>view view {
+  text-indent: 34px;
+  font-size: 30rpx;
+}
+
+.center {
+  margin: 0px 10px;
+  width: 10px;
+  height: 300px;
+  background: #e4e4e4;
+  border-radius: 3px;
+  position: relative;
+}
+
+.center .star {
+  height: 100px;
+  width: 6px;
+  position: relative;
+}
+
+.center .star::before {
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  content: '';
+  background: #009fe8;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+
+.chose {
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #000;
+  left: 0px;
+  position: absolute;
+}
+
+.right {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.right>view {
+  height: 100px;
+  width: 100%;
+  font-size: 30rpx;
+  color: #666;
+  padding-top: 3px;
+}
+
+.detail1 {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  left: 50%;
+  margin-left: 15px;
+  padding-left: 60px;
+}
+
+.detail1::before {
+  height: 5px;
+  width: 50px;
+  content: '';
+  background: url('https://cdn.bestseller.com.cn/assets/common/pub/image/arrow_long_black.png');
+  top: 2px;
+  left: 0px;
+  position: absolute;
+  background-size: 100%;
+}
+
+.detail1 view {
+  font-size: 22rpx;
+}
+
+.detail1 .toshop {
+  color: #f00;
+}
+
+.rightsTit {
+  text-align: center;
+  position: relative;
+}
+
+.rightsTit::before {
+  height: 30px;
+  width: 30px;
+  content: '';
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/point_start.png);
+  top: 2px;
+  left: 22%;
+  position: absolute;
+  background-size: 100%;
+}
+
+.rightsTit::after {
+  height: 30px;
+  width: 30px;
+  content: '';
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/point_start.png);
+  top: 2px;
+  right: 22%;
+  position: absolute;
+  background-size: 100%;
+}
+
+.rightsList {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rightsList .exchange, .rightsList .gifts {
+  width: 140rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.exchange image, .gifts image {
+  width: 60%;
+  height: 90rpx;
+}
+
+.text1 {
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.text2 {
+  width: 100%;
+  font-size: 22rpx;
+}
+.memberLevel {
+  margin-top: 30rpx;
+  position: relative;
+}
+
+.levelLine {
+  width: 73%;
+  height: 7px;
+  margin-left: 13%;
+  background-color: #d9b97b;
+  position: relative;
+}
+
+.levelLine .progressLine {
+  height: 7px;
+  background-color: #009fe8;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.levelLine .progressLine::before {
+  width: 4rpx;
+  height: 24rpx;
+  background-color: #009fe8;
+  content: '';
+  position: absolute;
+  top: -3rpx;
+  right: -5rpx;
+}
+
+.cardLevel {
+  display: flex;
+  width: 79%;
+  margin-left: 11%;
+  justify-content: space-between;
+  color: #000;
+  font-size: 28rpx;
+}
+
+.cardLevel .traditionalCard, .cardLevel .silverCard, .cardLevel .goldenCard, .cardLevel .whiteGoldenCard {
+  width: 70rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: relative;
+  color: #8dc9f1;
+}
+
+.cardLevel .goldenCard {
+  color: #d9b97b;
+}
+.cardLevel .whiteGoldenCard {
+  color: #000;
+}
+
+.cardLevel .traditionalCard::before, .cardLevel .silverCard::before,
+.cardLevel .goldenCard::before, .cardLevel .whiteGoldenCard::before {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #8dc9f1;
+  content: '';
+  position: absolute;
+  top: -20rpx;
+  left: 14rpx;
+}
+
+.currentStar {
+  width: 70rpx;
+  height: 70rpx;
+  background-image: url(https://cdn.bestseller.com.cn/assets/common/pub/image/point_start.gif);
+  background-size: 100%;
+  position: absolute;
+  top: 10rpx;
+}
+
+.goMemberCenter {
+  width: 40%;
+  margin-left: 30%;
+  height: 50rpx;
+  background-color: #000;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+ .levelTips {
+  color: #000;
+  font-size: 24rpx;
+  margin-left: 50rpx;
+}
+.container01 {
+  display: flex;
+  flex-direction: column;
+  /* height: 50px; */
+  flex: 1;
+  border-radius: 20rpx;
+  width: 86%;
+  margin-left: 7%;
+}
+
+.pbWrap {
+  height: 30rpx;
+  width: 100%;
+  position: relative;
+  border-radius: 20rpx;
+}
+
+image.blinkImg {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.circleListWrap {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 20rpx;
+  border-radius: 20rpx;
+}
+
+.circleList {
+  border-radius: 50%;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.levelTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 30rpx;
+  flex: 1;
+  color: #000;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+.progressBackground {
+  top: 20rpx;
+  height: 20rpx;
+  width: 100%;
+  position: absolute;
+  border-radius: 20rpx;
+  background-color: #D9B97B;
+}
+.progressBufferBackground {
+  height: 20rpx;
+  width: 100%;
+  position: absolute;
+  border-radius: 20rpx;
+  background-color: #009FE8;
+}

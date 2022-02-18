@@ -1,0 +1,42 @@
+<view class="authorize-wrapper">
+  <view class="container">
+    <view class="authorize-main">
+      <view class="banner">
+        <image src="{{bannerImg}}" mode="widthFix"></image>
+        <view class="logo">
+          <image src="{{brandLogo}}" mode="aspectFit"></image>
+        </view>
+      </view>
+      <view class="title font-bold">您还未授权开卡登录，你所操作的功能还不能使用，是否现在授权？</view>
+      <text class="sub-title text-c">授权后{{title}}将获得以下信息</text>
+      <text class="desc text-c">获得你的公开信息(昵称、头像等)</text>
+      <text class="sub-title text-c">您将开启如下功能的使用权限：</text>
+      <view class="server-list flex-bet">
+        <view class="list-item flex-start" wx:for="{{serverList}}" wx:key="index">
+          <image src="{{item.image}}" mode="widthFix"></image>
+          <view class="list-text">
+            <text class="text1">{{item.serverText1}}</text>
+            <text class="text2">{{item.serverText2}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="clause flex-start {{animate ? 'animated shake' : ''}}" mut-bind:tap="changeCheck">
+      <icon type="{{agreePrivacy ? 'success': 'circle'}}" color="#000" size="30rpx" class="margin-r-10"></icon>
+      <view class="clause-content">我已阅读并同意<text mut-bind:tap="goClause">《隐私权政策》</text>的全部内容。</view>
+    </view>
+<!--    <button type="primary" bindtap="getUserProfile" hover-class="btn-active">好</button>-->
+    <view class="btn-wrapper flex-bet">
+      <view class="btn-item" bind:tap="navigateBack">
+        <button>不允许</button>
+      </view>
+      <view class="btn-item">
+<!--        <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" hover-class="btn-active">好</button>-->
+        <button type="primary" bindtap="getUserProfile" hover-class="btn-active">好</button>
+      </view>
+    </view>
+    <!--<button wx:if="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="authorize-btn" hover-class="btn-active">进入授权</button>-->
+    <!--<view wx:else>请升级微信版本</view>-->
+  </view>
+  <text class="back" bindtap="onClick">返回</text>
+</view>

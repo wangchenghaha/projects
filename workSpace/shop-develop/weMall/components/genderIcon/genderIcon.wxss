@@ -1,0 +1,63 @@
+.gender {
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+.gender .woman {
+  position: relative;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: solid 2rpx #fca8a8;
+}
+.gender .woman:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 24rpx;
+  width: 16rpx;
+  height: 2rpx;
+  background: #fca8a8;
+  transform: translateX(-50%);
+}
+.gender .woman:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 18rpx;
+  width: 2rpx;
+  height: 16rpx;
+  background: #fca8a8;
+  transform: translateX(-50%);
+}
+.gender .man {
+  position: relative;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: solid 2rpx #a8cafc;
+  transform: translateY(10rpx);
+}
+.gender .man .line {
+  position: absolute;
+  left: 50%;
+  top: -15rpx;
+  display: inline-block;
+  width: 2rpx;
+  height: 15rpx;
+  background: #a8cafc;
+  transform: translateX(-50%) translateY(-2rpx);
+}
+.gender .man .line:before {
+  content: "";
+  position: absolute;
+  top: 4rpx;
+  width: 10rpx;
+  height: 10rpx;
+  border-top: solid 2rpx #a8cafc;
+  border-left: solid 2rpx #a8cafc;
+  transform: rotate(50deg) translateX(-63%);
+}
+
+/*# sourceMappingURL=genderIcon.wxss.map */

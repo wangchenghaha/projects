@@ -1,0 +1,74 @@
+<import src="../tmpl/classicOrderItem/classicOrderItem" />
+<import src="../../pages/nearbyShops/tmpl/shopMultiBar/shopMultiBar" />
+<view class="layout_father g_cus_serv_padding_bottom">
+  <view class="g_layout_red_top">
+
+    <block wx:if="{{exOrderBean.status=='CREATED'}}" >
+      <view class="g_tip_00">等待商家处理换货申请</view>
+      <view class="g_tip_01">还剩<span class="g_span_time"> {{remainTimeArray[0]}} </span>天<span class="g_span_time"> {{remainTimeArray[1]}} </span>小时<span class="g_span_time"> {{remainTimeArray[2]}} </span>分
+      </view>
+    </block>
+
+    <block wx:if="{{exOrderBean.status=='CHECK_FAIL'}}" >
+      <view class="g_tip_00">换货审核失败</view>
+      <view class="g_tip_01">商家拒绝换货，换货申请已关闭，您有疑问可以联系客服处理。</view>
+    </block>
+  </view>
+  <!-- 换货审核中/失败 -->
+  <view class="global_order_status_bar_wrap">
+    <text class="order_key">换货单状态</text>
+    <text class="order_status" wx:if="{{exOrderBean.status=='CREATED'}}">等待商家审核</text>
+    <text class="order_status" wx:elif="{{exOrderBean.status=='CHECK_FAIL'}}">换货审核失败</text>
+  </view>
+  <view class="weui-loadmore global_my_loading_wrapper" wx:if="{{false}}">
+    <image src="{{imgUrl}}" class="global_my_loading" />
+    <view class="weui-loadmore__tips global_tip_loading">
+      {{exOrderBean.status=='CREATED'?'换货申请审核中...':'抱歉，审核失败了'}}
+    </view>
+  </view>
+  <view wx:if="{{flagSuccess&&exOrderBean.status=='CHECK_FAIL'}}">
+    <view class="tip_failed_detail">
+      您的换货申请失败，失败原因：{{exOrderBean.remark?exOrderBean.remark:'暂无'}}。详情可咨询在线客服或拨打400在线客服电话进行咨询。
+    </view>
+    <view class="hotline">客服电话：400-862-8888</view>
+  </view>
+  <view class="layout_extra_info" wx:if="{{exOrderBean.status=='CREATED'}}">
+    <!-- <view class="title_0">换货单状态：{{exOrderBean.status=='CREATED' ? "换货审核中":"换货审核失败"}}</view> -->
+    <view class="title_1">若商家同意，换货申请达成，请您及时退货。</view>
+    <view class="title_1">若商家拒绝，换货申请将关闭，您可以联系客服处理。</view>
+  </view>
+  <block wx:if="{{exOrderBean.refundShop}}">
+    <view class="wrapper_shop g_border_h flex_c align_s">
+      <view class="txt_shop">换货门店信息</view>
+      <template is="shopMultiBarTmpl" data="{{shopBean}}" />
+    </view>
+    <view class="d_frame g_border_h flex_c align_s space_b">
+      <view class="d_title">提货人信息</view>
+      <view class="d_value_bar flex_r align_c space_b">
+        <view>提货人：<span class="d_value_gray"> {{exOrderBean.oriConsignee}}</span></view>
+        <view>手机号：<span class="d_value_gray"> {{exOrderBean.oriContactTel}}</span></view>
+      </view>
+    </view>
+  </block>
+  <view class="g_order_item_title g_border_h">当前商品</view>
+  <view class="bottom_list">
+    <view class="global_order_item" wx:for="{{exOrderBean.applySourceList}}" wx:key="applySourceList">
+      <template is="classicOrderItemTmpl" data="{{item}}" />
+    </view>
+  </view>
+  <view class="g_border_h" wx:if="{{exOrderBean.applyTargetList.length>0}}">
+    <view class="global_layout_refresh" wx:if="{{false}}">
+      <image class="global_img_refresh" src="/images/icon_refresh.png"></image>
+    </view>
+    <view class="g_order_item_title">换货商品</view>
+    <view class="bottom_list">
+      <view class="global_order_item" wx:for="{{exOrderBean.applyTargetList}}" wx:key="applyTargetList">
+        <template is="classicOrderItemTmpl" data="{{item}}" />
+      </view>
+    </view>
+  </view>
+  <view class="g_border_top">
+    <ex-order-infos-view exOrderBean="{{exOrderBean}}" />
+  </view>
+  <ex-button-layout exchangeCode="{{exOrderBean.exchangeCode}}" flagShowCancel="{{exOrderBean.status=='CREATED'}}" bindonCommitClick="onCommitClick" />
+</view>

@@ -1,0 +1,18 @@
+
+
+.wrap{ width:100%; height:100%;}
+.bg{ display:block; width:100%; height:100%;}
+
+.quan{ width:50%; height:auto; position:absolute; left:0; right:0; margin:0 auto; bottom:100rpx;}
+.quan image{ display:block; width:100%; height:auto; border-radius:20rpx;}
+
+.tanchu{ width:100%; height:100%; position:fixed; left:0; top:0;}
+.opacity{ width:100%; height:100%; background:#000; opacity:0.6; position:absolute; left:0; top:0; }
+.con{ width:68%; height:auto; background:#fff; position:absolute; bottom:350rpx; left:0; right:0; margin:0 auto; box-sizing:border-box; padding:0 20rpx;}
+.ttImg{ width:100%; height:auto; padding:42rpx 0 35rpx;}
+.ttImg image{ width:282rpx; height:auto; display:block; margin:0 auto 10rpx;}
+.ttImg .text{ font-size:32rpx; line-height:50rpx; color:#000; text-align:center;}
+.btns{ width:100%; height:auto; clear:both; overflow:hidden; padding-bottom:42rpx;}
+.btn{ float:left; width:50%; height:70rpx; font-size:30rpx; line-height:70rpx; color:#000; text-align:center; box-sizing:border-box; padding:0 35rpx;}
+.btn_true{ width:100%; height:70rpx; background:#019fe8; color:#fff; border-radius:15rpx;}
+.btn_false{ width:100%; height:70rpx; background:#aaaaaa; border-radius:15rpx;}

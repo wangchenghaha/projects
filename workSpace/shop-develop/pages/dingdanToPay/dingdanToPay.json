@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "dmpGoods": "/components/dmpRecommendGoods/dmpRecommendGoods",
+    "copy-icon": "/components/copyIcon/copyIcon",
+    "rob-bag": "/components/orderRobRedBag/orderRobRedBag"
+
+  }
+}

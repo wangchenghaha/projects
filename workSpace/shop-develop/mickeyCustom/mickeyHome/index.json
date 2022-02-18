@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "米奇抽奖",
+  "usingComponents": {
+    "imageLoading":"../imageLoading/index"
+  }
+}

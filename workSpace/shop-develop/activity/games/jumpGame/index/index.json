@@ -1,0 +1,7 @@
+{
+  "navigationStyle" : "custom",
+  "disableScroll": true,
+  "usingComponents": {
+    "index_slt" : "../components/index_slt/index_slt"
+  }
+}

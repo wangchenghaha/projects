@@ -1,0 +1,121 @@
+$footerHeight: 220rpx;
+.content{
+  font-size: 24rpx;
+  .title{
+    padding: 0 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: solid 1rpx #ccc;
+    &.header{
+      height: 74rpx;
+      background: #dadada;
+      border: none;
+      .status{
+        color: red;
+      }
+    }
+    &.order-code, &.address{
+      padding: 20rpx 10rpx;
+    }
+    .address-detail{
+      padding-top: 10rpx;
+    }
+  }
+  .goods-list{
+    padding-bottom: $footerHeight;
+    .goods-item{
+      position: relative;
+      .btn-refund{
+        position: absolute;
+        right: 0;
+        top: 235rpx;
+        .btn-item{
+          display: inline-block;
+          padding: 10rpx 20rpx;
+          border: solid 1rpx #ccc;
+          border-radius: 30rpx;
+          margin-right: 15rpx;
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+      .express{
+        padding: 20rpx;
+        margin: 20rpx auto 0;
+        width: 95%;
+        height: 100rpx;
+        border: solid 2rpx #ccc;
+        box-sizing: border-box;
+        border-radius: 50rpx;
+        &-icon{
+          width: 80rpx;
+          height: 80rpx;
+          border-radius: 50%;
+          overflow: hidden;
+          &.bg-color{
+            background: #3997DD;
+          }
+          image{
+            width: 60rpx;
+            height: 60rpx;
+          }
+        }
+        .text{
+          margin-left: 30rpx;
+          flex: 1;
+          overflow: hidden;
+          .address{
+            color: #3997DD;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            &.tip{
+              white-space: normal;
+              color: #000;
+            }
+          }
+        }
+        .arrow{
+          display: inline-block;
+          width: 30rpx;
+          height: 30rpx;
+          border-left: solid 6rpx #ccc;
+          border-top: solid 6rpx #ccc;
+          transform: rotate(135deg);
+          transform-origin: center;
+          &.color{
+            border-color: #3997DD
+          }
+        }
+      }
+    }
+  }
+  .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: solid 1rpx #ccc;
+    background: #fff;
+    .tip{
+      margin-top: 10rpx;
+      padding-right: 20rpx;
+      text-align: right;
+    }
+    .btn-wrap{
+      padding: 20rpx 0;
+      .btn-item{
+        flex: 1;
+        margin: 0 20rpx;
+        height: 80;
+        line-height: 80rpx;
+        font-size: 30rpx;
+        background: #000;
+        color: #fff;
+        border-radius: 40rpx;
+      }
+    }
+  }
+
+}

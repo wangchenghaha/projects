@@ -1,0 +1,22 @@
+<view class="wrapper container {{isBigPhone ? 'big':''}}" style="height: {{wh}}px;">
+    <!-- 顶部logo -->
+    <view class="logo {{preload? '':'animate'}}">
+        <view class="bar" style="padding-top: {{sbH}}px"></view>
+        <view class="icon"></view>
+    </view>
+
+    <!-- 内容 -->
+    <view class="content {{isBigPhone ? 'big':''}} {{preload? '':'animate'}}" style="margin-top: -{{sbH}}px">
+        <view class="crayon {{isBigPhone ? 'big':''}}">
+            <view class="startbtn" hover-class="hover" bindtap='joinActive'>
+                <view class="btn y"></view>
+                <view class="btn b"></view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 底部 -->
+    <footerBar needAnimate='{{true}}' preload='{{preload}}' />
+
+    <preload bindimageAllLoad='imageAllLoad' wx:if='{{preload}}' />
+</view>

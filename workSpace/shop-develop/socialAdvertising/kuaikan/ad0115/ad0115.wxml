@@ -1,0 +1,7 @@
+<!-- socialAdvertising/kuaikan/ad0115/ad0115.wxml -->
+<view class="frame">
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_0115_010.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_0115_020.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onCouponClick" />
+    <image class="img_with_full img_live" src="{{imgBaseUrl}}kuaikan_0115_030.jpg?v={{randomMilli}}" data-bt-name="进入直播间" bind:tap="onLiveClick" />
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_0115_040.jpg?v={{randomMilli}}" mode="widthFix" bind:tap="onIndexClick" />
+</view>

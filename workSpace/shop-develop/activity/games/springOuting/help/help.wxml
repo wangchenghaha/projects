@@ -1,0 +1,23 @@
+<view class="container">
+    <image class="helpbg" src="{{helpbg}}" mode="widthFix"></image>
+
+    <view class="content">{{content}}</view>
+    <view class="rule1" style="top: {{ruleTop}}" data-type="rule" bindtap="onClick" wx:if="{{isBrandShow}}"></view>
+    <view class="rule2" style="top: {{ruleTop}}" data-type="rule" bindtap="onClick" wx:else></view>
+    <view class="text1" style="top:{{txtTop}};">呜呜…我在春游途中遇到了小麻烦，速来助我一臂之力！</view>
+    <view class="help" style="top:{{helpTop}};" data-type="help" bindtap="onClick">立即助力</view>
+    <view class="startGame" style="top:{{playTop}};" data-type="startGame" bindtap="onClick">我也要冒险</view>
+</view>
+
+<view class="voucher flex-center"  wx:if="{{isShowRule}}">
+    <view class="showModel flex-center" >
+        <image class="rankbg" src="{{rulebg}}" mode="widthFix"></image>
+        <image class="tan_close" src="{{tan_close}}" mode="widthFix" data-type="tan_close" bindtap="onClick"></image>
+        <view class="rankArea ">
+            <block wx:for="{{ruleContent}}" wx:key="rule">
+                <view class="ruleTitle">{{item.title}}</view>
+                <view class="ruleContent">{{item.contents}}</view>
+            </block>
+        </view>
+    </view>
+</view>

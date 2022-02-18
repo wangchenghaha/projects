@@ -1,0 +1,5 @@
+<view class="g_bottom_cus_bar" bind:tap="onButtonsClick">
+  <view class="g_bt_cus_serv" data-id="0" wx:if="{{flagShowService}}">联系客服</view>
+  <view class="g_bt_cancel_ex" data-id="1" wx:if="{{flagShowCancel}}">撤销换货</view>
+  <view class='g_bt_cancel_ex g_bt_cus_commit' data-id="2" wx:if="{{flagShowCommit}}">提交</view>
+</view>

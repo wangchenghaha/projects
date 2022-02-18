@@ -1,0 +1,84 @@
+<view class="wrap">
+    <view class="collectionHeader flex-bet">
+      <view class="collectionNums">共<text class="txt1"> {{collectionNums}}  </text>件商品</view>
+      <view class="collectionOption" bindtap="collectionEdit">{{editText}}</view>
+    </view>
+    <view class="{{isIphoneX ? 'iPhoneXlist':'list'}}" wx:if="{{haveGoods}}">
+        <view class="collectionList">
+            <block wx:for="{{trackList}}" wx:key="index">
+                <view class="collectionList-item" >
+                    <view class="btn_sel flex-center" wx:if="{{isEdit}}" data-index="{{index}}" bindtap="checked">
+                        <image src="{{item.isSelected?'../../images/collection_sel.png':'../../images/collection_nor.png'}}"/>
+                    </view>
+                    <view class="goods" style="margin-left:{{isEdit? '0rpx':'50rpx'}};" data-index="{{index}}" bindtap="{{isEdit? 'checked':'goDetail'}}">
+                        <view class="imagePic">
+                            <image src="{{item.imagePic}}" mode="widthFix"/>
+                        </view>
+                        <view class="goods-info">
+                            <view class="goodsTitle">{{item.goodsName}}</view>
+                            <view class="base-info flex-bet">
+                                <view class="price">￥{{item.browsePrice}}</view>
+                                <view class="time">{{item.createTime}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="bottomLine flex-center" wx:if="{{isBottom && isFol}}">
+        <view class="line"></view>
+        <view class="lineText"> 已经到底了 </view>
+        <view class="line"></view>
+    </view>
+
+    <!-- 热销推荐/猜你喜欢 -->
+    <!-- <dmpGoods projeckName="{{projeckName}}" wx:if="{{isBottom  && !isFol}}"></dmpGoods> -->
+    <view class="seacherFrame" wx:if="{{isSeacher}}">
+          <view class="inputArea">
+            <input class="seacherEdit" type="text" value="{{searchValue}}" bindinput="searchInput" placeholder="搜索商品名"/>
+            <view class="seacher-icon flex-center" bindtap="seacherGoods">
+                <image src="../../images/collection_seacher.png" mode="widthFix" bindtap="seacherGoods"></image>
+            </view>
+          </view> 
+          <view class="canncelSeacher" bindtap="canncelSeacher">取消</view>
+    </view>
+
+    <view class="noGoods" wx:if="{{noGoods}}">
+          <image style="width: 200rpx; height: 200rpx;" src="../../images/bag.png" mode="aspectFit"/>
+          <text style="font-size: 32rpx; color: black;">亲,您没有浏览过任何商品哦~</text>
+          <view class="list_null_btn" bindtap="toIndex">去逛逛</view> 
+    </view>
+
+     <view class="footer" wx:if="{{isEdit}}">
+        <view class="settlementContent">
+            <view class="left">
+                <image class="checkIamge" src="{{isAllSelected?'../../images/collection_sel.png':'../../images/collection_nor.png'}}" mode='widthFix' bindtap="allCheckGood"/>
+                <text style="margin-left: 10rpx;">全选</text>
+            </view>
+            <view class="btn" bindtap="deleteSel">删除</view>
+        </view>
+        <view class="bottomCom {{isIphoneX ?'bottomHeight':''}}">
+        </view>
+    </view>
+
+    <!-- 删除商品 - 弹出框 -->
+    <view class="tishi" style="display:{{remove_display}}">
+      <view class="opacity"></view>
+        <view class="tanchu">
+          <view class="h2">提示</view>
+          <view class="title">
+              确认删除该条记录吗？
+          </view>
+          <view class="bott">
+            <view class="bot">
+              <view class="true" bindtap="remove_true">确定</view>
+            </view>
+            <view class="bot">
+              <view class="false" bindtap="remove_false">取消</view>
+            </view>
+          </view>
+      </view>
+    </view>
+</view>

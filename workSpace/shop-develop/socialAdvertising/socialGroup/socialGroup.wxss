@@ -1,0 +1,58 @@
+/* socialAdvertising/crossIndustryCooperation/crossIndustryCooperation.wxss */
+.frame{width: 100%;display: flex;flex-direction: column; clear:both; overflow:hidden;background-color: #E8E8E8;}
+.img_bg{width: 100%;}
+.img_goto_un{width: 100%;margin-top: 10rpx;margin-bottom: 10rpx;}
+
+.img_shop{width: 100%;margin-top: 10rpx;}
+.img_goto_un_2{width: 100%;margin-bottom: 27rpx;}
+
+.scroll_v{width: 100%;height: 900rpx;}
+.scroll_wapper,.scroll_iphoneX{width: 100%;height: 900rpx;display: flex;flex-direction: column;background-color: #E8E8E8;}
+.scroll_iphoneX{height: 1500rpx;}
+
+.layout_swiper{width: 100%;height: 750rpx;}
+.img_swiper_item{width: 100%;height: 750rpx;}
+
+.layout_swiper_bottom{width: 100%;height: 1125rpx;}
+.img_swiper_item_bottom{width: 100%;height: 1125rpx;}
+.v_blank{height: 550rpx;}
+
+.frame_actual_fixed{width: 100%;height: auto; display: flex;flex-direction: column;background-color: transparent;
+position: fixed;left: 0;right: 0;bottom: 0;bottom: 57rpx;
+font-size: 30rpx;background-color: rgba(0, 0, 0, 0.7);
+}
+.frame_actual_inflow{width: 100%;background-color: rgba(0, 0, 0, 0.7);font-size: 27rpx;
+    height: auto;
+    display: flex;flex-direction: column;align-items: center;justify-content: center;
+}
+
+.bar_1,.bar_2,.bar_3{width: 100%;color: white;
+    display: flex;flex-direction: row;
+}
+.wrapper_logo,.wrapper_shop_info{ height: 55rpx;background-color: #2C2C2E;border: solid 1rpx #2C2C2E;
+    /* display: flex;flex-direction: row;align-items: center;justify-content: center; */
+   }
+.wrapper_shop_info{margin-left: 10rpx;margin-right: 10rpx;color: white;}
+.mini_logo{width: 50rpx;margin-left: 5rpx;}
+.wrapper_logo,.wrapper_shop_info,.mini_logo{ border-radius: 13rpx;}
+
+.wrapper_logo,.wrapper_service{margin-left: auto;margin-right: auto;}
+
+.txt_brand{margin-left: 17rpx;margin-right: 17rpx;color:#FBD700}
+.txt_brand_des{margin-left: 17rpx;margin-right: 17rpx;}
+.bar_1{height: 60rpx;line-height: 60rpx;margin-top: 22rpx;}
+.bar_2{height: auto;margin-top: 17rpx;margin-bottom: 17rpx;text-align: center;}
+.bar_3{height: 80rpx;margin-bottom: 27rpx;}
+.more{color: #DB7382;}
+.tip{width: 100%;margin-left: 27rpx; margin-right: 27rpx;white-space: pre-wrap;}
+
+.wrapper_service{width: 600rpx;
+    display: flex;flex-direction: row;justify-content: flex-start;align-items: center;
+    border-radius: 67rpx;background-color: black;border: solid 2rpx white;
+}
+.cus_service_avatar{border-radius: 50%;width: 60rpx;height: 60rpx;margin-left: 5rpx;}
+.cus_button{font-size: 30rpx;width: 450rpx;color: #AAA;background-color: transparent;
+    /* text-align: left;margin-left: 17rpx;padding-left: 0; */
+}
+
+.img_arrow{width: 45rpx;height: 45rpx; position: fixed;bottom: 440rpx;left: 50%;transform: translateX(-50%);}

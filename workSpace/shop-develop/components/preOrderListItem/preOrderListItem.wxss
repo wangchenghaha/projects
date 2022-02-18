@@ -1,0 +1,125 @@
+.itemContainer {
+  width: 100%;
+  clear: both;
+  border-top: 20rpx solid #eee;
+  padding-bottom: 30rpx;
+}
+.itemContainer .orderStatus {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+.itemContainer .orderStatus .orderNum {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.itemContainer .orderStatus .orderNum image {
+  margin-left: 20rpx;
+  width: 40rpx;
+}
+.itemContainer .orderStatus .orderstatus {
+  font-weight: 600;
+  color: orangered;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}
+.itemContainer .priceNotice {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  color: red;
+  font-weight: 550;
+}
+.itemContainer .goodsInfo {
+  display: flex;
+  margin-top: 20rpx;
+}
+.itemContainer .goodsInfo image {
+  width: 200rpx;
+  margin-left: 20rpx;
+}
+.itemContainer .goodsInfo .goodDetail {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+}
+.itemContainer .goodsInfo .goodDetail .goodName {
+  width: 500rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.itemContainer .goodsInfo .goodDetail .goodType {
+  display: flex;
+  margin-top: 50rpx;
+}
+.itemContainer .goodsInfo .goodDetail .goodType .itemType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rpx;
+  font-size: 24rpx;
+  min-width: 200rpx;
+  margin-left: 10rpx;
+  background: #eee;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+.itemContainer .goodsInfo .goodDetail .goodPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 80rpx;
+  margin-right: 30rpx;
+}
+.itemContainer .goodsInfo .goodDetail .goodPrice .price {
+  color: red;
+  font-weight: 600;
+  margin-left: 20rpx;
+}
+.itemContainer .optionsShow {
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 30rpx;
+}
+.itemContainer .optionsShow .priceShow {
+  color: #999;
+  margin-right: 30rpx;
+}
+.itemContainer .optionsShow .statusNotice {
+  color: black;
+}
+.itemContainer .optionsShow .options {
+  width: 200rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 2rpx solid #999;
+  border-radius: 30rpx;
+  margin-right: 30rpx;
+}
+.itemContainer .optionsShow .payNotice {
+  color: red;
+  border: 2rpx solid red;
+}
+.itemContainer .optionsShow .lastPayNo {
+  color: #999;
+  border: 2rpx solid #999;
+}
+.itemContainer .baseLine {
+  width: 94%;
+  margin-left: 3%;
+  height: 2rpx;
+  background: #eee;
+}
+
+/*# sourceMappingURL=preOrderListItem.wxss.map */

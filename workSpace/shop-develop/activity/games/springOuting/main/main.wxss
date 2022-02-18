@@ -1,0 +1,402 @@
+@charset "UTF-8";
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container .mainbg {
+  width: 100%;
+}
+
+.container .brandLogo {
+  position: absolute;
+  width: 320rpx;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .backImg {
+  position: absolute;
+  width: 40rpx;
+  top: 7%;
+  z-index: 10001;
+  left: 5%;
+}
+
+.container .startGame1 {
+  position: absolute;
+  width: 400rpx;
+  height: 180rpx;
+  background: none;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .startGame2 {
+  position: absolute;
+  width: 400rpx;
+  height: 180rpx;
+  background: none;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-20%);
+}
+
+.container .rule1 {
+  position: absolute;
+  width: 160rpx;
+  height: 80rpx;
+  background: none;
+  top: 200rpx;
+  z-index: 9;
+  right: 0;
+}
+
+.container .rule2 {
+  position: absolute;
+  width: 120rpx;
+  height: 120rpx;
+  background: none;
+  right: 82px;
+  z-index: 9;
+}
+
+.container .ranking {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background: none;
+  top: 800rpx;
+  right: 45rpx;
+  z-index: 9;
+}
+
+.container .giftList {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background: none;
+  top: 950rpx;
+  right: 45rpx;
+  z-index: 9;
+}
+
+.voucher {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.voucher .showModel {
+  position: relative;
+  width: 92%;
+}
+
+.voucher .showModel .rankbg {
+  width: 100%;
+}
+
+.voucher .showModel .tan_close {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  top: 50rpx;
+  right: 40rpx;
+}
+
+.voucher .showModel .tab {
+  position: absolute;
+  width: 150rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  top: 68rpx;
+}
+
+.voucher .showModel .rankArea {
+  position: absolute;
+  width: 70%;
+  height: 900rpx;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.voucher .showModel .rankArea .myPoint {
+  font-size: 28rpx;
+  color: #ebad4c;
+  margin-top: 20rpx;
+}
+
+.voucher .showModel .rankArea .threeArea {
+  width: 90%;
+  overflow: hidden;
+}
+
+.voucher .showModel .rankArea .threeArea .userInfo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.voucher .showModel .rankArea .threeArea .userInfo .avatarArea {
+  position: relative;
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.voucher .showModel .rankArea .threeArea .userInfo .avatarArea .avatarbg {
+  position: absolute;
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.voucher .showModel .rankArea .threeArea .userInfo .avatarArea .avatarImg {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+}
+
+.voucher .showModel .rankArea .threeArea .userInfo .avatarArea .level {
+  position: absolute;
+  width: 80rpx;
+  height: 30rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: white;
+  bottom: 10rpx;
+}
+
+.voucher .showModel .rankArea .threeArea .userInfo .nickName {
+  font-size: 26rpx;
+  width: 110rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.voucher .showModel .rankArea .threeArea .userInfo .points {
+  font-size: 28rpx;
+  font-weight: 550;
+  color: #6ebe27;
+}
+
+.voucher .showModel .rankArea .otherArea {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+
+.voucher .showModel .rankArea .otherArea .otherId {
+  width: 80rpx;
+  font-size: 24rpx;
+  margin-left: 35rpx;
+}
+
+.voucher .showModel .rankArea .otherArea .otherImg {
+  width: 55rpx;
+  height: 55rpx;
+  border-radius: 55rpx;
+  margin-left: 6rpx;
+}
+
+.voucher .showModel .rankArea .otherArea .otherName {
+  font-size: 22rpx;
+  margin-left: 10rpx;
+  width: 180rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.voucher .showModel .rankArea .otherArea .otherPoints {
+  font-size: 24rpx;
+  font-weight: 550;
+  color: #6ebe27;
+  margin-right: 30rpx;
+}
+
+.voucher .showModel .rankArea .showNum {
+  font-size: 24rpx;
+  color: #dadada;
+}
+
+.voucher .showModel .rankArea .ruleTitle {
+  font-size: 28rpx;
+  color: #e58e1e;
+  margin-top: 20rpx;
+}
+
+.voucher .showModel .rankArea .ruleContent {
+  width: 85%;
+  font-size: 24rpx;
+  color: #87c13b;
+}
+
+.voucher .showModel .friendRank {
+  position: absolute;
+  width: 70%;
+  height: 800rpx;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.voucher .showModel .friendRank .otherArea {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+
+.voucher .showModel .friendRank .otherArea .otherId {
+  width: 80rpx;
+  font-size: 24rpx;
+  margin-left: 35rpx;
+}
+
+.voucher .showModel .friendRank .otherArea .otherImg {
+  width: 55rpx;
+  height: 55rpx;
+  border-radius: 55rpx;
+  margin-left: 6rpx;
+}
+
+.voucher .showModel .friendRank .otherArea .otherName {
+  font-size: 22rpx;
+  margin-left: 10rpx;
+  width: 180rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.voucher .showModel .friendRank .otherArea .otherPoints {
+  font-size: 24rpx;
+  font-weight: 550;
+  color: #6ebe27;
+  margin-right: 30rpx;
+}
+
+.voucher .showModel .friendRank .showNum {
+  font-size: 24rpx;
+  color: #dadada;
+}
+
+.bounced {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+
+.bounced-firstPop {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bounced-firstPop .background {
+  position: absolute;
+  width: 80%;
+}
+
+.bounced-firstPop .share {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 800rpx;
+  background: none;
+  width: 300rpx;
+  height: 80rpx;
+}
+
+.bounced-firstPop .share::after {
+  border: none;
+}
+
+.bounced-firstPop .regretBg {
+  width: 80%;
+  height: 550rpx;
+  background: white;
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bounced-firstPop .regretBg .regretlogo {
+  width: 200rpx;
+  height: 62rpx;
+  margin: 60rpx;
+}
+
+.bounced-firstPop .regretBg .txt1 {
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+
+.bounced-firstPop .regretBg .txt2 {
+  font-size: 28rpx;
+  margin-top: 60rpx;
+  max-width: 500rpx;
+  color: #8ebe06;
+}
+
+.bounced-firstPop .regretBg .btn1 {
+  width: 400rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #faba39;
+  color: white;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+  border-radius: 80rpx;
+}
+
+.bounced-firstPop .close {
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 100rpx;
+}
+
+.musicImg {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  top: 22%;
+  z-index: 9;
+  right: 6%;
+  opacity: 0.5;
+}
+
+/* 旋转class */
+.music-on {
+  animation: music-rotate 4s linear infinite;
+}
+
+/* 旋转动画 */
+@keyframes music-rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

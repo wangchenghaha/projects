@@ -1,0 +1,46 @@
+<view class="wrap">
+    <block wx:for='{{pageModule}}' wx:key="pageModule">
+        <!--轮播-->
+        <view class="banner" wx:if="{{item.moduleType === 'largeLoop' || item.moduleType === 'loop'}}">
+            <swiper class="swiper {{item.moduleType === 'largeLoop' ? 'large-swiper' : ''}}" style="{{item.mySelf ? 'height: '+ item.description : '' }}" autoplay="auto" circular="{{swiper.circular}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" indicator-dots="true" indicator-active-color="#fff">
+            <swiper-item wx:for="{{item.detailList}}" wx:for-item="swiperItem" wx:key="swiperList">
+                <navigator wx:if="{{item.type === 'jumpMiniProgram'}}" target="miniProgram" open-type="navigate" app-id="{{item.code}}" path="{{item.linkUrl}}">
+                <image src="{{item.picUrl}}" mode='widthFix'></image>
+                </navigator>
+                <image wx:else src="{{swiperItem.picUrl}}" class="img" mode='widthFix' data-description="{{swiperItem.description}}" data-code='{{swiperItem.code}}' data-module="{{item.moduleType}}" data-index="{{index}}" data-link="{{swiperItem.linkUrl}}" id="{{index}}" bindtap="onClick"></image>
+            </swiper-item>
+            </swiper>
+        </view>
+
+        <view class="botton-content flex-start"  wx:if="{{item.moduleType === 'botton'}}" >
+            <view class="botton-item" wx:for="{{item.bottonArr}}" wx:key="botton" wx:for-item="btnItem">
+                <image lazy-load="true" src="{{btnItem.picUrl}}" mode="widthFix" data-code="{{btnItem.code}}" data-link="{{btnItem.linkUrl}}" data-index="{{index}}" data-module="{{item.moduleType}}" bindtap="onClick"></image>
+            </view>
+        </view>
+        <!-- 热销 -->
+        <view wx:if="{{item.moduleType === 'hot'}}">
+            <view class="hot" wx:for="{{item.hotArr}}" wx:key="hotItem" wx:for-item="hotItem" >
+                <image lazy-load="true" src="{{hotItem.picUrl}}" mode='widthFix' data-index="{{index}}" data-groupName="{{item.groupName}}" data-module="{{item.moduleType}}" bindtap="onClick"></image>
+            </view>
+        </view>
+
+        <!--4个的-->
+        <view wx:if="{{item.moduleType === 'categoryType'}}" wx:if="{{item.isShow}}">
+             <scroll-view scroll-x class="scroll-header">
+                <view class="category-four" wx:for="{{item.categoryType}}" wx:for-item="fourItem" wx:key="categoryType">
+                    <image lazy-load="true" src="{{fourItem.picUrl}}"  data-type="{{fourItem.type}}" data-module="{{item.moduleType}}"  data-index="{{index}}" mode="widthFix" data-link="{{fourItem.linkUrl}}" bindtap="onClick"></image>
+                </view>
+             </scroll-view>
+        </view>
+
+        <view wx:if="{{item.moduleType === 'category'}}">
+            <scroll-view scroll-x class="scroll-header">
+                <view class="flow-content" wx:for="{{item.categoryArr}}" wx:key="category" wx:for-item="flowItem">
+                    <image lazy-load="true" src="{{flowItem.pic_preview}}" mode="widthFix" data-code="{{flowItem.sku}}" data-marks="{{flowItem.graphics}}"  data-index="{{index}}" data-module="{{item.moduleType}}" bindtap="onClick"></image>
+                    <view class="goodsInfo">{{flowItem.template_name}}</view>
+                    <view class="goodsInfo">￥{{flowItem.sale_price}}</view>
+                </view>
+            </scroll-view>
+        </view>
+    </block>
+</view>

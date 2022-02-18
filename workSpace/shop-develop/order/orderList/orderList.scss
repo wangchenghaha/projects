@@ -1,0 +1,172 @@
+.wrap{
+  min-height: 100%;
+  background: #eee;
+  padding-top: 90rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  .header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80rpx;
+    background: #fff;
+    z-index: 99;
+    image{
+      width: 288rpx;
+      height: 30rpx;
+    }
+  }
+  .content{
+    .order-item{
+      padding: 20rpx;
+      min-height: 410rpx;
+      margin-bottom: 25rpx;
+      border-radius: 20rpx;
+      background: #fff;
+      .order-code{
+        padding-bottom: 5rpx;
+      }
+      .order-status{
+        color: red;
+      }
+    }
+    .store{
+      font-size: 26rpx;
+      border-bottom: solid 1rpx #ccc;
+    }
+    .goods-content{
+      border-bottom: solid 1rpx #ccc;
+      border-top: solid 1rpx #ccc;
+      .goods{
+        padding: 20rpx 0;
+        align-items: flex-start;
+        &-img{
+          margin-right: 10rpx;
+          width: 160rpx;
+          image{
+            display: block;
+            width: 100%;
+          }
+        }
+        &-info{
+          max-width: 420rpx;
+        }
+        &-count{
+          text{
+            font-size: 20rpx;
+          }
+        }
+        &-text{
+          margin-bottom: 20rpx;
+          font-size: 24rpx;
+          text{
+            display: inline-block;
+            padding: 5rpx;
+            margin-right: 10rpx;
+            font-size: 20rpx;
+            background: #ebebeb;
+          }
+          &:last-child{
+            margin-top: 50rpx;
+          }
+        }
+      }
+      .voucher{
+        display: inline-block;
+        padding: 5rpx 25rpx;
+        background: #000;
+        color: #fff;
+        font-size: 30rpx;
+        border-radius: 10rpx;
+      }
+    }
+    .time{
+      margin-top: 20rpx;
+      font-size: 26rpx;
+      .pay-price{
+        padding-left: 20rpx;
+        text{
+          color: red;
+        }
+      }
+    }
+    .btn{
+      margin-top: 20rpx;
+      &-item{
+        width: 170rpx;
+        height: 50rpx;
+        line-height: 50rpx;
+        font-size: 26rpx;
+        border-radius: 30rpx;
+      }
+      &-pay{
+        background: #000;
+        color: #fff;
+      }
+      &-remind{
+        background: rgb(215,7,21);
+        color: #fff;
+      }
+      &-refund{
+        border: solid 2rpx #000;
+      }
+    }
+    .no-order{
+      .order-img{
+        margin: 150rpx auto;
+        width: 300rpx;
+        image{
+          display: block;
+          width: 100%;
+        }
+        text{
+          color: #636363;
+          font-size: 30rpx;
+        }
+      }
+      .btn-go{
+        margin: 0 auto;
+        width: 90%;
+        height: 80rpx;
+        line-height: 80rpx;
+        font-size: 30rpx;
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+  .pickup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9;
+    &-wrap{
+      display: inline-block;
+      position: relative;
+      padding: 20rpx 10rpx;
+      width: 540rpx;
+      background: #fff;
+      box-sizing: border-box;
+      .title{
+        padding-bottom: 10rpx;
+        font-size: 36rpx;
+        font-weight: bold;
+        border-bottom: solid 1rpx #000;
+      }
+      .canvas{
+        margin: 40rpx auto 20rpx;
+        width: 500rpx;
+        height: 100rpx;
+      }
+      .close{
+        position: absolute;
+        right: 10rpx;
+        top: 5rpx;
+      }
+    }
+  }
+}

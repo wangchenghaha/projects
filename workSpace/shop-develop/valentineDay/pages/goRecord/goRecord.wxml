@@ -1,0 +1,17 @@
+<!-- <comp-nav-dynamic id='comp-nav-dynamic'></comp-nav-dynamic> -->
+<view class="container"  style="background:url({{isBigPhone ? comData.valentine.activity_bac_big_img : comData.valentine.activity_bac_small_img}});background-repeat: repeat; background-size:100%; width:100%;min-height:100vh;">
+    <comp-image-pre src='{{comData.valentine.activity_title}}' class="main-img" mode="aspectFill"
+        width="472" height="333"></comp-image-pre>
+  
+    
+    <comp-image-pre src='{{comData.valentine.main_img}}' wx:if="{{!startRecord}}" class="main-img" mode="aspectFill" width="750"
+        height="475"></comp-image-pre>
+    <!-- 首页的按钮 -->
+    <view class="warp" >
+        <comp-image-pre src='{{comData.valentine.customized_btn}}' bindtap="openRecord" class="btn1" mode="aspectFill" width="375"
+        height="397"></comp-image-pre>
+    <comp-image-pre src='{{comData.valentine.lover_gift_btn}}' bindtap="jumpToIndex" class="btn2" mode="aspectFill"
+        width="375" height="397"></comp-image-pre>
+    </view>
+    
+</view>

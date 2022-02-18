@@ -1,0 +1,8 @@
+<!--socialAdvertising/kuaikan/ad1225/ad1225.wxml-->
+<view class="frame">
+    <image class="img_with_full" src="{{imgBaseUrl}}kuaikan_1223_010.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_1223_020.jpg?v={{randomMilli}}" mode="widthFix" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_1223_030.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="领券" bind:tap="onCouponClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_1223_040.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="专辑页" bind:tap="onAlbumClick" />
+    <image class="img_with_full n" src="{{imgBaseUrl}}kuaikan_1223_050.jpg?v={{randomMilli}}" mode="widthFix" data-bt-name="1分钱领券" bind:tap="onOneCentClick" />
+</view>

@@ -1,0 +1,11 @@
+<view class="guide">
+  <view class="title font-bold" bindtap="goNextPage" wx:if="{{showTitle}}">{{video.title}}</view>
+  <view class="video flex-bet">
+    <block wx:for="{{video.list}}" wx:for-item="videoItem" wx:key="{{item.videoName}}">
+      <view wx:if="{{index < showListSize}}" class="video-item" data-name="{{videoItem.videoName}}" bindtap="openVideo">
+        <image src="{{videoItem.img}}" mode="widthFix"></image>
+        <text class="video-title">{{videoItem.title}}</text>
+      </view>
+    </block>
+  </view>
+</view>

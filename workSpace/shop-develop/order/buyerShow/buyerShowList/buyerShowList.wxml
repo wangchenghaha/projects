@@ -1,0 +1,53 @@
+<view class="container">
+    <view class="goods flex-start" bindtap="goDetail">
+      <image class="goodsImg" src="{{goodsImg}}" mode="aspectFill"></image>
+      <view class="info">
+        <view class="goodstxt">{{listData.list.length}}<text style="color:#999; font-size: 26rpx;">条买家秀</text></view>
+        <view class="timer">最近更新于{{listData.list[0].createTime}}</view>
+      </view>
+    
+    </view>
+    <view class="list">
+      <view class='list-half'>
+        <view wx:for="{{listData.list}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card' data-id="{{item.id}}" bindtap="onClick">
+            <view class="picNum flex-center">
+              <image class="icon" src="{{picIcon}}" mode="widthFix"></image>
+              <view class="text">{{item.evaluateImgs.length}}</view>
+            </view>
+            <image class="showImg" src="{{item.evaluateImgs[0]}}" mode="widthFix"></image>
+            <view class="content">{{item.reviewContent}} </view>
+            <view class="flex-bet">
+              <view class="right flex-start">
+                  <image class="icon" src="{{item.headimgurl}}"></image>
+                  <view class="name">{{item.nickname}}</view>
+              </view>
+              <view class="left flex-end">
+                  <view class="agreeNum">{{item.buyerShowLikeCount}}</view>
+                  <image class="icon" src="{{agreeIcon}}" mode="widthFix" ></image>
+              </view>
+            </view>
+        </view>
+      </view>
+      <view class='list-half'>
+        <view wx:for="{{listData.list}}" wx:key="index" wx:if="{{index%2 != 0}}" class='card' data-id="{{item.id}}" bindtap="onClick">
+            <view class="picNum flex-center">
+              <image class="icon" src="{{picIcon}}" mode="widthFix"></image>
+              <view class="text">{{item.evaluateImgs.length}}</view>
+            </view>
+            <image class="showImg" src="{{item.evaluateImgs[0]}}" mode="widthFix"></image>
+            <view class="content">{{item.reviewContent}}</view>
+            <view class="userInfo flex-bet">
+              <view class="right flex-start">
+                  <image class="icon" src="{{item.headimgurl}}"></image>
+                  <view class="name">{{item.nickname}}</view>
+              </view>
+              <view class="left flex-end">
+                  <view class="agreeNum">{{item.buyerShowLikeCount}}</view>
+                  <image class="icon" src="{{agreeIcon}}" mode="widthFix" ></image>
+              </view>
+            </view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomView"></view>
+</view>

@@ -1,0 +1,75 @@
+.bg-black {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .5;
+}
+
+.shareView {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: auto;
+  background-color: white;
+}
+
+.shareView .topView {
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.shareView .topView-leftView {
+  width: 100%;
+  height: 50rpx;
+  flex: 1;
+}
+
+.shareView .topView-rightView {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+}
+
+.shareView .imageView {
+  width: 100%;
+  height: auto;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  box-sizing: border-box;
+}
+
+.shareView .textView {
+  margin-top: 20rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  width: 100%;
+  font-size: 24rpx;
+  line-height: 29rpx;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.shareView .bottomShare {
+  margin-top: 30rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #4FBBB2;
+  text-align: center;
+}
+
+.share {
+  background: none;
+}
+
+.share::after {
+  border: none;
+}

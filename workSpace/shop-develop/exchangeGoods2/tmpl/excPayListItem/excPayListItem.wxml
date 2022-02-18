@@ -1,0 +1,64 @@
+<template name="excPayListItemTmpl">
+    <view class="global_classic_order_item_wrap padding">
+        <view id="{{index}}" class="global_thumbnail" bindtap="checkboxChange">
+            <image class="global_thumbnail" mode="widthFix" src="https://cdn.bestseller.com.cn{{item.gsMainPicPath}}" />
+        </view>
+        <view id="{{index}}" class="global_thumbnail_right_txt">
+            <view class="title_style">{{item.goodsName}}</view>
+            <view class="key">
+                颜色
+                <text>{{item.colorName}}</text>
+            </view>
+            <view class="key">
+                尺码
+                <text>{{item.sizeName}}</text>
+            </view>
+            <view class="key" wx:if="{{flagShowStorage}}">
+                申请退货数量
+                <text>{{item.goodsCount}}</text>
+            </view>
+            <view class="key" wx:if="{{flagShowStorage}}">
+                已入库数量
+                <text>{{item.alreadyStorageCount}}</text>
+            </view>
+            <view class="key" wx:if="{{!flagShowStorage}}">
+                数量
+                <text>{{item.goodsCount}}</text>
+            </view>
+            <view class="key">
+                金额
+                <text>￥ {{item.price}}</text>
+            </view>
+        </view>
+
+        <!-- <view id="{{index}}" class="global_thumbnail">
+            <image class="global_thumbnail" mode="widthFix" src="https://cdn.bestseller.com.cn{{item.gsMainPicPath}}" />
+        </view>
+        <view class="global_thumbnail_right_txt">
+            <view>
+                <text class="global_key_left_gray">商品名称</text>
+                <text class="global_key_right_black">{{item.goodsName}}</text>
+            </view>
+            <view>
+                <text class="global_key_left_gray">颜色</text>
+                <text class="global_key_right_black">{{item.colorName}}</text>
+            </view>
+            <view>
+                <text class="global_key_left_gray">尺码</text>
+                <text class="global_key_right_black">{{item.sizeName}}</text>
+            </view>
+            <view>
+                <text class="global_key_left_gray">申请退货数量</text>
+                <text class="global_key_right_black">{{item.goodsCount}}件</text>
+            </view>
+            <view wx:if="{{flagShowStorage}}">
+                <text class="global_key_left_gray">已入库数量</text>
+                <text class="global_key_right_black">{{item.alreadyStorageCount}}件</text>
+            </view>
+            <view>
+                <text class="global_key_left_gray">金额</text>
+                <text class="global_key_right_black">￥ {{item.price}}</text>
+            </view>
+        </view> -->
+    </view>
+</template>

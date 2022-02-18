@@ -1,0 +1,17 @@
+<view class='main'>
+  <image class="bg" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_bg.png"></image>
+  <image wx:if="{{!saved}}" class="submit" bindtap="submit" src="https://alioss.woaap.com/bestseller/campaign2001/images/write_submit.png"></image>
+  <view class="alert">
+    <image class="write_title" src="https://alioss.woaap.com/bestseller/campaign2001/images/write_title.png"></image>
+    <image class="alertBg" src="https://alioss.woaap.com/bestseller/campaign2001/images/rules_alert_bg.png"></image>
+    <image class="inputBg" src="https://alioss.woaap.com/bestseller/campaign2001/images/write_input_bg.png"></image>
+    <input disabled="{{saved}}" type="text" class="name" data-key="receive_name" value="{{receive_name}}" bindinput="changeValue"/>
+    <input disabled="{{saved}}" type="text" class="address" data-key="receive_address" value="{{receive_address}}" bindinput="changeValue"/>
+    <input disabled="{{saved}}" type="text" class="phone" data-key="receive_phone" value="{{receive_phone}}" bindinput="changeValue"/>
+  </view>
+  <view wx:if="{{subAlert}}" class="subAlertWrap" catchtouchmove="catchtouchmove" catchtap="catchtap">
+      <image class="subAlert" src="https://alioss.woaap.com/bestseller/campaign2001/images/write_sub_alert.png"></image>
+      <image class="close" bindtap="close" src="https://alioss.woaap.com/bestseller/campaign2001/images/write_sub_close.png"></image>
+  </view>
+</view>
+<imageLoading imageList="{{loadImageList}}"></imageLoading>

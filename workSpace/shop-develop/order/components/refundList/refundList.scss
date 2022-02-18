@@ -1,0 +1,45 @@
+$red-color: #d70715;
+.refund{
+  margin: 0 auto;
+  width: 95%;
+  &-item{
+    margin-bottom: 20rpx;
+    padding: 20rpx 10rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    .refund-code{
+      text{
+        font-size: 24rpx;
+      }
+    }
+    .refund-status{
+      align-items: flex-start;
+      .price{
+        font-size: 28rpx;
+        color: $red-color;
+      }
+      .status{
+        &.success{
+          color: #07C160;
+        }
+        &.fail{
+          color: $red-color;
+        }
+      }
+      .store-refund{
+        display: inline-block;
+        margin-left: 10rpx;
+        width: 130rpx;
+        height: 50rpx;
+        line-height: 50rpx;
+        border: solid 1rpx $red-color;
+        color: $red-color;
+      }
+    }
+    .goods-wrap{
+      max-height: 660rpx;
+      overflow-y: scroll;
+    }
+  }
+}
